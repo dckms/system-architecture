@@ -126,7 +126,7 @@ Neuron Zettelkasten
 GitJournal
 ----------
 
-     Compatible with your favorite Desktop Apps. GitJournal aims to be extremely configurable and work with your favorite apps. The idea is to not build another silo and instead integrate into your existing workflow.
+    Compatible with your favorite Desktop Apps. GitJournal aims to be extremely configurable and work with your favorite apps. The idea is to not build another silo and instead integrate into your existing workflow.
 
     No two people are the same...
 
