@@ -123,6 +123,26 @@ Neuron Zettelkasten
     https://neuron.zettel.page/philosophy
 
 
+GitJournal
+----------
+
+     Compatible with your favorite Desktop Apps. GitJournal aims to be extremely configurable and work with your favorite apps. The idea is to not build another silo and instead integrate into your existing workflow.
+
+    No two people are the same...
+
+    Multiple Editors. All your notes are stored in Markdown. However you can edit the notes in many different ways depending on the task.
+
+    100% Open Source. GitJournal will always be completely Open Source. Join the community and help us build your ideal note taking app. 
+
+    https://gitjournal.io/
+
+..
+
+    Why create another Note Taking App? There are many Note taking apps on the desktop, but the mobile space is lacking good note taking apps which give you control over your data and operate with open protocols.
+
+    https://gitjournal.io/support/
+
+
 Markdown
 ========
 
