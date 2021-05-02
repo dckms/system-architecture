@@ -127,7 +127,9 @@ Markdown
 ========
 
 Markdown - популярный язык разметки.
-Вы легко можете использовать его, благодаря расширению `MyST-Parser <https://myst-parser.readthedocs.io/en/latest/>`__ (`порядок установки <https://www.sphinx-doc.org/en/master/usage/markdown.html>`__).
+Приводимые в начале этой страницы архитектурные руководства Microsoft написаны на Markdown.
+
+Вы легко можете использовать Markdown, благодаря расширению `MyST-Parser <https://myst-parser.readthedocs.io/en/latest/>`__ (`порядок установки <https://www.sphinx-doc.org/en/master/usage/markdown.html>`__).
 Расширение позволяет использовать в Markdown все директивы и роли Sphinx-doc, и является мостом Docutils к `markdown-it-py <https://github.com/executablebooks/markdown-it-py>`__, который поддерживает синтаксис `CommonMark <https://commonmark.org/>`__.
 
 Как вариант, возможна и обычная статическая конвертация Markdown в reStructuredText:
