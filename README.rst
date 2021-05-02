@@ -173,7 +173,7 @@ Neuron Zettelkasten может представлять интерес для т
 - https://github.com/srid/neuron
 - https://github.com/srid/neuron-template
 
-Парень `дает сравнение <https://lobste.rs/s/kydg6q/neuron_0_4_zettelkasten_note_management#c_me2hhh>`__ Neuron Zettelkasten и Sphinx-doc.
+Парень дает `сравнение Neuron Zettelkasten и Sphinx-doc <https://lobste.rs/s/kydg6q/neuron_0_4_zettelkasten_note_management#c_me2hhh>`__.
 
 
 Интеграция с другими системами
