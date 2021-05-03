@@ -262,6 +262,12 @@ RSS
 - https://core.telegram.org/bots/faq
 
 
+Sitemap
+-------
+
+- https://github.com/jdillard/sphinx-sitemap
+
+
 Послесловие
 ===========
 
