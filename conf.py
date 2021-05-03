@@ -68,6 +68,8 @@ html_static_path = ['_static']
 
 html_extra_path = ['_html_extra', ]
 
+show_authors = True
+
 # RSS settings (yasfb)
 feed_base_url = 'http://YOUR_HOST_URL'
 feed_author = author
