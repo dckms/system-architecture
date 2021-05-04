@@ -31,6 +31,7 @@ extensions = [
     'sphinx.ext.todo',
     'myst_parser',
     'yasfb',
+    'sphinx_reredirects',
 ]
 
 source_suffix = {
