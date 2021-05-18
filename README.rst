@@ -145,6 +145,16 @@ GitJournal
     https://gitjournal.io/support/
 
 
+Другие интересные проекты
+-------------------------
+
+- https://gohugo.io/
+- https://github.com/google/docsy
+
+- https://github.com/jekyll/jekyll
+- https://github.com/vsoch/docsy-jekyll
+
+
 Markdown
 ========
 
