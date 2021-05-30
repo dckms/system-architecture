@@ -280,6 +280,13 @@ Sitemap
 - https://github.com/jdillard/sphinx-sitemap
 
 
+Полезные расширения
+===================
+
+- `Sphinx-Needs <https://sphinxcontrib-needs.readthedocs.io/en/latest/>`__ (`source code <https://github.com/useblocks/sphinxcontrib-needs>`__) - Sphinx-Needs allows the definition, linking and filtering of need-objects, which are by default: requirements, specifications, implementations, test cases.
+- `Sphinx Traceability plugin <https://0x6d64.github.io/sphinx-traceability-example/>`__ (`source code <https://github.com/melexis/sphinx-traceability-extension>`__) - traceability extension for Sphinx documentation generator. Sphinx plugin that allows defining documentation items and relations between those items. Can be used as a requirements management tool for e.g. ISO26262 projects.
+
+
 Послесловие
 ===========
 
