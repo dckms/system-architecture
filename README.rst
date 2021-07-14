@@ -156,6 +156,8 @@ GitJournal
 - https://github.com/jekyll/jekyll
 - https://github.com/vsoch/docsy-jekyll
 
+- "`imdone-core <https://github.com/imdone/imdone-core>`__" - Text based kanban processor (`Why? <https://github.com/imdone/imdone-core#resources>`__).
+
 
 Markdown
 ========
