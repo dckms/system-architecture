@@ -150,7 +150,7 @@ GitJournal
 Другие интересные проекты
 -------------------------
 
-- https://gohugo.io/
+- https://gohugo.io/ (`поддерживает Markdown, reStructuredText, Org-mode, etc. <https://gohugo.io/content-management/formats/>`__)
 - https://github.com/google/docsy
 
 - https://github.com/jekyll/jekyll
