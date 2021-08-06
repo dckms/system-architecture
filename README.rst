@@ -159,6 +159,7 @@ GitJournal
 - "`imdone-core <https://github.com/imdone/imdone-core>`__" - Text based kanban processor (`Why? <https://github.com/imdone/imdone-core#resources>`__).
 - "`coddx-alpha <https://github.com/coddx-hq/coddx-alpha>`__" - Todo Kanban Board manages tasks and save them as TODO.md - a simple plain text file.
 - "`Orgzly <http://www.orgzly.com/>`__" - Outliner for notes and tasks. Notebooks in plain text.
+- "`Joplin <https://joplinapp.org/>`__" - an open source note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS (`Source Code <https://github.com/laurent22/joplin/>`__).
 
 
 Markdown
