@@ -232,6 +232,8 @@ Neuron Zettelkasten может представлять интерес для т
 
 Зато сообщество Obsidian `дает много дельных советов <https://forum.obsidian.md/t/how-do-i-work-with-obsidian-on-mobile/471>`__, как работать с Markdown-файлами на мобильных устройствах.
 
+А также сообщество Obsidian предоставляет `варианты статической генерации <https://forum.obsidian.md/t/static-site-generators-any-guides/8915>`__ помимо помимо `Obsidian Publish <https://obsidian.md/publish>`__.
+
 
 Интеграция с Notion
 -------------------
