@@ -147,15 +147,58 @@ GitJournal
     https://gitjournal.io/support/
 
 
+Статические генераторы сайтов
+-----------------------------
+
+Существует целый класс инструментов, предназначенных для генерации сайта
+(блога, документации или информационной страницы) из исходных материалов
+в текстовых файлах в markdown, reStructuredText и `других аналогичных
+форматах`_. Часто генераторы сайтов поддерживают дополнительную разметку
+(shortcodes), которая упрощает вставку диаграмм, формул, сносок, ссылок
+на твиты, видео и других элементов.
+
+Наиболее известные из cтатических генераторов сайтов - `Hugo`_ (написан
+на Go, распространяется как бинарный исполняемый файл) и `Jekyll`_
+(требует установки Ruby). Так, например, страницы для представления
+markdown файлов на Github Pаges обрабатываются Jekyll.
+
+Есть группа генераторов на JavaScript, как связанная с конкретными
+фреймворками (Gastby, Next, Nuxt, VuePress), так и самостоятельных
+(Hexo, Eleventy и другие). На Python написаны sphinx, mkdocs, pelican и
+другие.
+
+У многих генераторов есть темы оформления, связанные с документацией,
+например, очень красивый дизайн у `mkdocs-material`_ и `doks (hugo)`_,
+а также у `just-the-docs (jekyll)`_.
+
+Ряд статических генераторов нацелены преимущественно на "книжный" формат
+представления документов c оглавлением слева:
+
+-  `mdbook`_ - очень лаконичный и быстрый в развертывании генератор,
+   используется для документации языка Rust, поставляется бинарным
+   файлом
+-  `jupyterbook`_ (Python)
+-  `bookdown`_ (R)
+
+Список статических генераторов сайтов по полуярности на Github можно
+посмотреть `здесь`_.
+
+.. _других аналогичных форматах: https://gohugo.io/content-management/formats/
+.. _Hugo: https://gohugo.io
+.. _Jekyll: https://github.com/jekyll/jekyll
+.. _mkdocs-material: https://squidfunk.github.io/mkdocs-material/
+.. _doks (hugo): https://getdoks.org/
+.. _just-the-docs (jekyll): https://github.com/pmarsceill/just-the-docs
+.. _mdbook: https://rust-lang.github.io/mdBook/
+.. _jupyterbook: https://jupyterbook.org/intro.html
+.. _bookdown: https://www.bookdown.org/
+.. _здесь: https://share.streamlit.io/epogrebnyak/ssg-dataset/main
+
+
 Другие интересные проекты
 -------------------------
-
-- https://gohugo.io/ (`поддерживает Markdown, reStructuredText, Org-mode, etc. <https://gohugo.io/content-management/formats/>`__)
 - https://github.com/google/docsy
-
-- https://github.com/jekyll/jekyll
 - https://github.com/vsoch/docsy-jekyll
-
 - "`imdone-core <https://github.com/imdone/imdone-core>`__" - Text based kanban processor (`Why? <https://github.com/imdone/imdone-core#resources>`__).
 - "`coddx-alpha <https://github.com/coddx-hq/coddx-alpha>`__" - Todo Kanban Board manages tasks and save them as TODO.md - a simple plain text file.
 - "`Orgzly <http://www.orgzly.com/>`__" - Outliner for notes and tasks. Notebooks in plain text (`Source Code <https://github.com/orgzly>`__).
