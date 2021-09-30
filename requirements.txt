@@ -1,3 +1,4 @@
 Sphinx==3.5.4
 myst-parser==0.13.7
 yasfb==0.8.0
+sphinx-reredirects==0.0.1
