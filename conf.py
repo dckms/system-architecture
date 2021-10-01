@@ -10,7 +10,7 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
+import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -72,5 +72,5 @@ html_extra_path = ['_html_extra', ]
 show_authors = True
 
 # RSS settings (yasfb)
-feed_base_url = 'http://YOUR_HOST_URL'
+feed_base_url = os.environ.get('BASE_URL', 'http://YOUR_HOST_URL')
 feed_author = author
