@@ -169,6 +169,7 @@ markdown файлов на Github Pаges обрабатываются Jekyll.
 фреймворками (Gastby, Next, Nuxt, VuePress), так и самостоятельных
 (Hexo, Eleventy и другие). На Python написаны sphinx, mkdocs, pelican и
 другие.
+На Ruby можно добавить еще Middleman.
 
 У многих генераторов есть темы оформления, связанные с документацией,
 например, очень красивый дизайн у `mkdocs-material`_, `doks`_, `Docsy`_
