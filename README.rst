@@ -147,6 +147,8 @@ GitJournal
     https://gitjournal.io/support/
 
 
+.. _popular-static-site-generators:
+
 Статические генераторы сайтов
 -----------------------------
 
@@ -219,6 +221,8 @@ Markdown - популярный язык разметки.
 - `m2r <https://github.com/miyakogi/m2r>`__ - Markdown to reStructuredText converter 
 - `mdToRst <https://github.com/kata198/mdToRst>`__ - tool and library to convert markdown [md] to restructed text [rst] (md to rst).
 
+
+.. _using-dckms-on-mobile-devices:
 
 Как работать на мобильных устройствах
 =====================================
