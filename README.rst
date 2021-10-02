@@ -185,7 +185,8 @@ markdown файлов на Github Pаges обрабатываются Jekyll.
 -  `bookdown`_ (R)
 
 Список статических генераторов сайтов по полуярности на Github можно
-посмотреть `здесь <https://share.streamlit.io/epogrebnyak/ssg-dataset/main>`__.
+посмотреть `здесь <https://share.streamlit.io/epogrebnyak/ssg-dataset/main>`__
+или `здесь <https://jamstack.org/generators/>`__.
 
 .. _Hugo: https://gohugo.io
 .. _Docsy: https://github.com/google/docsy
