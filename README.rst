@@ -72,6 +72,8 @@ Sphinx-doc предоставляет и тегирование (директи�
 #. Произведите сборку: ``make html``
 #. Подробнее `здесь <https://www.sphinx-doc.org/en/master/usage/quickstart.html>`__.
 
+Так же существует возможность собрать PDF-файл или электронную книгу EPUB.
+
 
 О Zettelkasten
 ==============
@@ -222,6 +224,10 @@ Markdown - популярный язык разметки.
 
 - `m2r <https://github.com/miyakogi/m2r>`__ - Markdown to reStructuredText converter 
 - `mdToRst <https://github.com/kata198/mdToRst>`__ - tool and library to convert markdown [md] to restructed text [rst] (md to rst).
+
+И reStructuredText в Markdown:
+
+- `RST-to-MyST <https://rst-to-myst.readthedocs.io/en/latest/>`__
 
 
 .. _using-dckms-on-mobile-devices:
