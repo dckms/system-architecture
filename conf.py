@@ -13,7 +13,7 @@
 import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # -- Project information -----------------------------------------------------
 
@@ -68,6 +68,18 @@ html_theme = 'alabaster'
 html_static_path = ['_static']
 
 html_extra_path = ['_html_extra', ]
+
+# This is also used if you do content translation via gettext catalogs.
+# Usually you set "language" from the command line for these cases.
+# language = 'ru'
+
+# This defaults to the global language selected with language.
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_search_language
+# html_search_language = 'ru'
+
+# https://www.sphinx-doc.org/ru/master/usage/advanced/intl.html
+locale_dirs = [os.path.join(PROJECT_ROOT, 'locale/')]
+gettext_compact = False
 
 show_authors = True
 

@@ -3,6 +3,7 @@ attrs==20.3.0
 Babel==2.9.1
 certifi==2020.12.5
 chardet==4.0.0
+click==8.0.3
 cssselect==1.1.0
 docutils==0.16
 idna==2.10
@@ -22,6 +23,7 @@ PyYAML==5.4.1
 requests==2.25.1
 snowballstemmer==2.1.0
 Sphinx==3.5.4
+sphinx-intl==2.0.1
 sphinx-reredirects==0.0.1
 sphinxcontrib-applehelp==1.0.2
 sphinxcontrib-devhelp==1.0.2
