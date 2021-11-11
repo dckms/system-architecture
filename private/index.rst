@@ -7,6 +7,6 @@ Private space
    :caption: Contents:
    :glob:
 
-   *
-   */index
+..    *
+..    */index
 

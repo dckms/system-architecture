@@ -7,6 +7,6 @@ Ivan Ivanov's public space
    :caption: Contents:
    :glob:
 
-   *
-   */index
+..    *
+..    */index
 
