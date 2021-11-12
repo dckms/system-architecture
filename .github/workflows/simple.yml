@@ -29,7 +29,7 @@ jobs:
     - name: Generate static pages
       run: sphinx-build -D language=ru -b html . _build
       env:
-        YOUR_HOST_URL: "${GITHUB_ACTOR}.github.io/${GITHUB_ACTOR}"
+        BASE_URL: "${GITHUB_ACTOR}.github.io/${GITHUB_ACTOR}"
     - name: Set git config and add changes
       run: |
           git config --global user.email "${GITHUB_ACTOR}@https://users.noreply.github.com/"
