@@ -18,9 +18,8 @@ jobs:
       with:
         python-version: 3.8
     - name: Install dependencies
-      with:
-        pre-build-command: "apt-get update -y && apt-get install -y git git-core libxml2-dev libxslt-dev python3.8-dev"
       run: |
+          apt-get update -y && apt-get install -y git git-core libxml2-dev libxslt-dev python3.8-dev
           python -m pip install --upgrade pip
           pip install -r requirements.freeze.txt
     - name: Make output folder
