@@ -27,9 +27,7 @@ jobs:
     - name: Clone master branch
       run: git clone "https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.git" --branch gh-pages --single-branch ./_build # git clone "https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git" --branch master --single-branch ./_build
     - name: Generate static pages
-      run: sphinx-build -D language=ru -b html . _build
-      env:
-        BASE_URL: "${GITHUB_ACTOR}.github.io/${GITHUB_ACTOR}"
+      run: BASE_URL="${GITHUB_ACTOR}.github.io/${GITHUB_ACTOR}" sphinx-build -D language=ru -b html . _build
     - name: Set git config and add changes
       run: |
           git config --global user.email "${GITHUB_ACTOR}@https://users.noreply.github.com/"
