@@ -17,18 +17,18 @@ jobs:
     # Standard drop-in approach that should work for most people.
     - uses: ammaraskar/sphinx-action@master
       with:
-        pre-build-command: "apt-get update -y && apt-get install -y git"
+        pre-build-command: "apt-get update -y && apt-get install -y git git-core"
         docs-folder: "./"
     # Example of using a custom build-command.
     - uses: ammaraskar/sphinx-action@master
       with:
-        pre-build-command: "apt-get update -y && apt-get install -y git"
+        pre-build-command: "apt-get update -y && apt-get install -y git git-core"
         build-command: "sphinx-build -b html . _build"
         docs-folder: "./"
     # Grabbing custom dependencies and building as a pdf.
     - uses: ammaraskar/sphinx-action@master
       with:
-        pre-build-command: "apt-get update -y && apt-get install -y git latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended"
+        pre-build-command: "apt-get update -y && apt-get install -y git git-core latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended"
         build-command: "make latexpdf"
         docs-folder: "./"
     # Great extra actions to compose with:
