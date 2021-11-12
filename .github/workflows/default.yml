@@ -46,7 +46,7 @@ jobs:
     # ===============================
     - name: Commit documentation changes
       run: |
-        git clone https://github.com/dckms/dckms-trunk.git --branch gh-pages --single-branch gh-pages
+        git clone https://github.com/${GITHUB_ACTOR}/${GITHUB_REPOSITORY}.git --branch gh-pages --single-branch gh-pages
         cp -r _build/html/* gh-pages/
         cd gh-pages
         touch .nojekyll
