@@ -3,7 +3,7 @@ name: Push content to the user's GitHub pages repository
 on:
   push:
     branches:    
-      - trunk
+      - system-architecture
 
 jobs:
   build:
