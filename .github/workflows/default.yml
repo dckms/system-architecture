@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:    
-      - trunk
+      - trunk2
 
 jobs:
   build:
