@@ -17,7 +17,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Distributed Collaborative Knowledge Management System'
+project = 'System Architecture'
 copyright = '2021, Your Full Name'
 author = 'Your Full Name'
 
