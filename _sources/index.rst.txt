@@ -3,17 +3,42 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-================================================================
-Welcome to Distributed Collaborative Knowledge Management System
-================================================================
+===================
+System Architecture
+===================
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
+   :caption: Общее пространство:
+   :glob:
+
+   /trunk/*/index
+   /trunk/*
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Авторские пространства:
+   :glob:
+
+   /emacsway/index
+   /ivan.ivanov/index
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Приватное пространствo:
+   :glob:
+
+   /private/index
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption:  Прочее:
    :glob:
 
    *
-   */*
 
 
 
