@@ -1,0 +1,1384 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Domain Events in DDD &#8212; документация System Architecture </title>
+    <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../../../../" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/jquery.js"></script>
+    <script src="../../../../../../_static/underscore.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../../../../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../../../../search.html" />
+    <link rel="next" title="Soft Skills" href="../../../../../../trunk/soft-skills/index.html" />
+    <link rel="prev" title="Domain Events" href="../../../../../../trunk/it/ddd/tactical-design/domain-model/domain-events/index.html" />
+   
+  <link rel="stylesheet" href="../../../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="domain-events-in-ddd">
+<span id="index-0"></span><h1><a class="toc-backref" href="#id115">Domain Events in DDD</a><a class="headerlink" href="#domain-events-in-ddd" title="Ссылка на этот заголовок">¶</a></h1>
+<p><em>Автор раздела: Ivan Zakrevsky</em></p>
+<p>Существует множество спорных точек зрения среди практиков DDD по поводу реализации Domain Events.
+Лучший способ понять суть вещей - это обратиться к первоисточнику, чтобы понять его мотивы и те проблемы, решение которым он стремился найти.</p>
+<div class="contents topic" id="id1">
+<p class="topic-title">Содержание</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#domain-events-in-ddd" id="id115">Domain Events in DDD</a></p>
+<ul>
+<li><p><a class="reference internal" href="#domain-event" id="id116">Назначение Domain Event</a></p></li>
+<li><p><a class="reference internal" href="#eventual-consistency-vs-strong-transactional-consistency" id="id117">Eventual Consistency vs Strong (Transactional) Consistency</a></p>
+<ul>
+<li><p><a class="reference internal" href="#eventual-consistency" id="id118">Eventual Consistency - это следствие, а не причина</a></p></li>
+<li><p><a class="reference internal" href="#id15" id="id119">Eventual Consistency предпочтительней</a></p></li>
+<li><p><a class="reference internal" href="#id18" id="id120">Все решают бизнес-правила</a></p></li>
+<li><p><a class="reference internal" href="#ask-whose-job-it-is" id="id121">Принцип «Ask Whose Job It Is»</a></p></li>
+<li><p><a class="reference internal" href="#strong-consistency" id="id122">Strong Consistency - новичкам</a></p></li>
+<li><p><a class="reference internal" href="#performance" id="id123">Интересы performance</a></p></li>
+<li><p><a class="reference internal" href="#id25" id="id124">Обратная совместимость формата объектов событий</a></p></li>
+<li><p><a class="reference internal" href="#net-microservices" id="id125">Рекомендации от «.NET Microservices»</a></p></li>
+<li><p><a class="reference internal" href="#scott-millett-nick-tune" id="id126">Мнение Scott Millett и Nick Tune</a></p></li>
+<li><p><a class="reference internal" href="#jimmy-bogard" id="id127">Мнение Jimmy Bogard</a></p></li>
+<li><p><a class="reference internal" href="#kamil-grzybek" id="id128">Мнение Kamil Grzybek</a></p></li>
+<li><p><a class="reference internal" href="#udi-dahan" id="id129">Мнение Udi Dahan</a></p></li>
+<li><p><a class="reference internal" href="#cesar-de-la-torre" id="id130">Мнение Cesar De la Torre</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#in-process-vs-out-of-process" id="id131">In-process vs out-of-process</a></p></li>
+<li><p><a class="reference internal" href="#internal-vs-external" id="id132">Internal vs External</a></p></li>
+<li><p><a class="reference internal" href="#one-phase-vs-two-phase" id="id133">One-phase vs Two-phase</a></p></li>
+<li><p><a class="reference internal" href="#id70" id="id134">Кто может издавать Domain Event?</a></p></li>
+<li><p><a class="reference internal" href="#id73" id="id135">Может ли Domain Event отменить свою причину?</a></p></li>
+<li><p><a class="reference internal" href="#id79" id="id136">Решение - это баланс стоимости и обретаемой выгоды</a></p>
+<ul>
+<li><p><a class="reference internal" href="#cqrs" id="id137">Может ли CQRS-команда возвращать результат?</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#atomicity-and-resiliency-of-integration-events" id="id138">Atomicity and Resiliency of Integration Events</a></p></li>
+<li><p><a class="reference internal" href="#integration-events" id="id139">Проблема сохранения очередности Integration Events</a></p></li>
+<li><p><a class="reference internal" href="#id104" id="id140">Где создавать Domain Event об удалении объекта?</a></p></li>
+<li><p><a class="reference internal" href="#id108" id="id141">Почему важно читать оригиналы вместо переводов</a></p></li>
+<li><p><a class="reference internal" href="#id111" id="id142">Послесловие</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Как сказал Bertrand Meyer,</p>
+<blockquote>
+<div><p>The zealots of an idea are often more extreme than its creators - the phase «more royalist than the King» captures that phenomenon - and you will find that foundational agile texts, such as those by Beck, Larman or Cockburn, occupy a higher plane of discourse; in particular they avoid below-the-belt hits at other approaches.</p>
+<p>- «Agile!: The Good, the Hype and the Ugly» by Bertrand Meyer</p>
+</div></blockquote>
+<p>Поэтому, я буду начинать всегда с первоисточников, т.е. с Eric Evans, Bertrand Meyer и др.
+Но также буду делать обзор мнений их ключевых последователей - Vaughn Vernon, Jimmy Bogard, Greg Young, Udi Dahan, Kamil Grzybek, Scott Millett, Nick Tune, коллектив авторов руководств Microsoft по архитектуре и др.
+К счастью, при внимательном рассмотрении, противоречий между ними практически нет.</p>
+<div class="section" id="domain-event">
+<h2><a class="toc-backref" href="#id116">Назначение Domain Event</a><a class="headerlink" href="#domain-event" title="Ссылка на этот заголовок">¶</a></h2>
+<blockquote>
+<div><p>Something happened that domain experts care about.
+Model information about activity in the domain as a series of discrete events. Represent each event as a domain object.
+&lt;…&gt;
+A domain event is a full-fledged part of the domain model, a representation of something that happened in the domain.</p>
+<p>- «Domain-Driven Design Reference» <a class="footnote-reference brackets" href="#fndddr" id="id2">2</a> by Eric Evans, Chapter «Domain Events»</p>
+</div></blockquote>
+</div>
+<div class="section" id="eventual-consistency-vs-strong-transactional-consistency">
+<h2><a class="toc-backref" href="#id117">Eventual Consistency vs Strong (Transactional) Consistency</a><a class="headerlink" href="#eventual-consistency-vs-strong-transactional-consistency" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="eventual-consistency">
+<h3><a class="toc-backref" href="#id118">Eventual Consistency - это следствие, а не причина</a><a class="headerlink" href="#eventual-consistency" title="Ссылка на этот заголовок">¶</a></h3>
+<blockquote>
+<div><p>A distinct, though related set of issues arises in distributed systems.
+The state of a distributed system cannot be kept completely consistent at all times.
+We keep the aggregates internally consistent at all times, while making other changes asynchronously.
+As changes propagate across nodes of a network, it can be difficult to resolve multiple updates arriving out of order or from distinct sources.</p>
+<p>- «Domain-Driven Design Reference» <a class="footnote-reference brackets" href="#fndddr" id="id3">2</a> by Eric Evans, Chapter «Domain Events»</p>
+</div></blockquote>
+<blockquote>
+<div><p>It is difficult to guarantee the consistency of changes to objects in a model with complex associations.
+Objects are supposed to maintain their own internal consistent state, but they can be blindsided by changes in other objects that are conceptually constituent parts.
+Cautious database locking schemes cause multiple users to interfere pointlessly with each other and can make a system unusable.
+Similar issues arise when distributing objects among multiple servers, or designing asynchronous transactions.</p>
+<p>&lt;…&gt;</p>
+<p>Use the same aggregate boundaries to govern transactions and distribution.
+Within an aggregate boundary, apply consistency rules synchronously. Across boundaries, handle updates asynchronously.
+Keep an aggregate together on one server.
+Allow different aggregates to be distributed among nodes.</p>
+<p>- «Domain-Driven Design Reference» <a class="footnote-reference brackets" href="#fndddr" id="id4">2</a> by Eric Evans, Chapter «Aggregates»</p>
+</div></blockquote>
+<p>Здесь мы видим, что краеугольной причиной Eventual Consistency является распределенное хранение данных.
+Это значит, что, в силу <a class="reference external" href="http://ksat.me/a-plain-english-introduction-to-cap-theorem">CAP-теоремы</a> (<a class="reference external" href="https://habr.com/ru/post/130577/">перевод на Русский</a>), становится невозможно достигнуть одновременно Consistency и Availability при Partition Tolerance.
+Это та самая причина, по которой концепция Агрегата лежит в основе практически любого распределенного NoSQL хранилища - агрегат просто хранится целиком на одном узле, поэтому, он всегда и доступен, и согласован одновременно.</p>
+<p>Представьте на минутку, что узлы автомобиля хранятся на разных узлах, и они не успели прийти в согласованное состояние после обновления агрегата, в котором был заменен типоразмер шин.
+Тогда у нас возникла бы вероятность получить из хранилища автомобиль с различными типоразмерами шин, что нарушило бы инвариант агрегата.</p>
+<p>Иными словами, Eventual Consistency является не причиной, а следствием. И сохраняется агрегат одной транзакцией потому, что иное просто технически невозможно в условиях распределенности. Точнее, Агрегат является границей транзакции. И Вернон прибегает к Eventual Consistency потому что это лучше для high availability, чем Two-Phase Commit.</p>
+<p>Таким образом, используя распределенное NoSQL хранилище или Actor Model, как правило, просто нет технической возможности сохранить более одного агрегата в одной транзакции.
+Хотя, многие распределенные NoSQL хранилища и позволяют пакетировать несколько операций, транзакциями их считать нельзя.</p>
+<p>Используя микросервисную архитектуру с RDBMS, существует техническая возможность сохранять более одного агрегата внутри <a class="reference external" href="https://martinfowler.com/bliki/IntegrationDatabase.html">одного и того же микросервиса</a> одной транзакцией.
+Правда, это может ухудшить уровень параллелизма, поэтому важно стремиться достигать наименее возможных границ транзакции.
+А вот синхронизация агрегатов различных сервисов может быть только асинхронной, либо же с использованием Two-Phase Commit.
+То же самое справедливо и для Bounded Contexts DDD-монолита.</p>
+<p>Стремление избежать Two-Phase Commit, в целях достижения highly scalable, подталкивает Vaughn Vernon к Eventual Consistency:</p>
+<blockquote>
+<div><p><strong>It can eliminate the need for two-phase commits (global transactions) and support of the rules of Aggregates (10).</strong>
+One rule of Aggregates states that only a single instance should be modified in a single transaction, and all other dependent changes must occur in separate transactions.
+So other Aggregate instances in the local Bounded Context may be synchronized using this approach.
+We also bring remote dependencies into a consistent state with latency.
+The decoupling helps provide <strong>a highly scalable</strong> and peak-performing set of cooperating services.
+It also allows us to achieve loose coupling between systems.</p>
+<p>-»Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id5">3</a> by Vaughn Vernon, Chapter «Chapter 8. Domain Events :: The When and Why of Domain Events»</p>
+</div></blockquote>
+<p>Но мы видим, что, кроме проблемы достижения одновременной Согласованности и Доступности при распределенном хранении агрегатов (и устойчивости к разделению), озвучивается еще одна причина - database locking.
+Означает ли проблема database locking то, что коммититься должен только один агрегат в одной транзакции при использовании RDBMS (Relational Database Management System)?
+Это означает только то, что транзакция должна быть fine-grained.
+«Fine-grained system transaction» != «one aggregate per transaction».</p>
+<blockquote>
+<div><p>This rationale is based on embracing <strong>fine-grained transactions instead of transactions spanning many aggregates</strong> or entities.
+The idea is that in the second case, the number of database locks will be substantial in large-scale applications with high scalability needs.
+Embracing the fact that <strong>highly scalable</strong> applications need not have instant transactional consistency between multiple aggregates helps with accepting the concept of eventual consistency.
+Atomic changes are often not needed by the business, and it is in any case the responsibility of the domain experts to say whether particular operations need atomic transactions or not.
+If an operation always needs an atomic transaction between multiple aggregates, you might ask whether your aggregate should be larger or was not correctly designed.</p>
+<p>- «.NET Microservices: Architecture for Containerized .NET Applications» <a class="footnote-reference brackets" href="#fnnetms" id="id6">7</a> by Cesar de la Torre, Bill Wagner, Mike Rousos, Chapter «<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/domain-events-design-implementation#single-transaction-across-aggregates-versus-eventual-consistency-across-aggregates">Domain events: design and implementation :: Single transaction across aggregates versus eventual consistency across aggregates</a>»</p>
+</div></blockquote>
+<p>О проблемах ухудшения параллелизма говорит и Vaughn Vernon, причем, причиной проблемы может стать даже один-единственный крупный агрегат.
+Как видно, дело не столько в количестве агрегатов, сколько в размере границ транзакции.</p>
+<blockquote>
+<div><p>Smaller Aggregates not only perform and scale better, they are also biased toward transactional success, meaning that conflicts preventing a commit are rare.</p>
+<p>- «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id7">3</a> by Vaughn Vernon, Chapter «Chapter 10 Aggregates :: Rule: Design Small Aggregates»</p>
+</div></blockquote>
+<p>Сам Eric Evans в своем известном выражении, которое многие приводят как первопричину Eventual Consistency, вовсе не требует одну транзакцию на агрегат, а говорит лишь о том, что после коммита инвариант каждого из агрегатов должен соблюдаться:</p>
+<blockquote>
+<div><p>Invariants, which are consistency rules that must be maintained whenever data changes, will involve relationships between members of the AGGREGATE.
+Any rule that <strong>spans AGGREGATES</strong> will <strong>not be expected</strong> to be up-to-date at all times.
+Through event processing, batch processing, or other update mechanisms, other dependencies can be resolved within some specified time.
+<strong>But the invariants applied within an AGGREGATE will be enforced with the completion of each transaction.</strong></p>
+<p>- «Domain-Driven Design: Tackling Complexity in the Heart of Software» <a class="footnote-reference brackets" href="#fnddd" id="id8">1</a> by Eric Evans, Chapter «Six. The Life Cycle of a Domain Object :: Aggregates»</p>
+</div></blockquote>
+<blockquote>
+<div><p>Leave transaction control to the client. Although the REPOSITORY will insert into and delete from the database, it will ordinarily not commit anything.
+It is tempting to commit after saving, for example, but the client presumably has the context to correctly initiate and commit units of work.
+Transaction management will be simpler if the REPOSITORY keeps its hands off.</p>
+<p>- «Domain-Driven Design: Tackling Complexity in the Heart of Software» <a class="footnote-reference brackets" href="#fnddd" id="id9">1</a> by Eric Evans, Chapter «Six. The Life Cycle of a Domain Object :: Repositories»</p>
+</div></blockquote>
+<p>А здесь он говорит о корне агрегата во множественном числе:</p>
+<blockquote>
+<div><p>Schemes have been developed for defining ownership relationships in the model. The following simple but rigorous system, distilled from those concepts, includes a set of rules for implementing transactions that modify the objects and their owners.</p>
+<p>- «Domain-Driven Design: Tackling Complexity in the Heart of Software» <a class="footnote-reference brackets" href="#fnddd" id="id10">1</a> by Eric Evans, Chapter «Six. The Life Cycle of a Domain Object :: Aggregates»</p>
+</div></blockquote>
+<p>Такую же причину озвучивает и Vaughn Vernon:</p>
+<blockquote>
+<div><p><strong>Transactions across distributed systems are not atomic.</strong>
+<strong>The various systems bring multiple Aggregates into a consistent state eventually.</strong></p>
+<p>- «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id11">3</a> by Vaughn Vernon, Chapter «10 Aggregates :: Rule: Reference Other Aggregates by Identity :: Scalability and Distribution»</p>
+</div></blockquote>
+<blockquote>
+<div><p>Accepting that <strong>all Aggregate instances in a large-scale, high-traffic enterprise are never completely consistent</strong> helps us accept that eventual consistency also makes sense in the smaller scale where just a few instances are involved.</p>
+<p>- «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id12">3</a> by Vaughn Vernon, Chapter «10 Aggregates :: Rule: Use Eventual Consistency Outside the Boundary»</p>
+</div></blockquote>
+<p>Кстати, автором идеи агрегата является даже не Eric Evans, а David Siegel.</p>
+<blockquote>
+<div><p>Schemes have been developed for defining ownership relationships in the model.
+The following simple but rigorous system, distilled from those concepts, includes a set of rules for implementing transactions that modify the objects and their owners. [1]
+(<strong>David Siegel devised and used this system on projects in the 1990s but has not published it.</strong>)</p>
+<p>First we need an abstraction for encapsulating references within the model.
+An AGGREGATE is a cluster of associated objects that we treat as a unit for the purpose of data changes.
+Each AGGREGATE has a root and a boundary.
+The boundary defines what is inside the AGGREGATE.
+The root is a single, specific ENTITY contained in the AGGREGATE.
+The root is the only member of the AGGREGATE that outside objects are allowed to hold references to, although objects within the boundary may hold references to each other.
+ENTITIES other than the root have local identity, but that identity needs to be distinguishable only within the AGGREGATE, because no outside object can ever see it out of the context of the root ENTITY.</p>
+<p>- «Domain-Driven Design: Tackling Complexity in the Heart of Software» <a class="footnote-reference brackets" href="#fnddd" id="id13">1</a> by Eric Evans, Chapter «Six. The Life Cycle of a Domain Object :: Aggregates»</p>
+</div></blockquote>
+<p>Оригинальная работа David Siegel к сожалению, не опубликована (по крайней мере, мне ее отыскать не удалось).
+Но он упоминается также в PoEAA, где определение агрегата звучит так:</p>
+<blockquote>
+<div><p>Eric Evans and David Siegel [Evans] define an <strong>aggregate as a cluster of associated objects that we treat as a unit for data changes</strong>.
+Each aggregate has a root that provides the only access point to members of the set and a boundary that defines what’s included in the set.
+The aggregate’s characteristics call for a Coarse-Grained Lock, since working with any of its members requires locking all of them. Locking an aggregate yields an alternative to a shared lock that I call a root lock (see Figure 16.4).
+By definition locking the root locks all members of the aggregate. The root lock gives us a single point of contention.</p>
+<p>- «Patterns of Enterprise Application Architecture» <a class="footnote-reference brackets" href="#fnpoeaa" id="id14">10</a> by Martin Fowler, David Rice, Matthew Foemmel, Edward Hieatt, Robert Mee, Randy Stafford, Chapter «16. Offline Concurrency Patterns :: Coarse-Grained Lock»</p>
+</div></blockquote>
+<p>Здесь говорится про единицу изменения, про бизнес-транзакцию и блокировку, но о связи бизнес-транзакции с системной транзакцией говорится только то, что «the system transaction in which you commit the business transaction», т.е. границы системной транзакции включают в себя границы бизнес-транзакции, но не ограничиваются ими.</p>
+</div>
+<div class="section" id="id15">
+<h3><a class="toc-backref" href="#id119">Eventual Consistency предпочтительней</a><a class="headerlink" href="#id15" title="Ссылка на этот заголовок">¶</a></h3>
+<p>С одной стороны, Vaughn Vernon настоятельно рекомендует использовать Eventual Consistency между Агрегатами.
+И тут же объясняет - агрегаты в высоконагруженных масштабируемых распределенных приложениях, устойчивых к разделению, никогда не бывают доступны и согласованы между собой одновременно.</p>
+<blockquote>
+<div><p>Thus, if executing a command on one Aggregate instance requires that additional business rules execute on one or more other Aggregates, <strong>use eventual consistency</strong>.
+Accepting that all <strong>Aggregate instances in a large-scale, high-traffic enterprise are never completely consistent</strong> helps us accept that eventual consistency also makes sense in the smaller scale where just a few instances are involved.</p>
+<p>- «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id16">3</a> by Vaughn Vernon, Chapter «10 Aggregates :: Rule: Use Eventual Consistency Outside the Boundary»</p>
+</div></blockquote>
+<blockquote>
+<div><p>An invariant is a business rule that must always be consistent.
+There are different kinds of consistency. One is transactional consistency, which is considered immediate and atomic.
+There is also eventual consistency. When discussing invariants, we are referring to transactional consistency.</p>
+<p>&lt;…&gt;</p>
+<p>The consistency boundary logically asserts that everything inside adheres to a specific set of business invariant rules no matter what operations are performed.
+The consistency of everything outside this boundary is irrelevant to the Aggregate.
+Thus, Aggregate is synonymous with transactional consistency boundary.</p>
+<p>&lt;…&gt;</p>
+<p>When employing a typical persistence mechanism, we use a single <a class="reference external" href="https://martinfowler.com/eaaCatalog/unitOfWork.html">transaction</a> to manage consistency.
+When the transaction commits, everything inside one boundary must be consistent.
+A properly designed Aggregate is one that can be modified in any way required by the business with its invariants completely consistent within a single transaction.
+And a properly designed Bounded Context modifies only one Aggregate instance per transaction in all cases.
+What is more, we cannot correctly reason on Aggregate design without applying transactional analysis.
+Limiting modification to one Aggregate instance per transaction may sound overly strict.
+However, it is a rule of thumb and should be the goal in most cases.
+It addresses the very reason to use Aggregates.</p>
+<p>- «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id17">3</a> by Vaughn Vernon, Chapter «10 Aggregates :: Rule: Model True Invariants in Consistency Boundaries»</p>
+</div></blockquote>
+</div>
+<div class="section" id="id18">
+<h3><a class="toc-backref" href="#id120">Все решают бизнес-правила</a><a class="headerlink" href="#id18" title="Ссылка на этот заголовок">¶</a></h3>
+<p>С другой стороны, все решают бизнес-правила:</p>
+<blockquote>
+<div><p>The main point to remember from this section is that business rules are the drivers for determining what must be whole, complete, and consistent at the end of a single transaction.</p>
+<p>-  «Domain-Driven Design Distilled» <a class="footnote-reference brackets" href="#fndddd" id="id19">4</a> by Vaughn Vernon, Chapter «5. Tactical Design with Aggregates :: Why Used»</p>
+</div></blockquote>
+</div>
+<div class="section" id="ask-whose-job-it-is">
+<h3><a class="toc-backref" href="#id121">Принцип «Ask Whose Job It Is»</a><a class="headerlink" href="#ask-whose-job-it-is" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Тем не менее, Vaughn Vernon не считает вопрос Strong (Transactional) Consistency vs Eventual Consistency однозначным, и приводит четыре причины, по которым выбор может отдаваться в пользу Strong (Transactional) Consistency.
+Цитировать все не буду - слишком много текста.
+Кому интересно - глава «Chapter 10 Aggregates :: Rule: Use Eventual Consistency Outside the Boundary :: Ask Whose Job It Is» и далее, вплоть до главы «Gaining Insight through Discovery».
+Приведу только отрывок:</p>
+<blockquote>
+<div><p>Ask Whose Job It Is</p>
+<p>Some domain scenarios can make it very challenging to determine whether transactional or eventual consistency should be used.
+Those who use DDD in a classic/traditional way may lean toward transactional consistency.
+Those who use CQRS may tend toward eventual consistency.
+But which is correct?
+<strong>Frankly, neither of those tendencies provides a domain-specific answer, only a technical preference. Is there a better way to break the tie?</strong></p>
+<p>Discussing this with Eric Evans revealed a very simple and sound guideline.
+When examining the use case (or story), ask whether it’s the job of the user executing the use case to make the data consistent.
+<strong>If it is, try to make it transactionally consistent, but only by adhering to the other rules of Aggregates.</strong>
+If it is another user’s job, or the job of the system, allow it to be eventually consistent.
+That bit of wisdom not only provides a convenient tie breaker, but it helps us gain a deeper understanding of our domain.
+It exposes the real system invariants: the ones that must be kept transactionally consistent.
+That understanding is much more valuable than defaulting to a technical leaning.</p>
+<p>- «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id20">3</a> by Vaughn Vernon, Chapter «10 Aggregates :: Rule: Use Eventual Consistency Outside the Boundary :: Ask Whose Job It Is»</p>
+</div></blockquote>
+<p>В цитате Вона Вернона видно, что Эрик Эванс не спешит разделять стремление к одному агрегату на транзакцию, и предлагает рассматривать каждый случай отдельно.</p>
+<p>Можно заметить, что принцип «When examining the use case (or story), ask whether it’s the job of the user executing the use case to make the data consistent. <strong>If it is, try to make it transactionally consistent, but only by adhering to the other rules of Aggregates.</strong>» не противоречит приведенному ниже принципу «developers and architects like Jimmy Bogard are okay with spanning a single transaction across several aggregates - but only <strong>when those additional aggregates are related to side effects for the same original command</strong>.»</p>
+<p>Здесь же Vaughn Vernon напоминает нам, что во главе угла стоит, опять же, масштабирование и распределенность:</p>
+<blockquote>
+<div><p>We’ll have <strong>consistency</strong> where necessary [имеется ввиду CAP-theorem], and support for optimally performing and <strong>highly scalable systems</strong>.</p>
+<p>- «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id21">3</a> by Vaughn Vernon, Chapter «10 Aggregates :: Reasons to Break the Rules :: Adhering to the Rules»</p>
+</div></blockquote>
+<p>Далее, в главе «Chapter 10 Aggregates :: Gaining Insight through Discovery :: Is It the Team Member’s Job?» книги, он демонстрирует применение принципа «Ask Whose Job It Is» на практике.</p>
+</div>
+<div class="section" id="strong-consistency">
+<h3><a class="toc-backref" href="#id122">Strong Consistency - новичкам</a><a class="headerlink" href="#strong-consistency" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Вот что советует новичкам Vaughn Vernon:</p>
+<blockquote>
+<div><p>There is nothing incredibly difficult about using eventual consistency.
+Still, until you can gain some experience, you may be concerned about using it.
+If so, you should still partition your model into Aggregates according to business-defined transactional boundaries.
+<strong>However, there is nothing preventing you from committing modifications to two or more Aggregates in a single atomic database transaction.</strong>
+You might choose to use this approach in cases that you know will succeed but use eventual consistency for all others.
+<strong>This will allow you to get used to the techniques without taking too big an initial step.</strong>
+<strong>Just understand that this is not the primary way that Aggregates are meant to be used, and you may experience transactional failures as a result.</strong></p>
+<p>- «Domain-Driven Design Distilled» <a class="footnote-reference brackets" href="#fndddd" id="id22">4</a> by Vaughn Vernon, Chapter «5. Tactical Design with Aggregates :: Rule 4: Update Other Aggregates Using Eventual Consistency»</p>
+</div></blockquote>
+</div>
+<div class="section" id="performance">
+<h3><a class="toc-backref" href="#id123">Интересы performance</a><a class="headerlink" href="#performance" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Ранее упоминалось, что одной из ключевых причин fine-grained транзакций является performance.
+Но всегда ли?
+На самом деле, все зависит от конкретных условий.
+Забегая наперед, рассмотрим такое утверждение:</p>
+<blockquote>
+<div><p>NOTE: Try not to confuse this guideline with loading or creating aggregates.
+It is perfectly fine to load multiple aggregates inside the same transaction as long as you save only one of them.
+<strong>Equally, it is permissible to create multiple aggregates inside a single transaction because adding new aggregates should not cause concurrency issues.</strong></p>
+<p>- «Patterns, Principles, and Practices of Domain-Driven Design» <a class="footnote-reference brackets" href="#fnpppddd" id="id23">6</a> by Scott Millett, Nick Tune, Chapter «19 Aggregates :: Special Cases»</p>
+</div></blockquote>
+<p>Какое значение имеет это утверждение для performance?
+Я обращусь к статьям двух известных организаций в области highload:</p>
+<blockquote>
+<div><p>This consistent insert throughput also persists when writing large batches of rows in single operations to TimescaleDB (instead of row-by-row).
+Such batched inserts are common practice for databases employed in more high-scale production environments, e.g., when ingesting data from a distributed queue like Kafka.
+<strong>In such scenarios, a single Timescale server can ingest 130K rows (or 1.3M metrics) per second, approximately 15x that of vanilla PostgreSQL once the table has reached a couple 100M rows.</strong></p>
+<p>- «<a class="reference external" href="https://blog.timescale.com/blog/time-series-data-why-and-how-to-use-a-relational-database-instead-of-nosql-d0cd6975e87c/">Time-series data: Why (and how) to use a relational database instead of NoSQL</a>» by Mike Freedman, Timescale CTO and co-founder. Professor of Computer Science at Princeton.</p>
+</div></blockquote>
+<blockquote>
+<div><ol class="arabic simple" start="7">
+<li><p>Insert rows in batches.</p></li>
+</ol>
+<p>In order to achieve higher ingest rates, you should insert your data with many rows in each INSERT call (or else use some bulk insert command, like COPY or our parallel copy tool).</p>
+<p>Don’t insert your data row-by-row – instead try at least hundreds (or thousands) of rows per INSERT.
+This allows the database to spend less time on connection management, transaction overhead, SQL parsing, etc., and more time on data processing.</p>
+<p>- «<a class="reference external" href="https://blog.timescale.com/blog/13-tips-to-improve-postgresql-insert-performance/">13 tips to improve PostgreSQL Insert performance</a>» by Mike Freedman, Timescale CTO and co-founder. Professor of Computer Science at Princeton.</p>
+</div></blockquote>
+<blockquote>
+<div><p>It is of note here that each insert is a transaction.
+What this means is Postgres is doing some extra coordination to make sure the transaction is completed before returning.
+On every single write this takes some overhead.
+Instead of single row transactions, if we wrap all of our inserts in a transaction like below, we’ll see some nice performance gains:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">begin</span><span class="p">;</span>
+<span class="n">insert</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">insert</span> <span class="mi">2</span><span class="p">;</span>
+<span class="n">insert</span> <span class="mi">3</span><span class="p">;</span>
+<span class="o">...</span>
+<span class="n">commit</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This took my inserts down from 15 minutes 30 seconds to 5 minutes and 4 seconds.
+We’ve suddenly boosted our throughput by 3x to about 3k inserts per second.</p>
+<p>&lt;…&gt;</p>
+<p>By batching our inserts into a single transaction, we saw our throughput go higher.
+But hold on, there is even more we can do. The <code class="docutils literal notranslate"><span class="pre">\copy</span></code> mechanism gives a way to bulk load data in an even more performant manner.</p>
+<p>&lt;…&gt;</p>
+<p>Running this copy completes in 82 seconds! We’re now processing over 10k writes per second on some fairly modest hardware.</p>
+<p>- «<a class="reference external" href="https://www.citusdata.com/blog/2017/11/08/faster-bulk-loading-in-postgresql-with-copy/">Faster bulk loading in Postgres with copy</a>» by Craig Kerstiens, CitusData</p>
+</div></blockquote>
+<p>Вот что говорит по этому вопросу документация по PostgreSQL:</p>
+<blockquote>
+<div><p>When using multiple INSERTs, turn off autocommit and just do one commit at the end.
+(In plain SQL, this means issuing BEGIN at the start and COMMIT at the end. Some client libraries might do this behind your back, in which case you need to make sure the library does it when you want it done.)
+<strong>If you allow each insertion to be committed separately, PostgreSQL is doing a lot of work for each row that is added.</strong></p>
+<p>- «<a class="reference external" href="https://www.postgresql.org/docs/11/populate.html#DISABLE-AUTOCOMMIT">PostgreSQL 11 Documentation :: 14.4. Populating a Database :: 14.4.1. Disable Autocommit</a>»</p>
+</div></blockquote>
+<p>Целесообразность использования Eventual Consistency в интересах performance нужно рассматривать в каждом конкретном случае отдельно.
+Универсального рецепта не существует.
+Этот вопрос особенно актуален при разработке сертифицированных приложений, где свобода выбора базы данных ограничена списком сертифицированных решений (зачастую вся свобода выбора сводится к RDBMS PostgresPro).
+Организовать пакетирование запросов можно на уровне <a class="reference external" href="https://martinfowler.com/eaaCatalog/unitOfWork.html">Unit of Work</a>.</p>
+<p>В контексте этого вопроса можно еще раз вспомнить утверждение Eric Evans:</p>
+<blockquote>
+<div><p>Discussing this with Eric Evans revealed a very simple and sound guideline.
+When examining the use case (or story), ask whether it’s the job of the user executing the use case to make the data consistent.
+<strong>If it is, try to make it transactionally consistent, but only by adhering to the other rules of Aggregates.</strong></p>
+<p>- «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id24">3</a> by Vaughn Vernon, Chapter «10 Aggregates :: Rule: Use Eventual Consistency Outside the Boundary :: Ask Whose Job It Is»</p>
+</div></blockquote>
+</div>
+<div class="section" id="id25">
+<h3><a class="toc-backref" href="#id124">Обратная совместимость формата объектов событий</a><a class="headerlink" href="#id25" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Другим достоинством Strong Consistency является отсутствие потребности в обеспечении обратной совместимости формата объектов событий, ведь их время жизни ограничено одной транзакцией.
+При использовании же шины сообщений всегда сохраняется вероятность того, что обновленная версия программного обеспечения, после ее развертывания, получит из шины устаревший формат сообщения, отправленный в шину еще предыдущей версией программного обеспечения.
+Кроме того, возникает потребность поддерживать оба формата сообщений для организации <a class="reference external" href="https://thenewstack.io/deployment-strategies/">blue-green deployment</a>.</p>
+<p>Подробнее о версионировании сообщений смотрите в книге «<a class="reference external" href="https://leanpub.com/esversioning">Versioning in an Event Sourced System</a>» by Greg Young («<a class="reference external" href="https://leanpub.com/esversioning/read">читать online</a>», «<a class="reference external" href="https://github.com/luque/Notes--Versioning-Event-Sourced-System">конспект книги</a>»), а так же в главе «<a class="reference external" href="https://docs.microsoft.com/en-us/previous-versions/msp-n-p/jj591577(v=pandp.10)#event-versioning">Event versioning</a> книги «CQRS Journey».</p>
+</div>
+<div class="section" id="net-microservices">
+<h3><a class="toc-backref" href="#id125">Рекомендации от «.NET Microservices»</a><a class="headerlink" href="#net-microservices" title="Ссылка на этот заголовок">¶</a></h3>
+<p>«.NET Microservices: Architecture for Containerized .NET Applications» <a class="footnote-reference brackets" href="#fnnetms" id="id26">7</a> явно разделяет внутренние Domain Events (для подписчиков внутри Bounded Context) и внешние Integration Events.
+Внутренние Domain Events рекомендуется использовать для синхронизации Агрегатов внутри Bounded Context.</p>
+<blockquote>
+<div><p>Domain events as a preferred way to trigger side effects across multiple aggregates within the same domain</p>
+<p>If executing a command related to one aggregate instance requires additional domain rules to be run on one or more additional aggregates, you should design and implement those side effects to be triggered by domain events.
+As shown in Figure 7-14, and as one of the most important use cases, a domain event should be used to propagate state changes across multiple aggregates within the same domain model.</p>
+<p>- «.NET Microservices: Architecture for Containerized .NET Applications» <a class="footnote-reference brackets" href="#fnnetms" id="id27">7</a> by Cesar de la Torre, Bill Wagner, Mike Rousos, Chapter «<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/domain-events-design-implementation#domain-events-as-a-preferred-way-to-trigger-side-effects-across-multiple-aggregates-within-the-same-domain">Domain events: design and implementation :: Domain events as a preferred way to trigger side effects across multiple aggregates within the same domain</a>»</p>
+</div></blockquote>
+<p>Причем, Strong Consistency является приемлемым для внутренних Domain Events, синхронизирующих Агрегаты внутри Bounded Context:</p>
+<blockquote>
+<div><p>Be aware that transactional boundaries come into significant play here.
+<strong>If your unit of work and transaction can span more than one aggregate (as when using EF Core and a relational database), this can work well.</strong>
+But if the transaction cannot span aggregates, such as when you are using a NoSQL database like Azure CosmosDB, you have to implement additional steps to achieve consistency.</p>
+<p>- «.NET Microservices: Architecture for Containerized .NET Applications» <a class="footnote-reference brackets" href="#fnnetms" id="id28">7</a> by Cesar de la Torre, Bill Wagner, Mike Rousos, Chapter «<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/domain-events-design-implementation#the-deferred-approach-to-raise-and-dispatch-events">Domain events: design and implementation :: Implement domain events :: The deferred approach to raise and dispatch events</a>»</p>
+</div></blockquote>
+<p>Оба подхода, и Strong Consistency, и Eventual Consistency, являются приемлемыми для синхронизации Агрегатов внутри Bounded Context:</p>
+<blockquote>
+<div><p><strong>Actually, both approaches (single atomic transaction and eventual consistency) can be right.</strong>
+It really depends on your domain or business requirements and what the domain experts tell you.
+It also depends on how scalable you need the service to be (more granular transactions have less impact with regard to database locks).
+And it depends on how much investment you are willing to make in your code, since eventual consistency requires more complex code in order to detect possible inconsistencies across aggregates and the need to implement compensatory actions.
+Consider that if you commit changes to the original aggregate and afterwards, when the events are being dispatched, if there is an issue and the event handlers cannot commit their side effects, you will have inconsistencies between aggregates.</p>
+<p>A way to allow compensatory actions would be to store the domain events in additional database tables so they can be part of the original transaction.
+Afterwards, you could have a batch process that detects inconsistencies and runs compensatory actions by comparing the list of events with the current state of the aggregates.
+The compensatory actions are part of a complex topic that will require deep analysis from your side, which includes discussing it with the business user and domain experts.</p>
+<p>In any case, you can choose the approach you need.
+But the initial deferred approach—raising the events before committing, so you use a single transaction—is the simplest approach when using EF Core and a relational database.
+It is easier to implement and valid in many business cases.
+It is also the approach used in the ordering microservice in eShopOnContainers.</p>
+<p>- «.NET Microservices: Architecture for Containerized .NET Applications» <a class="footnote-reference brackets" href="#fnnetms" id="id29">7</a> by Cesar de la Torre, Bill Wagner, Mike Rousos, Chapter «<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/domain-events-design-implementation#single-transaction-across-aggregates-versus-eventual-consistency-across-aggregates">Domain events: design and implementation :: Implement domain events :: Single transaction across aggregates versus eventual consistency across aggregates</a>»</p>
+</div></blockquote>
+</div>
+<div class="section" id="scott-millett-nick-tune">
+<h3><a class="toc-backref" href="#id126">Мнение Scott Millett и Nick Tune</a><a class="headerlink" href="#scott-millett-nick-tune" title="Ссылка на этот заголовок">¶</a></h3>
+<blockquote>
+<div><p><strong>Sometimes it is actually good practice to modify multiple aggregates within a transaction.</strong>
+But it’s important to understand why the guidelines exist in the first place so that you can be aware of the consequences of ignoring them.</p>
+<p><strong>When the cost of eventual consistency is too high, it’s acceptable to consider modifying two objects in the same transaction.</strong>
+Exceptional circumstances will usually be when the business tells you that the customer experience will be too unsatisfactory.
+You shouldn’t just accept the business’s decision, though; it never wants to accept eventual consistency.
+You should elaborate on the scalability, performance, and other costs involved when not using eventual consistency so that the business can make an informed, customer‐focused decision.</p>
+<p><strong>Another time it’s acceptable to avoid eventual consistency is when the complexity is too great.</strong>
+You will see later in this chapter that robust eventually consistent implementations often utilize asynchronous, out‐of‐process workflows that add more complexity and dependencies.</p>
+<p><strong>To summarize, saving one aggregate per transaction is the default approach.</strong>
+But you should collaborate with the business, assess the technical complexity of each use case, and consciously ignore the guideline if there is a worthwhile advantage, such as a better user experience.</p>
+<p>NOTE: Try not to confuse this guideline with loading or creating aggregates.
+It is perfectly fine to load multiple aggregates inside the same transaction as long as you save only one of them.
+<strong>Equally, it is permissible to create multiple aggregates inside a single transaction because adding new aggregates should not cause concurrency issues.</strong></p>
+<p>&lt;…&gt;</p>
+<p><strong>You should try to align your aggregate boundaries with transactions, because the higher the number of aggregates being modified in a single transaction, the greater the chance of a concurrency failure.</strong>
+Therefore, strive to modify a single aggregate per use case to keep the system performant.</p>
+<p>&lt;…&gt;</p>
+<p>If you find that you are modifying more than one aggregate in a transaction, it may be a sign that your aggregate boundaries can be better aligned with the problem domain.</p>
+<p>&lt;…&gt;</p>
+<p>In a typical business use case there are often multiple actions that need to succeed or fail together inside a transaction.
+By managing transactions in application services, you have full control over which operations that you request of the domain will live inside the same transaction boundary.</p>
+<p>This can be demonstrated using an updated RecommendAFriendService.
+Imagine the business has decided that if the referral policy cannot be applied, it should not create the new account.
+Therefore, the transactional boundary encapsulates creating the new account and applying the referral policy to both accounts, as shown in Figure 25-3.</p>
+<p>- «Patterns, Principles, and Practices of Domain-Driven Design» <a class="footnote-reference brackets" href="#fnpppddd" id="id30">6</a> by Scott Millett, Nick Tune, Chapter «19 Aggregates :: Special Cases»</p>
+</div></blockquote>
+</div>
+<div class="section" id="jimmy-bogard">
+<h3><a class="toc-backref" href="#id127">Мнение Jimmy Bogard</a><a class="headerlink" href="#jimmy-bogard" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Вот что говорит «.NET Microservices: Architecture for Containerized .NET Applications» со ссылкой на Jimmy Bogard:</p>
+<blockquote>
+<div><p>However, other developers and architects like Jimmy Bogard are <strong>okay with spanning a single transaction across several aggregates - but only when those additional aggregates are related to side effects for the same original command</strong>.
+For instance, in <a class="reference external" href="https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/">A better domain events pattern</a>, Bogard says this:</p>
+<blockquote>
+<div><p>Typically, I want the side effects of a domain event to occur within the same logical transaction, but not necessarily in the same scope of raising the domain event […] Just before we commit our transaction, we dispatch our events to their respective handlers.</p>
+</div></blockquote>
+<p>- «.NET Microservices: Architecture for Containerized .NET Applications» <a class="footnote-reference brackets" href="#fnnetms" id="id31">7</a> by Cesar de la Torre, Bill Wagner, Mike Rousos, Chapter «<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/domain-events-design-implementation#single-transaction-across-aggregates-versus-eventual-consistency-across-aggregates">Domain events: design and implementation :: Single transaction across aggregates versus eventual consistency across aggregates</a>»</p>
+</div></blockquote>
+<p>Сам Jimmy Bogard говорит следующее:</p>
+<blockquote>
+<div><p>Domain events are similar to messaging-style eventing, with one key difference.
+With true messaging and a service bus, a message is fired and handled to asynchronously.
+With domain events, the response is synchronous</p>
+<p>- «Strengthening your domain: Domain Events» <a class="footnote-reference brackets" href="#fnjbde1" id="id32">18</a> by Jimmy Bogard</p>
+</div></blockquote>
+<blockquote>
+<div><p>Transactions are handled in our unit of work wrapping each HTTP request.
+Since our domain events are synchronous and on the same thread, they are part of the same transaction as the entity that first raised the event.</p>
+<p>- «<a class="reference external" href="https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/#comment-173067283">Strengthening your domain: Domain Events</a>», comment of Jimmy Bogard</p>
+</div></blockquote>
+<blockquote>
+<div><p>With our domain event in place, we can ensure that our entire <strong>domain model stays consistent with the business rules applied, even when we need to notify other aggregate roots</strong> in our system when something happens.
+We’ve also locked down all the ways the risk status could change (charged a new fee), so <strong>we can keep our Customer aggregate consistent even in the face of changes in a separate aggregate (Fee)</strong>.</p>
+<p>This pattern isn’t always applicable.
+If I need to do something like send an email, notify a web service or any other potentially blocking tasks, I should revert back to normal asynchronous messaging.
+But for synchronous messaging across disconnected aggregates, <strong>domain events are a great way to ensure aggregate root consistency across the entire model</strong>.
+The alternative would be transaction script design, where consistency is enforced not by the domain model but by some other (non-intuitive) layer.</p>
+<p>- «Strengthening your domain: Domain Events» <a class="footnote-reference brackets" href="#fnjbde1" id="id33">18</a> by Jimmy Bogard</p>
+</div></blockquote>
+<blockquote>
+<div><p>Typically, I want the side effects of a domain event to occur within the same logical transaction, but not necessarily in the same scope of raising the domain event. If I cared enough to have the side effects occur, I would instead just couple myself directly to that other service as an argument to my domain’s method.</p>
+<p>Instead of dispatching to a domain event handler immediately, what if instead we recorded our domain events, and before committing our transaction, dispatch those domain events at that point? This will have a number of benefits, besides us not tearing our hair out. Instead of raising domain events, let’s define a container for events on our domain object:</p>
+<p>&lt;…&gt;</p>
+<p>Just before we commit our transaction, we dispatch our events to their respective handlers.</p>
+<p>- «A better domain events pattern» <a class="footnote-reference brackets" href="#fnjbde2" id="id34">19</a> by Jimmy Bogard</p>
+</div></blockquote>
+</div>
+<div class="section" id="kamil-grzybek">
+<h3><a class="toc-backref" href="#id128">Мнение Kamil Grzybek</a><a class="headerlink" href="#kamil-grzybek" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Вот что говорит Kamil Grzybek:</p>
+<blockquote>
+<div><p>The way of handling of domain events depends indirectly on publishing method.
+If you use DomainEvents static class, you have to handle event immediately.
+In other two cases you control when events are published as well handlers execution – in or outside existing transaction.</p>
+<p>In my opinion <strong>it is good approach to always handle domain events in existing transaction</strong> and treat aggregate method execution and handlers processing as atomic operation.
+This is good because if you have a lot of events and handlers you do not have to think about initializing connections, transactions and what should be treat in “all-or-nothing” way and what not.</p>
+<p>- «How to publish and handle Domain Events» <a class="footnote-reference brackets" href="#fnkgde1" id="id35">15</a> by Kamil Grzybek</p>
+</div></blockquote>
+<blockquote>
+<div><p>Thanks for question Andreas!</p>
+<p>I know both books of Vaughn Vernon - they are great and must read for every DDD practitioner. From the DDD Distlled book (chapter 5 about aggregates):</p>
+<blockquote>
+<div><p><strong>…business rules are the drivers for determining what must be whole, complete, and consistent at the end of a single transaction.</strong></p>
+</div></blockquote>
+<p>So in general this is good rule to have separate transactions, but sometimes it is impossible or very hard to achieve.</p>
+<p>My approach is similar to Vaughn Vernon - I try always handle event in separate transaction if it is possible.
+To do that I have two types of events: <strong>Domain Events (private, handled in the same transaction)</strong> and <strong>Domain Events Notifications (handled outside transaction)</strong>.
+Domain Event Notification often becomes an Integration Event which is send to Events Bus to other Bounded Context.
+This way I support all cases - immediate consistency, eventual consistency and integrations scenarios.</p>
+<p>- «<a class="reference external" href="http://www.kamilgrzybek.com/design/how-to-publish-and-handle-domain-events/#comment-4602236620">How to publish and handle Domain Events</a>» <a class="footnote-reference brackets" href="#fnkgde1" id="id36">15</a>, comment of Kamil Grzybek</p>
+</div></blockquote>
+<blockquote>
+<div><p>Aggregates can publish multiple Domain Events, and for each Domain Event there can be many handlers responsible for different behavior.
+This behavior can be communication with an external system or <strong>executing a Command on another Aggregate</strong>, which will again publish its events to which another part of our system will subscribe.</p>
+<p>- «<a class="reference external" href="http://www.kamilgrzybek.com/design/handling-domain-events-missing-part/">Handling Domain Events: Missing Part</a>» <a class="footnote-reference brackets" href="#fnkgde2" id="id37">16</a> by Kamil Grzybek</p>
+</div></blockquote>
+<blockquote>
+<div><p>Let’s assume that in this particular case <strong>both Order placement and Payment creation should take place in the same transaction</strong>.
+If transaction is successful, we need to send 2 emails – about the Order and Payment.</p>
+<p>&lt;…&gt;</p>
+<ol class="arabic simple">
+<li><p><strong>Command Handler defines transaction boundary. Transaction is started when Command Handler is invoked and committed at the end.</strong></p></li>
+<li><p><strong>Each Domain Event handler is invoked in context of the same transaction boundary.</strong></p></li>
+<li><p>If we want to process something outside the transaction, we need to create a <strong>public event</strong> based on the Domain Event. I call it Domain Event Notification, <a class="reference external" href="http://verraes.net/2019/05/patterns-for-decoupling-distsys-explicit-public-events/">some people call it a public event</a>, but the concept is the same.</p></li>
+</ol>
+<p>The second most important thing is when to publish and process Domain Events? Events may be created after each action on the Aggregate, so we must publish them:</p>
+<ul class="simple">
+<li><p>after each Command handling (but BEFORE committing transaction)</p></li>
+<li><p>after each Domain Event handling (but WITHOUT committing transaction)</p></li>
+</ul>
+<p>&lt;…&gt;</p>
+<p>The second thing we have to do is to save notifications about Domain Events that we want to process outside of the transaction.</p>
+<p>- «<a class="reference external" href="http://www.kamilgrzybek.com/design/handling-domain-events-missing-part/">Handling Domain Events: Missing Part</a>» <a class="footnote-reference brackets" href="#fnkgde2" id="id38">16</a> by Kamil Grzybek</p>
+</div></blockquote>
+<p>Обратите внимание, что, по приведенной им ссылке, под термином «public event» понимается сообщение, выходящее за пределы Bounded Context (к этому вопросу мы еще вернемся):</p>
+<blockquote>
+<div><p>Set up separate messaging channels for inside the Bounded Context and outside. Keep all events private by default, and indicate the ones you want to make public with an explicit &#64;Public annotation, a marker interface, or an isPublic():bool method. When emitting events, the event publishing mechanism knows to read the annotation and either send the event on the private channel only, or on both the private and the public channel.</p>
+<p class="attribution">—«<a class="reference external" href="https://verraes.net/2019/05/patterns-for-decoupling-distsys-explicit-public-events/">Patterns for Decoupling in Distributed Systems: Explicit Public Events</a>» by Mathias Verraes</p>
+</div></blockquote>
+<p>И, в своем демонстрационном приложении sample-dotnet-core-cqrs-api, <a class="reference external" href="https://github.com/kgrzybek/sample-dotnet-core-cqrs-api/blob/01a1d6517bc88773f004abc0cb9c6d79f537e575/src/SampleProject.Application/Orders/PlaceCustomerOrder/OrderPlacedDomainEventHandler.cs#L22">он демонстрирует обработку Domain Event в одной транзакции с агрегатом</a>.</p>
+</div>
+<div class="section" id="udi-dahan">
+<h3><a class="toc-backref" href="#id129">Мнение Udi Dahan</a><a class="headerlink" href="#udi-dahan" title="Ссылка на этот заголовок">¶</a></h3>
+<blockquote>
+<div><p>&gt; This might be a bit of a late question. But shouldn’t domain events be handled after the transaction ends?
+Is there any specific reason for handle domain events within the same transaction scoping DoSomething?</p>
+<p>Domain events get handled by service layer objects in the same process which usually send out other messages – as such, we want those messages to be sent (or not) in the same transactional context.</p>
+<p>- «<a class="reference external" href="http://udidahan.com/2009/06/14/domain-events-salvation/#comment-4723">Domain Events – Salvation</a>» <a class="footnote-reference brackets" href="#fnudde3" id="id39">22</a> comment of Udi Dahan</p>
+</div></blockquote>
+<blockquote>
+<div><p>&gt; In message number 120 above, Lars asks about how to access the data if the event is fired before the commit.
+I didn’t understand your response.
+Maybe my situation is different so I’ll explain.</p>
+<p>&gt; I have 2 BCs.
+One context deals with the merging of employee information.
+I’d like to fire a domain event specifying that the employee was merged.
+I’d like the 2nd BC to react to this event.
+The issue is that the data won’t be committed at that point, and this data that changed is vital to the 2nd BC to react.</p>
+<p>&gt; Am I going down the wrong path by attempting to use domain events? Is there another solution you could suggest?</p>
+<p>The question is whether you need both your BCs to be consistent with each other at *all* times – ergo in the same transaction.</p>
+<p><strong>If the answer is yes, then you absolutely do want the event to be raised and handled in the same transaction – you’d also be deploying both BCs together.</strong></p>
+<p>If the answer is no, then you should use some kind of message bus between the BCs.
+The handler for the domain event would publish a message using the bus, and that would be enlisted in the same transaction – thus is the first BC rolled back, the message wouldn’t be sent.
+The second BC would be invoked by the bus when the message arrives at its queue where its handling would then be done in a separate transaction.</p>
+<p>- «<a class="reference external" href="http://udidahan.com/2009/06/14/domain-events-salvation/#comment-4730">Domain Events – Salvation</a>» <a class="footnote-reference brackets" href="#fnudde3" id="id40">22</a> comment of Udi Dahan</p>
+</div></blockquote>
+<blockquote>
+<div><p>&gt; Shouldn’t the event only be handled when the transaction commits?
+Until the transaction commits, the change to the domain object isn’t really permanent, right?</p>
+<p>Not necessarily – sometimes you want loose-coupling within the same transaction.</p>
+<p>I do agree that often where we find a place ready for logical decoupling it coincides with separate transaction boundaries.
+In those cases, using a transactionally-aware technology like NServiceBus will be a better choice for publishing events.</p>
+<p>- «<a class="reference external" href="http://udidahan.com/2009/06/14/domain-events-salvation/#comment-4773">Domain Events – Salvation</a>» <a class="footnote-reference brackets" href="#fnudde3" id="id41">22</a> comment of Udi Dahan</p>
+</div></blockquote>
+<blockquote>
+<div><p>&gt; Domain event could alter multiple aggregates which is common, wouldn’t you be updating multiple aggregates in a single transaction?</p>
+<p><strong>The more common case is where those multiple aggregates are updated in separate transactions</strong>, usually as a result of some kind of «service bus» event being transmitted from the domain events.
+That service bus event gets routed to multiple subscribers, behind which you’d have each of the respective aggregates that would updated in their own transactions.</p>
+<p>- «<a class="reference external" href="http://udidahan.com/2009/06/14/domain-events-salvation/#comment-74959">Domain Events – Salvation</a>» <a class="footnote-reference brackets" href="#fnudde3" id="id42">22</a> comment of Udi Dahan</p>
+</div></blockquote>
+</div>
+<div class="section" id="cesar-de-la-torre">
+<h3><a class="toc-backref" href="#id130">Мнение Cesar De la Torre</a><a class="headerlink" href="#cesar-de-la-torre" title="Ссылка на этот заголовок">¶</a></h3>
+<blockquote>
+<div><p>When handling the event, any event handler subscribed to the event could run additional domain operations by using other AggregateRoot objects, but again, you still need to be within the same transaction scope.</p>
+<p>&lt;..&gt;</p>
+<p>for in-memory event based communication across disconnected aggregates that are part of the same domain model and part of the same transaction, domain events are great ensuring consistency across a single domain model within the same microservice or Bounded-Context.</p>
+<p>- «Domain Events vs. Integration Events in Domain-Driven Design and microservices architectures» <a class="footnote-reference brackets" href="#fncdltdevie" id="id43">23</a> by Cesar De la Torre, Principal Program Manager, .NET</p>
+</div></blockquote>
+<p>Ссылки по теме:</p>
+<ul class="simple">
+<li><p>«<a class="reference external" href="https://www.allthingsdistributed.com/2008/12/eventually_consistent.html">Eventually Consistent - Revisited</a>» by Werner Vogels, CTO - Amazon.com</p></li>
+<li><p>«<a class="reference external" href="https://www.allthingsdistributed.com/2007/12/eventually_consistent.html">Eventually Consistent</a>» by Werner Vogels, CTO - Amazon.com</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="in-process-vs-out-of-process">
+<h2><a class="toc-backref" href="#id131">In-process vs out-of-process</a><a class="headerlink" href="#in-process-vs-out-of-process" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Обычно считается, что in-process - это синхронное исполнение, а out-of-process - асинхронное.
+Хотя, сугубо технически, асинхронное исполнение может быть как in-process, так и out-of-process.
+К тому же асинхронное исполнение нужно подразделять на использующее event-loop (async/await) и использующее внешнюю инфраструктуру (external event bus).</p>
+<p>В большинстве случаев, in-process подразумевает «в той же транзакции», т.е. Strong Consistency.</p>
+<blockquote>
+<div><p>The reference app uses MediatR to propagate domain events synchronously across aggregates, within a single transaction.
+However, you could also use some AMQP implementation like RabbitMQ or Azure Service Bus to propagate domain events asynchronously, using eventual consistency but, as mentioned above, you have to consider the need for compensatory actions in case of failures.</p>
+<p>- «.NET Microservices: Architecture for Containerized .NET Applications» <a class="footnote-reference brackets" href="#fnnetms" id="id44">7</a> by Cesar de la Torre, Bill Wagner, Mike Rousos, Chapter «<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/domain-events-design-implementation#conclusions-on-domain-events">Domain events: design and implementation :: Conclusions on domain events</a>»</p>
+</div></blockquote>
+</div>
+<div class="section" id="internal-vs-external">
+<h2><a class="toc-backref" href="#id132">Internal vs External</a><a class="headerlink" href="#internal-vs-external" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Существует ряд методик (Anti-Corruption Layer, CQRS etc.), направленных на то, чтобы защитить изменения внутренних интерфейсов от изменения внешних и наоборот.
+Это логично, так как они будут изменяться в разное время, с разной частотой и по разным причинам.</p>
+<p>Domain Events могут покидать пределы Bounded Context:</p>
+<blockquote>
+<div><p>Using Domain Events will help you both to model explicitly and to share what has occurred within your model with the systems that need to know about it.
+<strong>The interested parties might be your own local Bounded Context and other remote Bounded Contexts.</strong></p>
+<p>- «Domain-Driven Design Distilled» <a class="footnote-reference brackets" href="#fndddd" id="id45">4</a> by Vaughn Vernon, Chapter «1. DDD for Me :: Tactical Design»</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Publishing the Event outward to any number Bounded Contexts of other Subdomains (2) emphasizes the word Domain in the term Domain Event.</strong>
+In other words, Events are a domain-wide concept, not just a concept in a single Bounded Context.
+The contract of Event publishing should have the potential to be at least as broad as the enterprise, or even broader.
+Yet, wide broadcast does not forbid delivery of Events by consumers in the same Bounded Context.</p>
+<p>- «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id46">3</a> by Vaughn Vernon, Chapter «8. Domain Events :: Publishing Events from the Domain Model :: Subscribers»</p>
+</div></blockquote>
+<p>Это выдвигает вопрос по отношению к Domain Events - нужно ли отделять внутренние от внешних?
+Проблему озвучивает сам Vaughn Vernon:</p>
+<blockquote>
+<div><p><strong>Once your Domain Event is saved to the event store, it can be published to any interested parties . This might be within your own Bounded Context and to external Bounded Contexts.</strong>
+This is your way of telling the world that something noteworthy has occurred in your Core Domain.</p>
+<p>Are Domain Event Consumers Conformists?
+<strong>You may be wondering how Domain Events can be consumed by another Bounded Context [это и есть тот самый волнующий вопрос - прим. мое] and not force that consuming Bounded Context into a Conformist relationship.</strong>
+As recommended in Implementing Domain-Driven Design [IDDD] , and specifically in Chapter 13, “Integrating Bounded Contexts,” <strong>consumers should not use the event types (e.g., classes) of an event publisher</strong>.
+Rather, <strong>they should depend only on the schema of the events</strong>, that is, <strong>their Published Language</strong>.
+This generally means that if the events are published as JSON, or perhaps a more economical object format, the consumer should consume the events by parsing them to obtain their data attributes.»</p>
+<p>- «Domain-Driven Design Distilled» <a class="footnote-reference brackets" href="#fndddd" id="id47">4</a> by Vaughn Vernon, Chapter «6. Tactical Design with Domain Events:: Designing, Implementing, and Using Domain Events»</p>
+</div></blockquote>
+<p>Тут он четко обозначает проблему, которой рано или поздно задаются многие. И он делает две вещи:</p>
+<ol class="arabic simple">
+<li><p>Он разделяет реализацию издания Domain Events внутри Bounded Context (ГОФ-паттерны), от реализации издания Domain Events для других Bounded Contexts (интеграционная шина), которая начинает выполняться после завершения первой.</p></li>
+<li><p>Он разделяет Domain Events с публичной схемой, от остальных Domain Events. А это, по сути, и есть то самое, что в «.NET Microservices: Architecture for Containerized .NET Applications» <a class="footnote-reference brackets" href="#fnnetms" id="id48">7</a> именуется как Integration Event.</p></li>
+</ol>
+<p>Поскольку эти виды Ивентов имеют различные цели, различный способ доставки, различные реализации, различные категории подписчиков, различную область действия и различное назначение, то они, резонно, разделили их на два вида события:</p>
+<ol class="arabic simple">
+<li><p>Domain Events, которые действуют исключительно внутри Bounded Context, и доставляются посредством ГОФ-паттернов синхронно или асинхронно (но исключительно in-process, используя event-loop и async/await конструкции) в той же транзакции.</p></li>
+<li><p>Integration Event, которые выходят за пределы Bounded Context, доставляются интеграционной шиной, всегда асинхронны и в другой транзакции.</p></li>
+</ol>
+<p>Такого же мнения придерживается и Kamil Grzybek, называя внешние события (public event, которые уже упоминались) термином «Domain Event Notifications»:</p>
+<blockquote>
+<div><p>Last thing to consider is processing of Domain Event Notifications (public events). We need to find a way to process them outside transaction and here Outbox Pattern comes in to play.</p>
+<p>- «<a class="reference external" href="http://www.kamilgrzybek.com/design/handling-domain-events-missing-part/">Handling Domain Events: Missing Part</a>» <a class="footnote-reference brackets" href="#fnkgde2" id="id49">16</a> by Kamil Grzybek</p>
+</div></blockquote>
+<blockquote>
+<div><p>Sometimes, however, it is necessary to communicate with 3rd party service (for example e-mail or web service) based on Domain Event.
+As we know, communication with 3rd party services is not usually transactional so we need some additional generic mechanism to handle these types of scenarios.
+So I created Domain Events Notifications.</p>
+<p>&lt;…&gt;</p>
+<p>There is no such thing as domain events notifications in DDD terms.
+I gave that name because I think it fits best – it is notification that domain event was published.</p>
+<p>&lt;..&gt;</p>
+<p>For non-trasactional operations Domain Events Notifications were introduced.</p>
+<p>- «<a class="reference external" href="http://www.kamilgrzybek.com/design/how-to-publish-and-handle-domain-events/">How to publish and handle Domain Events</a>» <a class="footnote-reference brackets" href="#fnkgde1" id="id50">15</a> by Kamil Grzybek</p>
+</div></blockquote>
+<p>В одном из своих комментариев он  связывает «Domain Event Notification» с «Integration Events»:</p>
+<p>My approach is similar to Vaughn Vernon - I try always handle event in separate transaction if it is possible. To do that I have two types of events: Domain Events (private, handled in the same transaction) and Domain Events Notifications (handled outside transaction). Domain Event Notification often becomes an <strong>Integration Event</strong> which is send to Events Bus to other Bounded Context. This way I support all cases - immediate consistency, eventual consistency and integrations scenarios.</p>
+<blockquote>
+<div><p>- «<a class="reference external" href="http://www.kamilgrzybek.com/design/how-to-publish-and-handle-domain-events/#comment-4602236620">How to publish and handle Domain Events</a>» <a class="footnote-reference brackets" href="#fnkgde1" id="id51">15</a>, comment of Kamil Grzybek</p>
+</div></blockquote>
+<p>Обратите внимание на окончание - там перечислены три сценария:</p>
+<ol class="arabic simple">
+<li><p>Immediate consistency</p></li>
+<li><p>Eventual consistency</p></li>
+<li><p>Integrations scenarios</p></li>
+</ol>
+<p>В другом комментарии он вносит уточнение:</p>
+<blockquote>
+<div><p>Domain Event - private event, not persisted [Outbox], part of UL</p>
+<p>Domain Event Notification - private event, persisted [Outbox], part of UL. Sometimes called «persisted event»</p>
+<p>Integration event - public event, part of PL as you described</p>
+<p>- «<a class="reference external" href="http://www.kamilgrzybek.com/design/handling-domain-events-missing-part/#comment-5205858557">Handling Domain Events: Missing Part</a>» <a class="footnote-reference brackets" href="#fnkgde2" id="id52">16</a> by Kamil Grzybek</p>
+</div></blockquote>
+<p>Здесь у него, правда, наблюдается небольшое противоречие с предыдущим его комментарием:</p>
+<blockquote>
+<div><p>If you want to process Domain Event in separate transaction, you need to create Domain Event Notification <strong>(public event)</strong> which is saved within the same transaction to the Outbox but processed in different (Outbox processing).</p>
+<p>- «<a class="reference external" href="http://www.kamilgrzybek.com/design/handling-domain-events-missing-part/#comment-4507778871">Handling Domain Events: Missing Part</a>» <a class="footnote-reference brackets" href="#fnkgde2" id="id53">16</a> by Kamil Grzybek</p>
+</div></blockquote>
+<p>А так же, наблюдается противоречие с другим его выражением, где он, ссылаясь на определение Mathias Verraes, приравнивает Domain Event Notification к «public event»:</p>
+<blockquote>
+<div><ol class="arabic simple" start="3">
+<li><p>If we want to process something outside the transaction, we need to create a <strong>public event</strong> based on the Domain Event. I call it Domain Event Notification, <a class="reference external" href="http://verraes.net/2019/05/patterns-for-decoupling-distsys-explicit-public-events/">some people call it a public event</a>, but the concept is the same.</p></li>
+</ol>
+<p>- «<a class="reference external" href="http://www.kamilgrzybek.com/design/handling-domain-events-missing-part/">Handling Domain Events: Missing Part</a>» <a class="footnote-reference brackets" href="#fnkgde2" id="id54">16</a> by Kamil Grzybek</p>
+</div></blockquote>
+<p>Как уже упоминалось ранее, по приведенной им ссылке, под термином «public event» понимается сообщение, выходящее за пределы Bounded Context:</p>
+<blockquote>
+<div><p>Set up separate messaging channels for inside the Bounded Context and outside. Keep all events private by default, and indicate the ones you want to make public with an explicit &#64;Public annotation, a marker interface, or an isPublic():bool method. When emitting events, the event publishing mechanism knows to read the annotation and either send the event on the private channel only, or on both the private and the public channel.</p>
+<p class="attribution">—«<a class="reference external" href="https://verraes.net/2019/05/patterns-for-decoupling-distsys-explicit-public-events/">Patterns for Decoupling in Distributed Systems: Explicit Public Events</a>» by Mathias Verraes</p>
+</div></blockquote>
+<p>Но, в целом, понятно, что Domain Event обрабатывается внутри транзакции, Domain Event Notification - вне транзакции (и может требовать Outbox pattern), и Integration Event - за пределами Bounded Context.</p>
+<p>Еще дальше идут авторы книги «Patterns, Principles, and Practices of Domain-Driven Design» <a class="footnote-reference brackets" href="#fnpppddd" id="id55">6</a>, вводя явное разделение внутренних и внешних событий:</p>
+<div class="figure align-center" id="id112">
+<a class="reference internal image-reference" href="../../../../../../_images/pppddd-18.1.png"><img alt="FIGURE pppddd-18-1: Ensuring correct transactional behavior. The image is from &quot;Patterns, Principles, and Practices of Domain-Driven Design&quot; by Scott Millett, Nick Tune" src="../../../../../../_images/pppddd-18.1.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">FIGURE pppddd-18-1: Ensuring correct transactional behavior. The image is from «Patterns, Principles, and Practices of Domain-Driven Design» by Scott Millett, Nick Tune</span><a class="headerlink" href="#id112" title="Постоянная ссылка на рисунок">¶</a></p>
+</div>
+<blockquote>
+<div><p>An important distinction needs to be made when using the domain events pattern to avoid confusion that can lead to poor technical implementations. It is crucial that you are aware of the difference between internal and external events. Internal events are internal to a domain model–they are not shared between bounded contexts.
+In this chapter, you will see how the domain events pattern uses internal events, whereas you saw external events in Part II of this book.</p>
+<p>Differentiating internal and external events is important because they have different characteristics.
+Because internal events are limited in scope to a single bounded context, it is Ok to put domain objects on them, as the example in Listing 18‐1 showed. This poses no risk, because other bounded contexts cannot become coupled to these domain objects.
+Conversely, external events tend to be flat in structure, exposing just a few properties—most of the time just correlational IDs, as typified in Listing 18‐3.</p>
+<p>You learned in Part II that external events need to be versioned to avoid breaking changes.
+This is another differentiator with internal events, because if you make breaking changes to an internal  event your code will not compile (if using a compiled programming language). So there’s no need to  version internal events.</p>
+<p>As you start to implement domain events, you will see that in a typical business use case there may  be a number of internal events raised, and just one or two external events that are raised by the  service layer.
+Figure 18-2 illustrates how the sequence of events may occur in a typical use case.</p>
+<p>With all of these differences in mind, it makes sense to put your events in different namespaces to  accentuate those that are internal from those that are external.</p>
+<p>- «Patterns, Principles, and Practices of Domain-Driven Design» <a class="footnote-reference brackets" href="#fnpppddd" id="id56">6</a> by Scott Millett, Nick Tune, Chapter «18 Domain Events :: Internal vs External Events»</p>
+</div></blockquote>
+<div class="figure align-center" id="id113">
+<a class="reference internal image-reference" href="../../../../../../_images/pppddd-18.2.png"><img alt="FIGURE pppddd-18-2: Flow of internal and external events in a typical business use case. The image is from &quot;Patterns, Principles, and Practices of Domain-Driven Design&quot; by Scott Millett, Nick Tune" src="../../../../../../_images/pppddd-18.2.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">FIGURE pppddd-18-2: Flow of internal and external events in a typical business use case. The image is from «Patterns, Principles, and Practices of Domain-Driven Design» by Scott Millett, Nick Tune</span><a class="headerlink" href="#id113" title="Постоянная ссылка на рисунок">¶</a></p>
+</div>
+<p>Разделяют Domain Events на внутренние и внешние и специалисты .NET.</p>
+<blockquote>
+<div><p>Basically, by differentiating between Domain Events and Integration Events you can solve the issue of dealing with transactions since domain events are always scoped within a transaction but integration events (using an EventBus.Publish()) are only published to the outside world if the transaction was committed successfully.
+By doing this you can be sure that other domain-models, microservices and external systems do not react on something that in fact has rolled back and does not exist anymore.</p>
+<p>- «Domain Events vs. Integration Events in Domain-Driven Design and microservices architectures» <a class="footnote-reference brackets" href="#fncdltdevie" id="id57">23</a> by Cesar De la Torre, Principal Program Manager, .NET</p>
+</div></blockquote>
+<blockquote>
+<div><p>Domain events versus integration events</p>
+<p>Semantically, domain and integration events are the same thing: notifications about something that just happened.
+However, their implementation must be different.
+Domain events are just messages pushed to a domain event dispatcher, which could be implemented as an in-memory mediator based on an IoC container or any other method.</p>
+<p>On the other hand, the purpose of integration events is to propagate committed transactions and updates to additional subsystems, whether they are other microservices, Bounded Contexts or even external applications.
+Hence, they should occur only if the entity is successfully persisted, otherwise it’s as if the entire operation never happened.</p>
+<p>As mentioned before, integration events must be based on asynchronous communication between multiple microservices (other Bounded Contexts) or even external systems/applications.</p>
+<p>Thus, the event bus interface needs some infrastructure that allows inter-process and distributed communication between potentially remote services.
+It can be based on a commercial service bus, queues, a shared database used as a mailbox, or any other distributed and ideally push based messaging system.</p>
+<p>- «.NET Microservices: Architecture for Containerized .NET Applications» <a class="footnote-reference brackets" href="#fnnetms" id="id58">7</a> by Cesar de la Torre, Bill Wagner, Mike Rousos, Chapter «<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/domain-events-design-implementation#domain-events-versus-integration-events">Domain events: design and implementation :: Domain events versus integration events</a>»</p>
+</div></blockquote>
+<blockquote>
+<div><p>Domain events can generate integration events to be published outside of the microservice boundaries</p>
+<p>Finally, it’s important to mention that you might sometimes want to propagate events across multiple microservices.
+That propagation is an integration event, and it could be published through an event bus from any specific domain event handler.</p>
+<p>- «.NET Microservices: Architecture for Containerized .NET Applications» <a class="footnote-reference brackets" href="#fnnetms" id="id59">7</a> by Cesar de la Torre, Bill Wagner, Mike Rousos, Chapter «<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/domain-events-design-implementation#domain-events-can-generate-integration-events-to-be-published-outside-of-the-microservice-boundaries">Domain events: design and implementation :: Implement domain events :: Domain events can generate integration events to be published outside of the microservice boundaries</a>»</p>
+</div></blockquote>
+<blockquote>
+<div><p>Model information about activity in the domain as a series of discrete events. Represent each event as a domain object. These are distinct from system events that reflect activity within the software itself, although often a system event is associated with a domain event, either as part of a response to the domain event or as a way of carrying information about the domain event into the system.</p>
+<p>- «Domain-Driven Design Reference» <a class="footnote-reference brackets" href="#fndddr" id="id60">2</a> by Eric Evans, Chapter «Domain Events»</p>
+</div></blockquote>
+<blockquote>
+<div><p>More importantly, the outside API is tightly coupled to the internal structure of the Bounded Context. Changing the internals would force an API change.</p>
+<p>&lt;..&gt;</p>
+<p>Set up separate messaging channels for inside the Bounded Context and outside.</p>
+<p>&lt;..&gt;</p>
+<p>In general, my feeling is that the problem seldom occurs when the Domain Events have been chosen carefully to reflect the business domain, using Ubiquitous Language, and at the right granularity.
+These events then tend to become stable very quickly during development, and rarely need to be altered.
+When there are significant changes in the domain, the events may need to change, but in these cases you’ll need an API change anyway.</p>
+<p>That said, it’s a universally useful heuristic in software design to keep everything as closed off as possible, and only open up things where there’s a good case for it.</p>
+<p>- «Patterns for Decoupling in Distributed Systems: Explicit Public Events» <a class="footnote-reference brackets" href="#fnmvpe" id="id61">25</a> by Mathias Verraes</p>
+</div></blockquote>
+</div>
+<div class="section" id="one-phase-vs-two-phase">
+<h2><a class="toc-backref" href="#id133">One-phase vs Two-phase</a><a class="headerlink" href="#one-phase-vs-two-phase" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Ответ на вопрос о разделении доставки Domain Events во многом зависит от того, разделять ли Domain Events на внутренние и внешние?</p>
+<p>Хотя у Vaughn Vernon такое разделение не совсем очевидное, он разделяет реализацию доставки  для подписчиков внутри Bounded Context за его пределами.</p>
+<div class="figure align-center" id="id114">
+<a class="reference internal image-reference" href="../../../../../../_images/iddd-8.1.png"><img alt="Figure 8.1. Aggregates create Events and publish them. Subscribers may store Events and then forward them to remote subscribers, or just forward them without storing. Immediate forwarding requires XA (two-phase commit) unless messaging middleware shares the model’s data store. The image is from &quot;Implementing Domain-Driven Design&quot; by Vaughn Vernon" src="../../../../../../_images/iddd-8.1.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">Figure 8.1. Aggregates create Events and publish them.
+<strong>Subscribers may store Events and then forward them to remote subscribers, or just forward them without storing.</strong>
+Immediate forwarding requires XA (two-phase commit) unless messaging middleware shares the model’s data store.
+The image is from «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id62">3</a> by Vaughn Vernon</span><a class="headerlink" href="#id114" title="Постоянная ссылка на рисунок">¶</a></p>
+</div>
+<blockquote>
+<div><p>Forwarding the Event via a messaging infrastructure would allow asynchronous delivery to out-of-band subscribers.
+Each of those asynchronous subscribers could arrange to modify an additional Aggregate instance in one or more separate transactions.
+The additional Aggregate instances could be in the same Bounded Context or in others.
+Publishing the Event outward to any number Bounded Contexts of other Subdomains (2) emphasizes the word Domain in the term Domain Event.
+In other words, Events are a domain-wide concept, not just a concept in a single Bounded Context.
+The contract of Event publishing should have the potential to be at least as broad as the enterprise, or even broader.
+Yet, wide broadcast does not forbid delivery of Events by consumers in the same Bounded Context.
+Refer back to Figure 8.1.</p>
+<p>- «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id63">3</a> by Vaughn Vernon, Chapter «8. Domain Events :: Publishing Events from the Domain Model :: Subscribers»</p>
+</div></blockquote>
+<p>В качестве первой ступени доставки Domain Events внутренним подписчикам, Vaughn Vernon предлагает использовать обычные GOF-паттерны (Mediator, Observer), которые вызывают подписчиков в том же самом потоке и в той же самой транзакции.</p>
+<blockquote>
+<div><p>Publishing Events from the Domain Model</p>
+<p>Avoid exposing the domain model to any kind of middleware messaging infrastructure.
+Those kinds of components live only in the infrastructure.
+And while the domain model might at times use such infrastructure indirectly, it would never explicitly couple to it. We’ll use an approach that completely avoids the use of infrastructure.</p>
+<p>One of the simplest and most effective ways to publish Domain Events without coupling to components outside the domain model is to create a lightweight Observer [Gamma et al.].
+For the sake of naming I use Publish-Subscribe, which is acknowledged by [Gamma et al.] as another name for the same pattern.
+The examples in that pattern and my use of it are lightweight because there is no network involved in subscribing to Events and publishing them.
+All registered subscribers execute in the same process space with the publisher and run on the same thread.
+When an Event is published, each subscriber is notified synchronously, one by one.
+This also implies that <strong>all subscribers are running within the same transaction</strong>, perhaps controlled by an Application Service that is the direct client of the domain model.</p>
+<p>Considering the two halves of Publish-Subscribe separately helps to explain them in a DDD context.</p>
+<p>- «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id64">3</a> by Vaughn Vernon, Chapter «8. Domain Events :: Publishing Events from the Domain Model»</p>
+</div></blockquote>
+<blockquote>
+<div><p>What components register subscribers to Domain Events?
+Generally speaking, Application Services (14), and sometimes Domain Services, will.
+<strong>The subscriber may be any component that is running on the same thread as the Aggregate that publishes the Event</strong>, and that can subscribe prior to the Event being published.
+This means that <strong>the subscriber is registered in the method execution path that uses the domain model</strong>.</p>
+<p>- «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id65">3</a> by Vaughn Vernon, Chapter «8. Domain Events :: Publishing Events from the Domain Model :: Subscribers»</p>
+</div></blockquote>
+<p>При этом, Vaughn Vernon делает предостережение относительно первой ступени доставки, т.е. внутренних подписчиков, впрочем, это предостережение зависит от уже рассмотренного ранее вопроса Eventual Consistency vs Strong (Transactional) Consistency.</p>
+<blockquote>
+<div><p>Remember, the Application Service controls the transaction.
+Don’t use the Event notification to modify a second Aggregate instance.
+That breaks a rule of thumb to modify one Aggregate instance per transaction.</p>
+<p>- «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id66">3</a> by Vaughn Vernon, Chapter «8. Domain Events :: Publishing Events from the Domain Model :: Subscribers»</p>
+</div></blockquote>
+<p>В другом месте Vaughn Vernon приводит небольшой пример, по которому создается иллюзия, что якобы асинхронные подписчики уведомляются непосредственно (однофазно):</p>
+<blockquote>
+<div><p>There is a practical way to support eventual consistency in a DDD model.
+An Aggregate command method publishes a Domain Event that is in time delivered to one or more asynchronous subscribers:</p>
+<p>Each of these subscribers then retrieves a different yet corresponding Aggregate instance and executes its behavior based on it.
+Each of the subscribers executes in a separate transaction, obeying the rule of Aggregates to modify just one instance per transaction.</p>
+<p>- «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id67">3</a> by Vaughn Vernon, Chapter «10 Aggregates :: Rule: Use Eventual Consistency Outside the Boundary»</p>
+</div></blockquote>
+<p>Однако, если найти этот пример в коде, то эта иллюзия рассеивается.
+См. <a class="reference external" href="https://github.com/VaughnVernon/IDDD_Samples_NET/blob/90fcc52d9c1af29640ec2a8a3e0e7c692f3e6663/iddd_agilepm/Domain.Model/Products/BacklogItems/BacklogItem.cs#L201">здесь</a> и <a class="reference external" href="https://github.com/VaughnVernon/IDDD_Samples_NET/blob/90fcc52d9c1af29640ec2a8a3e0e7c692f3e6663/iddd_common/Domain.Model/DomainEventPublisher.cs#L77">здесь</a></p>
+<p>Kamil Grzybek вводит явное разделение механизма доставки на две ступени, первая - для внутренних Domain Events, вторая - для внешних:</p>
+<blockquote>
+<div><p>Domain Events Notifications</p>
+<p>There is no such thing as domain events notifications in DDD terms.
+I gave that name because I think it fits best – it is notification that domain event was published.</p>
+<p>Mechanism is pretty simple.
+If I want to inform my application that domain event was published I create notification class for it and as many handlers for this notification as I want.
+I always publish my notifications after transaction is committed.
+The complete process looks like this:</p>
+<ol class="arabic simple">
+<li><p>Create database transaction.</p></li>
+<li><p>Get aggregate(s).</p></li>
+<li><p>Invoke aggregate method.</p></li>
+<li><p>Add domain events to Events collections.</p></li>
+<li><p>Publish domain events and handle them.</p></li>
+<li><p>Save changes to DB and commit transaction.</p></li>
+<li><p>Publish domain events notifications and handle them.</p></li>
+</ol>
+<p>- «<a class="reference external" href="http://www.kamilgrzybek.com/design/how-to-publish-and-handle-domain-events/">How to publish and handle Domain Events</a>» <a class="footnote-reference brackets" href="#fnkgde1" id="id68">15</a> by Kamil Grzybek</p>
+</div></blockquote>
+<p>А вот Udi Dahan в своей статье «Domain Events – Salvation» <a class="footnote-reference brackets" href="#fnudde3" id="id69">22</a> предложил использовать единый Mediator как для внутренних синхронных подписчиков, вызываемых в той же транзакции, так и для асинхронных подписчиков.</p>
+</div>
+<div class="section" id="id70">
+<h2><a class="toc-backref" href="#id134">Кто может издавать Domain Event?</a><a class="headerlink" href="#id70" title="Ссылка на этот заголовок">¶</a></h2>
+<blockquote>
+<div><p>One more point about what can cause a Domain Event is noteworthy.
+Although often it is a user-based command emitted by the user interface that causes an event to occur, sometimes Domain Events
+can be caused by a different source.
+This might be from a timer that expires, such as at the end of the business day or the end of a week, month, or year.
+In cases like this it won’t be a command that causes the event, because the ending of some time period is a matter of fact.
+You can’t reject the fact that some time frame has expired, and if the business cares about this fact, the time expiration is modeled as a Domain Event, and not as a command.</p>
+<p>- «Domain-Driven Design Distilled» <a class="footnote-reference brackets" href="#fndddd" id="id71">4</a> by Vaughn Vernon, Chapter «6. Tactical Design with Domain Events  :: Designing, Implementing, and Using Domain Events»</p>
+</div></blockquote>
+<blockquote>
+<div><p>Sometimes Events are designed to be created by direct request from clients.
+This is done in response to some occurrence that is not the direct result of executing behavior on an instance of an Aggregate in the model.
+Possibly a user of the system initiates some action that is considered an Event in its own right.
+When that happens, the Event can be modeled as an Aggregate and retained in its own Repository.
+Since it represents some past occurrence, its Repository would not permit its removal.
+When Events are modeled in this way, like Aggregates they become part of the model’s structure.
+Thus, they are not just a record of some past occurrence, although they are that also.</p>
+<p>-»Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id72">3</a> by Vaughn Vernon, Chapter «Chapter 8. Domain Events :: Modeling Events :: With Aggregate Characteristics»</p>
+</div></blockquote>
+</div>
+<div class="section" id="id73">
+<h2><a class="toc-backref" href="#id135">Может ли Domain Event отменить свою причину?</a><a class="headerlink" href="#id73" title="Ссылка на этот заголовок">¶</a></h2>
+<blockquote>
+<div><p>Domain events are ordinarily immutable, as they are <strong>a record of something in the past</strong>.
+In addition to a description of the event, a domain event typically contains a timestamp for the time the event occurred and the identity of entities involved in the event.</p>
+<p>- «Domain-Driven Design Reference» <a class="footnote-reference brackets" href="#fndddr" id="id74">2</a> by Eric Evans, Chapter «Domain events»</p>
+</div></blockquote>
+<blockquote>
+<div><p>A command is different from a Domain Event in that a command can be rejected as inappropriate in some cases, such as due to supply and availability of some resources (product, funds, etc.), or another kind of business-level validation.
+<strong>So, a command may be rejected, but a Domain Event is a matter of history and cannot logically be denied.</strong>
+Even so, in response to a time-based Domain Event it could be that the application will need to generate one or more commands in order to ask the application to carry out some set of actions.</p>
+<p>- «Domain-Driven Design Distilled» <a class="footnote-reference brackets" href="#fndddd" id="id75">4</a> by Vaughn Vernon, Chapter «6. Tactical Design with Domain Events  :: Designing, Implementing, and Using Domain Events»</p>
+</div></blockquote>
+<blockquote>
+<div><p>Your Domain Event type names should be <strong>a statement of a past occurrence</strong>, that is, a verb in the past tense.
+Here are some examples from the Agile Project Management Context : ProductCreated, for instance, states that a Scrum product was created at some past time.
+Other Domain Events are ReleaseScheduled, SprintScheduled, BacklogItemPlanned, and BacklogItemCommitted.
+Each of the names clearly and concisely states what happened in your Core Domain.</p>
+<p>- «Domain-Driven Design Distilled» <a class="footnote-reference brackets" href="#fndddd" id="id76">4</a> by Vaughn Vernon, Chapter «6. Tactical Design with Domain Events  :: Designing, Implementing, and Using Domain Events»</p>
+</div></blockquote>
+<blockquote>
+<div><p>As noted earlier, an important characteristic of events is that since an event is something that happened in the past, it should not change.
+Therefore, it must be an immutable class. You can see in the previous code that the properties are read-only.
+There’s no way to update the object, you can only set values when you create it.</p>
+<p>- «.NET Microservices: Architecture for Containerized .NET Applications» <a class="footnote-reference brackets" href="#fnnetms" id="id77">7</a> by Cesar de la Torre, Bill Wagner, Mike Rousos, Chapter «<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/domain-events-design-implementation#implement-domain-events">Domain events: design and implementation :: Implement domain events</a>»</p>
+</div></blockquote>
+<p>Таким образом, Событие не может изменить прошлого, хотя и может <a class="reference external" href="https://microservices.io/patterns/data/saga.html">инициировать компенсационную транзакцию</a> и изменить будущее.
+Если вы когда-нибудь работали с Emacs, то заметили, что его команда Undo <a class="reference external" href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Undo.html">не возвращает в прошлое</a>, а компенсирует ранее выполненные команды.
+По этой причине в Emacs отсутствует Redo.</p>
+<blockquote>
+<div><p>Starting from that moment, the entire sequence of undo commands that you have just performed are themselves placed into the undo record.
+Therefore, to re-apply changes you have undone, type C-f or any other command that harmlessly breaks the sequence of undoing; then type C-/ one or more times to undo some of the undo commands.</p>
+<p>- <a class="reference external" href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Undo.html">The Emacs Editor</a></p>
+</div></blockquote>
+<p>Однако, рассмотрение <a class="reference external" href="https://docs.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction">компенсационных транзакций</a> уже выходит за рамки данного поста.</p>
+<blockquote>
+<div><p>Eventual consistency can lead to undesirable scenarios.
+For example, if a payment has been rejected, you can’t just roll back the transaction and not create the order (as many non‐eventually consistent systems would); the order was already created as part of a previous transaction in a different component and currently lives in that component’s database.
+What you can do, though, is roll forward into a new state.
+You’d probably tell the customer the order could not be completed because payment failed.
+Ideally you would tell her immediately when she tries to place an order.
+However, you have to remember that you’re trying to build a scalable fault‐tolerant solution and you need to make sacrifices.
+Upsetting the few customers who cannot successfully place orders so that everybody else gets a superior user experience is often an acceptable trade‐off.
+When you are in an inconsistent state, you need to roll forward into a new state that represents the wishes of the business or the real‐world domain processes you are modeling.</p>
+<p>- «Patterns, Principles, and Practices of Domain-Driven Design» <a class="footnote-reference brackets" href="#fnpppddd" id="id78">6</a> by Scott Millett, Nick Tune, Chapter «12 Integrating via Messaging :: Building an E‐Commerce Application with NServiceBus :: Eventual Consistency in Practice :: Dealing with Inconsistency»</p>
+</div></blockquote>
+</div>
+<div class="section" id="id79">
+<h2><a class="toc-backref" href="#id136">Решение - это баланс стоимости и обретаемой выгоды</a><a class="headerlink" href="#id79" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Любое решение - это баланс выгод и затрат на его реализацию.
+Решение не должно базироваться на <a class="reference external" href="https://youtu.be/LDW0QWie21s?t=1363">«религиозном» догматизме</a>, основываясь на бездумной вере только в то, что кто-то так сказал, не понимая при этом причин и следствий.
+Нужно понимать причину решения, решаемую им проблему, и применять его сообразно стоящими перед конкретным проектом проблемами.</p>
+<div class="section" id="cqrs">
+<span id="emacsway-de-cqrs-command-and-result"></span><h3><a class="toc-backref" href="#id137">Может ли CQRS-команда возвращать результат?</a><a class="headerlink" href="#cqrs" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Хорошим примером, демонстрирующим архитектурную гибкость мышления, является ответ Jimmy Bogard по поводу того, может ли Команда в CQRS возвращать результат?</p>
+<blockquote>
+<div><p>It might seem rather strange that commands always have a result, but it’s much, much easier to deal with side effects of commands through return parameters than through some other means (global registry, static field, re-querying some object, collecting parameter, etc.). <strong>For commands that create an item, I usually want to redirect to a screen showing that item, very easily accomplished when I can get the created item and as for its ID.</strong></p>
+<p>This is a bit controversial, but don’t frankly care, as it’s the simplest thing that could possibly work. If I want to have a command that returns Void, I could steal a page from F# and have a Command base class that returns a Unit type:</p>
+<p>- «<a class="reference external" href="https://lostechies.com/jimmybogard/2013/12/19/put-your-controllers-on-a-diet-posts-and-commands/">Put your controllers on a diet: POSTs and commands</a>» by Jimmy Bogard</p>
+</div></blockquote>
+<p>Причины такого решения он раскрывает в другой своей статье:</p>
+<blockquote>
+<div><p>Myth #2 – CQRS requires an eventual consistent read store</p>
+<p>No, it does not. You can make your read store immediately consistent. That is, your read store can be updated when your command side succeeds (in the same transaction).</p>
+<p>For many legacy/existing apps, transitioning to eventually consistent read stores will either force you to go through bogus hoops of mimicking synchronous calls. Users will bang down on your door with pitchforks and torches if you try and transition to an asynchronous model if you don’t change their business process first.</p>
+<p>Instead, you can start with immediate consistency and transition where and when it’s needed. Unless a user expects a confirmation page, making every command page have a series of confirmations of “your request was received” is going to annoy the snot out of your users.</p>
+<p>Myth #3 – CQRS requires a bus/queues/asynchronous messaging</p>
+<p>See above myth. <strong>Nothing about CQRS says “thou shalt use NServiceBus”. It’s just not there. You’re merely separating infrastructure between handling commands and queries, but the how is quite varied. Don’t start with a bus until you prove you need eventual consistency.</strong></p>
+<p>Consistency models are a business decision because it directly impacts user experience. An eventually consistent model requires a different user experience than an immediate one, and this is not something you can just «slip in» to your users, or try to emulate. If you’re attempting to emulate immediate consistency in an eventually consistent model, you’re doing something wrong.</p>
+<p>- «<a class="reference external" href="https://lostechies.com/jimmybogard/2012/08/22/busting-some-cqrs-myths/">Busting some CQRS myths</a>» by Jimmy Bogard</p>
+</div></blockquote>
+<p>Что он также подтверждает своим комментарием к этой статье:</p>
+<blockquote>
+<div><p>Scaling and CQRS are orthogonal, it’s highly contextual and certainly doesn’t require async.</p>
+<p>- «<a class="reference external" href="https://lostechies.com/jimmybogard/2012/08/22/busting-some-cqrs-myths/#comment-3422377189">Busting some CQRS myths</a>» by Jimmy Bogard</p>
+</div></blockquote>
+<p>Итак, ответ прост - если вы не используете асинхронное исполнение Команды посредством инфраструктуры (Command Bus), то ничто не препятствует вам получить идентификатор вновь созданной записи БД в возвращаемом командой результате, и реализацию можно существенно упростить.</p>
+<p>Вы можете удивиться, какая связь между Командами CQRS и Domain Events?
+А связь заключается в том, что и в первом, и во втором случае, отступление от принципа приводит к упрощению реализации, но к ухудшению возможностей масштабирования.
+И в том, и в другом случае, решением является баланс между простотой реализации и потребностью в масштабировании.</p>
+<p>Впрочем, вопрос относительно того, должна ли Команда CQRS возвращать результат, и не противоречит ли это CQS принципу Bertrand Meyer, заслуживает на «<a class="reference internal" href="../../cqrs/cqrs-command-and-result.html"><span class="doc">отдельное исследование</span></a>».
+Как известно, термин CQRS ввел Greg Young, разделив CQS на два отдельных класса.</p>
+<blockquote>
+<div><p>Starting with CQRS, CQRS is simply the creation of two objects where there was previously only one.
+The separation occurs based upon whether the methods are a command or a query (the same definition that is used by Meyer in Command and Query Separation, a command is any method that mutates state and a query is any method that returns a value).</p>
+<p>- «CQRS, Task Based UIs, Event Sourcing agh!» <a class="footnote-reference brackets" href="#fngycqrs" id="id80">26</a> by Greg Young</p>
+</div></blockquote>
+<p>Забегая наперед, скажу, что не противоречит, при соблюдении определенных условий.</p>
+<p>Во-первых, в основе CQS лежит принцип функциональной чистоты:</p>
+<blockquote>
+<div><p>Command-Query Separation principle - Functions should not produce abstract side effects.</p>
+<p>- «Object-Oriented Software Construction» <a class="footnote-reference brackets" href="#fnoosc" id="id81">9</a> 2nd edition by Bertrand Meyer, chapter «23.1 SIDE EFFECTS IN FUNCTIONS :: Objects as machines»</p>
+</div></blockquote>
+<p>Во-вторых, кроме функций-команд и функций-запросов, Bertrand Meyer вводит еще и функции-конструкторы. И тут кроется интересное:</p>
+<blockquote>
+<div><p>From a mathematical perspective we may pretend that all of the objects of interest, for all times past, present and future, are already inscribed in the Great Book of Objects; <strong>a creation instruction is just a way to obtain one of them, but it does not by itself change anything in the environment</strong>. It is common, and legitimate, for a function to create, initialize and return such an object.
+<strong>These observations assume that in the second form the creation procedure make does not produce side effects on any object other than the one being created.</strong></p>
+<p>- «Object-Oriented Software Construction» <a class="footnote-reference brackets" href="#fnoosc" id="id82">9</a> 2nd edition by Bertrand Meyer, chapter «23.1 SIDE EFFECTS IN FUNCTIONS :: Functions that create objects»</p>
+</div></blockquote>
+<p>Этот пример наглядно демонстрирует нам, почему важно всегда изучать мнение первоисточника.
+Сравните это с тем, какие выводы можно сделать на основе утверждений Vaughn Vernon и Википедии:</p>
+<blockquote>
+<div><p>This principle, devised by Bertrand Meyer, asserts the following:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Every method should be either a command that performs an action, or a query that returns data to the caller, but not both. In other words, asking a question should not change the answer.</dt><dd><p>More formally, methods should return a value only if they are referentially transparent and hence possess no side effects. [Wikipedia, CQS]</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>At an object level this means:</p>
+<ol class="arabic simple">
+<li><p>If a method modifies the state of the object, it is a command, and its method must not return a value. In Java and C# the method must be declared void .</p></li>
+<li><p><strong>If a method returns some value, it is a query</strong>, and it must not directly or indirectly cause the modification of the state of the object. In Java and C# the method must be declared with the type of the value it returns.</p></li>
+</ol>
+<p>- «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id83">3</a> by Vaughn Vernon, Chapter «4. Architecture :: Command-Query Responsibility Segregation, or CQRS»</p>
+</div></blockquote>
+<p>Или из  CQRS Journey:</p>
+<blockquote>
+<div><p>A query returns data and does not alter the state of the object; a command changes the state of an object but does not return any data.</p>
+<p>- «<a class="reference external" href="https://docs.microsoft.com/en-us/previous-versions/msp-n-p/jj591573(v=pandp.10)#what-is-cqrs">CQRS Journey :: Reference 2: Introducing the Command Query Responsibility Segregation Pattern :: What is CQRS?</a>»</p>
+</div></blockquote>
+<p>Но как быть, если команда исполняется асинхронно, используя инфраструктуру  (Command Bus), и мы должны вернуть результат команды в исполнение требований <a class="reference external" href="https://tools.ietf.org/html/rfc7231#page-25">RFC-7231</a>  для HTTP-method POST REST API:</p>
+<blockquote>
+<div><p>the origin server SHOULD send a 201 (Created) response containing a Location header field that provides an identifier for the primary resource created (Section 7.1.2) and a representation that describes the status of the request while referring to the new resource(s).</p>
+<p>- «<a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-4.3.3">Section 4.3.3. POST of RFC-7231</a>»</p>
+</div></blockquote>
+<p>Есть два варианта (помимо того, что можно просто запросить идентификатор у сервера предварительно).</p>
+<p>Первый предлагает Udi Dahan:</p>
+<blockquote>
+<div><p>If the data is needed by the client as soon as it is submitted, it is there – on the client that submitted it. No need to poll the query side. The only thing that might not have been there is an ID from the database – which is easily solved with client-generated GUIDs instead of database-generated IDs.</p>
+<p>- «<a class="reference external" href="http://udidahan.com/2009/12/09/clarified-cqrs/#comment-5118">Clarified CQRS</a>» comment 68 of Udi Dahan</p>
+</div></blockquote>
+<p>Мы просто генерируем идентификатор на стороне клиента (используя <a class="reference external" href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Hi/Lo_algorithm">Hi/Lo algorithm</a> и т.п.), а затем применяем <a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-4.3.4">PUT Request Method</a> для создания объекта.</p>
+<blockquote>
+<div><p>The PUT method requests that the state of the target resource be created or replaced with the state defined by the representation enclosed in the request message payload. &lt;…&gt; If the target resource does not have a current representation and the PUT successfully creates one, then the origin server MUST inform the user agent by sending a 201 (Created) response.</p>
+<p>- «<a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-4.3.4">Section 4.3.4. PUT of RFC-7231</a>»</p>
+</div></blockquote>
+<p>Идею второго варианта выразил самим Bertrand Meyer, в виде введения концепции буфера:</p>
+<blockquote>
+<div><p>buffer — the concurrent equivalent of a first-in, first out queue.</p>
+<p>- «Object-Oriented Software Construction» <a class="footnote-reference brackets" href="#fnoosc" id="id84">9</a> 2nd edition by Bertrand Meyer, chapter «23.1 SIDE EFFECTS IN FUNCTIONS :: Objections»</p>
+</div></blockquote>
+<p>И приводит пример:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">next_element</span> <span class="o">:=</span> <span class="n">buffer</span><span class="o">.</span><span class="n">item</span>
+<span class="n">buffer</span><span class="o">.</span><span class="n">remove</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>With the notation of this chapter, it is easy to obtain exclusive access without sacrificing the Command-Query Separation principle: simply enclose the two instructions above, with buffer replaced by b, in a procedure of formal argument b, and call that procedure with the attribute buffer as argument.</p>
+<p>- «Object-Oriented Software Construction» <a class="footnote-reference brackets" href="#fnoosc" id="id85">9</a> 2nd edition by Bertrand Meyer, chapter «30.12 DISCUSSION :: Support for command-query separation»</p>
+</div></blockquote>
+<p>Если транслировать этот же принцип на REST-API, то мы получим паттерн «<a class="reference external" href="https://docs.microsoft.com/en-us/azure/architecture/patterns/async-request-reply">Asynchronous Request-Reply pattern</a>», использующий <a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-6.3.3">202 Response Status Code</a>.</p>
+<p>У Bertrand Meyer в главе «23.1 SIDE EFFECTS IN FUNCTIONS :: Pseudo-random number generators: a design exercise» книги «Object-Oriented Software Construction» <a class="footnote-reference brackets" href="#fnoosc" id="id86">9</a> 2nd edition, есть пример с генератором случайных чисел, который решает задачу, аналогичную задаче с получением идентификатора ресурса.
+Цитировать не буду, ибо много текста, если интересно, можно посмотреть в книге.
+На примере с генератором случайных чисел хорошо видно, какую критическую роль играет правильное именование и правильное моделирование процессов предметной области.
+И как легко можно создать кривое решение, если не иметь ясного понимания этих процессов, или если использовать недостаточно ясное именование.</p>
+<p>Также он разделяет абстрактное состояние от конкретного состояния, и приводит пример, в значительной мере похожий на добавление нового ресурса через REST-API:</p>
+<blockquote>
+<div><p>What this means for us is that a function that modifies a concrete object is harmless if the result of this modification still represents the same abstract object — yields the same a value.
+For example assume in a function on stacks contains the operation</p>
+<p>representation.put (some_value, count + 1)</p>
+<p>(with the guarantee that the array’s capacity is at least count + 1).
+<strong>This side effect changes a value above the stack-significant section of the array; it can do no ill.</strong></p>
+<p>- «Object-Oriented Software Construction» <a class="footnote-reference brackets" href="#fnoosc" id="id87">9</a> 2nd edition by Bertrand Meyer, chapter «23.1 SIDE EFFECTS IN FUNCTIONS :: Abstract state, concrete state»</p>
+</div></blockquote>
+<p>Как видно, внимательное изучение первоисточника дает глубокое понимание целей, причин, спектра решаемых проблем, достоинств и недостатков, и, как следствие, приводит к более гибким и менее догматичным архитектурным решениям.</p>
+<p>Как результат, в одном из лучших демонстрационных приложений, Команда возвращает результат, смотрите <a class="reference external" href="https://github.com/dotnet-architecture/eShopOnContainers/blob/b1021c88d55d96c247eab75bde650ab4b194f706/src/Services/Ordering/Ordering.API/Controllers/OrdersController.cs#L151">здесь</a> и <a class="reference external" href="https://github.com/dotnet-architecture/eShopOnContainers/blob/b1021c88d55d96c247eab75bde650ab4b194f706/src/Services/Ordering/Ordering.API/Application/Commands/CreateOrderDraftCommandHandler.cs#L40">здесь</a>.</p>
+</div>
+</div>
+<div class="section" id="atomicity-and-resiliency-of-integration-events">
+<h2><a class="toc-backref" href="#id138">Atomicity and Resiliency of Integration Events</a><a class="headerlink" href="#atomicity-and-resiliency-of-integration-events" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Если отправить Integration Event до коммита транзакции базы данных, то другой процесс не увидит изменений.
+К тому же, может произойти откат транзакции, и согласованность данных будет утрачена.
+А если после коммита, то существует вероятность, что процесс может аварийно завершиться, и сообщение так и не будет отправлено, что приведет к утрате согласованности данных.</p>
+<p>Подробно эта проблема рассмотрена в главе «<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/multi-container-microservice-net-applications/subscribe-events#designing-atomicity-and-resiliency-when-publishing-to-the-event-bus">Subscribing to events :: Publishing events through the event bus :: Designing atomicity and resiliency when publishing to the event bus</a>» книги «.NET Microservices: Architecture for Containerized .NET Applications» <a class="footnote-reference brackets" href="#fnnetms" id="id88">7</a> by Cesar de la Torre, Bill Wagner, Mike Rousos.</p>
+<p>Chris Richardson называет эту проблему <a class="reference external" href="https://microservices.io/patterns/#transactional-messaging">Transactional messaging</a> рассматривает ее в главе «<a class="reference external" href="https://livebook.manning.com/book/microservices-patterns/chapter-3/section-3-3-7?origin=product-toc">3.3.7 Transactional messaging</a>» книги «Microservices Patterns: With examples in Java» <a class="footnote-reference brackets" href="#fnmsp" id="id89">14</a>.</p>
+<p>Vaughn Vernon посвящает этой проблеме главу «8 Domain Events :: Spreading the News to Remote Bounded Contexts :: Messaging Infrastructure Consistency» книги «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id90">3</a>.</p>
+<p>Очень глубокое понимание этой проблемы и способов ее решения дается в главе «10.Messaging Endpoints :: Transactional Client» книги «Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions» <a class="footnote-reference brackets" href="#fneip" id="id91">11</a> by Gregor Hohpe, Bobby Woolf.</p>
+<p>А также эта тема затрагивается в главе «Chapter 9. Message Endpoints :: Transactional Client/Actor» книги «Reactive Messaging Patterns with the Actor Model: Applications and Integration in Scala and Akka» <a class="footnote-reference brackets" href="#fnrmp" id="id92">5</a> by Vaughn Vernon.</p>
+<p>Существует три основных способа решения этой проблемы:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing">Event Sourcing pattern</a> (сюда же относится <a class="reference external" href="https://github.com/obsidiandynamics/goharvest/wiki/Comparison-of-messaging-patterns#front-door-queue">Front-Door Queue</a> pattern и Transactional Consumer <a class="footnote-reference brackets" href="#fneip" id="id93">11</a> vs Transactional Sender)</p></li>
+<li><p><a class="reference external" href="https://www.scoop.it/t/sql-server-transaction-log-mining">Transaction log mining</a> (и <a class="reference external" href="https://microservices.io/patterns/data/transaction-log-tailing.html">еще</a>)</p></li>
+<li><p><a class="reference external" href="https://www.kamilgrzybek.com/design/the-outbox-pattern/">Outbox pattern</a></p></li>
+</ol>
+<p>Ссылки по теме:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://dzone.com/articles/event-driven-data-management-for-microservices-1">Event-Driven Data Management for Microservices</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ThreeDotsLabs/watermill/tree/master/_examples/real-world-examples/transactional-events">Готовая реализация паттерна outbox на Golang с примером использования (см. README)</a></p></li>
+</ul>
+</div>
+<div class="section" id="integration-events">
+<h2><a class="toc-backref" href="#id139">Проблема сохранения очередности Integration Events</a><a class="headerlink" href="#integration-events" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Подписчики не всегда получают Integration Events в той же последовательности, в которой они были отправлены, по ряду причин.
+Одно из решений этой проблемы заключается в том, что, если получатель обнаруживает, что сообщение не соответствует ожидаемому порядку, то он просто не забирает его из очереди.</p>
+<blockquote>
+<div><p>Note that just saving the Domain Event in its causal order doesn’t guarantee that it will arrive at other distributed nodes in the same order.
+Thus, it is also the responsibility of the consuming Bounded Context to recognize proper causality.
+It might be the Domain Event type itself that can indicate causality, or it may be metadata associated with the Domain Event, such as a sequence or causal identifier.
+The <strong>sequence</strong> or <strong>causal identifier</strong> would indicate <strong>what caused this Domain Event</strong>, and <strong>if the cause was not yet seen, the consumer must wait to apply the newly arrived event until its cause arrives</strong>.
+In some cases it is possible to ignore latent Domain Events that have already been superseded by the actions associated with a later one; in this case causality has a dismissible impact.</p>
+<p>- «Domain-Driven Design Distilled» <a class="footnote-reference brackets" href="#fndddd" id="id94">4</a> by Vaughn Vernon, Chapter «6. Tactical Design with Domain Events:: Designing, Implementing, and Using Domain Events»</p>
+</div></blockquote>
+<p>В книге «Reactive Messaging Patterns with the Actor Model: Applications and Integration in Scala and Akka» <a class="footnote-reference brackets" href="#fnrmp" id="id95">5</a> by Vaughn Vernon также говорится о том, что Actor должен сам решать, принимать ли ему сообщение:</p>
+<blockquote>
+<div><p>Actors must be prepared to accept and reject messages based on their current state, which is reflected by the order in which previous messages were received.
+Sometimes a latent message could be accepted even if it is not perfect timing, but the actor’s reaction to the latent message may have to carefully take into account its current state beforehand.
+This may be dealt with more gracefully by using the actors become() capabilities.</p>
+<p>- «Reactive Messaging Patterns with the Actor Model: Applications and Integration in Scala and Akka» <a class="footnote-reference brackets" href="#fnrmp" id="id96">5</a> by Vaughn Vernon, Chapter «5. Messaging Channels :: Point-to-Point Channel»</p>
+</div></blockquote>
+<p>Этой же проблеме посвящена и глава «Chapter 7 Message Routing :: Resequencer» <a class="footnote-reference brackets" href="#fnrmp" id="id97">5</a> той же книги.</p>
+<p>Pattern <a class="reference external" href="https://www.enterpriseintegrationpatterns.com/patterns/messaging/Resequencer.html">Resequencer</a> описан также и в главе «7.Message Routing :: Resequencer» книги «Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions» <a class="footnote-reference brackets" href="#fneip" id="id98">11</a> by Gregor Hohpe, Bobby Woolf.</p>
+<p>Существует open source integration framework <a class="reference external" href="https://camel.apache.org/">Camel</a>, который предоставляет <a class="reference external" href="https://camel.apache.org/components/latest/eips/resequence-eip.html">готовую из коробки реализацию паттерна Resequencer</a>.
+Он легко интегрируется с различными системами обмена сообщениями, например, <a class="reference external" href="https://camel.apache.org/components/latest/nats-component.html">с Nats</a> (<a class="reference external" href="https://nats.io/blog/apache-camel-nats-connector/">подробнее</a>).</p>
+<p>В «CQRS Journey» <a class="footnote-reference brackets" href="#fncqrsj" id="id99">8</a> предлагается два варианта решения:</p>
+<blockquote>
+<div><p>The first option is to <strong>use message sessions</strong>, a feature of the Azure Service Bus. If you use message sessions, this guarantees that messages within a session are delivered in the same order that they were sent.</p>
+<p>The second alternative is to modify the handlers within the application to detect out-of-order messages through the use of sequence numbers or timestamps added to the messages when they are sent.
+<strong>If the receiving handler detects an out-of-order message, it rejects the message and puts it back onto the queue or topic to be processed later</strong>, after it has processed the messages that were sent before the rejected message.</p>
+<p>- «CQRS Journey» <a class="footnote-reference brackets" href="#fncqrsj" id="id100">8</a> by Dominic Betts, Julián Domínguez, Grigori Melnik, Fernando Simonazzi, Mani Subramanian, Chapter «<a class="reference external" href="https://docs.microsoft.com/ru-ru/previous-versions/msp-n-p/jj591565(v=pandp.10)#message-ordering">Journey 6: Versioning Our System :: Message ordering</a>»</p>
+</div></blockquote>
+<p>Проблема сохранения очередности сообщений в условиях конкурирующих подписчиков рассматривается и в главе «<a class="reference external" href="https://livebook.manning.com/book/microservices-patterns/chapter-3/section-3-3-5?origin=product-toc">3.3.5 Competing receivers and message ordering</a>» книги «Microservices Patterns: With examples in Java» <a class="footnote-reference brackets" href="#fnmsp" id="id101">14</a> by Chris Richardson, где для решения проблемы предлагается использовать партиционирование каналов.</p>
+<p>Но даже если подписчик всего один, и сообщения доставляются последовательно, то и тогда очередность обработки сообщений может быть нарушена:</p>
+<blockquote>
+<div><p>With the redelivery feature, order can’t be guaranteed, since by definition server will resend messages that have not been acknowledged after a period of time. Suppose your consumer receives messages 1, 2 and 3, does not acknowledge 2. Then message 4 is produced, server sends this message to the consumer. The redelivery timer then kicks in and server will resend message 2. The consumer would see messages: 1, 2, 3, 4, 2, 5, etc…</p>
+<p>In conclusion, the server does not offer this guarantee although it tries to redeliver messages first thing on startup. That being said, if the durable is stalled (number of outstanding messages &gt;= MaxInflight), then the redelivery will also be stalled, and new messages will be allowed to be sent. When the consumer resumes acking messages, then it may receive redelivered and new messages interleaved (new messages will be in order though).</p>
+<p>- nats-streaming-server, <a class="reference external" href="https://github.com/nats-io/nats-streaming-server/issues/187#issuecomment-257024506">issue #187 «Order of delivery»</a>, comment by Ivan Kozlovic</p>
+</div></blockquote>
+<p>Ну а лучше всего эта тема раскрывается в Chapter «12 The Future of Data Systems :: Data Integration :: Combining Specialized Tools by Deriving Data :: Ordering events to capture causality» книги «Designing Data-Intensive Applications. The Big Ideas Behind Reliable, Scalable, and Maintainable Systems» <a class="footnote-reference brackets" href="#fnddia" id="id102">12</a> by Martin Kleppmann.</p>
+<p>Еще проблемы распределенности хорошо освещаются в книге «Database Reliability Engineering. Designing and Operating Resilient Database Systems.» <a class="footnote-reference brackets" href="#fndre" id="id103">13</a> by Laine Campbell and Charity Majors.</p>
+<p>Ссылки по теме:</p>
+<ul class="simple">
+<li><p>«<a class="reference external" href="https://queue.acm.org/detail.cfm?id=2610533">Don’t Settle for Eventual Consistency. Stronger properties for low-latency geo-replicated storage.</a>» (<a class="reference external" href="https://dl.acm.org/ft_gateway.cfm?id=2610533&amp;ftid=1449165&amp;dwn=1">pdf</a>) by Wyatt Lloyd, Facebook; Michael J. Freedman, Princeton University; Michael Kaminsky, Intel Labs; David G. Andersen, Carnegie Mellon University</p></li>
+<li><p>«<a class="reference external" href="http://www.bailis.org/papers/bolton-sigmod2013.pdf">Bolt-on Causal Consistency</a>» by Peter Bailis, Ali Ghodsi, Joseph M. Hellerstein†, Ion Stoica, UC Berkeley KTH/Royal Institute of Technology</p></li>
+<li><p>«<a class="reference external" href="https://disco.ethz.ch/courses/hs08/seminar/papers/mattern4.pdf">Detecting Causal Relationships in Distributed Computations:In Search of the Holy Grail</a>» by Reinhard Schwarz, Friedemann Mattern</p></li>
+<li><p>«<a class="reference external" href="https://www.microsoft.com/en-us/research/publication/principles-of-eventual-consistency/">Principles of Eventual Consistency</a>» (<a class="reference external" href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/final-printversion-10-5-14.pdf">pdf</a>) by Sebastian Burckhardt, Microsoft Research</p></li>
+<li><p>«<a class="reference external" href="https://eventsourcing.readthedocs.io/en/stable/topics/process.html#causal-dependencies">Causal dependencies at eventsourcing framework by Python</a>» by John Bywater</p></li>
+<li><p>«<a class="reference external" href="http://labix.org/vclock">The vclock package</a> offers full vector clock support for the Go language. Vector clocks allow recording and analyzing the inherent partial ordering of events in a distributed system in a comfortable way.» by Gustavo Niemeyer (<a class="reference external" href="https://blog.labix.org/2010/12/21/vector-clock-support-for-go">more info</a>)</p></li>
+</ul>
+<p>Ссылки для начинающих в Integration Events:</p>
+<ul class="simple">
+<li><p>Хороший лаконичный обзорный блог-пост по возможностям NATS Streaming Server «<a class="reference external" href="https://nats.io/blog/use-cases-for-persistent-logs-with-nats-streaming/">Guest Post: Use cases for persistent logs with NATS Streaming</a>» by Byron Ruth</p></li>
+<li><p>Лучше один раз увидеть. <a class="reference external" href="https://github.com/bruth/code-examples/tree/master/patterns-nats-streaming">Живые примеры по работе с NATS Streaming Server</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="id104">
+<h2><a class="toc-backref" href="#id140">Где создавать Domain Event об удалении объекта?</a><a class="headerlink" href="#id104" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Информации по этому вопросу практически нет, поэтому, я поделюсь своими мыслями.</p>
+<p>В Английском языке есть <a class="reference external" href="https://english.stackexchange.com/a/52509">разница</a> между словом «delete» и «remove».
+«Delete» подразумевает «уничтожить».
+«Remove» - «изъять», «вынести».</p>
+<p>Кстати, русское слово «удалить» <a class="reference external" href="https://ru.wiktionary.org/wiki/%D1%83%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C#%D0%AD%D1%82%D0%B8%D0%BC%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F">происходит</a> от слова «даль».
+Например, «Удалить ненужные вещи из комнаты», «Удалить занозу».</p>
+<p>Термин «remove» (удаление) применим к Коллекции, содержащей объект, и означает то, что объект удаляется от Коллекции (в даль).
+Но при этом, объект, сам по себе, продолжает существовать.
+Он может быть удален от (из) одной Коллекции, а затем вставлен в иную Коллекцию.
+Как говорилось ранее, источником Domain Event не обязательно должен быть Агрегат или Команда.
+Источником может быть и Коллекция, т.е. Repository.</p>
+<p>Но если мы будем говорить не об удалении, а об «уничтожении» («delete»), то мы говорим о состоянии, т.е. о части жизненного цикла объекта.
+В таком случае было бы уместно, чтобы событие о переходе в новое состояние жизненного цикла объекта создавал сам объект.
+Это становится особенно заметно, если мы используем soft delete (смотрите статью «<a class="reference external" href="http://udidahan.com/2009/09/01/dont-delete-just-dont/">Don’t Delete – Just Don’t</a>» by Udi Dahan по этому поводу).
+Пример можно посмотреть <a class="reference external" href="https://github.com/kgrzybek/modular-monolith-with-ddd/blob/78810bb44ae10cd88ca12b8d81712ba20c0ca43f/src/Modules/Meetings/Domain/Meetings/MeetingAttendee.cs#L124">здесь</a> (вызывается <a class="reference external" href="https://github.com/kgrzybek/modular-monolith-with-ddd/blob/78810bb44ae10cd88ca12b8d81712ba20c0ca43f/src/Modules/Meetings/Domain/Meetings/Meeting.cs#L289">здесь</a>).
+Это не Агрегат - это вложенная Сущность.</p>
+<p>В другом <a class="reference external" href="https://github.com/kgrzybek/sample-dotnet-core-cqrs-api/blob/1d344b90658c6593993eaa1391410b5ab1ebabfc/src/SampleProject.Domain/Customers/Orders/Order.cs#L111">примере</a> реализации soft delete, событие <a class="reference external" href="https://github.com/kgrzybek/sample-dotnet-core-cqrs-api/blob/01a1d6517bc88773f004abc0cb9c6d79f537e575/src/SampleProject.Domain/Customers/Customer.cs#L89">создается</a> Агрегатом, владеющим Сущностью.
+Похожие примеры можно найти и у Vaughn Vernon, см. <a class="reference external" href="https://github.com/VaughnVernon/IDDD_Samples_NET/blob/90fcc52d9c1af29640ec2a8a3e0e7c692f3e6663/iddd_identityaccess/Domain.Model/Identity/Group.cs#L159">здесь</a> и <a class="reference external" href="https://github.com/VaughnVernon/IDDD_Samples_NET/blob/90fcc52d9c1af29640ec2a8a3e0e7c692f3e6663/iddd_identityaccess/Domain.Model/Identity/Group.cs#L142">здесь</a>.</p>
+<p>Посмотреть <a class="reference external" href="https://github.com/VaughnVernon/IDDD_Samples_NET/blob/90fcc52d9c1af29640ec2a8a3e0e7c692f3e6663/iddd_agilepm/Domain.Model/Products/BacklogItems/BacklogItem.cs#L360">пример реализации soft delete Агрегата</a> (а не Сущности) можно у Vaughn Vernon (Агрегат BacklogItem хоть и <a class="reference external" href="https://github.com/VaughnVernon/IDDD_Samples_NET/blob/90fcc52d9c1af29640ec2a8a3e0e7c692f3e6663/iddd_agilepm/Domain.Model/Products/Product.cs#L128">создается</a> Агрегатом Product, но является самостоятельным корнем).</p>
+<p>Скрыть присутствие Repository помогает pattern «<a class="reference external" href="https://martinfowler.com/eaaCatalog/unitOfWork.html">Unit of Work</a>».
+В одноименной главе книги «Patterns of Enterprise Application Architecture» <a class="footnote-reference brackets" href="#fnpoeaa" id="id105">10</a> приводится пример класса DomainObject, который содержит метод markRemoved().</p>
+<blockquote>
+<div><p>With object registration (Figure 11.2), the onus is removed from the caller.
+The usual trick here is to place registration methods in object methods. Loading an object from the database registers the object as clean;
+the setting methods register the object as dirty.
+For this scheme to work the Unit of Work needs either to be passed to the object or to be in a well-known place.
+Passing the Unit of Work around is tedious but usually no problem to have it present in some kind of session object.</p>
+<p>- «Patterns of Enterprise Application Architecture» <a class="footnote-reference brackets" href="#fnpoeaa" id="id106">10</a> by Martin Fowler, David Rice, Matthew Foemmel, Edward Hieatt, Robert Mee, Randy Stafford, Chapter «16. Offline Concurrency Patterns :: Coarse-Grained Lock»</p>
+</div></blockquote>
+<p>Для этих целей удобно применять Aspect-oriented programming:</p>
+<blockquote>
+<div><p>This is a natural place for code generation to generate appropriate calls, but that only works when you can clearly separate generated and nongenerated code.
+This problem turns out to be particularly suited to aspect-oriented programming.
+I’ve also come across post-processing of the object files to pull this off.
+In this example a post-processor examined all the Java .class files, looked for the appropriate methods and inserted registration calls into the byte code.
+Such finicking around feels dirty, but it separates the database code from the regular code.
+Aspect-oriented programming will do this more cleanly with source code, and as its tools become more commonplace I expect to see this strategy being used.</p>
+<p>- «Patterns of Enterprise Application Architecture» <a class="footnote-reference brackets" href="#fnpoeaa" id="id107">10</a> by Martin Fowler, David Rice, Matthew Foemmel, Edward Hieatt, Robert Mee, Randy Stafford, Chapter «16. Offline Concurrency Patterns :: Coarse-Grained Lock»</p>
+</div></blockquote>
+<p>Также существует разница и между термином «insert» («вставить») и «create» («создать»).
+Первый применим к Коллекции объектов (как и «remove»), а второй - к состоянию жизненного цикла самого объекта (как и «delete»).</p>
+<p>Вопрос о том, где создавать Domain Event об уничтожении/удалении объекта, во многом зависит от того, где создавался Domain Event о его создании/вставке, который, в свою очередь, зависит от того, каким образом создается идентификатор создаваемого объекта, если он необходим для Domain Event.</p>
+<p>Как вариант, если нужно создавать Domain Event о создании («create») объекта внутри него самого, но при этом используется автоинкрементный первичный ключ базы данных, то обойти это ограничение можно вложив сам экземпляр созданного объекта в Domain Event.
+Тогда, в момент вызова обработчика Domain Event, если он, конечно, будет происходить после сохранения созданного объекта в Хранилище (хотя и до коммита), созданному объекту уже будет присвоен идентификатор.
+Агрегат, в таком случае, можно снабдить методом <a class="reference external" href="https://github.com/dotnet-architecture/eShopOnContainers/blob/1d8c6178de2830ad809eae138a0a99011c26ac2c/src/Services/Ordering/Ordering.Domain/SeedWork/Entity.cs#L42">IsTransient</a>.
+Другим возможным вариантом обхода этого ограничения может быть передача в Domain Event объекта отложенного значения (в крайнем случае - указателя на значение).
+Ну и, разумеется, можно использовать <a class="reference external" href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Hi/Lo_algorithm">Hi/Lo algorithm</a> и т.п.</p>
+<p>В целом я придерживаюсь такого правила - если Domain Event о «вставке» («insert») объекта создает Коллекция (Repository), то и Domain Event об «удалении» («remove») объекта должна создавать тоже Коллекция (Repository), на том же уровне абстракции.
+А если Domain Event о «создании» («create») объекта создает сам объект, как уведомление о переходе в новое состояние своего жизненного цикла, то и Domain Event об «уничтожении» («delete») объекта должен создавать он же.</p>
+</div>
+<div class="section" id="id108">
+<h2><a class="toc-backref" href="#id141">Почему важно читать оригиналы вместо переводов</a><a class="headerlink" href="#id108" title="Ссылка на этот заголовок">¶</a></h2>
+<p>В самом начале этого поста я говорил, что важно читать первоисточники.
+Теперь я хочу показать, почему важно читать оригиналы, а не их переводы.</p>
+<p>Возьмем известную фразу Эрика Эванса, которая послужила первопричиной для eventual consistency между агрегатами. Сравните ее смысл в оригинале:</p>
+<blockquote>
+<div><p>Invariants, which are consistency rules that must be maintained whenever data changes, will involve relationships between members of the AGGREGATE.
+<strong>Any rule that spans AGGREGATES [мн. число] will not be expected to be up-to-date at all times.</strong>
+Through event processing, batch processing, or other update mechanisms, other dependencies can be resolved within some specified time.
+But the invariants applied within an AGGREGATE will be enforced with the completion of each transaction.</p>
+<p>- «Domain-Driven Design: Tackling Complexity in the Heart of Software» <a class="footnote-reference brackets" href="#fnddd" id="id109">1</a> by Eric Evans, Chapter «Six. The Life Cycle of a Domain Object:: Aggregates»</p>
+</div></blockquote>
+<p>И ее смысл в переводе:</p>
+<blockquote>
+<div><p>Из взаимосвязей между объектами АГРЕГАТА можно составить так называемые инварианты, т.е. правила совместности, которые должны соблюдаться при любых изменениях данных.
+<strong>Не всякое правило, распространяющееся на АГРЕГАТ [ед. число], обязано выполняться непрерывно.</strong>
+Восстановить нужные взаимосвязи за определенное время можно с помощью обработки событий, пакетной обработки и других механизмов обновления системы.
+Но соблюдение инвариантов, имеющих силу внутри агрегата, должно контролироваться немедленно по завершении любой транзакции.</p>
+</div></blockquote>
+<p>Смысл утрачен. А этот смысл имеет ключевое значение - он говорит о распространении правил между агрегатами.</p>
+<p>Или другой пример.</p>
+<blockquote>
+<div><p>There are several possible ways for remote Bounded Contexts to become aware of Events that occur in your Bounded Context.
+The primary idea is that some form of messaging takes place, and an enterprise messaging mechanism is needed.
+To be clear, the mechanism being spoken of here goes well beyond the simple, lightweight Publish-Subscribe components just discussed.
+Here we are discussing what takes over <strong>where the lightweight mechanism leaves off</strong>.</p>
+<p>- «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id110">3</a> by Vaughn Vernon, Chapter «8. Domain Events :: Spreading the News to Remote Bounded Contexts»</p>
+</div></blockquote>
+<p>Сравните с русским переводом:</p>
+<blockquote>
+<div><p>Существует несколько способов сообщить удаленным ОГРАНИЧЕННЫМ КОНТЕКСТАМ о событии, произошедшем в вашем ОГРАНИЧЕННОМ КОНТЕКСТЕ.
+Основная идея заключается в том, чтобы организовать какую-то форму передачи сообщений и создать механизм передачи сообщений в масштабе предприятия.
+Точнее говоря, механизм, о котором идет речь, выходит далеко за рамки простых облегченных компонентов шаблона ИЗДАТЕЛЬ - ПОДПИСЧИК.
+Ниже мы обсудим, что произойдет, <strong>если отказаться от этого упрощенного механизма</strong>.</p>
+</div></blockquote>
+<p>Русский перевод не отражает оригинального смысла, который, кстати, опять же имеет немаловажное значение.
+И даже если считать оригинальный смысл недостаточно ясным, допускающим несколько трактовок, из которых можно выбрать наиболее корректную исходя из контекста и предыдущих утверждений автора, то русский перевод такой возможности нас лишает.
+Я трактую эту фразу так, чтобы она находилась в согласованности с другими утверждениями Вернона, т.е. «Ниже мы обсудим, что произойдет <strong>за пределами этого упрощенного механизма</strong>», что полностью соответствует рис.8.1. и его описанию.</p>
+</div>
+<div class="section" id="id111">
+<h2><a class="toc-backref" href="#id142">Послесловие</a><a class="headerlink" href="#id111" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Эта статья отражает мое мнение на текущий момент времени, которое, однако, я не спешил бы называть окончательно сформированным, поскольку существует еще достаточно большой пласт информации по этому вопросу, который мне только предстоит переработать.
+Основной посыл статьи - больше внимания уделять первоисточникам, и быть более гибким в принятии решений, хорошо осознавая их причины и следствия.</p>
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="fnddd"><span class="brackets">1</span><span class="fn-backref">(<a href="#id8">1</a>,<a href="#id9">2</a>,<a href="#id10">3</a>,<a href="#id13">4</a>,<a href="#id109">5</a>)</span></dt>
+<dd><p>«Domain-Driven Design: Tackling Complexity in the Heart of Software» by Eric Evans</p>
+</dd>
+<dt class="label" id="fndddr"><span class="brackets">2</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id3">2</a>,<a href="#id4">3</a>,<a href="#id60">4</a>,<a href="#id74">5</a>)</span></dt>
+<dd><p>«<a class="reference external" href="https://domainlanguage.com/ddd/reference/">Domain-Driven Design Reference</a>» by Eric Evans</p>
+</dd>
+<dt class="label" id="fniddd"><span class="brackets">3</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id7">2</a>,<a href="#id11">3</a>,<a href="#id12">4</a>,<a href="#id16">5</a>,<a href="#id17">6</a>,<a href="#id20">7</a>,<a href="#id21">8</a>,<a href="#id24">9</a>,<a href="#id46">10</a>,<a href="#id62">11</a>,<a href="#id63">12</a>,<a href="#id64">13</a>,<a href="#id65">14</a>,<a href="#id66">15</a>,<a href="#id67">16</a>,<a href="#id72">17</a>,<a href="#id83">18</a>,<a href="#id90">19</a>,<a href="#id110">20</a>)</span></dt>
+<dd><p>«<a class="reference external" href="https://kalele.io/books/">Implementing Domain-Driven Design</a>» by Vaughn Vernon</p>
+</dd>
+<dt class="label" id="fndddd"><span class="brackets">4</span><span class="fn-backref">(<a href="#id19">1</a>,<a href="#id22">2</a>,<a href="#id45">3</a>,<a href="#id47">4</a>,<a href="#id71">5</a>,<a href="#id75">6</a>,<a href="#id76">7</a>,<a href="#id94">8</a>)</span></dt>
+<dd><p>«<a class="reference external" href="https://kalele.io/books/">Domain-Driven Design Distilled</a>» by Vaughn Vernon</p>
+</dd>
+<dt class="label" id="fnrmp"><span class="brackets">5</span><span class="fn-backref">(<a href="#id92">1</a>,<a href="#id95">2</a>,<a href="#id96">3</a>,<a href="#id97">4</a>)</span></dt>
+<dd><p>«<a class="reference external" href="https://kalele.io/books/">Reactive Messaging Patterns with the Actor Model: Applications and Integration in Scala and Akka</a>» by Vaughn Vernon</p>
+</dd>
+<dt class="label" id="fnpppddd"><span class="brackets">6</span><span class="fn-backref">(<a href="#id23">1</a>,<a href="#id30">2</a>,<a href="#id55">3</a>,<a href="#id56">4</a>,<a href="#id78">5</a>)</span></dt>
+<dd><p>«Patterns, Principles, and Practices of Domain-Driven Design» by Scott Millett, Nick Tune</p>
+</dd>
+<dt class="label" id="fnnetms"><span class="brackets">7</span><span class="fn-backref">(<a href="#id6">1</a>,<a href="#id26">2</a>,<a href="#id27">3</a>,<a href="#id28">4</a>,<a href="#id29">5</a>,<a href="#id31">6</a>,<a href="#id44">7</a>,<a href="#id48">8</a>,<a href="#id58">9</a>,<a href="#id59">10</a>,<a href="#id77">11</a>,<a href="#id88">12</a>)</span></dt>
+<dd><p>«<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/index">.NET Microservices: Architecture for Containerized .NET Applications</a>» edition v2.2.1 (<a class="reference external" href="https://aka.ms/microservicesebook">mirror</a>) by Cesar de la Torre, Bill Wagner, Mike Rousos</p>
+</dd>
+<dt class="label" id="fncqrsj"><span class="brackets">8</span><span class="fn-backref">(<a href="#id99">1</a>,<a href="#id100">2</a>)</span></dt>
+<dd><p>«<a class="reference external" href="https://docs.microsoft.com/en-US/previous-versions/msp-n-p/jj554200(v=pandp.10)">CQRS Journey</a>» by Dominic Betts, Julián Domínguez, Grigori Melnik, Fernando Simonazzi, Mani Subramanian</p>
+</dd>
+<dt class="label" id="fnoosc"><span class="brackets">9</span><span class="fn-backref">(<a href="#id81">1</a>,<a href="#id82">2</a>,<a href="#id84">3</a>,<a href="#id85">4</a>,<a href="#id86">5</a>,<a href="#id87">6</a>)</span></dt>
+<dd><p>«Object-Oriented Software Construction» 2nd edition by Bertrand Meyer</p>
+</dd>
+<dt class="label" id="fnpoeaa"><span class="brackets">10</span><span class="fn-backref">(<a href="#id14">1</a>,<a href="#id105">2</a>,<a href="#id106">3</a>,<a href="#id107">4</a>)</span></dt>
+<dd><p>«<a class="reference external" href="https://www.martinfowler.com/books/eaa.html">Patterns of Enterprise Application Architecture</a>» by Martin Fowler, David Rice, Matthew Foemmel, Edward Hieatt, Robert Mee, Randy Stafford</p>
+</dd>
+<dt class="label" id="fneip"><span class="brackets">11</span><span class="fn-backref">(<a href="#id91">1</a>,<a href="#id93">2</a>,<a href="#id98">3</a>)</span></dt>
+<dd><p>«<a class="reference external" href="https://www.enterpriseintegrationpatterns.com/">Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions</a>» by Gregor Hohpe, Bobby Woolf</p>
+</dd>
+<dt class="label" id="fnddia"><span class="brackets"><a class="fn-backref" href="#id102">12</a></span></dt>
+<dd><p>«<a class="reference external" href="https://dataintensive.net/">Designing Data-Intensive Applications. The Big Ideas Behind Reliable, Scalable, and Maintainable Systems</a>» by Martin Kleppmann</p>
+</dd>
+<dt class="label" id="fndre"><span class="brackets"><a class="fn-backref" href="#id103">13</a></span></dt>
+<dd><p>«Database Reliability Engineering. Designing and Operating Resilient Database Systems.» by Laine Campbell and Charity Majors</p>
+</dd>
+<dt class="label" id="fnmsp"><span class="brackets">14</span><span class="fn-backref">(<a href="#id89">1</a>,<a href="#id101">2</a>)</span></dt>
+<dd><p>«<a class="reference external" href="https://www.manning.com/books/microservice-patterns">Microservices Patterns: With examples in Java</a>» 1st edition by Chris Richardson (<a class="reference external" href="https://microservices.io/book">more info</a>)</p>
+</dd>
+<dt class="label" id="fnkgde1"><span class="brackets">15</span><span class="fn-backref">(<a href="#id35">1</a>,<a href="#id36">2</a>,<a href="#id50">3</a>,<a href="#id51">4</a>,<a href="#id68">5</a>)</span></dt>
+<dd><p>«<a class="reference external" href="http://www.kamilgrzybek.com/design/how-to-publish-and-handle-domain-events/">How to publish and handle Domain Events</a>» by Kamil Grzybek</p>
+</dd>
+<dt class="label" id="fnkgde2"><span class="brackets">16</span><span class="fn-backref">(<a href="#id37">1</a>,<a href="#id38">2</a>,<a href="#id49">3</a>,<a href="#id52">4</a>,<a href="#id53">5</a>,<a href="#id54">6</a>)</span></dt>
+<dd><p>«<a class="reference external" href="http://www.kamilgrzybek.com/design/handling-domain-events-missing-part/">Handling Domain Events: Missing Part</a>» by Kamil Grzybek</p>
+</dd>
+<dt class="label" id="fnkgoutbox"><span class="brackets">17</span></dt>
+<dd><p>«<a class="reference external" href="https://www.kamilgrzybek.com/design/the-outbox-pattern/">The Outbox Pattern</a> by Kamil Grzybek</p>
+</dd>
+<dt class="label" id="fnjbde1"><span class="brackets">18</span><span class="fn-backref">(<a href="#id32">1</a>,<a href="#id33">2</a>)</span></dt>
+<dd><p>«<a class="reference external" href="https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/">Strengthening your domain: Domain Events</a>» by Jimmy Bogard</p>
+</dd>
+<dt class="label" id="fnjbde2"><span class="brackets"><a class="fn-backref" href="#id34">19</a></span></dt>
+<dd><p>«<a class="reference external" href="https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/">A better domain events pattern</a>» by Jimmy Bogard</p>
+</dd>
+<dt class="label" id="fnudde1"><span class="brackets">20</span></dt>
+<dd><p>«<a class="reference external" href="http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/">How to create fully encapsulated Domain Models</a>» by Udi Dahan</p>
+</dd>
+<dt class="label" id="fnudde2"><span class="brackets">21</span></dt>
+<dd><p>«<a class="reference external" href="http://udidahan.com/2008/08/25/domain-events-take-2/">Domain Events – Take 2</a>» by Udi Dahan</p>
+</dd>
+<dt class="label" id="fnudde3"><span class="brackets">22</span><span class="fn-backref">(<a href="#id39">1</a>,<a href="#id40">2</a>,<a href="#id41">3</a>,<a href="#id42">4</a>,<a href="#id69">5</a>)</span></dt>
+<dd><p>«<a class="reference external" href="http://udidahan.com/2009/06/14/domain-events-salvation/">Domain Events – Salvation</a>» by Udi Dahan</p>
+</dd>
+<dt class="label" id="fncdltdevie"><span class="brackets">23</span><span class="fn-backref">(<a href="#id43">1</a>,<a href="#id57">2</a>)</span></dt>
+<dd><p>«<a class="reference external" href="https://devblogs.microsoft.com/cesardelatorre/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/">Domain Events vs. Integration Events in Domain-Driven Design and microservices architectures</a>» by Cesar De la Torre, Principal Program Manager, .NET</p>
+</dd>
+<dt class="label" id="fnntuhbr"><span class="brackets">24</span></dt>
+<dd><p>«<a class="reference external" href="https://medium.com/nick-tune-tech-strategy-blog/uncovering-hidden-business-rules-with-ddd-aggregates-67fb02abc4b">Uncovering Hidden Business Rules with DDD Aggregates</a> by Nick Tune</p>
+</dd>
+<dt class="label" id="fnmvpe"><span class="brackets"><a class="fn-backref" href="#id61">25</a></span></dt>
+<dd><p>«<a class="reference external" href="https://verraes.net/2019/05/patterns-for-decoupling-distsys-explicit-public-events/">Patterns for Decoupling in Distributed Systems: Explicit Public Events</a>» by Mathias Verraes</p>
+</dd>
+<dt class="label" id="fngycqrs"><span class="brackets"><a class="fn-backref" href="#id80">26</a></span></dt>
+<dd><p>«<a class="reference external" href="http://codebetter.com/gregyoung/2010/02/16/cqrs-task-based-uis-event-sourcing-agh/">CQRS, Task Based UIs, Event Sourcing agh!</a>» by Greg Young</p>
+</dd>
+<dt class="label" id="fnvkdesars"><span class="brackets">27</span></dt>
+<dd><p>«<a class="reference external" href="https://enterprisecraftsmanship.com/posts/domain-events-simple-reliable-solution/">Domain events: simple and reliable solution</a>» by Vladimir Khorikov</p>
+</dd>
+<dt class="label" id="fnvkmdebd"><span class="brackets">28</span></dt>
+<dd><p>«<a class="reference external" href="https://enterprisecraftsmanship.com/posts/merging-domain-events-dispatching/">Merging domain events before dispatching</a>» by Vladimir Khorikov</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../../index.html">System Architecture</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Общее пространство:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../../trunk/it/index.html">IT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../../trunk/index.html">Общее пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Авторские пространства:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Emacsway’s public space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../ivan.ivanov/index.html">Ivan Ivanov’s public space</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Приватное пространствo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../private/index.html">Private space</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Прочее:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../README.html">Как пользоваться</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../../../trunk/it/index.html">IT</a><ul>
+  <li><a href="../../../../../../trunk/it/ddd/index.html">IT</a><ul>
+  <li><a href="../../../../../../trunk/it/ddd/tactical-design/index.html">Tactical design</a><ul>
+  <li><a href="../../../../../../trunk/it/ddd/tactical-design/domain-model/index.html">Domain Model</a><ul>
+  <li><a href="../../../../../../trunk/it/ddd/tactical-design/domain-model/domain-events/index.html">Domain Events</a><ul>
+      <li>Previous: <a href="../../../../../../trunk/it/ddd/tactical-design/domain-model/domain-events/index.html" title="предыдущая глава">Domain Events</a></li>
+      <li>Next: <a href="../../../../../../trunk/soft-skills/index.html" title="следующая глава">Soft Skills</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Your Full Name.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../../../_sources/emacsway/it/ddd/tactical-design/domain-model/domain-events/domain-events-in-ddd.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
