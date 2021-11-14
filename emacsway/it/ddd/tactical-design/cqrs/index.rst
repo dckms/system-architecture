@@ -1,10 +1,10 @@
-==
-IT
-==
+====
+CQRS
+====
 
 .. toctree::
    :maxdepth: 1
    :caption: Оглавление:
    :glob:
 
-   */index
+   *
