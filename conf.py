@@ -69,6 +69,8 @@ html_static_path = ['_static']
 
 html_extra_path = ['_html_extra', ]
 
+html_baseurl = 'https://dckms.github.io/system-architecture'
+
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
 # language = 'ru'
