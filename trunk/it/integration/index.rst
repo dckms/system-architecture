@@ -1,5 +1,5 @@
 ===========
-Soft Skills
+Integration
 ===========
 
 .. toctree::
@@ -7,4 +7,4 @@ Soft Skills
    :caption: Оглавление:
    :glob:
 
-   *
+   */index

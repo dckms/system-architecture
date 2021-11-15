@@ -1,6 +1,6 @@
-===========
-Soft Skills
-===========
+==========================
+Asynchronous communication
+==========================
 
 .. toctree::
    :maxdepth: 1
