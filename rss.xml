@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0"><channel><title>System Architecture</title><link>https://dckms.github.io/system-architecture</link><description /><language>ru</language><copyright>2021, Your Full Name</copyright><item><title>Может ли CQRS-команда возвращать результат?</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/tactical-design/cqrs/cqrs-command-and-result.html</link><description>
+<rss version="2.0"><channel><title>System Architecture</title><link>https://dckms.github.io/system-architecture</link><description /><language>ru</language><copyright>2021, @dckms</copyright><item><title>Может ли CQRS-команда возвращать результат?</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/tactical-design/cqrs/cqrs-command-and-result.html</link><description>
 &lt;span id="index-0"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Данная статья представляет собой компиляцию &lt;a class="reference external" href="https://t.me/emacsway_log/276"&gt;сообщений&lt;/a&gt; с Telegram-channel &lt;a class="reference external" href="https://t.me/emacsway_log"&gt;@emacsway_log&lt;/a&gt;, и посвящена довольно дискуссионному вопросу о том, может ли CQRS-команда возвращать результат.&lt;/p&gt;
