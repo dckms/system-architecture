@@ -12,14 +12,15 @@
 #
 import os
 # import sys
+import datetime
 # sys.path.insert(0, os.path.abspath('.'))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # -- Project information -----------------------------------------------------
 
 project = 'System Architecture'
-copyright = '2021, Your Full Name'
-author = 'Your Full Name'
+copyright = '{}, @dckms'.format(datetime.datetime.now().strftime('%Y'))
+author = '@dckms'
 
 
 # -- General configuration ---------------------------------------------------
@@ -70,6 +71,17 @@ html_static_path = ['_static']
 html_extra_path = ['_html_extra', ]
 
 html_baseurl = 'https://dckms.github.io/system-architecture'
+
+html_theme_options = {
+    'github_banner': True,
+    'github_button': True,
+    'github_user': "dckms",
+    'github_repo': "system-architecture",
+    'show_related': True,
+    'show_relbars': True,
+    'show_powered_by': True,
+    'description': "Distributed Collaborative Knowledge Management System for System Architecture",
+}
 
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.

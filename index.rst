@@ -45,6 +45,10 @@ System Architecture
 Indices and tables
 ==================
 
+* `RSS feed <./rss.xml>`__
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
+* `Canonical Home Page <https://dckms.github.io/system-architecture/>`__
+
+.. * :ref:`modindex`
+
