@@ -75,6 +75,8 @@ html_baseurl = 'https://dckms.github.io/system-architecture'
 html_theme_options = {
     'github_banner': True,
     'github_button': True,
+    'github_type': "star",
+    'github_count': True,
     'github_user': "dckms",
     'github_repo': "system-architecture",
     'show_related': True,
