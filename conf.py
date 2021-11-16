@@ -12,13 +12,14 @@
 #
 import os
 # import sys
+import datetime
 # sys.path.insert(0, os.path.abspath('.'))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Distributed Collaborative Knowledge Management System'
-copyright = '2021, Your Full Name'
+project = 'DCKMS'
+copyright = '{}, Your Full Name'.format(datetime.datetime.now().strftime('%Y'))
 author = 'Your Full Name'
 
 
@@ -68,6 +69,13 @@ html_theme = 'alabaster'
 html_static_path = ['_static']
 
 html_extra_path = ['_html_extra', ]
+
+html_theme_options = {
+    'show_related': True,
+    'show_relbars': True,
+    'show_powered_by': True,
+    'description': "Distributed Collaborative Knowledge Management System",
+}
 
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
