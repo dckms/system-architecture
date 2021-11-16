@@ -41,7 +41,6 @@ System Architecture
    *
 
 
-
 Indices and tables
 ==================
 
@@ -51,4 +50,3 @@ Indices and tables
 * `Canonical Home Page <https://dckms.github.io/system-architecture/>`__
 
 .. * :ref:`modindex`
-
