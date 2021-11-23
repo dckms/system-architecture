@@ -7,4 +7,4 @@ Soft Skills
    :caption: Оглавление:
    :glob:
 
-   /emacsway/soft-skills/cognitive-biases.rst
+   /emacsway/soft-skills/cognitive-biases
