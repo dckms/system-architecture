@@ -7,4 +7,4 @@
    :caption: Оглавление:
    :glob:
 
-   *
+   /emacsway/it/self-learning/self-learning-for-software-engineer

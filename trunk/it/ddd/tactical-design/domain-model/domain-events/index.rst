@@ -7,4 +7,4 @@ Domain Events
    :caption: Оглавление:
    :glob:
 
-   /emacsway/it/ddd/tactical-design/domain-model/domain-events/domain-events-in-ddd.rst
+   /emacsway/it/ddd/tactical-design/domain-model/domain-events/domain-events-in-ddd
