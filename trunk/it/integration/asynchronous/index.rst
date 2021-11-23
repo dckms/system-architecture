@@ -7,4 +7,4 @@ Asynchronous communication
    :caption: Оглавление:
    :glob:
 
-   /emacsway/it/integration/asynchronous/message-ordering-in-competing-consumers.rst
+   /emacsway/it/integration/asynchronous/message-ordering-in-competing-consumers

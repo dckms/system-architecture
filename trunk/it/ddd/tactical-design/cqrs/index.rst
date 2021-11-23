@@ -7,4 +7,4 @@ CQRS
    :caption: Оглавление:
    :glob:
 
-   /emacsway/it/ddd/tactical-design/cqrs/cqrs-command-and-result.rst
+   /emacsway/it/ddd/tactical-design/cqrs/cqrs-command-and-result
