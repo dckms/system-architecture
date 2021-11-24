@@ -8,3 +8,4 @@ Soft Skills
    :glob:
 
    /emacsway/soft-skills/cognitive-biases
+   /emacsway/soft-skills/how-to-provide-changes
