@@ -1,4 +1,4 @@
-.. index:: Cognitive Bias
+.. index:: Cognitive Bias, Soft Skills
 
 ===============================
 Список психологических эффектов
@@ -78,3 +78,4 @@
 
 - "`Soft Skills Pro <https://youtube.com/channel/UCSN7G8syJUaRiXrw1l0qk_g>`__"
 
+Источник: https://t.me/emacsway_log/537
