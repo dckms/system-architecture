@@ -1,5 +1,8 @@
 .. index:: Cognitive Bias, Soft Skills
 
+.. index::
+   single: Change-making; in psychology
+
 =======================================
 Как осуществлять изменения в коллективе
 =======================================
@@ -67,5 +70,9 @@
 
 Отличная книга по теме:
 - "Social psychology" 13th edition by David G. Myers. Перевод: "Социальная психология" / Майерс Д. Пер. с англ. З. Замчук; Зав. ред. кол. Л. Винокуров. — 7-е изд. — СПб.: Питер, 2006.
+
+.. seealso::
+
+   - ":doc:`./icebreaker-principle`"
 
 Источник: https://t.me/emacsway_log/621
