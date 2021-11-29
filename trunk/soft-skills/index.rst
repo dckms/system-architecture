@@ -8,6 +8,6 @@ Soft Skills
    :glob:
 
    /emacsway/soft-skills/cognitive-biases
-   /emacsway/soft-skills/how-to-provide-changes
+   /emacsway/soft-skills/change-making
    /emacsway/soft-skills/icebreaker-principle
    /emacsway/soft-skills/planning-in-psychology.rst

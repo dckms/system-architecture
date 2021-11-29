@@ -6,7 +6,7 @@
 
 .. sectionauthor:: Ivan Zakrevsky
 
-В статье ":doc:`./how-to-provide-changes`" говорилось о том, что, изменяя процессы коллектива, важно выбрать такую область воздействия, в которой потребность изменений будет превосходить силу сопротивления.
+В статье ":doc:`./change-making`" говорилось о том, что, изменяя процессы коллектива, важно выбрать такую область воздействия, в которой потребность изменений будет превосходить силу сопротивления.
 
 На этот счет существует интересная аналогия.
 Знаете, почему ледокол рубит лед, а обычный корабль нет?
@@ -44,9 +44,9 @@
 В программировании
 ------------------
 
-     "Software design is a constant battle with complexity."
+    "Software design is a constant battle with complexity."
 
-    -- Eric Evans, "Domain-Driven Design: Tackling Complexity in the Heart of Software"
+    -- "Domain-Driven Design: Tackling Complexity in the Heart of Software" by Eric Evans
 
 В алгоритмах группы "Divide-and-conquer" действует тот же принцип, который известен по названием "Разделяй и властвуй".
 Властвуй - значит обладай превосходством, откуда происходят такие воинские термины как "господствующая высота", "господство в воздухе" и т.д.
@@ -69,6 +69,61 @@ Grady Booch говорил, что архитектура - это многоу�
     In software design, separating what operations do from how they do it is known as abstraction.
 
     -- "Algorithms Unlocked" 3d edition by Thomas H. Cormen
+
+Ну и как же здесь не вспомнить Steve McConnell:
+
+    Managing complexity is the most important technical topic in software development. In my view, it's so important that Software's Primary Technical Imperative has to be managing complexity.
+
+    -- "Code Complete" by Steve McConnell
+
+..
+
+    "Dijkstra pointed out that no one's skull is really big enough to contain a modern
+    computer program (Dijkstra 1972), which means that we as software developers
+    shouldn't try to cram whole programs into our skulls at once; we should try to organize
+    our programs in such a way that we can safely focus on one part of it at a time. The goal
+    is to minimize the amount of a program you have to think about at any one time. You
+    might think of this as mental juggling—the more mental balls the program requires you
+    to keep in the air at once, the more likely you'll drop one of the balls, leading to a design
+    or coding error.
+
+    At the software-architecture level, the complexity of a problem is reduced by dividing
+    the system into subsystems. Humans have an easier time comprehending several simple
+    pieces of information than one complicated piece. The goal of all software-design
+    techniques is to break a complicated problem into simple pieces. The more independent
+    the subsystems are, the more you make it safe to focus on one bit of complexity at a
+    time. Carefully defined objects separate concerns so that you can focus on one thing at a
+    time. Packages provide the same benefit at a higher level of aggregation.
+
+    Keeping routines short helps reduce your mental workload. Writing programs in terms
+    of the problem domain, rather than in terms of low-level implementation details, and
+    working at the highest level of abstraction reduce the load on your brain.
+
+    The bottom line is that programmers who compensate for inherent human limitations
+    write code that's easier for themselves and others to understand and that has fewer
+    errors."
+
+    -- "Code Complete" by Steve McConnell
+
+..
+
+    Software's Primary Technical Imperative is managing complexity. This is greatly
+    aided by a design focus on simplicity.
+    Simplicity is achieved in two general ways: minimizing the amount of essential
+    complexity that anyone's brain has to deal with at any one time, and keeping
+    accidental complexity from proliferating needlessly.
+
+    -- "Code Complete" by Steve McConnell
+
+..
+
+    The number
+    "7±2" has been found to be a number of discrete items a person can remember while
+    performing other tasks (Miller 1956). If a class contains more than about seven data
+    members, consider whether the class should be decomposed into multiple smaller
+    classes (Riel 1996).
+
+    -- "Code Complete" by Steve McConnell
 
 
 В борьбе
@@ -124,7 +179,7 @@ Grady Booch говорил, что архитектура - это многоу�
 В управленческой психологии
 ---------------------------
 
-А изменяя процессы коллектива важно выбрать такую область воздействия, в которой потребность изменений будет превосходить силу сопротивления, см. ":doc:`./how-to-provide-changes`".
+Изменяя процессы коллектива важно выбрать такую область воздействия, в которой потребность изменений будет превосходить силу сопротивления, см. ":doc:`./change-making`".
 
 
 В психологии
@@ -135,9 +190,18 @@ Grady Booch говорил, что архитектура - это многоу�
 См. также ":doc:`./planning-in-psychology`".
 
 
+В природе
+---------
+
+Вода камень точит.
+Видели как море режет скалы?
+Обязательно посмотрите - вдохновляет.
+Стекающие капельки воды прорезают в камне бороздки и углубляют их до тех пор, пока глыба не обрушится.
+Капля против скалы!
+
 .. seealso::
 
-   - :doc:`./how-to-provide-changes`
+   - :doc:`./change-making`
    - :doc:`./planning-in-psychology`
 
 Источник: https://t.me/emacsway_log/665
