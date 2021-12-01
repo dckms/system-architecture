@@ -881,6 +881,7 @@ Code Smell catalogs
 - `Solution Architecture links, articles, books, video lessons, etc. <https://github.com/unlight/solution-architecture>`__
 - `Awesome Algorithms <https://github.com/tayllan/awesome-algorithms>`__
 - `Awesome Algorithms Education <https://github.com/gaerae/awesome-algorithms-education>`__
+- `The System Design Primer <https://github.com/donnemartin/system-design-primer>`__ - Learn how to design large-scale systems. Prep for the system design interview.
 - `List of awesome university courses for learning Computer Science <https://github.com/prakhar1989/awesome-courses>`__
 - `MAXimal :: bookz - электронные версии различных книг по алгоритмам <http://e-maxx.ru/bookz/>`__
 - `Programming and design learning resources by Kamil Grzybek <http://www.kamilgrzybek.com/programming-and-design-resources/>`__
