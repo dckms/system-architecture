@@ -1,4 +1,4 @@
-.. index:: Literature, Self-education, Литература, Самообучение
+.. index:: Literature, Self-education
 
 ========================================================================
 Список литературы для самообучения разработчика программного обеспечения
@@ -16,7 +16,7 @@
 ===========
 
 Классическая ошибка новичков - жажда к знаниям, нетерпеливость.
-Обычно это приводит к тому, что, в погоне за количеством, они надрываются (объем знаний, который предстоит освоить, действительно, огромный), осознают невыполнимость желаемого, впадают в депрессию, а затем и в состояние `психологической защиты <https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%89%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC>`__ (мол, "академичность" неуместна на практике), и прекращают развиваться.
+Обычно это приводит к тому, что, в погоне за количеством, они :doc:`надрываются </emacsway/soft-skills/planning-in-psychology>` (объем знаний, который предстоит освоить, действительно, огромный), осознают невыполнимость желаемого, впадают в депрессию, а затем и в состояние `психологической защиты <https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%89%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC>`__ (мол, "академичность" неуместна на практике), и прекращают развиваться.
 Решается эта проблема очень просто - жажда должна быть не к знаниям, а к дисциплине.
 А уж дисциплина обязательно приведет к обретению знаний.
 Дисциплина - это, своего рода, производная знаний.
@@ -881,6 +881,7 @@ Code Smell catalogs
 - `Solution Architecture links, articles, books, video lessons, etc. <https://github.com/unlight/solution-architecture>`__
 - `Awesome Algorithms <https://github.com/tayllan/awesome-algorithms>`__
 - `Awesome Algorithms Education <https://github.com/gaerae/awesome-algorithms-education>`__
+- `The System Design Primer <https://github.com/donnemartin/system-design-primer>`__ - Learn how to design large-scale systems. Prep for the system design interview.
 - `List of awesome university courses for learning Computer Science <https://github.com/prakhar1989/awesome-courses>`__
 - `MAXimal :: bookz - электронные версии различных книг по алгоритмам <http://e-maxx.ru/bookz/>`__
 - `Programming and design learning resources by Kamil Grzybek <http://www.kamilgrzybek.com/programming-and-design-resources/>`__
