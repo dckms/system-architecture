@@ -6,8 +6,6 @@ Systems Development Life Cycle (SDLC)
 
 .. sectionauthor:: Ivan Zakrevsky
 
-Данная статья представляет собой компиляцию сообщений с Telegram-channel `@emacsway_log <https://t.me/emacsway_log>`__, и посвящена вопросу выбора и реализации процессов Systems Development Life Cycle (SDLC).
-
 Grady Booch выделяет два ключевых критерия, которые определяют успех или неудачу проекта:
 
     📝 "Traits of Successful Projects 
