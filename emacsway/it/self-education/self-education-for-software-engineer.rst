@@ -945,6 +945,7 @@ Code Smell catalogs
 - "`dotnet-sample <https://github.com/Eventuous/dotnet-sample>`__" - Sample application using Eventuous .NET by Alexey Zimarev
 - `Extended code samples related to the book "Domain Modeling Made Functional" <https://github.com/swlaschin/DomainModelingMadeFunctional>`__ by Scott Wlaschin
 - `Railway-Oriented-Programming-Example <https://github.com/swlaschin/Railway-Oriented-Programming-Example>`__ by Scott Wlaschin
+- `Order Taking Service <https://github.com/andorp/order-taking>`__ - Idris version of Domain Modeling Made Functional Book.
 - `DDD with Actors <https://github.com/VaughnVernon/DDDwithActors>`__ by Vaughn Vernon
 - `The examples for the book "Reactive Messaging Patterns with the Actor Model" <https://github.com/VaughnVernon/ReactiveMessagingPatterns_ActorModel>`__ by Vaughn Vernon
 - `A Stock Trader system to demonstrate reactive systems development <https://github.com/VaughnVernon/reactive-stock-trader>`__ (`source <https://github.com/RedElastic/reactive-stock-trader>`__ by RedElastic)
