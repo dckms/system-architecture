@@ -418,7 +418,7 @@ Others:
 - "Domain-Driven Design Distilled" by Vaughn Vernon, chapter "Chapter 7 Acceleration and Management Tools :: Event Storming"
 - "`What is Domain-Driven Design? <https://www.oreilly.com/library/view/what-is-domain-driven/9781492057802/>`__" by Vladik Khononov, chapter "Chapter 8: Event Storming"
 - "`EventStorming Glossary & Cheat sheet <https://ddd-crew.github.io/eventstorming-glossary-cheat-sheet/>`__" by Nick Tune
-- "Open Agile Architecture", chapter "`19. Event Storming <https://ddd-crew.github.io/eventstorming-glossary-cheat-sheet/>`__"
+- "Open Agile Architecture", chapter "`19. Event Storming <https://pubs.opengroup.org/architecture/o-aa-standard/>`__"
 - "`Event Storming на практических кейсах <http://agilemindset.ru/event-storming-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85-%D0%BA%D0%B5%D0%B9%D1%81%D0%B0%D1%85/>`__", Сергей Баранов (`видео <https://www.youtube.com/watch?v=kJjuTuviZ-E>`__)
 - "`Reactive in practice, Unit 1: Event storming the stock trader domain <https://developer.ibm.com/tutorials/reactive-in-practice-1/>`__" by Kevin Webber, Dana Harrington
 - "`Event storming at ibm.com <https://www.ibm.com/cloud/architecture/architecture/practices/event-storming-methodology-architecture/>`__"
@@ -507,6 +507,7 @@ Scaled Agile
 - "Art of Project Management" by Scott Berkun
 - "Менеджмент: Учебник для вузов." 3-е изд. Глухов В. В.
 - "Оргуправленческое мышление. Идеология, методология, технология" / Щедровицкий Георгий Петрович
+- "`Managing Digital Concepts and Practices <https://publications.opengroup.org/g183>`__"
 
 
 Развитие личностных профессиональных качеств
@@ -738,12 +739,29 @@ Donald E. Knuth:
 - "`ISO/IEC/IEEE 42030:2019 Software, systems and enterprise — Architecture evaluation framework <https://www.iso.org/standard/73436.html>`__"
 - `ГОСТ Р 57100-2016 Системная и программная инженерия. Описание архитектуры <https://allgosts.ru/35/080/gost_r_57100-2016>`__
 
+Рейтинг инструментов для упраления требованиями/архитектурой/SDLC/etc. от Gartner по категориям: "`Reviews Organized by Markets <https://www.gartner.com/reviews/markets>`__.
+
 
 Аналитика
 ---------
 
 - "Software Requirements (Developer Best Practices)" 3rd Edition by Karl Wiegers
 - "INCOSE Guide for Writing Requirements" by INCOSE
+- "`Systems engineering handbook. A guide for System Life Cycle Processes and activities. <https://www.incose.org/products-and-publications/se-handbook>`__" by INCOSE
+- "Managing Software Requirements: A Unified Approach" 1st edition by Dean Leffingwell, Don Widrig
+- "Managing Software Requirements (paperback): A Use Case Approach" 2d Edition by Dean Leffingwell, Don Widrig
+- "Requirements Engineering Fundamentals: A Study Guide for the Certified Professional for Requirements Engineering Exam - Foundation Level - IREB compliant" 2nd Edition by Klaus Pohl, Chris Rupp
+
+- "`A Guide to the Business Analysis Body of Knowledge (BABOK®) <https://www.iiba.org/career-resources/a-business-analysis-professionals-foundation-for-success/babok/>`__"
+- "`Guide to the Systems Engineering Body of Knowledge (SEBoK) <https://www.sebokwiki.org/wiki/Download_SEBoK_PDF>`__"
+
+- "`Library of IREB artifacts <https://www.ireb.org/en/downloads/tag:handbook>`__"
+- "`Handbook for the CPRE Foundation Level according to the IREB Standard Education and Training for Certified Professional for Requirements Engineering (CPRE) Foundation Level <https://www.ireb.org/content/downloads/5-cpre-foundation-level-handbook/cpre_foundationlevel_handbook_en_v1.0.pdf>`__" Version 1.0.0
+- "`Handbook of Advanced Level Elicitation according to the IREB Standard Education and Training for IREB Certified Professional for Requirements Engineering Advanced Level Advanced Level Elicitation <https://www.ireb.org/content/downloads/13-cpre-advanced-level-elicitation-handbook/advanced_level_elicitation_handbook_en.pdf>`__" Version 1.0.3
+- "`Requirements Management according to the IREB Standard Education and Training for the IREB Certified Professional for Requirements Engineering Qualification Advanced Level Requirements Management <https://www.ireb.org/content/downloads/16-cpre-advanced-level-requirements-management-handbook/ireb-cpre-handbook-for-requirements-management-advanced-level-en-v1.1.pdf>`__" Version 1.1.0
+- "`Handbook of Requirements Modeling According to the IREB Standard Education and Training for IREB Certified Professional for Requirements Engineering Advanced Level Requirements Modeling <https://www.ireb.org/content/downloads/19-handbook-cpre-advanced-level-requirements-modeling/ireb_cpre_handbook_requirements-modeling_advanced-level-v1.3.pdf>`__" Version 1.3
+- "`A Glossary of Requirements Engineering Terminology <https://www.ireb.org/content/downloads/1-cpre-glossary/ireb_cpre_glossary_17.pdf>`__" Version 1.7
+- "`A  Glossary  of Requirements Engineering Terminology Caution: This glossary is aligned to the CPRE Foundation Level syllabus 3.0 only! <https://www.ireb.org/content/downloads/2-cpre-glossary-2-0/ireb_cpre_glossary_en_2.0.pdf>`__" Version 2.0.0
 
 
 Аналитика в Agile:
@@ -751,6 +769,11 @@ Donald E. Knuth:
 - "Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise" by Dean Leffingwell
 - Whitepaper "`A Lean and Scalable Requirements Information Model for the Agile Enterprise <https://scalingsoftwareagility.files.wordpress.com/2007/03/a-lean-and-scalable-requirements-information-model-for-agile-enterprises-pdf.pdf>`__" by Dean Leffingwell with Juha‐Markus Aalto
 - "`An Agile Architectural Epic Kanban System: Part 2 – The Model <https://scalingsoftwareagility.wordpress.com/2010/03/05/an-agile-architectural-epic-kanban-system-part-2-%E2%80%93-the-model/>`__" by Dean Leffingwell
+
+- "`Agile Extension to the BABOK® Guide <https://www.iiba.org/career-resources/business-analysis-resources/iiba-bookstore/>`__"
+
+- "`Handbook of RE@Agile According to the IREB Standard Education and Training for IREB Certified Professional for Requirements Engineering Advanced Level RE@Agile <https://www.ireb.org/content/downloads/22-cpre-advanced-level-re-agile-handbook/handbook_cpre_al_re%40agile_en_v1.0.2.pdf>`__" Version 1.0.2
+- "`IREB Certified Professional for Requirements Engineering RE@Agile Glossary <https://www.ireb.org/content/downloads/34-re-agile-glossary/ireb_cpre_re%40agile_glossary_v1.0.5.pdf>`__"
 
 
 Другие подборки литературы по аналитике:
