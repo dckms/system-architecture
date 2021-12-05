@@ -739,7 +739,7 @@ Donald E. Knuth:
 - "`ISO/IEC/IEEE 42030:2019 Software, systems and enterprise — Architecture evaluation framework <https://www.iso.org/standard/73436.html>`__"
 - `ГОСТ Р 57100-2016 Системная и программная инженерия. Описание архитектуры <https://allgosts.ru/35/080/gost_r_57100-2016>`__
 
-Рейтинг инструментов для упраления требованиями/архитектурой/SDLC/etc. от Gartner по категориям: "`Reviews Organized by Markets <https://www.gartner.com/reviews/markets>`__.
+Рейтинг инструментов для упраления требованиями/архитектурой/SDLC/etc. от Gartner по категориям: "`Reviews Organized by Markets <https://www.gartner.com/reviews/markets>`__".
 
 
 Аналитика
