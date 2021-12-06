@@ -694,6 +694,9 @@ Donald E. Knuth:
 - "Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation" by Jez Humble, David Farley
 - "Continuous Integration: Improving Software Quality and Reducing Risk" by Paul M. Duvall, Steve Matyas, Andrew Glover
 
+- "`ISTQB® Related Books <https://www.istqb.org/references/books/istqb-related-books.html>`__"
+- "`Referenced Books in ISTQB® Syllabi <https://www.istqb.org/references/books/referenced-books-in-istqb-syllabi.html>`__"
+
 
 Компиляторы
 -----------
