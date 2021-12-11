@@ -536,6 +536,9 @@ Scaled Agile
 - "`Искусство спора (обучающие материалы) <https://ruxpert.ru/%D0%98%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE_%D1%81%D0%BF%D0%BE%D1%80%D0%B0_(%D0%BE%D0%B1%D1%83%D1%87%D0%B0%D1%8E%D1%89%D0%B8%D0%B5_%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8B)>`__"
 - "`Книги по риторике <https://m.vk.com/wall-56611080_127534>`__"
 
+Простой и доходчивый видеокурс по SoftSkills:
+
+- "`Soft Skills Pro <https://youtube.com/channel/UCSN7G8syJUaRiXrw1l0qk_g>`__"
 
 
 Базы данных
@@ -564,6 +567,20 @@ PostgresPro представил `три книги <https://postgrespro.ru/educ
 
 - `MVCC-1. Изоляция <https://m.habr.com/ru/company/postgrespro/blog/442804/>`__
 - `WAL в PostgreSQL: 1. Буферный кеш <https://m.habr.com/ru/company/postgrespro/blog/458186/>`__
+
+Шпаргалка по выбору типа хранилища данных:
+
+- "`Understand data store models <https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/data-store-comparison>`__"
+- "`Select an Azure data store for your application <https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/data-store-decision-tree>`__"
+
+Jepsen's analysis over two dozen databases, coordination services, and queues—and we’ve found replica divergence, data loss, stale reads, read skew, lock conflicts, and much more:
+
+- "`Analyses <https://jepsen.io/analyses>`__"
+- "`Everything Tagged "Jepsen" <https://aphyr.com/tags/jepsen>`__"
+
+Рейтинг хранилищ данных:
+
+- "`DB-Engines Ranking <https://db-engines.com/en/ranking>`__"
 
 
 Изучаем распределенные системы. Третий заход.
