@@ -50,48 +50,48 @@
           <div class="body" role="main">
             
   <div class="section" id="domain-events-in-ddd">
-<span id="index-0"></span><h1><a class="toc-backref" href="#id115">Domain Events in DDD</a><a class="headerlink" href="#domain-events-in-ddd" title="Ссылка на этот заголовок">¶</a></h1>
+<span id="index-0"></span><h1><a class="toc-backref" href="#id116">Domain Events in DDD</a><a class="headerlink" href="#domain-events-in-ddd" title="Ссылка на этот заголовок">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
 <p>Существует множество спорных точек зрения среди практиков DDD по поводу реализации Domain Events.
 Лучший способ понять суть вещей - это обратиться к первоисточнику, чтобы понять его мотивы и те проблемы, решение которым он стремился найти.</p>
 <div class="contents topic" id="id1">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#domain-events-in-ddd" id="id115">Domain Events in DDD</a></p>
+<li><p><a class="reference internal" href="#domain-events-in-ddd" id="id116">Domain Events in DDD</a></p>
 <ul>
-<li><p><a class="reference internal" href="#domain-event" id="id116">Назначение Domain Event</a></p></li>
-<li><p><a class="reference internal" href="#eventual-consistency-vs-strong-transactional-consistency" id="id117">Eventual Consistency vs Strong (Transactional) Consistency</a></p>
+<li><p><a class="reference internal" href="#domain-event" id="id117">Назначение Domain Event</a></p></li>
+<li><p><a class="reference internal" href="#eventual-consistency-vs-strong-transactional-consistency" id="id118">Eventual Consistency vs Strong (Transactional) Consistency</a></p>
 <ul>
-<li><p><a class="reference internal" href="#eventual-consistency" id="id118">Eventual Consistency - это следствие, а не причина</a></p></li>
-<li><p><a class="reference internal" href="#id15" id="id119">Eventual Consistency предпочтительней</a></p></li>
-<li><p><a class="reference internal" href="#id18" id="id120">Все решают бизнес-правила</a></p></li>
-<li><p><a class="reference internal" href="#ask-whose-job-it-is" id="id121">Принцип «Ask Whose Job It Is»</a></p></li>
-<li><p><a class="reference internal" href="#strong-consistency" id="id122">Strong Consistency - новичкам</a></p></li>
-<li><p><a class="reference internal" href="#performance" id="id123">Интересы performance</a></p></li>
-<li><p><a class="reference internal" href="#id25" id="id124">Обратная совместимость формата объектов событий</a></p></li>
-<li><p><a class="reference internal" href="#net-microservices" id="id125">Рекомендации от «.NET Microservices»</a></p></li>
-<li><p><a class="reference internal" href="#scott-millett-nick-tune" id="id126">Мнение Scott Millett и Nick Tune</a></p></li>
-<li><p><a class="reference internal" href="#jimmy-bogard" id="id127">Мнение Jimmy Bogard</a></p></li>
-<li><p><a class="reference internal" href="#kamil-grzybek" id="id128">Мнение Kamil Grzybek</a></p></li>
-<li><p><a class="reference internal" href="#udi-dahan" id="id129">Мнение Udi Dahan</a></p></li>
-<li><p><a class="reference internal" href="#cesar-de-la-torre" id="id130">Мнение Cesar De la Torre</a></p></li>
+<li><p><a class="reference internal" href="#eventual-consistency" id="id119">Eventual Consistency - это следствие, а не причина</a></p></li>
+<li><p><a class="reference internal" href="#id15" id="id120">Eventual Consistency предпочтительней</a></p></li>
+<li><p><a class="reference internal" href="#id18" id="id121">Все решают бизнес-правила</a></p></li>
+<li><p><a class="reference internal" href="#ask-whose-job-it-is" id="id122">Принцип «Ask Whose Job It Is»</a></p></li>
+<li><p><a class="reference internal" href="#strong-consistency" id="id123">Strong Consistency - новичкам</a></p></li>
+<li><p><a class="reference internal" href="#performance" id="id124">Интересы performance</a></p></li>
+<li><p><a class="reference internal" href="#id25" id="id125">Обратная совместимость формата объектов событий</a></p></li>
+<li><p><a class="reference internal" href="#net-microservices" id="id126">Рекомендации от «.NET Microservices»</a></p></li>
+<li><p><a class="reference internal" href="#scott-millett-nick-tune" id="id127">Мнение Scott Millett и Nick Tune</a></p></li>
+<li><p><a class="reference internal" href="#jimmy-bogard" id="id128">Мнение Jimmy Bogard</a></p></li>
+<li><p><a class="reference internal" href="#kamil-grzybek" id="id129">Мнение Kamil Grzybek</a></p></li>
+<li><p><a class="reference internal" href="#udi-dahan" id="id130">Мнение Udi Dahan</a></p></li>
+<li><p><a class="reference internal" href="#cesar-de-la-torre" id="id131">Мнение Cesar De la Torre</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#in-process-vs-out-of-process" id="id131">In-process vs out-of-process</a></p></li>
-<li><p><a class="reference internal" href="#internal-vs-external" id="id132">Internal vs External</a></p></li>
-<li><p><a class="reference internal" href="#one-phase-vs-two-phase" id="id133">One-phase vs Two-phase</a></p></li>
-<li><p><a class="reference internal" href="#id70" id="id134">Кто может издавать Domain Event?</a></p></li>
-<li><p><a class="reference internal" href="#id73" id="id135">Может ли Domain Event отменить свою причину?</a></p></li>
-<li><p><a class="reference internal" href="#id79" id="id136">Решение - это баланс стоимости и обретаемой выгоды</a></p>
+<li><p><a class="reference internal" href="#in-process-vs-out-of-process" id="id132">In-process vs out-of-process</a></p></li>
+<li><p><a class="reference internal" href="#internal-vs-external" id="id133">Internal vs External</a></p></li>
+<li><p><a class="reference internal" href="#one-phase-vs-two-phase" id="id134">One-phase vs Two-phase</a></p></li>
+<li><p><a class="reference internal" href="#id70" id="id135">Кто может издавать Domain Event?</a></p></li>
+<li><p><a class="reference internal" href="#id73" id="id136">Может ли Domain Event отменить свою причину?</a></p></li>
+<li><p><a class="reference internal" href="#id79" id="id137">Решение - это баланс стоимости и обретаемой выгоды</a></p>
 <ul>
-<li><p><a class="reference internal" href="#cqrs" id="id137">Может ли CQRS-команда возвращать результат?</a></p></li>
+<li><p><a class="reference internal" href="#cqrs" id="id138">Может ли CQRS-команда возвращать результат?</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#atomicity-and-resiliency-of-integration-events" id="id138">Atomicity and Resiliency of Integration Events</a></p></li>
-<li><p><a class="reference internal" href="#integration-events" id="id139">Проблема сохранения очередности Integration Events</a></p></li>
-<li><p><a class="reference internal" href="#id104" id="id140">Где создавать Domain Event об удалении объекта?</a></p></li>
-<li><p><a class="reference internal" href="#id108" id="id141">Почему важно читать оригиналы вместо переводов</a></p></li>
-<li><p><a class="reference internal" href="#id111" id="id142">Послесловие</a></p></li>
+<li><p><a class="reference internal" href="#atomicity-and-resiliency-of-integration-events" id="id139">Atomicity and Resiliency of Integration Events</a></p></li>
+<li><p><a class="reference internal" href="#integration-events" id="id140">Проблема сохранения очередности Integration Events</a></p></li>
+<li><p><a class="reference internal" href="#id104" id="id141">Где создавать Domain Event об удалении объекта?</a></p></li>
+<li><p><a class="reference internal" href="#id108" id="id142">Почему важно читать оригиналы вместо переводов</a></p></li>
+<li><p><a class="reference internal" href="#id111" id="id143">Послесловие</a></p></li>
 </ul>
 </li>
 </ul>
@@ -105,7 +105,7 @@
 Но также буду делать обзор мнений их ключевых последователей - Vaughn Vernon, Jimmy Bogard, Greg Young, Udi Dahan, Kamil Grzybek, Scott Millett, Nick Tune, коллектив авторов руководств Microsoft по архитектуре и др.
 К счастью, при внимательном рассмотрении, противоречий между ними практически нет.</p>
 <div class="section" id="domain-event">
-<h2><a class="toc-backref" href="#id116">Назначение Domain Event</a><a class="headerlink" href="#domain-event" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id117">Назначение Domain Event</a><a class="headerlink" href="#domain-event" title="Ссылка на этот заголовок">¶</a></h2>
 <blockquote>
 <div><p>Something happened that domain experts care about.
 Model information about activity in the domain as a series of discrete events. Represent each event as a domain object.
@@ -115,9 +115,9 @@ A domain event is a full-fledged part of the domain model, a representation of s
 </div></blockquote>
 </div>
 <div class="section" id="eventual-consistency-vs-strong-transactional-consistency">
-<h2><a class="toc-backref" href="#id117">Eventual Consistency vs Strong (Transactional) Consistency</a><a class="headerlink" href="#eventual-consistency-vs-strong-transactional-consistency" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id118">Eventual Consistency vs Strong (Transactional) Consistency</a><a class="headerlink" href="#eventual-consistency-vs-strong-transactional-consistency" title="Ссылка на этот заголовок">¶</a></h2>
 <div class="section" id="eventual-consistency">
-<h3><a class="toc-backref" href="#id118">Eventual Consistency - это следствие, а не причина</a><a class="headerlink" href="#eventual-consistency" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id119">Eventual Consistency - это следствие, а не причина</a><a class="headerlink" href="#eventual-consistency" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>A distinct, though related set of issues arises in distributed systems.
 The state of a distributed system cannot be kept completely consistent at all times.
@@ -232,7 +232,7 @@ By definition locking the root locks all members of the aggregate. The root lock
 <p>Здесь говорится про единицу изменения, про бизнес-транзакцию и блокировку, но о связи бизнес-транзакции с системной транзакцией говорится только то, что «the system transaction in which you commit the business transaction», т.е. границы системной транзакции включают в себя границы бизнес-транзакции, но не ограничиваются ими.</p>
 </div>
 <div class="section" id="id15">
-<h3><a class="toc-backref" href="#id119">Eventual Consistency предпочтительней</a><a class="headerlink" href="#id15" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id120">Eventual Consistency предпочтительней</a><a class="headerlink" href="#id15" title="Ссылка на этот заголовок">¶</a></h3>
 <p>С одной стороны, Vaughn Vernon настоятельно рекомендует использовать Eventual Consistency между Агрегатами.
 И тут же объясняет - агрегаты в высоконагруженных масштабируемых распределенных приложениях, устойчивых к разделению, никогда не бывают доступны и согласованы между собой одновременно.</p>
 <blockquote>
@@ -261,7 +261,7 @@ It addresses the very reason to use Aggregates.</p>
 </div></blockquote>
 </div>
 <div class="section" id="id18">
-<h3><a class="toc-backref" href="#id120">Все решают бизнес-правила</a><a class="headerlink" href="#id18" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id121">Все решают бизнес-правила</a><a class="headerlink" href="#id18" title="Ссылка на этот заголовок">¶</a></h3>
 <p>С другой стороны, все решают бизнес-правила:</p>
 <blockquote>
 <div><p>The main point to remember from this section is that business rules are the drivers for determining what must be whole, complete, and consistent at the end of a single transaction.</p>
@@ -269,7 +269,7 @@ It addresses the very reason to use Aggregates.</p>
 </div></blockquote>
 </div>
 <div class="section" id="ask-whose-job-it-is">
-<h3><a class="toc-backref" href="#id121">Принцип «Ask Whose Job It Is»</a><a class="headerlink" href="#ask-whose-job-it-is" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id122">Принцип «Ask Whose Job It Is»</a><a class="headerlink" href="#ask-whose-job-it-is" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Тем не менее, Vaughn Vernon не считает вопрос Strong (Transactional) Consistency vs Eventual Consistency однозначным, и приводит четыре причины, по которым выбор может отдаваться в пользу Strong (Transactional) Consistency.
 Цитировать все не буду - слишком много текста.
 Кому интересно - глава «Chapter 10 Aggregates :: Rule: Use Eventual Consistency Outside the Boundary :: Ask Whose Job It Is» и далее, вплоть до главы «Gaining Insight through Discovery».
@@ -300,7 +300,7 @@ That understanding is much more valuable than defaulting to a technical leaning.
 <p>Далее, в главе «Chapter 10 Aggregates :: Gaining Insight through Discovery :: Is It the Team Member’s Job?» книги, он демонстрирует применение принципа «Ask Whose Job It Is» на практике.</p>
 </div>
 <div class="section" id="strong-consistency">
-<h3><a class="toc-backref" href="#id122">Strong Consistency - новичкам</a><a class="headerlink" href="#strong-consistency" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id123">Strong Consistency - новичкам</a><a class="headerlink" href="#strong-consistency" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Вот что советует новичкам Vaughn Vernon:</p>
 <blockquote>
 <div><p>There is nothing incredibly difficult about using eventual consistency.
@@ -314,7 +314,7 @@ You might choose to use this approach in cases that you know will succeed but us
 </div></blockquote>
 </div>
 <div class="section" id="performance">
-<h3><a class="toc-backref" href="#id123">Интересы performance</a><a class="headerlink" href="#performance" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id124">Интересы performance</a><a class="headerlink" href="#performance" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Ранее упоминалось, что одной из ключевых причин fine-grained транзакций является performance.
 Но всегда ли?
 На самом деле, все зависит от конкретных условий.
@@ -384,14 +384,14 @@ When examining the use case (or story), ask whether it’s the job of the user e
 </div></blockquote>
 </div>
 <div class="section" id="id25">
-<h3><a class="toc-backref" href="#id124">Обратная совместимость формата объектов событий</a><a class="headerlink" href="#id25" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id125">Обратная совместимость формата объектов событий</a><a class="headerlink" href="#id25" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Другим достоинством Strong Consistency является отсутствие потребности в обеспечении обратной совместимости формата объектов событий, ведь их время жизни ограничено одной транзакцией.
 При использовании же шины сообщений всегда сохраняется вероятность того, что обновленная версия программного обеспечения, после ее развертывания, получит из шины устаревший формат сообщения, отправленный в шину еще предыдущей версией программного обеспечения.
 Кроме того, возникает потребность поддерживать оба формата сообщений для организации <a class="reference external" href="https://thenewstack.io/deployment-strategies/">blue-green deployment</a>.</p>
 <p>Подробнее о версионировании сообщений смотрите в книге «<a class="reference external" href="https://leanpub.com/esversioning">Versioning in an Event Sourced System</a>» by Greg Young («<a class="reference external" href="https://leanpub.com/esversioning/read">читать online</a>», «<a class="reference external" href="https://github.com/luque/Notes--Versioning-Event-Sourced-System">конспект книги</a>»), а так же в главе «<a class="reference external" href="https://docs.microsoft.com/en-us/previous-versions/msp-n-p/jj591577(v=pandp.10)#event-versioning">Event versioning</a> книги «CQRS Journey».</p>
 </div>
 <div class="section" id="net-microservices">
-<h3><a class="toc-backref" href="#id125">Рекомендации от «.NET Microservices»</a><a class="headerlink" href="#net-microservices" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id126">Рекомендации от «.NET Microservices»</a><a class="headerlink" href="#net-microservices" title="Ссылка на этот заголовок">¶</a></h3>
 <p>«.NET Microservices: Architecture for Containerized .NET Applications» <a class="footnote-reference brackets" href="#fnnetms" id="id26">7</a> явно разделяет внутренние Domain Events (для подписчиков внутри Bounded Context) и внешние Integration Events.
 Внутренние Domain Events рекомендуется использовать для синхронизации Агрегатов внутри Bounded Context.</p>
 <blockquote>
@@ -425,7 +425,7 @@ It is also the approach used in the ordering microservice in eShopOnContainers.<
 </div></blockquote>
 </div>
 <div class="section" id="scott-millett-nick-tune">
-<h3><a class="toc-backref" href="#id126">Мнение Scott Millett и Nick Tune</a><a class="headerlink" href="#scott-millett-nick-tune" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id127">Мнение Scott Millett и Nick Tune</a><a class="headerlink" href="#scott-millett-nick-tune" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p><strong>Sometimes it is actually good practice to modify multiple aggregates within a transaction.</strong>
 But it’s important to understand why the guidelines exist in the first place so that you can be aware of the consequences of ignoring them.</p>
@@ -455,7 +455,7 @@ Therefore, the transactional boundary encapsulates creating the new account and 
 </div></blockquote>
 </div>
 <div class="section" id="jimmy-bogard">
-<h3><a class="toc-backref" href="#id127">Мнение Jimmy Bogard</a><a class="headerlink" href="#jimmy-bogard" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id128">Мнение Jimmy Bogard</a><a class="headerlink" href="#jimmy-bogard" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Вот что говорит «.NET Microservices: Architecture for Containerized .NET Applications» со ссылкой на Jimmy Bogard:</p>
 <blockquote>
 <div><p>However, other developers and architects like Jimmy Bogard are <strong>okay with spanning a single transaction across several aggregates - but only when those additional aggregates are related to side effects for the same original command</strong>.
@@ -495,7 +495,7 @@ The alternative would be transaction script design, where consistency is enforce
 </div></blockquote>
 </div>
 <div class="section" id="kamil-grzybek">
-<h3><a class="toc-backref" href="#id128">Мнение Kamil Grzybek</a><a class="headerlink" href="#kamil-grzybek" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id129">Мнение Kamil Grzybek</a><a class="headerlink" href="#kamil-grzybek" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Вот что говорит Kamil Grzybek:</p>
 <blockquote>
 <div><p>The way of handling of domain events depends indirectly on publishing method.
@@ -549,7 +549,7 @@ If transaction is successful, we need to send 2 emails – about the Order and P
 <p>И, в своем демонстрационном приложении sample-dotnet-core-cqrs-api, <a class="reference external" href="https://github.com/kgrzybek/sample-dotnet-core-cqrs-api/blob/01a1d6517bc88773f004abc0cb9c6d79f537e575/src/SampleProject.Application/Orders/PlaceCustomerOrder/OrderPlacedDomainEventHandler.cs#L22">он демонстрирует обработку Domain Event в одной транзакции с агрегатом</a>.</p>
 </div>
 <div class="section" id="udi-dahan">
-<h3><a class="toc-backref" href="#id129">Мнение Udi Dahan</a><a class="headerlink" href="#udi-dahan" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id130">Мнение Udi Dahan</a><a class="headerlink" href="#udi-dahan" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>&gt; This might be a bit of a late question. But shouldn’t domain events be handled after the transaction ends?
 Is there any specific reason for handle domain events within the same transaction scoping DoSomething?</p>
@@ -589,7 +589,7 @@ That service bus event gets routed to multiple subscribers, behind which you’d
 </div></blockquote>
 </div>
 <div class="section" id="cesar-de-la-torre">
-<h3><a class="toc-backref" href="#id130">Мнение Cesar De la Torre</a><a class="headerlink" href="#cesar-de-la-torre" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id131">Мнение Cesar De la Torre</a><a class="headerlink" href="#cesar-de-la-torre" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>When handling the event, any event handler subscribed to the event could run additional domain operations by using other AggregateRoot objects, but again, you still need to be within the same transaction scope.</p>
 <p>&lt;..&gt;</p>
@@ -604,7 +604,7 @@ That service bus event gets routed to multiple subscribers, behind which you’d
 </div>
 </div>
 <div class="section" id="in-process-vs-out-of-process">
-<h2><a class="toc-backref" href="#id131">In-process vs out-of-process</a><a class="headerlink" href="#in-process-vs-out-of-process" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id132">In-process vs out-of-process</a><a class="headerlink" href="#in-process-vs-out-of-process" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Обычно считается, что in-process - это синхронное исполнение, а out-of-process - асинхронное.
 Хотя, сугубо технически, асинхронное исполнение может быть как in-process, так и out-of-process.
 К тому же асинхронное исполнение нужно подразделять на использующее event-loop (async/await) и использующее внешнюю инфраструктуру (external event bus).</p>
@@ -616,7 +616,7 @@ However, you could also use some AMQP implementation like RabbitMQ or Azure Serv
 </div></blockquote>
 </div>
 <div class="section" id="internal-vs-external">
-<h2><a class="toc-backref" href="#id132">Internal vs External</a><a class="headerlink" href="#internal-vs-external" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id133">Internal vs External</a><a class="headerlink" href="#internal-vs-external" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Существует ряд методик (Anti-Corruption Layer, CQRS etc.), направленных на то, чтобы защитить изменения внутренних интерфейсов от изменения внешних и наоборот.
 Это логично, так как они будут изменяться в разное время, с разной частотой и по разным причинам.</p>
 <p>Domain Events могут покидать пределы Bounded Context:</p>
@@ -706,10 +706,28 @@ I gave that name because I think it fits best – it is notification that domain
 <p class="attribution">—«<a class="reference external" href="https://verraes.net/2019/05/patterns-for-decoupling-distsys-explicit-public-events/">Patterns for Decoupling in Distributed Systems: Explicit Public Events</a>» by Mathias Verraes</p>
 </div></blockquote>
 <p>Но, в целом, понятно, что Domain Event обрабатывается внутри транзакции, Domain Event Notification - вне транзакции (и может требовать Outbox pattern), и Integration Event - за пределами Bounded Context.</p>
+<p>Позже Kamil Grzybek публикует в Twitter <a class="reference external" href="https://twitter.com/kamgrzybek/status/1471756563400605701?t=DO3_TJK0jncMCGlvb34UuA&amp;s=19">следующее разъяснение</a>:</p>
+<blockquote>
+<div><p>In your system you should have 3 types of events:</p>
+<ol class="arabic simple">
+<li><p>Private, domain events (sth important occured in your domain)</p></li>
+<li><p>Private, persisted events (based on 1, for later async processing)</p></li>
+<li><p>Public, integration events (based on 2, to integrate with another contexts, part of contract)</p></li>
+</ol>
+<p class="attribution">—<a class="reference external" href="https://twitter.com/kamgrzybek/status/1471756563400605701?t=DO3_TJK0jncMCGlvb34UuA&amp;s=19">Источник</a></p>
+</div></blockquote>
+<p>И сопровождает его <a class="reference external" href="https://twitter.com/kamgrzybek/status/1472232661938843657?t=czUCrilodujW8aAIdV6OBw&amp;s=19">иллюстрацией</a>:</p>
+<div class="figure align-left" id="id112">
+<a class="reference internal image-reference" href="../../../../../../_images/domain-vs-integration-event-by-kamil-grzybek.jpeg"><img alt="The difference between event types." src="../../../../../../_images/domain-vs-integration-event-by-kamil-grzybek.jpeg" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">The difference between event types.</span><a class="headerlink" href="#id112" title="Постоянная ссылка на рисунок">¶</a></p>
+<div class="legend">
+<p>– <a class="reference external" href="https://twitter.com/kamgrzybek/status/1472232661938843657?t=czUCrilodujW8aAIdV6OBw&amp;s=19">Источник</a></p>
+</div>
+</div>
 <p>Еще дальше идут авторы книги «Patterns, Principles, and Practices of Domain-Driven Design» <a class="footnote-reference brackets" href="#fnpppddd" id="id55">6</a>, вводя явное разделение внутренних и внешних событий:</p>
-<div class="figure align-center" id="id112">
+<div class="figure align-center" id="id113">
 <a class="reference internal image-reference" href="../../../../../../_images/pppddd-18.1.png"><img alt="FIGURE pppddd-18-1: Ensuring correct transactional behavior. The image is from &quot;Patterns, Principles, and Practices of Domain-Driven Design&quot; by Scott Millett, Nick Tune" src="../../../../../../_images/pppddd-18.1.png" style="width: 70%;" /></a>
-<p class="caption"><span class="caption-text">FIGURE pppddd-18-1: Ensuring correct transactional behavior. The image is from «Patterns, Principles, and Practices of Domain-Driven Design» by Scott Millett, Nick Tune</span><a class="headerlink" href="#id112" title="Постоянная ссылка на рисунок">¶</a></p>
+<p class="caption"><span class="caption-text">FIGURE pppddd-18-1: Ensuring correct transactional behavior. The image is from «Patterns, Principles, and Practices of Domain-Driven Design» by Scott Millett, Nick Tune</span><a class="headerlink" href="#id113" title="Постоянная ссылка на рисунок">¶</a></p>
 </div>
 <blockquote>
 <div><p>An important distinction needs to be made when using the domain events pattern to avoid confusion that can lead to poor technical implementations. It is crucial that you are aware of the difference between internal and external events. Internal events are internal to a domain model–they are not shared between bounded contexts.
@@ -724,9 +742,9 @@ Figure 18-2 illustrates how the sequence of events may occur in a typical use ca
 <p>With all of these differences in mind, it makes sense to put your events in different namespaces to  accentuate those that are internal from those that are external.</p>
 <p>- «Patterns, Principles, and Practices of Domain-Driven Design» <a class="footnote-reference brackets" href="#fnpppddd" id="id56">6</a> by Scott Millett, Nick Tune, Chapter «18 Domain Events :: Internal vs External Events»</p>
 </div></blockquote>
-<div class="figure align-center" id="id113">
+<div class="figure align-center" id="id114">
 <a class="reference internal image-reference" href="../../../../../../_images/pppddd-18.2.png"><img alt="FIGURE pppddd-18-2: Flow of internal and external events in a typical business use case. The image is from &quot;Patterns, Principles, and Practices of Domain-Driven Design&quot; by Scott Millett, Nick Tune" src="../../../../../../_images/pppddd-18.2.png" style="width: 70%;" /></a>
-<p class="caption"><span class="caption-text">FIGURE pppddd-18-2: Flow of internal and external events in a typical business use case. The image is from «Patterns, Principles, and Practices of Domain-Driven Design» by Scott Millett, Nick Tune</span><a class="headerlink" href="#id113" title="Постоянная ссылка на рисунок">¶</a></p>
+<p class="caption"><span class="caption-text">FIGURE pppddd-18-2: Flow of internal and external events in a typical business use case. The image is from «Patterns, Principles, and Practices of Domain-Driven Design» by Scott Millett, Nick Tune</span><a class="headerlink" href="#id114" title="Постоянная ссылка на рисунок">¶</a></p>
 </div>
 <p>Разделяют Domain Events на внутренние и внешние и специалисты .NET.</p>
 <blockquote>
@@ -769,15 +787,15 @@ When there are significant changes in the domain, the events may need to change,
 </div></blockquote>
 </div>
 <div class="section" id="one-phase-vs-two-phase">
-<h2><a class="toc-backref" href="#id133">One-phase vs Two-phase</a><a class="headerlink" href="#one-phase-vs-two-phase" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id134">One-phase vs Two-phase</a><a class="headerlink" href="#one-phase-vs-two-phase" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Ответ на вопрос о разделении доставки Domain Events во многом зависит от того, разделять ли Domain Events на внутренние и внешние?</p>
 <p>Хотя у Vaughn Vernon такое разделение не совсем очевидное, он разделяет реализацию доставки  для подписчиков внутри Bounded Context за его пределами.</p>
-<div class="figure align-center" id="id114">
+<div class="figure align-center" id="id115">
 <a class="reference internal image-reference" href="../../../../../../_images/iddd-8.1.png"><img alt="Figure 8.1. Aggregates create Events and publish them. Subscribers may store Events and then forward them to remote subscribers, or just forward them without storing. Immediate forwarding requires XA (two-phase commit) unless messaging middleware shares the model’s data store. The image is from &quot;Implementing Domain-Driven Design&quot; by Vaughn Vernon" src="../../../../../../_images/iddd-8.1.png" style="width: 70%;" /></a>
 <p class="caption"><span class="caption-text">Figure 8.1. Aggregates create Events and publish them.
 <strong>Subscribers may store Events and then forward them to remote subscribers, or just forward them without storing.</strong>
 Immediate forwarding requires XA (two-phase commit) unless messaging middleware shares the model’s data store.
-The image is from «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id62">3</a> by Vaughn Vernon</span><a class="headerlink" href="#id114" title="Постоянная ссылка на рисунок">¶</a></p>
+The image is from «Implementing Domain-Driven Design» <a class="footnote-reference brackets" href="#fniddd" id="id62">3</a> by Vaughn Vernon</span><a class="headerlink" href="#id115" title="Постоянная ссылка на рисунок">¶</a></p>
 </div>
 <blockquote>
 <div><p>Forwarding the Event via a messaging infrastructure would allow asynchronous delivery to out-of-band subscribers.
@@ -852,7 +870,7 @@ The complete process looks like this:</p>
 <p>А вот Udi Dahan в своей статье «Domain Events – Salvation» <a class="footnote-reference brackets" href="#fnudde3" id="id69">22</a> предложил использовать единый Mediator как для внутренних синхронных подписчиков, вызываемых в той же транзакции, так и для асинхронных подписчиков.</p>
 </div>
 <div class="section" id="id70">
-<h2><a class="toc-backref" href="#id134">Кто может издавать Domain Event?</a><a class="headerlink" href="#id70" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id135">Кто может издавать Domain Event?</a><a class="headerlink" href="#id70" title="Ссылка на этот заголовок">¶</a></h2>
 <blockquote>
 <div><p>One more point about what can cause a Domain Event is noteworthy.
 Although often it is a user-based command emitted by the user interface that causes an event to occur, sometimes Domain Events
@@ -874,7 +892,7 @@ Thus, they are not just a record of some past occurrence, although they are that
 </div></blockquote>
 </div>
 <div class="section" id="id73">
-<h2><a class="toc-backref" href="#id135">Может ли Domain Event отменить свою причину?</a><a class="headerlink" href="#id73" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id136">Может ли Domain Event отменить свою причину?</a><a class="headerlink" href="#id73" title="Ссылка на этот заголовок">¶</a></h2>
 <blockquote>
 <div><p>Domain events are ordinarily immutable, as they are <strong>a record of something in the past</strong>.
 In addition to a description of the event, a domain event typically contains a timestamp for the time the event occurred and the identity of entities involved in the event.</p>
@@ -921,12 +939,12 @@ When you are in an inconsistent state, you need to roll forward into a new state
 </div></blockquote>
 </div>
 <div class="section" id="id79">
-<h2><a class="toc-backref" href="#id136">Решение - это баланс стоимости и обретаемой выгоды</a><a class="headerlink" href="#id79" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id137">Решение - это баланс стоимости и обретаемой выгоды</a><a class="headerlink" href="#id79" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Любое решение - это баланс выгод и затрат на его реализацию.
 Решение не должно базироваться на <a class="reference external" href="https://youtu.be/LDW0QWie21s?t=1363">«религиозном» догматизме</a>, основываясь на бездумной вере только в то, что кто-то так сказал, не понимая при этом причин и следствий.
 Нужно понимать причину решения, решаемую им проблему, и применять его сообразно стоящими перед конкретным проектом проблемами.</p>
 <div class="section" id="cqrs">
-<span id="emacsway-de-cqrs-command-and-result"></span><h3><a class="toc-backref" href="#id137">Может ли CQRS-команда возвращать результат?</a><a class="headerlink" href="#cqrs" title="Ссылка на этот заголовок">¶</a></h3>
+<span id="emacsway-de-cqrs-command-and-result"></span><h3><a class="toc-backref" href="#id138">Может ли CQRS-команда возвращать результат?</a><a class="headerlink" href="#cqrs" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Хорошим примером, демонстрирующим архитектурную гибкость мышления, является ответ Jimmy Bogard по поводу того, может ли Команда в CQRS возвращать результат?</p>
 <blockquote>
 <div><p>It might seem rather strange that commands always have a result, but it’s much, much easier to deal with side effects of commands through return parameters than through some other means (global registry, static field, re-querying some object, collecting parameter, etc.). <strong>For commands that create an item, I usually want to redirect to a screen showing that item, very easily accomplished when I can get the created item and as for its ID.</strong></p>
@@ -1043,7 +1061,7 @@ For example assume in a function on stacks contains the operation</p>
 </div>
 </div>
 <div class="section" id="atomicity-and-resiliency-of-integration-events">
-<h2><a class="toc-backref" href="#id138">Atomicity and Resiliency of Integration Events</a><a class="headerlink" href="#atomicity-and-resiliency-of-integration-events" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id139">Atomicity and Resiliency of Integration Events</a><a class="headerlink" href="#atomicity-and-resiliency-of-integration-events" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Если отправить Integration Event до коммита транзакции базы данных, то другой процесс не увидит изменений.
 К тому же, может произойти откат транзакции, и согласованность данных будет утрачена.
 А если после коммита, то существует вероятность, что процесс может аварийно завершиться, и сообщение так и не будет отправлено, что приведет к утрате согласованности данных.</p>
@@ -1065,7 +1083,7 @@ For example assume in a function on stacks contains the operation</p>
 </ul>
 </div>
 <div class="section" id="integration-events">
-<h2><a class="toc-backref" href="#id139">Проблема сохранения очередности Integration Events</a><a class="headerlink" href="#integration-events" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id140">Проблема сохранения очередности Integration Events</a><a class="headerlink" href="#integration-events" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Подписчики не всегда получают Integration Events в той же последовательности, в которой они были отправлены, по ряду причин.
 Одно из решений этой проблемы заключается в том, что, если получатель обнаруживает, что сообщение не соответствует ожидаемому порядку, то он просто не забирает его из очереди.</p>
 <blockquote>
@@ -1119,7 +1137,7 @@ This may be dealt with more gracefully by using the actors become() capabilities
 </ul>
 </div>
 <div class="section" id="id104">
-<h2><a class="toc-backref" href="#id140">Где создавать Domain Event об удалении объекта?</a><a class="headerlink" href="#id104" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id141">Где создавать Domain Event об удалении объекта?</a><a class="headerlink" href="#id104" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Информации по этому вопросу практически нет, поэтому, я поделюсь своими мыслями.</p>
 <p>В Английском языке есть <a class="reference external" href="https://english.stackexchange.com/a/52509">разница</a> между словом «delete» и «remove».
 «Delete» подразумевает «уничтожить».
@@ -1171,7 +1189,7 @@ Aspect-oriented programming will do this more cleanly with source code, and as i
 А если Domain Event о «создании» («create») объекта создает сам объект, как уведомление о переходе в новое состояние своего жизненного цикла, то и Domain Event об «уничтожении» («delete») объекта должен создавать он же.</p>
 </div>
 <div class="section" id="id108">
-<h2><a class="toc-backref" href="#id141">Почему важно читать оригиналы вместо переводов</a><a class="headerlink" href="#id108" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id142">Почему важно читать оригиналы вместо переводов</a><a class="headerlink" href="#id108" title="Ссылка на этот заголовок">¶</a></h2>
 <p>В самом начале этого поста я говорил, что важно читать первоисточники.
 Теперь я хочу показать, почему важно читать оригиналы, а не их переводы.</p>
 <p>Возьмем известную фразу Эрика Эванса, которая послужила первопричиной для eventual consistency между агрегатами. Сравните ее смысл в оригинале:</p>
@@ -1210,7 +1228,7 @@ Here we are discussing what takes over <strong>where the lightweight mechanism l
 Я трактую эту фразу так, чтобы она находилась в согласованности с другими утверждениями Вернона, т.е. «Ниже мы обсудим, что произойдет <strong>за пределами этого упрощенного механизма</strong>», что полностью соответствует рис.8.1. и его описанию.</p>
 </div>
 <div class="section" id="id111">
-<h2><a class="toc-backref" href="#id142">Послесловие</a><a class="headerlink" href="#id111" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id143">Послесловие</a><a class="headerlink" href="#id111" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Эта статья отражает мое мнение на текущий момент времени, которое, однако, я не спешил бы называть окончательно сформированным, поскольку существует еще достаточно большой пласт информации по этому вопросу, который мне только предстоит переработать.
 Основной посыл статьи - больше внимания уделять первоисточникам, и быть более гибким в принятии решений, хорошо осознавая их причины и следствия.</p>
 <p class="rubric">Footnotes</p>
