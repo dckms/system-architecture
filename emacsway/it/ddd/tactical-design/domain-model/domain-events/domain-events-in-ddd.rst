@@ -776,6 +776,27 @@ My approach is similar to Vaughn Vernon - I try always handle event in separate 
 
 Но, в целом, понятно, что Domain Event обрабатывается внутри транзакции, Domain Event Notification - вне транзакции (и может требовать Outbox pattern), и Integration Event - за пределами Bounded Context.
 
+Позже Kamil Grzybek публикует в Twitter `следующее разъяснение <https://twitter.com/kamgrzybek/status/1471756563400605701?t=DO3_TJK0jncMCGlvb34UuA&s=19>`__:
+
+    In your system you should have 3 types of events:
+
+    1. Private, domain events (sth important occured in your domain)
+    2. Private, persisted events (based on 1, for later async processing)
+    3. Public, integration events (based on 2, to integrate with another contexts, part of contract)
+
+    -- `Источник <https://twitter.com/kamgrzybek/status/1471756563400605701?t=DO3_TJK0jncMCGlvb34UuA&s=19>`__
+
+И сопровождает его `иллюстрацией <https://twitter.com/kamgrzybek/status/1472232661938843657?t=czUCrilodujW8aAIdV6OBw&s=19>`__:
+
+.. figure:: _media/domain-events-in-ddd/domain-vs-integration-event-by-kamil-grzybek.jpeg
+   :alt: The difference between event types.
+   :align: left
+   :width: 70%
+
+   The difference between event types.
+
+   -- `Источник <https://twitter.com/kamgrzybek/status/1472232661938843657?t=czUCrilodujW8aAIdV6OBw&s=19>`__
+
 Еще дальше идут авторы книги "Patterns, Principles, and Practices of Domain-Driven Design" [#fnpppddd]_, вводя явное разделение внутренних и внешних событий:
 
 .. figure:: _media/domain-events-in-ddd/pppddd-18.1.png
