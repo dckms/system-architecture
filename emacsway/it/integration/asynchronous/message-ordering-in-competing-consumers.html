@@ -242,6 +242,24 @@ The second alternative is to modify the handlers within the application to detec
 <div><p>📝 «<strong>Actors must be prepared to accept and reject messages based on their current state, which is reflected by the order in which previous messages were received.</strong> Sometimes a latent message could be accepted even if it is not perfect timing, but the actor’s reaction to the latent message may have to carefully take into account its current state beforehand. This may be dealt with more gracefully by using the actors become() capabilities.»</p>
 <p class="attribution">—«Reactive Messaging Patterns with the Actor Model: Applications and Integration in Scala and Akka» by Vaughn Vernon, Chapter «5. Messaging Channels :: Point-to-Point Channel»</p>
 </div></blockquote>
+<p>Возникает вопрос о том, нужно ли заниматься восстановлением очередности сообщений на уровне Domain Logic, или на уровне Application Logic.
+В статье «<a class="reference external" href="https://www.infoq.com/articles/no-reliable-messaging/">Nobody Needs Reliable Messaging</a>» by Marc de Graauw приводятся убедительные аргументы о том, что если это важно для бизнеса, то это должно быть на уровне бизнес-логики (Domain Logic).
+Однако, нужно учитывать, что термина «Сообщение» в предметной области вообще не существует (есть только «Событие»).
+Зато существует термин «время», которое едино для всего в предметной области, в отличии от времени приложения в распределенной системе.</p>
+<p>Таким образом, очередность доставки сообщений - это проблема, свойственная не предметной области, а приложению.
+Нужно ли решать её на уровне бизнеса?
+Ответ зависит от конкретных обстоятельств.</p>
+<p>Еще один из способов решения проблемы согласованности - это дублирование данных, сохранение, обработка и передача зависимых данных атомарно.
+Этот прием часто используется для обеспечения границ согласованности Aggregate в DDD, для обеспечения автономности микросервисов и Bounded Contexts.</p>
+<blockquote>
+<div><p>An implementation consistent with this model would guarantee the invariant relating PO [Purchase Order] and its items, while changes to the price of a part would not have to immediately affect the items that reference it.
+Broader consistency rules could be addressed in other ways.
+For example, the system could present a queue of items with outdated prices to the users each day, so they could update or exempt each one.
+But this is not an invariant that must be enforced at all times.
+By making the dependency of line items on parts looser, we avoid contention and reflect the realities of the business better.
+At the same time, tightening the relationship of the PO and its line items guarantees that an important business rule will be followed.</p>
+<p class="attribution">—«Domain-Driven Design» by Eric Evans</p>
+</div></blockquote>
 <p>Родственные EIP patterns:</p>
 <ul class="simple">
 <li><p>«<a class="reference external" href="https://www.enterpriseintegrationpatterns.com/patterns/messaging/CorrelationIdentifier.html">Correlation Identifier</a>»</p></li>
