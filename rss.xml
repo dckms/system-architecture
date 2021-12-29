@@ -1,5 +1,450 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0"><channel><title>System Architecture</title><link>https://dckms.github.io/system-architecture</link><description /><language>ru</language><copyright>2021, @dckms</copyright><item><title>Domain Events in DDD</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/tactical-design/domain-model/domain-events/domain-events-in-ddd.html</link><description>
+<rss version="2.0"><channel><title>System Architecture</title><link>https://dckms.github.io/system-architecture</link><description /><language>ru</language><copyright>2021, @dckms</copyright><item><title>Как пользоваться</title><link>https://dckms.github.io/system-architecture/README.html</link><description>
+ 
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/emacsway/dckms-template"&gt;Distributed Collaborative Knowledge Management System&lt;/a&gt;&lt;/p&gt;
+&lt;div class="contents topic" id="id2"&gt;
+&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id1" id="id25"&gt;Как пользоваться&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id26"&gt;Почему&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id4" id="id27"&gt;Коллективность&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id5" id="id28"&gt;Субъектность&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id6" id="id29"&gt;Психология&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id7" id="id30"&gt;Экономия времени&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id8" id="id31"&gt;Навигация&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id9" id="id32"&gt;Интеграция&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id10" id="id33"&gt;Реализация&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id11" id="id34"&gt;Влияние на качество обучения&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id12" id="id35"&gt;Легкость переключения контекста&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id13" id="id36"&gt;Порядок использования&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#html" id="id37"&gt;Как собрать html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#zettelkasten" id="id38"&gt;О Zettelkasten&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id15" id="id39"&gt;Философия&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id16" id="id40"&gt;Близкие по духу системы&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#obsidian" id="id41"&gt;Obsidian&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#neuron-zettelkasten" id="id42"&gt;Neuron Zettelkasten&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#gitjournal" id="id43"&gt;GitJournal&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#popular-static-site-generators" id="id44"&gt;Статические генераторы сайтов&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id18" id="id45"&gt;Другие интересные проекты&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#markdown" id="id46"&gt;Markdown&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#using-dckms-on-mobile-devices" id="id47"&gt;Как работать на мобильных устройствах&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#android" id="id48"&gt;Как работать на Android&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#iphone" id="id49"&gt;Как работать на iPhone&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id20" id="id50"&gt;Аналоги&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id21" id="id51"&gt;Интеграция с другими системами&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id22" id="id52"&gt;Интеграция с Obsidian&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#notion" id="id53"&gt;Интеграция с Notion&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#evernote" id="id54"&gt;Интеграция с Evernote&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#rss" id="id55"&gt;RSS&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#rss-mattermost" id="id56"&gt;Интегация RSS с Mattermost&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#rss-telegram" id="id57"&gt;Интегация RSS с Telegram&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#sitemap" id="id58"&gt;Sitemap&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id23" id="id59"&gt;Полезные расширения&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id24" id="id60"&gt;Послесловие&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id26"&gt;Почему&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Объем информации в современном мире стал достаточно большим, и возникла потребность этим объемом как-то управлять.&lt;/p&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id27"&gt;Коллективность&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Опыт показал, что высокое качество объемного материала легче достигают &lt;strong&gt;коллективы авторов&lt;/strong&gt;, как, например:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/"&gt;.NET Microservices: Architecture for Containerized .NET Applications&lt;/a&gt;» (&lt;a class="reference external" href="https://github.com/dotnet/docs"&gt;более 4.5 тыс. форков&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://docs.microsoft.com/en-us/azure/architecture/"&gt;Azure Architecture Center&lt;/a&gt; (&lt;a class="reference external" href="https://github.com/MicrosoftDocs/architecture-center"&gt;более 1.1 тыс. форков&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Опыт Microsoft продемонстрировал высокую эффективность распределенных коллективных систем управления знаниями с открытым и неограниченным авторским кругом.&lt;/p&gt;
+&lt;p&gt;Можно заметить, что некоторые пользователи ведут автономные версии форков, периодически вливая в них главный бранч.
+Т.е., пользователи стремятся создавать &lt;strong&gt;собственные пространства знаний&lt;/strong&gt;, которые &lt;strong&gt;обогащаются&lt;/strong&gt; из других источников и &lt;strong&gt;дистиллируются&lt;/strong&gt; от всего лишнего.&lt;/p&gt;
+&lt;p&gt;Это наводит на мысль - а что, если совместить персональную систему управления знаниями с коллективной?
+Вы сами решаете, какими именно своими заметками вы хотите поделиться, а какие вы хотите добавить в свою базу от других авторов.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id28"&gt;Субъектность&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;У классических коллективных систем управления знаниями на основе wiki-движков, являющихся единственным носителем инфорации, информация может быть представлена только в единственном виде, а значит, она не может удовлетворять различным потребностям разных пользователей.
+Возникает противоречие между между потребностью во множестве представлений информации и единственностью возможного представления информации единичного носителя.&lt;/p&gt;
+&lt;p&gt;Так же у разных пользователей существует различная потребность в объеме и полноте информации.
+Что для одного пользователя представляет ценность, для другого - информационная помеха, затрудняющая навигацию по его подмножеству информации.&lt;/p&gt;
+&lt;p&gt;Попытка разрешить это противоречие порождает ряд вопросов о модерации, редакционной политике, достижении консенсуса и разрешении противоречий, выработке норм поведения, управлении правами, защите от диверсий в виде уничтожения содержимого или постановки информационных помех.
+Все это резко ограничивает возможность применения wiki-движков в качестве персональной системы управления знаниями.
+Теряется субъектность пользователя.
+Также wiki-движки затруднительно использовать в offline-режиме, особенно с мобильного телефона.&lt;/p&gt;
+&lt;p&gt;Отдельные попытки решить эти проблемы, и совместить персональную и коллективную системы знаний, осуществляет Notion.
+Еще интересней выглядит управление знаниями на основе простых текстовых файлов (чаще всего Markdown или reStructuredText) и системы контроля версий (обычно Git).&lt;/p&gt;
+&lt;p&gt;Такие средства устраняют противоречие, которое заключается в том, что один экземпляр информации не может соответствовать потребностям множества пользователей.
+Каждый пользователь сам устраивает свою базу знаний так, как считает нужным, обогащая её информацией от других пользователей посредством системы контроля версий.&lt;/p&gt;
+&lt;p&gt;Именно на этой идее и построен данный проект, основная суть которого заключается в том, что &lt;strong&gt;субъектом субъектом знаний в такой моделе является именно пользователь&lt;/strong&gt;, в то время, как в большинстве других систем управления знаниями на основе wiki-движков, пользователь является, скорее, объектом системы.&lt;/p&gt;
+&lt;p&gt;Распределенный подход к хранению знаний избавляет от перечисленных выше проблем - вы сами решаете, чем поделиться, и от кого и что добавить в свою базу знаний.
+Можете обогащать статьи других авторов своей собственной информацией, удалять нерелевантную для вас информацию, сохраняя сфокусированность своего внимания, и делиться своими знаниями с другими специалистами, публикуя их в публичных бранчах, закрепив, при этом, свое авторство.
+Ваша база знаний не обязана следовать чьим-то чужим точкам зрения.
+Все как в реальной жизни.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id29"&gt;Психология&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Немаловажным является и психологический фактор.
+Одно дело, когда человеку нужно представить на суд пользователей информацию, которая будет оцениваться с позиции стандартов коллектива, а другое дело, когда он просто позволяет другим пользователям использовать его персональные заметки.
+Снятие психологического барьера ускоряет обмен информацией.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id7"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id30"&gt;Экономия времени&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Еще один фактор, который поспособствовал появлению этого проекта, заключается в том, что сегодня человек живет в условиях стесненного времени.
+Каждому из нас есть чем поделиться и обогатить коллективные знания, но не у каждого есть время прорабатывать по этой теме статьи.
+Именно поэтому короткие заметки стали сегодня так популярны.
+В конечном итоге, люди тратят на Telegram (и другие мессенджеры) намного больше времени, чем требуется на написание статей.
+Просто в Telegram они делают это короткими интервалами времени.&lt;/p&gt;
+&lt;p&gt;В Telegram знания хорошо рождаются, но не кристализируются, из-за чего они часто тонут в безорганизованной свалке информации среди океана информационных помех.
+Несмотря на факт своего существования, эта информация быстро становится бесполезной в условиях отсутствия навигации.
+Возникает потребность комбинировать Telegram с другими формами управления знаниями, и желательно, чтоб эти формы обеспечивали бы как приватный, так и коллективный способ управления знаниями.&lt;/p&gt;
+&lt;p&gt;Вы, наверное, замечали, как в профессиональных Telegram-чатах молодые ребята регулярно задают один и тот же вопрос.
+И если на первый вопрос кто-то из экспертов ответит, то на следующий вопрос «попугайничать» уже никто из экспертов не хочет.
+Тогда пытаются отвечать другие малоопытные ребята, и, зачастую, вреда от таких ответов больше, чем пользы.
+Через время, отыскать правильный ответ от эксперта становится практически невозможно, так как его становится сложно выявить среди наплодившейся дезинформации.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id8"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id31"&gt;Навигация&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Возникло  противоречие: там, где можно структурировать, - там не пишут, а там, где пишут, - структурировать нельзя.
+Можно ли это противоречие разрешить?&lt;/p&gt;
+&lt;p&gt;Цель данного проекта заключается в разрешении этого противоречия, путем обеспечения навигации в распределенной коллективной информации коротких сообщений (заметок).
+Навигация позволяет повысить реиспользуемость качественных ответов.&lt;/p&gt;
+&lt;p&gt;Система управления знаниями - это, своего рода, скелет, на который налипают знания.
+Без такого скелета знания просто тонут в бесструктурном и распределенном океане информационных помех.
+Вы, наверное, слышали о таком антипаттерне как «коллекционер знаний» - это когда информации накапливается много, но найти что-нибудь в этом мессиве становится нереально.&lt;/p&gt;
+&lt;p&gt;Навигация обеспечивается комплексом средств:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Полнотекстовый offline поиск с морфологией.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Древовидная структуризация контента. Причем, деревьев может быть множество, и они могут пересекаться между собой. Деревья навигации не обязаны воспроизводить файловую структуру документов.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Алфавитный указатель (тегирование/индексирование).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Перекрестные, и даже кросс-проектные, ссылки.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Навигация по структурированному содержанию страницы.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id9"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id32"&gt;Интеграция&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Благодаря RSS-каналу, новые сообщения можно легко отражать в Telegram-channel или в другие мессенджеры, например, в Mattermost, посредством ботов и плагинов к мессенджерам.
+Таким образом достигается и цель уведомления о новых сообщениях, и сохраняется навигация по сообщениям.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id10"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id33"&gt;Реализация&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Система представляет собой минималистичный набор принципов и соглашений, реализованный на Open Source системе документирования &lt;a class="reference external" href="https://www.sphinx-doc.org/"&gt;Sphinx-doc&lt;/a&gt; и использущий reStructuredText и Markdown форматы разметок.
+Sphinx-doc предоставляет и тегирование/индексирование (директива «&lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#index-generating-markup"&gt;index&lt;/a&gt;»), и перекрестные ссылки, и Table of Content (ToC, директива «&lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-of-contents"&gt;toctree&lt;/a&gt;»), и неограниченную иерархию файлов, и перекрестные связи между иерархиями файлов и иерархиями ToC, и клиентский полнотекстовый поиск (средствами JS браузера), и &lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/todo.html"&gt;TODO&lt;/a&gt;-листы, и RSS (в виде стороннего расширения), и подсветку синтаксиса языков программирования, и расширяемость с большим количеством готовых к использованию расширений.&lt;/p&gt;
+&lt;p&gt;Критически важной является &lt;a class="reference internal" href="#using-dckms-on-mobile-devices"&gt;&lt;span class="std std-ref"&gt;возможность работать offline на мобильном устройстве&lt;/span&gt;&lt;/a&gt; (используя, при этом, полнотекстовый поиск с морфологией).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id11"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id34"&gt;Влияние на качество обучения&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Вот что пишет Евгений Пешков, основатель российского DDD-сообщества, руководитель в ЦИАН:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;Летом 2020 я проходил курс по Системному мышлению Левенчука. Анатолий с первых же занятий всячески рекомендует «мышление письмом».&lt;/p&gt;
+&lt;p&gt;Что это?
+Мышление письмом подразумевает создание конспектов занятий, статей, книг.
+Но не просто переписывание слов автора, а своё собственное понимание пройденного.&lt;/p&gt;
+&lt;p&gt;Почему это важно?&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;Лучше запоминаем. Это происходит из-за того, что мы прогоняем через себя, через внутренний диалог, через механическую память, через визуальный образ собственных слов.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Лучше понимаем. Когда мы просто мыслим, наши мысли могут быть недостаточно строго сформулированы, могут обрываться, состоять из полуобразов. Но даже с такими несформировавшимися мыслями у нас может быть ложное ощущение понятности. Когда же мы пишем - мы обязаны четко сформулировать тезисы и сложить их в определенном порядке.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Можно вернуться и доосмыслить. У нас остается артефакт, пригодный для дальнейшей проработки.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Наше знание становится отчуждаемым. Мы легко можем запостить наши мысли в телеграм или отправить другу.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Сложно взять и начать записывать, и как одна из рекомендаций в курсе была указана книга «&lt;a class="reference external" href="https://www.goodreads.com/book/show/34507927-how-to-take-smart-notes"&gt;How to Take Smart Notes&lt;/a&gt;».
+И в этой книге есть еще классный поинт: если мы привыкаем делать заметки, то нам становится проще писать в целом.
+Тут срабатывает привычка, но кроме этого, как я и указывал ранее, у нас накапливается определенное количество артефактов, которые мы можем легко переиспользовать.&lt;/p&gt;
+&lt;p&gt;Источник: &lt;a class="reference external" href="https://t.me/dddevotion/176"&gt;https://t.me/dddevotion/176&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;На меня, в свое время, произвела сильное впечатление небольшая, и уже не самая молодая, книжечка «Как читать книги» / Поварнин Сергей, которую можно прочесть всего за один день.
+Скачать можно &lt;a class="reference external" href="https://royallib.com/book/povarnin_s/kak_chitat_knigi.html"&gt;здесь&lt;/a&gt; или &lt;a class="reference external" href="https://m.vk.com/wall-56611080_127534"&gt;здесь&lt;/a&gt;.
+Эту книжечку сложно переоценить - она на вес золота.&lt;/p&gt;
+&lt;p&gt;Также нужно упомянуть про особое значение возможности применять принципы &lt;a class="reference internal" href="#zettelkasten"&gt;&lt;span class="std std-ref"&gt;Zettelkasten&lt;/span&gt;&lt;/a&gt; для запоминания информации и легкой навигации по ней.&lt;/p&gt;
+&lt;p&gt;Ну и, раз была затронута тема, не лишне будет упомянуть «A Mind for Numbers: How to Excel at Math and Science» by Barbara Ann Oakley, перевод: «Думай как математик. Как решать любые проблемы быстрее и эффективнее.» / Барбара Оакли.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id12"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id35"&gt;Легкость переключения контекста&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Специалисты, не работающие с информацией письменно, нередко испытывают затруднения с частым переключением контекста на работе.
+Сложность восстанавления в памяти исходного контекста снижает качество решений.
+В то же время, у специалистов, работающих с информацией письменно, таких проблем обычно не возникает.&lt;/p&gt;
+&lt;p&gt;Если выработать привычку записывать все в электронные заметки, прежде чем эта информация отразится в каком-либо еще источнике, то будет единый источник истины, который всегда под рукой, даже offline.
+Вначале требуется определенное усилие воли и самодисциплина, чтобы выработать привычку все записывать, но результат проявляется очень быстро, ведь записываем мы один раз, а обращаемся к записанному много раз.
+А если к записанному предоставить доступ команде, то это кратно повысит эффективность реиспользования информации и экономию времени.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id13"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id36"&gt;Порядок использования&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Система работает следующим образом:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;Создайте форк &lt;a class="reference external" href="https://github.com/emacsway/dckms-template"&gt;репозитария&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Перейдите в приватный бранч «private».&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Свои приватные заметки ведите в пространстве имен «private» (&lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;/private&lt;/span&gt;&lt;/code&gt;, &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;_media/private&lt;/span&gt;&lt;/code&gt;, &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;_html_extra/private&lt;/span&gt;&lt;/code&gt;).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Создайте свой публичный бранч, например, «ivan.ivanov». Приватные директории сразу же внесите в файл «.gitignore» в этом бранче.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Создайте пространство имен для своих публичных заметок, которыми вы хотите поделиться, например, «ivan.ivanov» (&lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;/ivan.ivanov&lt;/span&gt;&lt;/code&gt;, &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;_media/ivan.ivanov&lt;/span&gt;&lt;/code&gt;, &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;_html_extra/ivan.ivanov&lt;/span&gt;&lt;/code&gt;). Таким образом вы облегчите читателям навигацию по вашим заметкам и сохраните очевидность авторства за собой (можно еще использовать директиву «&lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-sectionauthor"&gt;sectionauthor&lt;/a&gt;»). Создание персонального пространства имен необходимо еще и потому, что древовидное устройство файловой системы сложно унифицировать для всех авторов - у каждого автора есть свое видение на классификацию его материала. Благодаря гибкости директивы «&lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-of-contents"&gt;toctree&lt;/a&gt;», вы легко можете включать в дерево своего содержания поддеревья или страницы других авторов.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Тегируйте свой материал с помощью директивы «&lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#index-generating-markup"&gt;index&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Ненужные вам заметки других авторов вы можете удалить в своем приватном бранче. А нужные - добавить, как целиком, так и выборочно, используя &lt;a class="reference external" href="https://git-scm.com/docs/git-cherry-pick"&gt;cherry-pick&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Используя &lt;a class="reference external" href="https://www.uuidgenerator.net/version4"&gt;UUID4&lt;/a&gt;, создавайте &lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#ref-role"&gt;перекрестные ссылки&lt;/a&gt; между связанными заметками, следуя лучшим практикам &lt;a class="reference internal" href="#zettelkasten"&gt;&lt;span class="std std-ref"&gt;Zettelkasten&lt;/span&gt;&lt;/a&gt;. Вместо UUID можно использовать префиксирование своих label-names, используя в качестве префикса - пространство имен своих публичных заметок (поскольку заметка может быть перемещена из приватного простанства имен в публичное). Так же можно использовать расширение &lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autosectionlabel.html"&gt;sphinx.ext.autosectionlabel&lt;/a&gt; – Allow reference sections using its title (но оно не облегчает изменение локации заметки). И можно даже организовывать ссылки между отдельными проектами, используя директиву &lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-seealso"&gt;seealso&lt;/a&gt; и расширение &lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html"&gt;sphinx.ext.intersphinx&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Ведите &lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/todo.html"&gt;TODO&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Создайте Pull Request из своего именного публичного бранча («ivan.ivanov») в trunk-branch. Может быть множество trunk-бранчей, и, в качестве одного из них, можете использовать &lt;a class="reference external" href="https://github.com/dckms/system-architecture"&gt;этот&lt;/a&gt;. Trunk-branch можно сравнить с шиной событий в Event Sourcing системе.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Стройте свою распределенную коллективную базу знаний.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Можно добавить, что GitHub планирует добавить &lt;a class="reference external" href="https://github.com/isaacs/github/issues/629"&gt;поддержку cherry-pick в свой web-интерфейс&lt;/a&gt;, а в &lt;a class="reference external" href="https://github.blog/2021-03-30-github-desktop-now-supports-cherry-picking/"&gt;Desktop-client она уже реализована&lt;/a&gt;.
+А вот GitLab уже реализовал &lt;a class="reference external" href="https://docs.gitlab.com/ee/user/project/merge_requests/cherry_pick_changes.html"&gt;поддержку cherry-pick в web-интерфейсе&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="html"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id37"&gt;Как собрать html&lt;/a&gt;&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;Если не установлен Python, то &lt;a class="reference external" href="https://docs.python.org/3/installing/index.html"&gt;установите его&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Установите зависимости. Для этого, из корневой директории проекта выполните команду: &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;pip&lt;/span&gt; &lt;span class="pre"&gt;install&lt;/span&gt; &lt;span class="pre"&gt;-r&lt;/span&gt; &lt;span class="pre"&gt;requirements.freeze.txt&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Отредактируйте файл conf.py, подробности смотрите в &lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html"&gt;документации&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Произведите сборку: &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;make&lt;/span&gt; &lt;span class="pre"&gt;html&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Подробнее &lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/quickstart.html"&gt;здесь&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Так же существует возможность собрать PDF-файл или электронную книгу EPUB.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="zettelkasten"&gt;
+&lt;span id="id14"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id38"&gt;О Zettelkasten&lt;/a&gt;&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://zettelkasten.de/posts/overview/"&gt;Zettelkasten&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://zettelkasten.de/introduction/"&gt;The Introduction to the Zettelkasten Method&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://habr.com/ru/post/509756/"&gt;Как я веду Zettelkasten в Notion уже год: стартовый набор и полезные трюки&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://habr.com/ru/post/508672/"&gt;Zettelkasten: как один немецкий учёный стал невероятно продуктивным&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;То, что Niklas Luhmann &lt;a class="reference external" href="https://vas3k.club/post/3040/"&gt;сделал&lt;/a&gt; на простых бумажных карточках, можно сделать и на Sphinx-doc.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id15"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id39"&gt;Философия&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Основные принципы системы:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;минимизация рисков и внешних зависимостей (от конкретного типа текстового редактора, вендора)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;минимализм&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;неограниченная расширяемость&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;автономность&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;субъектность пользователя и полный контроль над информацией&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;распределенность и коллективность&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;свободное обогащение и дистилляция информации&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id16"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id40"&gt;Близкие по духу системы&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="obsidian"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id41"&gt;Obsidian&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;In our age when cloud services can shut down, get bought, or change privacy policy any day, the last thing you want is proprietary formats and data lock-in.&lt;/p&gt;
+&lt;p&gt;With Obsidian, your data sits in a local folder. Never leave your life’s work held hostage in the cloud again.&lt;/p&gt;
+&lt;p&gt;Plain text Markdown also gives you the unparalleled interoperability to use any kind of sync, encryption, or data processing that works with plain text files.&lt;/p&gt;
+&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://obsidian.md/"&gt;https://obsidian.md/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="neuron-zettelkasten"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id42"&gt;Neuron Zettelkasten&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;Neuron was designed with these criteria in mind:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Future-proof: store notes locally1 as plain-text (Markdown) files&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Not tied2 to a single text editor&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Statically generated web site, for browsing and publishing on the web&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Remain as simple to use as possible, whilst being feature-rich via Plugins&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://neuron.zettel.page/philosophy"&gt;https://neuron.zettel.page/philosophy&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="gitjournal"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id43"&gt;GitJournal&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;Compatible with your favorite Desktop Apps. GitJournal aims to be extremely configurable and work with your favorite apps. The idea is to not build another silo and instead integrate into your existing workflow.&lt;/p&gt;
+&lt;p&gt;No two people are the same…&lt;/p&gt;
+&lt;p&gt;Multiple Editors. All your notes are stored in Markdown. However you can edit the notes in many different ways depending on the task.&lt;/p&gt;
+&lt;p&gt;100% Open Source. GitJournal will always be completely Open Source. Join the community and help us build your ideal note taking app.&lt;/p&gt;
+&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://gitjournal.io/"&gt;https://gitjournal.io/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;Why create another Note Taking App? There are many Note taking apps on the desktop, but the mobile space is lacking good note taking apps which give you control over your data and operate with open protocols.&lt;/p&gt;
+&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://gitjournal.io/support/"&gt;https://gitjournal.io/support/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="popular-static-site-generators"&gt;
+&lt;span id="id17"/&gt;&lt;h3&gt;&lt;a class="toc-backref" href="#id44"&gt;Статические генераторы сайтов&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Существует целый класс инструментов, предназначенных для генерации сайта
+(блога, документации или информационной страницы) из исходных материалов
+в текстовых файлах в markdown, reStructuredText и других аналогичных
+форматах. Часто генераторы сайтов поддерживают дополнительную разметку
+(shortcodes), которая упрощает вставку диаграмм, формул, сносок, ссылок
+на твиты, видео и других элементов.&lt;/p&gt;
+&lt;p&gt;Наиболее известные из cтатических генераторов сайтов - &lt;a class="reference external" href="https://gohugo.io"&gt;Hugo&lt;/a&gt; (написан
+на Go, распространяется как бинарный исполняемый файл, поддерживает
+&lt;a class="reference external" href="https://gohugo.io/content-management/formats/"&gt;множество форматов&lt;/a&gt; разметки) и &lt;a class="reference external" href="https://github.com/jekyll/jekyll"&gt;Jekyll&lt;/a&gt;
+(требует установки Ruby). Так, например, страницы для представления
+markdown файлов на Github Pаges обрабатываются Jekyll.&lt;/p&gt;
+&lt;p&gt;Есть группа генераторов на JavaScript, как связанная с конкретными
+фреймворками (Gastby, Next, Nuxt, VuePress), так и самостоятельных
+(Hexo, Eleventy и другие). На Python написаны sphinx, mkdocs, pelican и
+другие.
+На Ruby можно добавить еще Middleman.&lt;/p&gt;
+&lt;p&gt;У многих генераторов есть темы оформления, связанные с документацией,
+например, очень красивый дизайн у &lt;a class="reference external" href="https://squidfunk.github.io/mkdocs-material/"&gt;mkdocs-material&lt;/a&gt;, &lt;a class="reference external" href="https://getdoks.org/"&gt;doks&lt;/a&gt;, &lt;a class="reference external" href="https://github.com/google/docsy"&gt;Docsy&lt;/a&gt;
+для Hugo, а также у &lt;a class="reference external" href="https://github.com/pmarsceill/just-the-docs"&gt;just-the-docs&lt;/a&gt; и &lt;a class="reference external" href="https://github.com/google/docsy"&gt;Docsy Jekyll Theme&lt;/a&gt; для Jekyll.&lt;/p&gt;
+&lt;p&gt;Ряд статических генераторов нацелены преимущественно на «книжный» формат
+представления документов c оглавлением слева:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://rust-lang.github.io/mdBook/"&gt;mdbook&lt;/a&gt; - очень лаконичный и быстрый в развертывании генератор,
+используется для документации языка Rust, поставляется бинарным
+файлом&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://jupyterbook.org/intro.html"&gt;jupyterbook&lt;/a&gt; (Python)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://www.bookdown.org/"&gt;bookdown&lt;/a&gt; (R)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Список статических генераторов сайтов по полуярности на Github можно
+посмотреть &lt;a class="reference external" href="https://share.streamlit.io/epogrebnyak/ssg-dataset/main"&gt;здесь&lt;/a&gt;
+или &lt;a class="reference external" href="https://jamstack.org/generators/"&gt;здесь&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id18"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id45"&gt;Другие интересные проекты&lt;/a&gt;&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://github.com/imdone/imdone-core"&gt;imdone-core&lt;/a&gt;» - Text based kanban processor (&lt;a class="reference external" href="https://github.com/imdone/imdone-core#resources"&gt;Why?&lt;/a&gt;).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://github.com/coddx-hq/coddx-alpha"&gt;coddx-alpha&lt;/a&gt;» - Todo Kanban Board manages tasks and save them as TODO.md - a simple plain text file.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="http://www.orgzly.com/"&gt;Orgzly&lt;/a&gt;» - Outliner for notes and tasks. Notebooks in plain text (&lt;a class="reference external" href="https://github.com/orgzly"&gt;Source Code&lt;/a&gt;).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://joplinapp.org/"&gt;Joplin&lt;/a&gt;» - an open source note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS (&lt;a class="reference external" href="https://github.com/laurent22/joplin/"&gt;Source Code&lt;/a&gt;).&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="markdown"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id46"&gt;Markdown&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Markdown - популярный язык разметки.
+Приводимые в начале этой страницы архитектурные руководства Microsoft написаны на Markdown.&lt;/p&gt;
+&lt;p&gt;Вы легко можете использовать Markdown, благодаря расширению &lt;a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/"&gt;MyST-Parser&lt;/a&gt; (&lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/markdown.html"&gt;порядок установки&lt;/a&gt;).
+Расширение позволяет использовать в Markdown все директивы и роли Sphinx-doc, и является мостом Docutils к &lt;a class="reference external" href="https://github.com/executablebooks/markdown-it-py"&gt;markdown-it-py&lt;/a&gt;, который поддерживает синтаксис &lt;a class="reference external" href="https://commonmark.org/"&gt;CommonMark&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Как вариант, возможна и обычная статическая конвертация Markdown в reStructuredText:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/miyakogi/m2r"&gt;m2r&lt;/a&gt; - Markdown to reStructuredText converter&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/kata198/mdToRst"&gt;mdToRst&lt;/a&gt; - tool and library to convert markdown [md] to restructed text [rst] (md to rst).&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;И reStructuredText в Markdown:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://rst-to-myst.readthedocs.io/en/latest/"&gt;RST-to-MyST&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="using-dckms-on-mobile-devices"&gt;
+&lt;span id="id19"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id47"&gt;Как работать на мобильных устройствах&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="android"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id48"&gt;Как работать на Android&lt;/a&gt;&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Markor - популярный Markdown-редактор на Android: &lt;a class="reference external" href="https://github.com/gsantner/markor"&gt;GitHub&lt;/a&gt;, &lt;a class="reference external" href="https://f-droid.org/packages/net.gsantner.markor"&gt;F-Droid&lt;/a&gt;, &lt;a class="reference external" href="https://play.google.com/store/apps/details?id=net.gsantner.markor"&gt;Google Play&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://termux.com/"&gt;Termux&lt;/a&gt; - a unix-like environment for Android, for git and python3.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://gitjournal.io/"&gt;GitJournal&lt;/a&gt; - mobile first Markdown Notes integrated with Git: &lt;a class="reference external" href="https://github.com/GitJournal/GitJournal"&gt;GitHub&lt;/a&gt;, &lt;a class="reference external" href="https://play.google.com/store/apps/details?id=io.gitjournal.gitjournal&amp;amp;pcampaignid=website"&gt;Google Play&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="iphone"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id49"&gt;Как работать на iPhone&lt;/a&gt;&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://gitjournal.io/"&gt;GitJournal&lt;/a&gt; - mobile first Markdown Notes integrated with Git: &lt;a class="reference external" href="https://github.com/GitJournal/GitJournal"&gt;GitHub&lt;/a&gt;, &lt;a class="reference external" href="https://apps.apple.com/app/gitjournal/id1466519634"&gt;App Store&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://apps.apple.com/ca/app/working-copy-git-client/id896694807"&gt;Working Copy&lt;/a&gt; - a Git client.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://1writerapp.com/"&gt;1Writer&lt;/a&gt; - powerful, beautiful Markdown editor for iOS.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://ia.net/writer"&gt;iA Writer&lt;/a&gt; - the simple, award-winning design of iA Writer delivers the essential writing experience.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://www.omz-software.com/editorial/"&gt;Editorial&lt;/a&gt; is a plain text editor for iOS with great Markdown support and powerful automation tools.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://tekacs.github.io/editorial-obsidian/"&gt;Editorial-obsidian&lt;/a&gt; - Editorial scripts for Obsidian (unofficial): &lt;a class="reference external" href="https://github.com/tekacs/editorial-obsidian"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://brettterpstra.com/ios-text-editors/"&gt;iTextEditors&lt;/a&gt; - the iOS Text Editor roundup.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id20"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id50"&gt;Аналоги&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/roalyr/zettelkasten"&gt;Zettelkasten&lt;/a&gt; - a template for a Zettelkasten based on markdown files.&lt;/p&gt;
+&lt;p&gt;Neuron Zettelkasten может представлять интерес для тех, кто предпочитает минимизацию внешних зависимостей, минимализм и неограниченность:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://neuron.zettel.page/philosophy"&gt;https://neuron.zettel.page/philosophy&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://neuron.zettel.page/tutorial"&gt;https://neuron.zettel.page/tutorial&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://srid.github.io/neuron-template/README"&gt;https://srid.github.io/neuron-template/README&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/srid/neuron"&gt;https://github.com/srid/neuron&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/srid/neuron-template"&gt;https://github.com/srid/neuron-template&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Парень дает &lt;a class="reference external" href="https://lobste.rs/s/kydg6q/neuron_0_4_zettelkasten_note_management#c_me2hhh"&gt;сравнение Neuron Zettelkasten и Sphinx-doc&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id21"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id51"&gt;Интеграция с другими системами&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Интеграция с другими системами, сервисами и приложениями возможна в пределах пересекающегося подмножества поддерживаемого Markdown-синтаксиса.&lt;/p&gt;
+&lt;div class="section" id="id22"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id52"&gt;Интеграция с Obsidian&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Идея Obsidian так же построена на локальных Markown-файлах, но с GUI-клиентом (недавно появился и &lt;a class="reference external" href="https://help.obsidian.md/Obsidian/Mobile+app+beta"&gt;мобильный клиент&lt;/a&gt;).
+Теоретически это означает, что вы можете шарить файлы между двумя системами.
+На практике я не пробовал это сделать (если попробуете - расскажите, пожалуйста, как получилось).&lt;/p&gt;
+&lt;p&gt;Зато сообщество Obsidian &lt;a class="reference external" href="https://forum.obsidian.md/t/how-do-i-work-with-obsidian-on-mobile/471"&gt;дает много дельных советов&lt;/a&gt;, как работать с Markdown-файлами на мобильных устройствах.&lt;/p&gt;
+&lt;p&gt;А также сообщество Obsidian предоставляет &lt;a class="reference external" href="https://forum.obsidian.md/t/static-site-generators-any-guides/8915"&gt;варианты статической генерации&lt;/a&gt; помимо помимо &lt;a class="reference external" href="https://obsidian.md/publish"&gt;Obsidian Publish&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="notion"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id53"&gt;Интеграция с Notion&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Notion позволяет экспортировать содержимое в Markdown-файлы.
+Теоретически это означает, что вы можете шарить файлы между двумя системами.
+На практике я не пробовал это сделать (если попробуете - расскажите, пожалуйста, как получилось).
+Массового импорта в Notion я не встречал, но есть варианты, например &lt;a class="reference external" href="https://github.com/Cobertos/md2notion/"&gt;Notion.so Markdown Importer&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="evernote"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id54"&gt;Интеграция с Evernote&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Существуют решения для экспорта заметок из Evernote:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/wormi4ok/evernote2md"&gt;evernote2md&lt;/a&gt; - convert Evernote .enex files to Markdown.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/claytron/ever2simple"&gt;ever2simple&lt;/a&gt; - migrate from evernote to simplenote with markdown formatting.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/nicholaskuechler/ever2text"&gt;ever2text&lt;/a&gt; - convert Evernote exports to text files.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="rss"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id55"&gt;RSS&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Существует несколько коробочных решений RSS-feed для Sphinx:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/sphinx-contrib/yasfb"&gt;https://github.com/sphinx-contrib/yasfb&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/sphinx-contrib/feed"&gt;https://github.com/sphinx-contrib/feed&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/lsaffre/sphinxfeed"&gt;https://github.com/lsaffre/sphinxfeed&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/prometheusresearch/sphinxcontrib-newsfeed"&gt;https://github.com/prometheusresearch/sphinxcontrib-newsfeed&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Смотрите так же &lt;a class="reference external" href="https://github.com/sphinx-doc/sphinx/issues/2"&gt;https://github.com/sphinx-doc/sphinx/issues/2&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="rss-mattermost"&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="#id56"&gt;Интегация RSS с Mattermost&lt;/a&gt;&lt;/h4&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://integrations.mattermost.com/rssfeed-plugin/"&gt;https://integrations.mattermost.com/rssfeed-plugin/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/wbernest/mattermost-plugin-rssfeed"&gt;https://github.com/wbernest/mattermost-plugin-rssfeed&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="rss-telegram"&gt;
+&lt;h4&gt;&lt;a class="toc-backref" href="#id57"&gt;Интегация RSS с Telegram&lt;/a&gt;&lt;/h4&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/BoKKeR/RSS-to-Telegram-Bot"&gt;https://github.com/BoKKeR/RSS-to-Telegram-Bot&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://thefeedreaderbot.com/"&gt;https://thefeedreaderbot.com/&lt;/a&gt; ( &lt;a class="reference external" href="https://telegram.me/TheFeedReaderBot"&gt;https://telegram.me/TheFeedReaderBot&lt;/a&gt; )&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://www.integromat.com/en/integrations/rss/telegram"&gt;https://www.integromat.com/en/integrations/rss/telegram&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://core.telegram.org/bots/faq"&gt;https://core.telegram.org/bots/faq&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="sitemap"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id58"&gt;Sitemap&lt;/a&gt;&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/jdillard/sphinx-sitemap"&gt;https://github.com/jdillard/sphinx-sitemap&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id23"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id59"&gt;Полезные расширения&lt;/a&gt;&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://sphinxcontrib-needs.readthedocs.io/en/latest/"&gt;Sphinx-Needs&lt;/a&gt; (&lt;a class="reference external" href="https://github.com/useblocks/sphinxcontrib-needs"&gt;source code&lt;/a&gt;) - Sphinx-Needs allows the definition, linking and filtering of need-objects, which are by default: requirements, specifications, implementations, test cases.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://0x6d64.github.io/sphinx-traceability-example/"&gt;Sphinx Traceability plugin&lt;/a&gt; (&lt;a class="reference external" href="https://github.com/melexis/sphinx-traceability-extension"&gt;source code&lt;/a&gt;) - traceability extension for Sphinx documentation generator. Sphinx plugin that allows defining documentation items and relations between those items. Can be used as a requirements management tool for e.g. ISO26262 projects.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id24"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id60"&gt;Послесловие&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Проект в состоянии развития. Стабильность пока не гарантируется.&lt;/p&gt;
+&lt;p&gt;Технически, в отдаленной перспективе можно было бы приспособить под принципы и соглашения системы одно из Open Source приложений для заметок, но у меня такая цель на данный момент не стоит. В таком приложении можно было бы выбирать источники подписок, автоматизировать и облегчить просмотр и принятие коммитов в свою базу знаний, например, если коммит содержит новую заметку, связанную с одной из уже принятых ранее заметок, или является её обновлением, тогда принимать коммит автоматически.&lt;/p&gt;
+&lt;p&gt;P.S.: Контент является моей личной записной книжкой и доступен только для учебных и исследовательских целей.&lt;/p&gt;
+&lt;/div&gt;
+</description><pubDate>Wed, 29 Dec 2021 00:00:00 </pubDate></item><item><title>Domain Events in DDD</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/tactical-design/domain-model/domain-events/domain-events-in-ddd.html</link><description>
 &lt;span id="index-0"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Существует множество спорных точек зрения среди практиков DDD по поводу реализации Domain Events.
@@ -2856,451 +3301,7 @@ If a person keeps faithfully busy each hour of the working day, he can count on 
 &lt;p&gt;Отличная книга по теме:
 - «Social psychology» 13th edition by David G. Myers. Перевод: «Социальная психология» / Майерс Д. Пер. с англ. З. Замчук; Зав. ред. кол. Л. Винокуров. — 7-е изд. — СПб.: Питер, 2006.&lt;/p&gt;
 &lt;p&gt;Источник: &lt;a class="reference external" href="https://t.me/emacsway_log/621"&gt;https://t.me/emacsway_log/621&lt;/a&gt;&lt;/p&gt;
-</description><pubDate>Wed, 24 Nov 2021 00:00:00 </pubDate></item><item><title>Как пользоваться</title><link>https://dckms.github.io/system-architecture/README.html</link><description>
- 
-&lt;p&gt;&lt;a class="reference external" href="https://github.com/emacsway/dckms-template"&gt;Distributed Collaborative Knowledge Management System&lt;/a&gt;&lt;/p&gt;
-&lt;div class="contents topic" id="id2"&gt;
-&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id1" id="id25"&gt;Как пользоваться&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id26"&gt;Почему&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id4" id="id27"&gt;Коллективность&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id5" id="id28"&gt;Субъектность&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id6" id="id29"&gt;Психология&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id7" id="id30"&gt;Экономия времени&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id8" id="id31"&gt;Навигация&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id9" id="id32"&gt;Интеграция&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id10" id="id33"&gt;Реализация&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id11" id="id34"&gt;Влияние на качество обучения&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id12" id="id35"&gt;Легкость переключения контекста&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id13" id="id36"&gt;Порядок использования&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#html" id="id37"&gt;Как собрать html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#zettelkasten" id="id38"&gt;О Zettelkasten&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id15" id="id39"&gt;Философия&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id16" id="id40"&gt;Близкие по духу системы&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#obsidian" id="id41"&gt;Obsidian&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#neuron-zettelkasten" id="id42"&gt;Neuron Zettelkasten&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#gitjournal" id="id43"&gt;GitJournal&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#popular-static-site-generators" id="id44"&gt;Статические генераторы сайтов&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id18" id="id45"&gt;Другие интересные проекты&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#markdown" id="id46"&gt;Markdown&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#using-dckms-on-mobile-devices" id="id47"&gt;Как работать на мобильных устройствах&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#android" id="id48"&gt;Как работать на Android&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#iphone" id="id49"&gt;Как работать на iPhone&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id20" id="id50"&gt;Аналоги&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id21" id="id51"&gt;Интеграция с другими системами&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id22" id="id52"&gt;Интеграция с Obsidian&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#notion" id="id53"&gt;Интеграция с Notion&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#evernote" id="id54"&gt;Интеграция с Evernote&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#rss" id="id55"&gt;RSS&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#rss-mattermost" id="id56"&gt;Интегация RSS с Mattermost&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#rss-telegram" id="id57"&gt;Интегация RSS с Telegram&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#sitemap" id="id58"&gt;Sitemap&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id23" id="id59"&gt;Полезные расширения&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id24" id="id60"&gt;Послесловие&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id3"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id26"&gt;Почему&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Объем информации в современном мире стал достаточно большим, и возникла потребность этим объемом как-то управлять.&lt;/p&gt;
-&lt;div class="section" id="id4"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id27"&gt;Коллективность&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Опыт показал, что высокое качество объемного материала легче достигают &lt;strong&gt;коллективы авторов&lt;/strong&gt;, как, например:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/"&gt;.NET Microservices: Architecture for Containerized .NET Applications&lt;/a&gt;» (&lt;a class="reference external" href="https://github.com/dotnet/docs"&gt;более 4.5 тыс. форков&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://docs.microsoft.com/en-us/azure/architecture/"&gt;Azure Architecture Center&lt;/a&gt; (&lt;a class="reference external" href="https://github.com/MicrosoftDocs/architecture-center"&gt;более 1.1 тыс. форков&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Опыт Microsoft продемонстрировал высокую эффективность распределенных коллективных систем управления знаниями с открытым и неограниченным авторским кругом.&lt;/p&gt;
-&lt;p&gt;Можно заметить, что некоторые пользователи ведут автономные версии форков, периодически вливая в них главный бранч.
-Т.е., пользователи стремятся создавать &lt;strong&gt;собственные пространства знаний&lt;/strong&gt;, которые &lt;strong&gt;обогащаются&lt;/strong&gt; из других источников и &lt;strong&gt;дистиллируются&lt;/strong&gt; от всего лишнего.&lt;/p&gt;
-&lt;p&gt;Это наводит на мысль - а что, если совместить персональную систему управления знаниями с коллективной?
-Вы сами решаете, какими именно своими заметками вы хотите поделиться, а какие вы хотите добавить в свою базу от других авторов.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id5"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id28"&gt;Субъектность&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;У классических коллективных систем управления знаниями на основе wiki-движков, являющихся единственным носителем инфорации, информация может быть представлена только в единственном виде, а значит, она не может удовлетворять различным потребностям разных пользователей.
-Возникает противоречие между между потребностью во множестве представлений информации и единственностью возможного представления информации единичного носителя.&lt;/p&gt;
-&lt;p&gt;Так же у разных пользователей существует различная потребность в объеме и полноте информации.
-Что для одного пользователя представляет ценность, для другого - информационная помеха, затрудняющая навигацию по его подмножеству информации.&lt;/p&gt;
-&lt;p&gt;Попытка разрешить это противоречие порождает ряд вопросов о модерации, редакционной политике, достижении консенсуса и разрешении противоречий, выработке норм поведения, управлении правами, защите от диверсий в виде уничтожения содержимого или постановки информационных помех.
-Все это резко ограничивает возможность применения wiki-движков в качестве персональной системы управления знаниями.
-Теряется субъектность пользователя.
-Также wiki-движки затруднительно использовать в offline-режиме, особенно с мобильного телефона.&lt;/p&gt;
-&lt;p&gt;Отдельные попытки решить эти проблемы, и совместить персональную и коллективную системы знаний, осуществляет Notion.
-Еще интересней выглядит управление знаниями на основе простых текстовых файлов (чаще всего Markdown или reStructuredText) и системы контроля версий (обычно Git).&lt;/p&gt;
-&lt;p&gt;Такие средства устраняют противоречие, которое заключается в том, что один экземпляр информации не может соответствовать потребностям множества пользователей.
-Каждый пользователь сам устраивает свою базу знаний так, как считает нужным, обогащая её информацией от других пользователей посредством системы контроля версий.&lt;/p&gt;
-&lt;p&gt;Именно на этой идее и построен данный проект, основная суть которого заключается в том, что &lt;strong&gt;субъектом субъектом знаний в такой моделе является именно пользователь&lt;/strong&gt;, в то время, как в большинстве других систем управления знаниями на основе wiki-движков, пользователь является, скорее, объектом системы.&lt;/p&gt;
-&lt;p&gt;Распределенный подход к хранению знаний избавляет от перечисленных выше проблем - вы сами решаете, чем поделиться, и от кого и что добавить в свою базу знаний.
-Можете обогащать статьи других авторов своей собственной информацией, удалять нерелевантную для вас информацию, сохраняя сфокусированность своего внимания, и делиться своими знаниями с другими специалистами, публикуя их в публичных бранчах, закрепив, при этом, свое авторство.
-Ваша база знаний не обязана следовать чьим-то чужим точкам зрения.
-Все как в реальной жизни.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id6"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id29"&gt;Психология&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Немаловажным является и психологический фактор.
-Одно дело, когда человеку нужно представить на суд пользователей информацию, которая будет оцениваться с позиции стандартов коллектива, а другое дело, когда он просто позволяет другим пользователям использовать его персональные заметки.
-Снятие психологического барьера ускоряет обмен информацией.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id7"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id30"&gt;Экономия времени&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Еще один фактор, который поспособствовал появлению этого проекта, заключается в том, что сегодня человек живет в условиях стесненного времени.
-Каждому из нас есть чем поделиться и обогатить коллективные знания, но не у каждого есть время прорабатывать по этой теме статьи.
-Именно поэтому короткие заметки стали сегодня так популярны.
-В конечном итоге, люди тратят на Telegram (и другие мессенджеры) намного больше времени, чем требуется на написание статей.
-Просто в Telegram они делают это короткими интервалами времени.&lt;/p&gt;
-&lt;p&gt;В Telegram знания хорошо рождаются, но не кристализируются, из-за чего они часто тонут в безорганизованной свалке информации среди океана информационных помех.
-Несмотря на факт своего существования, эта информация быстро становится бесполезной в условиях отсутствия навигации.
-Возникает потребность комбинировать Telegram с другими формами управления знаниями, и желательно, чтоб эти формы обеспечивали бы как приватный, так и коллективный способ управления знаниями.&lt;/p&gt;
-&lt;p&gt;Вы, наверное, замечали, как в профессиональных Telegram-чатах молодые ребята регулярно задают один и тот же вопрос.
-И если на первый вопрос кто-то из экспертов ответит, то на следующий вопрос «попугайничать» уже никто из экспертов не хочет.
-Тогда пытаются отвечать другие малоопытные ребята, и, зачастую, вреда от таких ответов больше, чем пользы.
-Через время, отыскать правильный ответ от эксперта становится практически невозможно, так как его становится сложно выявить среди наплодившейся дезинформации.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id8"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id31"&gt;Навигация&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Возникло  противоречие: там, где можно структурировать, - там не пишут, а там, где пишут, - структурировать нельзя.
-Можно ли это противоречие разрешить?&lt;/p&gt;
-&lt;p&gt;Цель данного проекта заключается в разрешении этого противоречия, путем обеспечения навигации в распределенной коллективной информации коротких сообщений (заметок).
-Навигация позволяет повысить реиспользуемость качественных ответов.&lt;/p&gt;
-&lt;p&gt;Система управления знаниями - это, своего рода, скелет, на который налипают знания.
-Без такого скелета знания просто тонут в бесструктурном и распределенном океане информационных помех.
-Вы, наверное, слышали о таком антипаттерне как «коллекционер знаний» - это когда информации накапливается много, но найти что-нибудь в этом мессиве становится нереально.&lt;/p&gt;
-&lt;p&gt;Навигация обеспечивается комплексом средств:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;Полнотекстовый offline поиск с морфологией.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Древовидная структуризация контента. Причем, деревьев может быть множество, и они могут пересекаться между собой. Деревья навигации не обязаны воспроизводить файловую структуру документов.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Алфавитный указатель (тегирование/индексирование).&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Перекрестные, и даже кросс-проектные, ссылки.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Навигация по структурированному содержанию страницы.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id9"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id32"&gt;Интеграция&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Благодаря RSS-каналу, новые сообщения можно легко отражать в Telegram-channel или в другие мессенджеры, например, в Mattermost, посредством ботов и плагинов к мессенджерам.
-Таким образом достигается и цель уведомления о новых сообщениях, и сохраняется навигация по сообщениям.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id10"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id33"&gt;Реализация&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Система представляет собой минималистичный набор принципов и соглашений, реализованный на Open Source системе документирования &lt;a class="reference external" href="https://www.sphinx-doc.org/"&gt;Sphinx-doc&lt;/a&gt; и использущий reStructuredText и Markdown форматы разметок.
-Sphinx-doc предоставляет и тегирование/индексирование (директива «&lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#index-generating-markup"&gt;index&lt;/a&gt;»), и перекрестные ссылки, и Table of Content (ToC, директива «&lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-of-contents"&gt;toctree&lt;/a&gt;»), и неограниченную иерархию файлов, и перекрестные связи между иерархиями файлов и иерархиями ToC, и клиентский полнотекстовый поиск (средствами JS браузера), и &lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/todo.html"&gt;TODO&lt;/a&gt;-листы, и RSS (в виде стороннего расширения), и подсветку синтаксиса языков программирования, и расширяемость с большим количеством готовых к использованию расширений.&lt;/p&gt;
-&lt;p&gt;Критически важной является &lt;a class="reference internal" href="#using-dckms-on-mobile-devices"&gt;&lt;span class="std std-ref"&gt;возможность работать offline на мобильном устройстве&lt;/span&gt;&lt;/a&gt; (используя, при этом, полнотекстовый поиск с морфологией).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id11"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id34"&gt;Влияние на качество обучения&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Вот что пишет Евгений Пешков, основатель российского DDD-сообщества, руководитель в ЦИАН:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;Летом 2020 я проходил курс по Системному мышлению Левенчука. Анатолий с первых же занятий всячески рекомендует «мышление письмом».&lt;/p&gt;
-&lt;p&gt;Что это?
-Мышление письмом подразумевает создание конспектов занятий, статей, книг.
-Но не просто переписывание слов автора, а своё собственное понимание пройденного.&lt;/p&gt;
-&lt;p&gt;Почему это важно?&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;&lt;p&gt;Лучше запоминаем. Это происходит из-за того, что мы прогоняем через себя, через внутренний диалог, через механическую память, через визуальный образ собственных слов.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Лучше понимаем. Когда мы просто мыслим, наши мысли могут быть недостаточно строго сформулированы, могут обрываться, состоять из полуобразов. Но даже с такими несформировавшимися мыслями у нас может быть ложное ощущение понятности. Когда же мы пишем - мы обязаны четко сформулировать тезисы и сложить их в определенном порядке.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Можно вернуться и доосмыслить. У нас остается артефакт, пригодный для дальнейшей проработки.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Наше знание становится отчуждаемым. Мы легко можем запостить наши мысли в телеграм или отправить другу.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Сложно взять и начать записывать, и как одна из рекомендаций в курсе была указана книга «&lt;a class="reference external" href="https://www.goodreads.com/book/show/34507927-how-to-take-smart-notes"&gt;How to Take Smart Notes&lt;/a&gt;».
-И в этой книге есть еще классный поинт: если мы привыкаем делать заметки, то нам становится проще писать в целом.
-Тут срабатывает привычка, но кроме этого, как я и указывал ранее, у нас накапливается определенное количество артефактов, которые мы можем легко переиспользовать.&lt;/p&gt;
-&lt;p&gt;Источник: &lt;a class="reference external" href="https://t.me/dddevotion/176"&gt;https://t.me/dddevotion/176&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;На меня, в свое время, произвела сильное впечатление небольшая, и уже не самая молодая, книжечка «Как читать книги» / Поварнин Сергей, которую можно прочесть всего за один день.
-Скачать можно &lt;a class="reference external" href="https://royallib.com/book/povarnin_s/kak_chitat_knigi.html"&gt;здесь&lt;/a&gt; или &lt;a class="reference external" href="https://m.vk.com/wall-56611080_127534"&gt;здесь&lt;/a&gt;.
-Эту книжечку сложно переоценить - она на вес золота.&lt;/p&gt;
-&lt;p&gt;Также нужно упомянуть про особое значение возможности применять принципы &lt;a class="reference internal" href="#zettelkasten"&gt;&lt;span class="std std-ref"&gt;Zettelkasten&lt;/span&gt;&lt;/a&gt; для запоминания информации и легкой навигации по ней.&lt;/p&gt;
-&lt;p&gt;Ну и, раз была затронута тема, не лишне будет упомянуть «A Mind for Numbers: How to Excel at Math and Science» by Barbara Ann Oakley, перевод: «Думай как математик. Как решать любые проблемы быстрее и эффективнее.» / Барбара Оакли.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id12"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id35"&gt;Легкость переключения контекста&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Специалисты, не работающие с информацией письменно, нередко испытывают затруднения с частым переключением контекста на работе.
-Сложность восстанавления в памяти исходного контекста снижает качество решений.
-В то же время, у специалистов, работающих с информацией письменно, таких проблем обычно не возникает.&lt;/p&gt;
-&lt;p&gt;Если выработать привычку записывать все в электронные заметки, прежде чем эта информация отразится в каком-либо еще источнике, то будет единый источник истины, который всегда под рукой, даже offline.
-Вначале требуется определенное усилие воли и самодисциплина, чтобы выработать привычку все записывать, но результат проявляется очень быстро, ведь записываем мы один раз, а обращаемся к записанному много раз.
-А если к записанному предоставить доступ команде, то это кратно повысит эффективность реиспользования информации и экономию времени.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id13"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id36"&gt;Порядок использования&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Система работает следующим образом:&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;&lt;p&gt;Создайте форк &lt;a class="reference external" href="https://github.com/emacsway/dckms-template"&gt;репозитария&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Перейдите в приватный бранч «private».&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Свои приватные заметки ведите в пространстве имен «private» (&lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;/private&lt;/span&gt;&lt;/code&gt;, &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;_media/private&lt;/span&gt;&lt;/code&gt;, &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;_html_extra/private&lt;/span&gt;&lt;/code&gt;).&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Создайте свой публичный бранч, например, «ivan.ivanov». Приватные директории сразу же внесите в файл «.gitignore» в этом бранче.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Создайте пространство имен для своих публичных заметок, которыми вы хотите поделиться, например, «ivan.ivanov» (&lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;/ivan.ivanov&lt;/span&gt;&lt;/code&gt;, &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;_media/ivan.ivanov&lt;/span&gt;&lt;/code&gt;, &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;_html_extra/ivan.ivanov&lt;/span&gt;&lt;/code&gt;). Таким образом вы облегчите читателям навигацию по вашим заметкам и сохраните очевидность авторства за собой (можно еще использовать директиву «&lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-sectionauthor"&gt;sectionauthor&lt;/a&gt;»). Создание персонального пространства имен необходимо еще и потому, что древовидное устройство файловой системы сложно унифицировать для всех авторов - у каждого автора есть свое видение на классификацию его материала. Благодаря гибкости директивы «&lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-of-contents"&gt;toctree&lt;/a&gt;», вы легко можете включать в дерево своего содержания поддеревья или страницы других авторов.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Тегируйте свой материал с помощью директивы «&lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#index-generating-markup"&gt;index&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Ненужные вам заметки других авторов вы можете удалить в своем приватном бранче. А нужные - добавить, как целиком, так и выборочно, используя &lt;a class="reference external" href="https://git-scm.com/docs/git-cherry-pick"&gt;cherry-pick&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Используя &lt;a class="reference external" href="https://www.uuidgenerator.net/version4"&gt;UUID4&lt;/a&gt;, создавайте &lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#ref-role"&gt;перекрестные ссылки&lt;/a&gt; между связанными заметками, следуя лучшим практикам &lt;a class="reference internal" href="#zettelkasten"&gt;&lt;span class="std std-ref"&gt;Zettelkasten&lt;/span&gt;&lt;/a&gt;. Вместо UUID можно использовать префиксирование своих label-names, используя в качестве префикса - пространство имен своих публичных заметок (поскольку заметка может быть перемещена из приватного простанства имен в публичное). Так же можно использовать расширение &lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autosectionlabel.html"&gt;sphinx.ext.autosectionlabel&lt;/a&gt; – Allow reference sections using its title (но оно не облегчает изменение локации заметки). И можно даже организовывать ссылки между отдельными проектами, используя директиву &lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-seealso"&gt;seealso&lt;/a&gt; и расширение &lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html"&gt;sphinx.ext.intersphinx&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Ведите &lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/todo.html"&gt;TODO&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Создайте Pull Request из своего именного публичного бранча («ivan.ivanov») в trunk-branch. Может быть множество trunk-бранчей, и, в качестве одного из них, можете использовать &lt;a class="reference external" href="https://github.com/dckms/system-architecture"&gt;этот&lt;/a&gt;. Trunk-branch можно сравнить с шиной событий в Event Sourcing системе.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Стройте свою распределенную коллективную базу знаний.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Можно добавить, что GitHub планирует добавить &lt;a class="reference external" href="https://github.com/isaacs/github/issues/629"&gt;поддержку cherry-pick в свой web-интерфейс&lt;/a&gt;, а в &lt;a class="reference external" href="https://github.blog/2021-03-30-github-desktop-now-supports-cherry-picking/"&gt;Desktop-client она уже реализована&lt;/a&gt;.
-А вот GitLab уже реализовал &lt;a class="reference external" href="https://docs.gitlab.com/ee/user/project/merge_requests/cherry_pick_changes.html"&gt;поддержку cherry-pick в web-интерфейсе&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="html"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id37"&gt;Как собрать html&lt;/a&gt;&lt;/h2&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;&lt;p&gt;Если не установлен Python, то &lt;a class="reference external" href="https://docs.python.org/3/installing/index.html"&gt;установите его&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Установите зависимости. Для этого, из корневой директории проекта выполните команду: &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;pip&lt;/span&gt; &lt;span class="pre"&gt;install&lt;/span&gt; &lt;span class="pre"&gt;-r&lt;/span&gt; &lt;span class="pre"&gt;requirements.freeze.txt&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Отредактируйте файл conf.py, подробности смотрите в &lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html"&gt;документации&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Произведите сборку: &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;make&lt;/span&gt; &lt;span class="pre"&gt;html&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Подробнее &lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/quickstart.html"&gt;здесь&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Так же существует возможность собрать PDF-файл или электронную книгу EPUB.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="zettelkasten"&gt;
-&lt;span id="id14"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id38"&gt;О Zettelkasten&lt;/a&gt;&lt;/h2&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://zettelkasten.de/posts/overview/"&gt;Zettelkasten&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://zettelkasten.de/introduction/"&gt;The Introduction to the Zettelkasten Method&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://habr.com/ru/post/509756/"&gt;Как я веду Zettelkasten в Notion уже год: стартовый набор и полезные трюки&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://habr.com/ru/post/508672/"&gt;Zettelkasten: как один немецкий учёный стал невероятно продуктивным&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;То, что Niklas Luhmann &lt;a class="reference external" href="https://vas3k.club/post/3040/"&gt;сделал&lt;/a&gt; на простых бумажных карточках, можно сделать и на Sphinx-doc.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id15"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id39"&gt;Философия&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Основные принципы системы:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;минимизация рисков и внешних зависимостей (от конкретного типа текстового редактора, вендора)&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;минимализм&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;неограниченная расширяемость&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;автономность&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;субъектность пользователя и полный контроль над информацией&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;распределенность и коллективность&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;свободное обогащение и дистилляция информации&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id16"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id40"&gt;Близкие по духу системы&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="section" id="obsidian"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id41"&gt;Obsidian&lt;/a&gt;&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;In our age when cloud services can shut down, get bought, or change privacy policy any day, the last thing you want is proprietary formats and data lock-in.&lt;/p&gt;
-&lt;p&gt;With Obsidian, your data sits in a local folder. Never leave your life’s work held hostage in the cloud again.&lt;/p&gt;
-&lt;p&gt;Plain text Markdown also gives you the unparalleled interoperability to use any kind of sync, encryption, or data processing that works with plain text files.&lt;/p&gt;
-&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://obsidian.md/"&gt;https://obsidian.md/&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="neuron-zettelkasten"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id42"&gt;Neuron Zettelkasten&lt;/a&gt;&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;Neuron was designed with these criteria in mind:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;Future-proof: store notes locally1 as plain-text (Markdown) files&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Not tied2 to a single text editor&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Statically generated web site, for browsing and publishing on the web&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Remain as simple to use as possible, whilst being feature-rich via Plugins&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://neuron.zettel.page/philosophy"&gt;https://neuron.zettel.page/philosophy&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="gitjournal"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id43"&gt;GitJournal&lt;/a&gt;&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;Compatible with your favorite Desktop Apps. GitJournal aims to be extremely configurable and work with your favorite apps. The idea is to not build another silo and instead integrate into your existing workflow.&lt;/p&gt;
-&lt;p&gt;No two people are the same…&lt;/p&gt;
-&lt;p&gt;Multiple Editors. All your notes are stored in Markdown. However you can edit the notes in many different ways depending on the task.&lt;/p&gt;
-&lt;p&gt;100% Open Source. GitJournal will always be completely Open Source. Join the community and help us build your ideal note taking app.&lt;/p&gt;
-&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://gitjournal.io/"&gt;https://gitjournal.io/&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;Why create another Note Taking App? There are many Note taking apps on the desktop, but the mobile space is lacking good note taking apps which give you control over your data and operate with open protocols.&lt;/p&gt;
-&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://gitjournal.io/support/"&gt;https://gitjournal.io/support/&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="popular-static-site-generators"&gt;
-&lt;span id="id17"/&gt;&lt;h3&gt;&lt;a class="toc-backref" href="#id44"&gt;Статические генераторы сайтов&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Существует целый класс инструментов, предназначенных для генерации сайта
-(блога, документации или информационной страницы) из исходных материалов
-в текстовых файлах в markdown, reStructuredText и других аналогичных
-форматах. Часто генераторы сайтов поддерживают дополнительную разметку
-(shortcodes), которая упрощает вставку диаграмм, формул, сносок, ссылок
-на твиты, видео и других элементов.&lt;/p&gt;
-&lt;p&gt;Наиболее известные из cтатических генераторов сайтов - &lt;a class="reference external" href="https://gohugo.io"&gt;Hugo&lt;/a&gt; (написан
-на Go, распространяется как бинарный исполняемый файл, поддерживает
-&lt;a class="reference external" href="https://gohugo.io/content-management/formats/"&gt;множество форматов&lt;/a&gt; разметки) и &lt;a class="reference external" href="https://github.com/jekyll/jekyll"&gt;Jekyll&lt;/a&gt;
-(требует установки Ruby). Так, например, страницы для представления
-markdown файлов на Github Pаges обрабатываются Jekyll.&lt;/p&gt;
-&lt;p&gt;Есть группа генераторов на JavaScript, как связанная с конкретными
-фреймворками (Gastby, Next, Nuxt, VuePress), так и самостоятельных
-(Hexo, Eleventy и другие). На Python написаны sphinx, mkdocs, pelican и
-другие.
-На Ruby можно добавить еще Middleman.&lt;/p&gt;
-&lt;p&gt;У многих генераторов есть темы оформления, связанные с документацией,
-например, очень красивый дизайн у &lt;a class="reference external" href="https://squidfunk.github.io/mkdocs-material/"&gt;mkdocs-material&lt;/a&gt;, &lt;a class="reference external" href="https://getdoks.org/"&gt;doks&lt;/a&gt;, &lt;a class="reference external" href="https://github.com/google/docsy"&gt;Docsy&lt;/a&gt;
-для Hugo, а также у &lt;a class="reference external" href="https://github.com/pmarsceill/just-the-docs"&gt;just-the-docs&lt;/a&gt; и &lt;a class="reference external" href="https://github.com/google/docsy"&gt;Docsy Jekyll Theme&lt;/a&gt; для Jekyll.&lt;/p&gt;
-&lt;p&gt;Ряд статических генераторов нацелены преимущественно на «книжный» формат
-представления документов c оглавлением слева:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://rust-lang.github.io/mdBook/"&gt;mdbook&lt;/a&gt; - очень лаконичный и быстрый в развертывании генератор,
-используется для документации языка Rust, поставляется бинарным
-файлом&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://jupyterbook.org/intro.html"&gt;jupyterbook&lt;/a&gt; (Python)&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://www.bookdown.org/"&gt;bookdown&lt;/a&gt; (R)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Список статических генераторов сайтов по полуярности на Github можно
-посмотреть &lt;a class="reference external" href="https://share.streamlit.io/epogrebnyak/ssg-dataset/main"&gt;здесь&lt;/a&gt;
-или &lt;a class="reference external" href="https://jamstack.org/generators/"&gt;здесь&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id18"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id45"&gt;Другие интересные проекты&lt;/a&gt;&lt;/h3&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://github.com/imdone/imdone-core"&gt;imdone-core&lt;/a&gt;» - Text based kanban processor (&lt;a class="reference external" href="https://github.com/imdone/imdone-core#resources"&gt;Why?&lt;/a&gt;).&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://github.com/coddx-hq/coddx-alpha"&gt;coddx-alpha&lt;/a&gt;» - Todo Kanban Board manages tasks and save them as TODO.md - a simple plain text file.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="http://www.orgzly.com/"&gt;Orgzly&lt;/a&gt;» - Outliner for notes and tasks. Notebooks in plain text (&lt;a class="reference external" href="https://github.com/orgzly"&gt;Source Code&lt;/a&gt;).&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://joplinapp.org/"&gt;Joplin&lt;/a&gt;» - an open source note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS (&lt;a class="reference external" href="https://github.com/laurent22/joplin/"&gt;Source Code&lt;/a&gt;).&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="markdown"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id46"&gt;Markdown&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Markdown - популярный язык разметки.
-Приводимые в начале этой страницы архитектурные руководства Microsoft написаны на Markdown.&lt;/p&gt;
-&lt;p&gt;Вы легко можете использовать Markdown, благодаря расширению &lt;a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/"&gt;MyST-Parser&lt;/a&gt; (&lt;a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/markdown.html"&gt;порядок установки&lt;/a&gt;).
-Расширение позволяет использовать в Markdown все директивы и роли Sphinx-doc, и является мостом Docutils к &lt;a class="reference external" href="https://github.com/executablebooks/markdown-it-py"&gt;markdown-it-py&lt;/a&gt;, который поддерживает синтаксис &lt;a class="reference external" href="https://commonmark.org/"&gt;CommonMark&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Как вариант, возможна и обычная статическая конвертация Markdown в reStructuredText:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/miyakogi/m2r"&gt;m2r&lt;/a&gt; - Markdown to reStructuredText converter&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/kata198/mdToRst"&gt;mdToRst&lt;/a&gt; - tool and library to convert markdown [md] to restructed text [rst] (md to rst).&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;И reStructuredText в Markdown:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://rst-to-myst.readthedocs.io/en/latest/"&gt;RST-to-MyST&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="using-dckms-on-mobile-devices"&gt;
-&lt;span id="id19"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id47"&gt;Как работать на мобильных устройствах&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="section" id="android"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id48"&gt;Как работать на Android&lt;/a&gt;&lt;/h3&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;Markor - популярный Markdown-редактор на Android: &lt;a class="reference external" href="https://github.com/gsantner/markor"&gt;GitHub&lt;/a&gt;, &lt;a class="reference external" href="https://f-droid.org/packages/net.gsantner.markor"&gt;F-Droid&lt;/a&gt;, &lt;a class="reference external" href="https://play.google.com/store/apps/details?id=net.gsantner.markor"&gt;Google Play&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://termux.com/"&gt;Termux&lt;/a&gt; - a unix-like environment for Android, for git and python3.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://gitjournal.io/"&gt;GitJournal&lt;/a&gt; - mobile first Markdown Notes integrated with Git: &lt;a class="reference external" href="https://github.com/GitJournal/GitJournal"&gt;GitHub&lt;/a&gt;, &lt;a class="reference external" href="https://play.google.com/store/apps/details?id=io.gitjournal.gitjournal&amp;amp;pcampaignid=website"&gt;Google Play&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="iphone"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id49"&gt;Как работать на iPhone&lt;/a&gt;&lt;/h3&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://gitjournal.io/"&gt;GitJournal&lt;/a&gt; - mobile first Markdown Notes integrated with Git: &lt;a class="reference external" href="https://github.com/GitJournal/GitJournal"&gt;GitHub&lt;/a&gt;, &lt;a class="reference external" href="https://apps.apple.com/app/gitjournal/id1466519634"&gt;App Store&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://apps.apple.com/ca/app/working-copy-git-client/id896694807"&gt;Working Copy&lt;/a&gt; - a Git client.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://1writerapp.com/"&gt;1Writer&lt;/a&gt; - powerful, beautiful Markdown editor for iOS.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://ia.net/writer"&gt;iA Writer&lt;/a&gt; - the simple, award-winning design of iA Writer delivers the essential writing experience.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://www.omz-software.com/editorial/"&gt;Editorial&lt;/a&gt; is a plain text editor for iOS with great Markdown support and powerful automation tools.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://tekacs.github.io/editorial-obsidian/"&gt;Editorial-obsidian&lt;/a&gt; - Editorial scripts for Obsidian (unofficial): &lt;a class="reference external" href="https://github.com/tekacs/editorial-obsidian"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://brettterpstra.com/ios-text-editors/"&gt;iTextEditors&lt;/a&gt; - the iOS Text Editor roundup.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id20"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id50"&gt;Аналоги&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://github.com/roalyr/zettelkasten"&gt;Zettelkasten&lt;/a&gt; - a template for a Zettelkasten based on markdown files.&lt;/p&gt;
-&lt;p&gt;Neuron Zettelkasten может представлять интерес для тех, кто предпочитает минимизацию внешних зависимостей, минимализм и неограниченность:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://neuron.zettel.page/philosophy"&gt;https://neuron.zettel.page/philosophy&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://neuron.zettel.page/tutorial"&gt;https://neuron.zettel.page/tutorial&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://srid.github.io/neuron-template/README"&gt;https://srid.github.io/neuron-template/README&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/srid/neuron"&gt;https://github.com/srid/neuron&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/srid/neuron-template"&gt;https://github.com/srid/neuron-template&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Парень дает &lt;a class="reference external" href="https://lobste.rs/s/kydg6q/neuron_0_4_zettelkasten_note_management#c_me2hhh"&gt;сравнение Neuron Zettelkasten и Sphinx-doc&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id21"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id51"&gt;Интеграция с другими системами&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Интеграция с другими системами, сервисами и приложениями возможна в пределах пересекающегося подмножества поддерживаемого Markdown-синтаксиса.&lt;/p&gt;
-&lt;div class="section" id="id22"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id52"&gt;Интеграция с Obsidian&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Идея Obsidian так же построена на локальных Markown-файлах, но с GUI-клиентом (недавно появился и &lt;a class="reference external" href="https://help.obsidian.md/Obsidian/Mobile+app+beta"&gt;мобильный клиент&lt;/a&gt;).
-Теоретически это означает, что вы можете шарить файлы между двумя системами.
-На практике я не пробовал это сделать (если попробуете - расскажите, пожалуйста, как получилось).&lt;/p&gt;
-&lt;p&gt;Зато сообщество Obsidian &lt;a class="reference external" href="https://forum.obsidian.md/t/how-do-i-work-with-obsidian-on-mobile/471"&gt;дает много дельных советов&lt;/a&gt;, как работать с Markdown-файлами на мобильных устройствах.&lt;/p&gt;
-&lt;p&gt;А также сообщество Obsidian предоставляет &lt;a class="reference external" href="https://forum.obsidian.md/t/static-site-generators-any-guides/8915"&gt;варианты статической генерации&lt;/a&gt; помимо помимо &lt;a class="reference external" href="https://obsidian.md/publish"&gt;Obsidian Publish&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="notion"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id53"&gt;Интеграция с Notion&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Notion позволяет экспортировать содержимое в Markdown-файлы.
-Теоретически это означает, что вы можете шарить файлы между двумя системами.
-На практике я не пробовал это сделать (если попробуете - расскажите, пожалуйста, как получилось).
-Массового импорта в Notion я не встречал, но есть варианты, например &lt;a class="reference external" href="https://github.com/Cobertos/md2notion/"&gt;Notion.so Markdown Importer&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="evernote"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id54"&gt;Интеграция с Evernote&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Существуют решения для экспорта заметок из Evernote:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/wormi4ok/evernote2md"&gt;evernote2md&lt;/a&gt; - convert Evernote .enex files to Markdown.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/claytron/ever2simple"&gt;ever2simple&lt;/a&gt; - migrate from evernote to simplenote with markdown formatting.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/nicholaskuechler/ever2text"&gt;ever2text&lt;/a&gt; - convert Evernote exports to text files.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="rss"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id55"&gt;RSS&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Существует несколько коробочных решений RSS-feed для Sphinx:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/sphinx-contrib/yasfb"&gt;https://github.com/sphinx-contrib/yasfb&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/sphinx-contrib/feed"&gt;https://github.com/sphinx-contrib/feed&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/lsaffre/sphinxfeed"&gt;https://github.com/lsaffre/sphinxfeed&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/prometheusresearch/sphinxcontrib-newsfeed"&gt;https://github.com/prometheusresearch/sphinxcontrib-newsfeed&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Смотрите так же &lt;a class="reference external" href="https://github.com/sphinx-doc/sphinx/issues/2"&gt;https://github.com/sphinx-doc/sphinx/issues/2&lt;/a&gt;&lt;/p&gt;
-&lt;div class="section" id="rss-mattermost"&gt;
-&lt;h4&gt;&lt;a class="toc-backref" href="#id56"&gt;Интегация RSS с Mattermost&lt;/a&gt;&lt;/h4&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://integrations.mattermost.com/rssfeed-plugin/"&gt;https://integrations.mattermost.com/rssfeed-plugin/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/wbernest/mattermost-plugin-rssfeed"&gt;https://github.com/wbernest/mattermost-plugin-rssfeed&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="rss-telegram"&gt;
-&lt;h4&gt;&lt;a class="toc-backref" href="#id57"&gt;Интегация RSS с Telegram&lt;/a&gt;&lt;/h4&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/BoKKeR/RSS-to-Telegram-Bot"&gt;https://github.com/BoKKeR/RSS-to-Telegram-Bot&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://thefeedreaderbot.com/"&gt;https://thefeedreaderbot.com/&lt;/a&gt; ( &lt;a class="reference external" href="https://telegram.me/TheFeedReaderBot"&gt;https://telegram.me/TheFeedReaderBot&lt;/a&gt; )&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://www.integromat.com/en/integrations/rss/telegram"&gt;https://www.integromat.com/en/integrations/rss/telegram&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://core.telegram.org/bots/faq"&gt;https://core.telegram.org/bots/faq&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="sitemap"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id58"&gt;Sitemap&lt;/a&gt;&lt;/h3&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/jdillard/sphinx-sitemap"&gt;https://github.com/jdillard/sphinx-sitemap&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id23"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id59"&gt;Полезные расширения&lt;/a&gt;&lt;/h2&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://sphinxcontrib-needs.readthedocs.io/en/latest/"&gt;Sphinx-Needs&lt;/a&gt; (&lt;a class="reference external" href="https://github.com/useblocks/sphinxcontrib-needs"&gt;source code&lt;/a&gt;) - Sphinx-Needs allows the definition, linking and filtering of need-objects, which are by default: requirements, specifications, implementations, test cases.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://0x6d64.github.io/sphinx-traceability-example/"&gt;Sphinx Traceability plugin&lt;/a&gt; (&lt;a class="reference external" href="https://github.com/melexis/sphinx-traceability-extension"&gt;source code&lt;/a&gt;) - traceability extension for Sphinx documentation generator. Sphinx plugin that allows defining documentation items and relations between those items. Can be used as a requirements management tool for e.g. ISO26262 projects.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id24"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id60"&gt;Послесловие&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Проект в состоянии развития. Стабильность пока не гарантируется.&lt;/p&gt;
-&lt;p&gt;Технически, в отдаленной перспективе можно было бы приспособить под принципы и соглашения системы одно из Open Source приложений для заметок, но у меня такая цель на данный момент не стоит. В таком приложении можно было бы выбирать источники подписок, автоматизировать и облегчить просмотр и принятие коммитов в свою базу знаний, например, если коммит содержит новую заметку, связанную с одной из уже принятых ранее заметок, или является её обновлением, тогда принимать коммит автоматически.&lt;/p&gt;
-&lt;/div&gt;
-</description><pubDate>Tue, 23 Nov 2021 00:00:00 </pubDate></item><item><title>Список литературы для самообучения разработчика программного обеспечения</title><link>https://dckms.github.io/system-architecture/emacsway/it/self-learning/self-learning-for-software-engineer.html</link><description>
+</description><pubDate>Wed, 24 Nov 2021 00:00:00 </pubDate></item><item><title>Список литературы для самообучения разработчика программного обеспечения</title><link>https://dckms.github.io/system-architecture/emacsway/it/self-learning/self-learning-for-software-engineer.html</link><description>
 &lt;span id="id1"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Один из частых вопросов, который я наблюдаю регулярно, - это «посоветуйте список литературы в области разработки программного обеспечения».
