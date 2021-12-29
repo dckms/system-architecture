@@ -234,6 +234,27 @@ Vaughn Vernon в "Reactive Messaging Patterns with the Actor Model: Applications
 
     -- "Reactive Messaging Patterns with the Actor Model: Applications and Integration in Scala and Akka" by Vaughn Vernon, Chapter "5. Messaging Channels :: Point-to-Point Channel"
 
+Возникает вопрос о том, нужно ли заниматься восстановлением очередности сообщений на уровне Domain Logic, или на уровне Application Logic.
+В статье "`Nobody Needs Reliable Messaging <https://www.infoq.com/articles/no-reliable-messaging/>`__" by Marc de Graauw приводятся убедительные аргументы о том, что если это важно для бизнеса, то это должно быть на уровне бизнес-логики (Domain Logic).
+Однако, нужно учитывать, что термина "Сообщение" в предметной области вообще не существует (есть только "Событие").
+Зато существует термин "время", которое едино для всего в предметной области, в отличии от времени приложения в распределенной системе.
+
+Таким образом, очередность доставки сообщений - это проблема, свойственная не предметной области, а приложению.
+Нужно ли решать её на уровне бизнеса?
+Ответ зависит от конкретных обстоятельств.
+
+Еще один из способов решения проблемы согласованности - это дублирование данных, сохранение, обработка и передача зависимых данных атомарно.
+Этот прием часто используется для обеспечения границ согласованности Aggregate в DDD, для обеспечения автономности микросервисов и Bounded Contexts.
+
+    An implementation consistent with this model would guarantee the invariant relating PO [Purchase Order] and its items, while changes to the price of a part would not have to immediately affect the items that reference it.
+    Broader consistency rules could be addressed in other ways.
+    For example, the system could present a queue of items with outdated prices to the users each day, so they could update or exempt each one.
+    But this is not an invariant that must be enforced at all times.
+    By making the dependency of line items on parts looser, we avoid contention and reflect the realities of the business better.
+    At the same time, tightening the relationship of the PO and its line items guarantees that an important business rule will be followed.
+
+    -- "Domain-Driven Design" by Eric Evans
+
 Родственные EIP patterns:
 
 - "`Correlation Identifier <https://www.enterpriseintegrationpatterns.com/patterns/messaging/CorrelationIdentifier.html>`__"
