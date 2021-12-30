@@ -14,6 +14,8 @@ import os
 # import sys
 import datetime
 import posixpath
+from jinja2.utils import escape
+
 # sys.path.insert(0, os.path.abspath('.'))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_URL = os.environ.get('BASE_URL', 'http://YOUR_HOST_URL')
@@ -21,11 +23,12 @@ BASE_URL = os.environ.get('BASE_URL', 'http://YOUR_HOST_URL')
 # -- Project information -----------------------------------------------------
 
 project = 'DCKMS'
-copyright = '{}, Your Full Name (<a href="{}" rel="nofollow">License</a>)'.format(
-    datetime.datetime.now().strftime('%Y'),
-    posixpath.join(BASE_URL, 'LICENSE')
-)
 author = 'Your Full Name'
+copyright = '{}, {} (<a href="{}" rel="nofollow">License</a>)'.format(
+    datetime.datetime.now().strftime('%Y'),
+    author,
+    escape(posixpath.join(BASE_URL, 'LICENSE'))
+)
 
 
 # -- General configuration ---------------------------------------------------
