@@ -84,7 +84,7 @@ html_extra_path = [
 
 # Do not use html_baseurl together with custom page metadata ``canonical-url``
 # https://www.sphinx-doc.org/en/master/development/theming.html#use-custom-page-metadata-in-html-templates
-# html_baseurl = os.environ.get('BASE_URL', None)
+# html_baseurl = BASE_URL
 
 html_theme_options = {
     'github_banner': True,
