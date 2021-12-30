@@ -83,12 +83,12 @@ html_theme_options = {
     'show_powered_by': True,
     'description': "Distributed Collaborative Knowledge Management System",
     # Google Analytics ID
-    'analytics_id': None
+    'analytics_id': os.environ.get('GOOGLE_ANALITICS_ID', None),
 }
 
 html_context = {
     # Yandex.Metrika ID
-    'theme_ym_analytics_id': None,
+    'theme_yandex_metrika_id': os.environ.get('YANDEX_METRIKA_ID', None),
 }
 
 
