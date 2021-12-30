@@ -19,7 +19,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # -- Project information -----------------------------------------------------
 
 project = 'DCKMS'
-copyright = '{}, Your Full Name'.format(datetime.datetime.now().strftime('%Y'))
+copyright = '{}, Your Full Name (<a href="/LICENSE" rel="nofollow">License</a>)'.format(datetime.datetime.now().strftime('%Y'))
 author = 'Your Full Name'
 
 
@@ -70,14 +70,27 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_extra_path = ['_html_extra', ]
+html_extra_path = [
+    '_html_extra',
+    'LICENSE',
+    'LICENSE-CONTENT',
+    'LICENSE-CODE',
+]
 
 html_theme_options = {
     'show_related': True,
     'show_relbars': True,
     'show_powered_by': True,
     'description': "Distributed Collaborative Knowledge Management System",
+    # Google Analytics ID
+    'analytics_id': None
 }
+
+html_context = {
+    # Yandex.Metrika ID
+    'theme_ym_analytics_id': None,
+}
+
 
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
