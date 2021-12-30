@@ -30,7 +30,6 @@ copyright = '{}, {} (<a href="{}" rel="nofollow">License</a>)'.format(
     escape(posixpath.join(BASE_URL, 'LICENSE'))
 )
 
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
