@@ -175,14 +175,22 @@ Sphinx-doc предоставляет и тегирование/индексир
 
 #. Создайте форк `репозитария <https://github.com/emacsway/dckms-template>`__.
 #. Перейдите в приватный бранч "private".
-#. Свои приватные заметки ведите в пространстве имен "private" (``/private``, ``_media/private``, ``_html_extra/private``).
+#. Свои приватные заметки ведите в пространстве имен "private" (``/private``, ``_html_extra/private``).
 #. Создайте свой публичный бранч, например, "ivan.ivanov". Приватные директории сразу же внесите в файл ".gitignore" в этом бранче.
-#. Создайте пространство имен для своих публичных заметок, которыми вы хотите поделиться, например, "ivan.ivanov" (``/ivan.ivanov``, ``_media/ivan.ivanov``, ``_html_extra/ivan.ivanov``). Таким образом вы облегчите читателям навигацию по вашим заметкам и сохраните очевидность авторства за собой (можно еще использовать директиву "`sectionauthor <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-sectionauthor>`__"). Создание персонального пространства имен необходимо еще и потому, что древовидное устройство файловой системы сложно унифицировать для всех авторов - у каждого автора есть свое видение на классификацию его материала. Благодаря гибкости директивы "`toctree <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-of-contents>`__", вы легко можете включать в дерево своего содержания поддеревья или страницы других авторов.
+#. Создайте пространство имен для своих публичных заметок, которыми вы хотите поделиться, например, "ivan.ivanov" (``/ivan.ivanov``, ``_html_extra/ivan.ivanov``). Таким образом вы облегчите читателям навигацию по вашим заметкам и сохраните очевидность авторства за собой (можно еще использовать директиву "`sectionauthor <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-sectionauthor>`__"). Создание персонального пространства имен необходимо еще и потому, что древовидное устройство файловой системы сложно унифицировать для всех авторов - у каждого автора есть свое видение на классификацию его материала. Благодаря гибкости директивы "`toctree <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-of-contents>`__", вы легко можете включать в дерево своего содержания поддеревья или страницы других авторов.
 #. Тегируйте свой материал с помощью директивы "`index <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#index-generating-markup>`__"
 #. Ненужные вам заметки других авторов вы можете удалить в своем приватном бранче. А нужные - добавить, как целиком, так и выборочно, используя `cherry-pick <https://git-scm.com/docs/git-cherry-pick>`__.
 #. Используя `UUID4 <https://www.uuidgenerator.net/version4>`__, создавайте `перекрестные ссылки <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#ref-role>`__ между связанными заметками, следуя лучшим практикам :ref:`Zettelkasten <zettelkasten>`. Вместо UUID можно использовать префиксирование своих label-names, используя в качестве префикса - пространство имен своих публичных заметок (поскольку заметка может быть перемещена из приватного простанства имен в публичное). Так же можно использовать расширение `sphinx.ext.autosectionlabel <https://www.sphinx-doc.org/en/master/usage/extensions/autosectionlabel.html>`__ – Allow reference sections using its title (но оно не облегчает изменение локации заметки). И можно даже организовывать ссылки между отдельными проектами, используя директиву `seealso <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-seealso>`__ и расширение `sphinx.ext.intersphinx <https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html>`__.
 #. Ведите `TODO <https://www.sphinx-doc.org/en/master/usage/extensions/todo.html>`__.
 #. Создайте Pull Request из своего именного публичного бранча ("ivan.ivanov") в trunk-branch. Может быть множество trunk-бранчей, и, в качестве одного из них, можете использовать `этот <https://github.com/dckms/system-architecture>`__. Trunk-branch можно сравнить с шиной событий в Event Sourcing системе.
+#. Когда вы делитесь своим контентом в публичном пространстве, важно понимать, что он может оказаться доступным в интернете на других доменах. Чтобы сохранить поисковый траффик за оригинальным адресом предоставляемых страниц, вначале каждой такой страницы используйте `custom page metadata <https://www.sphinx-doc.org/en/master/development/theming.html#use-custom-page-metadata-in-html-templates>`__ ``canonical-url``:
+
+    ::
+
+        :canonical-url: https://my-domain/my-path
+
+    При этом не следует использовать `html_baseurl <https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_baseurl>`__ или `html_theme_options[\"canonical_url\"] <https://alabaster.readthedocs.io/en/latest/customization.html#theme-options>`__.
+
 #. Стройте свою распределенную коллективную базу знаний.
 
 Можно добавить, что GitHub планирует добавить `поддержку cherry-pick в свой web-интерфейс <https://github.com/isaacs/github/issues/629>`__, а в `Desktop-client она уже реализована <https://github.blog/2021-03-30-github-desktop-now-supports-cherry-picking/>`__.
@@ -486,4 +494,4 @@ Sitemap
 
 Технически, в отдаленной перспективе можно было бы приспособить под принципы и соглашения системы одно из Open Source приложений для заметок, но у меня такая цель на данный момент не стоит. В таком приложении можно было бы выбирать источники подписок, автоматизировать и облегчить просмотр и принятие коммитов в свою базу знаний, например, если коммит содержит новую заметку, связанную с одной из уже принятых ранее заметок, или является её обновлением, тогда принимать коммит автоматически.
 
-P.S.: Контент является личной записной книжкой и доступен только для учебных и исследовательских целей.
+P.S.: Проект представляет собой личную записную книжку и её контент доступен только для учебных и исследовательских целей.

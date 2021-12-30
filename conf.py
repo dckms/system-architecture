@@ -19,7 +19,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # -- Project information -----------------------------------------------------
 
 project = 'System Architecture'
-copyright = '{}, @dckms'.format(datetime.datetime.now().strftime('%Y'))
+copyright = '{}, @dckms (<a href="/LICENSE" rel="nofollow">License</a>)'.format(datetime.datetime.now().strftime('%Y'))
 author = '@dckms'
 
 
@@ -70,9 +70,16 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_extra_path = ['_html_extra', ]
+html_extra_path = [
+    '_html_extra',
+    'LICENSE',
+    'LICENSE-CONTENT',
+    'LICENSE-CODE',
+]
 
-html_baseurl = 'https://dckms.github.io/system-architecture'
+# Do not use html_baseurl together with custom page metadata ``canonical-url``
+# https://www.sphinx-doc.org/en/master/development/theming.html#use-custom-page-metadata-in-html-templates
+# html_baseurl = os.environ.get('BASE_URL', None)
 
 html_theme_options = {
     'github_banner': True,
@@ -85,7 +92,15 @@ html_theme_options = {
     'show_relbars': True,
     'show_powered_by': True,
     'description': "Distributed Collaborative Knowledge Management System for System Architecture",
+    # Google Analytics ID
+    'analytics_id': os.environ.get('GOOGLE_ANALITICS_ID', None),
 }
+
+html_context = {
+    # Yandex.Metrika ID
+    'theme_yandex_metrika_id': os.environ.get('YANDEX_METRIKA_ID', None),
+}
+
 
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.

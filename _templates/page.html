@@ -1,0 +1,11 @@
+{%- extends "!page.html" %}
+
+{% block body %}
+    {{ super() }}
+
+    {% if meta is mapping and meta.get("canonical-url") %}
+        <div class="section">
+            <p>Canonical URL: <a href="{{ meta.get("canonical-url")|e }}" />{{ meta.get("canonical-url")|e }}</a></p>
+        </div>
+    {% endif %}
+{% endblock %}
