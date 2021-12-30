@@ -13,13 +13,18 @@
 import os
 # import sys
 import datetime
+import posixpath
 # sys.path.insert(0, os.path.abspath('.'))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+BASE_URL = os.environ.get('BASE_URL', 'http://YOUR_HOST_URL')
 
 # -- Project information -----------------------------------------------------
 
 project = 'DCKMS'
-copyright = '{}, Your Full Name (<a href="/LICENSE" rel="nofollow">License</a>)'.format(datetime.datetime.now().strftime('%Y'))
+copyright = '{}, Your Full Name (<a href="{}" rel="nofollow">License</a>)'.format(
+    datetime.datetime.now().strftime('%Y'),
+    posixpath.join(BASE_URL, 'LICENSE')
+)
 author = 'Your Full Name'
 
 
@@ -107,5 +112,5 @@ gettext_compact = False
 show_authors = True
 
 # RSS settings (yasfb)
-feed_base_url = os.environ.get('BASE_URL', 'http://YOUR_HOST_URL')
+feed_base_url = BASE_URL
 feed_author = author
