@@ -1,3 +1,5 @@
+:canonical-base-url: https://dckms.github.io/system-architecture
+
 .. index:: Messaging, Message Broker, Causal Consistency, Eventual Consistency, Integration Patterns, NATS Streaming Server, Actor Model, Asynchronous Communication
 
 ======================================================
