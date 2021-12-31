@@ -4,8 +4,13 @@
 {%- block extrahead %}
     {{ super() }}
 
-    {% if meta is mapping and meta.get("canonical-url") %}
-        <link rel="canonical" href="{{ meta.get("canonical-url")|e }}" />
+
+    {% if meta is mapping %}
+        {% if meta.get("canonical-url") %}
+            <link rel="canonical" href="{{ meta.get("canonical-url")|e }}" />
+        {% elif meta.get("canonical-base-url") %}
+            <link rel="canonical" href="{{ meta.get("canonical-base-url")|e }}/{{ pagename|e }}{{ file_suffix|e }}" />
+        {% endif %}
     {% endif %}
 {% endblock %}
 

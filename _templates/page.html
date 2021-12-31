@@ -3,9 +3,15 @@
 {% block body %}
     {{ super() }}
 
-    {% if meta is mapping and meta.get("canonical-url") %}
-        <div class="section">
-            <p>Canonical URL: <a href="{{ meta.get("canonical-url")|e }}" />{{ meta.get("canonical-url")|e }}</a></p>
-        </div>
+    {% if meta is mapping %}
+        {% if meta.get("canonical-url") %}
+            <div class="section" style="text-align: right;">
+                <p><a href="{{ meta.get("canonical-url")|e }}">{{ _('Canonical URL')|e }}</a></p>
+            </div>
+        {% elif meta.get("canonical-base-url") %}
+            <div class="section" style="text-align: right;">
+                <p><a href="{{ meta.get("canonical-base-url")|e }}/{{ pagename|e }}{{ file_suffix|e }}">{{ _('Canonical URL')|e }}</a></p>
+            </div>
+        {% endif %}
     {% endif %}
 {% endblock %}
