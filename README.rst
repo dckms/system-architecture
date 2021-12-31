@@ -1,3 +1,5 @@
+:canonical-url: https://github.com/emacsway/dckms-template
+
 ================
 Как пользоваться
 ================
