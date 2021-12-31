@@ -187,7 +187,13 @@ Sphinx-doc предоставляет и тегирование/индексир
 
     ::
 
-        :canonical-url: https://my-domain/my-path
+        :canonical-url: https://my-domain.ru/my-path
+
+    или ``canonical-base-url`` (без закрывающего слэша):
+
+    ::
+
+        :canonical-base-url: https://my-domain.ru
 
     При этом не следует использовать `html_baseurl <https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_baseurl>`__ или `html_theme_options[\"canonical_url\"] <https://alabaster.readthedocs.io/en/latest/customization.html#theme-options>`__.
 
