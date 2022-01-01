@@ -8,6 +8,12 @@
 
 .. sectionauthor:: Ivan Zakrevsky
 
+TODO:
+
+- ISO Definition
+- Назначение - обреботка неопределенности
+- График роста стоимости точности Prediction и бизнес-выгод от точности (видео Роберта Мартина)
+
 Agile является естественным следствием эволюции итеративной разработки, краткий обзор которой можно посмотреть в превосходной статье Craig Larman "`Iterative and Incremental Development: A Brief History <https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf>`__".
 
 Вся суть Agile (итеративной) модели разработки одним предложением:
