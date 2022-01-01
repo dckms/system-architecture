@@ -6,6 +6,11 @@
 Balancing Prediction/Adaptation
 ===============================
 
+TODO:
+
+- https://t.me/emacsway_log/812
+- https://t.me/emacsway_log/731
+
 
 Alberto Brandolini about Prediction/Adaptation
 ==============================================
