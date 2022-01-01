@@ -9,3 +9,4 @@ SDLC
 
    */index
    /emacsway/it/sdlc/sdlc-reference
+   /emacsway/it/sdlc/balancing-prediction-adaptation
