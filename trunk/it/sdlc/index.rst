@@ -8,4 +8,4 @@ SDLC
    :glob:
 
    */index
-   /emacsway/it/sdlc/sdlc-reference.rst
+   /emacsway/it/sdlc/sdlc-reference
