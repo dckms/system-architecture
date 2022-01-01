@@ -1,0 +1,95 @@
+Appendix II. Fibonacci
+In answer to a question from one of the reviewers of this book, I posted a test-driven Fibonacci. Several reviewers commented that this example turned on their light about how TDD works. However, it is not long enough, nor does it demonstrate enough of TDD techniques, to replace the existing examples. If your lights are still dark after reading the main examples, take a look here and see.
+The first test shows that fib(0) = 0 . The implementation returns a constant.
+
+public void testFibonacci() {
+    assertEquals(0, fib(0));
+}
+
+int fib(int n) {
+    return 0;
+}
+
+(I am just using the TestCase class as a home for the code, because it is only a single function.)
+The second test shows that fib(1) = 1 .
+
+public void testFibonacci() {
+    assertEquals(0, fib(0));
+    assertEquals(1, fib(1));
+}
+
+I just put the second assert in the same method, because there didn't seem to be any substantial communication value to writing testFibonacciOfOneIsOne .
+There are several ways I could go to make this run. I'll choose to treat 0 as a special case:
+
+int fib(int n) {
+    if (n == 0) return 0;
+    return 1;
+}
+
+The duplication in the test case is starting to bug me, and it will only get worse as we add new cases. We can factor out the common structure of the assertions by driving the test from a table of input and expected values.
+
+public void testFibonacci() {
+    int cases[][]= {{0,0},{1,1}};
+    for (int i= 0; i < cases.length; i++)
+        assertEquals(cases[i][1], fib(cases[i][0]));
+}
+
+Now adding the next case requires six keystrokes and no additional lines:
+
+public void testFibonacci() {
+    int cases[][]= {{0,0},{1,1},{2,1}};
+    for (int i= 0; i < cases.length; i++)
+        assertEquals(cases[i][1], fib(cases[i][0]));
+}
+
+Disconcertingly, the test works. It just so happens that our constant 1 is right for this case as well. On to the next test:
+
+public void testFibonacci() {
+    int cases[][]= {{0,0},{1,1},{2,1},{3,2}};
+    for (int i= 0; i < cases.length; i++)
+        assertEquals(cases[i][1], fib(cases[i][0]));
+}
+
+Hooray, it fails. Applying the same strategy as before (treating smaller inputs as special cases), we write:
+
+int fib(int n) {
+    if (n == 0) return 0;
+    if (n <= 2) return 1;
+    return 2;
+}
+
+Now we are ready to generalize. We wrote 2, but we don't really mean 2, we mean 1 + 1.
+
+int fib(int n) {
+    if (n == 0) return 0;
+    if (n <= 2) return 1;
+    return 1 + 1;
+}
+
+That first 1 is an example of fib(n-1) :
+
+int fib(int n) {
+    if (n == 0) return 0;
+    if (n <= 2) return 1;
+    return fib(n-1) + 1;
+}
+
+The second 1 is an example of fib(n-2) :
+
+int fib(int n) {
+    if (n == 0) return 0;
+    if (n <= 2) return 1;
+    return fib(n-1) + fib(n-2);
+}
+
+Cleaning up now, the same structure should work for fib(2) , so we can tighten up the second condition:
+
+int fib(int n) {
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    return fib(n-1) + fib(n-2);
+}
+
+And there we have Fibonacci, derived totally from the tests.
+
+Source: "Test-Driven Development By Example" by Kent Beck

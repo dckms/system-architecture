@@ -791,7 +791,7 @@ My approach is similar to Vaughn Vernon - I try always handle event in separate 
 И сопровождает его `иллюстрацией <https://twitter.com/kamgrzybek/status/1472232661938843657?t=czUCrilodujW8aAIdV6OBw&s=19>`__:
 
 .. figure:: _media/domain-events-in-ddd/domain-vs-integration-event-by-kamil-grzybek.jpeg
-   :alt: The difference between event types.
+   :alt: The difference between event types. The image source is https://twitter.com/kamgrzybek/status/1472232661938843657?t=czUCrilodujW8aAIdV6OBw&s=19
    :align: left
    :width: 70%
 
@@ -802,11 +802,11 @@ My approach is similar to Vaughn Vernon - I try always handle event in separate 
 Еще дальше идут авторы книги "Patterns, Principles, and Practices of Domain-Driven Design" [#fnpppddd]_, вводя явное разделение внутренних и внешних событий:
 
 .. figure:: _media/domain-events-in-ddd/pppddd-18.1.png
-   :alt: FIGURE pppddd-18-1: Ensuring correct transactional behavior. The image is from "Patterns, Principles, and Practices of Domain-Driven Design" by Scott Millett, Nick Tune
+   :alt: FIGURE pppddd-18-1: Ensuring correct transactional behavior. The image source is "Patterns, Principles, and Practices of Domain-Driven Design" by Scott Millett, Nick Tune
    :align: center
    :width: 70%
 
-   FIGURE pppddd-18-1: Ensuring correct transactional behavior. The image is from "Patterns, Principles, and Practices of Domain-Driven Design" by Scott Millett, Nick Tune
+   FIGURE pppddd-18-1: Ensuring correct transactional behavior. The image source is "Patterns, Principles, and Practices of Domain-Driven Design" by Scott Millett, Nick Tune
 
 ..
 
@@ -828,11 +828,11 @@ My approach is similar to Vaughn Vernon - I try always handle event in separate 
     \- "Patterns, Principles, and Practices of Domain-Driven Design" [#fnpppddd]_ by Scott Millett, Nick Tune, Chapter "18 Domain Events :: Internal vs External Events"
 
 .. figure:: _media/domain-events-in-ddd/pppddd-18.2.png
-   :alt: FIGURE pppddd-18-2: Flow of internal and external events in a typical business use case. The image is from "Patterns, Principles, and Practices of Domain-Driven Design" by Scott Millett, Nick Tune
+   :alt: FIGURE pppddd-18-2: Flow of internal and external events in a typical business use case. The image source is "Patterns, Principles, and Practices of Domain-Driven Design" by Scott Millett, Nick Tune
    :align: center
    :width: 70%
 
-   FIGURE pppddd-18-2: Flow of internal and external events in a typical business use case. The image is from "Patterns, Principles, and Practices of Domain-Driven Design" by Scott Millett, Nick Tune
+   FIGURE pppddd-18-2: Flow of internal and external events in a typical business use case. The image source is "Patterns, Principles, and Practices of Domain-Driven Design" by Scott Millett, Nick Tune
 
 Разделяют Domain Events на внутренние и внешние и специалисты .NET.
 
@@ -901,14 +901,14 @@ One-phase vs Two-phase
 Хотя у Vaughn Vernon такое разделение не совсем очевидное, он разделяет реализацию доставки  для подписчиков внутри Bounded Context за его пределами.
 
 .. figure:: _media/domain-events-in-ddd/iddd-8.1.png
-   :alt: Figure 8.1. Aggregates create Events and publish them. Subscribers may store Events and then forward them to remote subscribers, or just forward them without storing. Immediate forwarding requires XA (two-phase commit) unless messaging middleware shares the model’s data store. The image is from "Implementing Domain-Driven Design" by Vaughn Vernon
+   :alt: Figure 8.1. Aggregates create Events and publish them. Subscribers may store Events and then forward them to remote subscribers, or just forward them without storing. Immediate forwarding requires XA (two-phase commit) unless messaging middleware shares the model’s data store. The image source is "Implementing Domain-Driven Design" by Vaughn Vernon
    :align: center
    :width: 70%
 
    Figure 8.1. Aggregates create Events and publish them.
    **Subscribers may store Events and then forward them to remote subscribers, or just forward them without storing.**
    Immediate forwarding requires XA (two-phase commit) unless messaging middleware shares the model’s data store.
-   The image is from "Implementing Domain-Driven Design" [#fniddd]_ by Vaughn Vernon
+   The image source is "Implementing Domain-Driven Design" [#fniddd]_ by Vaughn Vernon
 
 ..
 

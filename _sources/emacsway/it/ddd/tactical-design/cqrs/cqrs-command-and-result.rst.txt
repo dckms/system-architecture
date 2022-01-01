@@ -410,11 +410,11 @@ Referential Transparency означает, что вызов функции мо
 Отделение Команд от Запросов позволяет организовать однонаправленный поток изменений, и тогда оба пользователя одновременно получат сообщение о событии, что последний товар закончился.
 
 .. figure:: _media/cqrs-command-and-result/cqrs.png
-   :alt: CQRS. The image is from "Clarified CQRS" by Udi Dahan https://udidahan.com/2009/12/09/clarified-cqrs/
+   :alt: CQRS. The image from "Clarified CQRS" by Udi Dahan https://udidahan.com/2009/12/09/clarified-cqrs/
    :align: center
    :width: 70%
 
-   CQRS. The image is from "Clarified CQRS" by Udi Dahan https://udidahan.com/2009/12/09/clarified-cqrs/
+   CQRS. The image from "Clarified CQRS" by Udi Dahan https://udidahan.com/2009/12/09/clarified-cqrs/
 
 ..
 

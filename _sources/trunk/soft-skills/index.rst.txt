@@ -10,4 +10,4 @@ Soft Skills
    /emacsway/soft-skills/cognitive-biases
    /emacsway/soft-skills/change-making
    /emacsway/soft-skills/icebreaker-principle
-   /emacsway/soft-skills/planning-in-psychology.rst
+   /emacsway/soft-skills/planning-in-psychology
