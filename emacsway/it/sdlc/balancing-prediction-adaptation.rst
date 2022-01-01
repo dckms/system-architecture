@@ -11,6 +11,16 @@ TODO:
 - https://t.me/emacsway_log/812
 - https://t.me/emacsway_log/731
 
+    📝 McConnell writes, "In ten years the pendulum has swung from 'design everything' to 'design nothing.'
+    But the alternative to BDUF [Big Design Up Front] isn't no design up front, it's a Little Design Up Front (LDUF) or Enough Design Up Front (ENUF)."
+    This is a strawman argument.
+    The alternative to designing before implementing is designing after implementing.
+    Some design up-front is necessary, but just enough to get the initial implementation.
+    Further design takes place once the implementation is in place and the real constraints on the design are obvious.
+    Far from "design nothing," the XP strategy is "design always."
+
+    -- "Extreme Programming Explained" 2nd edition by Kent Beck
+
 
 Alberto Brandolini about Prediction/Adaptation
 ==============================================
