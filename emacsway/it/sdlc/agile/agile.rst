@@ -79,3 +79,10 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
 
     -- Kent Beck, https://twitter.com/KentBeck/status/1402276528910704655?s=19
 
+..
+
+    📝 "The incremental and iterative nature of Agile development can facilitate **efficient technical and management processes and practices to reduce the cost associated with change**.
+    In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project."
+
+    -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
+
