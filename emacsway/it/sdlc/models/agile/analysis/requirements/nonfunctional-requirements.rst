@@ -71,6 +71,7 @@ Agile nonfunctional Requirements
     <...>
 
     nonfunctional requirement.
+
     1. A requirement that does not relate to functionality but to attributes such as reliability, efficiency, usability, maintainability, and portability, which product backlog items must possess in order to be fully accepted by the stakeholders.
     2. **Each nonfunctional requirement is a candidate for inclusion in the definition of done**. See also definition of done."
 
@@ -125,5 +126,5 @@ Agile nonfunctional Requirements
 См. также:
 
 - "`Nonfunctional Requirements <https://www.scaledagileframework.com/nonfunctional-requirements/>`__" at SAFe
-- "` An Agile Architectural Epic Kanban System: Part 2 – The Model <https://scalingsoftwareagility.wordpress.com/2010/03/05/an-agile-architectural-epic-kanban-system-part-2-%E2%80%93-the-model/>`__" by Dean Leffingwell
+- "`An Agile Architectural Epic Kanban System: Part 2 – The Model <https://scalingsoftwareagility.wordpress.com/2010/03/05/an-agile-architectural-epic-kanban-system-part-2-%E2%80%93-the-model/>`__" by Dean Leffingwell
 - `A Lean and Scalable Requirements Information Model for the Agile Enterprise <https://scalingsoftwareagility.files.wordpress.com/2007/03/a-lean-and-scalable-requirements-information-model-for-agile-enterprises-pdf.pdf>`__ by Dean Leffingwell with Juha‐Markus Aalto

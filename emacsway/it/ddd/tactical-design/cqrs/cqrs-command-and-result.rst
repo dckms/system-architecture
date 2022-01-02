@@ -414,7 +414,7 @@ Referential Transparency означает, что вызов функции мо
    :align: center
    :width: 70%
 
-   CQRS. The image from "Clarified CQRS" by Udi Dahan https://udidahan.com/2009/12/09/clarified-cqrs/
+   CQRS. The image from "`Clarified CQRS <https://udidahan.com/2009/12/09/clarified-cqrs/>`__" by Udi Dahan
 
 ..
 
