@@ -1,6 +1,7 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
-.. index:: Prediction, Adaptation, Soft Skills
+.. index:: Prediction, Adaptation
+   :name: emacsway-balancing-prediction-adaptation
 
 ===============================
 Balancing Prediction/Adaptation
