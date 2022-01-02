@@ -7,4 +7,4 @@ Prediction
    :caption: Оглавление:
    :glob:
 
-   /emacsway/it/sdlc/prediction/prediction
+   /emacsway/it/sdlc/uncertainty-management/prediction/prediction
