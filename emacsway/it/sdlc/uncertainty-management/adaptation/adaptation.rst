@@ -47,7 +47,7 @@ Prediction при этом не исчезает полностью, а пони
 
     -- "The Mythical Man-Month Essays on Software Engineering Anniversary Edition" by Frederick P. Brooks, Jr.
 
-Конечно, сугубо семантически, термин "requirements" немного вводит в заблуждение в Agile, ведь заранее требования к продукту неизвестны полностью, и они изменяются по мере реализации продукта.
+Конечно, сугубо семантически, термин ":ref:`requirements <emacsway-agile-requirements>`" немного вводит в заблуждение в Agile, ведь заранее требования к продукту неизвестны полностью, и они изменяются по мере реализации продукта.
 А в таком случае, как они могут что-то требовать?
 Вы, наверное, встречали картинку с треугольником "`Iron Triangle <https://www.atlassian.com/agile/agile-at-scale/agile-iron-triangle>`__" (Requirements/Scope, Cost, Time), где в waterfall он обращен вершиной Requirements вниз (константная область), а в Agile - вверх (переменная область). The iron triangle of planning:
 
@@ -58,7 +58,7 @@ Prediction при этом не исчезает полностью, а пони
 
    Iron Triangle. The image source is "Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise" by Dean Leffingwell
 
-Итеративная разработка востребована, когда невозможно достигнуть полноты (Complete) требований (set of requirements).
+Итеративная разработка востребована, когда невозможно достигнуть полноты (Complete) требований (set of :ref:`requirements <emacsway-agile-requirements>`).
 
     📝 "Complete. The set of requirements needs no further amplification because it contains everything pertinent to the definition of the system or system element being specified. In addition, the set contains no To Be Defined (TBD), To Be Specified (TBS), or To Be Resolved (TBR) clauses. Resolution of the TBx designations may be iterative and there is an acceptable timeframe for TBx items, determined by risks and dependencies."
 
@@ -86,7 +86,7 @@ Prediction при этом не исчезает полностью, а пони
 
     -- "IEEE Std 830-1998, IEEE Std 830-1993 IEEE Recommended Practice for Software Requirements Specifications"
 
-Таким образом, использование термина requirements, несмотря на то, что вызывает вопросы относительно семантики, никоим образом не противоречит использованию его в Agile SDLC-моделе, которая, кстати, описана тем же стандартом - ISO/IEC/IEEE 12207:2017, в разделах "5.4.2. Life cycle model for the software system" и "Annex H".
+Таким образом, использование термина :ref:`requirements <emacsway-agile-requirements>`, несмотря на то, что вызывает вопросы относительно семантики, никоим образом не противоречит использованию его в Agile SDLC-моделе, которая, кстати, описана тем же стандартом - ISO/IEC/IEEE 12207:2017, в разделах "5.4.2. Life cycle model for the software system" и "Annex H".
 
 
 .. seealso::
@@ -94,3 +94,4 @@ Prediction при этом не исчезает полностью, а пони
    - ":ref:`emacsway-iterative-development`"
    - ":ref:`emacsway-agile-development`"
    - ":doc:`../../models/agile/index`"
+   - ":ref:`emacsway-agile-requirements`"

@@ -1,6 +1,6 @@
-=====
-Agile
-=====
+=================
+Analysis in Agile
+=================
 
 .. toctree::
    :maxdepth: 1
@@ -8,4 +8,3 @@ Agile
    :glob:
 
    */index
-   /emacsway/it/sdlc/models/agile/agile
