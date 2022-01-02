@@ -1,13 +1,16 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
-.. index:: Agile
-   :name: emacsway-agile
+.. index:: Agile Development
+   :name: emacsway-agile-development
 
-===============
-Что такое Agile
-===============
+
+===========================
+Что такое Agile Development
+===========================
 
 .. sectionauthor:: Ivan Zakrevsky
+
+..
 
     📝 "Agile development - software development approach based on iterative development, frequent inspection and adaptation, and incremental deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback."
 
@@ -64,8 +67,7 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
 
 Иными словами, внутреннее качество программы является первичным условием в Agile и в любой другой итеративной разработке.
 
-📝 "Engineers who don't understand exponential growth and the cost curve as economies of scale kick in come to wildly incorrect conclusions."
+    📝 "Engineers who don't understand exponential growth and the cost curve as economies of scale kick in come to wildly incorrect conclusions."
 
--- Kent Beck, https://twitter.com/KentBeck/status/1402276528910704655?s=19
-
+    -- Kent Beck, https://twitter.com/KentBeck/status/1402276528910704655?s=19
 

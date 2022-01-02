@@ -7,4 +7,4 @@ SDLC-Models
    :caption: Оглавление:
    :glob:
 
-   *
+   /emacsway/it/sdlc/models/iterative.rst

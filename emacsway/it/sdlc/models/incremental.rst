@@ -7,4 +7,3 @@ SDLC-Models
    :caption: Оглавление:
    :glob:
 
-   *
