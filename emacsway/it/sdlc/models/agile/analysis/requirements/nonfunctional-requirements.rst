@@ -71,6 +71,7 @@ Agile nonfunctional Requirements
     <...>
 
     nonfunctional requirement.
+
     1. A requirement that does not relate to functionality but to attributes such as reliability, efficiency, usability, maintainability, and portability, which product backlog items must possess in order to be fully accepted by the stakeholders.
     2. **Each nonfunctional requirement is a candidate for inclusion in the definition of done**. See also definition of done."
 
