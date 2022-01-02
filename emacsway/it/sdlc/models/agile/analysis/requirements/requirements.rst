@@ -173,6 +173,9 @@ Bertrand Meyer о том, в чем отличия между User Story и Requ
 - "`Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise <https://www.amazon.com/Agile-Software-Requirements-Enterprise-Development/dp/0321635841>`__" by Dean Leffingwell.
 - "Software Requirements (Developer Best Practices)" 3rd Edition by Karl Wiegers
 
+- "` An Agile Architectural Epic Kanban System: Part 2 – The Model <https://scalingsoftwareagility.wordpress.com/2010/03/05/an-agile-architectural-epic-kanban-system-part-2-%E2%80%93-the-model/>`__" by Dean Leffingwell
+- `A Lean and Scalable Requirements Information Model for the Agile Enterprise <https://scalingsoftwareagility.files.wordpress.com/2007/03/a-lean-and-scalable-requirements-information-model-for-agile-enterprises-pdf.pdf>`__ by Dean Leffingwell with Juha‐Markus Aalto
+
 См. также:
 
 - "`Agile Modeling :: Requirements-Analysis Models <http://agilemodeling.com/artifacts/#Requirements>`__"

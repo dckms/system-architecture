@@ -78,10 +78,52 @@ Agile nonfunctional Requirements
 
 Топовые авторы по аналитике (K.Wigers) и Scrum (K.Rubin) сошлись в одном мнении. Один дает описание с точки зрения работы с требованиями, а другой - с точки зрения гибких процессов разработки.
 
+
+    📝 "So, in the information model, we have modeled NFRs as backlog constraints, as illustrated in Figure 17–1.
+
+    From the diagram, we see that a backlog item may be constrained by (zero, one, or more) nonfunctional requirements.
+    An example from the case study appears in Figure 17–2.
+
+    Also, nonfunctional requirements apply to zero or more backlog items.
+    For example, a nonfunctional requirement such as support 100 concurrent users might apply to zero, one, or many backlog items.
+
+    Once identified, relevant nonfunctional requirements must be captured and communicated to all teams who may be affected by the constraints.
+    In agile, with its focus on the backlog, there is no obvious place to model them, so in the Big Picture, we just call them backlog constraints and represent them as shown in Figure 17–3."
+
+    -- "Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise" by Dean Leffingwell
+
+..
+
+    Persisting nonfunctional requirements
+
+    Another difference between user stories and nonfunctional requirements is that they typically need to persist differently in the development life cycle. We’ve described how user stories are lightweight and generally don’t have to be maintained, which is one of the key benefits. We’ve also shown that the details of a user story are captured in the acceptance test, which persist inside the team’s automated or manual regression test environment. That is why we can throw the user story away after implementation—because we have memorialized the important details in our test cases.
+
+    That can work for some NFRs, too, but it gets a bit riskier. For example, if a system must support 1000 concurrent users, we could develop an automated test that simulated that load and build it in the regression test suite. That would be an excellent practice because we could refactor the code at will, and if we accidentally created a performance bottleneck, it would be quickly discovered. In that case, we could forget about the NFR once we have seen it the fi rst time, because the automated test remembers it for us.
+
+    There are other types of NFRs, however, that must be treated quite differently. Here are some examples:
+
+    - Maintain PCI compliance (credit card industry user security standards) in all applications
+    - Localize the application in all then-current, supported languages prior to release in any language 
+    - No open source without a CFO license review
+
+    We surely can’t forget these, and we can’t write automated test cases for them, either. 
+    So, the teams must have an organized way to save them, find them, and review them when necessary. In practice, we’ve seen agile teams take a number of approaches to persisting NFRs.
+
+    - Create a separate backlog in the agile project management tool. Most enterprises will adopt agile project management tooling as a central repository for stories and tasks, as well as iteration and release objects that support scheduling, burndown, and feature status reporting. Teams can create a special project/product backlog to hold and maintain the NFRs within the tool. Access privileges must be granted to all team members who are working on the program.
+
+    - Store and manage them in a wiki. This method works well because it provides continuous visibility; is available to all team members; is persistent; fosters communication, comments, and interaction; and doesn’t require any special tooling.
+
+    - Maintain a supplementary specification. This label/document was originally developed as an auxiliary document to RUP’s use case models and use case specifications and served exactly this role (organizing nonfunctional requirements). Remember, as agilists, we “favor working software over comprehensive documentation,” but that doesn’t mean we can’t create the documentation we need. Even more importantly, we like to do the simplest thing that can possibly work, and when we know something is important, it makes sense to write it down. Table 17–3 later in this chapter provides an example template for a supplemental specif i cation.
+
+    - Build the NFRs into the definition of done, and point to the special backlog, wiki, or supplemental specification that contains the details. In this approach, a team can’t be done until the NFRs are satisfied as well. Different definitions of done, requiring different amounts of regression testing, inspection, and so on, can be established for various iteration, potentially shippable increment, and release milestones.
+
+    No matter the approach, it is mandatory that the teams do something to maintain and manage these specif i cations, because they could make the difference between success and failure.
+
+    -- "Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise" by Dean Leffingwell
+
+
 См. также:
 
 - "`Nonfunctional Requirements <https://www.scaledagileframework.com/nonfunctional-requirements/>`__" at SAFe
-
-TODO:
-
-- Dean Leffingwell тоже дает описание работы с нефункциональными требованиями.
+- "` An Agile Architectural Epic Kanban System: Part 2 – The Model <https://scalingsoftwareagility.wordpress.com/2010/03/05/an-agile-architectural-epic-kanban-system-part-2-%E2%80%93-the-model/>`__" by Dean Leffingwell
+- `A Lean and Scalable Requirements Information Model for the Agile Enterprise <https://scalingsoftwareagility.files.wordpress.com/2007/03/a-lean-and-scalable-requirements-information-model-for-agile-enterprises-pdf.pdf>`__ by Dean Leffingwell with Juha‐Markus Aalto

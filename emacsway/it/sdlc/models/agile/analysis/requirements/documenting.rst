@@ -51,6 +51,16 @@
 
 ..
 
+    📝 "Create Minimal but Sufficient Documentation.
+    Document-based approaches to managing solution intent and context do not scale.
+    Indeed, they quickly become obsolete and inconsistent with one another.
+    The alternative is a set of related digital models that define, design, analyze, and document the system under development.
+    Some models specify system requirements and design, while others are domain-specific (e.g., electrical, mechanical, or some systems property).
+
+    -- "SAFe® 5.0: The World’s Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell
+
+..
+
     📝 "The preparation of **specifications, design artifacts, and information items or documentation** during agile projects is often **limited**, while software developers apply their time and skills to transform a scenario or narrative of a function (“**user story**”) into a working, testable software element.
     Rather than preparing elaborate review packages for briefing at infrequent major milestone reviews, the team meets with stakeholders frequently to present informal evidence of completing a set of functions and to agree on the content of the next iteration.
     Documented information items focus on what will be needed for transition, operation and maintenance, such as operator and end‐user documentation and baselines of tested and released versions of software with test plans and test cases.
