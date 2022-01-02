@@ -46,8 +46,6 @@ Alberto Brandolini about Prediction/Adaptation
 
     -- "`Introducing EventStorming: An act of Deliberate Collective Learning <https://leanpub.com/introducing_eventstorming>`__" by Alberto Brandolini
 
-Источник: https://t.me/emacsway_log/819
-
 TODO:
 
 - https://t.me/emacsway_log/812

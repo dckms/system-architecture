@@ -4,6 +4,7 @@
 
 .. index::
    single: Change-making; in psychology
+   :name: emacsway-change-making-in-psychology
 
 =======================================
 Как осуществлять изменения в коллективе
@@ -77,4 +78,3 @@
 
    - ":doc:`./icebreaker-principle`"
 
-Источник: https://t.me/emacsway_log/621

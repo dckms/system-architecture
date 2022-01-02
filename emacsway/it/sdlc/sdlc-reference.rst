@@ -2,9 +2,9 @@
 
 .. index:: SDLC, Literature
 
-=====================================
-Systems Development Life Cycle (SDLC)
-=====================================
+===============================================
+Systems Development Life Cycle (SDLC) Reference
+===============================================
 
 .. sectionauthor:: Ivan Zakrevsky
 
@@ -75,5 +75,3 @@ Grady Booch выделяет два ключевых критерия, кото�
     The processes of this document directly correspond to processes of ISO/IEC/IEEE 15288 with specialization for software products and services."
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
-
-Источник: https://t.me/emacsway_log/490

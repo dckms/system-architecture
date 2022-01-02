@@ -4,6 +4,7 @@
 
 .. index::
    single: Planning; in psychology
+   :name: emacsway-planning-in-psychology
 
 =====================================
 Психологическое значение планирования
@@ -91,8 +92,3 @@
    - :doc:`icebreaker-principle`
    - :doc:`/README`
    - :doc:`/emacsway/it/self-education/self-education-for-software-engineer`
-
-Источник:
-
-- https://t.me/emacsway_log/712
-- https://t.me/emacsway_log/713

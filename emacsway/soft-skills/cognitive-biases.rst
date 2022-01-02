@@ -1,6 +1,7 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
 .. index:: Cognitive Bias, Soft Skills
+   :name: emacsway-cognitive-biases
 
 ===============================
 Список психологических эффектов
@@ -80,4 +81,3 @@
 
 - "`Soft Skills Pro <https://youtube.com/channel/UCSN7G8syJUaRiXrw1l0qk_g>`__"
 
-Источник: https://t.me/emacsway_log/537
