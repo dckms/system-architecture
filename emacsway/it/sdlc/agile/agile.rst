@@ -1,6 +1,7 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
 .. index:: Agile
+   :name: emacsway-agile
 
 ===============
 Что такое Agile
@@ -8,11 +9,9 @@
 
 .. sectionauthor:: Ivan Zakrevsky
 
-TODO:
+    📝 "Agile development - software development approach based on iterative development, frequent inspection and adaptation, and incremental deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback."
 
-- ISO Definition
-- Назначение - обреботка неопределенности
-- График роста стоимости точности Prediction и бизнес-выгод от точности (видео Роберта Мартина)
+    -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
 
 Agile является естественным следствием эволюции итеративной разработки, краткий обзор которой можно посмотреть в превосходной статье Craig Larman "`Iterative and Incremental Development: A Brief History <https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf>`__".
 
