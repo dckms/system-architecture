@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Что такое Agile Development &#8212; System Architecture</title>
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../../../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../../../search.html" />
+    <link rel="next" title="Iterative Development" href="../iterative.html" />
+    <link rel="prev" title="Критерии качества Agile Requirements" href="analysis/requirements/requirements-criteria.html" />
+    
+   
+  <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+
+
+    
+        
+            <link rel="canonical" href="https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/agile.html" />
+        
+    
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+              <div class="related top">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="analysis/requirements/requirements-criteria.html" title="Previous document">Критерии качества Agile Requirements</a>
+        </li>
+        <li>
+          <a href="../iterative.html" title="Next document">Iterative Development</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+
+          <div class="body" role="main">
+            
+    
+  <div class="section" id="agile-development">
+<span id="emacsway-agile-development"></span><h1>Что такое Agile Development<a class="headerlink" href="#agile-development" title="Ссылка на этот заголовок">¶</a></h1>
+<p><em>Автор раздела: Ivan Zakrevsky</em></p>
+<blockquote>
+<div><p>📝 «Agile development - software development approach based on <a class="reference internal" href="../iterative.html#emacsway-iterative-development"><span class="std std-ref">iterative development</span></a>, frequent inspection and adaptation, and incremental deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback.»</p>
+<p class="attribution">—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»</p>
+</div></blockquote>
+<blockquote>
+<div><p>📝 «&quot;Agile&quot; methods actually can be applied within a variety of models.
+While Agile methods are common in executing an evolutionary lifecycle model, they can be used in other lifecycle models at various stages.
+What the methods have in common is an emphasis on continuous inspection and collaboration in the rapid production of working software in an environment where changes, including changes to requirements, are expected.»</p>
+<p class="attribution">—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»</p>
+</div></blockquote>
+<blockquote>
+<div><p>📝 «As discussed in 5.4.2, the life cycle models used in agile projects are often highly <a class="reference internal" href="../incremental.html#emacsway-incremental-development"><span class="std std-ref">incremental</span></a> and <a class="reference internal" href="../evolutionary.html#emacsway-evolutionary-development"><span class="std std-ref">evolutionary</span></a>.»</p>
+<p class="attribution">—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»</p>
+</div></blockquote>
+<p>Agile является естественным следствием эволюции итеративной разработки, краткий обзор которой можно посмотреть в превосходной статье Craig Larman «<a class="reference external" href="https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf">Iterative and Incremental Development: A Brief History</a>».</p>
+<p>Вся суть Agile (итеративной) модели разработки одним предложением:</p>
+<blockquote>
+<div><p>📝 «Сделайте изменение легким, а потом делай легко изменение.</p>
+<p><strong>Make the change easy then make the easy change.</strong>»</p>
+<p class="attribution">—Kent Beck, dddeu 20</p>
+</div></blockquote>
+<p>Невероятный талант Kent Beck объяснять сложные вещи простым языком. Именно об этом я говорил здесь (<a class="reference external" href="https://t.me/emacsway_log/810">https://t.me/emacsway_log/810</a>). И это при необычайной эрудированности Kent Beck. Cписок использованной литературы в его книгах просто ошеломляет.</p>
+<p>Thanks to Vladik Khononov for <a class="reference external" href="https://youtu.be/ybYtgII151g?t=9808">https://youtu.be/ybYtgII151g?t=9808</a></p>
+<p>Более развернутый вариант его фразы:</p>
+<blockquote>
+<div><p>📝 «At the core of understanding this argument is the software change curve.
+The change curve says that as the project runs, it becomes exponentially more expensive to make changes.
+The change curve is usually expressed in terms of phases «a change made in analysis for $1 would cost thousands to fix in production».
+This is ironic as most projects still work in an ad-hoc process that doesn’t have an analysis phase, but the exponentiation is still there.
+<strong>The exponential change curve means that evolutionary design cannot possibly work.</strong>
+It also conveys why planned design must be done carefully because any mistakes in planned design face the same exponentiation.</p>
+<p><strong>The fundamental assumption underlying XP is that it is possible to flatten the change curve enough to make evolutionary design work.</strong>
+This flattening is both enabled by XP and exploited by XP.
+This is part of the coupling of the XP practices: specifically <strong>you can’t do those parts of XP that exploit the flattened curve without doing those things that enable the flattening.</strong>
+This is a common source of the controversy over XP.
+Many people criticize the exploitation without understanding the enabling.
+Often the criticisms stem from critics“ own experience where they didn’t do the enabling practices that allow the exploiting practices to work.
+As a result they got burned and when they see XP they remember the fire.»</p>
+<p class="attribution">—«<a class="reference external" href="https://martinfowler.com/articles/designDead.html">Is Design Dead?</a>» by M.Fowler</p>
+</div></blockquote>
+<blockquote>
+<div><p>📝 «<strong>This is one of the premises of XP. It is the technical premise of XP.</strong>
+If the cost of change rose slowly over time, you would act completely differently from how you do under the assumption that costs rise exponentially.
+You would make big decisions as late in the process as possible, to defer the cost of making the decisions and to have the greatest possible chance that they would be right.
+You would only implement what you had to, in hopes that the needs you anticipate for tomorrow wouldn’t come true.
+You would introduce elements to the design only as they simplified existing code or made writing the next bit of code simpler.</p>
+<p><strong>If a flattened change cost curve makes XP possible, a steep change cost curve makes XP impossible.</strong>
+If change is ruinously expensive, you would be crazy to charge ahead without careful forethought.
+But if change stays cheap, the additional value and reduced risk of early concrete feedback outweighs the additional cost of early change.»</p>
+<p class="attribution">—«Extreme Programming Explained» 1st edition by Kent Beck</p>
+</div></blockquote>
+<p>Поскольку это было произнесено еще до встречи 2001 года и принятия Agile Manifesto, то под XP следует понимать Agile (или даже любую итератиную модель разработки) в принципе, поскольку XP - это частный случай Agile.</p>
+<p>Иными словами, внутреннее качество программы является первичным условием в Agile и в любой другой итеративной разработке.</p>
+<blockquote>
+<div><p>📝 «Engineers who don’t understand exponential growth and the cost curve as economies of scale kick in come to wildly incorrect conclusions.»</p>
+<p class="attribution">—Kent Beck, <a class="reference external" href="https://twitter.com/KentBeck/status/1402276528910704655?s=19">https://twitter.com/KentBeck/status/1402276528910704655?s=19</a></p>
+</div></blockquote>
+<blockquote>
+<div><p>📝 «The incremental and iterative nature of Agile development can facilitate <strong>efficient technical and management processes and practices to reduce the cost associated with change</strong>.
+In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project.»</p>
+<p class="attribution">—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»</p>
+</div></blockquote>
+</div>
+
+
+
+    
+        
+            <div class="section" style="text-align: right;">
+                <p><a href="https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/agile.html">Canonical URL</a></p>
+            </div>
+        
+    
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="analysis/requirements/requirements-criteria.html" title="Previous document">Критерии качества Agile Requirements</a>
+        </li>
+        <li>
+          <a href="../iterative.html" title="Next document">Iterative Development</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../index.html">System Architecture</a></h1>
+
+
+
+<p class="blurb">Distributed Collaborative Knowledge Management System for System Architecture</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dckms&repo=system-architecture&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Общее пространство:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/it/index.html">IT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/index.html">Общее пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Авторские пространства:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Пространство Emacsway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Приватное пространствo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../private/index.html">Приватное пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Прочее:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../README.html">Как пользоваться</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../../trunk/it/index.html">IT</a><ul>
+  <li><a href="../../../../../trunk/it/sdlc/index.html">SDLC</a><ul>
+  <li><a href="../../../../../trunk/it/sdlc/models/index.html">SDLC Models</a><ul>
+  <li><a href="../../../../../trunk/it/sdlc/models/agile/index.html">Agile</a><ul>
+      <li>Previous: <a href="analysis/requirements/requirements-criteria.html" title="предыдущая глава">Критерии качества Agile Requirements</a></li>
+      <li>Next: <a href="../iterative.html" title="следующая глава">Iterative Development</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="footer">
+      &copy;2022, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE" rel="nofollow">License</a>).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../../_sources/emacsway/it/sdlc/models/agile/agile.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/dckms/system-architecture" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+
+    
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+           ym(87033138, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true,
+                trackHash:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/87033138" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    
+
+  </body>
+</html>

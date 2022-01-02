@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Что такое Prediction &#8212; System Architecture</title>
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../../../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../../../search.html" />
+    <link rel="next" title="Balancing Prediction/Adaptation" href="../balancing-prediction-adaptation.html" />
+    <link rel="prev" title="Prediction" href="../../../../../trunk/it/sdlc/uncertainty-management/prediction/index.html" />
+    
+   
+  <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+
+
+    
+        
+            <link rel="canonical" href="https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/prediction/prediction.html" />
+        
+    
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+              <div class="related top">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="../../../../../trunk/it/sdlc/uncertainty-management/prediction/index.html" title="Previous document">Prediction</a>
+        </li>
+        <li>
+          <a href="../balancing-prediction-adaptation.html" title="Next document">Balancing Prediction/Adaptation</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+
+          <div class="body" role="main">
+            
+    
+  <div class="section" id="prediction">
+<span id="emacsway-prediction"></span><h1>Что такое Prediction<a class="headerlink" href="#prediction" title="Ссылка на этот заголовок">¶</a></h1>
+<p>К Prediction относится ряд активностей на основе правил логического вывода, предшествующих производству системного инкремента и направленных на заблаговременное разрешение неопределенности требований.
+К ним относятся Business/System Requirements Definition and Analysis, Architecture Definition, Design Definition, разработка макетов UX/UI-Design, Estimation и Planning.</p>
+<p>В Scrum эти активности традиционно выражаются в событиях, предшествующих Definition Of Ready (DOR):</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Со стороны Product Owner:</dt><dd><ul>
+<li><p>Reveal needs of stakeholders</p></li>
+<li><p>Creating PBI</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Со стороны Team:</dt><dd><ul>
+<li><p>PBR</p></li>
+<li><p>Planning</p></li>
+<li><p>Spike</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Основная проблема Prediction заключается в том, что характер роста стоимости прогнозирования, в зависимости от его точности, близок к экспоненциальному.
+В то время как характер роста бизнес-выгод от точности прогнозирования близок к логарифмическому.
+Пересечение этих графиков образует предел экономической целесообразности разрешения неопределенности путем прогнозирования.</p>
+<blockquote>
+<div><p>📝 «There is a fundamental truth to work breakdown structure estimation - the only way to estimate using a work breakdown structure to really accurately to get the number right is to implement the project.
+Then you’ll have the estimate.</p>
+<p>The cost of improving the estimate, the initial work breakdown estimation, the cost of refining that grows exponentially.
+With every next layer you want to take it down.
+And the benefit of doing that does not grow exponentially.
+It grows logarithmically.</p>
+<p>Managers understand there is an extremely high cost involved with refining the estimate.»</p>
+<p class="attribution">—<a class="reference external" href="https://youtu.be/eisuQefYw_o?t=1995">«YOW! 2016 Robert C. Martin - Effective Estimation (or: How not to Lie)» at 33:15</a></p>
+</div></blockquote>
+<p>Robert C. Martin упомянул о таком способе обработки неопределенности, как реализовать проект (или системный инкремент).
+Это уже другой, эмпирический (т.е. опытным путем) способ обработки неопределенности, который называется <a class="reference internal" href="../adaptation/adaptation.html#emacsway-adaptation"><span class="std std-ref">Adaptation</span></a> и составляет основу итеративной разработки.
+Чем сложнее предметная область проекта, тем раньше наступает предел экономической целесообразности Prediction.</p>
+</div>
+
+
+
+    
+        
+            <div class="section" style="text-align: right;">
+                <p><a href="https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/prediction/prediction.html">Canonical URL</a></p>
+            </div>
+        
+    
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="../../../../../trunk/it/sdlc/uncertainty-management/prediction/index.html" title="Previous document">Prediction</a>
+        </li>
+        <li>
+          <a href="../balancing-prediction-adaptation.html" title="Next document">Balancing Prediction/Adaptation</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../index.html">System Architecture</a></h1>
+
+
+
+<p class="blurb">Distributed Collaborative Knowledge Management System for System Architecture</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dckms&repo=system-architecture&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Общее пространство:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/it/index.html">IT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/index.html">Общее пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Авторские пространства:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Пространство Emacsway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Приватное пространствo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../private/index.html">Приватное пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Прочее:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../README.html">Как пользоваться</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../../trunk/it/index.html">IT</a><ul>
+  <li><a href="../../../../../trunk/it/sdlc/index.html">SDLC</a><ul>
+  <li><a href="../../../../../trunk/it/sdlc/uncertainty-management/index.html">Обработка неопределенности</a><ul>
+  <li><a href="../../../../../trunk/it/sdlc/uncertainty-management/prediction/index.html">Prediction</a><ul>
+      <li>Previous: <a href="../../../../../trunk/it/sdlc/uncertainty-management/prediction/index.html" title="предыдущая глава">Prediction</a></li>
+      <li>Next: <a href="../balancing-prediction-adaptation.html" title="следующая глава">Balancing Prediction/Adaptation</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="footer">
+      &copy;2022, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE" rel="nofollow">License</a>).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../../_sources/emacsway/it/sdlc/uncertainty-management/prediction/prediction.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/dckms/system-architecture" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+
+    
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+           ym(87033138, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true,
+                trackHash:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/87033138" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    
+
+  </body>
+</html>

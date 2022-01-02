@@ -1,5 +1,672 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0"><channel><title>System Architecture</title><link>https://dckms.github.io/system-architecture</link><description /><language>ru</language><copyright>2022, @dckms (&lt;a href="https://dckms.github.io/system-architecture/LICENSE" rel="nofollow"&gt;License&lt;/a&gt;)</copyright><item><title>Может ли CQRS-команда возвращать результат?</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/tactical-design/cqrs/cqrs-command-and-result.html</link><description>
+<rss version="2.0"><channel><title>System Architecture</title><link>https://dckms.github.io/system-architecture</link><description /><language>ru</language><copyright>2022, @dckms (&lt;a href="https://dckms.github.io/system-architecture/LICENSE" rel="nofollow"&gt;License&lt;/a&gt;)</copyright><item><title>Systems Development Life Cycle (SDLC)</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/sdlc-reference.html</link><description>
+&lt;span id="index-0"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Grady Booch выделяет два ключевых критерия, которые определяют успех или неудачу проекта:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Traits of Successful Projects&lt;/p&gt;
+&lt;p&gt;A successful software project is one in which the deliverables satisfy and possibly exceed the customer’s expectations, the development occurred in a timely and economical fashion, and the result is resilient to change and adaptation. By this measure, we have observed several traits that are common to virtually all of the successful object-oriented systems we have encountered and noticeably absent from the ones that we count as failures:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Existence of a strong architectural vision&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Application of a well-managed iterative and incremental development lifecycle»&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="attribution"&gt;—«Object-Oriented Analysis and Design with Applications» 3rd edition by Grady Booch, Robert A. Maksimchuk, Michael W. Engle, Bobbi J. Young Ph.D., Jim Conallen, Kelli A. Houston&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Если с «architectural vision» все понятно, то с «well-managed development lifecycle» у многих могут возникать вопросы. Тем не менее, для успешности проекта процессы должны быть грамотно выбраны и качественно отлажены.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://book4cio.ru/#page-14"&gt;Учебник 4CIO&lt;/a&gt;» - глава 3.4. Управление разработкой ПО&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.sebokwiki.org/wiki/Life_Cycle_Models"&gt;SEBoK: Life Cycle Models&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.sebokwiki.org/wiki/System_Life_Cycle_Process_Models:_Iterative"&gt;SEBoK: System Life Cycle Process Models: Iterative&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Неплохой «&lt;a class="reference external" href="https://www.tutorialspoint.com/sdlc/index.htm"&gt;SDLC Tutorial&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.tutorialspoint.com/sdlc/sdlc_quick_guide.htm"&gt;SDLC - Quick Guide&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://itabok.iasaglobal.org/itabok3_0/architecture-methodologies-and-frameworks/"&gt;ITABoK: Architecture Methodologies and Frameworks&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://itabok.iasaglobal.org/itabok3_0/digital-outcome-model/agility/"&gt;ITABoK: What is Agility&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.incose.org/products-and-publications/se-handbook"&gt;Systems engineering handbook. A guide for System Life Cycle Processes and activities&lt;/a&gt;» by INCOSE&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.iso.org/standard/63712.html"&gt;ISO/IEC/IEEE 12207:2017 Systems and software engineering — Software life cycle processes&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.iso.org/standard/63711.html"&gt;ISO/IEC/IEEE 15288:2015 Systems and software engineering — System life cycle processes&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«ISO/IEC/IEEE 29148:2011 Systems and software engineering — Life cycle processes — Requirements engineering»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«ISO/IEC/IEEE 15289:2019 Systems and software engineering — Content of life-cycle information items (documentation)»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«ISO/IEC/IEEE 24765:2017 Systems and software engineering — Vocabulary»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«ISO 9000:2005 Quality management systems — Fundamentals and vocabulary»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«ISO/IEC 33001:2015 Information technology — Process assessment — Concepts and terminology»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«ГОСТ Р ИСО/МЭК 12207-2010 Информационная технология. Системная и программная инженерия. Процессы жизненного цикла программных средств.»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«ГОСТ Р 57193-2016 Системная и программная инженерия. Процессы жизненного цикла систем.»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«Object-Oriented Analysis and Design with Applications» 3rd edition by Grady Booch, Robert A. Maksimchuk, Michael W. Engle, Bobbi J. Young Ph.D., Jim Conallen, Kelli A. Houston - «Chapter 6. Process»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«Software Architecture in Practice» 3d edition by Len Bass, Paul Clements, Rick Kazman - «Chapter 15. Architecture in agile projects»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«Extreme Programming Explained» 1st edition by Kent Beck (именно первое издание) - кто этой книги не читал, тот ничего в Agile не понимает.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Три превосходные книги Dean Leffingwell:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;«Scaling Software Agility: Best Practices for Large Enterprises» by Dean Leffingwell - о проблемах масштабирования команд.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise» by Dean Leffingwell - о проблемах интегрирования аналитической и архитектурной работы в Agile.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«SAFe® 5.0: The World’s Leading Framework for Business Agility» by Richard Knaster, Dean Leffingwell - наиболее удачная масштабируемая Agile-модель на сегодня.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;«Essential Scrum: A Practical Guide to the Most Popular Agile Process» by Kenneth Rubin - главы 3 и 8 просто необходимы для понимания области применения Scrum.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://t.me/emacsway_log/431"&gt;https://t.me/emacsway_log/431&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://t.me/emacsway_log/35"&gt;https://t.me/emacsway_log/35&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://t.me/emacsway_log/151"&gt;https://t.me/emacsway_log/151&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf"&gt;Краткая история итеративной разработки&lt;/a&gt;» by Craig Larman&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://less.works/less/framework/introduction"&gt;LeSS by Craig Larman&lt;/a&gt;» - куча полезной информации, которую можно использовать автономно. (&lt;a class="reference external" href="https://less.works/ru/less/framework/introduction"&gt;на русском&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Нужно заметить, что Software является подмножеством System.
+Раньше и Software, и System описывались одним стандартом ISO/IEC 12207:2008.
+Потом их разделили на ISO/IEC/IEEE 12207:2017 и ISO/IEC/IEEE 15288:2015.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «This document has a strong relationship with ISO/IEC/IEEE 15288:2015, Systems and Software Engineering System Life Cycle Processes, and is more applicable to software systems.
+To account for situations in which both ISO/IEC/IEEE 15288:2015 and ISO/IEC/IEEE 12207:2017 are applied (e.g., a development of a system containing software, or the development of a software system containing hardware), their process structures are harmonized to be identical.
+The processes of this document directly correspond to processes of ISO/IEC/IEEE 15288 with specialization for software products and services.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Источник: &lt;a class="reference external" href="https://t.me/emacsway_log/490"&gt;https://t.me/emacsway_log/490&lt;/a&gt;&lt;/p&gt;
+</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Что такое Agile Development</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/agile.html</link><description>
+&lt;span id="emacsway-agile-development"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Agile development - software development approach based on &lt;a class="reference internal" href="../iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative development&lt;/span&gt;&lt;/a&gt;, frequent inspection and adaptation, and incremental deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «"Agile" methods actually can be applied within a variety of models.
+While Agile methods are common in executing an evolutionary lifecycle model, they can be used in other lifecycle models at various stages.
+What the methods have in common is an emphasis on continuous inspection and collaboration in the rapid production of working software in an environment where changes, including changes to requirements, are expected.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «As discussed in 5.4.2, the life cycle models used in agile projects are often highly &lt;a class="reference internal" href="../incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental&lt;/span&gt;&lt;/a&gt; and &lt;a class="reference internal" href="../evolutionary.html#emacsway-evolutionary-development"&gt;&lt;span class="std std-ref"&gt;evolutionary&lt;/span&gt;&lt;/a&gt;.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Agile является естественным следствием эволюции итеративной разработки, краткий обзор которой можно посмотреть в превосходной статье Craig Larman «&lt;a class="reference external" href="https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf"&gt;Iterative and Incremental Development: A Brief History&lt;/a&gt;».&lt;/p&gt;
+&lt;p&gt;Вся суть Agile (итеративной) модели разработки одним предложением:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Сделайте изменение легким, а потом делай легко изменение.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Make the change easy then make the easy change.&lt;/strong&gt;»&lt;/p&gt;
+&lt;p class="attribution"&gt;—Kent Beck, dddeu 20&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Невероятный талант Kent Beck объяснять сложные вещи простым языком. Именно об этом я говорил здесь (&lt;a class="reference external" href="https://t.me/emacsway_log/810"&gt;https://t.me/emacsway_log/810&lt;/a&gt;). И это при необычайной эрудированности Kent Beck. Cписок использованной литературы в его книгах просто ошеломляет.&lt;/p&gt;
+&lt;p&gt;Thanks to Vladik Khononov for &lt;a class="reference external" href="https://youtu.be/ybYtgII151g?t=9808"&gt;https://youtu.be/ybYtgII151g?t=9808&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Более развернутый вариант его фразы:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «At the core of understanding this argument is the software change curve.
+The change curve says that as the project runs, it becomes exponentially more expensive to make changes.
+The change curve is usually expressed in terms of phases «a change made in analysis for $1 would cost thousands to fix in production».
+This is ironic as most projects still work in an ad-hoc process that doesn’t have an analysis phase, but the exponentiation is still there.
+&lt;strong&gt;The exponential change curve means that evolutionary design cannot possibly work.&lt;/strong&gt;
+It also conveys why planned design must be done carefully because any mistakes in planned design face the same exponentiation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The fundamental assumption underlying XP is that it is possible to flatten the change curve enough to make evolutionary design work.&lt;/strong&gt;
+This flattening is both enabled by XP and exploited by XP.
+This is part of the coupling of the XP practices: specifically &lt;strong&gt;you can’t do those parts of XP that exploit the flattened curve without doing those things that enable the flattening.&lt;/strong&gt;
+This is a common source of the controversy over XP.
+Many people criticize the exploitation without understanding the enabling.
+Often the criticisms stem from critics“ own experience where they didn’t do the enabling practices that allow the exploiting practices to work.
+As a result they got burned and when they see XP they remember the fire.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«&lt;a class="reference external" href="https://martinfowler.com/articles/designDead.html"&gt;Is Design Dead?&lt;/a&gt;» by M.Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «&lt;strong&gt;This is one of the premises of XP. It is the technical premise of XP.&lt;/strong&gt;
+If the cost of change rose slowly over time, you would act completely differently from how you do under the assumption that costs rise exponentially.
+You would make big decisions as late in the process as possible, to defer the cost of making the decisions and to have the greatest possible chance that they would be right.
+You would only implement what you had to, in hopes that the needs you anticipate for tomorrow wouldn’t come true.
+You would introduce elements to the design only as they simplified existing code or made writing the next bit of code simpler.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If a flattened change cost curve makes XP possible, a steep change cost curve makes XP impossible.&lt;/strong&gt;
+If change is ruinously expensive, you would be crazy to charge ahead without careful forethought.
+But if change stays cheap, the additional value and reduced risk of early concrete feedback outweighs the additional cost of early change.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Extreme Programming Explained» 1st edition by Kent Beck&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Поскольку это было произнесено еще до встречи 2001 года и принятия Agile Manifesto, то под XP следует понимать Agile (или даже любую итератиную модель разработки) в принципе, поскольку XP - это частный случай Agile.&lt;/p&gt;
+&lt;p&gt;Иными словами, внутреннее качество программы является первичным условием в Agile и в любой другой итеративной разработке.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Engineers who don’t understand exponential growth and the cost curve as economies of scale kick in come to wildly incorrect conclusions.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—Kent Beck, &lt;a class="reference external" href="https://twitter.com/KentBeck/status/1402276528910704655?s=19"&gt;https://twitter.com/KentBeck/status/1402276528910704655?s=19&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «The incremental and iterative nature of Agile development can facilitate &lt;strong&gt;efficient technical and management processes and practices to reduce the cost associated with change&lt;/strong&gt;.
+In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Документирование требований в Agile</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/requirements/documenting.html</link><description>
+&lt;span id="emacsway-agile-requirements-documenting"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;В Scrum, PBI является основным, хотя и не исчерпывающим, способом документирования требований.
+Способы документирования остаются на усмотрение самоорганизующихся команд.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Documentation does provide value, but only when it’s written to match its intended purpose.
+Agile business analysis practitioners produce documentation as they implement a change and use it to facilitate and support discussions with stakeholders.&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Avoid producing documentation before it is needed, and when documentation is needed do just enough.&lt;/strong&gt;»&lt;/p&gt;
+&lt;p class="attribution"&gt;—Agile Extension to the BABOK® Guide version 2 (actual)&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «The close collaboration of customers with developers on agile projects generally means that &lt;strong&gt;requirements can be documented in less detail&lt;/strong&gt; than on traditional projects.
+Instead, BAs or other people responsible for requirements will develop the necessary precision through &lt;strong&gt;conversations and documentation when it is needed&lt;/strong&gt; (IIBA 2013).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;People sometimes think that agile project teams are not supposed to write requirements.&lt;/strong&gt;
+&lt;strong&gt;That is not accurate.&lt;/strong&gt;
+&lt;strong&gt;Instead, agile methods encourage creating the minimum amount of ­documentation needed to accurately guide the developers and testers.&lt;/strong&gt;
+Any documentation beyond what the development and test teams need (or that is required to satisfy regulations or standards) ­represents wasted effort.
+Certain user stories might have little detail provided, with only the riskiest or highest-impact functionality being specified in more detail, typically in the form of acceptance tests.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Software Requirements (Developer Best Practices)» 3rd Edition by Karl Wiegers&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Views and Beyond and Agile agree emphatically on the following point: &lt;strong&gt;If information isn’t needed, don’t spend the resources to document it&lt;/strong&gt;.
+All documentation should have an intended use and audience in mind, and be produced in a way that serves both.&lt;/p&gt;
+&lt;p&gt;One of our fundamental principles of technical documentation is “Write for the reader.” That means understanding who will read the documentation and how they will use it.
+&lt;strong&gt;If there is no audience, there is no need to produce the documentation.&lt;/strong&gt;
+This principle is so important in Agile methods that it has been given its own name: YAGNI.
+YAGNI means “you ain’t gonna need it,” and it refers to the idea that you should only implement or document something when you actually have the need for it.
+Do not spend time attempting to anticipate all possible needs.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Software Architecture in Practice» 3d edition by Len Bass, Paul Clements, Rick Kazman&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «The preparation of &lt;strong&gt;specifications, design artifacts, and information items or documentation&lt;/strong&gt; during agile projects is often &lt;strong&gt;limited&lt;/strong&gt;, while software developers apply their time and skills to transform a scenario or narrative of a function (“&lt;strong&gt;user story&lt;/strong&gt;”) into a working, testable software element.
+Rather than preparing elaborate review packages for briefing at infrequent major milestone reviews, the team meets with stakeholders frequently to present informal evidence of completing a set of functions and to agree on the content of the next iteration.
+Documented information items focus on what will be needed for transition, operation and maintenance, such as operator and end‐user documentation and baselines of tested and released versions of software with test plans and test cases.
+Projects reuse organizational procedures for configuration and release management, verification, and incident and problem management.
+Where possible, &lt;strong&gt;bidirectional traceability is enabled and enforced by integrated automated systems and procedures for requirements management, architecture and design&lt;/strong&gt;, configuration management, measurement, and information management.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Agile nonfunctional Requirements</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/requirements/nonfunctional-requirements.html</link><description>
+&lt;span id="emacsway-agile-nonfunctional-requirements"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Если вы знакомы с ATAM, ADD, QAW, то вы знакомы со сценариями атрибутов качеств («Software Architecture in Practice» 3d edition by Len Bass, Paul Clements, Rick Kazman, глава 16), и легко поймете, о чем пишет K.Wigers - один из топовых авторов по требованиям и аналитике:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «&lt;strong&gt;Nonfunctional requirements need to have priority alongside user stories; you can’t defer their implementation until a later iteration.&lt;/strong&gt;
+It’s possible to specify quality attributes in the form of stories: «As a help desk technician, I want the knowledge base to respond to queries &lt;strong&gt;within five seconds&lt;/strong&gt; so the customer doesn’t get frustrated and hang up.»&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;Developers need to keep nonfunctional requirements in mind as they consider the implications of implementing individual user stories.
+As more functionality is added through a series of iterations, the system’s efficiency and hence performance can deteriorate.
+Specify performance goals and begin performance testing &lt;strong&gt;with early iterations&lt;/strong&gt;, so you can become aware of concerns early enough to take corrective actions.&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;As with user stories, it’s possible to write acceptance tests for quality attributes.
+This is a way to quantify the quality attributes.
+If a performance goal is stated simply as “The knowledge base must return search results quickly,” you can’t write tests to define what constitutes “quickly.” A better acceptance test would be: «Keyword search of the knowledge base &lt;strong&gt;takes less than 5 seconds&lt;/strong&gt;, and preferably &lt;strong&gt;less than 3 seconds&lt;/strong&gt;, to return a result.&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;Part of &lt;strong&gt;accepting an iteration as being complete&lt;/strong&gt; is to assess whether the pertinent nonfunctional requirements are satisfied.
+Often there is a range of acceptable performance, with some outcomes more desirable than others.
+As it does for any other software development approach, satisfying quality requirements can distinguish delight from disappointment on agile projects.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—Глава 14, подраздел «Handling quality attributes on agile projects», книги «Software Requirements» 3rd Edition, Wiegers K., Beatty J.&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Приоритезация и реализация нефункциональных требований совместно (alongside) с функциональными выбивает почву для появления технических задач, оторванных от бизнес-целей.
+А поскольку один из топовых авторов по Scrum, K.Rubin, утверждает, что нефункциональными требованиями должен заниматься Product Owner, то это автоматически устраняет необходимость в лоббировании технических задач техническими специалистами.&lt;/p&gt;
+&lt;p&gt;Нужно заметить, что в SAFe нефункциональными требованиями занимается уже не Product Owner, а System Architect.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;System Architect/Engineering is an individual or team that defines the overall architecture of the system. They work at a level of abstraction above the teams and components and define Non-Functional Requirements (NFRs), major system elements, subsystems, and interfaces.&lt;/p&gt;
+&lt;p class="attribution"&gt;—«SAFe® 5.0: The World’s Leading Framework for Business Agility» by Richard Knaster, Dean Leffingwell&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Вообще говоря, в Scrum этим не обязательно должен заниматься Product Owner.
+По офф.гайду команда должна сотрудничать со стейкхолдерами, а Product Owner может делегировать свои полномочия команде, например, аналитику или архитектору.
+Тут важно не кто, а как.&lt;/p&gt;
+&lt;p&gt;Был упомянут K.Rubin, посмотрим, что именно он говорит:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «The &lt;strong&gt;product owner is responsible&lt;/strong&gt; for defining the acceptance criteria for each product backlog item.
+These are the conditions under which the product owner would be satisfied that the functional and &lt;strong&gt;nonfunctional requirements&lt;/strong&gt; have been met.
+The product owner may also write acceptance tests corresponding to the acceptance criteria, or he could enlist the assistance of subject matter experts (SMEs) or development team members.
+In either case, the product owner should ensure that these acceptance criteria (and frequently specific acceptance tests) are created before an item is considered at a sprint-planning meeting.
+Without them, the team would have an incomplete understanding of the item and would not be ready to include it in a sprint.
+For this reason, many Scrum teams include the existence of clear acceptance criteria as an item on their definition-of-ready checklist (see Chapter 6).&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;The team must also decide when to test all of the browsers.
+Each nonfunctional requirement is a prime target for inclusion in the team’s definition of done.
+If the team includes the “Web Browser Support” nonfunctional requirement in the definition of done, the team will have to test any new features added in the sprint with all of the listed browsers.
+If it doesn’t work with all of them, the story isn’t done.&lt;/p&gt;
+&lt;p&gt;I recommend that teams try to include as many of the nonfunctional requirements in their definitions of done as they possibly can.
+Waiting to test nonfunctional requirements until late in the development effort defers getting fast feedback on critical system performance characteristics.&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;nonfunctional requirement.
+1. A requirement that does not relate to functionality but to attributes such as reliability, efficiency, usability, maintainability, and portability, which product backlog items must possess in order to be fully accepted by the stakeholders.
+2. &lt;strong&gt;Each nonfunctional requirement is a candidate for inclusion in the definition of done&lt;/strong&gt;. See also definition of done.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Essential Scrum : a practical guide to the most popular agile process» by Kenneth S. Rubin.&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Топовые авторы по аналитике (K.Wigers) и Scrum (K.Rubin) сошлись в одном мнении. Один дает описание с точки зрения работы с требованиями, а другой - с точки зрения гибких процессов разработки.&lt;/p&gt;
+&lt;p&gt;См. также:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.scaledagileframework.com/nonfunctional-requirements/"&gt;Nonfunctional Requirements&lt;/a&gt;» at SAFe&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;TODO:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Dean Leffingwell тоже дает описание работы с нефункциональными требованиями.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Agile Requirements</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/requirements/requirements.html</link><description>
+&lt;span id="emacsway-agile-requirements"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#agile-requirements" id="id4"&gt;Agile Requirements&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id2" id="id5"&gt;Что такое требование&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#product-backlog-item-requirements" id="id6"&gt;Product Backlog Item и Requirements&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#user-story-requirements" id="id7"&gt;Почему User Story, а не Requirements&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#index-0" id="id8"&gt;Литература про Agile-requirements&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id5"&gt;Что такое требование&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Следует различать значения терминов needs, requirements и specification.
+Вопросы возникают, как правило, там, где их не различают, и под требованиями зачастую понимают System Requirements Specification (SyRS), на который распространяется стандарт «ISO/IEC/IEEE 29148:2011 Systems and software engineering - Life cycle processes - Requirements engineering».&lt;/p&gt;
+&lt;p&gt;Однако, на сами требования распространяются стандарты SDLC:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«ISO/IEC/IEEE 15288:2015 Systems and software engineering - System life cycle processes»&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Итак, что такое требование:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «&lt;strong&gt;requirement&lt;/strong&gt; - statement that translates or expresses a need and its associated constraints and conditions.
+[SOURCE: ISO/IEC/IEEE 29148:2011, modified, NOTE has been removed.]»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Это все. Ни больше, ни меньше.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="product-backlog-item-requirements"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id6"&gt;Product Backlog Item и Requirements&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Какая связь между Product Backlog Item и Requirements?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «In the Scrum framework a &lt;strong&gt;product backlog&lt;/strong&gt; lists all of the &lt;strong&gt;requirements&lt;/strong&gt; for a solution, including both &lt;strong&gt;customer and technical requirements&lt;/strong&gt;.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—Agile Extension to the BABOK® Guide version 1 (obsolete, на момент написания статьи)&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «&lt;strong&gt;Backlog Item&lt;/strong&gt; - An item on the backlog which represents one or more &lt;strong&gt;requirements&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;User Stories&lt;/strong&gt; are used to convey a customer &lt;strong&gt;requirement&lt;/strong&gt; for the delivery team.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—Agile Extension to the BABOK® Guide version 2 (actual, на момент написания статьи)&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Актуальная версия Agile-расширения BABoK (на момент написания статьи) - вторая, хотя актуальная версия самого BABoK - третья.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «The &lt;strong&gt;Product Backlog&lt;/strong&gt; is a list of &lt;strong&gt;functional and nonfunctional requirements&lt;/strong&gt; that, when turned into functionality, will deliver this vision.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Agile Project Management with Scrum» by Ken Schwaber&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Agile projects generally maintain &lt;strong&gt;requirements&lt;/strong&gt; in the form of user stories in a &lt;strong&gt;product backlog&lt;/strong&gt;.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Software Requirements (Developer Best Practices)» 3rd Edition by Karl Wiegers&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Instead of compiling a large inventory of detailed &lt;strong&gt;requirements&lt;/strong&gt; up front, we create placeholders for the &lt;strong&gt;requirements&lt;/strong&gt;, called &lt;strong&gt;product backlog items (PBIs)&lt;/strong&gt;»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Essential Scrum: A Practical Guide to the Most Popular Agile Process» by Kenneth Rubin&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «XP- originated “&lt;strong&gt;user story&lt;/strong&gt;” as the primary currency for expressing application &lt;strong&gt;requirements&lt;/strong&gt;.»&lt;/p&gt;
+&lt;p&gt;📝 «&lt;strong&gt;User stories&lt;/strong&gt; are the agile replacement for most of what has been traditionally expressed as software &lt;strong&gt;requirements&lt;/strong&gt; statements (or use cases in RUP and UML), and they are the workhorses of agile development.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise» by Dean Leffingwell&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;И есть у него еще такой &lt;a class="reference external" href="https://scalingsoftwareagility.files.wordpress.com/2007/03/a-lean-and-scalable-requirements-information-model-for-agile-enterprises-pdf.pdf"&gt;документ&lt;/a&gt;, который прекрасно раскрывает связь между требованиями и PBI.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «&lt;strong&gt;User Story&lt;/strong&gt;: agile software development practice from Extreme Programming to express &lt;strong&gt;requirements&lt;/strong&gt; from an end user perspective, emphasizing verbal communication.
+In Scrum, it is often used to express functional items on the Product Backlog.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—Официальный сайт Ken Schwaber, &lt;a class="reference external" href="https://www.scrum.org/resources/professional-scrum-developer-glossary"&gt;glossary&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «The agile approach to &lt;strong&gt;requirements&lt;/strong&gt; is based on &lt;strong&gt;user stories&lt;/strong&gt;: units of functionality corresponding to interactions of users with the system.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Agile! The Good, the Hype and the Ugly» by Bertrand Meyer&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;У Mike Cohn есть прекрасная статья на тему, чем отличается User Story от других способов документирования требований, и начинается она со слов:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Extreme programming (XP) introduced the practice of expressing &lt;strong&gt;requirements&lt;/strong&gt; in the form of &lt;strong&gt;user stories&lt;/strong&gt;»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«&lt;a class="reference external" href="https://www.mountaingoatsoftware.com/articles/advantages-of-user-stories-for-requirements"&gt;Advantages of User Stories for Requirements&lt;/a&gt;» by Mike Cohn&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="user-story-requirements"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id7"&gt;Почему User Story, а не Requirements&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Kent Beck разъясняет, почему он использовал термин Story вместо Requirements.
+Ключевым аргументом здесь выступает семантическое различие - требования переменны, а не константны.
+А так же то, что полнота требований недостижима.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Software development has been steered wrong by the word «requirement», defined in the dictionary as "something mandatory or obligatory."
+The word carries a connotation of absolutism and permanence, inhibitors to embracing change.
+And the word "requirement" is just plain wrong.
+Out of one thousand pages of "requirements", if you deploy a system with the right 20% or 10% or even 5%, you will likely realize all of the business benefit envisioned for the whole system.
+So what were the other 80%? Not «requirements»; they weren’t really mandatory or obligatory.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Early estimation is a key difference between stories and other requirements practices.&lt;/strong&gt;
+Estimation gives the business and technical perspectives a chance to interact, which creates value early, when an idea has the most potential.
+When the team knows the cost of features it can split, combine, or extend scope based on what it knows about the features“ value.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Extreme Programming Explained» 2nd edition by Kent Beck&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Bertrand Meyer о том, в чем отличия между User Story и Requirements.
+Обратите внимание, Bertrand Meyer, как и Kent Beck, так же делает акцент на недостижимость полноты требований, и указывает на семантическое отличие термина Requirements по своему смыслу, хотя по стандарту итеративная разработка освобождается от полноты требований (и даже предназначается для её разрешения).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Agile development accepts change.
+In software projects, full requirements cannot be determined at the beginning; needs emerge as the project develops, and evolve as customers and others try intermediate releases.
+Such change is considered a normal part of the development process.&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;The last principle gives us the second part of the replacement for requirements: use scenarios to define functionality.
+A scenario is a description of a particular interaction of a user with the system, for example (if we are building mobile phone software) a phone conversation from the time the caller dials the number to the time the two parties get disconnected.
+“Scenario” is not a common agile term, but covers variants such as use cases and user stories which differ by their level of granularity (a use case is a complete interaction, a user story an application of a smaller unit of functionality).
+Scenarios are obtained from customers and indicate the fundamental properties of the system’s functionality as seen from the user perspective.
+Collecting scenarios, usually in the form of user stories, is the principal agile technique for requirements; it differs from traditional requirements elicitation in two fundamental ways:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;A scenario is just one example; unlike requirements, it cannot lay claim to completeness. A set of scenarios, however large, cannot come even close to achieving this goal, in the same way that no number of tests of a program can replace a specification.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In agile development, requirements are not collected at the beginning of the project but throughout, as development progresses. Note, however, that this difference is not as absolute as the agile literature suggests when it blasts “waterfall approaches”: while the traditional software engineering view presents requirements as a specific lifecycle step, coming early in the process, it does not rule out — except in the imagination of agile authors — a scheme in which the requirements are constantly updated in the rest of the lifecycle.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;The agile approach to requirements is based on user stories: units of functionality corresponding to interactions of users with the system.&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;We note once again the confusion inherent in such agile criticism as Beck’s comment that “Requirements gathering isn’t a phase that produces a static document”, as if having a requirements phase implied that the resulting requirements document will be static.
+The two matters are separate.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Agile! The Good, the Hype and the Ugly» by Bertrand Meyer&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Подведем итог: требование в условиях недостаточной полноты требований, которое может быть изменено по мере снижения уровня неопределенности, традиционно называется User Story или PBI.
+В таком случае требования уточняются по мере снижения уровня неопределенности, что является базовым принципом &lt;a class="reference internal" href="../../../iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;итеративной модели&lt;/span&gt;&lt;/a&gt; разработки.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="index-0"&gt;
+&lt;span id="id3"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id8"&gt;Литература про Agile-requirements&lt;/a&gt;&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.ireb.org/content/downloads/22-cpre-advanced-level-re-agile-handbook/handbook_cpre_al_re%40agile_en_v1.0.2.pdf"&gt;Handbook of RE@Agile According to the IREB Standard Education and Training for IREB Certified Professional for Requirements Engineering Advanced Level RE@Agile&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.pmi.org/pmbok-guide-standards/practice-guides/agile"&gt;Agile Practice Guide&lt;/a&gt;» by Project Management Institute, 2017&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«Agile Extension to the BABOK® Guide» version 2 (actual, на момент написания статьи)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.amazon.com/Agile-Software-Requirements-Enterprise-Development/dp/0321635841"&gt;Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise&lt;/a&gt;» by Dean Leffingwell.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«Software Requirements (Developer Best Practices)» 3rd Edition by Karl Wiegers&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;См. также:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="http://agilemodeling.com/artifacts/#Requirements"&gt;Agile Modeling :: Requirements-Analysis Models&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.scaledagileframework.com/safe-requirements-model/"&gt;SAFe Requirements Model&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.ireb.org/en/downloads/tag:handbook"&gt;Library of IREB artifacts&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;TODO:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://t.me/emacsway_log/531"&gt;https://t.me/emacsway_log/531&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://t.me/emacsway_log/157"&gt;https://t.me/emacsway_log/157&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://t.me/emacsway_log/158"&gt;https://t.me/emacsway_log/158&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="admonition seealso"&gt;
+&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Что такое Adaptation&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Критерии качества Agile Requirements</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/requirements/requirements-criteria.html</link><description>
+&lt;span id="emacsway-agile-requirements-criteria"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Существуют критерии качества к User Story, известные под акронимом INVEST (Independent, Negotiable, Valuable, Estimable, Small, Testable).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «The acronym INVEST helps to remember a widely accepted set of criteria, or checklist, to assess the quality of a user story.»&lt;/p&gt;
+&lt;p&gt;📝 «A good user story should be: I.N.V.E.S.T.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—Официальный сайт Agile Alliance, &lt;a class="reference external" href="https://www.agilealliance.org/glossary/invest/"&gt;glossary&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Первоисточник акронима INVEST можно посмотреть здесь: «&lt;a class="reference external" href="https://xp123.com/articles/invest-in-good-stories-and-smart-tasks/"&gt;INVEST in Good Stories, and SMART&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;В данном первоисточнике упоминается акроним SMART.
+Аналитикам он хорошо знаком, потому что он используется при написании требований:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «When writing quality requirements, keep in mind the useful SMART mnemonic—make them Specific, Measurable, Attainable, Relevant, and Time-sensitive.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Software Requirements (Developer Best Practices)» 3rd Edition by Karl Wiegers&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;SMART можно встретить в &lt;a class="reference external" href="https://www.agilealliance.org/wp-content/uploads/2016/01/Adressing-NFR-with-agile-practices-English-dec-16th.pdf"&gt;презентации по оформлению нефункциональных требований&lt;/a&gt; на сайте Agile Alliance.&lt;/p&gt;
+</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Evolutionary Development</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/evolutionary.html</link><description>
+&lt;span id="emacsway-evolutionary-development"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «The "evolutionary model" is intended to deal with incomplete knowledge of requirements.
+It provides for initial planning and initial architecture definition, but allocates requirements analysis, design, construction, verification, validation and delivery to a series of stages.
+Delivered capabilities that do not meet user needs can be reworked in subsequent stages of the evolution.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Incremental Development</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/incremental.html</link><description>
+&lt;span id="emacsway-incremental-development"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «The "incremental development" model includes initial planning, initial requirements analysis, initial architectural definition, and initial validation, but allocates design, implementation, verification (and sometimes delivery) activities to a series of stages, each of which provides a portion of the intended functionality.
+The approach provides for some flexibility to respond to inaccurate cost or schedule estimates by moving functionality to later increments.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;div class="figure align-left" id="id1"&gt;
+&lt;a class="reference internal image-reference" href="../../../../_images/incrementing.jpg"&gt;&lt;img alt="Incremental Development. The image source is &amp;quot;Don't Know What I Want, But I Know How to Get It&amp;quot; by Jeff Patton &amp;amp; Associates https://www.jpattonassociates.com/dont_know_what_i_want/" src="../../../../_images/incrementing.jpg" style="width: 90%;"/&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Incremental Development. The image source is «&lt;a class="reference external" href="https://www.jpattonassociates.com/dont_know_what_i_want/"&gt;Don’t Know What I Want, But I Know How to Get It&lt;/a&gt;» by Jeff Patton &amp;amp; Associates&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Iterative Development</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/iterative.html</link><description>
+&lt;span id="emacsway-iterative-development"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «The "iterative development" model performs initial planning and then consists of a cyclic process of prototyping, testing, analyzing and refining the requirements and the solution.
+"Iterative" models repeatedly perform the life cycle processes to deliver prioritized system functions sooner, with refined or more complex elements of the system coming in later iterations.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;div class="figure align-left" id="id1"&gt;
+&lt;a class="reference internal image-reference" href="../../../../_images/iterating.jpg"&gt;&lt;img alt="Iterative Development. The image source is &amp;quot;Don't Know What I Want, But I Know How to Get It&amp;quot; by Jeff Patton &amp;amp; Associates https://www.jpattonassociates.com/dont_know_what_i_want/" src="../../../../_images/iterating.jpg" style="width: 90%;"/&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Iterative Development. The image source is «&lt;a class="reference external" href="https://www.jpattonassociates.com/dont_know_what_i_want/"&gt;Don’t Know What I Want, But I Know How to Get It&lt;/a&gt;» by Jeff Patton &amp;amp; Associates&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «"Iteration" here means applying a function to itself.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Concrete Mathematics: A Foundation for Computer Science» 2nd edition by Ronald L. Graham, Donald E. Knuth, Oren Patashnik&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Ключевым элементом итеративной разработки является &lt;a class="reference internal" href="../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Adaptation&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="admonition seealso"&gt;
+&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Что такое Adaptation&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="agile/agile.html#emacsway-agile-development"&gt;&lt;span class="std std-ref"&gt;Что такое Agile Development&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Spiral Development</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/spiral.html</link><description>
+&lt;span id="emacsway-spiral-development"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «The "spiral" variation on &lt;a class="reference internal" href="incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental developmental&lt;/span&gt;&lt;/a&gt; proposes ordering the development of functionality based on risk, with the riskiest problems considered in the early increments.
+This provides some protection against cost surprises occurring late in the development cycle.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Что такое Adaptation</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/adaptation/adaptation.html</link><description>
+&lt;span id="emacsway-adaptation"/&gt; 
+&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#adaptation" id="id5"&gt;Что такое Adaptation&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id2" id="id6"&gt;Суть Адаптации&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id7"&gt;Назначение Адаптации&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id6"&gt;Суть Адаптации&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Суть Adaptation заключается в том, что мы не пытаемся разрешить неопределенность заблаговременно путем логического вывода, а, в противовес &lt;a class="reference internal" href="../prediction/prediction.html#emacsway-prediction"&gt;&lt;span class="std std-ref"&gt;Prediction&lt;/span&gt;&lt;/a&gt;, разрешаем неопределенность опытным, экспериментальным путем.
+Выдвигаем гипотезу, реализуем её в виде системного инкремента, инспектируем результат на основе практической обратной связи, и определяем, каким образом нам нужно адаптировать системный инкремент, если с первого раза не удалось удовлетворить ожидания.
+Полученные практическим способом знания являются входными аргументами для следующей &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;итерации&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «"Iteration" here means applying a function to itself.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Concrete Mathematics: A Foundation for Computer Science» 2nd edition by Ronald L. Graham, Donald E. Knuth, Oren Patashnik&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id7"&gt;Назначение Адаптации&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Рость неопределенности приводит к росту стоимости Prediction по мере роста его точности.
+Там, где график роста стоимости Adaptation (в зависимости от размера) проекта пересекает график роста стоимости Prediction (в зависимости от точности), возникает экономическая целесообразность обрабатывать неопределенность эмпирически, т.е. путем проведения эксперимента - спроектировали, реализовали, попробовали на практике, и адаптировали реализацию на основании практического фидбека.
+В этом - суть &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;итерации&lt;/span&gt;&lt;/a&gt;.
+Prediction при этом не исчезает полностью, а понижает свою точность и дополняется адаптацией.
+Для наилучшего экономического эффекта важно правильно выбрать баланс между Prediction и Adaptation, а так же обеспечить роста стоимости Adaptation близкий к горизонтальной асимптоте.&lt;/p&gt;
+&lt;p&gt;Это и есть та самая причина, по которой выбор SDLC-модели является неотъемлемой частью процесса проектирования, и изучается архитектурой.
+Ведь различные SDLC-модели (итеративные, инкрементальные, спиральные, гибридные, каскадные), реализованные в виде Scrum, RUP, SAFe, BDUF etc., обладают различным соотношением Prediction vs. Adaptation, имеют разные подходы к масштабированию команд и различные ограничения.
+Выбор SDLC-модели сильно зависит от ситуативного контекста проектирования.
+Повторюсь, основная цель итеративной разработки - удешевить стоимость проектирования в условиях неопределенности.&lt;/p&gt;
+&lt;p&gt;Об этом Брукс писал в Мифическом человеко-месяце когда еще до появления Agile Manifesto:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Therefore the most important function that software builders do for their clients is the &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative&lt;/span&gt;&lt;/a&gt; &lt;strong&gt;extraction and refinement of the product requirements&lt;/strong&gt;…&lt;/p&gt;
+&lt;p&gt;I would go a step further and assert that it is really impossible for clients, even those working with software engineers, to specify completely, precisely, and correctly the exact requirements of a modern software product before having built and tried some versions of the product they are specifying.&lt;/p&gt;
+&lt;p&gt;Therefore one of the most promising of the current technological efforts, and one which attacks the essence, not the accidents, of the software problem, is the development of approaches and tools for rapid prototyping of systems as part of the &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative&lt;/span&gt;&lt;/a&gt; &lt;strong&gt;specification of requirements&lt;/strong&gt;.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«The Mythical Man-Month Essays on Software Engineering Anniversary Edition» by Frederick P. Brooks, Jr.&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Конечно, сугубо семантически, термин «&lt;a class="reference internal" href="../../models/agile/analysis/requirements/requirements.html#emacsway-agile-requirements"&gt;&lt;span class="std std-ref"&gt;requirements&lt;/span&gt;&lt;/a&gt;» немного вводит в заблуждение в Agile, ведь заранее требования к продукту неизвестны полностью, и они изменяются по мере реализации продукта.
+А в таком случае, как они могут что-то требовать?
+Вы, наверное, встречали картинку с треугольником «&lt;a class="reference external" href="https://www.atlassian.com/agile/agile-at-scale/agile-iron-triangle"&gt;Iron Triangle&lt;/a&gt;» (Requirements/Scope, Cost, Time), где в waterfall он обращен вершиной Requirements вниз (константная область), а в Agile - вверх (переменная область). The iron triangle of planning:&lt;/p&gt;
+&lt;div class="figure align-left" id="id4"&gt;
+&lt;a class="reference internal image-reference" href="../../../../../_images/iron-triangle.png"&gt;&lt;img alt="Iron Triangle. The image source is &amp;quot;Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise&amp;quot; by Dean Leffingwell" src="../../../../../_images/iron-triangle.png" style="width: 90%;"/&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Iron Triangle. The image source is «Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise» by Dean Leffingwell&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Итеративная разработка востребована, когда невозможно достигнуть полноты (Complete) требований (set of &lt;a class="reference internal" href="../../models/agile/analysis/requirements/requirements.html#emacsway-agile-requirements"&gt;&lt;span class="std std-ref"&gt;requirements&lt;/span&gt;&lt;/a&gt;).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Complete. The set of requirements needs no further amplification because it contains everything pertinent to the definition of the system or system element being specified. In addition, the set contains no To Be Defined (TBD), To Be Specified (TBS), or To Be Resolved (TBR) clauses. Resolution of the TBx designations may be iterative and there is an acceptable timeframe for TBx items, determined by risks and dependencies.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 29148:2018 Systems and software engineering - Life cycle processes - Requirements engineering»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Но это и не требуется стандартом по SDLC:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «To deal with the &lt;strong&gt;issues of incompletely known requirements&lt;/strong&gt; and inaccurate estimates, a number of other types of models have been proposed: &lt;a class="reference internal" href="../../models/incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental&lt;/span&gt;&lt;/a&gt;, &lt;a class="reference internal" href="../../models/spiral.html#emacsway-spiral-development"&gt;&lt;span class="std std-ref"&gt;spiral&lt;/span&gt;&lt;/a&gt;, &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative&lt;/span&gt;&lt;/a&gt;, and &lt;a class="reference internal" href="../../models/evolutionary.html#emacsway-evolutionary-development"&gt;&lt;span class="std std-ref"&gt;evolutionary (adaptive)&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;The "&lt;a class="reference internal" href="../../models/evolutionary.html#emacsway-evolutionary-development"&gt;&lt;span class="std std-ref"&gt;evolutionary model&lt;/span&gt;&lt;/a&gt;" is intended to deal with &lt;strong&gt;incomplete knowledge of requirements&lt;/strong&gt;.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Как можно заметить, неполнота требований здесь первична, и именно для её разрешения и применяются такие SDLC-модели, как &lt;a class="reference internal" href="../../models/incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental&lt;/span&gt;&lt;/a&gt;, &lt;a class="reference internal" href="../../models/spiral.html#emacsway-spiral-development"&gt;&lt;span class="std std-ref"&gt;spiral&lt;/span&gt;&lt;/a&gt;, &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative&lt;/span&gt;&lt;/a&gt;, and &lt;a class="reference internal" href="../../models/evolutionary.html#emacsway-evolutionary-development"&gt;&lt;span class="std std-ref"&gt;evolutionary (adaptive)&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Интересно, что, во времена появления термина User Story, полнота требований так же не требовалась старым стандартом:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «The SRS may need to evolve as the development of the software product progresses. It may be impossible to specify some details at the time the project is initiated.&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;Requirements should be specified as completely and thoroughly as is known at the time, even if evolutionary revisions can be foreseen as inevitable. The fact that they are incomplete should be noted.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«IEEE Std 830-1998, IEEE Std 830-1993 IEEE Recommended Practice for Software Requirements Specifications»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Таким образом, использование термина &lt;a class="reference internal" href="../../models/agile/analysis/requirements/requirements.html#emacsway-agile-requirements"&gt;&lt;span class="std std-ref"&gt;requirements&lt;/span&gt;&lt;/a&gt;, несмотря на то, что вызывает вопросы относительно семантики, никоим образом не противоречит использованию его в Agile SDLC-моделе, которая, кстати, описана тем же стандартом - ISO/IEC/IEEE 12207:2017, в разделах «5.4.2. Life cycle model for the software system» и «Annex H».&lt;/p&gt;
+&lt;div class="admonition seealso"&gt;
+&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;Iterative Development&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../models/agile/agile.html#emacsway-agile-development"&gt;&lt;span class="std std-ref"&gt;Что такое Agile Development&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../models/agile/index.html"&gt;&lt;span class="doc"&gt;Agile&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../models/agile/analysis/requirements/requirements.html#emacsway-agile-requirements"&gt;&lt;span class="std std-ref"&gt;Agile Requirements&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Краткий курс по экономике разработки программного обеспечения</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics.html</link><description>
+&lt;span id="id1"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Краткий курс по экономике разработки программного обеспечения:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;dl class="simple"&gt;
+&lt;dt&gt;«Extreme Programming Explained» 1st edition by Kent Beck&lt;/dt&gt;&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;«Chapter 3. Economics of Software Development»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«Chapter 17. Design Strategy»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«Chapter 24. What Makes XP Hard»&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="simple"&gt;
+&lt;dt&gt;«Essential Scrum: A Practical Guide to the Most Popular Agile Process» by Kenneth Rubin&lt;/dt&gt;&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;«Chapter 3. Agile Principles»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«Chapter 8. Technical Debt»&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="simple"&gt;
+&lt;dt&gt;«Software Engineering: A Practitioner’s Approach» 9th edition by Roger S. Pressman, Bruce Maxim&lt;/dt&gt;&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;«3.2 Agility and the cost of change»&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="simple"&gt;
+&lt;dt&gt;«Software Architecture in Practice» 3d edition by Len Bass, Paul Clements, Rick Kazman&lt;/dt&gt;&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;«Chapter 7. Modifiability»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«Chapter 23. Economic analysis of architectures»&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="simple"&gt;
+&lt;dt&gt;«Refactoring: Improving the Design of Existing Code» 1st (and 2nd) edition by Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts&lt;/dt&gt;&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;«Chapter 2. Principles in Refactoring»&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="simple"&gt;
+&lt;dt&gt;«Clean Architecture: A Craftsman’s Guide to Software Structure and Design» by Robert C. Martin&lt;/dt&gt;&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;«Chapter 1. What Is Design and Architecture?»&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://martinfowler.com/bliki/Yagni.html"&gt;Yagni&lt;/a&gt;» (хорошо разъясняет виды экономических ущербов: «cost of build», «cost of delay», «cost of carry», «cost of repair», «cost of removing»)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://martinfowler.com/bliki/TechnicalDebt.html"&gt;Technical Debt&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://martinfowler.com/bliki/TechnicalDebtQuadrant.html"&gt;Technical Debt Quadrant&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://architectelevator.com/architecture/architecture-options/"&gt;Architecture: Selling Options&lt;/a&gt;» by Gregor Hohpe. How do you explain the value of architecture to business stakeholders? Deferring to the Nobel-prize winning economists Black and Scholes can work surprisingly well.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://martinfowler.com/bliki/DesignPayoffLine.html"&gt;Design Payoff Line&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://martinfowler.com/bliki/DesignStaminaHypothesis.html"&gt;Design Stamina Hypothesis&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://martinfowler.com/articles/is-quality-worth-cost.html"&gt;Is High Quality Software Worth the Cost?&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="http://sergeyteplyakov.blogspot.com/2016/08/yagni.html"&gt;Принцип YAGNI&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://less.works/less/principles/systems-thinking.html"&gt;Systems thinking&lt;/a&gt;» (&lt;a class="reference external" href="https://less.works/ru/less/principles/systems-thinking.html"&gt;на русском&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8299"&gt;Modifiability&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;См. также: &lt;a class="reference external" href="https://t.me/emacsway_log/125"&gt;https://t.me/emacsway_log/125&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Источник: &lt;a class="reference external" href="https://t.me/emacsway_log/459"&gt;https://t.me/emacsway_log/459&lt;/a&gt;&lt;/p&gt;
+</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Balancing Prediction/Adaptation</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/balancing-prediction-adaptation.html</link><description>
+&lt;span id="emacsway-balancing-prediction-adaptation"/&gt; 
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 McConnell writes, «In ten years the pendulum has swung from „design everything“ to „design nothing.“
+But the alternative to BDUF [Big Design Up Front] isn’t no design up front, it’s a Little Design Up Front (LDUF) or Enough Design Up Front (ENUF).»
+This is a strawman argument.
+The alternative to designing before implementing is designing after implementing.
+Some design up-front is necessary, but just enough to get the initial implementation.
+Further design takes place once the implementation is in place and the real constraints on the design are obvious.
+Far from «design nothing,» the XP strategy is «design always.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Extreme Programming Explained» 2nd edition by Kent Beck&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «The incremental and iterative nature of Agile development can facilitate efficient technical and management processes and practices to reduce the cost associated with change.
+In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;div class="section" id="alberto-brandolini-about-prediction-adaptation"&gt;
+&lt;h2&gt;Alberto Brandolini about Prediction/Adaptation&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Автор раздела: Андрей Ганичев&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Андрей Ганичев, contributor of «&lt;a class="reference external" href="https://github.com/kgrzybek/modular-monolith-with-ddd"&gt;Full Modular Monolith application with Domain-Driven Design approach&lt;/a&gt;», на тему поиска баланса Prediction/Adaptation:&lt;/p&gt;
+&lt;p&gt;Когда читал книгу Брандолини про «&lt;a class="reference external" href="https://leanpub.com/introducing_eventstorming"&gt;Introducing EventStorming: An act of Deliberate Collective Learning&lt;/a&gt;» by Alberto Brandolini (та которая недописанная), обратил внимание что и он вскользь проходит по этой теме.&lt;/p&gt;
+&lt;p&gt;Глава Pretending to solve the problem writing software, раздел Embrace Change:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «…iterative development is expensive. It is the best approach for developing software in very complex, and lean-demanding domains. However, the initial starting point matters, a lot. A big refactoring will cost a lot more than iterative fine tuning (think splitting a database, vs renaming a variable). So I’ll do everything possible to start iterating from the most reasonable starting point.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«&lt;a class="reference external" href="https://leanpub.com/introducing_eventstorming"&gt;Introducing EventStorming: An act of Deliberate Collective Learning&lt;/a&gt;» by Alberto Brandolini&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Upfront is a terrible word in the agile jargon. It recalls memories the old times analysis phase in the worst corporate waterfall. Given this infamous legacy, the word has been banned from agile environments like blasphemy. But unfortunately …there’s always something upfront. Even the worst developer thinks before typing the firs line of code.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«&lt;a class="reference external" href="https://leanpub.com/introducing_eventstorming"&gt;Introducing EventStorming: An act of Deliberate Collective Learning&lt;/a&gt;» by Alberto Brandolini&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Источник: &lt;a class="reference external" href="https://t.me/emacsway_log/819"&gt;https://t.me/emacsway_log/819&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;TODO:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://t.me/emacsway_log/812"&gt;https://t.me/emacsway_log/812&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://t.me/emacsway_log/731"&gt;https://t.me/emacsway_log/731&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Что такое Prediction</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/prediction/prediction.html</link><description>
+&lt;span id="emacsway-prediction"/&gt; 
+&lt;p&gt;К Prediction относится ряд активностей на основе правил логического вывода, предшествующих производству системного инкремента и направленных на заблаговременное разрешение неопределенности требований.
+К ним относятся Business/System Requirements Definition and Analysis, Architecture Definition, Design Definition, разработка макетов UX/UI-Design, Estimation и Planning.&lt;/p&gt;
+&lt;p&gt;В Scrum эти активности традиционно выражаются в событиях, предшествующих Definition Of Ready (DOR):&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;dl class="simple"&gt;
+&lt;dt&gt;Со стороны Product Owner:&lt;/dt&gt;&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Reveal needs of stakeholders&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Creating PBI&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="simple"&gt;
+&lt;dt&gt;Со стороны Team:&lt;/dt&gt;&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;PBR&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Planning&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Spike&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Основная проблема Prediction заключается в том, что характер роста стоимости прогнозирования, в зависимости от его точности, близок к экспоненциальному.
+В то время как характер роста бизнес-выгод от точности прогнозирования близок к логарифмическому.
+Пересечение этих графиков образует предел экономической целесообразности разрешения неопределенности путем прогнозирования.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «There is a fundamental truth to work breakdown structure estimation - the only way to estimate using a work breakdown structure to really accurately to get the number right is to implement the project.
+Then you’ll have the estimate.&lt;/p&gt;
+&lt;p&gt;The cost of improving the estimate, the initial work breakdown estimation, the cost of refining that grows exponentially.
+With every next layer you want to take it down.
+And the benefit of doing that does not grow exponentially.
+It grows logarithmically.&lt;/p&gt;
+&lt;p&gt;Managers understand there is an extremely high cost involved with refining the estimate.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://youtu.be/eisuQefYw_o?t=1995"&gt;«YOW! 2016 Robert C. Martin - Effective Estimation (or: How not to Lie)» at 33:15&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Robert C. Martin упомянул о таком способе обработки неопределенности, как реализовать проект (или системный инкремент).
+Это уже другой, эмпирический (т.е. опытным путем) способ обработки неопределенности, который называется &lt;a class="reference internal" href="../adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Adaptation&lt;/span&gt;&lt;/a&gt; и составляет основу итеративной разработки.
+Чем сложнее предметная область проекта, тем раньше наступает предел экономической целесообразности Prediction.&lt;/p&gt;
+</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Может ли CQRS-команда возвращать результат?</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/tactical-design/cqrs/cqrs-command-and-result.html</link><description>
 &lt;span id="index-0"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Данная статья представляет собой компиляцию &lt;a class="reference external" href="https://t.me/emacsway_log/276"&gt;сообщений&lt;/a&gt; с Telegram-channel &lt;a class="reference external" href="https://t.me/emacsway_log"&gt;@emacsway_log&lt;/a&gt;, и посвящена довольно дискуссионному вопросу о том, может ли CQRS-команда возвращать результат.&lt;/p&gt;
@@ -4437,57 +5104,6 @@ If a person keeps faithfully busy each hour of the working day, he can count on 
 &lt;/ul&gt;
 &lt;p&gt;См. также: &lt;a class="reference external" href="https://t.me/emacsway_log/125"&gt;https://t.me/emacsway_log/125&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Источник: &lt;a class="reference external" href="https://t.me/emacsway_log/459"&gt;https://t.me/emacsway_log/459&lt;/a&gt;&lt;/p&gt;
-</description><pubDate>Fri, 31 Dec 2021 00:00:00 </pubDate></item><item><title>Systems Development Life Cycle (SDLC)</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/sdlc-reference.html</link><description>
-&lt;span id="index-0"/&gt; 
-&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Grady Booch выделяет два ключевых критерия, которые определяют успех или неудачу проекта:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «Traits of Successful Projects&lt;/p&gt;
-&lt;p&gt;A successful software project is one in which the deliverables satisfy and possibly exceed the customer’s expectations, the development occurred in a timely and economical fashion, and the result is resilient to change and adaptation. By this measure, we have observed several traits that are common to virtually all of the successful object-oriented systems we have encountered and noticeably absent from the ones that we count as failures:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;Existence of a strong architectural vision&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Application of a well-managed iterative and incremental development lifecycle»&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p class="attribution"&gt;—«Object-Oriented Analysis and Design with Applications» 3rd edition by Grady Booch, Robert A. Maksimchuk, Michael W. Engle, Bobbi J. Young Ph.D., Jim Conallen, Kelli A. Houston&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Если с «architectural vision» все понятно, то с «well-managed development lifecycle» у многих могут возникать вопросы. Тем не менее, для успешности проекта процессы должны быть грамотно выбраны и качественно отлажены.&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://book4cio.ru/#page-14"&gt;Учебник 4CIO&lt;/a&gt;» - глава 3.4. Управление разработкой ПО&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.sebokwiki.org/wiki/Life_Cycle_Models"&gt;SEBoK: Life Cycle Models&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.sebokwiki.org/wiki/System_Life_Cycle_Process_Models:_Iterative"&gt;SEBoK: System Life Cycle Process Models: Iterative&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Неплохой «&lt;a class="reference external" href="https://www.tutorialspoint.com/sdlc/index.htm"&gt;SDLC Tutorial&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.tutorialspoint.com/sdlc/sdlc_quick_guide.htm"&gt;SDLC - Quick Guide&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://itabok.iasaglobal.org/itabok3_0/architecture-methodologies-and-frameworks/"&gt;ITABoK: Architecture Methodologies and Frameworks&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://itabok.iasaglobal.org/itabok3_0/digital-outcome-model/agility/"&gt;ITABoK: What is Agility&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.incose.org/products-and-publications/se-handbook"&gt;Systems engineering handbook. A guide for System Life Cycle Processes and activities&lt;/a&gt;» by INCOSE&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.iso.org/standard/63712.html"&gt;ISO/IEC/IEEE 12207:2017 Systems and software engineering — Software life cycle processes&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.iso.org/standard/63711.html"&gt;ISO/IEC/IEEE 15288:2015 Systems and software engineering — System life cycle processes&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«ISO/IEC/IEEE 29148:2011 Systems and software engineering — Life cycle processes — Requirements engineering»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«ISO/IEC/IEEE 15289:2019 Systems and software engineering — Content of life-cycle information items (documentation)»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«ISO/IEC/IEEE 24765:2017 Systems and software engineering — Vocabulary»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«ISO 9000:2005 Quality management systems — Fundamentals and vocabulary»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«ISO/IEC 33001:2015 Information technology — Process assessment — Concepts and terminology»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«ГОСТ Р ИСО/МЭК 12207-2010 Информационная технология. Системная и программная инженерия. Процессы жизненного цикла программных средств.»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«ГОСТ Р 57193-2016 Системная и программная инженерия. Процессы жизненного цикла систем.»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«Object-Oriented Analysis and Design with Applications» 3rd edition by Grady Booch, Robert A. Maksimchuk, Michael W. Engle, Bobbi J. Young Ph.D., Jim Conallen, Kelli A. Houston - «Chapter 6. Process»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«Software Architecture in Practice» 3d edition by Len Bass, Paul Clements, Rick Kazman - «Chapter 15. Architecture in agile projects»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«Extreme Programming Explained» 1st edition by Kent Beck (именно первое издание) - кто этой книги не читал, тот ничего в Agile не понимает.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Три превосходные книги Dean Leffingwell:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;«Scaling Software Agility: Best Practices for Large Enterprises» by Dean Leffingwell - о проблемах масштабирования команд.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise» by Dean Leffingwell - о проблемах интегрирования аналитической и архитектурной работы в Agile.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«SAFe® 5.0: The World’s Leading Framework for Business Agility» by Richard Knaster, Dean Leffingwell - наиболее удачная масштабируемая Agile-модель на сегодня.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;«Essential Scrum: A Practical Guide to the Most Popular Agile Process» by Kenneth Rubin - главы 3 и 8 просто необходимы для понимания области применения Scrum.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://t.me/emacsway_log/431"&gt;https://t.me/emacsway_log/431&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://t.me/emacsway_log/35"&gt;https://t.me/emacsway_log/35&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://t.me/emacsway_log/151"&gt;https://t.me/emacsway_log/151&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf"&gt;Краткая история итеративной разработки&lt;/a&gt;» by Craig Larman&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://less.works/less/framework/introduction"&gt;LeSS by Craig Larman&lt;/a&gt;» - куча полезной информации, которую можно использовать автономно. (&lt;a class="reference external" href="https://less.works/ru/less/framework/introduction"&gt;на русском&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Источник: &lt;a class="reference external" href="https://t.me/emacsway_log/490"&gt;https://t.me/emacsway_log/490&lt;/a&gt;&lt;/p&gt;
 </description><pubDate>Fri, 31 Dec 2021 00:00:00 </pubDate></item><item><title>Как осуществлять изменения в коллективе</title><link>https://dckms.github.io/system-architecture/emacsway/soft-skills/how-to-provide-changes.html</link><description>
 &lt;span id="id1"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;

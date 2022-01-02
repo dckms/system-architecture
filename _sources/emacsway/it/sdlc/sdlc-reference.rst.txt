@@ -32,6 +32,7 @@ Grady Booch выделяет два ключевых критерия, кото�
 
 - "`ISO/IEC/IEEE 12207:2017 Systems and software engineering — Software life cycle processes <https://www.iso.org/standard/63712.html>`__"
 - "`ISO/IEC/IEEE 15288:2015 Systems and software engineering — System life cycle processes <https://www.iso.org/standard/63711.html>`__"
+
 - "ISO/IEC/IEEE 29148:2011 Systems and software engineering — Life cycle processes — Requirements engineering"
 - "ISO/IEC/IEEE 15289:2019 Systems and software engineering — Content of life-cycle information items (documentation)"
 
@@ -64,5 +65,15 @@ Grady Booch выделяет два ключевых критерия, кото�
 
 - "`Краткая история итеративной разработки <https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf>`__" by Craig Larman
 - "`LeSS by Craig Larman <https://less.works/less/framework/introduction>`__" - куча полезной информации, которую можно использовать автономно. (`на русском <https://less.works/ru/less/framework/introduction>`__)
+
+Нужно заметить, что Software является подмножеством System.
+Раньше и Software, и System описывались одним стандартом ISO/IEC 12207:2008.
+Потом их разделили на ISO/IEC/IEEE 12207:2017 и ISO/IEC/IEEE 15288:2015.
+
+    📝 "This document has a strong relationship with ISO/IEC/IEEE 15288:2015, Systems and Software Engineering System Life Cycle Processes, and is more applicable to software systems.
+    To account for situations in which both ISO/IEC/IEEE 15288:2015 and ISO/IEC/IEEE 12207:2017 are applied (e.g., a development of a system containing software, or the development of a software system containing hardware), their process structures are harmonized to be identical.
+    The processes of this document directly correspond to processes of ISO/IEC/IEEE 15288 with specialization for software products and services."
+
+    -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
 
 Источник: https://t.me/emacsway_log/490

@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Balancing Prediction/Adaptation &#8212; System Architecture</title>
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../../search.html" />
+    <link rel="next" title="Systems Development Life Cycle (SDLC)" href="../sdlc-reference.html" />
+    <link rel="prev" title="Что такое Prediction" href="prediction/prediction.html" />
+    
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+
+
+    
+        
+            <link rel="canonical" href="https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/balancing-prediction-adaptation.html" />
+        
+    
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+              <div class="related top">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="prediction/prediction.html" title="Previous document">Что такое Prediction</a>
+        </li>
+        <li>
+          <a href="../sdlc-reference.html" title="Next document">Systems Development Life Cycle (SDLC)</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+
+          <div class="body" role="main">
+            
+    
+  <div class="section" id="balancing-prediction-adaptation">
+<span id="emacsway-balancing-prediction-adaptation"></span><h1>Balancing Prediction/Adaptation<a class="headerlink" href="#balancing-prediction-adaptation" title="Ссылка на этот заголовок">¶</a></h1>
+<blockquote>
+<div><p>📝 McConnell writes, «In ten years the pendulum has swung from „design everything“ to „design nothing.“
+But the alternative to BDUF [Big Design Up Front] isn’t no design up front, it’s a Little Design Up Front (LDUF) or Enough Design Up Front (ENUF).»
+This is a strawman argument.
+The alternative to designing before implementing is designing after implementing.
+Some design up-front is necessary, but just enough to get the initial implementation.
+Further design takes place once the implementation is in place and the real constraints on the design are obvious.
+Far from «design nothing,» the XP strategy is «design always.»</p>
+<p class="attribution">—«Extreme Programming Explained» 2nd edition by Kent Beck</p>
+</div></blockquote>
+<blockquote>
+<div><p>📝 «The incremental and iterative nature of Agile development can facilitate efficient technical and management processes and practices to reduce the cost associated with change.
+In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project.»</p>
+<p class="attribution">—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»</p>
+</div></blockquote>
+<div class="section" id="alberto-brandolini-about-prediction-adaptation">
+<h2>Alberto Brandolini about Prediction/Adaptation<a class="headerlink" href="#alberto-brandolini-about-prediction-adaptation" title="Ссылка на этот заголовок">¶</a></h2>
+<p><em>Автор раздела: Андрей Ганичев</em></p>
+<p>Андрей Ганичев, contributor of «<a class="reference external" href="https://github.com/kgrzybek/modular-monolith-with-ddd">Full Modular Monolith application with Domain-Driven Design approach</a>», на тему поиска баланса Prediction/Adaptation:</p>
+<p>Когда читал книгу Брандолини про «<a class="reference external" href="https://leanpub.com/introducing_eventstorming">Introducing EventStorming: An act of Deliberate Collective Learning</a>» by Alberto Brandolini (та которая недописанная), обратил внимание что и он вскользь проходит по этой теме.</p>
+<p>Глава Pretending to solve the problem writing software, раздел Embrace Change:</p>
+<blockquote>
+<div><p>📝 «…iterative development is expensive. It is the best approach for developing software in very complex, and lean-demanding domains. However, the initial starting point matters, a lot. A big refactoring will cost a lot more than iterative fine tuning (think splitting a database, vs renaming a variable). So I’ll do everything possible to start iterating from the most reasonable starting point.»</p>
+<p class="attribution">—«<a class="reference external" href="https://leanpub.com/introducing_eventstorming">Introducing EventStorming: An act of Deliberate Collective Learning</a>» by Alberto Brandolini</p>
+</div></blockquote>
+<blockquote>
+<div><p>📝 «Upfront is a terrible word in the agile jargon. It recalls memories the old times analysis phase in the worst corporate waterfall. Given this infamous legacy, the word has been banned from agile environments like blasphemy. But unfortunately …there’s always something upfront. Even the worst developer thinks before typing the firs line of code.»</p>
+<p class="attribution">—«<a class="reference external" href="https://leanpub.com/introducing_eventstorming">Introducing EventStorming: An act of Deliberate Collective Learning</a>» by Alberto Brandolini</p>
+</div></blockquote>
+<p>Источник: <a class="reference external" href="https://t.me/emacsway_log/819">https://t.me/emacsway_log/819</a></p>
+<p>TODO:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://t.me/emacsway_log/812">https://t.me/emacsway_log/812</a></p></li>
+<li><p><a class="reference external" href="https://t.me/emacsway_log/731">https://t.me/emacsway_log/731</a></p></li>
+</ul>
+</div>
+</div>
+
+
+
+    
+        
+            <div class="section" style="text-align: right;">
+                <p><a href="https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/balancing-prediction-adaptation.html">Canonical URL</a></p>
+            </div>
+        
+    
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="prediction/prediction.html" title="Previous document">Что такое Prediction</a>
+        </li>
+        <li>
+          <a href="../sdlc-reference.html" title="Next document">Systems Development Life Cycle (SDLC)</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">System Architecture</a></h1>
+
+
+
+<p class="blurb">Distributed Collaborative Knowledge Management System for System Architecture</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dckms&repo=system-architecture&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Общее пространство:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../trunk/it/index.html">IT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../trunk/index.html">Общее пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Авторские пространства:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Пространство Emacsway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Приватное пространствo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../private/index.html">Приватное пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Прочее:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html">Как пользоваться</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../trunk/it/index.html">IT</a><ul>
+  <li><a href="../../../../trunk/it/sdlc/index.html">SDLC</a><ul>
+  <li><a href="../../../../trunk/it/sdlc/uncertainty-management/index.html">Обработка неопределенности</a><ul>
+      <li>Previous: <a href="prediction/prediction.html" title="предыдущая глава">Что такое Prediction</a></li>
+      <li>Next: <a href="../sdlc-reference.html" title="следующая глава">Systems Development Life Cycle (SDLC)</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="footer">
+      &copy;2022, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE" rel="nofollow">License</a>).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../_sources/emacsway/it/sdlc/uncertainty-management/balancing-prediction-adaptation.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/dckms/system-architecture" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+
+    
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+           ym(87033138, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true,
+                trackHash:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/87033138" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    
+
+  </body>
+</html>

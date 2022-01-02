@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agile nonfunctional Requirements &#8212; System Architecture</title>
+    <link rel="stylesheet" href="../../../../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../../../../../" src="../../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../../_static/jquery.js"></script>
+    <script src="../../../../../../../_static/underscore.js"></script>
+    <script src="../../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../../../../../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../../../../../search.html" />
+    <link rel="next" title="Документирование требований в Agile" href="documenting.html" />
+    <link rel="prev" title="Agile Requirements" href="requirements.html" />
+    
+   
+  <link rel="stylesheet" href="../../../../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+
+
+    
+        
+            <link rel="canonical" href="https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/requirements/nonfunctional-requirements.html" />
+        
+    
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+              <div class="related top">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="requirements.html" title="Previous document">Agile Requirements</a>
+        </li>
+        <li>
+          <a href="documenting.html" title="Next document">Документирование требований в Agile</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+
+          <div class="body" role="main">
+            
+    
+  <div class="section" id="agile-nonfunctional-requirements">
+<span id="emacsway-agile-nonfunctional-requirements"></span><h1>Agile nonfunctional Requirements<a class="headerlink" href="#agile-nonfunctional-requirements" title="Ссылка на этот заголовок">¶</a></h1>
+<p><em>Автор раздела: Ivan Zakrevsky</em></p>
+<p>Если вы знакомы с ATAM, ADD, QAW, то вы знакомы со сценариями атрибутов качеств («Software Architecture in Practice» 3d edition by Len Bass, Paul Clements, Rick Kazman, глава 16), и легко поймете, о чем пишет K.Wigers - один из топовых авторов по требованиям и аналитике:</p>
+<blockquote>
+<div><p>📝 «<strong>Nonfunctional requirements need to have priority alongside user stories; you can’t defer their implementation until a later iteration.</strong>
+It’s possible to specify quality attributes in the form of stories: «As a help desk technician, I want the knowledge base to respond to queries <strong>within five seconds</strong> so the customer doesn’t get frustrated and hang up.»</p>
+<p>&lt;…&gt;</p>
+<p>Developers need to keep nonfunctional requirements in mind as they consider the implications of implementing individual user stories.
+As more functionality is added through a series of iterations, the system’s efficiency and hence performance can deteriorate.
+Specify performance goals and begin performance testing <strong>with early iterations</strong>, so you can become aware of concerns early enough to take corrective actions.</p>
+<p>&lt;…&gt;</p>
+<p>As with user stories, it’s possible to write acceptance tests for quality attributes.
+This is a way to quantify the quality attributes.
+If a performance goal is stated simply as “The knowledge base must return search results quickly,” you can’t write tests to define what constitutes “quickly.” A better acceptance test would be: «Keyword search of the knowledge base <strong>takes less than 5 seconds</strong>, and preferably <strong>less than 3 seconds</strong>, to return a result.</p>
+<p>&lt;…&gt;</p>
+<p>Part of <strong>accepting an iteration as being complete</strong> is to assess whether the pertinent nonfunctional requirements are satisfied.
+Often there is a range of acceptable performance, with some outcomes more desirable than others.
+As it does for any other software development approach, satisfying quality requirements can distinguish delight from disappointment on agile projects.»</p>
+<p class="attribution">—Глава 14, подраздел «Handling quality attributes on agile projects», книги «Software Requirements» 3rd Edition, Wiegers K., Beatty J.</p>
+</div></blockquote>
+<p>Приоритезация и реализация нефункциональных требований совместно (alongside) с функциональными выбивает почву для появления технических задач, оторванных от бизнес-целей.
+А поскольку один из топовых авторов по Scrum, K.Rubin, утверждает, что нефункциональными требованиями должен заниматься Product Owner, то это автоматически устраняет необходимость в лоббировании технических задач техническими специалистами.</p>
+<p>Нужно заметить, что в SAFe нефункциональными требованиями занимается уже не Product Owner, а System Architect.</p>
+<blockquote>
+<div><p>System Architect/Engineering is an individual or team that defines the overall architecture of the system. They work at a level of abstraction above the teams and components and define Non-Functional Requirements (NFRs), major system elements, subsystems, and interfaces.</p>
+<p class="attribution">—«SAFe® 5.0: The World’s Leading Framework for Business Agility» by Richard Knaster, Dean Leffingwell</p>
+</div></blockquote>
+<p>Вообще говоря, в Scrum этим не обязательно должен заниматься Product Owner.
+По офф.гайду команда должна сотрудничать со стейкхолдерами, а Product Owner может делегировать свои полномочия команде, например, аналитику или архитектору.
+Тут важно не кто, а как.</p>
+<p>Был упомянут K.Rubin, посмотрим, что именно он говорит:</p>
+<blockquote>
+<div><p>📝 «The <strong>product owner is responsible</strong> for defining the acceptance criteria for each product backlog item.
+These are the conditions under which the product owner would be satisfied that the functional and <strong>nonfunctional requirements</strong> have been met.
+The product owner may also write acceptance tests corresponding to the acceptance criteria, or he could enlist the assistance of subject matter experts (SMEs) or development team members.
+In either case, the product owner should ensure that these acceptance criteria (and frequently specific acceptance tests) are created before an item is considered at a sprint-planning meeting.
+Without them, the team would have an incomplete understanding of the item and would not be ready to include it in a sprint.
+For this reason, many Scrum teams include the existence of clear acceptance criteria as an item on their definition-of-ready checklist (see Chapter 6).</p>
+<p>&lt;…&gt;</p>
+<p>The team must also decide when to test all of the browsers.
+Each nonfunctional requirement is a prime target for inclusion in the team’s definition of done.
+If the team includes the “Web Browser Support” nonfunctional requirement in the definition of done, the team will have to test any new features added in the sprint with all of the listed browsers.
+If it doesn’t work with all of them, the story isn’t done.</p>
+<p>I recommend that teams try to include as many of the nonfunctional requirements in their definitions of done as they possibly can.
+Waiting to test nonfunctional requirements until late in the development effort defers getting fast feedback on critical system performance characteristics.</p>
+<p>&lt;…&gt;</p>
+<p>nonfunctional requirement.
+1. A requirement that does not relate to functionality but to attributes such as reliability, efficiency, usability, maintainability, and portability, which product backlog items must possess in order to be fully accepted by the stakeholders.
+2. <strong>Each nonfunctional requirement is a candidate for inclusion in the definition of done</strong>. See also definition of done.»</p>
+<p class="attribution">—«Essential Scrum : a practical guide to the most popular agile process» by Kenneth S. Rubin.</p>
+</div></blockquote>
+<p>Топовые авторы по аналитике (K.Wigers) и Scrum (K.Rubin) сошлись в одном мнении. Один дает описание с точки зрения работы с требованиями, а другой - с точки зрения гибких процессов разработки.</p>
+<p>См. также:</p>
+<ul class="simple">
+<li><p>«<a class="reference external" href="https://www.scaledagileframework.com/nonfunctional-requirements/">Nonfunctional Requirements</a>» at SAFe</p></li>
+</ul>
+<p>TODO:</p>
+<ul class="simple">
+<li><p>Dean Leffingwell тоже дает описание работы с нефункциональными требованиями.</p></li>
+</ul>
+</div>
+
+
+
+    
+        
+            <div class="section" style="text-align: right;">
+                <p><a href="https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/requirements/nonfunctional-requirements.html">Canonical URL</a></p>
+            </div>
+        
+    
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="requirements.html" title="Previous document">Agile Requirements</a>
+        </li>
+        <li>
+          <a href="documenting.html" title="Next document">Документирование требований в Agile</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../../../index.html">System Architecture</a></h1>
+
+
+
+<p class="blurb">Distributed Collaborative Knowledge Management System for System Architecture</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dckms&repo=system-architecture&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Общее пространство:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../../../trunk/it/index.html">IT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../../../trunk/index.html">Общее пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Авторские пространства:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../index.html">Пространство Emacsway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Приватное пространствo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../private/index.html">Приватное пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Прочее:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../README.html">Как пользоваться</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../../../../trunk/it/index.html">IT</a><ul>
+  <li><a href="../../../../../../../trunk/it/sdlc/index.html">SDLC</a><ul>
+  <li><a href="../../../../../../../trunk/it/sdlc/models/index.html">SDLC Models</a><ul>
+  <li><a href="../../../../../../../trunk/it/sdlc/models/agile/index.html">Agile</a><ul>
+  <li><a href="../../../../../../../trunk/it/sdlc/models/agile/analysis/index.html">Analysis in Agile</a><ul>
+  <li><a href="../../../../../../../trunk/it/sdlc/models/agile/analysis/requirements/index.html">Requirements in Agile</a><ul>
+      <li>Previous: <a href="requirements.html" title="предыдущая глава">Agile Requirements</a></li>
+      <li>Next: <a href="documenting.html" title="следующая глава">Документирование требований в Agile</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="footer">
+      &copy;2022, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE" rel="nofollow">License</a>).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../../../../_sources/emacsway/it/sdlc/models/agile/analysis/requirements/nonfunctional-requirements.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/dckms/system-architecture" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+
+    
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+           ym(87033138, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true,
+                trackHash:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/87033138" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    
+
+  </body>
+</html>
