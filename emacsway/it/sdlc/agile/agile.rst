@@ -16,6 +16,14 @@
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
 
+..
+
+    📝 ""Agile" methods actually can be applied within a variety of models.
+    While Agile methods are common in executing an evolutionary lifecycle model, they can be used in other lifecycle models at various stages.
+    What the methods have in common is an emphasis on continuous inspection and collaboration in the rapid production of working software in an environment where changes, including changes to requirements, are expected."
+
+    -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
+
 Agile является естественным следствием эволюции итеративной разработки, краткий обзор которой можно посмотреть в превосходной статье Craig Larman "`Iterative and Incremental Development: A Brief History <https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf>`__".
 
 Вся суть Agile (итеративной) модели разработки одним предложением:
