@@ -17,7 +17,7 @@ Agile Requirements
 Что такое требование
 ====================
 
-Следует различать значения терминов needs, requirements и specification.
+Следует различать значения терминов **needs**, **requirements** и **specification**.
 Вопросы возникают, как правило, там, где их не различают, и под требованиями зачастую понимают System Requirements Specification (SyRS), на который распространяется стандарт "ISO/IEC/IEEE 29148:2011 Systems and software engineering - Life cycle processes - Requirements engineering".
 
 Однако, на сами требования распространяются стандарты SDLC:
@@ -34,6 +34,10 @@ Agile Requirements
 
 Это все. Ни больше, ни меньше.
 
+
+.. index::
+   single: Product Backlog Item; in Agile analysis
+   :name: emacsway-product-backlog-item
 
 Product Backlog Item и Requirements
 ===================================
@@ -100,6 +104,10 @@ Product Backlog Item и Requirements
     -- "`Advantages of User Stories for Requirements <https://www.mountaingoatsoftware.com/articles/advantages-of-user-stories-for-requirements>`__" by Mike Cohn
 
 
+.. index::
+   single: User Story; in Agile analysis
+   :name: emacsway-user-story
+
 Почему User Story, а не Requirements
 ====================================
 
@@ -154,6 +162,7 @@ Bertrand Meyer о том, в чем отличия между User Story и Requ
 
 
 .. index:: Literature
+   :name: emacsway-agile-requirements-literature
 
 Литература про Agile-requirements
 =================================
@@ -163,6 +172,9 @@ Bertrand Meyer о том, в чем отличия между User Story и Requ
 - "Agile Extension to the BABOK® Guide" version 2 (actual, на момент написания статьи)
 - "`Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise <https://www.amazon.com/Agile-Software-Requirements-Enterprise-Development/dp/0321635841>`__" by Dean Leffingwell.
 - "Software Requirements (Developer Best Practices)" 3rd Edition by Karl Wiegers
+
+- "` An Agile Architectural Epic Kanban System: Part 2 – The Model <https://scalingsoftwareagility.wordpress.com/2010/03/05/an-agile-architectural-epic-kanban-system-part-2-%E2%80%93-the-model/>`__" by Dean Leffingwell
+- `A Lean and Scalable Requirements Information Model for the Agile Enterprise <https://scalingsoftwareagility.files.wordpress.com/2007/03/a-lean-and-scalable-requirements-information-model-for-agile-enterprises-pdf.pdf>`__ by Dean Leffingwell with Juha‐Markus Aalto
 
 См. также:
 

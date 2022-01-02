@@ -38,6 +38,3 @@
 - "`Modifiability <https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8299>`__"
 
 См. также: https://t.me/emacsway_log/125
-
-Источник: https://t.me/emacsway_log/459
-
