@@ -7,4 +7,5 @@ SDLC-Models
    :caption: Оглавление:
    :glob:
 
-   /emacsway/it/sdlc/models/iterative.rst
+   /emacsway/it/sdlc/models/iterative
+   /emacsway/it/sdlc/models/incremental
