@@ -12,7 +12,7 @@
 
 ..
 
-    📝 "Agile development - software development approach based on iterative development, frequent inspection and adaptation, and incremental deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback."
+    📝 "Agile development - software development approach based on :ref:`iterative development <emacsway-iterative-development>`, frequent inspection and adaptation, and incremental deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback."
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
 
