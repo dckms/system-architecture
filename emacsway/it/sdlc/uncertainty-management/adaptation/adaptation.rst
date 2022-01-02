@@ -58,11 +58,11 @@ Prediction при этом не исчезает полностью, а пони
 Вы, наверное, встречали картинку с треугольником "`Iron Triangle <https://www.atlassian.com/agile/agile-at-scale/agile-iron-triangle>`__" (Requirements/Scope, Cost, Time), где в waterfall он обращен вершиной Requirements вниз (константная область), а в Agile - вверх (переменная область). The iron triangle of planning:
 
 .. figure:: _media/adaptation/iron-triangle.png
-   :alt: Iron Triangle. The image source is "Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise" by Dean Leffingwell
+   :alt: Iron Triangle. Agile fixes the date and resources and varies the scope. The image source is "Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise" by Dean Leffingwell
    :align: left
    :width: 90%
 
-   Iron Triangle. The image source is "Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise" by Dean Leffingwell
+   Iron Triangle. Agile fixes the date and resources and varies the scope. The image source is "Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise" by Dean Leffingwell
 
 Итеративная разработка востребована, когда невозможно достигнуть полноты (Complete) требований (set of :ref:`requirements <emacsway-agile-requirements>`).
 
