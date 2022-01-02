@@ -38,7 +38,7 @@ Agile Requirements
 Product Backlog Item и Requirements
 ===================================
 
-Итак, какая же все-таки связь между Product Backlog Item и Requirements?
+Какая связь между Product Backlog Item и Requirements?
 
     📝 "In the Scrum framework a **product backlog** lists all of the **requirements** for a solution, including both **customer and technical requirements**."
 
