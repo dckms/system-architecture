@@ -22,4 +22,18 @@ Iterative Development
    :align: left
    :width: 90%
 
-   Iterative Development. The image source is "`Don't Know What I Want, But I Know How to Get It <https://www.jpattonassociates.com/dont_know_what_i_want/>`__" by Jeff Patton & Associates 
+   Iterative Development. The image source is "`Don't Know What I Want, But I Know How to Get It <https://www.jpattonassociates.com/dont_know_what_i_want/>`__" by Jeff Patton & Associates
+
+..
+
+    📝 "\"Iteration\" here means applying a function to itself."
+
+    -- "Concrete Mathematics: A Foundation for Computer Science" 2nd edition by Ronald L. Graham, Donald E. Knuth, Oren Patashnik
+
+Ключевым элементом итеративной разработки является :ref:`Adaptation <emacsway-adaptation>`.
+
+.. seealso::
+
+   - ":ref:`emacsway-adaptation`"
+   - ":ref:`emacsway-agile-development`"
+

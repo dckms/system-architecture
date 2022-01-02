@@ -7,11 +7,6 @@
 Balancing Prediction/Adaptation
 ===============================
 
-TODO:
-
-- https://t.me/emacsway_log/812
-- https://t.me/emacsway_log/731
-
     📝 McConnell writes, "In ten years the pendulum has swung from 'design everything' to 'design nothing.'
     But the alternative to BDUF [Big Design Up Front] isn't no design up front, it's a Little Design Up Front (LDUF) or Enough Design Up Front (ENUF)."
     This is a strawman argument.
@@ -52,3 +47,8 @@ Alberto Brandolini about Prediction/Adaptation
     -- "`Introducing EventStorming: An act of Deliberate Collective Learning <https://leanpub.com/introducing_eventstorming>`__" by Alberto Brandolini
 
 Источник: https://t.me/emacsway_log/819
+
+TODO:
+
+- https://t.me/emacsway_log/812
+- https://t.me/emacsway_log/731
