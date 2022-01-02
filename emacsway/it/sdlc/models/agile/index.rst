@@ -7,4 +7,5 @@ Agile
    :caption: Оглавление:
    :glob:
 
+   */index
    *

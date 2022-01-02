@@ -18,7 +18,7 @@
 
 ..
 
-    📝 ""Agile" methods actually can be applied within a variety of models.
+    📝 "\"Agile\" methods actually can be applied within a variety of models.
     While Agile methods are common in executing an evolutionary lifecycle model, they can be used in other lifecycle models at various stages.
     What the methods have in common is an emphasis on continuous inspection and collaboration in the rapid production of working software in an environment where changes, including changes to requirements, are expected."
 

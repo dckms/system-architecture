@@ -7,4 +7,4 @@ Agile
    :caption: Оглавление:
    :glob:
 
-   /emacsway/it/sdlc/agile/agile
+   /emacsway/it/sdlc/models/agile/agile
