@@ -1,143 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0"><channel><title>System Architecture</title><link>https://dckms.github.io/system-architecture</link><description /><language>ru</language><copyright>2022, @dckms (&lt;a href="https://dckms.github.io/system-architecture/LICENSE" rel="nofollow"&gt;License&lt;/a&gt;)</copyright><item><title>Психологическое значение планирования</title><link>https://dckms.github.io/system-architecture/emacsway/soft-skills/planning-in-psychology.html</link><description>&lt;span class="target" id="index-0"/&gt;&lt;div class="section" id="emacsway-planning-in-psychology"&gt;
-&lt;span id="id1"/&gt; 
-&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
-&lt;div class="contents topic" id="id2"&gt;
-&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-planning-in-psychology" id="id7"&gt;Психологическое значение планирования&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id8"&gt;Планирование в управлении&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id4" id="id9"&gt;Планирование в обучении&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id5" id="id10"&gt;Влияние психологического напряжения на здоровье&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id6" id="id11"&gt;Выводы&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id3"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id8"&gt;Планирование в управлении&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Есть одна интересная книга - «Planning Extreme Programming» by Kent Beck, Martin Fowler.
-В ней Kent Beck рассказывает о том, какую огромную роль играет планирование для снятия психологического напряжения у менеджмента.
-Все просто - без плана человек не может наблюдать превосходства ресурсов над Scope (объем работ) за оставшийся период времени.
-Неопределенность вызывает беспокойство и напряжение.
-Чтобы снять напряжение, нужно сконцентрировать ресурсы на каждом временном отрезке таким образом, чтобы они превосходили Scope.
-Т.е. сделать перегруппировку сил.
-Без хорошего планирования у менеджмента обычно всегда начинается спешка, а у разработчиков начинается проблема 90/90:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «The first 90 percent of the code accounts for the first 90 percent of the development time.
-The remaining 10 percent of the code accounts for the other 90 percent of the development time.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«Code Complete» by Steve McConnell&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id4"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id9"&gt;Планирование в обучении&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Один из наиболее важных навыков, который снимает панику и депрессию разработчика - это планирование самообучения.
-Без планирования огромный наукоемкий горизонт требуемых знаний будет перегружать психику, обостряя «эффект самозванца».
-И чем больше вы в индустрии, тем больше растет груз того, что &lt;a class="reference internal" href="../it/self-education/self-education-for-software-engineer.html"&gt;&lt;span class="doc"&gt;нужно знать&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Вы заметили, что в школе оценивают не уровень знаний, а успеваемость?
-Не нужно знать все, нужно просто успевать выполнять свой собственный план самообучения.
-Без плана вся тяжесть требуемых знаний фокусируется в текущий момент времени, и обладает превосходством над ресурсами мозга.
-Это вызывает беспокойство.
-Задача в том, чтобы спозиционировать осваиваемый объем знаний на таких отрезках времени, где уже ресурсы мозга будут обладать превосходством над ним.
-Как говорил Дейл Карнеги - одна песчинка песочных часов - в единицу времени, иначе часы сломаются.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id5"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id10"&gt;Влияние психологического напряжения на здоровье&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Напряжение морально-психологическое приводит к напряжению реальному, физическому, в виде спазма мышц.
-Самыми незащищенными оказываются самые маленькие мышцы - хрусталика глаза.
-Напряжение приводит к спазму аккомодации, который затем переходит в миопию.
-Неслучайно большинство популярных методик восстановления зрения начинаются со снятия психологического напряжения.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id6"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id11"&gt;Выводы&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Хотели «волшебную пилюлю» успеха? Вот она - из всего фронта выделяйте такой участок, на котором вы способны &lt;a class="reference internal" href="icebreaker-principle.html"&gt;&lt;span class="doc"&gt;сконцентрировать усилия и обеспечить превосходство&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Вот так все просто, есть план - будет спокойствие.
-Лучшая форма планирования - это визуализация.
-Можно рисовать таблички, можно timelines, можно использовать Kanban доску Trello или Notion, можно использовать &lt;a class="reference external" href="https://t.me/emacsway_log/644"&gt;org-mode&lt;/a&gt; и т.д.&lt;/p&gt;
-&lt;p&gt;Когда план готов, то единственное, что остается нужным - это &lt;a class="reference external" href="https://t.me/emacsway_log/251"&gt;дисциплина&lt;/a&gt;, которая обеспечивает постоянство скорости обретения знаний.&lt;/p&gt;
-&lt;p&gt;Суть в том, что в отличии от огромного объема недостающих знаний, на освоение которых требуются годы, овладеть дисциплиной вы можете прямо сейчас.
-Осознание этого факта снижает психологическую зависимость от недостающих знаний.&lt;/p&gt;
-&lt;p&gt;Кстати, тут Сергей, один из лучших теоретиков, которого я когда либо знал, паблик-спикер, автор книги и многочисленных статей, на днях запостил новое видео о роли &lt;a class="reference external" href="https://www.instagram.com/p/CUJuSrxgkZI/"&gt;дисциплины&lt;/a&gt;.
-У человека или есть дисциплина, и тогда он успевает все, или её нет, и тогда он ничего не успевает.
-Правда, сам Сергей говорит, что все дело, скорее, в правильных привычках, нежели в волевых усилиях.&lt;/p&gt;
-&lt;p&gt;Для того, чтобы стать сильным специалистом, достаточно осваивать всего 5 страниц в день:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «A little reading goes a long way toward professional advancement.
-If you read even one good programming book every two months, roughly 35 pages a week, you’ll soon have a firm grasp on the industry and distinguish yourself from nearly everyone around you.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«Code Complete» by Steve McConnell&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «We become authorities and experts in the practical and scientific spheres by so many separate acts and hours of work.
-If a person keeps faithfully busy each hour of the working day, he can count on waking up some morning to find himself one of the competent ones of his generation.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—William James&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;div class="admonition seealso"&gt;
-&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="icebreaker-principle.html"&gt;&lt;span class="doc"&gt;Принцип ледокола&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="learning.html#emacsway-learning-in-psychology"&gt;&lt;span class="std std-ref"&gt;Кристаллизация знаний. Как читать и не превратиться в коллекционера информации.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="../../README.html"&gt;&lt;span class="doc"&gt;Как пользоваться&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="../it/self-education/self-education-for-software-engineer.html"&gt;&lt;span class="doc"&gt;Список литературы для самообучения разработчика программного обеспечения&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description><pubDate>Mon, 03 Jan 2022 00:00:00 </pubDate></item><item><title>Кристаллизация знаний. Как читать и не превратиться в коллекционера информации.</title><link>https://dckms.github.io/system-architecture/emacsway/soft-skills/learning.html</link><description>&lt;span class="target" id="index-0"/&gt;&lt;div class="section" id="emacsway-learning-in-psychology"&gt;
-&lt;span id="id1"/&gt; 
-&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Иногда у меня спрашивают, как мне удается запоминать так много информации.
-Истина в том, что я не собираю информацию, а, наоборот, дистиллирую её.
-Процесс кристаллизации знаний заключается в том, чтобы сократить количество возможных вариантов.&lt;/p&gt;
-&lt;p&gt;Кто работал с TDD, тот знаком с методом проектирования ПО путем обобщения в результате триангуляции.
-Если кто не знаком, то обязательно почитайте «Test-Driven Development By Example» by Kent Beck - это на вес золота.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «Here is another general pattern of refactoring: &lt;strong&gt;take code that works in one instance and generalize it to work in many&lt;/strong&gt; by replacing constants with variables.
-Here the constant was hardwired code, not a data value, but the principle is the same.
-&lt;strong&gt;TDD makes this work well by giving you running concrete examples from which to generalize&lt;/strong&gt;, instead of having to generalize purely with reasoning.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«Test-Driven Development By Example» by Kent Beck&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Именно процесс триангуляции и обобщения происходит в моей памяти под воздействием новых точек зрения, которые дает литература.
-Таким образом, чем больше литературы я освоил, тем с более узким подмножеством вариантов я остался.
-Как говорил Robert C. Martin, архитектура - это наука о том, как не надо делать.&lt;/p&gt;
-&lt;p&gt;Отсечение - основной метод работы скульптора, благодаря которому из бесформенной глыбы высвобождается образ.
-Обратите внимание, слово «образование» (в контексте обучения) происходит от слова «образ».&lt;/p&gt;
-&lt;p&gt;Чем меньшим количеством вариантов я обладаю, тем легче мне ориентироваться среди них.
-Именно эта легкость и создает у стороннего наблюдателя ошибочную иллюзию изобилия информации.&lt;/p&gt;
-&lt;p&gt;Самое главное - это выявлять и понимать причинно-следственные связи, тогда не нужно запоминать все разнообразие возможных вариантов.
-Наглядный пример хорошо демонстрируется в этой статье Kent Beck о поисках границ микросервисов:&lt;/p&gt;
-&lt;p&gt;– «&lt;a class="reference external" href="https://medium.com/@kentbeck_7670/monolith-services-theory-practice-617e4546a879"&gt;Monolith -&amp;gt; Services: Theory &amp;amp; Practice&lt;/a&gt;» by Kent Beck&lt;/p&gt;
-&lt;p&gt;В детстве на меня произвели впечатления слова одного боевого офицера спецслужб, сослуживца моего отца, мастера спорта по рукопашному бою.
-Он говорил, что знать много приемов вредно - можно запутаться в критической ситуации.&lt;/p&gt;
-&lt;p&gt;По этому поводу мне нравится позиция Никлаус Вирт:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «Богатство функциональных возможностей во многих современных языках - это действительно проблема сама по себе, а не решение других проблем.
-Избыток возможностей - это еще одно следствие веры многих программистов в то, что ценность языка пропорциональна количеству этих возможностей (как я это называю- это вера в «колокольчики и свистки»).
-Однако, мы знаем, что будет лучше, если каждое базисное понятие представляется единственной, специально для этого предназначенной конструкцией.
-Это не только сокращает усилия по изучению языка, но и сокращает размер его описания, что, в свою очередь, помогает избежать несогласованности и неправильного понимания.
-Поддержание языка максимально простым и регулярным всегда было приоритетом в моей работе: описание Pascal занимало около 50 страниц, Modula - около 40, а Oberon - и вовсе 16.
-И я рассматриваю эту тенденцию как прогрессивную.
-Истинная ценность языков программирования зависит от качества и практичности их абстракций.
-Пример - абстракция, называемая «число» или абстракция «логическая величина», замещающая конкретную строку битов.&lt;/p&gt;
-&lt;p&gt;Ценность такого рода абстракции основывается на ее целостности.
-В случае чисел должны быть применяемы только арифметические операции, независимо от того факта, что логические операции, в принципе, также могут быть применимы к битовым строкам, представляющим числа.»
--
-- «&lt;a class="reference external" href="http://hosting.vspu.ac.ru/~chul/wirth/culture/culture.htm"&gt;О культуре разработки ПО&lt;/a&gt;» / Никлаус Вирт&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;P.S.: Бесподобная книга о том, как читать и не превратиться в коллекционера информации - «Как читать книги» / Поварнин С.И.
-Читается за один вечер.
-Книга номер один.&lt;/p&gt;
-&lt;div class="admonition seealso"&gt;
-&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="planning-in-psychology.html#emacsway-planning-in-psychology"&gt;&lt;span class="std std-ref"&gt;Психологическое значение планирования&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="icebreaker-principle.html"&gt;&lt;span class="doc"&gt;Принцип ледокола&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="../../README.html"&gt;&lt;span class="doc"&gt;Как пользоваться&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="../it/self-education/self-education-for-software-engineer.html"&gt;&lt;span class="doc"&gt;Список литературы для самообучения разработчика программного обеспечения&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description><pubDate>Mon, 03 Jan 2022 00:00:00 </pubDate></item><item><title>Может ли CQRS-команда возвращать результат?</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/tactical-design/cqrs/cqrs-command-and-result.html</link><description>
+<rss version="2.0"><channel><title>System Architecture</title><link>https://dckms.github.io/system-architecture</link><description /><language>ru</language><copyright>2022, @dckms (&lt;a href="https://dckms.github.io/system-architecture/LICENSE" rel="nofollow"&gt;License&lt;/a&gt;)</copyright><item><title>Может ли CQRS-команда возвращать результат?</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/tactical-design/cqrs/cqrs-command-and-result.html</link><description>
 &lt;span id="index-0"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Статья посвящена довольно дискуссионному вопросу о том, может ли CQRS-команда возвращать результат.&lt;/p&gt;
@@ -447,7 +309,7 @@ buffer.remove&lt;/p&gt;
 &lt;p&gt;Отделение Команд от Запросов позволяет организовать однонаправленный поток изменений, и тогда оба пользователя одновременно получат сообщение о событии, что последний товар закончился.&lt;/p&gt;
 &lt;div class="figure align-center" id="id9"&gt;
 &lt;a class="reference internal image-reference" href="../../../../../_images/cqrs.png"&gt;&lt;img alt="CQRS. The image from &amp;quot;Clarified CQRS&amp;quot; by Udi Dahan https://udidahan.com/2009/12/09/clarified-cqrs/" src="../../../../../_images/cqrs.png" style="width: 70%;"/&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;CQRS. The image from «Clarified CQRS» by Udi Dahan &lt;a class="reference external" href="https://udidahan.com/2009/12/09/clarified-cqrs/"&gt;https://udidahan.com/2009/12/09/clarified-cqrs/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;CQRS. The image from «&lt;a class="reference external" href="https://udidahan.com/2009/12/09/clarified-cqrs/"&gt;Clarified CQRS&lt;/a&gt;» by Udi Dahan&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;blockquote&gt;
 &lt;div&gt;&lt;p&gt;📝 «After the command-processing autonomous component has decided to accept a command, modifying its persistent store as needed, it publishes an event notifying the world about it.»&lt;/p&gt;
@@ -518,7 +380,506 @@ buffer.remove&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Ранее, этот вопрос &lt;a class="reference internal" href="../domain-model/domain-events/domain-events-in-ddd.html#emacsway-de-cqrs-command-and-result"&gt;&lt;span class="std std-ref"&gt;частично уже рассматривался&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
-</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>О гонке сообщений в условиях конкурирующих подписчиков</title><link>https://dckms.github.io/system-architecture/emacsway/it/integration/asynchronous/message-ordering-in-competing-consumers.html</link><description>
+</description><pubDate>Mon, 03 Jan 2022 00:00:00 </pubDate></item><item><title>Психологическое значение планирования</title><link>https://dckms.github.io/system-architecture/emacsway/soft-skills/planning-in-psychology.html</link><description>&lt;span class="target" id="index-0"/&gt;&lt;div class="section" id="emacsway-planning-in-psychology"&gt;
+&lt;span id="id1"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;div class="contents topic" id="id2"&gt;
+&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-planning-in-psychology" id="id7"&gt;Психологическое значение планирования&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id8"&gt;Планирование в управлении&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id4" id="id9"&gt;Планирование в обучении&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id5" id="id10"&gt;Влияние психологического напряжения на здоровье&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id6" id="id11"&gt;Выводы&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id8"&gt;Планирование в управлении&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Есть одна интересная книга - «Planning Extreme Programming» by Kent Beck, Martin Fowler.
+В ней Kent Beck рассказывает о том, какую огромную роль играет планирование для снятия психологического напряжения у менеджмента.
+Все просто - без плана человек не может наблюдать превосходства ресурсов над Scope (объем работ) за оставшийся период времени.
+Неопределенность вызывает беспокойство и напряжение.
+Чтобы снять напряжение, нужно сконцентрировать ресурсы на каждом временном отрезке таким образом, чтобы они превосходили Scope.
+Т.е. сделать перегруппировку сил.
+Без хорошего планирования у менеджмента обычно всегда начинается спешка, а у разработчиков начинается проблема 90/90:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «The first 90 percent of the code accounts for the first 90 percent of the development time.
+The remaining 10 percent of the code accounts for the other 90 percent of the development time.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Code Complete» by Steve McConnell&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id9"&gt;Планирование в обучении&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Один из наиболее важных навыков, который снимает панику и депрессию разработчика - это планирование самообучения.
+Без планирования огромный наукоемкий горизонт требуемых знаний будет перегружать психику, обостряя «эффект самозванца».
+И чем больше вы в индустрии, тем больше растет груз того, что &lt;a class="reference internal" href="../it/self-education/self-education-for-software-engineer.html"&gt;&lt;span class="doc"&gt;нужно знать&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Вы заметили, что в школе оценивают не уровень знаний, а успеваемость?
+Не нужно знать все, нужно просто успевать выполнять свой собственный план самообучения.
+Без плана вся тяжесть требуемых знаний фокусируется в текущий момент времени, и обладает превосходством над ресурсами мозга.
+Это вызывает беспокойство.
+Задача в том, чтобы спозиционировать осваиваемый объем знаний на таких отрезках времени, где уже ресурсы мозга будут обладать превосходством над ним.
+Как говорил Дейл Карнеги - одна песчинка песочных часов - в единицу времени, иначе часы сломаются.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id10"&gt;Влияние психологического напряжения на здоровье&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Напряжение морально-психологическое приводит к напряжению реальному, физическому, в виде спазма мышц.
+Самыми незащищенными оказываются самые маленькие мышцы - хрусталика глаза.
+Напряжение приводит к спазму аккомодации, который затем переходит в миопию.
+Неслучайно большинство популярных методик восстановления зрения начинаются со снятия психологического напряжения.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id11"&gt;Выводы&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Хотели «волшебную пилюлю» успеха? Вот она - из всего фронта выделяйте такой участок, на котором вы способны &lt;a class="reference internal" href="icebreaker-principle.html"&gt;&lt;span class="doc"&gt;сконцентрировать усилия и обеспечить превосходство&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Вот так все просто, есть план - будет спокойствие.
+Лучшая форма планирования - это визуализация.
+Можно рисовать таблички, можно timelines, можно использовать Kanban доску Trello или Notion, можно использовать &lt;a class="reference external" href="https://t.me/emacsway_log/644"&gt;org-mode&lt;/a&gt; и т.д.&lt;/p&gt;
+&lt;p&gt;Когда план готов, то единственное, что остается нужным - это &lt;a class="reference external" href="https://t.me/emacsway_log/251"&gt;дисциплина&lt;/a&gt;, которая обеспечивает постоянство скорости обретения знаний.&lt;/p&gt;
+&lt;p&gt;Суть в том, что в отличии от огромного объема недостающих знаний, на освоение которых требуются годы, овладеть дисциплиной вы можете прямо сейчас.
+Осознание этого факта снижает психологическую зависимость от недостающих знаний.&lt;/p&gt;
+&lt;p&gt;Кстати, тут Сергей, один из лучших теоретиков, которого я когда либо знал, паблик-спикер, автор книги и многочисленных статей, на днях запостил новое видео о роли &lt;a class="reference external" href="https://www.instagram.com/p/CUJuSrxgkZI/"&gt;дисциплины&lt;/a&gt;.
+У человека или есть дисциплина, и тогда он успевает все, или её нет, и тогда он ничего не успевает.
+Правда, сам Сергей говорит, что все дело, скорее, в правильных привычках, нежели в волевых усилиях.&lt;/p&gt;
+&lt;p&gt;Для того, чтобы стать сильным специалистом, достаточно осваивать всего 5 страниц в день:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «A little reading goes a long way toward professional advancement.
+If you read even one good programming book every two months, roughly 35 pages a week, you’ll soon have a firm grasp on the industry and distinguish yourself from nearly everyone around you.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Code Complete» by Steve McConnell&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «We become authorities and experts in the practical and scientific spheres by so many separate acts and hours of work.
+If a person keeps faithfully busy each hour of the working day, he can count on waking up some morning to find himself one of the competent ones of his generation.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—William James&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;div class="admonition seealso"&gt;
+&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="icebreaker-principle.html"&gt;&lt;span class="doc"&gt;Принцип ледокола&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="learning.html#emacsway-learning-in-psychology"&gt;&lt;span class="std std-ref"&gt;Кристаллизация знаний. Как читать и не превратиться в коллекционера информации.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="../../README.html"&gt;&lt;span class="doc"&gt;Как пользоваться&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="../it/self-education/self-education-for-software-engineer.html"&gt;&lt;span class="doc"&gt;Список литературы для самообучения разработчика программного обеспечения&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description><pubDate>Mon, 03 Jan 2022 00:00:00 </pubDate></item><item><title>Что такое Agile Development</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/agile.html</link><description>
+&lt;span id="emacsway-agile-development"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Agile development - software development approach based on &lt;a class="reference internal" href="../iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative development&lt;/span&gt;&lt;/a&gt;, frequent inspection and adaptation, and incremental deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «"Agile" methods actually can be applied within a variety of models.
+While Agile methods are common in executing an evolutionary lifecycle model, they can be used in other lifecycle models at various stages.
+What the methods have in common is an emphasis on continuous inspection and collaboration in the rapid production of working software in an environment where changes, including changes to requirements, are expected.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «As discussed in 5.4.2, the life cycle models used in agile projects are often highly &lt;a class="reference internal" href="../incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental&lt;/span&gt;&lt;/a&gt; and &lt;a class="reference internal" href="../evolutionary.html#emacsway-evolutionary-development"&gt;&lt;span class="std std-ref"&gt;evolutionary&lt;/span&gt;&lt;/a&gt;.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Agile является естественным следствием эволюции итеративной разработки, краткий обзор которой можно посмотреть в превосходной статье Craig Larman «&lt;a class="reference external" href="https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf"&gt;Iterative and Incremental Development: A Brief History&lt;/a&gt;».&lt;/p&gt;
+&lt;p&gt;Как уже говорилось ранее, итеративная модель разработки открывает широкие возможности для &lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;удешевления обработки неопределенности&lt;/span&gt;&lt;/a&gt;.
+Однако долгое время эти возможности оставались экономически нецелесообразными по причине быстрорастущего характера роста стоимости &lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Adaptation&lt;/span&gt;&lt;/a&gt;, приближющегося к экспоненциальному.
+При таком характере роста возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования (BDUF).&lt;/p&gt;
+&lt;div class="figure align-left" id="id1"&gt;
+&lt;a class="reference internal image-reference" href="../../../../../_images/exponential-cost-of-change.png"&gt;&lt;img alt="Figure 1. The cost of change rising exponentially over time. The image source is &amp;quot;Extreme Programming Explained&amp;quot; 1st edition by Kent Beck, &amp;quot;Chapter 5. Cost of Change&amp;quot;." src="../../../../../_images/exponential-cost-of-change.png" style="width: 90%;"/&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Figure 1. The cost of change rising exponentially over time. The image source is «Extreme Programming Explained» 1st edition by Kent Beck, «Chapter 5. Cost of Change».&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Однако, в конце 1990-х - начале 2000-х, в архитектурном мире произошли существенные изменения - обрели массовую популярность высокоуровневые объектно-ориентированные языки, появились шаблоны и принципы проектирования, методики управления сложностью (ROM, POSA, GOF, OOAD, SOLID, Use Case Driven Approach, Object-Oriented Software Construction etc.), появились TDD, Refactoring и т.п.&lt;/p&gt;
+&lt;p&gt;Унификация знаний в области архитектуры, переход ментального оперирования на элементы унифицированных шаблонных конструкций более высокого уровня абстракции, позволили сократить когнитивную и коммуникативную нагрузку на разработчика, уменьшить порог вхождения в новый проект, смягчить негативное воздействие Закона Брукса.&lt;/p&gt;
+&lt;p&gt;Рост количественных изменений привел к изменениям качественным - ведущим умам архитектуры своего времени удалось снизить характер роста стоимости адаптации вплоть до пологого графика, максимально приближенного к горизонтальной асимптоте.
+Это означало, что стоимость реализации решения больше не зависело от момента его принятия, что позволило отказаться от заблаговременного проектирования и откладывать принятие решения до момента наибольшей полноты информированности, даже после частичной реализации продукта.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «What would we do if all that investment paid off?
+What if all that work on languages and databases and whatnot actually got somewhere?
+What if the cost of change didn’t rise exponentially overtime, but rose much more slowly, &lt;strong&gt;eventually reaching an asymptote&lt;/strong&gt;?
+What if tomorrow’s software engineering professor draws Figure 3 on the board?»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Extreme Programming Explained» 1st edition by Kent Beck, «Chapter 5. Cost of Change»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;div class="figure align-left" id="id2"&gt;
+&lt;a class="reference internal image-reference" href="../../../../../_images/flatten-cost-of-change.png"&gt;&lt;img alt="Figure 3. The cost of change may not rise dramatically over time. The image source is &amp;quot;Extreme Programming Explained&amp;quot; 1st edition by Kent Beck, &amp;quot;Chapter 5. Cost of Change&amp;quot;." src="../../../../../_images/flatten-cost-of-change.png" style="width: 90%;"/&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Figure 3. The cost of change may not rise dramatically over time. The image source is «Extreme Programming Explained» 1st edition by Kent Beck, «Chapter 5. Cost of Change».&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Что такое асимтота, можно посмотреть в «§284 Асимтоты» Справочника по высшей математике / М.Я. Выгодский:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Прямая АВ называется асимптотой линии L, если расстояние МК (черт. 297) от точки М линии L до прямой АВ стремится к нулю при удалении точки М в бесконечность.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Справочник по высшей математике» / М.Я. Выгодский&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;В нашем случае, нас интересует Асимптоты, параллельная оси абсцисс (там же):&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Для разыскания горизонтальных асимптот линии y = f(х) ищем пределы f(х) при х -&amp;gt; +∞ и при х -&amp;gt; -∞. Если lim х-&amp;gt;∞ f(x) = b, то прямая у = b - асимптота (при бесконечном удалении вправо; черт. 299).»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Справочник по высшей математике» / М.Я. Выгодский&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Вся суть Agile (итеративной) модели разработки была лаконично и метко выражена Кент Беком всего одним предложением:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Сделайте изменение легким, а потом делай легко изменение.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Make the change easy then make the easy change.&lt;/strong&gt;»&lt;/p&gt;
+&lt;p class="attribution"&gt;—Kent Beck, dddeu 20&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Невероятный талант Kent Beck объяснять сложные вещи простым языком.
+Именно об этом я говорил в статье «&lt;a class="reference internal" href="../../../../soft-skills/learning.html#emacsway-learning-in-psychology"&gt;&lt;span class="std std-ref"&gt;Кристаллизация знаний. Как читать и не превратиться в коллекционера информации.&lt;/span&gt;&lt;/a&gt;».
+И это при необычайной эрудированности Kent Beck. Cписок использованной литературы в его книгах просто ошеломляет.&lt;/p&gt;
+&lt;p&gt;Thanks to Vladik Khononov for &lt;a class="reference external" href="https://youtu.be/ybYtgII151g?t=9808"&gt;https://youtu.be/ybYtgII151g?t=9808&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Более развернутый вариант его фразы:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «At the core of understanding this argument is the software change curve.
+The change curve says that as the project runs, it becomes exponentially more expensive to make changes.
+The change curve is usually expressed in terms of phases «a change made in analysis for $1 would cost thousands to fix in production».
+This is ironic as most projects still work in an ad-hoc process that doesn’t have an analysis phase, but the exponentiation is still there.
+&lt;strong&gt;The exponential change curve means that evolutionary design cannot possibly work.&lt;/strong&gt;
+It also conveys why planned design must be done carefully because any mistakes in planned design face the same exponentiation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The fundamental assumption underlying XP is that it is possible to flatten the change curve enough to make evolutionary design work.&lt;/strong&gt;
+This flattening is both enabled by XP and exploited by XP.
+This is part of the coupling of the XP practices: specifically &lt;strong&gt;you can’t do those parts of XP that exploit the flattened curve without doing those things that enable the flattening.&lt;/strong&gt;
+This is a common source of the controversy over XP.
+Many people criticize the exploitation without understanding the enabling.
+Often the criticisms stem from critics“ own experience where they didn’t do the enabling practices that allow the exploiting practices to work.
+As a result they got burned and when they see XP they remember the fire.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«&lt;a class="reference external" href="https://martinfowler.com/articles/designDead.html"&gt;Is Design Dead?&lt;/a&gt;» by M.Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «&lt;strong&gt;This is one of the premises of XP. It is the technical premise of XP.&lt;/strong&gt;
+If the cost of change rose slowly over time, you would act completely differently from how you do under the assumption that costs rise exponentially.
+You would make big decisions as late in the process as possible, to defer the cost of making the decisions and to have the greatest possible chance that they would be right.
+You would only implement what you had to, in hopes that the needs you anticipate for tomorrow wouldn’t come true.
+You would introduce elements to the design only as they simplified existing code or made writing the next bit of code simpler.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If a flattened change cost curve makes XP possible, a steep change cost curve makes XP impossible.&lt;/strong&gt;
+If change is ruinously expensive, you would be crazy to charge ahead without careful forethought.
+But if change stays cheap, the additional value and reduced risk of early concrete feedback outweighs the additional cost of early change.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Extreme Programming Explained» 1st edition by Kent Beck&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Поскольку это было произнесено еще до встречи 2001 года и принятия Agile Manifesto, то под XP следует понимать Agile (или даже любую итератиную модель разработки) в принципе, поскольку XP - это частный случай Agile.&lt;/p&gt;
+&lt;p&gt;Иными словами, внутреннее качество программы является первичным условием в Agile и в любой другой итеративной разработке.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Engineers who don’t understand exponential growth and the cost curve as economies of scale kick in come to wildly incorrect conclusions.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—Kent Beck, &lt;a class="reference external" href="https://twitter.com/KentBeck/status/1402276528910704655?s=19"&gt;https://twitter.com/KentBeck/status/1402276528910704655?s=19&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «The incremental and iterative nature of Agile development can facilitate &lt;strong&gt;efficient technical and management processes and practices to reduce the cost associated with change&lt;/strong&gt;.
+In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;div class="admonition seealso"&gt;
+&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Что такое Adaptation&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../uncertainty-management/prediction/prediction.html#emacsway-prediction"&gt;&lt;span class="std std-ref"&gt;Что такое Prediction&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../uncertainty-management/balancing-prediction-adaptation.html#emacsway-balancing-prediction-adaptation"&gt;&lt;span class="std std-ref"&gt;Balancing Prediction/Adaptation&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../uncertainty-management/adaptation/crash-course-in-software-development-economics.html"&gt;&lt;span class="doc"&gt;Краткий курс по экономике разработки программного обеспечения&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description><pubDate>Mon, 03 Jan 2022 00:00:00 </pubDate></item><item><title>Agile nonfunctional Requirements</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/requirements/nonfunctional-requirements.html</link><description>
+&lt;span id="emacsway-agile-nonfunctional-requirements"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Если вы знакомы с ATAM, ADD, QAW, то вы знакомы со сценариями атрибутов качеств («Software Architecture in Practice» 3d edition by Len Bass, Paul Clements, Rick Kazman, глава 16), и легко поймете, о чем пишет K.Wigers - один из топовых авторов по требованиям и аналитике:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «&lt;strong&gt;Nonfunctional requirements need to have priority alongside user stories; you can’t defer their implementation until a later iteration.&lt;/strong&gt;
+It’s possible to specify quality attributes in the form of stories: «As a help desk technician, I want the knowledge base to respond to queries &lt;strong&gt;within five seconds&lt;/strong&gt; so the customer doesn’t get frustrated and hang up.»&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;Developers need to keep nonfunctional requirements in mind as they consider the implications of implementing individual user stories.
+As more functionality is added through a series of iterations, the system’s efficiency and hence performance can deteriorate.
+Specify performance goals and begin performance testing &lt;strong&gt;with early iterations&lt;/strong&gt;, so you can become aware of concerns early enough to take corrective actions.&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;As with user stories, it’s possible to write acceptance tests for quality attributes.
+This is a way to quantify the quality attributes.
+If a performance goal is stated simply as “The knowledge base must return search results quickly,” you can’t write tests to define what constitutes “quickly.” A better acceptance test would be: «Keyword search of the knowledge base &lt;strong&gt;takes less than 5 seconds&lt;/strong&gt;, and preferably &lt;strong&gt;less than 3 seconds&lt;/strong&gt;, to return a result.&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;Part of &lt;strong&gt;accepting an iteration as being complete&lt;/strong&gt; is to assess whether the pertinent nonfunctional requirements are satisfied.
+Often there is a range of acceptable performance, with some outcomes more desirable than others.
+As it does for any other software development approach, satisfying quality requirements can distinguish delight from disappointment on agile projects.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—Глава 14, подраздел «Handling quality attributes on agile projects», книги «Software Requirements» 3rd Edition, Wiegers K., Beatty J.&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Приоритезация и реализация нефункциональных требований совместно (alongside) с функциональными выбивает почву для появления технических задач, оторванных от бизнес-целей.
+А поскольку один из топовых авторов по Scrum, K.Rubin, утверждает, что нефункциональными требованиями должен заниматься Product Owner, то это автоматически устраняет необходимость в лоббировании технических задач техническими специалистами.&lt;/p&gt;
+&lt;p&gt;Нужно заметить, что в SAFe нефункциональными требованиями занимается уже не Product Owner, а System Architect.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;System Architect/Engineering is an individual or team that defines the overall architecture of the system. They work at a level of abstraction above the teams and components and define Non-Functional Requirements (NFRs), major system elements, subsystems, and interfaces.&lt;/p&gt;
+&lt;p class="attribution"&gt;—«SAFe® 5.0: The World’s Leading Framework for Business Agility» by Richard Knaster, Dean Leffingwell&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Вообще говоря, в Scrum этим не обязательно должен заниматься Product Owner.
+По офф.гайду команда должна сотрудничать со стейкхолдерами, а Product Owner может делегировать свои полномочия команде, например, аналитику или архитектору.
+Тут важно не кто, а как.&lt;/p&gt;
+&lt;p&gt;Был упомянут K.Rubin, посмотрим, что именно он говорит:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «The &lt;strong&gt;product owner is responsible&lt;/strong&gt; for defining the acceptance criteria for each product backlog item.
+These are the conditions under which the product owner would be satisfied that the functional and &lt;strong&gt;nonfunctional requirements&lt;/strong&gt; have been met.
+The product owner may also write acceptance tests corresponding to the acceptance criteria, or he could enlist the assistance of subject matter experts (SMEs) or development team members.
+In either case, the product owner should ensure that these acceptance criteria (and frequently specific acceptance tests) are created before an item is considered at a sprint-planning meeting.
+Without them, the team would have an incomplete understanding of the item and would not be ready to include it in a sprint.
+For this reason, many Scrum teams include the existence of clear acceptance criteria as an item on their definition-of-ready checklist (see Chapter 6).&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;The team must also decide when to test all of the browsers.
+Each nonfunctional requirement is a prime target for inclusion in the team’s definition of done.
+If the team includes the “Web Browser Support” nonfunctional requirement in the definition of done, the team will have to test any new features added in the sprint with all of the listed browsers.
+If it doesn’t work with all of them, the story isn’t done.&lt;/p&gt;
+&lt;p&gt;I recommend that teams try to include as many of the nonfunctional requirements in their definitions of done as they possibly can.
+Waiting to test nonfunctional requirements until late in the development effort defers getting fast feedback on critical system performance characteristics.&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;nonfunctional requirement.&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;A requirement that does not relate to functionality but to attributes such as reliability, efficiency, usability, maintainability, and portability, which product backlog items must possess in order to be fully accepted by the stakeholders.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Each nonfunctional requirement is a candidate for inclusion in the definition of done&lt;/strong&gt;. See also definition of done.»&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p class="attribution"&gt;—«Essential Scrum : a practical guide to the most popular agile process» by Kenneth S. Rubin.&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Топовые авторы по аналитике (K.Wigers) и Scrum (K.Rubin) сошлись в одном мнении. Один дает описание с точки зрения работы с требованиями, а другой - с точки зрения гибких процессов разработки.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «So, in the information model, we have modeled NFRs as backlog constraints, as illustrated in Figure 17–1.&lt;/p&gt;
+&lt;p&gt;From the diagram, we see that a backlog item may be constrained by (zero, one, or more) nonfunctional requirements.
+An example from the case study appears in Figure 17–2.&lt;/p&gt;
+&lt;p&gt;Also, nonfunctional requirements apply to zero or more backlog items.
+For example, a nonfunctional requirement such as support 100 concurrent users might apply to zero, one, or many backlog items.&lt;/p&gt;
+&lt;p&gt;Once identified, relevant nonfunctional requirements must be captured and communicated to all teams who may be affected by the constraints.
+In agile, with its focus on the backlog, there is no obvious place to model them, so in the Big Picture, we just call them backlog constraints and represent them as shown in Figure 17–3.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise» by Dean Leffingwell&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;Persisting nonfunctional requirements&lt;/p&gt;
+&lt;p&gt;Another difference between user stories and nonfunctional requirements is that they typically need to persist differently in the development life cycle. We’ve described how user stories are lightweight and generally don’t have to be maintained, which is one of the key benefits. We’ve also shown that the details of a user story are captured in the acceptance test, which persist inside the team’s automated or manual regression test environment. That is why we can throw the user story away after implementation—because we have memorialized the important details in our test cases.&lt;/p&gt;
+&lt;p&gt;That can work for some NFRs, too, but it gets a bit riskier. For example, if a system must support 1000 concurrent users, we could develop an automated test that simulated that load and build it in the regression test suite. That would be an excellent practice because we could refactor the code at will, and if we accidentally created a performance bottleneck, it would be quickly discovered. In that case, we could forget about the NFR once we have seen it the fi rst time, because the automated test remembers it for us.&lt;/p&gt;
+&lt;p&gt;There are other types of NFRs, however, that must be treated quite differently. Here are some examples:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Maintain PCI compliance (credit card industry user security standards) in all applications&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Localize the application in all then-current, supported languages prior to release in any language&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;No open source without a CFO license review&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We surely can’t forget these, and we can’t write automated test cases for them, either.
+So, the teams must have an organized way to save them, find them, and review them when necessary. In practice, we’ve seen agile teams take a number of approaches to persisting NFRs.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Create a separate backlog in the agile project management tool. Most enterprises will adopt agile project management tooling as a central repository for stories and tasks, as well as iteration and release objects that support scheduling, burndown, and feature status reporting. Teams can create a special project/product backlog to hold and maintain the NFRs within the tool. Access privileges must be granted to all team members who are working on the program.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Store and manage them in a wiki. This method works well because it provides continuous visibility; is available to all team members; is persistent; fosters communication, comments, and interaction; and doesn’t require any special tooling.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Maintain a supplementary specification. This label/document was originally developed as an auxiliary document to RUP’s use case models and use case specifications and served exactly this role (organizing nonfunctional requirements). Remember, as agilists, we “favor working software over comprehensive documentation,” but that doesn’t mean we can’t create the documentation we need. Even more importantly, we like to do the simplest thing that can possibly work, and when we know something is important, it makes sense to write it down. Table 17–3 later in this chapter provides an example template for a supplemental specif i cation.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Build the NFRs into the definition of done, and point to the special backlog, wiki, or supplemental specification that contains the details. In this approach, a team can’t be done until the NFRs are satisfied as well. Different definitions of done, requiring different amounts of regression testing, inspection, and so on, can be established for various iteration, potentially shippable increment, and release milestones.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;No matter the approach, it is mandatory that the teams do something to maintain and manage these specif i cations, because they could make the difference between success and failure.&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise» by Dean Leffingwell&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;См. также:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.scaledagileframework.com/nonfunctional-requirements/"&gt;Nonfunctional Requirements&lt;/a&gt;» at SAFe&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://scalingsoftwareagility.wordpress.com/2010/03/05/an-agile-architectural-epic-kanban-system-part-2-%E2%80%93-the-model/"&gt;An Agile Architectural Epic Kanban System: Part 2 – The Model&lt;/a&gt;» by Dean Leffingwell&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://scalingsoftwareagility.files.wordpress.com/2007/03/a-lean-and-scalable-requirements-information-model-for-agile-enterprises-pdf.pdf"&gt;A Lean and Scalable Requirements Information Model for the Agile Enterprise&lt;/a&gt; by Dean Leffingwell with Juha‐Markus Aalto&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description><pubDate>Mon, 03 Jan 2022 00:00:00 </pubDate></item><item><title>Что такое Adaptation</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/adaptation/adaptation.html</link><description>
+&lt;span id="emacsway-adaptation"/&gt; 
+&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#adaptation" id="id6"&gt;Что такое Adaptation&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id2" id="id7"&gt;Суть Адаптации&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id8"&gt;Назначение Адаптации&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id7"&gt;Суть Адаптации&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Суть Adaptation (Адаптации) заключается в том, что мы не пытаемся разрешить неопределенность заблаговременно путем логического вывода, а, в противовес &lt;a class="reference internal" href="../prediction/prediction.html#emacsway-prediction"&gt;&lt;span class="std std-ref"&gt;Prediction&lt;/span&gt;&lt;/a&gt;, разрешаем неопределенность опытным, экспериментальным путем.
+Выдвигаем гипотетический план, частично реализуем его в виде Системного Инкремента, инспектируем результат на практике, и принимаем гипотезу об Адаптации плана для следующей итерации.
+Этот цикл образует &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;итерацию&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Полученные практическим способом знания, снижающие неопределенность, являются входными аргументами для следующей &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;итерации&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «"Iteration" here means applying a function to itself.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Concrete Mathematics: A Foundation for Computer Science» 2nd edition by Ronald L. Graham, Donald E. Knuth, Oren Patashnik&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id8"&gt;Назначение Адаптации&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Рость неопределенности приводит к росту стоимости Prediction по мере роста его точности.
+Предел экономической целесообразности Prediction определяется пересечением графика роста стоимости Prediction (в зависимости от его точности) с графиком роста бизнес-выгод от точности Прогнозирования.&lt;/p&gt;
+&lt;p&gt;Там, где сумма произведений количества Адаптаций Системного Инкремента и стоимости Адаптаций системного инкремена для каждой итерации пересечет сумму экономически целесообразной стоимости Prediction на горизонте планирования, возникает предел экономической целесообразности эмпирической обработки неопределенности Проекта при допущении, что остаточная стоимость самой реализации (которая не имеет отношения к разрешению неопределенности) остается неизменной в обоих случаях.
+Обратите внимание, в данном случае речь идет о стоимости Адаптации Системного Инкремента, а не Плана.
+Т.е. речь идет о стоимости экспериментального разрешения неопределенности (цикл ошибка - исправление).&lt;/p&gt;
+&lt;p&gt;Prediction при этом не исчезает полностью, а понижает свою точность и дополняется Адаптацией.
+Для наилучшего совокупного экономического эффекта важно правильно находить &lt;a class="reference internal" href="../balancing-prediction-adaptation.html#emacsway-balancing-prediction-adaptation"&gt;&lt;span class="std std-ref"&gt;баланс между Prediction и Adaptation&lt;/span&gt;&lt;/a&gt;, а также обеспечивать &lt;a class="reference internal" href="../../models/agile/agile.html#emacsway-agile-development"&gt;&lt;span class="std std-ref"&gt;характер роста стоимости Adaptation максимально приближенный к горизонтальной асимптоте&lt;/span&gt;&lt;/a&gt;, поскольку, чем больше Адаптаций Системного Инкремента возникает на горизонте планирования, тем дороже становится экспериментальный способ разрешения неопределенности по сравнению с логическим.&lt;/p&gt;
+&lt;p&gt;При этом нужно учитывать, что стоимость Prediction также не константна по отношению к жизненному циклу системы, а имеет тенденцию к понижению.
+Т.е. чем большая часть системы уже реализована, тем больше баланс экономической целесообразности смещается от Adaptation к Prediction.&lt;/p&gt;
+&lt;div class="figure align-left" id="id4"&gt;
+&lt;a class="reference internal image-reference" href="../../../../../_images/cost-of-decision-over-time.png"&gt;&lt;img alt="FIGURE 3.6 Make decisions at the last responsible moment. The image source is &amp;quot;Essential Scrum: A Practical Guide to the Most Popular Agile Process&amp;quot; by Kenneth Rubin, &amp;quot;Chapter 3 Agile Principles :: Prediction and Adaptation&amp;quot;." src="../../../../../_images/cost-of-decision-over-time.png" style="width: 70%;"/&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;FIGURE 3.6 Make decisions at the last responsible moment. The image source is «Essential Scrum: A Practical Guide to the Most Popular Agile Process» by Kenneth Rubin, «Chapter 3 Agile Principles :: Prediction and Adaptation».&lt;/span&gt;&lt;/p&gt;
+&lt;div class="legend"&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Most of us would prefer to wait until we have more information so that we can make a more informed decision.
+When dealing with important or irreversible decisions, if we decide too early and are wrong, we will be on the exponential part of the cost-of-deciding curve in Figure 3.6.
+As we acquire a better understanding regarding the decision, the cost of deciding declines (the likelihood of making a bad
+decision declines because of increasing market or technical certainty).
+That’s why we should wait until we have better information before committing to a decision.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Essential Scrum: A Practical Guide to the Most Popular Agile Process» by Kenneth Rubin, «Chapter 3 Agile Principles :: Prediction and Adaptation»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Это и есть та самая причина, по которой выбор SDLC-модели является неотъемлемой частью процесса проектирования, и изучается архитектурой.
+Ведь различные SDLC-модели (итеративные, инкрементальные, спиральные, гибридные, каскадные), реализованные в виде Scrum, RUP, SAFe, BDUF etc., обладают различным соотношением Prediction vs. Adaptation, имеют разные подходы к масштабированию команд и различные ограничения.
+Выбор SDLC-модели сильно зависит от ситуативного контекста проектирования.
+Повторюсь, основная цель итеративной разработки - удешевить стоимость проектирования в условиях неопределенности.&lt;/p&gt;
+&lt;p&gt;Об этом Брукс писал в Мифическом человеко-месяце когда еще до появления Agile Manifesto:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Therefore the most important function that software builders do for their clients is the &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative&lt;/span&gt;&lt;/a&gt; &lt;strong&gt;extraction and refinement of the product requirements&lt;/strong&gt;…&lt;/p&gt;
+&lt;p&gt;I would go a step further and assert that it is really impossible for clients, even those working with software engineers, to specify completely, precisely, and correctly the exact requirements of a modern software product before having built and tried some versions of the product they are specifying.&lt;/p&gt;
+&lt;p&gt;Therefore one of the most promising of the current technological efforts, and one which attacks the essence, not the accidents, of the software problem, is the development of approaches and tools for rapid prototyping of systems as part of the &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative&lt;/span&gt;&lt;/a&gt; &lt;strong&gt;specification of requirements&lt;/strong&gt;.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«The Mythical Man-Month Essays on Software Engineering Anniversary Edition» by Frederick P. Brooks, Jr.&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Конечно, сугубо семантически, термин «&lt;a class="reference internal" href="../../models/agile/analysis/requirements/requirements.html#emacsway-agile-requirements"&gt;&lt;span class="std std-ref"&gt;requirements&lt;/span&gt;&lt;/a&gt;» немного вводит в заблуждение в Agile, ведь заранее требования к продукту неизвестны полностью, и они изменяются по мере реализации продукта.
+А в таком случае, как они могут что-то требовать?
+Вы, наверное, встречали картинку с треугольником «&lt;a class="reference external" href="https://www.atlassian.com/agile/agile-at-scale/agile-iron-triangle"&gt;Iron Triangle&lt;/a&gt;» (Requirements/Scope, Cost, Time), где в waterfall он обращен вершиной Requirements вниз (константная область), а в Agile - вверх (переменная область). The iron triangle of planning:&lt;/p&gt;
+&lt;div class="figure align-left" id="id5"&gt;
+&lt;a class="reference internal image-reference" href="../../../../../_images/iron-triangle.png"&gt;&lt;img alt="Iron Triangle. Agile fixes the date and resources and varies the scope. The image source is &amp;quot;Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise&amp;quot; by Dean Leffingwell" src="../../../../../_images/iron-triangle.png" style="width: 90%;"/&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Iron Triangle. Agile fixes the date and resources and varies the scope. The image source is «Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise» by Dean Leffingwell&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Итеративная разработка востребована, когда невозможно достигнуть полноты (Complete) требований (set of &lt;a class="reference internal" href="../../models/agile/analysis/requirements/requirements.html#emacsway-agile-requirements"&gt;&lt;span class="std std-ref"&gt;requirements&lt;/span&gt;&lt;/a&gt;).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Complete. The set of requirements needs no further amplification because it contains everything pertinent to the definition of the system or system element being specified. In addition, the set contains no To Be Defined (TBD), To Be Specified (TBS), or To Be Resolved (TBR) clauses. Resolution of the TBx designations may be iterative and there is an acceptable timeframe for TBx items, determined by risks and dependencies.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 29148:2018 Systems and software engineering - Life cycle processes - Requirements engineering»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Но это и не требуется стандартом по SDLC:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «To deal with the &lt;strong&gt;issues of incompletely known requirements&lt;/strong&gt; and inaccurate estimates, a number of other types of models have been proposed: &lt;a class="reference internal" href="../../models/incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental&lt;/span&gt;&lt;/a&gt;, &lt;a class="reference internal" href="../../models/spiral.html#emacsway-spiral-development"&gt;&lt;span class="std std-ref"&gt;spiral&lt;/span&gt;&lt;/a&gt;, &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative&lt;/span&gt;&lt;/a&gt;, and &lt;a class="reference internal" href="../../models/evolutionary.html#emacsway-evolutionary-development"&gt;&lt;span class="std std-ref"&gt;evolutionary (adaptive)&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;The "&lt;a class="reference internal" href="../../models/evolutionary.html#emacsway-evolutionary-development"&gt;&lt;span class="std std-ref"&gt;evolutionary model&lt;/span&gt;&lt;/a&gt;" is intended to deal with &lt;strong&gt;incomplete knowledge of requirements&lt;/strong&gt;.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Как можно заметить, неполнота требований здесь первична, и именно для её разрешения и применяются такие SDLC-модели, как &lt;a class="reference internal" href="../../models/incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental&lt;/span&gt;&lt;/a&gt;, &lt;a class="reference internal" href="../../models/spiral.html#emacsway-spiral-development"&gt;&lt;span class="std std-ref"&gt;spiral&lt;/span&gt;&lt;/a&gt;, &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative&lt;/span&gt;&lt;/a&gt;, and &lt;a class="reference internal" href="../../models/evolutionary.html#emacsway-evolutionary-development"&gt;&lt;span class="std std-ref"&gt;evolutionary (adaptive)&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Интересно, что, во времена появления термина User Story, полнота требований так же не требовалась старым стандартом:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «The SRS may need to evolve as the development of the software product progresses. It may be impossible to specify some details at the time the project is initiated.&lt;/p&gt;
+&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
+&lt;p&gt;Requirements should be specified as completely and thoroughly as is known at the time, even if evolutionary revisions can be foreseen as inevitable. The fact that they are incomplete should be noted.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«IEEE Std 830-1998, IEEE Std 830-1993 IEEE Recommended Practice for Software Requirements Specifications»&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Таким образом, использование термина &lt;a class="reference internal" href="../../models/agile/analysis/requirements/requirements.html#emacsway-agile-requirements"&gt;&lt;span class="std std-ref"&gt;requirements&lt;/span&gt;&lt;/a&gt;, несмотря на то, что вызывает вопросы относительно семантики, никоим образом не противоречит использованию его в Agile SDLC-моделе, которая, кстати, описана тем же стандартом - ISO/IEC/IEEE 12207:2017, в разделах «5.4.2. Life cycle model for the software system» и «Annex H».&lt;/p&gt;
+&lt;div class="admonition seealso"&gt;
+&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;Iterative Development&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../models/agile/agile.html#emacsway-agile-development"&gt;&lt;span class="std std-ref"&gt;Что такое Agile Development&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../models/agile/index.html"&gt;&lt;span class="doc"&gt;Agile&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../models/agile/analysis/requirements/requirements.html#emacsway-agile-requirements"&gt;&lt;span class="std std-ref"&gt;Agile Requirements&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description><pubDate>Mon, 03 Jan 2022 00:00:00 </pubDate></item><item><title>Кристаллизация знаний. Как читать и не превратиться в коллекционера информации.</title><link>https://dckms.github.io/system-architecture/emacsway/soft-skills/learning.html</link><description>&lt;span class="target" id="index-0"/&gt;&lt;div class="section" id="emacsway-learning-in-psychology"&gt;
+&lt;span id="id1"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Иногда у меня спрашивают, как мне удается запоминать так много информации.
+Истина в том, что я не собираю информацию, а, наоборот, дистиллирую её.
+Процесс кристаллизации знаний заключается в том, чтобы сократить количество возможных вариантов.&lt;/p&gt;
+&lt;p&gt;Кто работал с TDD, тот знаком с методом проектирования ПО путем обобщения в результате триангуляции.
+Если кто не знаком, то обязательно почитайте «Test-Driven Development By Example» by Kent Beck - это на вес золота.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Here is another general pattern of refactoring: &lt;strong&gt;take code that works in one instance and generalize it to work in many&lt;/strong&gt; by replacing constants with variables.
+Here the constant was hardwired code, not a data value, but the principle is the same.
+&lt;strong&gt;TDD makes this work well by giving you running concrete examples from which to generalize&lt;/strong&gt;, instead of having to generalize purely with reasoning.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«Test-Driven Development By Example» by Kent Beck&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Именно процесс триангуляции и обобщения происходит в моей памяти под воздействием новых точек зрения, которые дает литература.
+Таким образом, чем больше литературы я освоил, тем с более узким подмножеством вариантов я остался.
+Как говорил Robert C. Martin, архитектура - это наука о том, как не надо делать.&lt;/p&gt;
+&lt;p&gt;Отсечение - основной метод работы скульптора, благодаря которому из бесформенной глыбы высвобождается образ.
+Обратите внимание, слово «образование» (в контексте обучения) происходит от слова «образ».&lt;/p&gt;
+&lt;p&gt;Чем меньшим количеством вариантов я обладаю, тем легче мне ориентироваться среди них.
+Именно эта легкость и создает у стороннего наблюдателя ошибочную иллюзию изобилия информации.&lt;/p&gt;
+&lt;p&gt;Самое главное - это выявлять и понимать причинно-следственные связи, тогда не нужно запоминать все разнообразие возможных вариантов.
+Наглядный пример хорошо демонстрируется в этой статье Kent Beck о поисках границ микросервисов:&lt;/p&gt;
+&lt;p&gt;– «&lt;a class="reference external" href="https://medium.com/@kentbeck_7670/monolith-services-theory-practice-617e4546a879"&gt;Monolith -&amp;gt; Services: Theory &amp;amp; Practice&lt;/a&gt;» by Kent Beck&lt;/p&gt;
+&lt;p&gt;В детстве на меня произвели впечатления слова одного боевого офицера спецслужб, сослуживца моего отца, мастера спорта по рукопашному бою.
+Он говорил, что знать много приемов вредно - можно запутаться в критической ситуации.&lt;/p&gt;
+&lt;p&gt;По этому поводу мне нравится позиция Никлаус Вирт:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 «Богатство функциональных возможностей во многих современных языках - это действительно проблема сама по себе, а не решение других проблем.
+Избыток возможностей - это еще одно следствие веры многих программистов в то, что ценность языка пропорциональна количеству этих возможностей (как я это называю- это вера в «колокольчики и свистки»).
+Однако, мы знаем, что будет лучше, если каждое базисное понятие представляется единственной, специально для этого предназначенной конструкцией.
+Это не только сокращает усилия по изучению языка, но и сокращает размер его описания, что, в свою очередь, помогает избежать несогласованности и неправильного понимания.
+Поддержание языка максимально простым и регулярным всегда было приоритетом в моей работе: описание Pascal занимало около 50 страниц, Modula - около 40, а Oberon - и вовсе 16.
+И я рассматриваю эту тенденцию как прогрессивную.
+Истинная ценность языков программирования зависит от качества и практичности их абстракций.
+Пример - абстракция, называемая «число» или абстракция «логическая величина», замещающая конкретную строку битов.&lt;/p&gt;
+&lt;p&gt;Ценность такого рода абстракции основывается на ее целостности.
+В случае чисел должны быть применяемы только арифметические операции, независимо от того факта, что логические операции, в принципе, также могут быть применимы к битовым строкам, представляющим числа.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«&lt;a class="reference external" href="http://hosting.vspu.ac.ru/~chul/wirth/culture/culture.htm"&gt;О культуре разработки ПО&lt;/a&gt;» / Никлаус Вирт&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;P.S.: Бесподобная книга о том, как читать и не превратиться в коллекционера информации - «Как читать книги» / Поварнин С.И.
+Читается за один вечер.
+Книга номер один.&lt;/p&gt;
+&lt;div class="admonition seealso"&gt;
+&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="planning-in-psychology.html#emacsway-planning-in-psychology"&gt;&lt;span class="std std-ref"&gt;Психологическое значение планирования&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="icebreaker-principle.html"&gt;&lt;span class="doc"&gt;Принцип ледокола&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="../../README.html"&gt;&lt;span class="doc"&gt;Как пользоваться&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="../it/self-education/self-education-for-software-engineer.html"&gt;&lt;span class="doc"&gt;Список литературы для самообучения разработчика программного обеспечения&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description><pubDate>Mon, 03 Jan 2022 00:00:00 </pubDate></item><item><title>Разрешение конфликтов на почве недостатка знаний</title><link>https://dckms.github.io/system-architecture/emacsway/soft-skills/knowledge-vs-opinion.html</link><description>&lt;span class="target" id="index-0"/&gt;&lt;span class="target" id="emacsway-knowledge-in-psychology"/&gt;&lt;div class="section" id="emacsway-opinion-in-psychology"&gt;
+&lt;span id="id1"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Нередко наблюдаю на практике возникновение конфликтов в коллективе практически на пустом месте, по причине принуждения коллектива к принятию решения в условиях недостаточной информированности.&lt;/p&gt;
+&lt;p&gt;Основное отличие &lt;strong&gt;знания&lt;/strong&gt; от &lt;strong&gt;мнения&lt;/strong&gt; заключается в широте охвата опыта, которым оно было произведено.
+Грубо говоря, &lt;strong&gt;теория - это обобщенная практика&lt;/strong&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;«&lt;strong&gt;Теория&lt;/strong&gt; — (1) система научных идей и принципов, &lt;strong&gt;обобщающих практический опыт&lt;/strong&gt;, отражающих объективные природные закономерности и положения, которые образуют науку (см.) или раздел какой-либо науки, а также совокупность правил в области какого-либо знания млн. мастерства (Т. вождения или полётов);»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«&lt;a class="reference external" href="https://polytechnic_dictionary.academic.ru/2647/%D0%A2%D0%95%D0%9E%D0%A0%D0%98%D0%AF"&gt;Большая политехническая энциклопедия.&lt;/a&gt;» - М.: Мир и образование. Рязанцев В. Д.. 2011.&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Обратимся к энциклопедии:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;«Там, где заканчивается &lt;strong&gt;знание&lt;/strong&gt;, начинается &lt;strong&gt;мнение&lt;/strong&gt;».&lt;/p&gt;
+&lt;p class="attribution"&gt;—«&lt;a class="reference external" href="https://dic.academic.ru/dic.nsf/enc_philosophy/737/%D0%9C%D0%9D%D0%95%D0%9D%D0%98%D0%95"&gt;Философия: Энциклопедический словарь.&lt;/a&gt;» — М.: Гардарики. Под редакцией А.А. Ивина. 2004.&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;«Со времен элеатов, атомистов и Платона &lt;strong&gt;знание&lt;/strong&gt; характеризуется через противоположность &lt;strong&gt;мнению&lt;/strong&gt;.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«&lt;a class="reference external" href="https://dic.academic.ru/dic.nsf/enc_philosophy/399"&gt;Новая философская энциклопедия: В 4 тт.&lt;/a&gt;» М.: Мысль. Под редакцией В. С. Стёпина. 2001.&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;«К отличительным особенностям научного знания в настоящее время относят: непротиворечивость, &lt;strong&gt;эмпирическую проверяемость&lt;/strong&gt;, логическую или &lt;strong&gt;эмпирическую обоснованность&lt;/strong&gt;.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«&lt;a class="reference external" href="https://dic.academic.ru/dic.nsf/enc_philosophy/399"&gt;Философия: Энциклопедический словарь.&lt;/a&gt;» — М.: Гардарики. Под редакцией А.А. Ивина. 2004.&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;«Знание есть такой результат познавательной деятельности, который обладает непреходящей истинностью, может быть логически или фактически обоснован и допускает &lt;strong&gt;эмпирическую или практическую проверку&lt;/strong&gt;.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«&lt;a class="reference external" href="https://dic.academic.ru/dic.nsf/enc_philosophy/399"&gt;Философия: Энциклопедический словарь.&lt;/a&gt;» — М.: Гардарики. Под редакцией А.А. Ивина. 2004.&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;«3нание, являясь &lt;strong&gt;обобщением&lt;/strong&gt; достоверных &lt;strong&gt;фактов&lt;/strong&gt;, за случайным находит необходимое и закономерное, за единичным и частным — общее.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«&lt;a class="reference external" href="https://dic.academic.ru/dic.nsf/enc_philosophy/399"&gt;Философский энциклопедический словарь.&lt;/a&gt;» — М.: Советская энциклопедия. Гл. редакция: Л. Ф. Ильичёв, П. Н. Федосеев, С. М. Ковалёв, В. Г. Панов. 1983.&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;«Знание есть не только &lt;strong&gt;преобразование опыта&lt;/strong&gt; в сознание путем структуризации, обозначения его элементов, не только фиксация опыта в социальной памяти.
+Оно является способом трансформации знаковых систем, сознания, деятельности и общения, придания им новой формы, т. е. нового смысла и значения.
+Знание возникает как осмысление человеком контекстов своего &lt;strong&gt;опыта&lt;/strong&gt;.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—«&lt;a class="reference external" href="https://dic.academic.ru/dic.nsf/enc_philosophy/399"&gt;Новая философская энциклопедия: В 4 тт.&lt;/a&gt;» М.: Мысль. Под редакцией В. С. Стёпина. 2001.&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Когда в коллективе недостаточно знаний, столкновения мнений и конфликты всегда неизбежны.
+Потому что &lt;strong&gt;мнение&lt;/strong&gt; выражает индивидуальный опыт человека.
+А это значит, что любое несогласие с его мнением воспринимается как недооценка его опыта и ущемление компетентности, что может усиливаться рядом &lt;a class="reference internal" href="cognitive-biases.html#emacsway-cognitive-biases"&gt;&lt;span class="std std-ref"&gt;когнитивых искажений&lt;/span&gt;&lt;/a&gt;.
+Этим объясняется повышенная токсичность online IT-сообществ.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Знания&lt;/strong&gt; же человек не отождествляет с персональной компетентностью, поскольку знания производятся гораздо более широким охватом опыта.
+Соответственно, он уже не воспринимает несогласие с его позицией как ущемление достоинства.&lt;/p&gt;
+&lt;p&gt;Мне известны два способа решения такого рода конфликтов:&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p&gt;Восполнить информационный вакуум путем обращения к расширенному обобщенному опыту, т.е. к теории, дабы восполнить недостающие точки зрения, возникшие в силу заведомой ограниченности индивидуального опыта.
+Причем, этот метод требует деликатности, ибо знания могут быть отторгнуты коллективом в силу эффекта «&lt;a class="reference external" href="https://ru.m.wikipedia.org/wiki/%D0%97%D0%B0%D1%89%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC"&gt;Психологической Защиты&lt;/a&gt;», так как выводят коллектив из зоны комфорта, и могут спровоцировать чувство ущербности на фоне осведомленности спикера.
+Лучшая форма донесения новых знаний - это постановка перед коллективом таких вопросов, которые способны пролить свет на недостающие точки зрения.
+Не говорить, а спрашивать.
+Об этом писали Kent Beck, Neal Ford, Gregor Hohpe и др.
+Это раздвигает границы опыта человека, на котором он основывает свое мнение, и вынуждает переосмыслить его.&lt;/p&gt;
+&lt;p&gt;Дело может существенно облегчиться, если у коллектива имеются общепризнанные им авторитетные авторы, освещающие решаемый вопрос.
+Зачастую помогают стандарты и материалы для сертификации уровня знаний.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Не настаивать на принятии решения в условиях недостаточной информированности. Дейл Карнеги в свое время дал такой совет для борьбы со стрессом - не пытайтесь принять решение в условиях недостаточной информированности.
+Просто собирайте информацию, и решение придет само.&lt;/p&gt;
+&lt;p&gt;Если продолжать настаивать («Вы должны сегодня определиться!…»), то возможны два сценария развития ситуации:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;Силы консолидации коллектива возобладают над силой внешнего принуждения коллектива. Принуждение будет отторгнуто («А нам это не нужно…»).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Сила внешнего принуждения возобладает над силами консолидации коллектива. Участники коллектива поймут, что защищать свое мнение в виде собственного достоинства легче сообща, и начнут объединяться по признаку отождествления общих угроз, что приведет к расколу коллектива по группам. Исправить такой раскол может оказаться сложно и долго.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description><pubDate>Mon, 03 Jan 2022 00:00:00 </pubDate></item><item><title>О гонке сообщений в условиях конкурирующих подписчиков</title><link>https://dckms.github.io/system-architecture/emacsway/it/integration/asynchronous/message-ordering-in-competing-consumers.html</link><description>
 &lt;span id="id1"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Одной из непростых  тем в DDD и микросервисной архитектуре является т.н. &lt;strong&gt;проблема «конкурирующих подписчиков»&lt;/strong&gt;. Это когда два причинно-зависимых события попадают на конкурирующие узлы обработки событий, и второе событие может «обогнать» первое, например, по причине того, что при обработке первого события возникли сетевые издержки, или запустился сборщик мусора, или по какой-либо причине первое сообщение не было обработано и подтверждено (ack) с первого раза. Возникает гонка сообщений.&lt;/p&gt;
@@ -1728,112 +2089,6 @@ To account for situations in which both ISO/IEC/IEEE 15288:2015 and ISO/IEC/IEEE
 The processes of this document directly correspond to processes of ISO/IEC/IEEE 15288 with specialization for software products and services.»&lt;/p&gt;
 &lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
-</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Что такое Agile Development</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/agile.html</link><description>
-&lt;span id="emacsway-agile-development"/&gt; 
-&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «Agile development - software development approach based on &lt;a class="reference internal" href="../iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative development&lt;/span&gt;&lt;/a&gt;, frequent inspection and adaptation, and incremental deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «"Agile" methods actually can be applied within a variety of models.
-While Agile methods are common in executing an evolutionary lifecycle model, they can be used in other lifecycle models at various stages.
-What the methods have in common is an emphasis on continuous inspection and collaboration in the rapid production of working software in an environment where changes, including changes to requirements, are expected.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «As discussed in 5.4.2, the life cycle models used in agile projects are often highly &lt;a class="reference internal" href="../incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental&lt;/span&gt;&lt;/a&gt; and &lt;a class="reference internal" href="../evolutionary.html#emacsway-evolutionary-development"&gt;&lt;span class="std std-ref"&gt;evolutionary&lt;/span&gt;&lt;/a&gt;.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Agile является естественным следствием эволюции итеративной разработки, краткий обзор которой можно посмотреть в превосходной статье Craig Larman «&lt;a class="reference external" href="https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf"&gt;Iterative and Incremental Development: A Brief History&lt;/a&gt;».&lt;/p&gt;
-&lt;p&gt;Как уже говорилось ранее, итеративная модель разработки открывает широкие возможности для &lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;удешевления обработки неопределенности&lt;/span&gt;&lt;/a&gt;.
-Однако долгое время эти возможности оставались экономически нецелесообразными по причине быстрорастущего характера роста стоимости &lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Adaptation&lt;/span&gt;&lt;/a&gt;, приближющегося к экспоненциальному.
-При таком характере роста возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования (BDUF).&lt;/p&gt;
-&lt;div class="figure align-left" id="id1"&gt;
-&lt;a class="reference internal image-reference" href="../../../../../_images/exponential-cost-of-change.png"&gt;&lt;img alt="Figure 1. The cost of change rising exponentially over time. The image source is &amp;quot;Extreme Programming Explained&amp;quot; 1st edition by Kent Beck, &amp;quot;Chapter 5. Cost of Change&amp;quot;." src="../../../../../_images/exponential-cost-of-change.png" style="width: 90%;"/&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Figure 1. The cost of change rising exponentially over time. The image source is «Extreme Programming Explained» 1st edition by Kent Beck, «Chapter 5. Cost of Change».&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Однако, в конце 1990-х - начале 2000-х, в архитектурном мире произошли существенные изменения - обрели массовую популярность высокоуровневые объектно-ориентированные языки, появились шаблоны и принципы проектирования, методики управления сложностью (ROM, POSA, GOF, OOAD, SOLID, Use Case Driven Approach, Object-Oriented Software Construction etc.), появились TDD, Refactoring и т.п.&lt;/p&gt;
-&lt;p&gt;Унификация знаний в области архитектуры, переход ментального оперирования на элементы унифицированных шаблонных конструкций более высокого уровня абстракции, позволили сократить когнитивную и коммуникативную нагрузку на разработчика, уменьшить порог вхождения в новый проект, смягчить негативное воздействие Закона Брукса.&lt;/p&gt;
-&lt;p&gt;Рост количественных изменений привел к изменениям качественным - ведущим умам архитектуры своего времени удалось снизить характер роста стоимости адаптации вплоть до пологого графика, максимально приближенного к горизонтальной асимптоте.
-Это означало, что стоимость реализации решения больше не зависело от момента его принятия, что позволило отказаться от заблаговременного проектирования и откладывать принятие решения до момента наибольшей полноты информированности, даже после частичной реализации продукта.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «What would we do if all that investment paid off?
-What if all that work on languages and databases and whatnot actually got somewhere?
-What if the cost of change didn’t rise exponentially overtime, but rose much more slowly, &lt;strong&gt;eventually reaching an asymptote&lt;/strong&gt;?
-What if tomorrow’s software engineering professor draws Figure 3 on the board?»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«Extreme Programming Explained» 1st edition by Kent Beck, «Chapter 5. Cost of Change»&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;div class="figure align-left" id="id2"&gt;
-&lt;a class="reference internal image-reference" href="../../../../../_images/flatten-cost-of-change.png"&gt;&lt;img alt="Figure 3. The cost of change may not rise dramatically over time. The image source is &amp;quot;Extreme Programming Explained&amp;quot; 1st edition by Kent Beck, &amp;quot;Chapter 5. Cost of Change&amp;quot;." src="../../../../../_images/flatten-cost-of-change.png" style="width: 90%;"/&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Figure 3. The cost of change may not rise dramatically over time. The image source is «Extreme Programming Explained» 1st edition by Kent Beck, «Chapter 5. Cost of Change».&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Что такое асимтота, можно посмотреть в «§284 Асимтоты» Справочника по высшей математике / М.Я. Выгодский:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «Прямая АВ называется асимптотой линии L, если расстояние МК (черт. 297) от точки М линии L до прямой АВ стремится к нулю при удалении точки М в бесконечность.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«Справочник по высшей математике» / М.Я. Выгодский&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;В нашем случае, нас интересует Асимптоты, параллельная оси абсцисс (там же):&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «Для разыскания горизонтальных асимптот линии y = f(х) ищем пределы f(х) при х -&amp;gt; +∞ и при х -&amp;gt; -∞. Если lim х-&amp;gt;∞ f(x) = b, то прямая у = b - асимптота (при бесконечном удалении вправо; черт. 299).»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«Справочник по высшей математике» / М.Я. Выгодский&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Вся суть Agile (итеративной) модели разработки была лаконично и метко выражена Кент Беком всего одним предложением:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «Сделайте изменение легким, а потом делай легко изменение.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Make the change easy then make the easy change.&lt;/strong&gt;»&lt;/p&gt;
-&lt;p class="attribution"&gt;—Kent Beck, dddeu 20&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Невероятный талант Kent Beck объяснять сложные вещи простым языком. Именно об этом я говорил здесь (&lt;a class="reference external" href="https://t.me/emacsway_log/810"&gt;https://t.me/emacsway_log/810&lt;/a&gt;). И это при необычайной эрудированности Kent Beck. Cписок использованной литературы в его книгах просто ошеломляет.&lt;/p&gt;
-&lt;p&gt;Thanks to Vladik Khononov for &lt;a class="reference external" href="https://youtu.be/ybYtgII151g?t=9808"&gt;https://youtu.be/ybYtgII151g?t=9808&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Более развернутый вариант его фразы:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «At the core of understanding this argument is the software change curve.
-The change curve says that as the project runs, it becomes exponentially more expensive to make changes.
-The change curve is usually expressed in terms of phases «a change made in analysis for $1 would cost thousands to fix in production».
-This is ironic as most projects still work in an ad-hoc process that doesn’t have an analysis phase, but the exponentiation is still there.
-&lt;strong&gt;The exponential change curve means that evolutionary design cannot possibly work.&lt;/strong&gt;
-It also conveys why planned design must be done carefully because any mistakes in planned design face the same exponentiation.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;The fundamental assumption underlying XP is that it is possible to flatten the change curve enough to make evolutionary design work.&lt;/strong&gt;
-This flattening is both enabled by XP and exploited by XP.
-This is part of the coupling of the XP practices: specifically &lt;strong&gt;you can’t do those parts of XP that exploit the flattened curve without doing those things that enable the flattening.&lt;/strong&gt;
-This is a common source of the controversy over XP.
-Many people criticize the exploitation without understanding the enabling.
-Often the criticisms stem from critics“ own experience where they didn’t do the enabling practices that allow the exploiting practices to work.
-As a result they got burned and when they see XP they remember the fire.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«&lt;a class="reference external" href="https://martinfowler.com/articles/designDead.html"&gt;Is Design Dead?&lt;/a&gt;» by M.Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «&lt;strong&gt;This is one of the premises of XP. It is the technical premise of XP.&lt;/strong&gt;
-If the cost of change rose slowly over time, you would act completely differently from how you do under the assumption that costs rise exponentially.
-You would make big decisions as late in the process as possible, to defer the cost of making the decisions and to have the greatest possible chance that they would be right.
-You would only implement what you had to, in hopes that the needs you anticipate for tomorrow wouldn’t come true.
-You would introduce elements to the design only as they simplified existing code or made writing the next bit of code simpler.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;If a flattened change cost curve makes XP possible, a steep change cost curve makes XP impossible.&lt;/strong&gt;
-If change is ruinously expensive, you would be crazy to charge ahead without careful forethought.
-But if change stays cheap, the additional value and reduced risk of early concrete feedback outweighs the additional cost of early change.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«Extreme Programming Explained» 1st edition by Kent Beck&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Поскольку это было произнесено еще до встречи 2001 года и принятия Agile Manifesto, то под XP следует понимать Agile (или даже любую итератиную модель разработки) в принципе, поскольку XP - это частный случай Agile.&lt;/p&gt;
-&lt;p&gt;Иными словами, внутреннее качество программы является первичным условием в Agile и в любой другой итеративной разработке.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «Engineers who don’t understand exponential growth and the cost curve as economies of scale kick in come to wildly incorrect conclusions.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—Kent Beck, &lt;a class="reference external" href="https://twitter.com/KentBeck/status/1402276528910704655?s=19"&gt;https://twitter.com/KentBeck/status/1402276528910704655?s=19&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «The incremental and iterative nature of Agile development can facilitate &lt;strong&gt;efficient technical and management processes and practices to reduce the cost associated with change&lt;/strong&gt;.
-In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;div class="admonition seealso"&gt;
-&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Что такое Adaptation&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../uncertainty-management/prediction/prediction.html#emacsway-prediction"&gt;&lt;span class="std std-ref"&gt;Что такое Prediction&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../uncertainty-management/balancing-prediction-adaptation.html#emacsway-balancing-prediction-adaptation"&gt;&lt;span class="std std-ref"&gt;Balancing Prediction/Adaptation&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../uncertainty-management/adaptation/crash-course-in-software-development-economics.html"&gt;&lt;span class="doc"&gt;Краткий курс по экономике разработки программного обеспечения&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
 </description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Документирование Agile Requirements</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/requirements/documenting.html</link><description>
 &lt;span id="emacsway-agile-requirements-documenting"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
@@ -1882,96 +2137,6 @@ Projects reuse organizational procedures for configuration and release managemen
 Where possible, &lt;strong&gt;bidirectional traceability is enabled and enforced by integrated automated systems and procedures for requirements management, architecture and design&lt;/strong&gt;, configuration management, measurement, and information management.»&lt;/p&gt;
 &lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
-</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Agile nonfunctional Requirements</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/requirements/nonfunctional-requirements.html</link><description>
-&lt;span id="emacsway-agile-nonfunctional-requirements"/&gt; 
-&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Если вы знакомы с ATAM, ADD, QAW, то вы знакомы со сценариями атрибутов качеств («Software Architecture in Practice» 3d edition by Len Bass, Paul Clements, Rick Kazman, глава 16), и легко поймете, о чем пишет K.Wigers - один из топовых авторов по требованиям и аналитике:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «&lt;strong&gt;Nonfunctional requirements need to have priority alongside user stories; you can’t defer their implementation until a later iteration.&lt;/strong&gt;
-It’s possible to specify quality attributes in the form of stories: «As a help desk technician, I want the knowledge base to respond to queries &lt;strong&gt;within five seconds&lt;/strong&gt; so the customer doesn’t get frustrated and hang up.»&lt;/p&gt;
-&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
-&lt;p&gt;Developers need to keep nonfunctional requirements in mind as they consider the implications of implementing individual user stories.
-As more functionality is added through a series of iterations, the system’s efficiency and hence performance can deteriorate.
-Specify performance goals and begin performance testing &lt;strong&gt;with early iterations&lt;/strong&gt;, so you can become aware of concerns early enough to take corrective actions.&lt;/p&gt;
-&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
-&lt;p&gt;As with user stories, it’s possible to write acceptance tests for quality attributes.
-This is a way to quantify the quality attributes.
-If a performance goal is stated simply as “The knowledge base must return search results quickly,” you can’t write tests to define what constitutes “quickly.” A better acceptance test would be: «Keyword search of the knowledge base &lt;strong&gt;takes less than 5 seconds&lt;/strong&gt;, and preferably &lt;strong&gt;less than 3 seconds&lt;/strong&gt;, to return a result.&lt;/p&gt;
-&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
-&lt;p&gt;Part of &lt;strong&gt;accepting an iteration as being complete&lt;/strong&gt; is to assess whether the pertinent nonfunctional requirements are satisfied.
-Often there is a range of acceptable performance, with some outcomes more desirable than others.
-As it does for any other software development approach, satisfying quality requirements can distinguish delight from disappointment on agile projects.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—Глава 14, подраздел «Handling quality attributes on agile projects», книги «Software Requirements» 3rd Edition, Wiegers K., Beatty J.&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Приоритезация и реализация нефункциональных требований совместно (alongside) с функциональными выбивает почву для появления технических задач, оторванных от бизнес-целей.
-А поскольку один из топовых авторов по Scrum, K.Rubin, утверждает, что нефункциональными требованиями должен заниматься Product Owner, то это автоматически устраняет необходимость в лоббировании технических задач техническими специалистами.&lt;/p&gt;
-&lt;p&gt;Нужно заметить, что в SAFe нефункциональными требованиями занимается уже не Product Owner, а System Architect.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;System Architect/Engineering is an individual or team that defines the overall architecture of the system. They work at a level of abstraction above the teams and components and define Non-Functional Requirements (NFRs), major system elements, subsystems, and interfaces.&lt;/p&gt;
-&lt;p class="attribution"&gt;—«SAFe® 5.0: The World’s Leading Framework for Business Agility» by Richard Knaster, Dean Leffingwell&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Вообще говоря, в Scrum этим не обязательно должен заниматься Product Owner.
-По офф.гайду команда должна сотрудничать со стейкхолдерами, а Product Owner может делегировать свои полномочия команде, например, аналитику или архитектору.
-Тут важно не кто, а как.&lt;/p&gt;
-&lt;p&gt;Был упомянут K.Rubin, посмотрим, что именно он говорит:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «The &lt;strong&gt;product owner is responsible&lt;/strong&gt; for defining the acceptance criteria for each product backlog item.
-These are the conditions under which the product owner would be satisfied that the functional and &lt;strong&gt;nonfunctional requirements&lt;/strong&gt; have been met.
-The product owner may also write acceptance tests corresponding to the acceptance criteria, or he could enlist the assistance of subject matter experts (SMEs) or development team members.
-In either case, the product owner should ensure that these acceptance criteria (and frequently specific acceptance tests) are created before an item is considered at a sprint-planning meeting.
-Without them, the team would have an incomplete understanding of the item and would not be ready to include it in a sprint.
-For this reason, many Scrum teams include the existence of clear acceptance criteria as an item on their definition-of-ready checklist (see Chapter 6).&lt;/p&gt;
-&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
-&lt;p&gt;The team must also decide when to test all of the browsers.
-Each nonfunctional requirement is a prime target for inclusion in the team’s definition of done.
-If the team includes the “Web Browser Support” nonfunctional requirement in the definition of done, the team will have to test any new features added in the sprint with all of the listed browsers.
-If it doesn’t work with all of them, the story isn’t done.&lt;/p&gt;
-&lt;p&gt;I recommend that teams try to include as many of the nonfunctional requirements in their definitions of done as they possibly can.
-Waiting to test nonfunctional requirements until late in the development effort defers getting fast feedback on critical system performance characteristics.&lt;/p&gt;
-&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
-&lt;p&gt;nonfunctional requirement.
-1. A requirement that does not relate to functionality but to attributes such as reliability, efficiency, usability, maintainability, and portability, which product backlog items must possess in order to be fully accepted by the stakeholders.
-2. &lt;strong&gt;Each nonfunctional requirement is a candidate for inclusion in the definition of done&lt;/strong&gt;. See also definition of done.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«Essential Scrum : a practical guide to the most popular agile process» by Kenneth S. Rubin.&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Топовые авторы по аналитике (K.Wigers) и Scrum (K.Rubin) сошлись в одном мнении. Один дает описание с точки зрения работы с требованиями, а другой - с точки зрения гибких процессов разработки.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «So, in the information model, we have modeled NFRs as backlog constraints, as illustrated in Figure 17–1.&lt;/p&gt;
-&lt;p&gt;From the diagram, we see that a backlog item may be constrained by (zero, one, or more) nonfunctional requirements.
-An example from the case study appears in Figure 17–2.&lt;/p&gt;
-&lt;p&gt;Also, nonfunctional requirements apply to zero or more backlog items.
-For example, a nonfunctional requirement such as support 100 concurrent users might apply to zero, one, or many backlog items.&lt;/p&gt;
-&lt;p&gt;Once identified, relevant nonfunctional requirements must be captured and communicated to all teams who may be affected by the constraints.
-In agile, with its focus on the backlog, there is no obvious place to model them, so in the Big Picture, we just call them backlog constraints and represent them as shown in Figure 17–3.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise» by Dean Leffingwell&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;Persisting nonfunctional requirements&lt;/p&gt;
-&lt;p&gt;Another difference between user stories and nonfunctional requirements is that they typically need to persist differently in the development life cycle. We’ve described how user stories are lightweight and generally don’t have to be maintained, which is one of the key benefits. We’ve also shown that the details of a user story are captured in the acceptance test, which persist inside the team’s automated or manual regression test environment. That is why we can throw the user story away after implementation—because we have memorialized the important details in our test cases.&lt;/p&gt;
-&lt;p&gt;That can work for some NFRs, too, but it gets a bit riskier. For example, if a system must support 1000 concurrent users, we could develop an automated test that simulated that load and build it in the regression test suite. That would be an excellent practice because we could refactor the code at will, and if we accidentally created a performance bottleneck, it would be quickly discovered. In that case, we could forget about the NFR once we have seen it the fi rst time, because the automated test remembers it for us.&lt;/p&gt;
-&lt;p&gt;There are other types of NFRs, however, that must be treated quite differently. Here are some examples:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;Maintain PCI compliance (credit card industry user security standards) in all applications&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Localize the application in all then-current, supported languages prior to release in any language&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;No open source without a CFO license review&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;We surely can’t forget these, and we can’t write automated test cases for them, either.
-So, the teams must have an organized way to save them, find them, and review them when necessary. In practice, we’ve seen agile teams take a number of approaches to persisting NFRs.&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;Create a separate backlog in the agile project management tool. Most enterprises will adopt agile project management tooling as a central repository for stories and tasks, as well as iteration and release objects that support scheduling, burndown, and feature status reporting. Teams can create a special project/product backlog to hold and maintain the NFRs within the tool. Access privileges must be granted to all team members who are working on the program.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Store and manage them in a wiki. This method works well because it provides continuous visibility; is available to all team members; is persistent; fosters communication, comments, and interaction; and doesn’t require any special tooling.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Maintain a supplementary specification. This label/document was originally developed as an auxiliary document to RUP’s use case models and use case specifications and served exactly this role (organizing nonfunctional requirements). Remember, as agilists, we “favor working software over comprehensive documentation,” but that doesn’t mean we can’t create the documentation we need. Even more importantly, we like to do the simplest thing that can possibly work, and when we know something is important, it makes sense to write it down. Table 17–3 later in this chapter provides an example template for a supplemental specif i cation.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Build the NFRs into the definition of done, and point to the special backlog, wiki, or supplemental specification that contains the details. In this approach, a team can’t be done until the NFRs are satisfied as well. Different definitions of done, requiring different amounts of regression testing, inspection, and so on, can be established for various iteration, potentially shippable increment, and release milestones.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;No matter the approach, it is mandatory that the teams do something to maintain and manage these specif i cations, because they could make the difference between success and failure.&lt;/p&gt;
-&lt;p class="attribution"&gt;—«Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise» by Dean Leffingwell&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;См. также:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://www.scaledagileframework.com/nonfunctional-requirements/"&gt;Nonfunctional Requirements&lt;/a&gt;» at SAFe&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«` An Agile Architectural Epic Kanban System: Part 2 – The Model &amp;lt;&lt;a class="reference external" href="https://scalingsoftwareagility.wordpress.com/2010/03/05/an-agile-architectural-epic-kanban-system-part-2-%E2%80%93-the-model/"&gt;https://scalingsoftwareagility.wordpress.com/2010/03/05/an-agile-architectural-epic-kanban-system-part-2-%E2%80%93-the-model/&lt;/a&gt;&amp;gt;`__» by Dean Leffingwell&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://scalingsoftwareagility.files.wordpress.com/2007/03/a-lean-and-scalable-requirements-information-model-for-agile-enterprises-pdf.pdf"&gt;A Lean and Scalable Requirements Information Model for the Agile Enterprise&lt;/a&gt; by Dean Leffingwell with Juha‐Markus Aalto&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Agile Requirements</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/requirements/requirements.html</link><description>
 &lt;span id="emacsway-agile-requirements"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
@@ -2194,104 +2359,6 @@ The approach provides for some flexibility to respond to inaccurate cost or sche
 This provides some protection against cost surprises occurring late in the development cycle.»&lt;/p&gt;
 &lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
-</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Что такое Adaptation</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/adaptation/adaptation.html</link><description>
-&lt;span id="emacsway-adaptation"/&gt; 
-&lt;div class="contents topic" id="id1"&gt;
-&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#adaptation" id="id6"&gt;Что такое Adaptation&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id2" id="id7"&gt;Суть Адаптации&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id8"&gt;Назначение Адаптации&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id2"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id7"&gt;Суть Адаптации&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Суть Adaptation (Адаптации) заключается в том, что мы не пытаемся разрешить неопределенность заблаговременно путем логического вывода, а, в противовес &lt;a class="reference internal" href="../prediction/prediction.html#emacsway-prediction"&gt;&lt;span class="std std-ref"&gt;Prediction&lt;/span&gt;&lt;/a&gt;, разрешаем неопределенность опытным, экспериментальным путем.
-Выдвигаем гипотетический план, частично реализуем его в виде Системного Инкремента, инспектируем результат на практике, и принимаем гипотезу об Адаптации плана для следующей итерации.
-Этот цикл образует &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;итерацию&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Полученные практическим способом знания, снижающие неопределенность, являются входными аргументами для следующей &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;итерации&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «"Iteration" here means applying a function to itself.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«Concrete Mathematics: A Foundation for Computer Science» 2nd edition by Ronald L. Graham, Donald E. Knuth, Oren Patashnik&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id3"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id8"&gt;Назначение Адаптации&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Рость неопределенности приводит к росту стоимости Prediction по мере роста его точности.
-Предел экономической целесообразности Prediction определяется пересечением графика роста стоимости Prediction (в зависимости от его точности) с графиком роста бизнес-выгод от точности Прогнозирования.&lt;/p&gt;
-&lt;p&gt;Там, где сумма произведений количества Адаптаций Системного Инкремента и стоимости Адаптаций системного инкремена для каждой итерации пересечет сумму экономически целесообразной стоимости Prediction на горизонте планирования, возникает предел экономической целесообразности эмпирической обработки неопределенности Проекта при допущении, что остаточная стоимость самой реализации (которая не имеет отношения к разрешению неопределенности) остается неизменной в обоих случаях.
-Обратите внимание, в данном случае речь идет о стоимости Адаптации Системного Инкремента, а не Плана.
-Т.е. речь идет о стоимости экспериментального разрешения неопределенности (цикл ошибка - исправление).&lt;/p&gt;
-&lt;p&gt;Prediction при этом не исчезает полностью, а понижает свою точность и дополняется Адаптацией.
-Для наилучшего совокупного экономического эффекта важно правильно находить &lt;a class="reference internal" href="../balancing-prediction-adaptation.html#emacsway-balancing-prediction-adaptation"&gt;&lt;span class="std std-ref"&gt;баланс между Prediction и Adaptation&lt;/span&gt;&lt;/a&gt;, а также обеспечивать &lt;a class="reference internal" href="../../models/agile/agile.html#emacsway-agile-development"&gt;&lt;span class="std std-ref"&gt;характер роста стоимости Adaptation максимально приближенный к горизонтальной асимптоте&lt;/span&gt;&lt;/a&gt;, поскольку, чем больше Адаптаций Системного Инкремента возникает на горизонте планирования, тем дороже становится экспериментальный способ разрешения неопределенности по сравнению с логическим.&lt;/p&gt;
-&lt;p&gt;При этом нужно учитывать, что стоимость Prediction также не константна по отношению к жизненному циклу системы, а имеет тенденцию к понижению.
-Т.е. чем большая часть системы уже реализована, тем больше баланс экономической целесообразности смещается от Adaptation к Prediction.&lt;/p&gt;
-&lt;div class="figure align-left" id="id4"&gt;
-&lt;a class="reference internal image-reference" href="../../../../../_images/cost-of-decision-over-time.png"&gt;&lt;img alt="FIGURE 3.6 Make decisions at the last responsible moment. The image source is &amp;quot;Essential Scrum: A Practical Guide to the Most Popular Agile Process&amp;quot; by Kenneth Rubin, &amp;quot;Chapter 3 Agile Principles :: Prediction and Adaptation&amp;quot;." src="../../../../../_images/cost-of-decision-over-time.png" style="width: 90%;"/&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;FIGURE 3.6 Make decisions at the last responsible moment. The image source is «Essential Scrum: A Practical Guide to the Most Popular Agile Process» by Kenneth Rubin, «Chapter 3 Agile Principles :: Prediction and Adaptation».&lt;/span&gt;&lt;/p&gt;
-&lt;div class="legend"&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «Most of us would prefer to wait until we have more information so that we can make a more informed decision.
-When dealing with important or irreversible decisions, if we decide too early and are wrong, we will be on the exponential part of the cost-of-deciding curve in Figure 3.6.
-As we acquire a better understanding regarding the decision, the cost of deciding declines (the likelihood of making a bad
-decision declines because of increasing market or technical certainty).
-That’s why we should wait until we have better information before committing to a decision.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«Essential Scrum: A Practical Guide to the Most Popular Agile Process» by Kenneth Rubin, «Chapter 3 Agile Principles :: Prediction and Adaptation»&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Это и есть та самая причина, по которой выбор SDLC-модели является неотъемлемой частью процесса проектирования, и изучается архитектурой.
-Ведь различные SDLC-модели (итеративные, инкрементальные, спиральные, гибридные, каскадные), реализованные в виде Scrum, RUP, SAFe, BDUF etc., обладают различным соотношением Prediction vs. Adaptation, имеют разные подходы к масштабированию команд и различные ограничения.
-Выбор SDLC-модели сильно зависит от ситуативного контекста проектирования.
-Повторюсь, основная цель итеративной разработки - удешевить стоимость проектирования в условиях неопределенности.&lt;/p&gt;
-&lt;p&gt;Об этом Брукс писал в Мифическом человеко-месяце когда еще до появления Agile Manifesto:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «Therefore the most important function that software builders do for their clients is the &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative&lt;/span&gt;&lt;/a&gt; &lt;strong&gt;extraction and refinement of the product requirements&lt;/strong&gt;…&lt;/p&gt;
-&lt;p&gt;I would go a step further and assert that it is really impossible for clients, even those working with software engineers, to specify completely, precisely, and correctly the exact requirements of a modern software product before having built and tried some versions of the product they are specifying.&lt;/p&gt;
-&lt;p&gt;Therefore one of the most promising of the current technological efforts, and one which attacks the essence, not the accidents, of the software problem, is the development of approaches and tools for rapid prototyping of systems as part of the &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative&lt;/span&gt;&lt;/a&gt; &lt;strong&gt;specification of requirements&lt;/strong&gt;.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«The Mythical Man-Month Essays on Software Engineering Anniversary Edition» by Frederick P. Brooks, Jr.&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Конечно, сугубо семантически, термин «&lt;a class="reference internal" href="../../models/agile/analysis/requirements/requirements.html#emacsway-agile-requirements"&gt;&lt;span class="std std-ref"&gt;requirements&lt;/span&gt;&lt;/a&gt;» немного вводит в заблуждение в Agile, ведь заранее требования к продукту неизвестны полностью, и они изменяются по мере реализации продукта.
-А в таком случае, как они могут что-то требовать?
-Вы, наверное, встречали картинку с треугольником «&lt;a class="reference external" href="https://www.atlassian.com/agile/agile-at-scale/agile-iron-triangle"&gt;Iron Triangle&lt;/a&gt;» (Requirements/Scope, Cost, Time), где в waterfall он обращен вершиной Requirements вниз (константная область), а в Agile - вверх (переменная область). The iron triangle of planning:&lt;/p&gt;
-&lt;div class="figure align-left" id="id5"&gt;
-&lt;a class="reference internal image-reference" href="../../../../../_images/iron-triangle.png"&gt;&lt;img alt="Iron Triangle. Agile fixes the date and resources and varies the scope. The image source is &amp;quot;Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise&amp;quot; by Dean Leffingwell" src="../../../../../_images/iron-triangle.png" style="width: 90%;"/&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Iron Triangle. Agile fixes the date and resources and varies the scope. The image source is «Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise» by Dean Leffingwell&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Итеративная разработка востребована, когда невозможно достигнуть полноты (Complete) требований (set of &lt;a class="reference internal" href="../../models/agile/analysis/requirements/requirements.html#emacsway-agile-requirements"&gt;&lt;span class="std std-ref"&gt;requirements&lt;/span&gt;&lt;/a&gt;).&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «Complete. The set of requirements needs no further amplification because it contains everything pertinent to the definition of the system or system element being specified. In addition, the set contains no To Be Defined (TBD), To Be Specified (TBS), or To Be Resolved (TBR) clauses. Resolution of the TBx designations may be iterative and there is an acceptable timeframe for TBx items, determined by risks and dependencies.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 29148:2018 Systems and software engineering - Life cycle processes - Requirements engineering»&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Но это и не требуется стандартом по SDLC:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «To deal with the &lt;strong&gt;issues of incompletely known requirements&lt;/strong&gt; and inaccurate estimates, a number of other types of models have been proposed: &lt;a class="reference internal" href="../../models/incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental&lt;/span&gt;&lt;/a&gt;, &lt;a class="reference internal" href="../../models/spiral.html#emacsway-spiral-development"&gt;&lt;span class="std std-ref"&gt;spiral&lt;/span&gt;&lt;/a&gt;, &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative&lt;/span&gt;&lt;/a&gt;, and &lt;a class="reference internal" href="../../models/evolutionary.html#emacsway-evolutionary-development"&gt;&lt;span class="std std-ref"&gt;evolutionary (adaptive)&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
-&lt;p&gt;The "&lt;a class="reference internal" href="../../models/evolutionary.html#emacsway-evolutionary-development"&gt;&lt;span class="std std-ref"&gt;evolutionary model&lt;/span&gt;&lt;/a&gt;" is intended to deal with &lt;strong&gt;incomplete knowledge of requirements&lt;/strong&gt;.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Как можно заметить, неполнота требований здесь первична, и именно для её разрешения и применяются такие SDLC-модели, как &lt;a class="reference internal" href="../../models/incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental&lt;/span&gt;&lt;/a&gt;, &lt;a class="reference internal" href="../../models/spiral.html#emacsway-spiral-development"&gt;&lt;span class="std std-ref"&gt;spiral&lt;/span&gt;&lt;/a&gt;, &lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative&lt;/span&gt;&lt;/a&gt;, and &lt;a class="reference internal" href="../../models/evolutionary.html#emacsway-evolutionary-development"&gt;&lt;span class="std std-ref"&gt;evolutionary (adaptive)&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Интересно, что, во времена появления термина User Story, полнота требований так же не требовалась старым стандартом:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 «The SRS may need to evolve as the development of the software product progresses. It may be impossible to specify some details at the time the project is initiated.&lt;/p&gt;
-&lt;p&gt;&amp;lt;…&amp;gt;&lt;/p&gt;
-&lt;p&gt;Requirements should be specified as completely and thoroughly as is known at the time, even if evolutionary revisions can be foreseen as inevitable. The fact that they are incomplete should be noted.»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«IEEE Std 830-1998, IEEE Std 830-1993 IEEE Recommended Practice for Software Requirements Specifications»&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Таким образом, использование термина &lt;a class="reference internal" href="../../models/agile/analysis/requirements/requirements.html#emacsway-agile-requirements"&gt;&lt;span class="std std-ref"&gt;requirements&lt;/span&gt;&lt;/a&gt;, несмотря на то, что вызывает вопросы относительно семантики, никоим образом не противоречит использованию его в Agile SDLC-моделе, которая, кстати, описана тем же стандартом - ISO/IEC/IEEE 12207:2017, в разделах «5.4.2. Life cycle model for the software system» и «Annex H».&lt;/p&gt;
-&lt;div class="admonition seealso"&gt;
-&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;Iterative Development&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../models/agile/agile.html#emacsway-agile-development"&gt;&lt;span class="std std-ref"&gt;Что такое Agile Development&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../models/agile/index.html"&gt;&lt;span class="doc"&gt;Agile&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;«&lt;a class="reference internal" href="../../models/agile/analysis/requirements/requirements.html#emacsway-agile-requirements"&gt;&lt;span class="std std-ref"&gt;Agile Requirements&lt;/span&gt;&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 </description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Краткий курс по экономике разработки программного обеспечения</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics.html</link><description>
 &lt;span id="id1"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
