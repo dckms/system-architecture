@@ -76,7 +76,39 @@ What the methods have in common is an emphasis on continuous inspection and coll
 <p class="attribution">—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»</p>
 </div></blockquote>
 <p>Agile является естественным следствием эволюции итеративной разработки, краткий обзор которой можно посмотреть в превосходной статье Craig Larman «<a class="reference external" href="https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf">Iterative and Incremental Development: A Brief History</a>».</p>
-<p>Вся суть Agile (итеративной) модели разработки одним предложением:</p>
+<p>Как уже говорилось ранее, итеративная модель разработки открывает широкие возможности для <a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"><span class="std std-ref">удешевления обработки неопределенности</span></a>.
+Однако долгое время эти возможности оставались экономически нецелесообразными по причине быстрорастущего характера роста стоимости <a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"><span class="std std-ref">Adaptation</span></a>, приближющегося к экспоненциальному.
+При таком характере роста возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования (BDUF).</p>
+<div class="figure align-left" id="id1">
+<a class="reference internal image-reference" href="../../../../../_images/exponential-cost-of-change.png"><img alt="Figure 1. The cost of change rising exponentially over time. The image source is &quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 5. Cost of Change&quot;." src="../../../../../_images/exponential-cost-of-change.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text">Figure 1. The cost of change rising exponentially over time. The image source is «Extreme Programming Explained» 1st edition by Kent Beck, «Chapter 5. Cost of Change».</span><a class="headerlink" href="#id1" title="Постоянная ссылка на рисунок">¶</a></p>
+</div>
+<p>Однако, в конце 1990-х - начале 2000-х, в архитектурном мире произошли существенные изменения - обрели массовую популярность высокоуровневые объектно-ориентированные языки, появились шаблоны и принципы проектирования, методики управления сложностью (ROM, POSA, GOF, OOAD, SOLID, Use Case Driven Approach, Object-Oriented Software Construction etc.), появились TDD, Refactoring и т.п.</p>
+<p>Унификация знаний в области архитектуры, переход ментального оперирования на элементы унифицированных шаблонных конструкций более высокого уровня абстракции, позволили сократить когнитивную и коммуникативную нагрузку на разработчика, уменьшить порог вхождения в новый проект, смягчить негативное воздействие Закона Брукса.</p>
+<p>Рост количественных изменений привел к изменениям качественным - ведущим умам архитектуры своего времени удалось снизить характер роста стоимости адаптации вплоть до пологого графика, максимально приближенного к горизонтальной асимптоте.
+Это означало, что стоимость реализации решения больше не зависело от момента его принятия, что позволило отказаться от заблаговременного проектирования и откладывать принятие решения до момента наибольшей полноты информированности, даже после частичной реализации продукта.</p>
+<blockquote>
+<div><p>📝 «What would we do if all that investment paid off?
+What if all that work on languages and databases and whatnot actually got somewhere?
+What if the cost of change didn’t rise exponentially overtime, but rose much more slowly, <strong>eventually reaching an asymptote</strong>?
+What if tomorrow’s software engineering professor draws Figure 3 on the board?»</p>
+<p class="attribution">—«Extreme Programming Explained» 1st edition by Kent Beck, «Chapter 5. Cost of Change»</p>
+</div></blockquote>
+<div class="figure align-left" id="id2">
+<a class="reference internal image-reference" href="../../../../../_images/flatten-cost-of-change.png"><img alt="Figure 3. The cost of change may not rise dramatically over time. The image source is &quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 5. Cost of Change&quot;." src="../../../../../_images/flatten-cost-of-change.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text">Figure 3. The cost of change may not rise dramatically over time. The image source is «Extreme Programming Explained» 1st edition by Kent Beck, «Chapter 5. Cost of Change».</span><a class="headerlink" href="#id2" title="Постоянная ссылка на рисунок">¶</a></p>
+</div>
+<p>Что такое асимтота, можно посмотреть в «§284 Асимтоты» Справочника по высшей математике / М.Я. Выгодский:</p>
+<blockquote>
+<div><p>📝 «Прямая АВ называется асимптотой линии L, если расстояние МК (черт. 297) от точки М линии L до прямой АВ стремится к нулю при удалении точки М в бесконечность.»</p>
+<p class="attribution">—«Справочник по высшей математике» / М.Я. Выгодский</p>
+</div></blockquote>
+<p>В нашем случае, нас интересует Асимптоты, параллельная оси абсцисс (там же):</p>
+<blockquote>
+<div><p>📝 «Для разыскания горизонтальных асимптот линии y = f(х) ищем пределы f(х) при х -&gt; +∞ и при х -&gt; -∞. Если lim х-&gt;∞ f(x) = b, то прямая у = b - асимптота (при бесконечном удалении вправо; черт. 299).»</p>
+<p class="attribution">—«Справочник по высшей математике» / М.Я. Выгодский</p>
+</div></blockquote>
+<p>Вся суть Agile (итеративной) модели разработки была лаконично и метко выражена Кент Беком всего одним предложением:</p>
 <blockquote>
 <div><p>📝 «Сделайте изменение легким, а потом делай легко изменение.</p>
 <p><strong>Make the change easy then make the easy change.</strong>»</p>
@@ -123,6 +155,15 @@ But if change stays cheap, the additional value and reduced risk of early concre
 In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project.»</p>
 <p class="attribution">—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»</p>
 </div></blockquote>
+<div class="admonition seealso">
+<p class="admonition-title">См.также</p>
+<ul class="simple">
+<li><p>«<a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"><span class="std std-ref">Что такое Adaptation</span></a>»</p></li>
+<li><p>«<a class="reference internal" href="../../uncertainty-management/prediction/prediction.html#emacsway-prediction"><span class="std std-ref">Что такое Prediction</span></a>»</p></li>
+<li><p>«<a class="reference internal" href="../../uncertainty-management/balancing-prediction-adaptation.html#emacsway-balancing-prediction-adaptation"><span class="std std-ref">Balancing Prediction/Adaptation</span></a>»</p></li>
+<li><p>«<a class="reference internal" href="../../uncertainty-management/adaptation/crash-course-in-software-development-economics.html"><span class="doc">Краткий курс по экономике разработки программного обеспечения</span></a>»</p></li>
+</ul>
+</div>
 </div>
 
 

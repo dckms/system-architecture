@@ -59,35 +59,54 @@
             
     
   <div class="section" id="adaptation">
-<span id="emacsway-adaptation"></span><h1><a class="toc-backref" href="#id5">Что такое Adaptation</a><a class="headerlink" href="#adaptation" title="Ссылка на этот заголовок">¶</a></h1>
+<span id="emacsway-adaptation"></span><h1><a class="toc-backref" href="#id6">Что такое Adaptation</a><a class="headerlink" href="#adaptation" title="Ссылка на этот заголовок">¶</a></h1>
 <div class="contents topic" id="id1">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#adaptation" id="id5">Что такое Adaptation</a></p>
+<li><p><a class="reference internal" href="#adaptation" id="id6">Что такое Adaptation</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id2" id="id6">Суть Адаптации</a></p></li>
-<li><p><a class="reference internal" href="#id3" id="id7">Назначение Адаптации</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id7">Суть Адаптации</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id8">Назначение Адаптации</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="id2">
-<h2><a class="toc-backref" href="#id6">Суть Адаптации</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
-<p>Суть Adaptation заключается в том, что мы не пытаемся разрешить неопределенность заблаговременно путем логического вывода, а, в противовес <a class="reference internal" href="../prediction/prediction.html#emacsway-prediction"><span class="std std-ref">Prediction</span></a>, разрешаем неопределенность опытным, экспериментальным путем.
-Выдвигаем гипотезу, реализуем её в виде системного инкремента, инспектируем результат на основе практической обратной связи, и определяем, каким образом нам нужно адаптировать системный инкремент, если с первого раза не удалось удовлетворить ожидания.
-Полученные практическим способом знания являются входными аргументами для следующей <a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"><span class="std std-ref">итерации</span></a>.</p>
+<h2><a class="toc-backref" href="#id7">Суть Адаптации</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Суть Adaptation (Адаптации) заключается в том, что мы не пытаемся разрешить неопределенность заблаговременно путем логического вывода, а, в противовес <a class="reference internal" href="../prediction/prediction.html#emacsway-prediction"><span class="std std-ref">Prediction</span></a>, разрешаем неопределенность опытным, экспериментальным путем.
+Выдвигаем гипотетический план, частично реализуем его в виде Системного Инкремента, инспектируем результат на практике, и принимаем гипотезу об Адаптации плана для следующей итерации.
+Этот цикл образует <a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"><span class="std std-ref">итерацию</span></a>.</p>
+<p>Полученные практическим способом знания, снижающие неопределенность, являются входными аргументами для следующей <a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"><span class="std std-ref">итерации</span></a>.</p>
 <blockquote>
 <div><p>📝 «&quot;Iteration&quot; here means applying a function to itself.»</p>
 <p class="attribution">—«Concrete Mathematics: A Foundation for Computer Science» 2nd edition by Ronald L. Graham, Donald E. Knuth, Oren Patashnik</p>
 </div></blockquote>
 </div>
 <div class="section" id="id3">
-<h2><a class="toc-backref" href="#id7">Назначение Адаптации</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">Назначение Адаптации</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Рость неопределенности приводит к росту стоимости Prediction по мере роста его точности.
-Там, где график роста стоимости Adaptation (в зависимости от размера) проекта пересекает график роста стоимости Prediction (в зависимости от точности), возникает экономическая целесообразность обрабатывать неопределенность эмпирически, т.е. путем проведения эксперимента - спроектировали, реализовали, попробовали на практике, и адаптировали реализацию на основании практического фидбека.
-В этом - суть <a class="reference internal" href="../../models/iterative.html#emacsway-iterative-development"><span class="std std-ref">итерации</span></a>.
-Prediction при этом не исчезает полностью, а понижает свою точность и дополняется адаптацией.
-Для наилучшего экономического эффекта важно правильно выбрать баланс между Prediction и Adaptation, а так же обеспечить роста стоимости Adaptation близкий к горизонтальной асимптоте.</p>
+Предел экономической целесообразности Prediction определяется пересечением графика роста стоимости Prediction (в зависимости от его точности) с графиком роста бизнес-выгод от точности Прогнозирования.</p>
+<p>Там, где сумма произведений количества Адаптаций Системного Инкремента и стоимости Адаптаций системного инкремена для каждой итерации пересечет сумму экономически целесообразной стоимости Prediction на горизонте планирования, возникает предел экономической целесообразности эмпирической обработки неопределенности Проекта при допущении, что остаточная стоимость самой реализации (которая не имеет отношения к разрешению неопределенности) остается неизменной в обоих случаях.
+Обратите внимание, в данном случае речь идет о стоимости Адаптации Системного Инкремента, а не Плана.
+Т.е. речь идет о стоимости экспериментального разрешения неопределенности (цикл ошибка - исправление).</p>
+<p>Prediction при этом не исчезает полностью, а понижает свою точность и дополняется Адаптацией.
+Для наилучшего совокупного экономического эффекта важно правильно находить <a class="reference internal" href="../balancing-prediction-adaptation.html#emacsway-balancing-prediction-adaptation"><span class="std std-ref">баланс между Prediction и Adaptation</span></a>, а также обеспечивать <a class="reference internal" href="../../models/agile/agile.html#emacsway-agile-development"><span class="std std-ref">характер роста стоимости Adaptation максимально приближенный к горизонтальной асимптоте</span></a>, поскольку, чем больше Адаптаций Системного Инкремента возникает на горизонте планирования, тем дороже становится экспериментальный способ разрешения неопределенности по сравнению с логическим.</p>
+<p>При этом нужно учитывать, что стоимость Prediction также не константна по отношению к жизненному циклу системы, а имеет тенденцию к понижению.
+Т.е. чем большая часть системы уже реализована, тем больше баланс экономической целесообразности смещается от Adaptation к Prediction.</p>
+<div class="figure align-left" id="id4">
+<a class="reference internal image-reference" href="../../../../../_images/cost-of-decision-over-time.png"><img alt="FIGURE 3.6 Make decisions at the last responsible moment. The image source is &quot;Essential Scrum: A Practical Guide to the Most Popular Agile Process&quot; by Kenneth Rubin, &quot;Chapter 3 Agile Principles :: Prediction and Adaptation&quot;." src="../../../../../_images/cost-of-decision-over-time.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text">FIGURE 3.6 Make decisions at the last responsible moment. The image source is «Essential Scrum: A Practical Guide to the Most Popular Agile Process» by Kenneth Rubin, «Chapter 3 Agile Principles :: Prediction and Adaptation».</span><a class="headerlink" href="#id4" title="Постоянная ссылка на рисунок">¶</a></p>
+<div class="legend">
+<blockquote>
+<div><p>📝 «Most of us would prefer to wait until we have more information so that we can make a more informed decision.
+When dealing with important or irreversible decisions, if we decide too early and are wrong, we will be on the exponential part of the cost-of-deciding curve in Figure 3.6.
+As we acquire a better understanding regarding the decision, the cost of deciding declines (the likelihood of making a bad
+decision declines because of increasing market or technical certainty).
+That’s why we should wait until we have better information before committing to a decision.»</p>
+<p class="attribution">—«Essential Scrum: A Practical Guide to the Most Popular Agile Process» by Kenneth Rubin, «Chapter 3 Agile Principles :: Prediction and Adaptation»</p>
+</div></blockquote>
+</div>
+</div>
 <p>Это и есть та самая причина, по которой выбор SDLC-модели является неотъемлемой частью процесса проектирования, и изучается архитектурой.
 Ведь различные SDLC-модели (итеративные, инкрементальные, спиральные, гибридные, каскадные), реализованные в виде Scrum, RUP, SAFe, BDUF etc., обладают различным соотношением Prediction vs. Adaptation, имеют разные подходы к масштабированию команд и различные ограничения.
 Выбор SDLC-модели сильно зависит от ситуативного контекста проектирования.
@@ -102,9 +121,9 @@ Prediction при этом не исчезает полностью, а пони
 <p>Конечно, сугубо семантически, термин «<a class="reference internal" href="../../models/agile/analysis/requirements/requirements.html#emacsway-agile-requirements"><span class="std std-ref">requirements</span></a>» немного вводит в заблуждение в Agile, ведь заранее требования к продукту неизвестны полностью, и они изменяются по мере реализации продукта.
 А в таком случае, как они могут что-то требовать?
 Вы, наверное, встречали картинку с треугольником «<a class="reference external" href="https://www.atlassian.com/agile/agile-at-scale/agile-iron-triangle">Iron Triangle</a>» (Requirements/Scope, Cost, Time), где в waterfall он обращен вершиной Requirements вниз (константная область), а в Agile - вверх (переменная область). The iron triangle of planning:</p>
-<div class="figure align-left" id="id4">
-<a class="reference internal image-reference" href="../../../../../_images/iron-triangle.png"><img alt="Iron Triangle. The image source is &quot;Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise&quot; by Dean Leffingwell" src="../../../../../_images/iron-triangle.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-text">Iron Triangle. The image source is «Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise» by Dean Leffingwell</span><a class="headerlink" href="#id4" title="Постоянная ссылка на рисунок">¶</a></p>
+<div class="figure align-left" id="id5">
+<a class="reference internal image-reference" href="../../../../../_images/iron-triangle.png"><img alt="Iron Triangle. Agile fixes the date and resources and varies the scope. The image source is &quot;Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise&quot; by Dean Leffingwell" src="../../../../../_images/iron-triangle.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text">Iron Triangle. Agile fixes the date and resources and varies the scope. The image source is «Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise» by Dean Leffingwell</span><a class="headerlink" href="#id5" title="Постоянная ссылка на рисунок">¶</a></p>
 </div>
 <p>Итеративная разработка востребована, когда невозможно достигнуть полноты (Complete) требований (set of <a class="reference internal" href="../../models/agile/analysis/requirements/requirements.html#emacsway-agile-requirements"><span class="std std-ref">requirements</span></a>).</p>
 <blockquote>

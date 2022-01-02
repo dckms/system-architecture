@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кристаллизация знаний. Как читать и не превратиться в коллекционера информации. &#8212; System Architecture</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="Общее пространство" href="../../trunk/index.html" />
+    <link rel="prev" title="Психологическое значение планирования" href="planning-in-psychology.html" />
+    
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+
+
+    
+        
+            <link rel="canonical" href="https://dckms.github.io/system-architecture/emacsway/soft-skills/learning.html" />
+        
+    
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+              <div class="related top">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="planning-in-psychology.html" title="Previous document">Психологическое значение планирования</a>
+        </li>
+        <li>
+          <a href="../../trunk/index.html" title="Next document">Общее пространство</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+
+          <div class="body" role="main">
+            
+    
+  <span class="target" id="index-0"></span><div class="section" id="emacsway-learning-in-psychology">
+<span id="id1"></span><h1>Кристаллизация знаний. Как читать и не превратиться в коллекционера информации.<a class="headerlink" href="#emacsway-learning-in-psychology" title="Ссылка на этот заголовок">¶</a></h1>
+<p><em>Автор раздела: Ivan Zakrevsky</em></p>
+<p>Иногда у меня спрашивают, как мне удается запоминать так много информации.
+Истина в том, что я не собираю информацию, а, наоборот, дистиллирую её.
+Процесс кристаллизации знаний заключается в том, чтобы сократить количество возможных вариантов.</p>
+<p>Кто работал с TDD, тот знаком с методом проектирования ПО путем обобщения в результате триангуляции.
+Если кто не знаком, то обязательно почитайте «Test-Driven Development By Example» by Kent Beck - это на вес золота.</p>
+<blockquote>
+<div><p>📝 «Here is another general pattern of refactoring: <strong>take code that works in one instance and generalize it to work in many</strong> by replacing constants with variables.
+Here the constant was hardwired code, not a data value, but the principle is the same.
+<strong>TDD makes this work well by giving you running concrete examples from which to generalize</strong>, instead of having to generalize purely with reasoning.»</p>
+<p class="attribution">—«Test-Driven Development By Example» by Kent Beck</p>
+</div></blockquote>
+<p>Именно процесс триангуляции и обобщения происходит в моей памяти под воздействием новых точек зрения, которые дает литература.
+Таким образом, чем больше литературы я освоил, тем с более узким подмножеством вариантов я остался.
+Как говорил Robert C. Martin, архитектура - это наука о том, как не надо делать.</p>
+<p>Отсечение - основной метод работы скульптора, благодаря которому из бесформенной глыбы высвобождается образ.
+Обратите внимание, слово «образование» (в контексте обучения) происходит от слова «образ».</p>
+<p>Чем меньшим количеством вариантов я обладаю, тем легче мне ориентироваться среди них.
+Именно эта легкость и создает у стороннего наблюдателя ошибочную иллюзию изобилия информации.</p>
+<p>Самое главное - это выявлять и понимать причинно-следственные связи, тогда не нужно запоминать все разнообразие возможных вариантов.
+Наглядный пример хорошо демонстрируется в этой статье Kent Beck о поисках границ микросервисов:</p>
+<p>– «<a class="reference external" href="https://medium.com/&#64;kentbeck_7670/monolith-services-theory-practice-617e4546a879">Monolith -&gt; Services: Theory &amp; Practice</a>» by Kent Beck</p>
+<p>В детстве на меня произвели впечатления слова одного боевого офицера спецслужб, сослуживца моего отца, мастера спорта по рукопашному бою.
+Он говорил, что знать много приемов вредно - можно запутаться в критической ситуации.</p>
+<p>По этому поводу мне нравится позиция Никлаус Вирт:</p>
+<blockquote>
+<div><p>📝 «Богатство функциональных возможностей во многих современных языках - это действительно проблема сама по себе, а не решение других проблем.
+Избыток возможностей - это еще одно следствие веры многих программистов в то, что ценность языка пропорциональна количеству этих возможностей (как я это называю- это вера в «колокольчики и свистки»).
+Однако, мы знаем, что будет лучше, если каждое базисное понятие представляется единственной, специально для этого предназначенной конструкцией.
+Это не только сокращает усилия по изучению языка, но и сокращает размер его описания, что, в свою очередь, помогает избежать несогласованности и неправильного понимания.
+Поддержание языка максимально простым и регулярным всегда было приоритетом в моей работе: описание Pascal занимало около 50 страниц, Modula - около 40, а Oberon - и вовсе 16.
+И я рассматриваю эту тенденцию как прогрессивную.
+Истинная ценность языков программирования зависит от качества и практичности их абстракций.
+Пример - абстракция, называемая «число» или абстракция «логическая величина», замещающая конкретную строку битов.</p>
+<p>Ценность такого рода абстракции основывается на ее целостности.
+В случае чисел должны быть применяемы только арифметические операции, независимо от того факта, что логические операции, в принципе, также могут быть применимы к битовым строкам, представляющим числа.»
+-
+- «<a class="reference external" href="http://hosting.vspu.ac.ru/~chul/wirth/culture/culture.htm">О культуре разработки ПО</a>» / Никлаус Вирт</p>
+</div></blockquote>
+<p>P.S.: Бесподобная книга о том, как читать и не превратиться в коллекционера информации - «Как читать книги» / Поварнин С.И.
+Читается за один вечер.
+Книга номер один.</p>
+<div class="admonition seealso">
+<p class="admonition-title">См.также</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="planning-in-psychology.html#emacsway-planning-in-psychology"><span class="std std-ref">Психологическое значение планирования</span></a></p></li>
+<li><p><a class="reference internal" href="icebreaker-principle.html"><span class="doc">Принцип ледокола</span></a></p></li>
+<li><p><a class="reference internal" href="../../README.html"><span class="doc">Как пользоваться</span></a></p></li>
+<li><p><a class="reference internal" href="../it/self-education/self-education-for-software-engineer.html"><span class="doc">Список литературы для самообучения разработчика программного обеспечения</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+
+    
+        
+            <div class="section" style="text-align: right;">
+                <p><a href="https://dckms.github.io/system-architecture/emacsway/soft-skills/learning.html">Canonical URL</a></p>
+            </div>
+        
+    
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="planning-in-psychology.html" title="Previous document">Психологическое значение планирования</a>
+        </li>
+        <li>
+          <a href="../../trunk/index.html" title="Next document">Общее пространство</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">System Architecture</a></h1>
+
+
+
+<p class="blurb">Distributed Collaborative Knowledge Management System for System Architecture</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dckms&repo=system-architecture&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Общее пространство:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../trunk/it/index.html">IT</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../trunk/soft-skills/index.html">Soft Skills</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../trunk/index.html">Общее пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Авторские пространства:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Пространство Emacsway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Приватное пространствo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../private/index.html">Приватное пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Прочее:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Как пользоваться</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../trunk/soft-skills/index.html">Soft Skills</a><ul>
+      <li>Previous: <a href="planning-in-psychology.html" title="предыдущая глава">Психологическое значение планирования</a></li>
+      <li>Next: <a href="../../trunk/index.html" title="следующая глава">Общее пространство</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="footer">
+      &copy;2022, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE" rel="nofollow">License</a>).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/emacsway/soft-skills/learning.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/dckms/system-architecture" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+
+    
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+           ym(87033138, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true,
+                trackHash:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/87033138" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    
+
+  </body>
+</html>

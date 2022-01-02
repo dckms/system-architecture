@@ -6,7 +6,7 @@
 
 
 ===================================
-Документирование требований в Agile
+Документирование Agile Requirements
 ===================================
 
 .. sectionauthor:: Ivan Zakrevsky
@@ -48,6 +48,16 @@
     Do not spend time attempting to anticipate all possible needs."
 
     -- "Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman
+
+..
+
+    📝 "Create Minimal but Sufficient Documentation.
+    Document-based approaches to managing solution intent and context do not scale.
+    Indeed, they quickly become obsolete and inconsistent with one another.
+    The alternative is a set of related digital models that define, design, analyze, and document the system under development.
+    Some models specify system requirements and design, while others are domain-specific (e.g., electrical, mechanical, or some systems property).
+
+    -- "SAFe® 5.0: The World’s Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell
 
 ..
 

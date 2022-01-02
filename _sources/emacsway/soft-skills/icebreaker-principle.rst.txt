@@ -1,6 +1,7 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
 .. index:: Icebreaker Principle, Soft Skills
+   :name: emacsway-icebreaker-principle
 
 ================
 Принцип ледокола
@@ -216,4 +217,3 @@ Grady Booch говорил, что архитектура - это многоу�
    - :doc:`./change-making`
    - :doc:`./planning-in-psychology`
 
-Источник: https://t.me/emacsway_log/665
