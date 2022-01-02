@@ -11,3 +11,4 @@ Soft Skills
    /emacsway/soft-skills/change-making
    /emacsway/soft-skills/icebreaker-principle
    /emacsway/soft-skills/planning-in-psychology
+   /emacsway/soft-skills/learning
