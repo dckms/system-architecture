@@ -44,7 +44,7 @@ Prediction при этом не исчезает полностью, а пони
 .. figure:: _media/adaptation/cost-of-decision-over-time.png
    :alt: FIGURE 3.6 Make decisions at the last responsible moment. The image source is "Essential Scrum: A Practical Guide to the Most Popular Agile Process" by Kenneth Rubin, "Chapter 3 Agile Principles :: Prediction and Adaptation".
    :align: left
-   :width: 90%
+   :width: 70%
 
    FIGURE 3.6 Make decisions at the last responsible moment. The image source is "Essential Scrum: A Practical Guide to the Most Popular Agile Process" by Kenneth Rubin, "Chapter 3 Agile Principles :: Prediction and Adaptation".
 
