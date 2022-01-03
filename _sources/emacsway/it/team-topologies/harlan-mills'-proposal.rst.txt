@@ -213,8 +213,7 @@ Harlan Mills' Proposal (Предложение Харлана Миллза):
 
     📝 "In theory, you don’t need microservices for this if you simply have the discipline to follow clear rules and establish clear boundaries within your monolithic application; in practice, I’ve found this to be the case only very rarely.)"
 
-    -- "Don’t start with a monolith" by Stefan Tilkov
-    https://martinfowler.com/articles/dont-start-monolith.html
+    -- "`Don’t start with a monolith <https://martinfowler.com/articles/dont-start-monolith.html>`__" by Stefan Tilkov
 
 Сетевые границы решают проблему, известную как creeping coupling или abstraction leak. А это позволяет снизить квалификационные требования к разработчикам, тем более, что Microservices First обычно имеет экономическую целесообразность только при задействовании большого количества разработчиков.
 

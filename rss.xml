@@ -165,8 +165,7 @@
 &lt;p&gt;На самом деле, если у вас армейская дисциплина среди разработчиков, то нет необходимости укреплять сетевыми границами пределы автономности команд, поскольку границами автономности команды является Bounded Context, который не обязательно должен быть выражен микорсервисом(-ами).&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div&gt;&lt;p&gt;📝 «In theory, you don’t need microservices for this if you simply have the discipline to follow clear rules and establish clear boundaries within your monolithic application; in practice, I’ve found this to be the case only very rarely.)»&lt;/p&gt;
-&lt;p class="attribution"&gt;—«Don’t start with a monolith» by Stefan Tilkov
-&lt;a class="reference external" href="https://martinfowler.com/articles/dont-start-monolith.html"&gt;https://martinfowler.com/articles/dont-start-monolith.html&lt;/a&gt;&lt;/p&gt;
+&lt;p class="attribution"&gt;—«&lt;a class="reference external" href="https://martinfowler.com/articles/dont-start-monolith.html"&gt;Don’t start with a monolith&lt;/a&gt;» by Stefan Tilkov&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
 &lt;p&gt;Сетевые границы решают проблему, известную как creeping coupling или abstraction leak. А это позволяет снизить квалификационные требования к разработчикам, тем более, что Microservices First обычно имеет экономическую целесообразность только при задействовании большого количества разработчиков.&lt;/p&gt;
 &lt;blockquote&gt;
