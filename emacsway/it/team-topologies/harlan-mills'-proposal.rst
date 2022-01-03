@@ -237,7 +237,7 @@ Program Management
 Рост силы тяжести опережает рост прочности.
 По мере роста массы организма в нем появляется скелет, который выполняет опорные функции.
 
-По этой же причине бумажный кораблик хорошо плавает по воде, но если его пропорционально увеличить в несколько раз, то он рухнет под собственной тяжестью без фермы жесткости.
+По этой же причине бумажный кораблик хорошо держит форму, но если его пропорционально увеличить в несколько раз, то он рухнет под собственной тяжестью без фермы жесткости.
 
 Попытка фрактально увеличивать численность Scrum/Nexus-команд равносильна попытке создать беспозвоночное животное с массой динозавра.
 Основная тяжесть, под которой рушится прочность коллектива, формируется коммуникативной нагрузкой (з-н Брукса: n(n-1)/2).
@@ -264,7 +264,7 @@ SAFe создан известным автором по аналитике Dean
 Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise
 ------------------------------------------------------------------------------------------------
 
-В книге "`Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise <https://www.amazon.com/Agile-Software-Requirements-Enterprise-Development/dp/0321635841>`__" by Dean Leffingwell, которая вышла в печать в том же году, в котором он выпустил первый релиз SAFe, Dean Leffingwell убедительно обосновывает, что аналитики и архитекторы должны быть частью системной команды.
+В книге "Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise" by Dean Leffingwell, которая вышла в печать в том же году, в котором он выпустил первый релиз SAFe, Dean Leffingwell убедительно обосновывает, что аналитики и архитекторы должны быть частью системной команды.
 
     📝 "Architects: Many agile teams do not contain people with titles containing the word architect [The best architectures, requirements, and designs emerge from self-organizing teams.], and yet architecture does matter to agile teams.
     In these cases, the local architecture (that of the component, service, or feature that the team is accountable for) is most often determined by the local teams in a collaborative model.
@@ -293,24 +293,27 @@ Agile Software Requirements: Lean Requirements Practices for Teams, Programs, an
    1. Реализация текущего системного инкремента.
    2. Анализ и проектирование (т.е. :ref:`Prediction-активности <emacsway-prediction>` в виде Spike и PBR) будущего системного инкремента.
 
-   Источником работы аналитиков являются стейкхолдеры, а результатом работы - требования, т.е. :ref:`PBI <emacsway-product-backlog-item>`.
+   Источником работы аналитиков являются стейкхолдеры, а результатом работы - требования (под руководством Product Owner, разумеется), т.е. :ref:`PBI <emacsway-product-backlog-item>`.
    В то время как для команды разработки источником работы являются PBI (в состоянии DOR), а результатом работы - Системный Инкремент.
 
-   Получается, что две команды работают несинхронно, над разными целями, и производят разные вещи.
+   Получается, что две команды работают несинхронно, над разными целями, и производят разные артефакты.
+   Аналитики работают вне цикла реализации Системного Инкремента, опережая его в среднем на пару спринтов.
 
-   Такие активности, как Spike, нацеленые на достижение цели будущих спринтов, повышают когнитивную нагрузку и затрудняют управление текущим спринтом.
-   Для малочисленного коллектива эта нагрузка не превышает накладные расходы на содержание отдельного Program Backlog.
-   Но, по мере роста численности коллектива, эти накладные расходы начинают уже окупаться.
+   PBI, не производящий Системного Инкремента, но производящий артефакты, необходимые для доведения PBI до состояния DOR, традиционно называется Spike.
+   Spike нацелен на достижение цели будущих спринтов, поэтому его присутствие в текущем спринте отвлекает от цели текущего спринта, повышает когнитивную нагрузку и затрудняет управление Team Backlog.
+   Для малочисленного коллектива (тем более, для Single Team Agile) эта нагрузка не превышает накладные расходы на содержание отдельного Program Backlog.
+   Но, по мере роста численности коллектива, накладные расходы на содержание отдельного Program Backlog начинают уже окупаться.
 
-2. По мере роста численности коллектива растет коммуникативная нагрузка, и требуется повышение уровня автономности команд.
+2. По мере роста численности коллектива растет коммуникативная нагрузка, и требуется :ref:`повышение уровня автономности команд <emacsway-harlan-mills'-proposal>`.
 3. Системные инкременты, производимы командами, нуждаются в интеграции.
+4. Стоимость :ref:`адаптации <emacsway-adaptation>` Продукта возрастает стремительней роста численность коллектива, что создает экономическую целесообразность для смещения :ref:`баланса Pridiction/Adaptation <emacsway-balancing-prediction-adaptation>` в сторону :ref:`Prediction <emacsway-prediction>`.
 
-Поэтому, аналитику, архитектуру и UX/UI Design в таком случае выводят в отдельный цикл производства, известный сегодня как Program Management (который следует отличать от Program Management в PMBoK).
-Получается два каскадных цикла, при этом, первый цикл (Program Backlog) создает арефакты, необходимые для DOR второго цикла (Team Backlogs), который, в свою очередь, уже производит системный инкремент.
+Поэтому, аналитику, архитектуру и UX/UI Design, в таком случае, выводят в отдельный цикл производства, известный сегодня как Program Management (который следует отличать от Program Management в PMBoK).
+Получается два каскадных цикла, при этом, первый цикл (Program Backlog) создает артефакты, необходимые для достижения DOR для второго цикла (Team Backlogs), который, в свою очередь, уже производит системный инкремент.
 
 Говоря о проблемах масштабирования Agile-команд, мне очень интересной показалась ещё одна его книга, которая вышла 4-мя годами ранее:
 
-- "`Scaling Software Agility: Best Practices for Large Enterprises <https://www.amazon.com/gp/aw/d/0321458192/>`__" by Dean Leffingwell
+- "Scaling Software Agility: Best Practices for Large Enterprises" by Dean Leffingwell
 
 
 Scaled Agile Framework (SAFe)
@@ -322,6 +325,8 @@ Scaled Agile Framework (SAFe)
 - "`Agile Teams <https://www.scaledagileframework.com/agile-teams/>`__"
 - "`Organizing Agile Teams and ARTs: Team Topologies at Scale <https://www.scaledagileframework.com/organizing-agile-teams-and-arts-team-topologies-at-scale/>`__"
 - "`Shared Services <https://www.scaledagileframework.com/shared-services/>`__"
+- "`Architectural Runway <https://www.scaledagileframework.com/architectural-runway/>`__"
+- "`Agile Architecture in SAFe <https://www.scaledagileframework.com/agile-architecture/>`__"
 
     📝 "The second dimension of the team and technical agility competency is teams of Agile teams. Even with good, local execution, building enterprise-class solutions typically requires more scope and breadth of skills than a single Agile team can provide. Therefore, Agile teams operate in the context of an ART, which is a long-lived team of Agile teams. The ART incrementally develops, delivers, and (where applicable) operates one or more solutions (Figure 6-5)."
 
@@ -408,7 +413,7 @@ Nexus
 
     -- "`Comparing Nexus and SAFe - Similarities, Differences, potential synergies <https://www.scrum.org/resources/blog/comparing-nexus-and-safe-similarities-differences-potential-synergies>`__" by Yuval Yeret
 
-Здесь автор ссылается на другую свою статью "`Scaling Scrum with Nexus and Kanban <https://www.scrum.org/resources/blog/scaling-scrum-nexus-and-kanban>`__" by Yuval Yeret, где предлагает интегрировать Program Management в Nexus, подобно тому, как это сделано в SAFe.
+Здесь автор ссылается на другую свою статью "`Scaling Scrum with Nexus and Kanban <https://www.scrum.org/resources/blog/scaling-scrum-nexus-and-kanban>`__" by Yuval Yeret, где предлагает интегрировать Program Management в самую легковесную scaled Scrum модель разработки Nexus, подобно тому, как это сделано в SAFe.
 
     📝 "This will include all stages of work in the Nexus - ranging from Value discovery..."
 
@@ -453,7 +458,12 @@ More than ever I believe that someone who claims to be an **Architect needs both
 
 - "The Mythical Man-Month Essays on Software Engineering Anniversary Edition" by Frederick P. Brooks, Jr.
 - "Team Topologies: Organizing Business and Technology Teams for Fast Flow" by Matthew Skelton
+- "Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise" by Dean Leffingwell
+- "Scaling Software Agility: Best Practices for Large Enterprises" by Dean Leffingwell
+- "SAFe® 5.0: The World’s Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell
+- "`Agile Practice Guide <https://www.pmi.org/pmbok-guide-standards/practice-guides/agile>`__" by Project Management Institute, 2017
 - "`Architecture Modernization with Strategic Domain-Driven Design. A Guide for Technology Leaders. <https://leanpub.com/arch-modernization-ddd>`__" by Nick Tune
+- "`Open Agile Architecture. A Standard of The Open Group <https://pubs.opengroup.org/architecture/o-aa-standard/>`__"
 
 
 Ссылки по теме
@@ -464,18 +474,7 @@ More than ever I believe that someone who claims to be an **Architect needs both
 #. "`Architecture Ownership Patterns for Team Topologies. Part 3: Multi-Team Patterns <https://medium.com/nick-tune-tech-strategy-blog/architecture-ownership-patterns-for-team-topologies-part-3-multi-team-patterns-eecc146ddb28>`__" by Nick Tune
 
 - "`About Team Topologies and Context Mapping <https://blog.avanscoperta.it/2021/04/22/about-team-topologies-and-context-mapping/>`__" by Alberto Brandolini
-
 - "`The strong and weak forces of architecture <https://martinfowler.com/articles/strong-weak-arch.html>`__" by Evan Bottcher
 - "`Compliance in a DevOps Culture. Integrating Compliance Controls and Audit into CI/CD Processes <https://martinfowler.com/articles/devops-compliance.html>`__ by Carl Nygard
-
 - "`How using events helps in a teams' autonomy <https://event-driven.io/en/how_using_events_help_in_teams_autonomy/>`__" by Oskar Dudycz
-
-1. "`Agile Teams <https://www.scaledagileframework.com/agile-teams/>`__"
-#. "`Organizing Agile Teams and ARTs: Team Topologies at Scale <https://www.scaledagileframework.com/organizing-agile-teams-and-arts-team-topologies-at-scale/>`__"
-#. "`System and Solution Architect/Engineering <https://www.scaledagileframework.com/system-and-solution-architect-engineering/>`__"
-#. "`Enterprise Architect <https://www.scaledagileframework.com/enterprise-architect/>`__"
-#. "`Architectural Runway <https://www.scaledagileframework.com/architectural-runway/>`__"
-#. "`Agile Architecture in SAFe <https://www.scaledagileframework.com/agile-architecture/>`__"
-
-- "`Open Agile Architecture. A Standard of The Open Group <https://pubs.opengroup.org/architecture/o-aa-standard/>`__"
 
