@@ -1,6 +1,10 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
-.. index:: Literature, Self-education
+.. index:: Self-education
+
+.. index::
+   single: Literature; in Self-education
+   :name: emacsway-self-education-literature
 
 ========================================================================
 Список литературы для самообучения разработчика программного обеспечения

@@ -1,6 +1,10 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
-.. index:: Economics, Literature
+.. index:: Economics
+
+.. index::
+   single: Literature; in Economics of Software Development
+   :name: emacsway-software-development-economics-literature
 
 =============================================================
 Краткий курс по экономике разработки программного обеспечения

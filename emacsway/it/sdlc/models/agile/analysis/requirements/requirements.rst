@@ -161,7 +161,8 @@ Bertrand Meyer о том, в чем отличия между User Story и Requ
 В таком случае требования уточняются по мере снижения уровня неопределенности, что является базовым принципом :ref:`итеративной модели <emacsway-iterative-development>` разработки.
 
 
-.. index:: Literature
+.. index::
+   single: Literature; in Agile requirements
    :name: emacsway-agile-requirements-literature
 
 Литература про Agile-requirements
