@@ -1,5 +1,5 @@
 ===============
-Team-Topologies
+Team Topologies
 ===============
 
 .. toctree::
