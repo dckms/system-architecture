@@ -65,7 +65,7 @@ Frederick Brooks формулирует противоречие. С одной 
 
     ... smaller teams working on smaller codebases tend to be more productive!"
 
-    -- "Building Microservices. Designing Fine-Grained Systems" by Sam Newman
+    -- "Building Microservices. Designing Fine-Grained Systems" by Sam Newman, перевод ООО Издательство "Питер"
 
 Но, с другой стороны:
 
@@ -181,7 +181,7 @@ Harlan Mills' Proposal (Предложение Харлана Миллза):
 
     ... we aim to ensure our services are decomposed such that the **pace of change inside a service is much higher than the pace of change between services**."
 
-    -- "Building Microservices. Designing Fine-Grained Systems" by Sam Newman
+    -- "Building Microservices. Designing Fine-Grained Systems" by Sam Newman, перевод ООО Издательство "Питер"
 
 ..
 
@@ -199,7 +199,7 @@ Harlan Mills' Proposal (Предложение Харлана Миллза):
 
     Probably the two poster children for the idea that organizations and architecture should be aligned are Amazon and Netflix. Early on, Amazon started to understand the benefits of teams owning the whole lifecycle of the systems they managed. It wanted teams to own and operate the systems they looked after, managing the entire lifecycle. But Amazon also knew that **small teams can work faster than large teams**. This led famously to its two-pizza teams, where no team should be so big that it could not be fed with two pizzas. This driver for small teams owning the whole lifecycle of their services is a major reason why Amazon developed Amazon Web Services. It needed to create the tooling to allow its teams to be self-sufficient. Netflix learned from this example, and ensured that from the beginning it structured itself around small, independent teams, so that the services they created would also be independent from each other. This ensured that the architecture of the system was optimized for speed of change. Effectively, Netflix designed the organizational structure for the system architecture it wanted."
 
-    -- "Building Microservices. Designing Fine-Grained Systems" by Sam Newman
+    -- "Building Microservices. Designing Fine-Grained Systems" by Sam Newman, перевод ООО Издательство "Питер"
 
 я хотел бы добавить еще одно высказывание от разработчиков популярного микросервисного фреймворка go-kit:
 
@@ -222,10 +222,106 @@ Harlan Mills' Proposal (Предложение Харлана Миллза):
 
     All communication between the services themselves are via network calls, **to enforce separation between the services** and avoid the perils of tight coupling."
 
-    -- "Building Microservices. Designing Fine-Grained Systems" by Sam Newman
+    -- "Building Microservices. Designing Fine-Grained Systems" by Sam Newman, перевод ООО Издательство "Питер"
 
 
-SAFe:
+.. index::
+   single: Program Management; in Team Topologies at scale
+   :name: emacsway-team-topologies-at-scale-program-management
+
+Program Management
+==================
+
+Знаете, почему не бывает больших червяков?
+Любое беспозвоночное животное не может быть бесконечно большим, поскольку на определенном пороге сила его тяжести превысит его прочность.
+Рост силы тяжести опережает рост прочности.
+По мере роста массы организма в нем появляется скелет, который выполняет опорные функции.
+
+По этой же причине бумажный кораблик хорошо плавает по воде, но если его пропорционально увеличить в несколько раз, то он рухнет под собственной тяжестью без фермы жесткости.
+
+Попытка фрактально увеличивать численность Scrum/Nexus-команд равносильна попытке создать беспозвоночное животное с массой динозавра.
+Основная тяжесть, под которой рушится прочность коллектива, формируется коммуникативной нагрузкой (з-н Брукса: n(n-1)/2).
+
+
+Spotify
+-------
+
+Даже в Spotify существует такой "опорный скелет":
+
+    📝 "At Spotify there is a separate operations team, but their job is not to make releases for the squads -­ their job is to give the squads the support they need to release code themselves; support in the form of infrastructure, scripts, and routines. They are, in a sense, “building the road to production”.
+
+    <...>
+
+    We also have a chief architect role, a person who coordinates work on high-­level architectural issues that cut across multiple systems. He reviews development of new systems to make sure they avoid common mistakes, and that they are aligned with our architectural vision. The feedback is always just suggestions and input -­ the decision for the final design of the system still lies with the squad building it."
+
+    -- "`Scaling Agile @ Spotify with Tribes, Squads, Chapters & Guilds <https://www.scrumatscale.com/wp-content/uploads/2020/09/S@S_Spotify_Scaling.pdf>`__" by Henrik Kniberg & Anders Ivarsson, Oct 2012
+
+Но более отчетливо этот скелет сформирован в виде Program Management в `Scaled Agile Framework (SAFe) <https://www.scaledagileframework.com/>`__ и в `Disciplined agile delivery (DAD) <https://www.pmi.org/disciplined-agile/process/introduction-to-dad>`__.
+
+SAFe создан известным автором по аналитике Dean Leffingwell, и, наверное, поэтому SAFe хорошо регламентирует процессы, предшествующие этапу реализации ПО в условиях масштабируемой Agile-разработки.
+
+
+Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise
+------------------------------------------------------------------------------------------------
+
+В книге "`Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise <https://www.amazon.com/Agile-Software-Requirements-Enterprise-Development/dp/0321635841>`__" by Dean Leffingwell, которая вышла в печать в том же году, в котором он выпустил первый релиз SAFe, Dean Leffingwell убедительно обосновывает, что аналитики и архитекторы должны быть частью системной команды.
+
+    📝 "Architects: Many agile teams do not contain people with titles containing the word architect [The best architectures, requirements, and designs emerge from self-organizing teams.], and yet architecture does matter to agile teams.
+    In these cases, the local architecture (that of the component, service, or feature that the team is accountable for) is most often determined by the local teams in a collaborative model.
+    In this way, it can be said that “architecture emerges” from the activities of those teams.
+
+    At the system level, however, **architecture is often coordinated among system architects and business analysts who are responsible for determining the overall structure (components and services) of the system**, as well as the system-level use cases and performance criteria that are to be imposed on the system as a whole. For this reason, it is likely that the **agile team has a key interface to one or more architects who may live outside the team**.
+    (We’ll discuss this in depth in Chapter 20.)
+
+    <...>
+
+    Some of these QA personnel will live outside the team, while others (primarily testers) will have likely been dispatched to live with the product team.
+    There, they work daily with developers to test new code and thereby help assure new code quality on a real-time basis.
+
+    In addition, as we’ll see later, QA personnel are involved with the development of the system-level testing required to assure overall system quality and conformance to nonfunctional, as well as functional, requirements.
+
+    <...>
+
+    Other specialists and supporting personnel: Other supporting roles may include user-experience designers, documentation specialists, database designers and administrators, configuration management, build and deployment specialists, and whomever else is necessary to develop and deploy a whole product solution.
+
+    -- Agile Software Requirements Lean Requirements Practices for Teams, Programs, and the Enterprise (Agile Software Development Series) by Dean Leffingwell
+
+Для такого решения есть несколько причин:
+
+1. В спринте возникают две цели (текущая и посторонняя):
+
+   1. Реализация текущего системного инкремента.
+   2. Анализ и проектирование (т.е. :ref:`Prediction-активности <emacsway-prediction>` в виде Spike и PBR) будущего системного инкремента.
+
+   Источником работы аналитиков являются стейкхолдеры, а результатом работы - требования, т.е. :ref:`PBI <emacsway-product-backlog-item>`.
+   В то время как для команды разработки источником работы являются PBI (в состоянии DOR), а результатом работы - Системный Инкремент.
+
+   Получается, что две команды работают несинхронно, над разными целями, и производят разные вещи.
+
+   Такие активности, как Spike, нацеленые на достижение цели будущих спринтов, повышают когнитивную нагрузку и затрудняют управление текущим спринтом.
+   Для малочисленного коллектива эта нагрузка не превышает накладные расходы на содержание отдельного Program Backlog.
+   Но, по мере роста численности коллектива, эти накладные расходы начинают уже окупаться.
+
+2. По мере роста численности коллектива растет коммуникативная нагрузка, и требуется повышение уровня автономности команд.
+3. Системные инкременты, производимы командами, нуждаются в интеграции.
+
+Поэтому, аналитику, архитектуру и UX/UI Design в таком случае выводят в отдельный цикл производства, известный сегодня как Program Management (который следует отличать от Program Management в PMBoK).
+Получается два каскадных цикла, при этом, первый цикл (Program Backlog) создает арефакты, необходимые для DOR второго цикла (Team Backlogs), который, в свою очередь, уже производит системный инкремент.
+
+Говоря о проблемах масштабирования Agile-команд, мне очень интересной показалась ещё одна его книга, которая вышла 4-мя годами ранее:
+
+- "`Scaling Software Agility: Best Practices for Large Enterprises <https://www.amazon.com/gp/aw/d/0321458192/>`__" by Dean Leffingwell
+
+
+Scaled Agile Framework (SAFe)
+-----------------------------
+
+- "`SAFe® 5.0 Distilled: Achieving Business Agility with the Scaled Agile Framework® <https://www.amazon.com/dp/B08F5HC37Z>`__" by Richard Knaster, Dean Leffingwell
+- "`Program and Solution Backlogs <https://www.scaledagileframework.com/program-and-solution-backlogs/>`__"
+- "`System Architect/Engineering <https://www.scaledagileframework.com/system-architect-engineering/>`__"
+- "`Agile Teams <https://www.scaledagileframework.com/agile-teams/>`__"
+- "`Organizing Agile Teams and ARTs: Team Topologies at Scale <https://www.scaledagileframework.com/organizing-agile-teams-and-arts-team-topologies-at-scale/>`__"
+- "`Shared Services <https://www.scaledagileframework.com/shared-services/>`__"
 
     📝 "The second dimension of the team and technical agility competency is teams of Agile teams. Even with good, local execution, building enterprise-class solutions typically requires more scope and breadth of skills than a single Agile team can provide. Therefore, Agile teams operate in the context of an ART, which is a long-lived team of Agile teams. The ART incrementally develops, delivers, and (where applicable) operates one or more solutions (Figure 6-5)."
 
@@ -240,6 +336,112 @@ SAFe:
     📝 "Figure 8-8. Architecture impacts the ability to release system elements independently"
 
     -- "SAFe® 5.0: The World’s Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell
+
+
+"Agile Practice Guide" by PMI
+-----------------------------
+
+Отдельно стоит выделить книгу "`Agile Practice Guide <https://www.pmi.org/pmbok-guide-standards/practice-guides/agile>`__" by Project Management Institute, 2017, поскольку эта книга является мощным оружием в руках аналитиков и архитекторов в вопросах организации качественных процессов.
+Автором книги является Project Management Institute (PMI), обладающий неоспоримым авторитетом в глазах менеджмента.
+Книга достаточно грамотная, и затрагивает острые вопросы интеграции аналитической и архитектурной активности в Agile-разработку.
+В общем, если вы где-то услышите фразу "Architecture vs. Agile", то самое время вспомнить об этой книге.
+
+- "`A Lean and Scalable Requirements Information Model for the Agile Enterprise <https://scalingsoftwareagility.files.wordpress.com/2007/03/a-lean-and-scalable-requirements-information-model-for-agile-enterprises-pdf.pdf>`__" by Dean Leffingwell with Juha‐Markus Aalto 
+
+
+Disciplined agile delivery (DAD)
+--------------------------------
+
+И еще один официальный способ о том, как интегрировать работу аналитиков и архитекторов в Scrum:
+
+- "`DAD Life Cycle – Program (Team of Teams) <https://www.pmi.org/disciplined-agile/lifecycle/program>`__"
+- "`Program Management <https://www.pmi.org/disciplined-agile/process/program-management>`__"
+- "`Large Agile Teams <https://www.pmi.org/disciplined-agile/agility-at-scale/tactical-agility-at-scale/large-agile-teams>`__"
+- "`Organizing Agile Teams : Large Teams/Programs <https://www.pmi.org/disciplined-agile/agility-at-scale/tactical-agility-at-scale/large-agile-teams/organizing-agile-teams#Large>`__"
+- "`The Standard for Program Management – Fourth Edition <https://www.pmi.org/pmbok-guide-standards/foundational/program-management>`__"
+
+Учитывая, что Disciplined agile delivery (DAD) сопровождается и развивается by Project Management Institute (PMI), интеграция его практик вызвает, как правило, меньше всего возражений со стороны менеджмента.
+
+См. также:
+
+- "`Agile Architecture: Strategies for Scaling Agile Development <http://agilemodeling.com/essays/agileArchitecture.htm>`__"
+
+
+ISO/IEC/IEEE 12207:2017
+-----------------------
+
+    📝 "Agile projects for complex systems attempt to manage cost by prioritizing the most important capabilities for early realization.
+    If an organization manages the development and maintenance of its entire portfolio of software systems as a single system, managed by spend rate rather than total spending, then the organization can, in principle, manage that portfolio of systems as a continuing agile development, analogous to managing a highly iterative "Kanban" maintenance effort."
+
+    -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
+
+
+Nexus
+-----
+
+На scrum.org есть интересная статья, сравнивающая Nexus и SAFe:
+
+- "`Comparing Nexus and SAFe - Similarities, Differences, potential synergies <https://www.scrum.org/resources/blog/comparing-nexus-and-safe-similarities-differences-potential-synergies>`__" by Yuval Yeret
+
+Интересна она, прежде всего, тем, что открыто говорит о проблемах Nexus, которые можно решить путем заимствования практик у SAFe.
+
+Одним из наиболее узких мест Nexus является отсутствие масштабирования архитектурной работы в problem space (сбор требований, аналитика...):
+
+    📝 "it’s hard for one Product Owner to deal with too many teams...
+    In real life, these Product Owners are typically accountable for the value delivered by these multiple teams and rely upon a lot of assistance from the Development Teams in order to deal with the challenge of scale."
+
+    -- "`Comparing Nexus and SAFe - Similarities, Differences, potential synergies <https://www.scrum.org/resources/blog/comparing-nexus-and-safe-similarities-differences-potential-synergies>`__" by Yuval Yeret
+
+Статья подчеркивает ограниченность Nexus и предлагает к рассмотрению SAFe-практики:
+
+    📝 "As Nexus is designed to be a lightweight framework, with a more limited scope than SAFe, its not surprising that there are a lot more elements in SAFe that Nexus doesn’t say anything about.
+    Some of these can be useful in your context, some not necessarily.
+    Think Architectural Runway, Innovation and Planning iteration, Team-level Kanbans, DevOps, Continuous Delivery pipeline, System Architect, Business Owner, Features/Enablers, Epics."
+
+    -- "`Comparing Nexus and SAFe - Similarities, Differences, potential synergies <https://www.scrum.org/resources/blog/comparing-nexus-and-safe-similarities-differences-potential-synergies>`__" by Yuval Yeret
+
+В числе прочего, упоминается и выделенная роль системного архитектора, поскольку в масштабируемом Agile возникают вопросы одновременного достижения как интеграции инкремента продукта, так и автономности команд.
+
+В статье много лестных отзывов о Program Kanban:
+
+    📝 "Program Kanban. SAFe includes one of the most powerful techniques to help improve flow and collaboration across a team of teams - a Kanban Board that takes a cross-team perspective. I started using this technique back in 2009 and it’s one I “don’t leave home without”. Nexus doesn’t include a Nexus-level Kanban board but it's a very nice complementary practice to consider. `Read more here <https://www.scrum.org/resources/blog/scaling-scrum-nexus-and-kanban>`__"
+
+    -- "`Comparing Nexus and SAFe - Similarities, Differences, potential synergies <https://www.scrum.org/resources/blog/comparing-nexus-and-safe-similarities-differences-potential-synergies>`__" by Yuval Yeret
+
+Здесь автор ссылается на другую свою статью "`Scaling Scrum with Nexus and Kanban <https://www.scrum.org/resources/blog/scaling-scrum-nexus-and-kanban>`__" by Yuval Yeret, где предлагает интегрировать Program Management в Nexus, подобно тому, как это сделано в SAFe.
+
+    📝 "This will include all stages of work in the Nexus - ranging from Value discovery..."
+
+    -- "`Scaling Scrum with Nexus and Kanban <https://www.scrum.org/resources/blog/scaling-scrum-nexus-and-kanban>`__" by Yuval Yeret
+
+Хотя в Scrum и можно выстроить хорошо отлаженные процессы, но это требует настолько деликатной работы, что я бы предпочел рассматривать сразу SAFe даже для маленьких команд (минимальную его конфигурацию - Essential Safe):
+
+- "`Six SAFe Practices for S-Sized Teams <https://www.scaledagileframework.com/guidance-six-safe-practices-for-s-sized-teams/>`__" by Juha-Markus Aalto, Director Product Development, Qentinel Group
+- "`Essential SAFe <https://www.scaledagileframework.com/essential-safe/>`__"
+
+
+Scrum of Scrums
+---------------
+
+    - Each team had an architecture representative on **a Scrum of Scrum architecture team led by the Business Unit Lead Architect**
+    - The **enterprise architecture team had Business Unit Lead Architects led by the CTO** who had senior management commitment to 10% of all points in every sprint dedicated to architectural improvement (technical debt remediation, integration, branding, etc.)
+
+    -- "`Agile Architecture Fast, Cheap, Out of Control <https://www.scruminc.com/wp-content/uploads/2014/06/agile-architecture.pdf>`__" Jeff Sutherland
+
+
+См. также структуру "Scrum of Scrum Team (SoS) a Core Team" на странице 5 "`The Scrum Software Factory <https://www.scrumatscale.com/wp-content/uploads/2020/09/Scrum_At_Scale_Case_Study_Air_Transport_Amogh.pdf>`__" by Amogh Joshi.
+
+
+Социальная роль архитектуры
+===========================
+
+📝 "By keeping things team sized, we help to achieve what MacCormack and colleagues call “an ‘**architecture for participation**’ that promotes ease of understanding by limiting module size, and ease of contribution by minimizing the propagation of design changes.”[MacCormack et al., “Exploring the Structure of Complex Software Designs.”] In other words, we need **a team-first software architecture that maximizes people’s ability to work with it**.
+
+<...>
+
+More than ever I believe that someone who claims to be an **Architect needs both technical and social skills, they need to understand people and work within the social framework**. They also need a remit that is broader than pure technology—they need to have a say in **organizational structures and personnel issues, i.e. they need to be a manager too**.[Kelly, “Return to Conway’s Law.”]"
+
+-- "Team Topologies: Organizing Business and Technology Teams for Fast Flow" by Matthew Skelton
 
 
 .. index::
