@@ -10,7 +10,7 @@
             </div>
         {% elif meta.get("canonical-base-url") %}
             <div class="section" style="text-align: right;">
-                <p><a href="{{ meta.get("canonical-base-url")|e }}/{{ pagename|e }}{{ file_suffix|e }}">{{ _('Canonical URL')|e }}</a></p>
+                <p><a href="{{ meta.get("canonical-base-url")|e }}/{{ pagename|urlencode|e }}{{ file_suffix|e }}">{{ _('Canonical URL')|e }}</a></p>
             </div>
         {% endif %}
     {% endif %}
