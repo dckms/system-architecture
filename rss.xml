@@ -852,6 +852,16 @@ Here the constant was hardwired code, not a data value, but the principle is the
 Знание возникает как осмысление человеком контекстов своего &lt;strong&gt;опыта&lt;/strong&gt;.»&lt;/p&gt;
 &lt;p class="attribution"&gt;—«&lt;a class="reference external" href="https://dic.academic.ru/dic.nsf/enc_philosophy/399"&gt;Новая философская энциклопедия: В 4 тт.&lt;/a&gt;» М.: Мысль. Под редакцией В. С. Стёпина. 2001.&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;«В совр. методологии науки принято выделять след. осн. компоненты теории:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;исходную эмпирич. основу, которая включает множество зафиксированных в данной области знания фактов, достигнутых в ходе экспериментов и требующих теоретич. объяснения;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;исходную теоретич. основу — множество первичных допущений, постулатов, аксиом, общих законов Т., в совокупности описывающих идеализированный объект Т.;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;логику Т.— множество допустимых в рамках Т. правил ло-гич. вывода и доказательства;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;совокупность выведенных в Т. утверждений с их доказательствами, составляющую осн. массив теоретич. знания.»&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p class="attribution"&gt;—«&lt;a class="reference external" href="https://dic.academic.ru/dic.nsf/enc_philosophy/1215/%D0%A2%D0%95%D0%9E%D0%A0%D0%98%D0%AF"&gt;Философский энциклопедический словарь.&lt;/a&gt;» — М.: Советская энциклопедия. Гл. редакция: Л. Ф. Ильичёв, П. Н. Федосеев, С. М. Ковалёв, В. Г. Панов. 1983.&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
 &lt;p&gt;Когда в коллективе недостаточно знаний, столкновения мнений и конфликты всегда неизбежны.
 Потому что &lt;strong&gt;мнение&lt;/strong&gt; выражает индивидуальный опыт человека.
 А это значит, что любое несогласие с его мнением воспринимается как недооценка его опыта и ущемление компетентности, что может усиливаться рядом &lt;a class="reference internal" href="cognitive-biases.html#emacsway-cognitive-biases"&gt;&lt;span class="std std-ref"&gt;когнитивых искажений&lt;/span&gt;&lt;/a&gt;.
@@ -878,6 +888,91 @@ Here the constant was hardwired code, not a data value, but the principle is the
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
+</description><pubDate>Mon, 03 Jan 2022 00:00:00 </pubDate></item><item><title>Как стать успешным разработчиком</title><link>https://dckms.github.io/system-architecture/emacsway/it/self-education/success-roadmap.html</link><description>&lt;span class="target" id="index-0"/&gt;&lt;div class="section" id="emacsway-success-roadmap"&gt;
+&lt;span id="id1"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;«My career mission is to help geeks feel safe in the world.»&lt;/p&gt;
+&lt;p class="attribution"&gt;—Kent Beck, description of his Linkedin profile&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;div class="contents topic" id="id2"&gt;
+&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-success-roadmap" id="id7"&gt;Как стать успешным разработчиком&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id8"&gt;1. Учимся писать экономически эффективный код&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id4" id="id9"&gt;2. Обучаем команду&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id5" id="id10"&gt;3. Организовываем процессы&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id6" id="id11"&gt;4. Изменяем коллектив&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;По поводу «&lt;a class="reference external" href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC_%D1%81%D0%B0%D0%BC%D0%BE%D0%B7%D0%B2%D0%B0%D0%BD%D1%86%D0%B0"&gt;Эффекта Самозванца&lt;/a&gt;» (ощущение того, что человек не заслуживает профессиональной позиции, полагая, что окружающие ошибочно думают иначе).
+Видно, что эта тема многих беспокоит.
+Мне даже известны люди, которые не выдержали напряжения и бросили разработку.&lt;/p&gt;
+&lt;p&gt;Хотя этот термин здесь не совсем корректно употреблен, и означает он немного другую проблему, но в индустрии этот термин хорошо закрепился и многим понятен.&lt;/p&gt;
+&lt;p&gt;Наверное, каждого разработчика волнует вопрос его эффективности.
+Чаще всего собственная недооценка провоцируется хронической неуспеваемостью, о чем и пойдет речь далее.&lt;/p&gt;
+&lt;p&gt;Нужно учитывать, что через «Долину Отчаяния» на графике &lt;a class="reference external" href="https://ru.m.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%94%D0%B0%D0%BD%D0%BD%D0%B8%D0%BD%D0%B3%D0%B0_%E2%80%94_%D0%9A%D1%80%D1%8E%D0%B3%D0%B5%D1%80%D0%B0"&gt;Даннинга-Крюгера&lt;/a&gt; проходят все.
+Если вы относите причины неуспеваемости на свой счет, то, вероятно, в вашей компании что-то не так с процессами, которые искажают это восприятие.
+Но подобная организация процессов является, скорее, правилом на рынке труда, чем исключением.&lt;/p&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id8"&gt;1. Учимся писать экономически эффективный код&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Первым важным навыком на пути к обретению успеваемости является умение писать &lt;a class="reference internal" href="../sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics.html"&gt;&lt;span class="doc"&gt;экономически эффективный код&lt;/span&gt;&lt;/a&gt; с &lt;a class="reference internal" href="../sdlc/models/agile/agile.html#emacsway-agile-development"&gt;&lt;span class="std std-ref"&gt;пологим характером роста стоимости его изменения&lt;/span&gt;&lt;/a&gt;.
+На эту тему было написано &lt;a class="reference internal" href="self-education-for-software-engineer.html"&gt;&lt;span class="doc"&gt;немало книг&lt;/span&gt;&lt;/a&gt;.
+Не понимая истинных причин снижения velocity, человек склонен относить это на свой счет, что препятствует их обнаружению и устранению.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id9"&gt;2. Обучаем команду&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Второй важный навык выводится исходя из модели коллективного владения кодом.
+Вы работаете по большей части с кодом, написанным другими участниками команды.
+Вы тратите на его чтение, понимание и изменение основную часть времени.
+От его качества зависит и ваша персональная успеваемость.&lt;/p&gt;
+&lt;p&gt;Здесь есть несколько вариантов:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;Попасть в струю коллектива, которая работает с качественным кодом. Для этого нужно уметь их собой заинтересовать, поэтому см. п.1.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Изолироваться от командного legacy и начать формировать новую кодовую базу под себя (вариант кажется фантастическим, но, тем не менее, вполне реальнен).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Влиять на коллектив, и вместе с коллективом изменять код. Этот вариант тоже возможен, но требует обладания совокупностью качеств. Больше всего мне в этом вопросе помогла книга «Extreme Programming Explained» 1st edition by Kent Beck.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Полученные знания нужно умело применять.
+Здесь важно понять, с какой стороны начать.
+Этот вопрос хорошо освещает статья «&lt;a class="reference external" href="https://less.works/ru/less/principles/systems-thinking.html"&gt;Системное мышление&lt;/a&gt; by Craig Larman.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id10"&gt;3. Организовываем процессы&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Итак. Теперь вы можете писать высокоэффективный код вместе с командой.
+Но это еще не победа.
+Успешность во многом зависит от качества организации процессов.
+Одно неверное управленческое решение, и команда демотивирована, уходят ключевые специалисты, возникают разногласия и конфликты.&lt;/p&gt;
+&lt;p&gt;Попасть работать к хорошему менедженту хотя и возможно, но это сложнее, чем попасть работать в хорошую команду.
+А это значит, что вы можете рассчитывать только на себя.&lt;/p&gt;
+&lt;p&gt;Наиболее частые проблемы исходят из-за неверного распределения обязанностей, например, когда продакт занимается не требованиями, а реализацией.
+Или методика оценивания задач не соответствует уровню культуры коллектива - индивидуальная оценка задачи может повысить точность планирования в зрелом коллективе, а может напрочь убить взаимопомощь и распространение знаний в развивающемся коллективе, и разогнать комплекс неполноценности до уровня психологического предела (см. «Agile Estimating and Planning» by Mike Cohn), особенно, если при этом еще и путают оценку с обязательством.
+Непонимание того, чем является макет UX/UI дизайна (problem vs. solution space) приводит конфликту между продактом и командой.
+Неудачная топология заблокирует автономность команд, и команды будут бОльшую часть времени потопать в дискуссиях.
+Список можно продолжать.
+Вообще, по моим наблюдением, качество организации процессов является основной причиной увольнения значимых специалистов.&lt;/p&gt;
+&lt;p&gt;Собственно, даже Steve McConnell советовал в некоторых случаях «голосовать ногами».
+Вот только вероятность того, что на новом месте менеджмент будет поставлен получше, не сильно высокая.&lt;/p&gt;
+&lt;p&gt;Поскольку процессы влияют на вас, то вы можете изменить свое положение, влияя на процессы.
+Поэтому, грамотный специалист должен уметь &lt;a class="reference internal" href="../sdlc/sdlc-reference.html"&gt;&lt;span class="doc"&gt;разбираться в процессах&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id11"&gt;4. Изменяем коллектив&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;И, наконец, мы подходим к самой сложной карьерной проблеме - это &lt;a class="reference internal" href="../../soft-skills/change-making.html"&gt;&lt;span class="doc"&gt;осуществление изменений в коллективе&lt;/span&gt;&lt;/a&gt; с точки зрения &lt;a class="reference internal" href="../../soft-skills/cognitive-biases.html"&gt;&lt;span class="doc"&gt;коммуникативной, социальной и управленческой психологии&lt;/span&gt;&lt;/a&gt;.
+Мало знать, что нужно изменить, нужно еще иметь понимание как это осуществить.&lt;/p&gt;
+&lt;div class="admonition seealso"&gt;
+&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="self-education-for-software-engineer.html"&gt;&lt;span class="doc"&gt;Список литературы для самообучения разработчика программного обеспечения&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="../../soft-skills/planning-in-psychology.html#emacsway-planning-in-psychology"&gt;&lt;span class="std std-ref"&gt;Психологическое значение планирования&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="../../soft-skills/learning.html#emacsway-learning-in-psychology"&gt;&lt;span class="std std-ref"&gt;Кристаллизация знаний. Как читать и не превратиться в коллекционера информации.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="../../../README.html"&gt;&lt;span class="doc"&gt;Как пользоваться&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 </description><pubDate>Mon, 03 Jan 2022 00:00:00 </pubDate></item><item><title>О гонке сообщений в условиях конкурирующих подписчиков</title><link>https://dckms.github.io/system-architecture/emacsway/it/integration/asynchronous/message-ordering-in-competing-consumers.html</link><description>
 &lt;span id="id1"/&gt; 
