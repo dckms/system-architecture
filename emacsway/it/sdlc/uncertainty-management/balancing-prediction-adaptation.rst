@@ -7,6 +7,8 @@
 Balancing Prediction/Adaptation
 ===============================
 
+.. contents:: Содержание
+
     📝 "Scrum projects do not have an up-front analysis or design phase; all work occurs within the repeated cycle of sprints.
     This does not mean, however, that design on a Scrum project is not intentional.
     An intentional design process is one in which the design is guided through deliberate, conscious decision making.
@@ -54,6 +56,13 @@ emergent.
     In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project."
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
+
+
+
+Open Agile Architecture™ Standard by The Open Group
+===================================================
+
+Глава "`4.5. Architecture Development Styles <https://pubs.opengroup.org/architecture/o-aa-standard/architecture-development.html#_architecture_development_styles>`__" стандарта посвящена поиску баланса между "`4.5.2. Intentional Architecture <https://pubs.opengroup.org/architecture/o-aa-standard/architecture-development.html#_intentional_architecture_2>`__" и "`4.5.1. Emergence Architecture <https://pubs.opengroup.org/architecture/o-aa-standard/architecture-development.html#emergence>`__".
 
 
 Alberto Brandolini about Prediction/Adaptation
