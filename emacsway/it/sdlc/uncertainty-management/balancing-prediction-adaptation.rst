@@ -20,8 +20,8 @@ Balancing Prediction/Adaptation
     Scrum teams acknowledge that as nice as it might be to make all design decisions up front, doing so is impossible.
     This means that on a Scrum project, design is both intentional and emergent.
 
-    A big part of an organization’s becoming agile is fi nding the appropriate balance between anticipation and adaptation (Highsmith 2002).
-    Figure 9.2 shows this balance along with activities and artifacts that inf l uence the balance.
+    A big part of an organization’s becoming agile is finding the appropriate balance between anticipation and adaptation (Highsmith 2002).
+    Figure 9.2 shows this balance along with activities and artifacts that influence the balance.
     When doing up-front analysis or design, we are attempting to anticipate users’ needs.
     Because we cannot perfectly anticipate these, we will make some mistakes; some work will need to be redone.
     When we forgo analysis and design and jump immediately into coding and testing with no forethought at all, we are trying to adapt to users’ needs.
