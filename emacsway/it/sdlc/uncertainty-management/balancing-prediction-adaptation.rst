@@ -7,6 +7,27 @@
 Balancing Prediction/Adaptation
 ===============================
 
+    📝 "Scrum projects do not have an up-front analysis or design phase; all work occurs within the repeated cycle of sprints.
+    This does not mean, however, that design on a Scrum project is not intentional.
+    An intentional design process is one in which the design is guided through deliberate, conscious decision making.
+    The difference on a Scrum project is not that intentional design is thrown out, but that it is done (like everything else on a Scrum project) incrementally.
+    Scrum teams acknowledge that as nice as it might be to make all design decisions up front, doing so is impossible.
+    This means that on a Scrum project, design is both intentional and 
+emergent.
+
+    A big part of an organization’s becoming agile is fi nding the appropriate balance between anticipation and adaptation (Highsmith 2002).
+    Figure 9.2 shows this balance along with activities and artifacts that inf l uence the balance.
+    When doing up-front analysis or design, we are attempting to anticipate users’ needs.
+    Because we cannot perfectly anticipate these, we will make some mistakes; some work will need to be redone.
+    When we forgo analysis and design and jump immediately into coding and testing with no forethought at all, we are trying to adapt to users’ needs.
+    All projects of interest will be positioned somewhere between anticipation and adaptation based on their own unique characteristics; no application will be all the way to either extreme.
+    A life-critical, medical safety application may be far to the anticipation side.
+    A three-person startup company building a website of information on kayak racing may be far toward the side of adaptation."
+
+    -- "Succeeding with Agile: Software Development Using Scrum" by Mike Cohn
+
+..
+
     📝 McConnell writes, "In ten years the pendulum has swung from 'design everything' to 'design nothing.'
     But the alternative to BDUF [Big Design Up Front] isn't no design up front, it's a Little Design Up Front (LDUF) or Enough Design Up Front (ENUF)."
     This is a strawman argument.
