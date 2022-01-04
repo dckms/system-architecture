@@ -1,6 +1,8 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
-.. index:: Prediction, Adaptation
+.. index::
+   single: Prediction; in balancing
+   single: Adaptation; in balancing
    :name: emacsway-balancing-prediction-adaptation
 
 ===============================
@@ -9,13 +11,14 @@ Balancing Prediction/Adaptation
 
 .. contents:: Содержание
 
+..
+
     📝 "Scrum projects do not have an up-front analysis or design phase; all work occurs within the repeated cycle of sprints.
     This does not mean, however, that design on a Scrum project is not intentional.
     An intentional design process is one in which the design is guided through deliberate, conscious decision making.
     The difference on a Scrum project is not that intentional design is thrown out, but that it is done (like everything else on a Scrum project) incrementally.
     Scrum teams acknowledge that as nice as it might be to make all design decisions up front, doing so is impossible.
-    This means that on a Scrum project, design is both intentional and 
-emergent.
+    This means that on a Scrum project, design is both intentional and emergent.
 
     A big part of an organization’s becoming agile is fi nding the appropriate balance between anticipation and adaptation (Highsmith 2002).
     Figure 9.2 shows this balance along with activities and artifacts that inf l uence the balance.
@@ -63,6 +66,64 @@ Open Agile Architecture™ Standard by The Open Group
 ===================================================
 
 Глава "`4.5. Architecture Development Styles <https://pubs.opengroup.org/architecture/o-aa-standard/architecture-development.html#_architecture_development_styles>`__" стандарта посвящена поиску баланса между "`4.5.2. Intentional Architecture <https://pubs.opengroup.org/architecture/o-aa-standard/architecture-development.html#_intentional_architecture_2>`__" и "`4.5.1. Emergence Architecture <https://pubs.opengroup.org/architecture/o-aa-standard/architecture-development.html#emergence>`__".
+
+
+.. index::
+   single: Prediction; in evolution
+   single: Adaptation; in evolution
+   :name: emacsway-balancing-prediction-adaptation-evolution
+
+Эволюция баланса
+================
+
+В 2021 году большую популярность обрела статья, освещала назревшие в индустрии вопросы относительно баланса Prediction/Adaptation.
+
+- "`Software Dark Ages <https://threedots.tech/post/software-dark-ages/>`__" by Robert Laszczak
+- "`Темные века разработки программного обеспечения <https://habr.com/ru/company/cian/blog/569940/>`__" by Robert Laszczak, перевод Евгения Пешкова
+
+В 2000-м Tom DeMarco и Camden, Maine писали:
+
+    📝 "In On War, Carl von Clausewitz tells us that military history is a pendulum swinging back and forth between the relative advantages of armor and of mobility.
+    The knights in shining armor were able to dominate any knight without, but they were no match for the quick, nearly naked pony warriors that swept across the plains with Genghis Kahn and his Mongols.
+    Light cavalry itself was doomed as soon as there were tanks, and tanks were no match for fleet-footed Palestinian teenagers with Sagger missiles.
+    With the Maginot Line, the French were gambling that the pendulum had swung again toward armor, but it hadn't, and the Germans simply went around it.
+
+    In the field of IT, we are just emerging from a time in which armor (process) has been king.
+    And now we are moving into a time when only mobility matters.
+    Building a product the right way still sounds like a laudable goal, but—let's face it—what really matters today is building it fast.
+    Because we are process-obsessed in our field, we have tended to react to this new imperative as we reacted to the imperatives thrust upon us in the 1980s and 1990s.
+    We have asked, "What shall we add to our process to deal with this new situation?"
+
+    -- Foreword of "Planning Extreme Programming" by Kent Beck, Martin Fowler
+
+Можно заметить, что на рубеже 2000 года, :ref:`маятник Prediction/Adaptation максимально отклонился в сторону Adaptation <emacsway-agile-development>`, минимизируя долю Prediction до минималистичного набора практик - PBR, Spike, Planning.
+Этому способствовало радикальное снижение стоимости Adaptation в те годы благодаря росту популярности OOP, шаблонов и принципов проектирования, методик управления сложностью (ROM, POSA, GOF, OOAD, SOLID, Use Case Driven Approach, Object-Oriented Software Construction etc.), TDD, Refactoring и т.д.
+
+Однако, в статье мы наблюдаем, что маятник пошел в обратном направлении  - "пять дней кодинга может сэкономить час планирования".
+Что это? Бунт против Agile? Против заветов Eric Evans?
+
+Причин здесь две.
+
+1. Проекты стали сложнее, а команды стали больше, нежели они были 20 лет назад.
+   Однако, стоимость Adaptation возрастает стремительней, чем размер коллектива.
+
+   Это вынуждает :ref:`сместить баланс Prediction/Adaptation в сторону Prediction <emacsway-harlan-mills'-proposal>`.
+   И здесь мы наблюдаем воскрешение старых принципов, которые были хорошо известны в RUP, MSF, RAD, FDD, Crystal Clear etc.
+   Дело в том, что в старые времена Scaled Agile хоть и был не таким частым явлением, как сегодня, да и не назывался вовсе Agile, но он все-таки существовал в немногочисленных крупных корпорациях, т.к. они уже тогда столкнулись с теми проблемами, которые обрели массовость примерно к 2010 году.
+
+   Например, многие идеи популярной книги "Team Topologies", которые сегодня создают "вау-эффект", были описаны, еще в RAD.
+
+   Обратите внимание на тот факт, что это совпало хронологически со взрывным ростом интереса к микросервисной архитектурой и DDD, поскольку они также отвечали на главный вызов того времени - стремительной рост размера среднего проекта и среднего коллектива.
+
+2. Сегодня мы наблюдаем снижение стоимости Prediction за счет появления таких легковесных методик, как Event Storming/Modeling, Domain Storytelling, Impact Mapping, Example Mapping, Design Thinking etc.
+
+Изменился контекст разработки, и сегодня в индустрии принципы Single-Team Agile зачастую стали не ускорять, а замедлять разработку. Это качнуло маятник назад, в сторону Prediction.
+
+Многие старые идеи Scaled Agile реинкарнировали в современные итеративные модели разработки, такие как DAD и SAFe.
+
+Начали появляться способы интеграции :ref:`Program Management <emacsway-team-topologies-at-scale-program-management>` (т.е. организации процессов Prediction) в даже самые легковесные Scaled Agile Frameworks, такие как Nexus by Ken Schwaber.
+
+А в основе лежит все та же идея ":ref:`Метода Хирурга <emacsway-harlan-mills'-proposal>`" Харлана Миллза, который младше Закона Конвея всего на три года.
 
 
 Alberto Brandolini about Prediction/Adaptation
