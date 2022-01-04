@@ -71,10 +71,10 @@ Open Agile Architecture™ Standard by The Open Group
 .. index::
    single: Prediction; in evolution
    single: Adaptation; in evolution
-   :name: emacsway-balancing-prediction-adaptation-evolution
+   :name: emacsway-balancing-prediction-adaptation-pendulum-swinging
 
-Эволюция баланса
-================
+Эволюционный маятник баланса Prediction/Adaptation
+==================================================
 
 В 2021 году большую популярность обрела статья, освещала назревшие в индустрии вопросы относительно баланса Prediction/Adaptation.
 
