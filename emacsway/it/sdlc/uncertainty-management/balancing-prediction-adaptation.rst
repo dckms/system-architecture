@@ -22,7 +22,17 @@ emergent.
     When we forgo analysis and design and jump immediately into coding and testing with no forethought at all, we are trying to adapt to users’ needs.
     All projects of interest will be positioned somewhere between anticipation and adaptation based on their own unique characteristics; no application will be all the way to either extreme.
     A life-critical, medical safety application may be far to the anticipation side.
-    A three-person startup company building a website of information on kayak racing may be far toward the side of adaptation."
+    A three-person startup company building a website of information on kayak racing may be far toward the side of adaptation.
+
+    Foretelling the agile preference for simplicity, in 1990, was speaker and author Do-While Jones. 
+
+        I’m not against planning for the future.
+        Some thought should be given to future expansion of capability.
+        But when the entire design process gets bogged down in an attempt to satisfy future requirements that may never materialize, then it is time to stop and see if there isn’t a simpler way to solve the immediate problem.
+
+        -- Jones’ 1990 article, "The Breakfast Food Cooker," remains a classic parable of what can go wrong when software developers over-design a solution. I highly recommended reading it at http://www.ridgecrest.ca.us/~do_while/toaster.htm
+
+    Scrum teams avoid this "bogging down" by realizing that not all future needs are worth worrying about today. Many future needs may be best handled by planning to adapt as they arise."
 
     -- "Succeeding with Agile: Software Development Using Scrum" by Mike Cohn
 
