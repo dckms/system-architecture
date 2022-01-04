@@ -41,6 +41,13 @@ Balancing Prediction/Adaptation
 
     -- "Succeeding with Agile: Software Development Using Scrum" by Mike Cohn
 
+.. figure:: _media/balancing-prediction-adaptation/fig-9.2-balancing-anticipation-adaptation.png
+   :alt: FIGURE 9.2 Achieving a balance between anticipation and adaptation involves balancing the inﬂuence of the activities and artifacts on each side. The image source is "Succeeding with Agile: Software Development Using Scrum" by Mike Cohn
+   :align: left
+   :width: 90%
+
+   FIGURE 9.2 Achieving a balance between anticipation and adaptation involves balancing the inﬂuence of the activities and artifacts on each side. The image source is "Succeeding with Agile: Software Development Using Scrum" by Mike Cohn
+
 ..
 
     📝 McConnell writes, "In ten years the pendulum has swung from 'design everything' to 'design nothing.'
