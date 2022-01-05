@@ -107,7 +107,7 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
 
     📝 "At the core of understanding this argument is the software change curve.
     The change curve says that as the project runs, it becomes exponentially more expensive to make changes.
-    The change curve is usually expressed in terms of phases "a change made in analysis for $1 would cost thousands to fix in production".
+    The change curve is usually expressed in terms of phases \"a change made in analysis for $1 would cost thousands to fix in production\".
     This is ironic as most projects still work in an ad-hoc process that doesn't have an analysis phase, but the exponentiation is still there.
     **The exponential change curve means that evolutionary design cannot possibly work.**
     It also conveys why planned design must be done carefully because any mistakes in planned design face the same exponentiation.
@@ -127,7 +127,7 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
     📝 "**This is one of the premises of XP. It is the technical premise of XP.**
     If the cost of change rose slowly over time, you would act completely differently from how you do under the assumption that costs rise exponentially.
     You would make big decisions as late in the process as possible, to defer the cost of making the decisions and to have the greatest possible chance that they would be right.
-    You would only implement what you had to, in hopes that the needs you anticipate for tomorrow wouldn’t come true.
+    You would only implement what you had to, in hopes that the needs you anticipate for tomorrow wouldn't come true.
     You would introduce elements to the design only as they simplified existing code or made writing the next bit of code simpler.
 
     **If a flattened change cost curve makes XP possible, a steep change cost curve makes XP impossible.**
@@ -178,7 +178,16 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
 Последнее предложение приведенной выше цитаты разъясняет то же самое, но другими словами.
 А ведь еще в 2004 г., в книге "Agile Project Management with Scrum" by Ken Schwaber, Scrum назывался методологий.
 
-Озвученному вопросу посвящена статья "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler.
+Позвольте еще раз повторить то, как это выразил Kent Beck:
+
+    📝 "If a flattened change cost curve makes XP possible, a steep change cost curve makes XP impossible."
+
+    -- "Extreme Programming Explained" 1st edition by Kent Beck
+
+Impossible. Точка.
+Если говорить более развернуто, то, конечно же это возможно, просто это становится экономически нецелесообразным, поскольку при быстрорастущем графике изменения кода возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования.
+
+Этому вопросу посвящена статья "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler.
 И очень удачно по этому вопросу высказался Grady Booch:
 
     📝 "Grady Booch has also provided a set of guidelines for an agile architecture (which in turn imply some duties for the agile architect).
