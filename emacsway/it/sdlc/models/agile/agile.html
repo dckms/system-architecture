@@ -59,8 +59,23 @@
             
     
   <div class="section" id="agile-development">
-<span id="emacsway-agile-development"></span><h1>Что такое Agile Development<a class="headerlink" href="#agile-development" title="Ссылка на этот заголовок">¶</a></h1>
+<span id="emacsway-agile-development"></span><h1><a class="toc-backref" href="#id8">Что такое Agile Development</a><a class="headerlink" href="#agile-development" title="Ссылка на этот заголовок">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
+<div class="contents topic" id="id1">
+<p class="topic-title">Содержание</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#agile-development" id="id8">Что такое Agile Development</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id9">Определение</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id10">История</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id11">Суть</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id12">О сложностях</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id9">Определение</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
 <blockquote>
 <div><p>📝 «Agile development - software development approach based on <a class="reference internal" href="../iterative.html#emacsway-iterative-development"><span class="std std-ref">iterative development</span></a>, frequent inspection and adaptation, and incremental deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback.»</p>
 <p class="attribution">—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»</p>
@@ -75,13 +90,16 @@ What the methods have in common is an emphasis on continuous inspection and coll
 <div><p>📝 «As discussed in 5.4.2, the life cycle models used in agile projects are often highly <a class="reference internal" href="../incremental.html#emacsway-incremental-development"><span class="std std-ref">incremental</span></a> and <a class="reference internal" href="../evolutionary.html#emacsway-evolutionary-development"><span class="std std-ref">evolutionary</span></a>.»</p>
 <p class="attribution">—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»</p>
 </div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id10">История</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Agile является естественным следствием эволюции итеративной разработки, краткий обзор которой можно посмотреть в превосходной статье Craig Larman «<a class="reference external" href="https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf">Iterative and Incremental Development: A Brief History</a>».</p>
 <p>Как уже говорилось ранее, итеративная модель разработки открывает широкие возможности для <a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"><span class="std std-ref">удешевления обработки неопределенности</span></a>.
 Однако долгое время эти возможности оставались экономически нецелесообразными по причине быстрорастущего характера роста стоимости <a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"><span class="std std-ref">Adaptation</span></a>, приближющегося к экспоненциальному.
 При таком характере роста возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования (BDUF).</p>
-<div class="figure align-left" id="id1">
+<div class="figure align-left" id="id6">
 <a class="reference internal image-reference" href="../../../../../_images/exponential-cost-of-change.png"><img alt="Figure 1. The cost of change rising exponentially over time. The image source is &quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 5. Cost of Change&quot;." src="../../../../../_images/exponential-cost-of-change.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-text">Figure 1. The cost of change rising exponentially over time. The image source is «Extreme Programming Explained» 1st edition by Kent Beck, «Chapter 5. Cost of Change».</span><a class="headerlink" href="#id1" title="Постоянная ссылка на рисунок">¶</a></p>
+<p class="caption"><span class="caption-text">Figure 1. The cost of change rising exponentially over time. The image source is «Extreme Programming Explained» 1st edition by Kent Beck, «Chapter 5. Cost of Change».</span><a class="headerlink" href="#id6" title="Постоянная ссылка на рисунок">¶</a></p>
 </div>
 <p>Однако, в конце 1990-х - начале 2000-х, в архитектурном мире произошли существенные изменения - обрели массовую популярность высокоуровневые объектно-ориентированные языки, появились шаблоны и принципы проектирования, методики управления сложностью (ROM, POSA, GOF, OOAD, SOLID, Use Case Driven Approach, Object-Oriented Software Construction etc.), появились TDD, Refactoring и т.п.</p>
 <p>Унификация знаний в области архитектуры, переход ментального оперирования на элементы унифицированных шаблонных конструкций более высокого уровня абстракции, позволили сократить когнитивную и коммуникативную нагрузку на разработчика, уменьшить порог вхождения в новый проект, смягчить негативное воздействие Закона Брукса.</p>
@@ -94,9 +112,9 @@ What if the cost of change didn’t rise exponentially overtime, but rose much m
 What if tomorrow’s software engineering professor draws Figure 3 on the board?»</p>
 <p class="attribution">—«Extreme Programming Explained» 1st edition by Kent Beck, «Chapter 5. Cost of Change»</p>
 </div></blockquote>
-<div class="figure align-left" id="id2">
+<div class="figure align-left" id="id7">
 <a class="reference internal image-reference" href="../../../../../_images/flatten-cost-of-change.png"><img alt="Figure 3. The cost of change may not rise dramatically over time. The image source is &quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 5. Cost of Change&quot;." src="../../../../../_images/flatten-cost-of-change.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-text">Figure 3. The cost of change may not rise dramatically over time. The image source is «Extreme Programming Explained» 1st edition by Kent Beck, «Chapter 5. Cost of Change».</span><a class="headerlink" href="#id2" title="Постоянная ссылка на рисунок">¶</a></p>
+<p class="caption"><span class="caption-text">Figure 3. The cost of change may not rise dramatically over time. The image source is «Extreme Programming Explained» 1st edition by Kent Beck, «Chapter 5. Cost of Change».</span><a class="headerlink" href="#id7" title="Постоянная ссылка на рисунок">¶</a></p>
 </div>
 <p>Что такое асимтота, можно посмотреть в «§284 Асимтоты» Справочника по высшей математике / М.Я. Выгодский:</p>
 <blockquote>
@@ -108,6 +126,9 @@ What if tomorrow’s software engineering professor draws Figure 3 on the board?
 <div><p>📝 «Для разыскания горизонтальных асимптот линии y = f(х) ищем пределы f(х) при х -&gt; +∞ и при х -&gt; -∞. Если lim х-&gt;∞ f(x) = b, то прямая у = b - асимптота (при бесконечном удалении вправо; черт. 299).»</p>
 <p class="attribution">—«Справочник по высшей математике» / М.Я. Выгодский</p>
 </div></blockquote>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id11">Суть</a><a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Вся суть Agile (итеративной) модели разработки была лаконично и метко выражена Кент Беком всего одним предложением:</p>
 <blockquote>
 <div><p>📝 «Сделайте изменение легким, а потом делай легко изменение.</p>
@@ -157,6 +178,47 @@ But if change stays cheap, the additional value and reduced risk of early concre
 In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project.»</p>
 <p class="attribution">—«ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes»</p>
 </div></blockquote>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id12">О сложностях</a><a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Вернемся еще раз к выражению Kent Beck «<em>сделайте изменение легким, а потом делай легко изменение</em>».
+Оно состоит из двух частей, причем, первая из них предшествует второй.
+Как раз именно первую часть нередко забывают сделать на современном рынке, а без первой части вторая часть работает не будет, как это нетрудно догадаться.</p>
+<blockquote>
+<div><p>📝 «Scrum is ok if you do it right.»</p>
+<p class="attribution">—<a class="reference external" href="https://youtu.be/0oGpWmS0aYQ?t=921">OOP 2015 Keynote - Robert C. Martin («Uncle Bob»): Agility and Architecture at 15:21</a></p>
+</div></blockquote>
+<p>Происходит это во многом потому, что:</p>
+<blockquote>
+<div><p>📝 «Я узнал от Jeff Sutherland, что первый Scrum на самом деле использовал все XP практики.
+Но Ken Schwaber убедил его оставить инженерные практики за рамками Scrum, чтобы упростить модель и позволить командам брать на себя ответственность за выбор тех или иных практик.
+Возможно, это ускорило распространение Scrum, но с другой стороны многие команды страдают из-за отсутствия технических практик, позволяющих поддерживать постоянный темп гибкой разработки.</p>
+<p>I learned from Jeff Sutherland that the first Scrum actually did all the XP practices.
+But Ken Schwaber convinced him to leave the engineering practices out of Scrum, to keep the model simple and let the teams take responsibility for the tech practices themselves.
+Perhaps this helped spread Scrum faster, but the downside is that a lot of teams suffer because they lack the technical practices that enable sustainable agile development.»</p>
+<p class="attribution">—«Scrum and XP from the Trenches: How We Do Scrum» 2nd edition by Henrik Kniberg, перевод под редакцией Алексея Кривицкого</p>
+</div></blockquote>
+<p>Последнее предложение приведенной выше цитаты разъясняет то же самое, но другими словами.
+А ведь еще в 2004 г., в книге «Agile Project Management with Scrum» by Ken Schwaber, Scrum назывался методологий.</p>
+<p>Озвученному вопросу посвящена статья «<a class="reference external" href="https://martinfowler.com/articles/designDead.html">Is Design Dead?</a>» by Martin Fowler.
+И очень удачно по этому вопросу высказался Grady Booch:</p>
+<blockquote>
+<div><p>📝 «Grady Booch has also provided a set of guidelines for an agile architecture (which in turn imply some duties for the agile architect).
+Booch claims that all good software-intensive architectures are agile.
+What does he mean by this? He means that a successful architecture is resilient and loosely coupled.
+It is composed of a core set of well-reasoned design decisions but still contains some “wiggle room” that allows modifications to be made and refactorings to be done, without ruining the original structure.</p>
+<p>Booch also notes that an effective agile process will allow the architecture to grow incrementally as the system is developed and matures.
+The key to success is to have decomposability, separation of concerns, and near-independence of the parts.
+(Sound familiar? These are all modifiability tactics.)</p>
+<p>Finally, Booch notes that to be agile, the architecture should be visible and self-evident in the code; this means making the design patterns, cross-cutting concerns, and other important decisions obvious, well communicated, and defended.
+This may, in turn, require documentation.
+But whatever architectural decisions are made, the architect must make an effort to “socialize” the architecture.»</p>
+<p class="attribution">—«Software Architecture in Practice» 3d edition by Len Bass, Paul Clements, Rick Kazman</p>
+</div></blockquote>
+<blockquote>
+<div><p>📝 «After all software is supposed to be soft.»</p>
+<p class="attribution">—«<a class="reference external" href="https://www.martinfowler.com/articles/newMethodology.html">The New Methodology</a>» by Martin Fowler</p>
+</div></blockquote>
 <div class="admonition seealso">
 <p class="admonition-title">См.также</p>
 <ul class="simple">
@@ -165,6 +227,7 @@ In comparison, projects managed at the waterfall end of the continuum seek to re
 <li><p>«<a class="reference internal" href="../../uncertainty-management/balancing-prediction-adaptation.html#emacsway-balancing-prediction-adaptation"><span class="std std-ref">Balancing Prediction/Adaptation</span></a>»</p></li>
 <li><p>«<a class="reference internal" href="../../uncertainty-management/adaptation/crash-course-in-software-development-economics.html"><span class="doc">Краткий курс по экономике разработки программного обеспечения</span></a>»</p></li>
 </ul>
+</div>
 </div>
 </div>
 

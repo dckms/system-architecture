@@ -113,6 +113,10 @@ Prediction при этом не исчезает полностью, а пони
 Таким образом, использование термина :ref:`requirements <emacsway-agile-requirements>`, несмотря на то, что вызывает вопросы относительно семантики, никоим образом не противоречит использованию его в Agile SDLC-моделе, которая, кстати, описана тем же стандартом - ISO/IEC/IEEE 12207:2017, в разделах "5.4.2. Life cycle model for the software system" и "Annex H".
 
 
+См. также:
+
+- "`The New Methodology :: Predictive versus Adaptive <https://www.martinfowler.com/articles/newMethodology.html#PredictiveVersusAdaptive>`__" by Martin Fowler
+
 .. seealso::
 
    - ":ref:`emacsway-iterative-development`"
