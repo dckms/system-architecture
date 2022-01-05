@@ -151,6 +151,15 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
 
+О том, почему я обратился к высказываю Kent Beck в этом вопросе, неплохо поясняет Martin Fowler:
+
+    📝 "Extreme Programming (XP) is a software development methodology developed primarily by Kent Beck.
+    XP was one of the first agile methods, indeed XP was the dominant agile method in the late 90s and early 00s before Scrum became dominant as the noughties passed.
+    Many people (including myself) consider XP to be the primary catalyst that got attention to agile methods, and superior to Scrum as a base for starting out in agile development."
+
+    -- "`Extreme Programming <https://martinfowler.com/bliki/ExtremeProgramming.html>`__" by Martin Fowler
+
+
 
 О сложностях
 ============
@@ -175,17 +184,17 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
 
     -- "Scrum and XP from the Trenches: How We Do Scrum" 2nd edition by Henrik Kniberg, перевод под редакцией Алексея Кривицкого
 
-Последнее предложение приведенной выше цитаты разъясняет то же самое, но другими словами.
+Последнее предложение приведенной выше цитаты выражает то же самое, но другими словами.
 А ведь еще в 2004 г., в книге "Agile Project Management with Scrum" by Ken Schwaber, Scrum назывался методологий.
 
-Позвольте еще раз повторить то, как это выразил Kent Beck:
+Позвольте еще раз повторить слова Kent Beck:
 
     📝 "If a flattened change cost curve makes XP possible, a steep change cost curve makes XP impossible."
 
     -- "Extreme Programming Explained" 1st edition by Kent Beck
 
 Impossible. Точка.
-Если говорить более развернуто, то, конечно же это возможно, просто это становится экономически нецелесообразным, поскольку при быстрорастущем графике изменения кода возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования.
+Если говорить более развернуто, то, конечно же, это возможно, просто это становится экономически нецелесообразным, поскольку при быстрорастущем графике изменения кода возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования.
 
     📝 "To make agile work, you need solid technical practices.
     A lot of agile education under-emphasizes these, but if you skimp on this you won't gain the productivity and responsiveness benefits that agile development can give you (stranding you at level 1 of the agile fluency model.)
