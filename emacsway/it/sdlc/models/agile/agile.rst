@@ -10,7 +10,12 @@
 
 .. sectionauthor:: Ivan Zakrevsky
 
-..
+.. contents:: Содержание
+
+
+Определение
+===========
+
 
     📝 "Agile development - software development approach based on :ref:`iterative development <emacsway-iterative-development>`, frequent inspection and adaptation, and incremental deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback."
 
@@ -29,6 +34,10 @@
     📝 "As discussed in 5.4.2, the life cycle models used in agile projects are often highly :ref:`incremental <emacsway-incremental-development>` and :ref:`evolutionary <emacsway-evolutionary-development>`."
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
+
+
+История
+=======
 
 Agile является естественным следствием эволюции итеративной разработки, краткий обзор которой можно посмотреть в превосходной статье Craig Larman "`Iterative and Incremental Development: A Brief History <https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf>`__".
 
@@ -75,6 +84,10 @@ Agile является естественным следствием эволю�
     📝 "Для разыскания горизонтальных асимптот линии y = f(х) ищем пределы f(х) при х -> +∞ и при х -> -∞. Если lim х->∞ f(x) = b, то прямая у = b - асимптота (при бесконечном удалении вправо; черт. 299)."
 
     -- "Справочник по высшей математике" / М.Я. Выгодский
+
+
+Суть
+====
 
 Вся суть Agile (итеративной) модели разработки была лаконично и метко выражена Кент Беком всего одним предложением:
 
@@ -138,6 +151,56 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
 
+
+О сложностях
+============
+
+Вернемся еще раз к выражению Kent Beck "*сделайте изменение легким, а потом делай легко изменение*".
+Оно состоит из двух частей, причем, первая из них предшествует второй.
+Как раз именно первую часть нередко забывают сделать на современном рынке, а без первой части вторая часть работает не будет, как это нетрудно догадаться.
+
+    📝 "Scrum is ok if you do it right."
+
+    -- `OOP 2015 Keynote - Robert C. Martin ("Uncle Bob"): Agility and Architecture at 15:21 <https://youtu.be/0oGpWmS0aYQ?t=921>`__
+
+Происходит это во многом потому, что:
+
+    📝 "Я узнал от Jeff Sutherland, что первый Scrum на самом деле использовал все XP практики.
+    Но Ken Schwaber убедил его оставить инженерные практики за рамками Scrum, чтобы упростить модель и позволить командам брать на себя ответственность за выбор тех или иных практик.
+    Возможно, это ускорило распространение Scrum, но с другой стороны многие команды страдают из-за отсутствия технических практик, позволяющих поддерживать постоянный темп гибкой разработки.
+
+    I learned from Jeff Sutherland that the first Scrum actually did all the XP practices.
+    But Ken Schwaber convinced him to leave the engineering practices out of Scrum, to keep the model simple and let the teams take responsibility for the tech practices themselves.
+    Perhaps this helped spread Scrum faster, but the downside is that a lot of teams suffer because they lack the technical practices that enable sustainable agile development."
+
+    -- "Scrum and XP from the Trenches: How We Do Scrum" 2nd edition by Henrik Kniberg, перевод под редакцией Алексея Кривицкого
+
+Последнее предложение приведенной выше цитаты разъясняет то же самое, но другими словами.
+А ведь еще в 2004 г., в книге "Agile Project Management with Scrum" by Ken Schwaber, Scrum назывался методологий.
+
+Озвученному вопросу посвящена статья "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler.
+И очень удачно по этому вопросу высказался Grady Booch:
+
+    📝 "Grady Booch has also provided a set of guidelines for an agile architecture (which in turn imply some duties for the agile architect).
+    Booch claims that all good software-intensive architectures are agile.
+    What does he mean by this? He means that a successful architecture is resilient and loosely coupled.
+    It is composed of a core set of well-reasoned design decisions but still contains some “wiggle room” that allows modifications to be made and refactorings to be done, without ruining the original structure.
+
+    Booch also notes that an effective agile process will allow the architecture to grow incrementally as the system is developed and matures.
+    The key to success is to have decomposability, separation of concerns, and near-independence of the parts.
+    (Sound familiar? These are all modifiability tactics.)
+
+    Finally, Booch notes that to be agile, the architecture should be visible and self-evident in the code; this means making the design patterns, cross-cutting concerns, and other important decisions obvious, well communicated, and defended.
+    This may, in turn, require documentation.
+    But whatever architectural decisions are made, the architect must make an effort to “socialize” the architecture."
+
+    -- "Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman
+
+..
+
+    📝 "After all software is supposed to be soft."
+
+    -- "`The New Methodology <https://www.martinfowler.com/articles/newMethodology.html>`__" by Martin Fowler
 
 
 .. seealso::
