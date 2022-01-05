@@ -187,6 +187,12 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
 Impossible. Точка.
 Если говорить более развернуто, то, конечно же это возможно, просто это становится экономически нецелесообразным, поскольку при быстрорастущем графике изменения кода возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования.
 
+    📝 "To make agile work, you need solid technical practices.
+    A lot of agile education under-emphasizes these, but if you skimp on this you won't gain the productivity and responsiveness benefits that agile development can give you (stranding you at level 1 of the agile fluency model.)
+    This is one of the reasons that I still think that Extreme Programming is the most valuable of the named agile methods as a core and starting point."
+
+    -- "`Agile Software Development <https://martinfowler.com/agile.html>`__" by Martin Fowler
+
 Этому вопросу посвящена статья "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler.
 И очень удачно по этому вопросу высказался Grady Booch:
 
