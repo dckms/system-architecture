@@ -13,3 +13,4 @@ Soft Skills
    /emacsway/soft-skills/planning-in-psychology
    /emacsway/soft-skills/learning
    /emacsway/soft-skills/knowledge-vs-opinion
+   /emacsway/soft-skills/learning-spiral-phase-mismatch

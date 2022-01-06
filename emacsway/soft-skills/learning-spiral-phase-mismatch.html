@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Несовпадение фаз спиралей обучения &#8212; System Architecture</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="Общее пространство" href="../../trunk/index.html" />
+    <link rel="prev" title="Разрешение конфликтов на почве недостатка знаний" href="knowledge-vs-opinion.html" />
+    
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+
+
+    
+        
+            <link rel="canonical" href="https://dckms.github.io/system-architecture/emacsway/soft-skills/learning-spiral-phase-mismatch.html" />
+        
+    
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+              <div class="related top">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="knowledge-vs-opinion.html" title="Previous document">Разрешение конфликтов на почве недостатка знаний</a>
+        </li>
+        <li>
+          <a href="../../trunk/index.html" title="Next document">Общее пространство</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+
+          <div class="body" role="main">
+            
+    
+  <span class="target" id="index-0"></span><div class="section" id="emacsway-learning-spiral-phase-mismatch">
+<span id="id1"></span><h1>Несовпадение фаз спиралей обучения<a class="headerlink" href="#emacsway-learning-spiral-phase-mismatch" title="Ссылка на этот заголовок">¶</a></h1>
+<p><em>Автор раздела: Ivan Zakrevsky</em></p>
+<blockquote>
+<div><p>📝 Вторая причина столь разных точек зрения на использования инструментов заключается в «спирали обучения».
+Если у вас больше 5 лет опыта, то вы наверняка замечали, что кривая обучения на самом деле выглядит не совсем так, как обычно принято представлять, а несколько иначе.
+<strong>Я бы сказал, что кривая обучения – это скорее бесконечный процесс, который в лучшем случае будет «сходиться» к точке «идеального использования инструмента»</strong>:</p>
+<div class="figure align-left" id="id2">
+<a class="reference internal image-reference" href="../../_images/learning-spiral.jpg"><img alt="Рис. 1: Кривая обучения vs. Спираль обучения. Изображение из статьи &quot;Is TDD Dead. Часть 5&quot; / Сергей Тепляков https://sergeyteplyakov.blogspot.com/2014/06/is-tdd-dead-5.html" src="../../_images/learning-spiral.jpg" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text">Рис. 1: Кривая обучения vs. Спираль обучения. Изображение из статьи «<a class="reference external" href="https://sergeyteplyakov.blogspot.com/2014/06/is-tdd-dead-5.html">Is TDD Dead. Часть 5</a>» / Сергей Тепляков</span><a class="headerlink" href="#id2" title="Постоянная ссылка на рисунок">¶</a></p>
+</div>
+<p>Форма этой «спирали обучения» обусловлена нашей увлеченностью.
+Как только мы узнаем о новом инструменте мы начинаем его интенсивно использовать, нас «заносит» и мы начинаем его применять там, где нужно, и там, где без него было бы лучше обойтись.
+Со временем наша эйфория проходит и мы можем либо вообще отказаться от него («Все, паттерны проектирования не нужны!») или же перейти на новый уровень понимания и использовать инструмент более рационально.</p>
+<p>Разные люди находятся на разных точках «спирали обучения», что также усложняет взаимопонимание.
+К тому же, у разных людей точка «правильного» понимания (линия «правильного понимания» на графике справа) находится на разном уровне, что проявляется в том, что кто-то полностью отказывается от инструмента («TDD не нужен!», или «IoC не нужен!», «или ОО не нужно» и т.п.), а кто-то продолжает упорно использовать инструмент не по назначению.</p>
+<p class="attribution">—«<a class="reference external" href="https://sergeyteplyakov.blogspot.com/2014/06/is-tdd-dead-5.html">Is TDD Dead. Часть 5</a>» / Сергей Тепляков</p>
+</div></blockquote>
+<p>Такое простое объяснение профессиональных конфликтов.
+У одного специалиста - девиация в сторону паттернов, у другого - в сторону алгоритмов.
+И не могут поделить что важнее.</p>
+<p>Кстати, это так же объясняет то, почему соискатель и интервьюер часто не находят друг друга.</p>
+<p>Психолог, нобелевский лауреат Даниэль Канеман выделил «правило пик-конец» нашей памяти.
+Мы помним прошлое неравномерно.
+Наибольший вес мы придаем двум видам событий: тем, что вызвали максимальные эмоции и тем, которые произошли недавно.</p>
+<p>Но, как было сказано:</p>
+<blockquote>
+<div><p>📝 кривая обучения – это скорее бесконечный процесс, который в лучшем случае будет «сходиться» к точке «идеального использования инструмента».</p>
+<p class="attribution">—«<a class="reference external" href="https://sergeyteplyakov.blogspot.com/2014/06/is-tdd-dead-5.html">Is TDD Dead. Часть 5</a>» / Сергей Тепляков</p>
+</div></blockquote>
+<p>Иными словами, чем шире полнота знаний, тем меньше степень «увлеченности» отдельными аспектами этих знаний, и лучше сбалансированность решений.
+Т.е., лечится это, опять же, <a class="reference internal" href="knowledge-vs-opinion.html#emacsway-knowledge-vs-opinion-in-psychology"><span class="std std-ref">увеличением охвата знаний</span></a>.</p>
+<p id="emacsway-martin-fowler-16-patterns-in-32-lines">Кстати, именно это явление описывал M.Fowler в своей статье «Is Design Dead?»:</p>
+<blockquote>
+<div><p>📝 «The essence of this argument is that patterns are often over-used. The world is full of the legendary programmer, fresh off his first reading of GOF  who includes sixteen patterns in 32 lines of code. I remember one evening, fueled by a very nice single malt, running through with Kent a paper to be called «Not Design Patterns: 23 cheap tricks» We were thinking of such things as use an if statement rather than a strategy. The joke had a point, patterns are often overused, but that doesn’t make them a bad idea. The question is how you use them.»</p>
+<p class="attribution">—«<a class="reference external" href="https://martinfowler.com/articles/designDead.html#PatternsAndXp">Is Design Dead?</a>» by M.Fowler</p>
+</div></blockquote>
+<p>См. также:</p>
+<ul class="simple">
+<li><p>«<a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%BD%D0%B5%D0%B4%D0%B0%D0%B2%D0%BD%D0%B5%D0%B3%D0%BE">Эффект недавнего</a>»</p></li>
+</ul>
+<div class="admonition seealso">
+<p class="admonition-title">См.также</p>
+<ul class="simple">
+<li><p>«<a class="reference internal" href="knowledge-vs-opinion.html#emacsway-knowledge-vs-opinion-in-psychology"><span class="std std-ref">Разрешение конфликтов на почве недостатка знаний</span></a>»</p></li>
+</ul>
+</div>
+</div>
+
+
+
+    
+        
+            <div class="section" style="text-align: right;">
+                <p><a href="https://dckms.github.io/system-architecture/emacsway/soft-skills/learning-spiral-phase-mismatch.html">Canonical URL</a></p>
+            </div>
+        
+    
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="knowledge-vs-opinion.html" title="Previous document">Разрешение конфликтов на почве недостатка знаний</a>
+        </li>
+        <li>
+          <a href="../../trunk/index.html" title="Next document">Общее пространство</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">System Architecture</a></h1>
+
+
+
+<p class="blurb">Distributed Collaborative Knowledge Management System for System Architecture</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dckms&repo=system-architecture&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Общее пространство:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../trunk/it/index.html">IT</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../trunk/soft-skills/index.html">Soft Skills</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../trunk/index.html">Общее пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Авторские пространства:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Пространство Emacsway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Приватное пространствo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../private/index.html">Приватное пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Прочее:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Как пользоваться</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../trunk/soft-skills/index.html">Soft Skills</a><ul>
+      <li>Previous: <a href="knowledge-vs-opinion.html" title="предыдущая глава">Разрешение конфликтов на почве недостатка знаний</a></li>
+      <li>Next: <a href="../../trunk/index.html" title="следующая глава">Общее пространство</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="footer">
+      &copy;2022, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE" rel="nofollow">License</a>).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/emacsway/soft-skills/learning-spiral-phase-mismatch.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/dckms/system-architecture" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+
+    
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+           ym(87033138, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true,
+                trackHash:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/87033138" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    
+
+  </body>
+</html>

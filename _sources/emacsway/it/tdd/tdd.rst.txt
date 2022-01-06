@@ -25,7 +25,7 @@ TDD - Разработка через тестирование
     This is the seeming contradiction that lies behind much of the pain of programming.
     Test-driven development replies to this contradiction with a paradox-test the program before you write it.
 
-    \- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck
+    -- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck, перевод П. Анджан
 
 
 TDD - это о Software Design
@@ -40,7 +40,7 @@ TDD - это о Software Design
     One of the ironies of TDD is that it isn't a testing technique (the Cunningham Koan).
     It's an analysis technique, a design technique, really a technique for structuring all the activities of development.
 
-    \- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck
+    -- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck, перевод П. Анджан
 
 ..
 
@@ -48,7 +48,7 @@ TDD - это о Software Design
 
     It lets you write code with far fewer defects and a much cleaner design than is common in the industry. However, those whose souls are healed by the balm of elegance can find in TDD a way to do well by doing good.
 
-    \- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck
+    -- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck, перевод П. Анджан
 
 ..
 
@@ -58,7 +58,7 @@ TDD - это о Software Design
     TDD rests on a charmingly naive geekoid assumption that if you write better code, you'll be more successful.
     TDD helps you to pay attention to the right issues at the right time so you can make your designs cleaner, you can refine your designs as you learn.
 
-    \- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck
+    -- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck, перевод П. Анджан
 
 ..
 
@@ -72,7 +72,7 @@ TDD - это о Software Design
     Perfectly sensible design ideas turn out to be wrong.
     Better just to think about what you want the system to do, and let the design sort itself out later.
 
-    \- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck
+    -- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck, перевод П. Анджан
 
 
 TDD - это способ управления сложностью
@@ -94,7 +94,7 @@ TDD именно именно это и делает - декомпозируе�
 
     My first experience with disciplined, "one step at a time" refactoring was when I was pair-programming at 30,000 feet with Kent Beck.
 
-    \- Martin Fowler, the key author of "Refactoring: Improving the Design of Existing Code" [#fnrefactoring]_
+    -- Martin Fowler, the key author of "Refactoring: Improving the Design of Existing Code" [#fnrefactoring]_, перевод С. Маккавеева
 
 К тому же, рефакторинг является необъемлемой частью цикла TDD:
 
@@ -102,13 +102,13 @@ TDD именно именно это и делает - декомпозируе�
 
     Red/green/refactor - the TDD mantra.
 
-    \- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck
+    -- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck, перевод П. Анджан
 
 По основной версии, слово "refactoring" происходит от математического термина "factoring", и дословно переводится как "факторизация" или "декомпозиция", о чем говорит на своем сайте ключевой автор известной книги "Refactoring: Improving the Design of Existing Code" [#fnrefactoring]_ (благодаря которой, рефакторинг, собственно, и стал популярным):
 
     The obvious answer comes from the notion of factoring in mathematics. You can take an expressions such as x^2 + 5x + 6 and factor it into (x+2)(x+3). By factoring it you can make a number of mathematical operations much easier. Obviously this is much the same as representing 18 as 2*3^2. I've certainly often heard of people talking about a program as well factored once it's broken out into similarly logical chunks.
 
-    \- "`Etymology Of Refactoring <https://martinfowler.com/bliki/EtymologyOfRefactoring.html>`__" by Martin Fowler
+    -- "`Etymology Of Refactoring <https://martinfowler.com/bliki/EtymologyOfRefactoring.html>`__" by Martin Fowler
 
 Такое же мнение можно увидеть и на сайте Ward Cunningham:
 
@@ -122,7 +122,7 @@ TDD именно именно это и делает - декомпозируе�
 
     For an example of efficiency, count the terms and operators: (x - 1) * (x + 1) = x^2 - 1. Four terms versus three. Three operators versus two. However, the left hand side expression is (arguably) simpler to understand because it uses simpler operations. Also, it provides you more information about the structure of the function f(x) = x^2 - 1, like the roots are +/- 1, that would be difficult to determine just by "looking" at the right hand side.
 
-    \- "`What Is Refactoring <http://wiki.c2.com/?WhatIsRefactoring>`__" on c2.com
+    -- "`What Is Refactoring <http://wiki.c2.com/?WhatIsRefactoring>`__" on wiki.c2.com
 
 Если кому-то имя Ward Cunningham ни о чем не говорит, то вот как представил его сам Kent Beck в книге "Test-Driven Development By Example" [#fntdd]_:
 
@@ -138,20 +138,20 @@ TDD именно именно это и делает - декомпозируе�
     out the source of ideas once two people have shared a brain. If you assume that all of the
     good ideas here are Ward's, then you won't be far wrong.
 
-    \- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck
+    -- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck, перевод П. Анджан
 
 Ну и Википедия о факторизации:
 
     Factorization (or factoring) may also refer to more general decompositions of a mathematical object into the product of smaller or simpler objects.
     For example, every function may be factored into the composition of a surjective function with an injective function.
 
-    \- "`Factorization <https://en.wikipedia.org/wiki/Factorization>`__", Wikipedia
+    -- "`Factorization <https://en.wikipedia.org/wiki/Factorization>`__", Wikipedia
 
 ..
 
     Decomposition in computer science, also known as factoring, is breaking a complex problem or system into parts that are easier to conceive, understand, program, and maintain.
 
-    \- "`Decomposition <https://en.wikipedia.org/wiki/Decomposition_(computer_science)>`__", Wikipedia
+    -- "`Decomposition <https://en.wikipedia.org/wiki/Decomposition_(computer_science)>`__", Wikipedia
 
 ..
 
@@ -159,7 +159,7 @@ TDD именно именно это и делает - декомпозируе�
     Например, число 15 факторизуется на простые числа 3 и 5, а полином x2 − 4 факторизуется на (x − 2)(x + 2).
     В результате факторизации во всех случаях получается произведение более простых объектов, чем исходный.
 
-    \- "`Факторизация <https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F>`__", Wikipedia
+    -- "`Факторизация <https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F>`__", Wikipedia
 
 
 Таким образом, рефакторинг - это способ управления сложностью программы, который делает программу более читаемой и понимаемой за счет декомпозиции сложности, что позволяет снизить нагрузку на человеческую память.
@@ -170,7 +170,7 @@ TDD именно именно это и делает - декомпозируе�
 
     Refactoring is the process of changing a software system in such a way that it does not alter the external behavior of the code yet improves its internal structure.
 
-    \- Martin Fowler in "Refactoring: Improving the Design of Existing Code" [#fnrefactoring]_
+    -- Martin Fowler in "Refactoring: Improving the Design of Existing Code" [#fnrefactoring]_, перевод С. Маккавеева
 
 TDD, как и рефакторинг, расщепляет сложность таким образом, чтобы минимизировать объем сложности, рассматриваемый разработчиком в единицу времени.
 Это как песочные часы - одна песчинка в единицу времени.
@@ -187,7 +187,7 @@ TDD, как и рефакторинг, расщепляет сложность �
     **The draping leaves the surgeon with only a fixed set of variables.**
     Now, we could have long arguments over whether this abstraction of a person to a lower left quadrant abdomen leads to good health care, but at the moment of surgery, I'm kind of glad the surgeon can focus.
 
-    \- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck
+    -- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck, перевод П. Анджан
 
 ..
 
@@ -212,7 +212,7 @@ TDD, как и рефакторинг, расщепляет сложность �
     With both of these I'm just focused on one thing at a time, and as a result I can concentrate better on that one
     thing.
 
-    \- Martin Fowler, Afterword, "Test-Driven Development By Example" [#fntdd]_
+    -- Martin Fowler, Afterword, "Test-Driven Development By Example" [#fntdd]_, перевод П. Анджан
 
 ..
 
@@ -236,7 +236,7 @@ TDD, как и рефакторинг, расщепляет сложность �
     Customers of my systems became more positive, too.
     A new release of the system just meant more functionality, not a host of new defects to identify among all of their old favorite bugs.
 
-    \- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck
+    -- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck, перевод П. Анджан
 
 Jason Gorman публиковал свою статистику прохождения кат как по TDD, так и без TDD (см. "Clean Architecture: A Craftsman’s Guide to Software Structure and Design" [#fncarch]_ by Robert C. Martin).
 TDD всегда оказывался существенно быстрее, причем, даже при многократном прохождении одних и тех же кат.
@@ -267,7 +267,7 @@ TDD позволяет сфокусировать мозг на минималь
     Here the constant was hardwired code, not a data value, but the principle is the same.
     **TDD makes this work well by giving you running concrete examples from which to generalize**, instead of having to generalize purely with reasoning.
 
-    \- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck
+    -- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck, перевод П. Анджан
 
 ..
 
@@ -282,7 +282,7 @@ TDD позволяет сфокусировать мозг на минималь
     You can do a better job of solving the immediate problem **because you are focused**.
     When you go to implement the next test case, you can focus on that one, too, knowing that the previous test is guaranteed to work.
 
-    \- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck
+    -- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck, перевод П. Анджан
 
 Математическое объяснение этого явления можно найти в главе "1. Recurrent Problems : 1.1. The Tower of Hanoi" книги "Concrete Mathematics: A Foundation for Computer Science" 2nd edition by Ronald L. Graham, Donald E. Knuth, Oren Patashnik.
 
@@ -303,7 +303,7 @@ TDD - основной катализатор Clean Code
     If you don’t write your tests first, there is no force preventing you from coupling the functions together into an untestable mass.
     If you write your tests later, you may be able to test the inputs and the outputs of the total mass, but it will probably be quite difficult to test the individual functions."
 
-    \- "Clean Coder" [#fnccoder]_ by Robert Martin
+    -- "Clean Coder" [#fnccoder]_ by Robert Martin
 
 Однако, нужно учитывать:
 
@@ -318,7 +318,7 @@ TDD - основной катализатор Clean Code
     Good engineering is maybe 20 percent of a project's success.
     Bad engineering will certainly sink projects, but modest engineering can enable project success as long as the other 80 percent lines up right.
 
-    \- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck
+    -- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck, перевод П. Анджан
 
 
 Влияние TDD на темпы разработки
@@ -342,13 +342,13 @@ TDD - основной катализатор Clean Code
     Continuous design is also known as evolutionary or emergent design.
     I prefer the term continuous design because it emphasizes the core of the process: continuously taking advantage of opportunities to improve your design.
 
-    \- "`Continuous Design <https://www.martinfowler.com/ieeeSoftware/continuousDesign.pdf>`__" by Jim Shore
+    -- "`Continuous Design <https://www.martinfowler.com/ieeeSoftware/continuousDesign.pdf>`__" by Jim Shore
 
 Существует точка зрения, что они, все-таки, отличаются:
 
     We distinguish between emergent and evolutionary architecture, and this distinction is an important one.
 
-    \- "`Microservices as an Evolutionary Architecture <https://www.thoughtworks.com/insights/blog/microservices-evolutionary-architecture>`__" by Neal Ford, Rebecca Parsons
+    -- "`Microservices as an Evolutionary Architecture <https://www.thoughtworks.com/insights/blog/microservices-evolutionary-architecture>`__" by Neal Ford, Rebecca Parsons
 
 
 .. index::
@@ -378,7 +378,7 @@ Black Box or White Box?
     So that for me is too high a price to pay.
     That's not a trade-off I'm willing to make just to get piecemeal development.
 
-    \- Kent Beck, "`Is TDD Dead? Part 1 at 21:10 <https://youtu.be/z9quxZsLcfo?t=1269>`__
+    -- Kent Beck, "`Is TDD Dead? Part 1 at 21:10 <https://youtu.be/z9quxZsLcfo?t=1269>`__
 
 ..
 
@@ -447,7 +447,7 @@ Black Box or White Box?
     If I give in to my fear and just check the variable, then I lose that opportunity.
     That said, if the design idea doesn't come, it doesn't come. I'll check the variable, shed a tear, make a note to come back on one of my smarter days, and move on.
 
-    \- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck
+    -- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck, перевод П. Анджан
 
 ..
 
@@ -466,7 +466,7 @@ Black Box or White Box?
     By ignoring the code, it demonstrates a different value system—the tests are valuable alone.
     It's an appropriate attitude to take in some circumstances, but that is different from TDD.
 
-    \- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck
+    -- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck, перевод П. Анджан
 
 ..
 
@@ -474,7 +474,7 @@ Black Box or White Box?
     Kent thinks it's about trade-offs: is it worth making intermediate results testable?
     He used the example of a compiler where an intermediate parse-tree makes a good test point, and is also a better design.
 
-    \- Kent Beck, "`Is TDD Dead? <https://martinfowler.com/articles/is-tdd-dead/>`__"
+    -- Kent Beck, "`Is TDD Dead? <https://martinfowler.com/articles/is-tdd-dead/>`__"
 
 ..
 
@@ -482,7 +482,7 @@ Black Box or White Box?
     I have a tendency to pollute API design decisions with implementation speculation.
     I need to find a new way to separate the two levels of thinking while still providing rapid feedback between them.
 
-    \- Kent Beck, "`RIP TDD <https://www.facebook.com/notes/kent-beck/rip-tdd/750840194948847/>`__"
+    -- Kent Beck, "`RIP TDD <https://www.facebook.com/notes/kent-beck/rip-tdd/750840194948847/>`__"
 
 ..
 
@@ -521,7 +521,7 @@ Black Box or White Box?
     In contrast, the production code tends to become increasingly more abstract and general.
     Strong structural coupling prevents - or at least impedes - this necessary evolution, and prevents the production code from being as general, and flexible, as it could be.
 
-    \- "Clean Architecture: A Craftsman’s Guide to Software Structure and Design" [#fncarch]_ by Robert C. Martin
+    -- "Clean Architecture: A Craftsman’s Guide to Software Structure and Design" [#fncarch]_ by Robert C. Martin
 
 ..
 
@@ -545,19 +545,19 @@ Sociable or Solitary?
 
     As xunit testing became more popular in the 2000's the notion of solitary tests came back, at least for some people. We saw the rise of Mock Objects and frameworks to support mocking. Two schools of xunit testing developed, which I call the classic and mockist styles. One of the differences between the two styles is that mockists insist upon solitary unit tests, while classicists prefer sociable tests. Today I know and respect xunit testers of both styles **(personally I've stayed with classic style)**.
 
-    \- "`Unit Test <https://martinfowler.com/bliki/UnitTest.html#SolitaryOrSociable>`__" by Martin Fowler
+    -- "`Unit Test <https://martinfowler.com/bliki/UnitTest.html#SolitaryOrSociable>`__" by Martin Fowler
 
 ..
 
     At the end of the day it's not important to decide if you go for solitary or sociable unit tests. Writing automated tests is what's important. Personally, I find myself using both approaches all the time.
 
-    \-  "`The Practical Test Pyramid <https://martinfowler.com/articles/practical-test-pyramid.html#SociableAndSolitary>`__" by Ham Vocke with support of Martin Fowler.
+    --  "`The Practical Test Pyramid <https://martinfowler.com/articles/practical-test-pyramid.html#SociableAndSolitary>`__" by Ham Vocke with support of Martin Fowler.
 
 ..
 
     TestDrivenDevelopment produces Developer Tests. The failure of a test case implicates only the developer's most recent edit. **This implies that developers don't need to use Mock Objects to split all their code up into testable units**. And it implies a developer may always avoid debugging by reverting that last edit.
 
-    \- "`Unit Test <https://wiki.c2.com/?UnitTest>`__" on c2.com
+    -- "`Unit Test <https://wiki.c2.com/?UnitTest>`__" on c2.com
 
 Недостатки и достоинства обоих подходов описаны в статье "`Mocks Aren't Stubs <https://martinfowler.com/articles/mocksArentStubs.html>`__".
 
@@ -565,7 +565,7 @@ Sociable or Solitary?
 
     "My personal practice - I mock almost nothing."
 
-    \- Kent Beck, "`Is TDD Dead? Part 1 at 21:10 <https://youtu.be/z9quxZsLcfo?t=1269>`__
+    -- Kent Beck, "`Is TDD Dead? Part 1 at 21:10 <https://youtu.be/z9quxZsLcfo?t=1269>`__
 
 Лично я считаю что нужно ограничивать использование современных средства мокирования, активно эксплуатирующих Monkey Patch,  поскольку они позволяют создавать и тестировать низкокачественный код.
 
@@ -618,7 +618,7 @@ TDD и Design Patterns
     Perfectly sensible design ideas turn out to be wrong.
     Better just to think about what you want the system to do, and let the design sort itself out later.
 
-    \- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck
+    -- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck, перевод П. Анджан
 
 
 ..
@@ -655,7 +655,7 @@ TDD и Design Patterns
     Clearly the XP community is in favor of patterns, after all there is huge intersection between XP advocates and patterns advocates — Ward and Kent were leaders in both.
     Perhaps pattern copying is a third monological mode to go with test-first and refactoring, and like those two is dangerous on its own but powerful in concert.
 
-    \- Martin Fowler, Afterword, "Test-Driven Development By Example" [#fntdd]_
+    -- Martin Fowler, Afterword, "Test-Driven Development By Example" [#fntdd]_, перевод П. Анджан
 
 ..
 
@@ -678,7 +678,7 @@ TDD и Design Patterns
 
     I think XP should emphasize learning about patterns more. I'm not sure how I would fit that into XP's practices, but I'm sure Kent can come up with a way.
 
-    \- "`Is Design Dead? <https://martinfowler.com/articles/designDead.html#PatternsAndXp>`__" by Martin Fowler
+    -- "`Is Design Dead? <https://martinfowler.com/articles/designDead.html#PatternsAndXp>`__" by Martin Fowler
 
 Смотрите так же:
 
@@ -704,7 +704,7 @@ One assertion per test?
     Sometimes that approach makes the test more readable.
     When it doesn’t, I wouldn’t be too dogmatic about insisting on a single assertion.
 
-    \- "xUnit Test Patterns. Refactoring Test Code." by Gerard Meszaros
+    -- "xUnit Test Patterns. Refactoring Test Code." by Gerard Meszaros
 
 Эту же тему рассматривает и Robert C. Martin в главе "Chapter 9: Unit Tests :: One Assert per Test" книги "Clean Code: A Handbook of Agile Software Craftsmanship":
 
@@ -718,7 +718,7 @@ One assertion per test?
     But I am not afraid to put more than one assert in a test.
     I think the best thing we can say is that the number of asserts in a test ought to be minimized.
 
-    -- "Clean Code: A Handbook of Agile Software Craftsmanship" [#fnccode]_ by Robert C. Martin
+    -- "Clean Code: A Handbook of Agile Software Craftsmanship" [#fnccode]_ by Robert C. Martin, перевод Е. Матвеев
 
 Здесь он отсылает к статье "`One Assertion Per Test <https://www.artima.com/weblogs/viewpost.jsp?thread=35578>`__" by Dave Astels в качестве первоисточника.
 

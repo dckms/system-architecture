@@ -95,7 +95,7 @@
 
 .. seealso::
 
-   - :doc:`./self-education-for-software-engineer`
-   - :ref:`emacsway-planning-in-psychology`
-   - :ref:`emacsway-learning-in-psychology`
-   - :doc:`/README`
+   - ":doc:`./self-education-for-software-engineer`"
+   - ":ref:`emacsway-planning-in-psychology`"
+   - ":ref:`emacsway-learning-in-psychology`"
+   - ":doc:`/README`"
