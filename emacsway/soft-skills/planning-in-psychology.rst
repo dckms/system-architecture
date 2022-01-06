@@ -89,7 +89,7 @@
 
 .. seealso::
 
-   - :doc:`icebreaker-principle`
-   - :ref:`emacsway-learning-in-psychology`
-   - :doc:`/README`
-   - :doc:`/emacsway/it/self-education/self-education-for-software-engineer`
+   - ":doc:`icebreaker-principle`"
+   - ":ref:`emacsway-learning-in-psychology`"
+   - ":doc:`/README`"
+   - ":doc:`/emacsway/it/self-education/self-education-for-software-engineer`"
