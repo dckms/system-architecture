@@ -112,10 +112,8 @@ Role of Design Patterns in Agile
 
 По мере формирования коллективной знаний в области системной архитектуры, стали обнажаться архитектурные недостатки RoR, и по этому поводу даже были сняты два поучительных и заслуживающих внимания сериала:
 
-1. "Is TDD Dead?"
-https://martinfowler.com/articles/is-tdd-dead/
-2. "A Conversation with Badri Janakiraman about Hexagonal Rails"
-https://martinfowler.com/articles/badri-hexagonal/
+1. "`Is TDD Dead? <https://martinfowler.com/articles/is-tdd-dead/>`__"
+2. "`A Conversation with Badri Janakiraman about Hexagonal Rails <https://martinfowler.com/articles/badri-hexagonal/>`__"
 
 Однако, сам факт достижения высокой экономической эффективности от использования паттернов PoEAA был очевиден, и этот факт оказал существенное влияние на формирование современного состояния области знаний системной архитектуры.
 
