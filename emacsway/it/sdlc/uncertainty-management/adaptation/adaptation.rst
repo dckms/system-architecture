@@ -117,6 +117,10 @@ Prediction при этом не исчезает полностью, а пони
 
 - "`The New Methodology :: Predictive versus Adaptive <https://www.martinfowler.com/articles/newMethodology.html#PredictiveVersusAdaptive>`__" by Martin Fowler
 
+.. todo::
+
+    Patterns https://t.me/emacsway_log/217
+
 .. seealso::
 
    - ":ref:`emacsway-iterative-development`"
