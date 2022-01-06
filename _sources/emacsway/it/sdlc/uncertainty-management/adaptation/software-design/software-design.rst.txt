@@ -458,4 +458,5 @@ Randy Shoup
 
    Do it right! Иллюстрация из открытых источников неизвестного автора.
 
-
+.. seealso::
+   - ":doc:`../crash-course-in-software-development-economics`"
