@@ -2166,6 +2166,7 @@ Better just to think about what you want the system to do, and let the design so
 &lt;li&gt;&lt;p&gt;переместить фокус внимания разработчиков от Domain-independent knowledge к &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Domain_knowledge"&gt;Domain knowledge&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;В итоге, разработка на RoR дала многократный (на то время) прирост темпов разработки, что вызвало вирусный интерес к PoEAA и массовое клонирование RoR на многие языки программирования.&lt;/p&gt;
+&lt;p&gt;Иными словами, паттерны осуществляют унификацию решений типовых проблем, что способствует удешевлению достижения коллективного понимания устройства системы, путем минимизации затрат времени на синхронизацию и обобщение мнений.&lt;/p&gt;
 &lt;p&gt;По мере формирования коллективной знаний в области системной архитектуры, стали обнажаться архитектурные недостатки RoR, и по этому поводу даже были сняты два поучительных и заслуживающих внимания сериала:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;p&gt;«&lt;a class="reference external" href="https://martinfowler.com/articles/is-tdd-dead/"&gt;Is TDD Dead?&lt;/a&gt;»&lt;/p&gt;&lt;/li&gt;
