@@ -53,6 +53,8 @@
 Иными словами, чем шире полнота знаний, тем меньше степень "увлеченности" отдельными аспектами этих знаний, и лучше сбалансированность решений.
 Т.е., лечится это, опять же, :ref:`увеличением охвата знаний <emacsway-opinion-in-psychology>`.
 
+.. _emacsway-martin-fowler-16-patterns-in-32-lines:
+
 Кстати, именно это явление описывал M.Fowler в своей статье "Is Design Dead?":
 
     📝 "The essence of this argument is that patterns are often over-used. The world is full of the legendary programmer, fresh off his first reading of GOF  who includes sixteen patterns in 32 lines of code. I remember one evening, fueled by a very nice single malt, running through with Kent a paper to be called "Not Design Patterns: 23 cheap tricks" We were thinking of such things as use an if statement rather than a strategy. The joke had a point, patterns are often overused, but that doesn't make them a bad idea. The question is how you use them."

@@ -132,7 +132,7 @@ Primary Technical Imperative
 
     -- "Code Complete" by Steve McConnell
 
-..
+.. _emacsway-kent-beck-constantine's-law:
 
     📝 "These were elucidated in the mid-70s by Yourdon & Constantine in Structured Design and haven’t changed.
     Their argument goes like this:
