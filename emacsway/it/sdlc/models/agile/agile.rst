@@ -232,4 +232,5 @@ Impossible. Точка.
    - ":ref:`emacsway-adaptation`"
    - ":ref:`emacsway-prediction`"
    - ":ref:`emacsway-balancing-prediction-adaptation`"
+   - ":doc:`../../uncertainty-management/adaptation/software-design/software-design`"
    - ":doc:`../../uncertainty-management/adaptation/crash-course-in-software-development-economics`"
