@@ -1,0 +1,7 @@
+/*
+  https://alabaster.readthedocs.io/en/latest/customization.html#custom-stylesheet
+*/
+
+div.body p, div.body dd, div.body li, div.body blockquote {
+    hyphens: none;
+}
