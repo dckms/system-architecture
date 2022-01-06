@@ -30,6 +30,7 @@
     - "Chapter 2. Principles in Refactoring"
 - "Clean Architecture: A Craftsman’s Guide to Software Structure and Design" by Robert C. Martin
     - "Chapter 1. What Is Design and Architecture?"
+- "Working Effectively with Legacy Code" by Michael C. Feathers
 - "`Yagni <https://martinfowler.com/bliki/Yagni.html>`__" (хорошо разъясняет виды экономических ущербов: "cost of build", "cost of delay", "cost of carry", "cost of repair", "cost of removing")
 - "`Technical Debt <https://martinfowler.com/bliki/TechnicalDebt.html>`__"
 - "`Technical Debt Quadrant <https://martinfowler.com/bliki/TechnicalDebtQuadrant.html>`__"
@@ -41,5 +42,6 @@
 - "`Принцип YAGNI <http://sergeyteplyakov.blogspot.com/2016/08/yagni.html>`__"
 - "`Systems thinking <https://less.works/less/principles/systems-thinking.html>`__" (`на русском <https://less.works/ru/less/principles/systems-thinking.html>`__)
 - "`Modifiability <https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8299>`__"
+- "`Making Architecture Matter - Martin Fowler Keynote <https://youtu.be/DngAZyWMGR0>`_" - превосходное 14-ти минутное видео.
 
 См. также: https://t.me/emacsway_log/125

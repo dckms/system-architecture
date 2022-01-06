@@ -1,6 +1,7 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
 .. index:: TDD
+   :name: emacsway-tdd
 
 ===================================
 TDD - Разработка через тестирование

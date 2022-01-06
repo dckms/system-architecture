@@ -107,7 +107,7 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
 
     📝 "At the core of understanding this argument is the software change curve.
     The change curve says that as the project runs, it becomes exponentially more expensive to make changes.
-    The change curve is usually expressed in terms of phases "a change made in analysis for $1 would cost thousands to fix in production".
+    The change curve is usually expressed in terms of phases \"a change made in analysis for $1 would cost thousands to fix in production\".
     This is ironic as most projects still work in an ad-hoc process that doesn't have an analysis phase, but the exponentiation is still there.
     **The exponential change curve means that evolutionary design cannot possibly work.**
     It also conveys why planned design must be done carefully because any mistakes in planned design face the same exponentiation.
@@ -127,7 +127,7 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
     📝 "**This is one of the premises of XP. It is the technical premise of XP.**
     If the cost of change rose slowly over time, you would act completely differently from how you do under the assumption that costs rise exponentially.
     You would make big decisions as late in the process as possible, to defer the cost of making the decisions and to have the greatest possible chance that they would be right.
-    You would only implement what you had to, in hopes that the needs you anticipate for tomorrow wouldn’t come true.
+    You would only implement what you had to, in hopes that the needs you anticipate for tomorrow wouldn't come true.
     You would introduce elements to the design only as they simplified existing code or made writing the next bit of code simpler.
 
     **If a flattened change cost curve makes XP possible, a steep change cost curve makes XP impossible.**
@@ -150,6 +150,15 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
     In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project."
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
+
+О том, почему я обратился к высказываю Kent Beck в этом вопросе, неплохо поясняет Martin Fowler:
+
+    📝 "Extreme Programming (XP) is a software development methodology developed primarily by Kent Beck.
+    XP was one of the first agile methods, indeed XP was the dominant agile method in the late 90s and early 00s before Scrum became dominant as the noughties passed.
+    Many people (including myself) consider XP to be the primary catalyst that got attention to agile methods, and superior to Scrum as a base for starting out in agile development."
+
+    -- "`Extreme Programming <https://martinfowler.com/bliki/ExtremeProgramming.html>`__" by Martin Fowler
+
 
 
 О сложностях
@@ -175,10 +184,25 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
 
     -- "Scrum and XP from the Trenches: How We Do Scrum" 2nd edition by Henrik Kniberg, перевод под редакцией Алексея Кривицкого
 
-Последнее предложение приведенной выше цитаты разъясняет то же самое, но другими словами.
+Последнее предложение приведенной выше цитаты выражает то же самое, но другими словами.
 А ведь еще в 2004 г., в книге "Agile Project Management with Scrum" by Ken Schwaber, Scrum назывался методологий.
 
-Озвученному вопросу посвящена статья "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler.
+Позвольте еще раз повторить слова Kent Beck:
+
+    📝 "If a flattened change cost curve makes XP possible, a steep change cost curve makes XP impossible."
+
+    -- "Extreme Programming Explained" 1st edition by Kent Beck
+
+Impossible. Точка.
+Если говорить более развернуто, то, конечно же, это возможно, просто это становится экономически нецелесообразным, поскольку при быстрорастущем графике изменения кода возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования.
+
+    📝 "To make agile work, you need solid technical practices.
+    A lot of agile education under-emphasizes these, but if you skimp on this you won't gain the productivity and responsiveness benefits that agile development can give you (stranding you at level 1 of the agile fluency model.)
+    This is one of the reasons that I still think that Extreme Programming is the most valuable of the named agile methods as a core and starting point."
+
+    -- "`Agile Software Development <https://martinfowler.com/agile.html>`__" by Martin Fowler
+
+Этому вопросу посвящена статья "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler.
 И очень удачно по этому вопросу высказался Grady Booch:
 
     📝 "Grady Booch has also provided a set of guidelines for an agile architecture (which in turn imply some duties for the agile architect).
