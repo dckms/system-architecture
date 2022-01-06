@@ -59,7 +59,7 @@
             
     
   <div class="section" id="tdd">
-<span id="index-0"></span><h1><a class="toc-backref" href="#id31">TDD - Разработка через тестирование</a><a class="headerlink" href="#tdd" title="Ссылка на этот заголовок">¶</a></h1>
+<span id="emacsway-tdd"></span><h1><a class="toc-backref" href="#id31">TDD - Разработка через тестирование</a><a class="headerlink" href="#tdd" title="Ссылка на этот заголовок">¶</a></h1>
 <p>Вокруг TDD (Test-Driven Development) сложилось немало мифов и заблуждений, и здесь я попытаюсь восстановить изначальный его смысл.
 Для этого придется обратиться к первоисточникам.</p>
 <div class="contents topic" id="id1">
@@ -135,7 +135,7 @@ Better just to think about what you want the system to do, and let the design so
 Превышение этого порога замедляет темпы разработки, так как мозг не может преодолеть высокую концентрацию сложности.</p>
 <p>Тут можно провести аналогию с народной пословицей: веник сложно поломать пока он связан, но, развязав его на отдельные прутики, их можно легко переломать по отдельности.
 TDD именно именно это и делает - декомпозирует сложность в процессе разработки.</p>
-<p id="index-1">Здесь хорошо прослеживается аналогия с рефакторингом, который, в значительной мере, был основан тем же самым человеком - Кент Беком.</p>
+<p id="index-0">Здесь хорошо прослеживается аналогия с рефакторингом, который, в значительной мере, был основан тем же самым человеком - Кент Беком.</p>
 <blockquote>
 <div><p>Мой первый опыт проведения дисциплинированного «поэтапного» рефакторинга связан с программированием на пару с Кентом Беком (Kent Beck) на высоте 30 000 футов.</p>
 <p>My first experience with disciplined, «one step at a time» refactoring was when I was pair-programming at 30,000 feet with Kent Beck.</p>
@@ -349,7 +349,7 @@ I prefer the term continuous design because it emphasizes the core of the proces
 </div></blockquote>
 </div>
 <div class="section" id="black-box-or-white-box">
-<span id="index-2"></span><h2><a class="toc-backref" href="#id37">Black Box or White Box?</a><a class="headerlink" href="#black-box-or-white-box" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="index-1"></span><h2><a class="toc-backref" href="#id37">Black Box or White Box?</a><a class="headerlink" href="#black-box-or-white-box" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Тесты по возможности должны быть черным ящиком, т.е. тестируем поведение, а не реализацию.
 Это позволяет безболезненно подменять реализацию при рефакторинге.
 Опускаться в глубь реализации нужно тогда, когда это требуется для сокращения комбинаций условий тестирования, например, класс использует несколько подключаемых стратегий, и нам проще протестировать стратегии по одной.
@@ -485,7 +485,7 @@ Strong structural coupling prevents - or at least impedes - this necessary evolu
 </div></blockquote>
 </div>
 <div class="section" id="sociable-or-solitary">
-<span id="index-3"></span><h2><a class="toc-backref" href="#id38">Sociable or Solitary?</a><a class="headerlink" href="#sociable-or-solitary" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="index-2"></span><h2><a class="toc-backref" href="#id38">Sociable or Solitary?</a><a class="headerlink" href="#sociable-or-solitary" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Наверное, самое часто заблуждение, которое мне приходилось слышать, это то, тесты должны быть полностью изолированы, и должны взаимодействовать только с <a class="reference external" href="https://martinfowler.com/bliki/TestDouble.html">дублерами</a>.
 Этот вопрос известен как «Solitary or Sociable?».</p>
 <blockquote>
@@ -510,7 +510,7 @@ Strong structural coupling prevents - or at least impedes - this necessary evolu
 <p>Лично я считаю что нужно ограничивать использование современных средства мокирования, активно эксплуатирующих Monkey Patch,  поскольку они позволяют создавать и тестировать низкокачественный код.</p>
 </div>
 <div class="section" id="tdd-design-patterns">
-<span id="index-4"></span><h2><a class="toc-backref" href="#id39">TDD и Design Patterns</a><a class="headerlink" href="#tdd-design-patterns" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="index-3"></span><h2><a class="toc-backref" href="#id39">TDD и Design Patterns</a><a class="headerlink" href="#tdd-design-patterns" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Почему-то многие начинающие программисты, не знакомые с первоисточниками по TDD, думают, что TDD подразумевает только Evolutionary Design, а Simple Design противопоставляется паттернам программирования.</p>
 <blockquote>
 <div><p>Я обратил внимание на один важный эффект, который, я надеюсь, смогут принять во внимание и другие.
