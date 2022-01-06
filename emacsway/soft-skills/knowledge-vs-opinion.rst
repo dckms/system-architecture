@@ -4,11 +4,8 @@
 
 .. index::
    single: Knowledge; in psychology
-   :name: emacsway-knowledge-in-psychology
-
-.. index::
    single: Opinion; in psychology
-   :name: emacsway-opinion-in-psychology
+   :name: emacsway-knowledge-vs-opinion-in-psychology
 
 
 ================================================

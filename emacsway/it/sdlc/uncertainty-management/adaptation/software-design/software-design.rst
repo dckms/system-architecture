@@ -5,9 +5,9 @@
    :name: emacsway-agile-software-design
 
 
-===============
-Software Design
-===============
+================================
+Role of Software Design in Agile
+================================
 
 .. sectionauthor:: Ivan Zakrevsky
 

@@ -51,7 +51,7 @@
     -- "`Is TDD Dead. Часть 5 <https://sergeyteplyakov.blogspot.com/2014/06/is-tdd-dead-5.html>`__" / Сергей Тепляков
 
 Иными словами, чем шире полнота знаний, тем меньше степень "увлеченности" отдельными аспектами этих знаний, и лучше сбалансированность решений.
-Т.е., лечится это, опять же, :ref:`увеличением охвата знаний <emacsway-knowledge-in-psychology>`.
+Т.е., лечится это, опять же, :ref:`увеличением охвата знаний <emacsway-knowledge-vs-opinion-in-psychology>`.
 
 .. _emacsway-martin-fowler-16-patterns-in-32-lines:
 
@@ -68,5 +68,5 @@
 
 .. seealso::
 
-   - ":ref:`emacsway-knowledge-in-psychology`"
+   - ":ref:`emacsway-knowledge-vs-opinion-in-psychology`"
 

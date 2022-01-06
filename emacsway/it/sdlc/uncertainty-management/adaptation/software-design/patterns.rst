@@ -5,9 +5,9 @@
    :name: emacsway-agile-patterns
 
 
-===============
-Patterns
-===============
+================================
+Role of Design Patterns in Agile
+================================
 
 .. sectionauthor:: Ivan Zakrevsky
 
@@ -30,7 +30,7 @@ Patterns
 Вопрос применения паттернов - это вопрос баланса между уровнем управляемой им сложности и уровнем привносимой им сложности.
 При дисбалансе бизнес и технических интересов, злоупотребление паттернами может привести к экономически неоправданному переусложению системы: https://t.me/emacsway_log/124
 
-Тем не менее, Паттерны Проектирования являются :ref:`обобщением и систематизацией практики <emacsway-knowledge-in-psychology>`.
+Тем не менее, Паттерны Проектирования являются :ref:`обобщением и систематизацией практики <emacsway-knowledge-vs-opinion-in-psychology>`.
 Их не выдумывают - их обобщают.
 Это значит, что незнание конкретного паттерна еще не означает неосознанного его применения.
 
@@ -119,7 +119,10 @@ https://martinfowler.com/articles/badri-hexagonal/
 
 Однако, сам факт достижения высокой экономической эффективности от использования паттернов PoEAA был очевиден, и этот факт оказал существенное влияние на формирование современного состояния области знаний системной архитектуры.
 
-    📝 "In most successful software projects, the expert developers working on that project have a shared understanding of the system design. This shared understanding is called ‘architecture.’ This understanding includes how the system is divided into components and how the components interact through interfaces. These components are usually composed of smaller components, but the architecture only includes the components and interfaces that are understood by all the developers."
+    📝 "In most successful software projects, the expert developers working on that project have a shared understanding of the system design.
+    **This shared understanding is called ‘architecture.’**
+    This understanding includes how the system is divided into components and how the components interact through interfaces.
+    These components are usually composed of smaller components, but the architecture only includes the components and interfaces that are understood by all the developers."
 
     -- `Ralph Johnson <https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf>`__
 
