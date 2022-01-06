@@ -446,7 +446,7 @@ Steve McConnell
 Randy Shoup
 -----------
 
-    | \- We don't time to do it right!
+    | \- We don't have time to do it right!
     | \- Do you have time to do it twice?
 
     -- `Randy Shoup <https://www.infoq.com/presentations/microservices-data-centric>`_, VP Engineering at Stitch Fix in San Francisco
