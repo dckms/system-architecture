@@ -8,3 +8,4 @@ Software Design
    :glob:
 
    /emacsway/it/sdlc/uncertainty-management/adaptation/software-design/software-design
+   /emacsway/it/sdlc/uncertainty-management/adaptation/software-design/patterns
