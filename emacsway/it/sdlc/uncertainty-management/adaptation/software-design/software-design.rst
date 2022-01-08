@@ -74,6 +74,9 @@ TDD является эффективным :ref:`средством управ�
     -- "Clean Code: A Handbook of Agile Software Craftsmanship" by Robert C. Martin
 
 
+.. index:: Primary Technical Imperative
+   :name: emacsway-primary-technical-imperative
+
 Primary Technical Imperative
 ============================
 
