@@ -59,23 +59,23 @@
             
     
   <div class="section" id="role-of-software-design-in-agile">
-<span id="emacsway-agile-software-design"></span><h1><a class="toc-backref" href="#id7">Role of Software Design in Agile</a><a class="headerlink" href="#role-of-software-design-in-agile" title="Ссылка на этот заголовок">¶</a></h1>
+<span id="emacsway-agile-software-design"></span><h1><a class="toc-backref" href="#id8">Role of Software Design in Agile</a><a class="headerlink" href="#role-of-software-design-in-agile" title="Ссылка на этот заголовок">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
 <div class="contents topic" id="id1">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#role-of-software-design-in-agile" id="id7">Role of Software Design in Agile</a></p>
+<li><p><a class="reference internal" href="#role-of-software-design-in-agile" id="id8">Role of Software Design in Agile</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id2" id="id8">Кто читает код?</a></p></li>
-<li><p><a class="reference internal" href="#primary-technical-imperative" id="id9">Primary Technical Imperative</a></p></li>
-<li><p><a class="reference internal" href="#id3" id="id10">Оправдано ли качество?</a></p>
+<li><p><a class="reference internal" href="#id2" id="id9">Кто читает код?</a></p></li>
+<li><p><a class="reference internal" href="#primary-technical-imperative" id="id10">Primary Technical Imperative</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id11">Оправдано ли качество?</a></p>
 <ul>
-<li><p><a class="reference internal" href="#martin-fowler" id="id11">Martin Fowler</a></p></li>
-<li><p><a class="reference internal" href="#kent-beck" id="id12">Kent Beck</a></p></li>
-<li><p><a class="reference internal" href="#robert-martin" id="id13">Robert Martin</a></p></li>
-<li><p><a class="reference internal" href="#ralph-johnson" id="id14">Ralph Johnson</a></p></li>
-<li><p><a class="reference internal" href="#steve-mcconnell" id="id15">Steve McConnell</a></p></li>
-<li><p><a class="reference internal" href="#randy-shoup" id="id16">Randy Shoup</a></p></li>
+<li><p><a class="reference internal" href="#martin-fowler" id="id12">Martin Fowler</a></p></li>
+<li><p><a class="reference internal" href="#kent-beck" id="id13">Kent Beck</a></p></li>
+<li><p><a class="reference internal" href="#robert-martin" id="id14">Robert Martin</a></p></li>
+<li><p><a class="reference internal" href="#ralph-johnson" id="id15">Ralph Johnson</a></p></li>
+<li><p><a class="reference internal" href="#steve-mcconnell" id="id16">Steve McConnell</a></p></li>
+<li><p><a class="reference internal" href="#randy-shoup" id="id17">Randy Shoup</a></p></li>
 </ul>
 </li>
 </ul>
@@ -83,7 +83,7 @@
 </ul>
 </div>
 <div class="section" id="id2">
-<h2><a class="toc-backref" href="#id8">Кто читает код?</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">Кто читает код?</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Среди малоопытных разработчиков иногда можно услышать, что им некогда писать качественный код, так как у них мало времени, а этот код все равно читать никто не будет.</p>
 <p>Истина в том, что в процессе конструирования кода, 91% времени занимает именно чтение кода и борьба со сложностью, и только 9% времени времени занимает ввод символов с клавиатуры.
 И это соотношение дано еще для качественного кода.</p>
@@ -132,7 +132,7 @@ So if you want to go fast, if you want to get done quickly, if you want your cod
 </div></blockquote>
 </div>
 <div class="section" id="primary-technical-imperative">
-<span id="emacsway-primary-technical-imperative"></span><h2><a class="toc-backref" href="#id9">Primary Technical Imperative</a><a class="headerlink" href="#primary-technical-imperative" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="emacsway-primary-technical-imperative"></span><h2><a class="toc-backref" href="#id10">Primary Technical Imperative</a><a class="headerlink" href="#primary-technical-imperative" title="Ссылка на этот заголовок">¶</a></h2>
 <blockquote>
 <div><p>📝 «There are two ways of constructing a software design: one way is to make it so simple that there are obviously no deficiencies, and the other is to make it so complicated that there are no obvious deficiencies.»</p>
 <p class="attribution">—C. A. R. Hoare</p>
@@ -165,7 +165,7 @@ write code that’s easier for themselves and others to understand and that has 
 <p class="attribution">—«Code Complete» by Steve McConnell</p>
 </div></blockquote>
 <blockquote>
-<div><p>📝 «Software’s Primary Technical Imperative is managing complexity.
+<div><p>📝 «<strong>Software’s Primary Technical Imperative is managing complexity.</strong>
 This is greatly aided by a design focus on simplicity.
 Simplicity is achieved in two general ways: minimizing the amount of essential
 complexity that anyone’s brain has to deal with at any one time, and keeping
@@ -177,8 +177,9 @@ accidental complexity from proliferating needlessly.»</p>
 If a class contains more than about seven data members, consider whether the class should be decomposed into multiple smaller classes (Riel 1996).»</p>
 <p class="attribution">—«Code Complete» by Steve McConnell</p>
 </div></blockquote>
+<p>См. также «<a class="reference internal" href="../../../../../soft-skills/icebreaker-principle.html#emacsway-icebreaker-principle"><span class="std std-ref">Принцип ледокола</span></a>».</p>
 <blockquote id="emacsway-kent-beck-constantine-s-law">
-<div><p>📝 «These were elucidated in the mid-70s by Yourdon &amp; Constantine in Structured Design and haven’t changed.
+<div><p>📝 «These were elucidated in the mid-70s by Yourdon &amp; Constantine in <a class="reference external" href="https://amzn.to/2GsuXvQ">Structured Design</a> and haven’t changed.
 Their argument goes like this:</p>
 <ol class="arabic simple">
 <li><p>We design software to reduce its cost.</p></li>
@@ -189,20 +190,33 @@ Their argument goes like this:</p>
 <li><p>So, design ≈ cost ≈ change ≈ big change ≈ coupling. Transitively, software design ≈ managing coupling.</p></li>
 </ol>
 <p>(This skips loads of interesting stuff, but I’m just trying to set up the argument for why rapid decomposition of a monolith into micro-services is counter-productive.)»</p>
+<p>Managing Coupling</p>
+<p>Note I don’t say, “Eliminating coupling.”
+Decoupling comes with its own costs, both the cost of the decoupling itself and the future costs of unanticipated changes.
+The more perfectly a design is adapted to one set of changes, the more likely it is to be blind-sided by novel changes. And so we have the classic tradeoff curve:</p>
+<div class="figure align-left" id="id5">
+<a class="reference internal image-reference" href="../../../../../../_images/balancing-coupling-decoupling.jpeg"><img alt="Classic tradeoff curve of balancing cost of Coupling vs. cost of Decoupling. The image source is article &quot;Monolith -&gt; Services: Theory &amp; Practice&quot; by Kent Beck https://medium.com/&#64;kentbeck_7670/monolith-services-theory-practice-617e4546a879" src="../../../../../../_images/balancing-coupling-decoupling.jpeg" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text">Classic tradeoff curve of balancing cost of Coupling vs. cost of Decoupling. The image source is article «<a class="reference external" href="https://medium.com/&#64;kentbeck_7670/monolith-services-theory-practice-617e4546a879">Monolith -&gt; Services: Theory &amp; Practice</a>» by Kent Beck.</span><a class="headerlink" href="#id5" title="Постоянная ссылка на рисунок">¶</a></p>
+</div>
+<p>You manage coupling one of two ways:</p>
+<ol class="arabic simple">
+<li><p>Eliminate coupling. A client and server with hard-coded read() and write() functions are coupled with respect to protocol changes. Change a write() and you’ll have to change the read(). Introduce an interface definition language, though, and you can add to the protocol in one place and have the change propagate automatically to read() and write().</p></li>
+<li><p>Reduce coupling’s scope. If changing one element implies changing ten others, then it’s better if those elements are together than if they are scattered all over the system —less to navigate, less to examine, less to test. The number of elements to change is the same, but the cost per change is smaller. (This is also known as the “manure in one pile” principle, or less-aromatically “cohesion”.)</p></li>
+</ol>
 <p class="attribution">—«<a class="reference external" href="https://medium.com/&#64;kentbeck_7670/monolith-services-theory-practice-617e4546a879">Monolith -&gt; Services: Theory &amp; Practice</a>» by Kent Beck</p>
 </div></blockquote>
 </div>
 <div class="section" id="id3">
-<h2><a class="toc-backref" href="#id10">Оправдано ли качество?</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">Оправдано ли качество?</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
 <div class="section" id="martin-fowler">
-<h3><a class="toc-backref" href="#id11">Martin Fowler</a><a class="headerlink" href="#martin-fowler" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">Martin Fowler</a><a class="headerlink" href="#martin-fowler" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>📝 «In most contexts higher quality ⇒ expensive. But high internal quality of software allows us to develop features faster and cheaper.»</p>
 <p class="attribution">—«<a class="reference external" href="https://martinfowler.com/bliki/TradableQualityHypothesis.html">Tradable Quality Hypothesis</a>» by Martin Fowler</p>
 </div></blockquote>
-<div class="figure align-left" id="id5">
+<div class="figure align-left" id="id6">
 <span id="emacsway-design-stamina-graph"></span><a class="reference internal image-reference" href="../../../../../../_images/design-stamina-graph.png"><img alt="The pseudo-graph plots delivered functionality (cumulative) versus time for two imaginary stereotypical projects: one with good design and one with no design. The image from &quot;Design Stamina Hypothesis&quot; by Martin Fowler. https://martinfowler.com/bliki/DesignStaminaHypothesis.html" src="../../../../../../_images/design-stamina-graph.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-text">The pseudo-graph plots delivered functionality (cumulative) versus time for two imaginary stereotypical projects: one with good design and one with no design. The image from «<a class="reference external" href="https://martinfowler.com/bliki/DesignStaminaHypothesis.html">Design Stamina Hypothesis</a>» by Martin Fowler.</span><a class="headerlink" href="#id5" title="Постоянная ссылка на рисунок">¶</a></p>
+<p class="caption"><span class="caption-text">The pseudo-graph plots delivered functionality (cumulative) versus time for two imaginary stereotypical projects: one with good design and one with no design. The image from «<a class="reference external" href="https://martinfowler.com/bliki/DesignStaminaHypothesis.html">Design Stamina Hypothesis</a>» by Martin Fowler.</span><a class="headerlink" href="#id6" title="Постоянная ссылка на рисунок">¶</a></p>
 </div>
 <blockquote>
 <div><p>📝 «… the true value of internal quality - that it’s the enabler to speed. The purpose of internal quality is to go faster.»</p>
@@ -270,9 +284,31 @@ We now know we can improve the design of existing code—so we can form and impr
 Since it is very difficult to do a good design up front, refactoring becomes vital to achieving that virtuous path of rapid functionality.»</p>
 <p class="attribution">—«Refactoring: Improving the Design of Existing Code» 2nd edition by Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts</p>
 </div></blockquote>
+<blockquote>
+<div><p>📝 «In its common usage, evolutionary design is a disaster.
+The design ends up being the aggregation of a bunch of ad-hoc tactical decisions, each of which makes the code harder to alter.
+In many ways you might argue this is no design, certainly it usually leads to a poor design.
+As Kent puts it, <strong>design is there to enable you to keep changing the software easily in the long term.</strong>
+<strong>As design deteriorates, so does your ability to make changes effectively.</strong>
+You have the state of software entropy, over time the design gets worse and worse.
+Not only does this make the software harder to change, it also makes bugs both easier to breed and harder to find and safely kill.
+This is the «code and fix» nightmare, where the bugs become exponentially more expensive to fix as the project goes on.»</p>
+<p class="attribution">—«<a class="reference external" href="https://martinfowler.com/articles/designDead.html">Is Design Dead?</a>» by Martin Fowler</p>
+</div></blockquote>
+<blockquote>
+<div><p>📝 «If you’re a manager or customer how can you tell if the software is well designed?
+It matters to you because poorly designed software will be more expensive to modify in the future.»</p>
+<p class="attribution">—«<a class="reference external" href="https://martinfowler.com/articles/designDead.html">Is Design Dead?</a>» by Martin Fowler</p>
+</div></blockquote>
+<blockquote>
+<div><p>📝 «From the very earliest days of agile methods, people have asked what role there is for architectural or design thinking.
+A common misconception is that since agile methods drop the notion of a detailed up-front design artifact, that there is no room for architecture in an agile project.
+In my keynote at the first-ever agile conference, I pointed out that design was every bit as important for agile projects, but it manifests itself differently, becoming an evolutionary approach.»</p>
+<p class="attribution">—«<a class="reference external" href="https://martinfowler.com/agile.html">Agile Software Development</a>» by Martin Fowler</p>
+</div></blockquote>
 </div>
 <div class="section" id="kent-beck">
-<h3><a class="toc-backref" href="#id12">Kent Beck</a><a class="headerlink" href="#kent-beck" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">Kent Beck</a><a class="headerlink" href="#kent-beck" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>📝 «Nothing kills speed more effectively than poor internal quality.»</p>
 <p class="attribution">—«Planning Extreme Programming» by Kent Beck, Martin Fowler</p>
@@ -315,7 +351,7 @@ Good design puts the logic near the data it operates allows the extension of the
 </div></blockquote>
 </div>
 <div class="section" id="robert-martin">
-<h3><a class="toc-backref" href="#id13">Robert Martin</a><a class="headerlink" href="#robert-martin" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id14">Robert Martin</a><a class="headerlink" href="#robert-martin" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>📝 «The way to go fast, and to keep the deadlines at bay, is to stay clean.
 Professionals do not succumb to the temptation to create a mess in order to move quickly.
@@ -345,7 +381,7 @@ Coupling—and especially coupling to premature decisions.»</p>
 </div></blockquote>
 </div>
 <div class="section" id="ralph-johnson">
-<h3><a class="toc-backref" href="#id14">Ralph Johnson</a><a class="headerlink" href="#ralph-johnson" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id15">Ralph Johnson</a><a class="headerlink" href="#ralph-johnson" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>📝 «In most successful software projects, the expert developers working on that project have
 a shared understanding of the system design.
@@ -357,7 +393,7 @@ includes the components and interfaces that are understood by all the developers
 </div></blockquote>
 </div>
 <div class="section" id="steve-mcconnell">
-<h3><a class="toc-backref" href="#id15">Steve McConnell</a><a class="headerlink" href="#steve-mcconnell" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id16">Steve McConnell</a><a class="headerlink" href="#steve-mcconnell" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>📝 «The General Principle of Software Quality is that improving quality reduces development costs.</p>
 <p>Understanding this principle depends on understanding a key observation: the best way
@@ -430,7 +466,7 @@ That is truly a worthy goal!»</p>
 </div></blockquote>
 </div>
 <div class="section" id="randy-shoup">
-<h3><a class="toc-backref" href="#id16">Randy Shoup</a><a class="headerlink" href="#randy-shoup" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id17">Randy Shoup</a><a class="headerlink" href="#randy-shoup" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">- We don’t have time to do it right!</div>
@@ -438,14 +474,17 @@ That is truly a worthy goal!»</p>
 </div>
 <p class="attribution">—<a class="reference external" href="https://www.infoq.com/presentations/microservices-data-centric">Randy Shoup</a>, VP Engineering at Stitch Fix in San Francisco</p>
 </div></blockquote>
-<div class="figure align-left" id="id6">
+<div class="figure align-left" id="id7">
 <a class="reference internal image-reference" href="../../../../../../_images/do-it-right.png"><img alt="Do it right! Иллюстрация из открытых источников неизвестного автора." src="../../../../../../_images/do-it-right.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-text">Do it right! Иллюстрация из открытых источников неизвестного автора.</span><a class="headerlink" href="#id6" title="Постоянная ссылка на рисунок">¶</a></p>
+<p class="caption"><span class="caption-text">Do it right! Иллюстрация из открытых источников неизвестного автора.</span><a class="headerlink" href="#id7" title="Постоянная ссылка на рисунок">¶</a></p>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">См.также</p>
 <ul class="simple">
 <li><p>«<a class="reference internal" href="../crash-course-in-software-development-economics.html"><span class="doc">Краткий курс по экономике разработки программного обеспечения</span></a>»</p></li>
+<li><p>«<a class="reference internal" href="../../../../../soft-skills/icebreaker-principle.html#emacsway-icebreaker-principle"><span class="std std-ref">Принцип ледокола</span></a>»</p></li>
+<li><p>«<a class="reference internal" href="../adaptation.html#emacsway-adaptation"><span class="std std-ref">Что такое Adaptation</span></a>»</p></li>
+<li><p>«<a class="reference internal" href="../../../models/agile/agile.html#emacsway-agile-development"><span class="std std-ref">Что такое Agile Development</span></a>»</p></li>
 </ul>
 </div>
 </div>

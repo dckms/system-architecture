@@ -62,6 +62,14 @@ Balancing Prediction/Adaptation
 
 ..
 
+    📝 "From the very earliest days of agile methods, people have asked what role there is for architectural or design thinking.
+    A common misconception is that since agile methods drop the notion of a detailed up-front design artifact, that there is no room for architecture in an agile project.
+    In my keynote at the first-ever agile conference, I pointed out that design was every bit as important for agile projects, but it manifests itself differently, becoming an evolutionary approach."
+
+    -- "`Agile Software Development <https://martinfowler.com/agile.html>`__" by Martin Fowler
+
+..
+
     📝 "The incremental and iterative nature of Agile development can facilitate efficient technical and management processes and practices to reduce the cost associated with change.
     In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project."
 

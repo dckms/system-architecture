@@ -69,7 +69,7 @@
 <li><p><a class="reference internal" href="#id2" id="id9">Определение</a></p></li>
 <li><p><a class="reference internal" href="#id3" id="id10">История</a></p></li>
 <li><p><a class="reference internal" href="#id4" id="id11">Суть</a></p></li>
-<li><p><a class="reference internal" href="#id5" id="id12">О сложностях</a></p></li>
+<li><p><a class="reference internal" href="#emacsway-agile-development-difficulties" id="id12">О сложностях</a></p></li>
 </ul>
 </li>
 </ul>
@@ -186,14 +186,20 @@ Many people (including myself) consider XP to be the primary catalyst that got a
 <p class="attribution">—«<a class="reference external" href="https://martinfowler.com/bliki/ExtremeProgramming.html">Extreme Programming</a>» by Martin Fowler</p>
 </div></blockquote>
 </div>
-<div class="section" id="id5">
-<h2><a class="toc-backref" href="#id12">О сложностях</a><a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="emacsway-agile-development-difficulties">
+<span id="id5"></span><h2><a class="toc-backref" href="#id12">О сложностях</a><a class="headerlink" href="#emacsway-agile-development-difficulties" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Вернемся еще раз к выражению Kent Beck «<em>сделайте изменение легким, а потом делай легко изменение</em>».
 Оно состоит из двух частей, причем, первая из них предшествует второй.
 Как раз именно первую часть нередко забывают сделать на современном рынке, а без первой части вторая часть работает не будет, как это нетрудно догадаться.</p>
 <blockquote>
 <div><p>📝 «Scrum is ok if you do it right.»</p>
 <p class="attribution">—<a class="reference external" href="https://youtu.be/0oGpWmS0aYQ?t=921">OOP 2015 Keynote - Robert C. Martin («Uncle Bob»): Agility and Architecture at 15:21</a></p>
+</div></blockquote>
+<blockquote>
+<div><p>📝 «One pattern I see time and time again on software teams is that they adopt Scrum, pay little attention to technical practices, and they’re able to consistently increase their velocity for the first few years.
+But after about three or four years the technical debt they’ve accumulated in their code is so great that their velocity starts to grind to a halt and they find it difficult to even get simple features implemented.
+This is a place you do not want to get to, though I see it far too often in the software community—teams stuck there without a clue how to get out.»</p>
+<p class="attribution">—«<a class="reference external" href="https://www.agilealliance.org/how-to-increase-velocity/">How to Increase Velocity</a>» by David Bernstein</p>
 </div></blockquote>
 <p>Происходит это во многом потому, что:</p>
 <blockquote>
@@ -212,16 +218,32 @@ Perhaps this helped spread Scrum faster, but the downside is that a lot of teams
 <div><p>📝 «If a flattened change cost curve makes XP possible, a steep change cost curve makes XP impossible.»</p>
 <p class="attribution">—«Extreme Programming Explained» 1st edition by Kent Beck</p>
 </div></blockquote>
-<p>Impossible. Точка.
-Если говорить более развернуто, то, конечно же, это возможно, просто это становится экономически нецелесообразным, поскольку при быстрорастущем графике изменения кода возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования.</p>
+<p>Impossible. Точка.</p>
+<p>Если говорить более развернуто, то, конечно же, это не совсем «Impossible», просто это становится экономически нецелесообразным, поскольку при быстрорастущем графике изменения кода возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования.</p>
 <blockquote>
 <div><p>📝 «To make agile work, you need solid technical practices.
 A lot of agile education under-emphasizes these, but if you skimp on this you won’t gain the productivity and responsiveness benefits that agile development can give you (stranding you at level 1 of the agile fluency model.)
 This is one of the reasons that I still think that Extreme Programming is the most valuable of the named agile methods as a core and starting point.»</p>
 <p class="attribution">—«<a class="reference external" href="https://martinfowler.com/agile.html">Agile Software Development</a>» by Martin Fowler</p>
 </div></blockquote>
-<p>Этому вопросу посвящена статья «<a class="reference external" href="https://martinfowler.com/articles/designDead.html">Is Design Dead?</a>» by Martin Fowler.
-И очень удачно по этому вопросу высказался Grady Booch:</p>
+<p>Этому вопросу посвящена статья «<a class="reference external" href="https://martinfowler.com/articles/designDead.html">Is Design Dead?</a>» by Martin Fowler.</p>
+<blockquote>
+<div><p>📝 «In its common usage, evolutionary design is a disaster.
+The design ends up being the aggregation of a bunch of ad-hoc tactical decisions, each of which makes the code harder to alter.
+In many ways you might argue this is no design, certainly it usually leads to a poor design.
+As Kent puts it, <strong>design is there to enable you to keep changing the software easily in the long term.</strong>
+<strong>As design deteriorates, so does your ability to make changes effectively.</strong>
+You have the state of software entropy, over time the design gets worse and worse.
+Not only does this make the software harder to change, it also makes bugs both easier to breed and harder to find and safely kill.
+This is the «code and fix» nightmare, where the bugs become exponentially more expensive to fix as the project goes on.»</p>
+<p class="attribution">—«<a class="reference external" href="https://martinfowler.com/articles/designDead.html">Is Design Dead?</a>» by Martin Fowler</p>
+</div></blockquote>
+<blockquote>
+<div><p>📝 «If you’re a manager or customer how can you tell if the software is well designed?
+It matters to you because poorly designed software will be more expensive to modify in the future.»</p>
+<p class="attribution">—«<a class="reference external" href="https://martinfowler.com/articles/designDead.html">Is Design Dead?</a>» by Martin Fowler</p>
+</div></blockquote>
+<p>И очень удачно по этому вопросу высказался Grady Booch:</p>
 <blockquote>
 <div><p>📝 «Grady Booch has also provided a set of guidelines for an agile architecture (which in turn imply some duties for the agile architect).
 Booch claims that all good software-intensive architectures are agile.
