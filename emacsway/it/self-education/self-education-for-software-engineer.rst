@@ -667,6 +667,7 @@ Streaming Processing
 - "Working Effectively with Legacy Code" by Michael C. Feathers
 - "Refactoring To Patterns" by Joshua Kerievsky
 - "Structure and Interpretation of Computer Programs" (aka SICP) 2nd edition (MIT Electrical Engineering and Computer Science) by Harold Abelson, Gerald Jay Sussman, Julie Sussman
+- "How to Design Programs, second edition: An Introduction to Programming and Computing" 2d edition by Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, Shriram Krishnamurthi
 - "Object Oriented Software Engineering: A Use Case Driven Approach" by Ivar Jacobson
 - "Object-Oriented Analysis and Design with Applications" 3rd edition by Grady Booch, Robert A. Maksimchuk, Michael W. Engle, Bobbi J. Young Ph.D., Jim Conallen, Kelli A. Houston
 

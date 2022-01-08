@@ -25,7 +25,7 @@
 
     All race conditions, deadlock conditions, and concurrent update problems are due to mutable variables. You cannot have a race condition or a concurrent update problem if no variable is ever updated. You cannot have deadlocks without mutable locks."
 
-    -- "Clean Architecture: A Craftsman’s Guide to Software Structure and Design" by Robert C. Martin
+    -- "Clean Architecture: A Craftsman’s Guide to Software Structure and Design" by Robert C. Martin, перевод ООО Издательство "Питер"
 
 Однако, индустрия не готова отказаться от императивных подвидов парадигм, таких как OOP.
 
