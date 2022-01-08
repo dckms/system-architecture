@@ -120,7 +120,7 @@ Primary Technical Imperative
 
 ..
 
-    📝 "Software's Primary Technical Imperative is managing complexity.
+    📝 "**Software's Primary Technical Imperative is managing complexity.**
     This is greatly aided by a design focus on simplicity.
     Simplicity is achieved in two general ways: minimizing the amount of essential
     complexity that anyone's brain has to deal with at any one time, and keeping
@@ -135,9 +135,11 @@ Primary Technical Imperative
 
     -- "Code Complete" by Steve McConnell
 
+См. также ":ref:`emacsway-icebreaker-principle`".
+
 .. _emacsway-kent-beck-constantine's-law:
 
-    📝 "These were elucidated in the mid-70s by Yourdon & Constantine in Structured Design and haven’t changed.
+    📝 "These were elucidated in the mid-70s by Yourdon & Constantine in `Structured Design <https://amzn.to/2GsuXvQ>`__ and haven’t changed.
     Their argument goes like this:
 
     #. We design software to reduce its cost.
@@ -148,6 +150,24 @@ Primary Technical Imperative
     #. So, design ≈ cost ≈ change ≈ big change ≈ coupling. Transitively, software design ≈ managing coupling.
 
     (This skips loads of interesting stuff, but I’m just trying to set up the argument for why rapid decomposition of a monolith into micro-services is counter-productive.)"
+
+    Managing Coupling
+
+    Note I don’t say, “Eliminating coupling.”
+    Decoupling comes with its own costs, both the cost of the decoupling itself and the future costs of unanticipated changes.
+    The more perfectly a design is adapted to one set of changes, the more likely it is to be blind-sided by novel changes. And so we have the classic tradeoff curve:
+
+    .. figure:: _media/software-design/balancing-coupling-decoupling.jpeg
+       :alt: Classic tradeoff curve of balancing cost of Coupling vs. cost of Decoupling. The image source is article "Monolith -> Services: Theory & Practice" by Kent Beck https://medium.com/@kentbeck_7670/monolith-services-theory-practice-617e4546a879
+       :align: left
+       :width: 90%
+
+       Classic tradeoff curve of balancing cost of Coupling vs. cost of Decoupling. The image source is article "`Monolith -> Services: Theory & Practice <https://medium.com/@kentbeck_7670/monolith-services-theory-practice-617e4546a879>`__" by Kent Beck.
+
+    You manage coupling one of two ways:
+
+    1. Eliminate coupling. A client and server with hard-coded read() and write() functions are coupled with respect to protocol changes. Change a write() and you’ll have to change the read(). Introduce an interface definition language, though, and you can add to the protocol in one place and have the change propagate automatically to read() and write().
+    2. Reduce coupling’s scope. If changing one element implies changing ten others, then it’s better if those elements are together than if they are scattered all over the system —less to navigate, less to examine, less to test. The number of elements to change is the same, but the cost per change is smaller. (This is also known as the “manure in one pile” principle, or less-aromatically “cohesion”.)
 
     -- "`Monolith -> Services: Theory & Practice <https://medium.com/@kentbeck_7670/monolith-services-theory-practice-617e4546a879>`__" by Kent Beck
 
@@ -259,6 +279,34 @@ Martin Fowler
     Since it is very difficult to do a good design up front, refactoring becomes vital to achieving that virtuous path of rapid functionality."
 
     -- "Refactoring: Improving the Design of Existing Code" 2nd edition by Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts
+
+..
+
+    📝 "In its common usage, evolutionary design is a disaster.
+    The design ends up being the aggregation of a bunch of ad-hoc tactical decisions, each of which makes the code harder to alter.
+    In many ways you might argue this is no design, certainly it usually leads to a poor design.
+    As Kent puts it, **design is there to enable you to keep changing the software easily in the long term.**
+    **As design deteriorates, so does your ability to make changes effectively.**
+    You have the state of software entropy, over time the design gets worse and worse.
+    Not only does this make the software harder to change, it also makes bugs both easier to breed and harder to find and safely kill.
+    This is the "code and fix" nightmare, where the bugs become exponentially more expensive to fix as the project goes on."
+
+    -- "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler
+
+..
+
+    📝 "If you're a manager or customer how can you tell if the software is well designed?
+    It matters to you because poorly designed software will be more expensive to modify in the future."
+
+    -- "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler
+
+..
+
+    📝 "From the very earliest days of agile methods, people have asked what role there is for architectural or design thinking.
+    A common misconception is that since agile methods drop the notion of a detailed up-front design artifact, that there is no room for architecture in an agile project.
+    In my keynote at the first-ever agile conference, I pointed out that design was every bit as important for agile projects, but it manifests itself differently, becoming an evolutionary approach."
+
+    -- "`Agile Software Development <https://martinfowler.com/agile.html>`__" by Martin Fowler
 
 
 Kent Beck
@@ -464,3 +512,6 @@ Randy Shoup
 .. seealso::
 
    - ":doc:`../crash-course-in-software-development-economics`"
+   - ":ref:`emacsway-icebreaker-principle`"
+   - ":ref:`emacsway-adaptation`"
+   - ":ref:`emacsway-agile-development`"

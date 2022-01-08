@@ -73,6 +73,10 @@
 У человека или есть дисциплина, и тогда он успевает все, или её нет, и тогда он ничего не успевает.
 Правда, сам Сергей говорит, что все дело, скорее, в правильных привычках, нежели в волевых усилиях.
 
+    📝 "I'm not a great programmer; I'm just a good programmer with great habits."
+
+    -- Kent Beck at "Refactoring: Improving the Design of Existing Code" 1st edition by Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts
+
 Для того, чтобы стать сильным специалистом, достаточно осваивать всего 5 страниц в день:
 
     📝 "A little reading goes a long way toward professional advancement.

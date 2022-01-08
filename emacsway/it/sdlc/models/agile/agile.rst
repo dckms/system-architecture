@@ -160,6 +160,7 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
     -- "`Extreme Programming <https://martinfowler.com/bliki/ExtremeProgramming.html>`__" by Martin Fowler
 
 
+.. _emacsway-agile-development-difficulties:
 
 О сложностях
 ============
@@ -171,6 +172,14 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
     📝 "Scrum is ok if you do it right."
 
     -- `OOP 2015 Keynote - Robert C. Martin ("Uncle Bob"): Agility and Architecture at 15:21 <https://youtu.be/0oGpWmS0aYQ?t=921>`__
+
+..
+
+    📝 "One pattern I see time and time again on software teams is that they adopt Scrum, pay little attention to technical practices, and they’re able to consistently increase their velocity for the first few years.
+    But after about three or four years the technical debt they’ve accumulated in their code is so great that their velocity starts to grind to a halt and they find it difficult to even get simple features implemented.
+    This is a place you do not want to get to, though I see it far too often in the software community—teams stuck there without a clue how to get out."
+
+    -- "`How to Increase Velocity <https://www.agilealliance.org/how-to-increase-velocity/>`__" by David Bernstein
 
 Происходит это во многом потому, что:
 
@@ -194,7 +203,8 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
     -- "Extreme Programming Explained" 1st edition by Kent Beck
 
 Impossible. Точка.
-Если говорить более развернуто, то, конечно же, это возможно, просто это становится экономически нецелесообразным, поскольку при быстрорастущем графике изменения кода возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования.
+
+Если говорить более развернуто, то, конечно же, это не совсем "Impossible", просто это становится экономически нецелесообразным, поскольку при быстрорастущем графике изменения кода возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования.
 
     📝 "To make agile work, you need solid technical practices.
     A lot of agile education under-emphasizes these, but if you skimp on this you won't gain the productivity and responsiveness benefits that agile development can give you (stranding you at level 1 of the agile fluency model.)
@@ -203,6 +213,25 @@ Impossible. Точка.
     -- "`Agile Software Development <https://martinfowler.com/agile.html>`__" by Martin Fowler
 
 Этому вопросу посвящена статья "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler.
+
+    📝 "In its common usage, evolutionary design is a disaster.
+    The design ends up being the aggregation of a bunch of ad-hoc tactical decisions, each of which makes the code harder to alter.
+    In many ways you might argue this is no design, certainly it usually leads to a poor design.
+    As Kent puts it, **design is there to enable you to keep changing the software easily in the long term.**
+    **As design deteriorates, so does your ability to make changes effectively.**
+    You have the state of software entropy, over time the design gets worse and worse.
+    Not only does this make the software harder to change, it also makes bugs both easier to breed and harder to find and safely kill.
+    This is the "code and fix" nightmare, where the bugs become exponentially more expensive to fix as the project goes on."
+
+    -- "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler
+
+..
+
+    📝 "If you're a manager or customer how can you tell if the software is well designed?
+    It matters to you because poorly designed software will be more expensive to modify in the future."
+
+    -- "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler
+
 И очень удачно по этому вопросу высказался Grady Booch:
 
     📝 "Grady Booch has also provided a set of guidelines for an agile architecture (which in turn imply some duties for the agile architect).
