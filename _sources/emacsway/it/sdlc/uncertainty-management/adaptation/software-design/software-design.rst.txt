@@ -74,6 +74,9 @@ TDD является эффективным :ref:`средством управ�
     -- "Clean Code: A Handbook of Agile Software Craftsmanship" by Robert C. Martin
 
 
+.. index:: Primary Technical Imperative
+   :name: emacsway-primary-technical-imperative
+
 Primary Technical Imperative
 ============================
 
@@ -90,7 +93,7 @@ Primary Technical Imperative
 
 ..
 
-    "Dijkstra pointed out that no one's skull is really big enough to contain a modern
+    📝 "Dijkstra pointed out that no one's skull is really big enough to contain a modern
     computer program (Dijkstra 1972), which means that we as software developers
     shouldn't try to cram whole programs into our skulls at once; we should try to organize
     our programs in such a way that we can safely focus on one part of it at a time.
