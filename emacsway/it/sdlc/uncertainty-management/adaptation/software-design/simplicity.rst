@@ -14,12 +14,12 @@ Role of Simplicity in Agile
 .. contents:: Содержание
 
 Не очень глубоко осведомленные в архитектуре люди почему-то иногда думают, что архитектурное решение всегда несет перфекционизм и overengineering.
-Они не знакомы с ":ref:`The Primary Technical Imperative <emacsway-primary-technical-imperative>`".
+Вероятно, они просто не знакомы с ":ref:`The Primary Technical Imperative <emacsway-primary-technical-imperative>`".
 
-На самом деле, overengineering означает решение не соответствующее контексту, т.е. когда ":ref:`уровень привнесенной сложности превышает уровень управляемой сложности <emacsway-agile-patterns>`".
-С точки зрения :ref:`The Primary Technical Imperative <emacsway-primary-technical-imperative>` это значит, что он ухудшает внутреннее качество программы, а не повышает его.
+На самом деле, overengineering означает решение не соответствующее контексту, т.е. когда :ref:`уровень привнесенной сложности превышает уровень управляемой сложности <emacsway-agile-patterns>`.
+С точки зрения ":ref:`The Primary Technical Imperative <emacsway-primary-technical-imperative>`" это значит, что он ухудшает внутреннее качество программы, а не повышает его.
 
-Хороший архитектор стремится исключить само возникновение сложной проблемы, нежели пытаться героически ее решить.
+Более того, хороший архитектор стремится исключить само возникновение сложной проблемы, нежели пытаться героически ее решить.
 
     📝 "Усложнять - просто, упрощать - сложно".
 
@@ -179,9 +179,9 @@ Kent Beck
     📝 Travel light - You can't expect to carry a lot of baggage and move fast.
     The artifacts we maintain should be:
 
-    - Few
-    - Simple
-    - Valuable
+        - Few
+        - Simple
+        - Valuable
 
     The XP team becomes intellectual nomads, always prepared to quickly pack up the tents and follow the herd.
     The herd in this case might be a design that wants to go a different direction than anticipated, or a customer that wants to go a different direction than anticipated, or a team member who leaves, or a technology that suddenly gets hot, or a business climate that shifts.
