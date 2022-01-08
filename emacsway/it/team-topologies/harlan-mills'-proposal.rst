@@ -460,6 +460,7 @@ RUP реализует :ref:`спиральную <emacsway-spiral-development>`
 В книге "Software Architecture in Practice" 4th edition by Len Bass, Paul Clements, Rick Kazman особый интерес представляют собою главы:
 
 - 20.6 More on ADD Step 7: Perform Analysis of the Current Design and Review the Iteration Goal and Achievement of the Design Purpose
+
   - Use of an Architectural Backlog
   - Use of a Design Kanban Board
 
