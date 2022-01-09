@@ -6441,9 +6441,9 @@ your code is stupid simple, so you don't have to be a genius to work with it."&l
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#srp-and-conway-s-law" id="id9"&gt;SRP and "Conway's law"&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#common-closure-principle-ccp" id="id10"&gt;Common Closure Principle (CCP)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#srp-and-complexity" id="id11"&gt;SRP and complexity&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#ad-hominem" id="id12"&gt;Ad hominem&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#ad-hominem" id="id12"&gt;Ad hominem&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#solid-and-agile" id="id13"&gt;SOLID and Agile&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id2" id="id14"&gt;Баланс краткосрочных и долгосрочных интересов&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#solid" id="id15"&gt;SOLID и первоисточники&lt;/a&gt;&lt;/p&gt;
@@ -6501,6 +6501,13 @@ In those cases a module is just a cohesive set of functions and data structures.
 Cohesion is the force that binds together the code responsible to a single actor.&lt;/p&gt;
 &lt;p&gt;Perhaps the best way to understand this principle is by looking at the symptoms of violating it..."&lt;/p&gt;
 &lt;p class="attribution"&gt;—"Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Впрочем, с пониманием OCP дела обстоят ненамного лучше:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "I've heard it said that the OCP is wrong, unworkable, impractical, and not for real programmers with real work to do.
+The rise of plugin architectures makes it plain that these views are utter nonsense.
+On the contrary, a strong plugin architecture is likely to be the most important aspect of future software systems."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html"&gt;The Open Closed Principle&lt;/a&gt;" by Robert C. Martin&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="srp-is-about-cohesion"&gt;
@@ -6682,8 +6689,9 @@ Thus, it is related to the potential for the system to adapt to external needs."
 &lt;/div&gt;&lt;/blockquote&gt;
 &lt;p&gt;Если рассматривать термин в этом значении, то SOLID увеличивает сложность, но это не имеет негативного влияния на понимание устройства системы.&lt;/p&gt;
 &lt;/div&gt;
+&lt;/div&gt;
 &lt;div class="section" id="ad-hominem"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id12"&gt;Ad hominem&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id12"&gt;Ad hominem&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Еще одно распространенное мнение, которое часто можно услышать, заключается в том, что Robert C. Martin - оторванный от практики теоретик, придумывающий в своем иллюзорном мирке всякие нежизнеспособные принципы вроде SOLID, которые на практике только ухудшают код.&lt;/p&gt;
 &lt;p&gt;Принципы SOLID действительно, имеют под собой теоретическое обоснование, только эта теория не связана с Robert C. Martin.
 А вот, например, Bertrand Meyer, действительно, является серьезным научным теоретиком, и его авторство Robert C. Martin не скрывал в своей оригинальной статье "&lt;a class="reference external" href="https://web.archive.org/web/20060822033314/http://www.objectmentor.com/resources/articles/ocp.pdf"&gt;The Open-Closed Principle&lt;/a&gt;".&lt;/p&gt;
@@ -6699,7 +6707,6 @@ Thus, it is related to the potential for the system to adapt to external needs."
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://t.me/emacsway_log/458"&gt;https://t.me/emacsway_log/458&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://t.me/emacsway_log/462"&gt;https://t.me/emacsway_log/462&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="solid-and-agile"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#id13"&gt;SOLID and Agile&lt;/a&gt;&lt;/h2&gt;

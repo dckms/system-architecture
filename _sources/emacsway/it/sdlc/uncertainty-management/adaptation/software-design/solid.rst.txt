@@ -73,6 +73,14 @@ SRP is not do just one thing
 
     -- "Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin
 
+Впрочем, с пониманием OCP дела обстоят ненамного лучше:
+
+    📝 "I've heard it said that the OCP is wrong, unworkable, impractical, and not for real programmers with real work to do.
+    The rise of plugin architectures makes it plain that these views are utter nonsense.
+    On the contrary, a strong plugin architecture is likely to be the most important aspect of future software systems."
+
+    -- "`The Open Closed Principle <https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html>`__" by Robert C. Martin
+
 
 SRP is about Cohesion
 ---------------------
@@ -284,7 +292,7 @@ SRP and complexity
 
 
 Ad hominem
-----------
+==========
 
 Еще одно распространенное мнение, которое часто можно услышать, заключается в том, что Robert C. Martin - оторванный от практики теоретик, придумывающий в своем иллюзорном мирке всякие нежизнеспособные принципы вроде SOLID, которые на практике только ухудшают код.
 
