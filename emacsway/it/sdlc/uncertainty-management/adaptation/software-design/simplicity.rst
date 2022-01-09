@@ -179,9 +179,9 @@ Kent Beck
     📝 Travel light - You can't expect to carry a lot of baggage and move fast.
     The artifacts we maintain should be:
 
-        - Few
-        - Simple
-        - Valuable
+    - Few
+    - Simple
+    - Valuable
 
     The XP team becomes intellectual nomads, always prepared to quickly pack up the tents and follow the herd.
     The herd in this case might be a design that wants to go a different direction than anticipated, or a customer that wants to go a different direction than anticipated, or a team member who leaves, or a technology that suddenly gets hot, or a business climate that shifts.
