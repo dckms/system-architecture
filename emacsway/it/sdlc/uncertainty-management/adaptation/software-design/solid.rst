@@ -130,7 +130,7 @@ SRP is about Cohesion
 - "`О повторном использовании кода <http://sergeyteplyakov.blogspot.com/2012/04/blog-post_19.html>`__"
 
 Лично мне на практике не доводилось наблюдать сложности от использования принципов SOLID, разве что только в проектах с использованием Redux.
-Кстати, у Udi Dahan есть прекрасная статья "`Clarified CQRS <http://udidahan.com/2009/12/09/clarified-cqrs/>`__" о том, как грамотно разделять бизнес-логику и логику приложения в CQRS-приложении (а `Redux реализаует принципы CQRS <https://redux.js.org/understanding/thinking-in-redux/motivation>`__), чтобы предотвратить фрагментирование бизнес-логики.
+Кстати, у Udi Dahan есть прекрасная статья "`Clarified CQRS <http://udidahan.com/2009/12/09/clarified-cqrs/>`__" о том, как грамотно разделять бизнес-логику и логику приложения в CQRS-приложении (а `Redux реализует принципы CQRS <https://redux.js.org/understanding/thinking-in-redux/motivation>`__), чтобы предотвратить фрагментирование бизнес-логики.
 
 Я обнаружил еще одну причину столь широкого недопонимания этого принципа.
 В переводе книги "Clean Code" термин "Single" переводится как "Единый".
