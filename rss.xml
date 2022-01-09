@@ -6436,7 +6436,7 @@ your code is stupid simple, so you don't have to be a genius to work with it."&l
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#srp" id="id6"&gt;Ошибочная трактовка SRP&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#srp-is-not-do-just-one-thing" id="id7"&gt;SRP is not do just one thing&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#srp-is-not-to-do-just-one-thing" id="id7"&gt;SRP is not to do just one thing&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#srp-is-about-cohesion" id="id8"&gt;SRP is about Cohesion&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#srp-and-conway-s-law" id="id9"&gt;SRP and "Conway's law"&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#common-closure-principle-ccp" id="id10"&gt;Common Closure Principle (CCP)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
@@ -6459,8 +6459,8 @@ your code is stupid simple, so you don't have to be a genius to work with it."&l
 &lt;/div&gt;
 &lt;div class="section" id="srp"&gt;
 &lt;span id="emacsway-agile-solid-misunderstanding"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id6"&gt;Ошибочная трактовка SRP&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="section" id="srp-is-not-do-just-one-thing"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id7"&gt;SRP is not do just one thing&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="section" id="srp-is-not-to-do-just-one-thing"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id7"&gt;SRP is not to do just one thing&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Существуют две распространенные ошибки применения принципа SRP:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;p&gt;SRP якобы подразумевает делать только одну вещь.&lt;/p&gt;&lt;/li&gt;

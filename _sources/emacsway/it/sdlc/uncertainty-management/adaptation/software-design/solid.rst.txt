@@ -22,8 +22,8 @@ Role of SOLID principles in Agile
 Ошибочная трактовка SRP
 =======================
 
-SRP is not do just one thing
-----------------------------
+SRP is not to do just one thing
+-------------------------------
 
 Существуют две распространенные ошибки применения принципа SRP:
 
