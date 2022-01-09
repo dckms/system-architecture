@@ -11,6 +11,13 @@ Role of Software Design in Agile
 
 .. sectionauthor:: Ivan Zakrevsky
 
+.. figure:: _media/software-design/ouroboros.jpg
+   :alt: Уроборос. Иллюстрация из открытых источников неизвестного автора.
+   :align: center
+   :width: 40%
+
+   Уроборос. Иллюстрация из открытых источников неизвестного автора.
+
 .. contents:: Содержание
 
 
@@ -34,7 +41,7 @@ TDD является эффективным :ref:`средством управ�
 Происходит перераспределение составляющих разработки.
 К тому же, время на написание тестов можно прогнозировать, в отличии от отладки.
 
-    📝 "You might ask: How much is code really read? Doesn’t most of the effort go into
+    📝 "You might ask: How much is code really read? Doesn't most of the effort go into
     writing it?
 
     Have you ever played back an edit session? In the 80s and 90s we had editors like Emacs that kept track of every keystroke.
@@ -46,13 +53,13 @@ TDD является эффективным :ref:`средством управ�
     - Bob enters the module.
     - He scrolls down to the function needing change.
     - He pauses, considering his options.
-    - Oh, he’s scrolling up to the top of the module to check the initialization of a variable.
+    - Oh, he's scrolling up to the top of the module to check the initialization of a variable.
     - Now he scrolls back down and begins to type.
-    - Ooops, he’s erasing what he typed!
+    - Ooops, he's erasing what he typed!
     - He types it again.
     - He erases it again!
     - He types half of something else but then erases that!
-    - He scrolls down to another function that calls the function he’s changing to see how it is called.
+    - He scrolls down to another function that calls the function he's changing to see how it is called.
     - He scrolls back up and types the same code he just erased.
     - He pauses.
     - He erases that code again!
@@ -64,7 +71,7 @@ TDD является эффективным :ref:`средством управ�
     We are constantly reading old code as part of the effort to write new code.
 
     Because this ratio is so high, we want the reading of code to be easy, even if it makes the writing harder.
-    Of course there’s no way to write code without reading it, so making it easy to read actually makes it easier to write.
+    Of course there's no way to write code without reading it, so making it easy to read actually makes it easier to write.
 
     There is no escape from this logic.
     You cannot write code if you cannot read the surrounding code.
@@ -79,6 +86,7 @@ TDD является эффективным :ref:`средством управ�
 
 Primary Technical Imperative
 ============================
+
 
     📝 "There are two ways of constructing a software design: one way is to make it so simple that there are obviously no deficiencies, and the other is to make it so complicated that there are no obvious deficiencies."
 
@@ -130,16 +138,31 @@ Primary Technical Imperative
 
 ..
 
-    "The number \"7±2\" has been found to be a number of discrete items a person can remember while performing other tasks (Miller 1956).
+    "The number "7±2" has been found to be a number of discrete items a person can remember while performing other tasks (Miller 1956).
     If a class contains more than about seven data members, consider whether the class should be decomposed into multiple smaller classes (Riel 1996)."
 
     -- "Code Complete" by Steve McConnell
+
+По поводу последнего изречения - лучше один раз увидеть:
+
+.. figure:: _media/software-design/12-points.jpg
+   :alt: Просто ваши глаза не могут увидеть все 12 точек одновременно. 
+         Ninio's extinction illusion. Twelve black dots cannot be seen at once.
+         Ninio, J. and Stevens, K. A. (2000) Variations on the Hermann grid: an extinction illusion. Perception, 29, 1209-1217.
+         The image source is a post by Akiyoshi Kitaoka https://www.facebook.com/akiyoshi.kitaoka/posts/10207806663219295
+   :align: left
+   :width: 90%
+
+   Просто ваши глаза не могут увидеть все 12 точек одновременно.
+   Ninio's extinction illusion. Twelve black dots cannot be seen at once.
+   Ninio, J. and Stevens, K. A. (2000) Variations on the Hermann grid: an extinction illusion. Perception, 29, 1209-1217.
+   The image source is "`a post <https://www.facebook.com/akiyoshi.kitaoka/posts/10207806663219295>`__" by Akiyoshi Kitaoka.
 
 См. также ":ref:`emacsway-icebreaker-principle`".
 
 .. _emacsway-kent-beck-constantine's-law:
 
-    📝 "These were elucidated in the mid-70s by Yourdon & Constantine in `Structured Design <https://amzn.to/2GsuXvQ>`__ and haven’t changed.
+    📝 "These were elucidated in the mid-70s by Yourdon & Constantine in `Structured Design <https://amzn.to/2GsuXvQ>`__ and haven't changed.
     Their argument goes like this:
 
     #. We design software to reduce its cost.
@@ -149,11 +172,11 @@ Primary Technical Imperative
     #. Coupling between elements of a design is this propensity for a change to propagate.
     #. So, design ≈ cost ≈ change ≈ big change ≈ coupling. Transitively, software design ≈ managing coupling.
 
-    (This skips loads of interesting stuff, but I’m just trying to set up the argument for why rapid decomposition of a monolith into micro-services is counter-productive.)"
+    (This skips loads of interesting stuff, but I'm just trying to set up the argument for why rapid decomposition of a monolith into micro-services is counter-productive.)"
 
     Managing Coupling
 
-    Note I don’t say, “Eliminating coupling.”
+    Note I don't say, "Eliminating coupling."
     Decoupling comes with its own costs, both the cost of the decoupling itself and the future costs of unanticipated changes.
     The more perfectly a design is adapted to one set of changes, the more likely it is to be blind-sided by novel changes. And so we have the classic tradeoff curve:
 
@@ -166,8 +189,8 @@ Primary Technical Imperative
 
     You manage coupling one of two ways:
 
-    1. Eliminate coupling. A client and server with hard-coded read() and write() functions are coupled with respect to protocol changes. Change a write() and you’ll have to change the read(). Introduce an interface definition language, though, and you can add to the protocol in one place and have the change propagate automatically to read() and write().
-    2. Reduce coupling’s scope. If changing one element implies changing ten others, then it’s better if those elements are together than if they are scattered all over the system —less to navigate, less to examine, less to test. The number of elements to change is the same, but the cost per change is smaller. (This is also known as the “manure in one pile” principle, or less-aromatically “cohesion”.)
+    1. Eliminate coupling. A client and server with hard-coded read() and write() functions are coupled with respect to protocol changes. Change a write() and you'll have to change the read(). Introduce an interface definition language, though, and you can add to the protocol in one place and have the change propagate automatically to read() and write().
+    2. Reduce coupling's scope. If changing one element implies changing ten others, then it's better if those elements are together than if they are scattered all over the system —less to navigate, less to examine, less to test. The number of elements to change is the same, but the cost per change is smaller. (This is also known as the "manure in one pile" principle, or less-aromatically "cohesion".)
 
     -- "`Monolith -> Services: Theory & Practice <https://medium.com/@kentbeck_7670/monolith-services-theory-practice-617e4546a879>`__" by Kent Beck
 
@@ -250,28 +273,28 @@ Martin Fowler
     This sounds counterintuitive.
     When I talk about refactoring, people can easily see that it improves quality.
     Better internal design, readability, reducing bugs—all theseimprove quality.
-    But doesn’t the time I spend on refactoring reduce the speed of development?
+    But doesn't the time I spend on refactoring reduce the speed of development?
 
     When I talk to software developers who have been working on a system for a while, I often hear that they were able to make progress rapidly at first, but now it takes much longer to add new features.
-    Every new feature requires more and more time to understand how to fit it into the existing code base, and once it’s added, bugs often crop up that take even longer to fix.
+    Every new feature requires more and more time to understand how to fit it into the existing code base, and once it's added, bugs often crop up that take even longer to fix.
     The code base starts looking like a series of patches covering patches, and it takes an exercise in archaeology to figure out how things work.
     This burden slows down adding new features — to the point that developers wish they could start again from a blank slate.
 
     I can visualize this state of affairs with :ref:`the following pseudograph <emacsway-design-stamina-graph>`.
 
     But some teams report a different experience.
-    They find they can add new features faster because they can leverage the existing things by quickly building on what’s already there.
+    They find they can add new features faster because they can leverage the existing things by quickly building on what's already there.
 
     The difference between these two is the internal quality of the software.
     Software with a good internal design allows me to easily find how and where I need to make changes to add a new feature.
     Good modularity allows me to only have to understand a small subset of the code base to make a change.
-    If the code is clear, I’m less likely to introduce a bug, and if I do, the debugging effort is much easier.
+    If the code is clear, I'm less likely to introduce a bug, and if I do, the debugging effort is much easier.
     Done well, my code base turns into a platform for building new features for its domain.
 
     I refer to this effect as the `Design Stamina Hypothesis <https://martinfowler.com/bliki/DesignStaminaHypothesis.html>`__:
     By putting our effort into a good internal design, we increase the stamina of the software effort, allowing us to go faster for longer.
-    I can’t prove that this is the case, which is why I refer to it as a hypothesis.
-    But it explains my experience, together with the experience of hundreds of great programmers that I’ve got to know over my career.
+    I can't prove that this is the case, which is why I refer to it as a hypothesis.
+    But it explains my experience, together with the experience of hundreds of great programmers that I've got to know over my career.
 
     Twenty years ago, the conventional wisdom was that to get this kind of good design, it had to be completed before starting to program — because once we wrote the code, we could only face decay.
     Refactoring changes this picture.
@@ -380,9 +403,9 @@ Robert Martin
     The measure of design quality is simply the measure of the effort required to meet the needs of the customer.
     If that effort is low, and stays low throughout the lifetime of the system, the design is good.
     If that effort grows with each new release, the design is bad.
-    It’s as simple as that."
+    It's as simple as that."
 
-    -- "Clean Architecture: A Craftsman’s Guide to Software Structure and Design" by Robert C. Martin
+    -- "Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin
 
 ..
 
@@ -394,7 +417,7 @@ Robert Martin
     What it is that saps this kind of peoplepower?
     Coupling—and especially coupling to premature decisions."
 
-    -- "Clean Architecture: A Craftsman’s Guide to Software Structure and Design" by Robert C. Martin, перевод ООО Издательство "Питер"
+    -- "Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin, перевод ООО Издательство "Питер"
 
 
 Ralph Johnson
@@ -402,7 +425,7 @@ Ralph Johnson
 
     📝 "In most successful software projects, the expert developers working on that project have
     a shared understanding of the system design.
-    **This shared understanding is called ‘architecture.’**
+    **This shared understanding is called 'architecture.'**
     This understanding includes how the system is divided into components and how the components interact through interfaces.
     These components are usually composed of smaller components, but the architecture only
     includes the components and interfaces that are understood by all the developers."
@@ -473,13 +496,13 @@ Steve McConnell
     📝 "Watts Humphrey reports that teams using the Team Software Process
     (TSP) have achieved defect levels of about 0.06 defects per 1000 lines of code.
     TSP focuses on training developers not to create defects in the first place (Weber 2003).
-    [Morales, Alexandra Weber. 2003. \"The Consummate Coach: Watts Humphrey, Father of Cmm and Author of Winning with Software, Explains How to Get Better at What You Do,\" SD Show Daily, September 16, 2003.]
+    [Morales, Alexandra Weber. 2003. "The Consummate Coach: Watts Humphrey, Father of Cmm and Author of Winning with Software, Explains How to Get Better at What You Do," SD Show Daily, September 16, 2003.]
 
     The results of the TSP and cleanroom projects confirm another version of the General
     Principle of Software Quality: it's cheaper to build high-quality software than it is to build and fix low-quality software.
     Productivity for a fully checked-out, 80,000-line cleanroom project was 740 lines of code per work-month.
     The industry average rate for fully checked-out code is closer to 250–300 lines per work-month, including all noncoding overhead (Cusumano et al 2003).
-    [Cusumano, Michael , et al. 2003. \"Software Development Worldwide: The State of the Practice,\" IEEE Software, November/ December 2003, 28–34.]
+    [Cusumano, Michael , et al. 2003. "Software Development Worldwide: The State of the Practice," IEEE Software, November/ December 2003, 28–34.]
     The cost savings and productivity come from the fact that virtually no time is devoted to debugging on TSP or cleanroom projects.
     No time spent on debugging?
     That is truly a worthy goal!"
@@ -488,8 +511,8 @@ Steve McConnell
 
 ..
 
-    📝 "A six-month study conducted by IBM found that maintenance programmers \"most often said that **understanding the original programmer's intent was the most difficult problem**\" (Fjelstad and Hamlen 1979).
-    [Fjelstad, R. K. , and W. T. Hamlen. 1979. \"Applications Program Maintenance Study: Report to our Respondents.\" Proceedings Guide 48, Philadelphia. Reprinted in Tutorial on Software Maintenance, G. Parikh and N. Zvegintzov eds. Los Alamitos, CA: CS Press, 1983: 13–27.]"
+    📝 "A six-month study conducted by IBM found that maintenance programmers "most often said that **understanding the original programmer's intent was the most difficult problem**" (Fjelstad and Hamlen 1979).
+    [Fjelstad, R. K. , and W. T. Hamlen. 1979. "Applications Program Maintenance Study: Report to our Respondents." Proceedings Guide 48, Philadelphia. Reprinted in Tutorial on Software Maintenance, G. Parikh and N. Zvegintzov eds. Los Alamitos, CA: CS Press, 1983: 13–27.]"
 
     -- "Code Complete" by Steve McConnell
 

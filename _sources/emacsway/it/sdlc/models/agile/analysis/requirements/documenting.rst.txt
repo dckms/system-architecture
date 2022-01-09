@@ -14,7 +14,7 @@
 В Scrum, PBI является основным, хотя и не исчерпывающим, способом документирования требований.
 Способы документирования остаются на усмотрение самоорганизующихся команд.
 
-    📝 "Documentation does provide value, but only when it’s written to match its intended purpose.
+    📝 "Documentation does provide value, but only when it's written to match its intended purpose.
     Agile business analysis practitioners produce documentation as they implement a change and use it to facilitate and support discussions with stakeholders.
 
     <...>
@@ -38,13 +38,13 @@
 
 ..
 
-    📝 "Views and Beyond and Agile agree emphatically on the following point: **If information isn’t needed, don’t spend the resources to document it**.
+    📝 "Views and Beyond and Agile agree emphatically on the following point: **If information isn't needed, don't spend the resources to document it**.
     All documentation should have an intended use and audience in mind, and be produced in a way that serves both.
 
-    One of our fundamental principles of technical documentation is “Write for the reader.” That means understanding who will read the documentation and how they will use it.
+    One of our fundamental principles of technical documentation is "Write for the reader." That means understanding who will read the documentation and how they will use it.
     **If there is no audience, there is no need to produce the documentation.**
     This principle is so important in Agile methods that it has been given its own name: YAGNI.
-    YAGNI means “you ain’t gonna need it,” and it refers to the idea that you should only implement or document something when you actually have the need for it.
+    YAGNI means "you ain't gonna need it," and it refers to the idea that you should only implement or document something when you actually have the need for it.
     Do not spend time attempting to anticipate all possible needs."
 
     -- "Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman
@@ -57,11 +57,11 @@
     The alternative is a set of related digital models that define, design, analyze, and document the system under development.
     Some models specify system requirements and design, while others are domain-specific (e.g., electrical, mechanical, or some systems property).
 
-    -- "SAFe® 5.0: The World’s Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell
+    -- "SAFe® 5.0: The World's Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell
 
 ..
 
-    📝 "The preparation of **specifications, design artifacts, and information items or documentation** during agile projects is often **limited**, while software developers apply their time and skills to transform a scenario or narrative of a function (“**user story**”) into a working, testable software element.
+    📝 "The preparation of **specifications, design artifacts, and information items or documentation** during agile projects is often **limited**, while software developers apply their time and skills to transform a scenario or narrative of a function ("**user story**") into a working, testable software element.
     Rather than preparing elaborate review packages for briefing at infrequent major milestone reviews, the team meets with stakeholders frequently to present informal evidence of completing a set of functions and to agree on the content of the next iteration.
     Documented information items focus on what will be needed for transition, operation and maintenance, such as operator and end‐user documentation and baselines of tested and released versions of software with test plans and test cases.
     Projects reuse organizational procedures for configuration and release management, verification, and incident and problem management.

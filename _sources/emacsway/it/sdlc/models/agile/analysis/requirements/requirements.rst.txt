@@ -78,7 +78,7 @@ Product Backlog Item и Requirements
 
 ..
 
-    📝 "XP- originated “**user story**” as the primary currency for expressing application **requirements**."
+    📝 "XP- originated "**user story**" as the primary currency for expressing application **requirements**."
 
     📝 "**User stories** are the agile replacement for most of what has been traditionally expressed as software **requirements** statements (or use cases in RUP and UML), and they are the workhorses of agile development."
 
@@ -115,10 +115,10 @@ Kent Beck разъясняет, почему он использовал тер�
 Ключевым аргументом здесь выступает семантическое различие - требования переменны, а не константны.
 А так же то, что полнота требований недостижима.
 
-    📝 "Software development has been steered wrong by the word "requirement", defined in the dictionary as \"something mandatory or obligatory.\"
+    📝 "Software development has been steered wrong by the word "requirement", defined in the dictionary as "something mandatory or obligatory."
     The word carries a connotation of absolutism and permanence, inhibitors to embracing change.
-    And the word \"requirement\" is just plain wrong.
-    Out of one thousand pages of \"requirements\", if you deploy a system with the right 20% or 10% or even 5%, you will likely realize all of the business benefit envisioned for the whole system.
+    And the word "requirement" is just plain wrong.
+    Out of one thousand pages of "requirements", if you deploy a system with the right 20% or 10% or even 5%, you will likely realize all of the business benefit envisioned for the whole system.
     So what were the other 80%? Not "requirements"; they weren't really mandatory or obligatory.
 
     **Early estimation is a key difference between stories and other requirements practices.**
@@ -138,12 +138,12 @@ Bertrand Meyer о том, в чем отличия между User Story и Requ
 
     The last principle gives us the second part of the replacement for requirements: use scenarios to define functionality.
     A scenario is a description of a particular interaction of a user with the system, for example (if we are building mobile phone software) a phone conversation from the time the caller dials the number to the time the two parties get disconnected.
-    “Scenario” is not a common agile term, but covers variants such as use cases and user stories which differ by their level of granularity (a use case is a complete interaction, a user story an application of a smaller unit of functionality).
-    Scenarios are obtained from customers and indicate the fundamental properties of the system’s functionality as seen from the user perspective.
+    "Scenario" is not a common agile term, but covers variants such as use cases and user stories which differ by their level of granularity (a use case is a complete interaction, a user story an application of a smaller unit of functionality).
+    Scenarios are obtained from customers and indicate the fundamental properties of the system's functionality as seen from the user perspective.
     Collecting scenarios, usually in the form of user stories, is the principal agile technique for requirements; it differs from traditional requirements elicitation in two fundamental ways: 
 
     - A scenario is just one example; unlike requirements, it cannot lay claim to completeness. A set of scenarios, however large, cannot come even close to achieving this goal, in the same way that no number of tests of a program can replace a specification. 
-    - In agile development, requirements are not collected at the beginning of the project but throughout, as development progresses. Note, however, that this difference is not as absolute as the agile literature suggests when it blasts “waterfall approaches”: while the traditional software engineering view presents requirements as a specific lifecycle step, coming early in the process, it does not rule out — except in the imagination of agile authors — a scheme in which the requirements are constantly updated in the rest of the lifecycle.
+    - In agile development, requirements are not collected at the beginning of the project but throughout, as development progresses. Note, however, that this difference is not as absolute as the agile literature suggests when it blasts "waterfall approaches": while the traditional software engineering view presents requirements as a specific lifecycle step, coming early in the process, it does not rule out — except in the imagination of agile authors — a scheme in which the requirements are constantly updated in the rest of the lifecycle.
 
     <...>
 
@@ -151,7 +151,7 @@ Bertrand Meyer о том, в чем отличия между User Story и Requ
 
     <...>
 
-    We note once again the confusion inherent in such agile criticism as Beck’s comment that “Requirements gathering isn’t a phase that produces a static document”, as if having a requirements phase implied that the resulting requirements document will be static.
+    We note once again the confusion inherent in such agile criticism as Beck's comment that "Requirements gathering isn't a phase that produces a static document", as if having a requirements phase implied that the resulting requirements document will be static.
     The two matters are separate."
 
     -- "Agile! The Good, the Hype and the Ugly" by Bertrand Meyer

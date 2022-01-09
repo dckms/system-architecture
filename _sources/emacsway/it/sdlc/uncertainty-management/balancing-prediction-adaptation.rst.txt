@@ -20,22 +20,22 @@ Balancing Prediction/Adaptation
     Scrum teams acknowledge that as nice as it might be to make all design decisions up front, doing so is impossible.
     This means that on a Scrum project, design is both intentional and emergent.
 
-    A big part of an organization’s becoming agile is finding the appropriate balance between anticipation and adaptation (Highsmith 2002).
+    A big part of an organization's becoming agile is finding the appropriate balance between anticipation and adaptation (Highsmith 2002).
     Figure 9.2 shows this balance along with activities and artifacts that influence the balance.
-    When doing up-front analysis or design, we are attempting to anticipate users’ needs.
+    When doing up-front analysis or design, we are attempting to anticipate users' needs.
     Because we cannot perfectly anticipate these, we will make some mistakes; some work will need to be redone.
-    When we forgo analysis and design and jump immediately into coding and testing with no forethought at all, we are trying to adapt to users’ needs.
+    When we forgo analysis and design and jump immediately into coding and testing with no forethought at all, we are trying to adapt to users' needs.
     All projects of interest will be positioned somewhere between anticipation and adaptation based on their own unique characteristics; no application will be all the way to either extreme.
     A life-critical, medical safety application may be far to the anticipation side.
     A three-person startup company building a website of information on kayak racing may be far toward the side of adaptation.
 
     Foretelling the agile preference for simplicity, in 1990, was speaker and author Do-While Jones. 
 
-        I’m not against planning for the future.
+        I'm not against planning for the future.
         Some thought should be given to future expansion of capability.
-        But when the entire design process gets bogged down in an attempt to satisfy future requirements that may never materialize, then it is time to stop and see if there isn’t a simpler way to solve the immediate problem.
+        But when the entire design process gets bogged down in an attempt to satisfy future requirements that may never materialize, then it is time to stop and see if there isn't a simpler way to solve the immediate problem.
 
-        -- Jones’ 1990 article, "The Breakfast Food Cooker," remains a classic parable of what can go wrong when software developers over-design a solution. I highly recommended reading it at http://www.ridgecrest.ca.us/~do_while/toaster.htm
+        -- Jones' 1990 article, "The Breakfast Food Cooker," remains a classic parable of what can go wrong when software developers over-design a solution. I highly recommended reading it at http://www.ridgecrest.ca.us/~do_while/toaster.htm
 
     Scrum teams avoid this "bogging down" by realizing that not all future needs are worth worrying about today. Many future needs may be best handled by planning to adapt as they arise."
 
@@ -77,9 +77,9 @@ Balancing Prediction/Adaptation
 
 ..
 
-    📝 "\"Agile\" methods actually can be applied within a variety of models.
+    📝 "Agile" methods actually can be applied within a variety of models.
     While Agile methods are common in executing an evolutionary lifecycle model, they can be used in other lifecycle models at various stages.
-    What the methods have in common is an emphasis on continuous inspection and collaboration in the rapid production of working software in an environment where changes, including changes to requirements, are expected."
+    What the methods have in common is an emphasis on continuous inspection and collaboration in the rapid production of working software in an environment where changes, including changes to requirements, are expected.
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
 
@@ -153,10 +153,10 @@ Simon Brown тоже обратил внимание на тот факт, чт�
 
 При этом, в статье очень вяло и вскользь говорится о снижении стоимости Adaptation:
 
-    📝 "Если вам нужно реализовать что-то «на будущее», потому что позже будет сложнее добавить это, – это очень плохой знак.
+    📝 "Если вам нужно реализовать что-то "на будущее", потому что позже будет сложнее добавить это, – это очень плохой знак.
     Вам следует подумать о том, как упростить позднее добавление.
 
-    If you need to implement something “for the future” because it will be harder to add it later – that’s a very bad sign.
+    If you need to implement something "for the future" because it will be harder to add it later – that's a very bad sign.
     You should think about how to make it easy to add it later."
 
     -- "`Software Dark Ages <https://threedots.tech/post/software-dark-ages/>`__" by Robert Laszczak, перевод Евгения Пешкова
@@ -210,13 +210,13 @@ Alberto Brandolini about Prediction/Adaptation
 
 Глава Pretending to solve the problem writing software, раздел Embrace Change:
 
-    📝 "...iterative development is expensive. It is the best approach for developing software in very complex, and lean-demanding domains. However, the initial starting point matters, a lot. A big refactoring will cost a lot more than iterative fine tuning (think splitting a database, vs renaming a variable). So I’ll do everything possible to start iterating from the most reasonable starting point."
+    📝 "...iterative development is expensive. It is the best approach for developing software in very complex, and lean-demanding domains. However, the initial starting point matters, a lot. A big refactoring will cost a lot more than iterative fine tuning (think splitting a database, vs renaming a variable). So I'll do everything possible to start iterating from the most reasonable starting point."
 
     -- "`Introducing EventStorming: An act of Deliberate Collective Learning <https://leanpub.com/introducing_eventstorming>`__" by Alberto Brandolini
 
 ..
 
-    📝 "Upfront is a terrible word in the agile jargon. It recalls memories the old times analysis phase in the worst corporate waterfall. Given this infamous legacy, the word has been banned from agile environments like blasphemy. But unfortunately …there’s always something upfront. Even the worst developer thinks before typing the firs line of code."
+    📝 "Upfront is a terrible word in the agile jargon. It recalls memories the old times analysis phase in the worst corporate waterfall. Given this infamous legacy, the word has been banned from agile environments like blasphemy. But unfortunately ...there's always something upfront. Even the worst developer thinks before typing the firs line of code."
 
     -- "`Introducing EventStorming: An act of Deliberate Collective Learning <https://leanpub.com/introducing_eventstorming>`__" by Alberto Brandolini
 

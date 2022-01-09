@@ -59,23 +59,27 @@
             
     
   <div class="section" id="role-of-software-design-in-agile">
-<span id="emacsway-agile-software-design"></span><h1><a class="toc-backref" href="#id8">Role of Software Design in Agile</a><a class="headerlink" href="#role-of-software-design-in-agile" title="Ссылка на этот заголовок">¶</a></h1>
+<span id="emacsway-agile-software-design"></span><h1><a class="toc-backref" href="#id10">Role of Software Design in Agile</a><a class="headerlink" href="#role-of-software-design-in-agile" title="Ссылка на этот заголовок">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="../../../../../../_images/ouroboros.jpg"><img alt="Уроборос. Иллюстрация из открытых источников неизвестного автора." src="../../../../../../_images/ouroboros.jpg" style="width: 40%;" /></a>
+<p class="caption"><span class="caption-text">Уроборос. Иллюстрация из открытых источников неизвестного автора.</span><a class="headerlink" href="#id5" title="Постоянная ссылка на рисунок">¶</a></p>
+</div>
 <div class="contents topic" id="id1">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#role-of-software-design-in-agile" id="id8">Role of Software Design in Agile</a></p>
+<li><p><a class="reference internal" href="#role-of-software-design-in-agile" id="id10">Role of Software Design in Agile</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id2" id="id9">Кто читает код?</a></p></li>
-<li><p><a class="reference internal" href="#primary-technical-imperative" id="id10">Primary Technical Imperative</a></p></li>
-<li><p><a class="reference internal" href="#id3" id="id11">Оправдано ли качество?</a></p>
+<li><p><a class="reference internal" href="#id2" id="id11">Кто читает код?</a></p></li>
+<li><p><a class="reference internal" href="#primary-technical-imperative" id="id12">Primary Technical Imperative</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id13">Оправдано ли качество?</a></p>
 <ul>
-<li><p><a class="reference internal" href="#martin-fowler" id="id12">Martin Fowler</a></p></li>
-<li><p><a class="reference internal" href="#kent-beck" id="id13">Kent Beck</a></p></li>
-<li><p><a class="reference internal" href="#robert-martin" id="id14">Robert Martin</a></p></li>
-<li><p><a class="reference internal" href="#ralph-johnson" id="id15">Ralph Johnson</a></p></li>
-<li><p><a class="reference internal" href="#steve-mcconnell" id="id16">Steve McConnell</a></p></li>
-<li><p><a class="reference internal" href="#randy-shoup" id="id17">Randy Shoup</a></p></li>
+<li><p><a class="reference internal" href="#martin-fowler" id="id14">Martin Fowler</a></p></li>
+<li><p><a class="reference internal" href="#kent-beck" id="id15">Kent Beck</a></p></li>
+<li><p><a class="reference internal" href="#robert-martin" id="id16">Robert Martin</a></p></li>
+<li><p><a class="reference internal" href="#ralph-johnson" id="id17">Ralph Johnson</a></p></li>
+<li><p><a class="reference internal" href="#steve-mcconnell" id="id18">Steve McConnell</a></p></li>
+<li><p><a class="reference internal" href="#randy-shoup" id="id19">Randy Shoup</a></p></li>
 </ul>
 </li>
 </ul>
@@ -83,7 +87,7 @@
 </ul>
 </div>
 <div class="section" id="id2">
-<h2><a class="toc-backref" href="#id9">Кто читает код?</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">Кто читает код?</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Среди малоопытных разработчиков иногда можно услышать, что им некогда писать качественный код, так как у них мало времени, а этот код все равно читать никто не будет.</p>
 <p>Истина в том, что в процессе конструирования кода, 91% времени занимает именно чтение кода и борьба со сложностью, и только 9% времени времени занимает ввод символов с клавиатуры.
 И это соотношение дано еще для качественного кода.</p>
@@ -97,7 +101,7 @@ TDD является эффективным <a class="reference internal" href="
 Происходит перераспределение составляющих разработки.
 К тому же, время на написание тестов можно прогнозировать, в отличии от отладки.</p>
 <blockquote>
-<div><p>📝 &quot;You might ask: How much is code really read? Doesn’t most of the effort go into
+<div><p>📝 &quot;You might ask: How much is code really read? Doesn't most of the effort go into
 writing it?</p>
 <p>Have you ever played back an edit session? In the 80s and 90s we had editors like Emacs that kept track of every keystroke.
 You could work for an hour and then play back your whole edit session like a high-speed movie.
@@ -107,13 +111,13 @@ When I did this, the results were fascinating.</p>
 <li><p>Bob enters the module.</p></li>
 <li><p>He scrolls down to the function needing change.</p></li>
 <li><p>He pauses, considering his options.</p></li>
-<li><p>Oh, he’s scrolling up to the top of the module to check the initialization of a variable.</p></li>
+<li><p>Oh, he's scrolling up to the top of the module to check the initialization of a variable.</p></li>
 <li><p>Now he scrolls back down and begins to type.</p></li>
-<li><p>Ooops, he’s erasing what he typed!</p></li>
+<li><p>Ooops, he's erasing what he typed!</p></li>
 <li><p>He types it again.</p></li>
 <li><p>He erases it again!</p></li>
 <li><p>He types half of something else but then erases that!</p></li>
-<li><p>He scrolls down to another function that calls the function he’s changing to see how it is called.</p></li>
+<li><p>He scrolls down to another function that calls the function he's changing to see how it is called.</p></li>
 <li><p>He scrolls back up and types the same code he just erased.</p></li>
 <li><p>He pauses.</p></li>
 <li><p>He erases that code again!</p></li>
@@ -123,7 +127,7 @@ When I did this, the results were fascinating.</p>
 <p>You get the drift. Indeed, the ratio of time spent reading vs. writing is well over 10:1.
 We are constantly reading old code as part of the effort to write new code.</p>
 <p>Because this ratio is so high, we want the reading of code to be easy, even if it makes the writing harder.
-Of course there’s no way to write code without reading it, so making it easy to read actually makes it easier to write.</p>
+Of course there's no way to write code without reading it, so making it easy to read actually makes it easier to write.</p>
 <p>There is no escape from this logic.
 You cannot write code if you cannot read the surrounding code.
 The code you are trying to write today will be hard or easy to write depending on how hard or easy the surrounding code is to read.
@@ -132,7 +136,7 @@ So if you want to go fast, if you want to get done quickly, if you want your cod
 </div></blockquote>
 </div>
 <div class="section" id="primary-technical-imperative">
-<span id="emacsway-primary-technical-imperative"></span><h2><a class="toc-backref" href="#id10">Primary Technical Imperative</a><a class="headerlink" href="#primary-technical-imperative" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="emacsway-primary-technical-imperative"></span><h2><a class="toc-backref" href="#id12">Primary Technical Imperative</a><a class="headerlink" href="#primary-technical-imperative" title="Ссылка на этот заголовок">¶</a></h2>
 <blockquote>
 <div><p>📝 &quot;There are two ways of constructing a software design: one way is to make it so simple that there are obviously no deficiencies, and the other is to make it so complicated that there are no obvious deficiencies.&quot;</p>
 <p class="attribution">—C. A. R. Hoare</p>
@@ -177,9 +181,17 @@ accidental complexity from proliferating needlessly.&quot;</p>
 If a class contains more than about seven data members, consider whether the class should be decomposed into multiple smaller classes (Riel 1996).&quot;</p>
 <p class="attribution">—&quot;Code Complete&quot; by Steve McConnell</p>
 </div></blockquote>
+<p>По поводу последнего изречения - лучше один раз увидеть:</p>
+<div class="figure align-left" id="id6">
+<a class="reference internal image-reference" href="../../../../../../_images/12-points.jpg"><img alt="Просто ваши глаза не могут увидеть все 12 точек одновременно. Ninio's extinction illusion. Twelve black dots cannot be seen at once. Ninio, J. and Stevens, K. A. (2000) Variations on the Hermann grid: an extinction illusion. Perception, 29, 1209-1217. The image source is a post by Akiyoshi Kitaoka https://www.facebook.com/akiyoshi.kitaoka/posts/10207806663219295" src="../../../../../../_images/12-points.jpg" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text">Просто ваши глаза не могут увидеть все 12 точек одновременно.
+Ninio's extinction illusion. Twelve black dots cannot be seen at once.
+Ninio, J. and Stevens, K. A. (2000) Variations on the Hermann grid: an extinction illusion. Perception, 29, 1209-1217.
+The image source is &quot;<a class="reference external" href="https://www.facebook.com/akiyoshi.kitaoka/posts/10207806663219295">a post</a>&quot; by Akiyoshi Kitaoka.</span><a class="headerlink" href="#id6" title="Постоянная ссылка на рисунок">¶</a></p>
+</div>
 <p>См. также &quot;<a class="reference internal" href="../../../../../soft-skills/icebreaker-principle.html#emacsway-icebreaker-principle"><span class="std std-ref">Принцип ледокола</span></a>&quot;.</p>
 <blockquote id="emacsway-kent-beck-constantine-s-law">
-<div><p>📝 &quot;These were elucidated in the mid-70s by Yourdon &amp; Constantine in <a class="reference external" href="https://amzn.to/2GsuXvQ">Structured Design</a> and haven’t changed.
+<div><p>📝 &quot;These were elucidated in the mid-70s by Yourdon &amp; Constantine in <a class="reference external" href="https://amzn.to/2GsuXvQ">Structured Design</a> and haven't changed.
 Their argument goes like this:</p>
 <ol class="arabic simple">
 <li><p>We design software to reduce its cost.</p></li>
@@ -189,34 +201,34 @@ Their argument goes like this:</p>
 <li><p>Coupling between elements of a design is this propensity for a change to propagate.</p></li>
 <li><p>So, design ≈ cost ≈ change ≈ big change ≈ coupling. Transitively, software design ≈ managing coupling.</p></li>
 </ol>
-<p>(This skips loads of interesting stuff, but I’m just trying to set up the argument for why rapid decomposition of a monolith into micro-services is counter-productive.)&quot;</p>
+<p>(This skips loads of interesting stuff, but I'm just trying to set up the argument for why rapid decomposition of a monolith into micro-services is counter-productive.)&quot;</p>
 <p>Managing Coupling</p>
-<p>Note I don’t say, “Eliminating coupling.”
+<p>Note I don't say, &quot;Eliminating coupling.&quot;
 Decoupling comes with its own costs, both the cost of the decoupling itself and the future costs of unanticipated changes.
 The more perfectly a design is adapted to one set of changes, the more likely it is to be blind-sided by novel changes. And so we have the classic tradeoff curve:</p>
-<div class="figure align-left" id="id5">
+<div class="figure align-left" id="id7">
 <a class="reference internal image-reference" href="../../../../../../_images/balancing-coupling-decoupling.jpeg"><img alt="Classic tradeoff curve of balancing cost of Coupling vs. cost of Decoupling. The image source is article &quot;Monolith -&gt; Services: Theory &amp; Practice&quot; by Kent Beck https://medium.com/&#64;kentbeck_7670/monolith-services-theory-practice-617e4546a879" src="../../../../../../_images/balancing-coupling-decoupling.jpeg" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-text">Classic tradeoff curve of balancing cost of Coupling vs. cost of Decoupling. The image source is article &quot;<a class="reference external" href="https://medium.com/&#64;kentbeck_7670/monolith-services-theory-practice-617e4546a879">Monolith -&gt; Services: Theory &amp; Practice</a>&quot; by Kent Beck.</span><a class="headerlink" href="#id5" title="Постоянная ссылка на рисунок">¶</a></p>
+<p class="caption"><span class="caption-text">Classic tradeoff curve of balancing cost of Coupling vs. cost of Decoupling. The image source is article &quot;<a class="reference external" href="https://medium.com/&#64;kentbeck_7670/monolith-services-theory-practice-617e4546a879">Monolith -&gt; Services: Theory &amp; Practice</a>&quot; by Kent Beck.</span><a class="headerlink" href="#id7" title="Постоянная ссылка на рисунок">¶</a></p>
 </div>
 <p>You manage coupling one of two ways:</p>
 <ol class="arabic simple">
-<li><p>Eliminate coupling. A client and server with hard-coded read() and write() functions are coupled with respect to protocol changes. Change a write() and you’ll have to change the read(). Introduce an interface definition language, though, and you can add to the protocol in one place and have the change propagate automatically to read() and write().</p></li>
-<li><p>Reduce coupling’s scope. If changing one element implies changing ten others, then it’s better if those elements are together than if they are scattered all over the system —less to navigate, less to examine, less to test. The number of elements to change is the same, but the cost per change is smaller. (This is also known as the “manure in one pile” principle, or less-aromatically “cohesion”.)</p></li>
+<li><p>Eliminate coupling. A client and server with hard-coded read() and write() functions are coupled with respect to protocol changes. Change a write() and you'll have to change the read(). Introduce an interface definition language, though, and you can add to the protocol in one place and have the change propagate automatically to read() and write().</p></li>
+<li><p>Reduce coupling's scope. If changing one element implies changing ten others, then it's better if those elements are together than if they are scattered all over the system —less to navigate, less to examine, less to test. The number of elements to change is the same, but the cost per change is smaller. (This is also known as the &quot;manure in one pile&quot; principle, or less-aromatically &quot;cohesion&quot;.)</p></li>
 </ol>
 <p class="attribution">—&quot;<a class="reference external" href="https://medium.com/&#64;kentbeck_7670/monolith-services-theory-practice-617e4546a879">Monolith -&gt; Services: Theory &amp; Practice</a>&quot; by Kent Beck</p>
 </div></blockquote>
 </div>
 <div class="section" id="id3">
-<h2><a class="toc-backref" href="#id11">Оправдано ли качество?</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id13">Оправдано ли качество?</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
 <div class="section" id="martin-fowler">
-<h3><a class="toc-backref" href="#id12">Martin Fowler</a><a class="headerlink" href="#martin-fowler" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id14">Martin Fowler</a><a class="headerlink" href="#martin-fowler" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>📝 &quot;In most contexts higher quality ⇒ expensive. But high internal quality of software allows us to develop features faster and cheaper.&quot;</p>
 <p class="attribution">—&quot;<a class="reference external" href="https://martinfowler.com/bliki/TradableQualityHypothesis.html">Tradable Quality Hypothesis</a>&quot; by Martin Fowler</p>
 </div></blockquote>
-<div class="figure align-left" id="id6">
+<div class="figure align-left" id="id8">
 <span id="emacsway-design-stamina-graph"></span><a class="reference internal image-reference" href="../../../../../../_images/design-stamina-graph.png"><img alt="The pseudo-graph plots delivered functionality (cumulative) versus time for two imaginary stereotypical projects: one with good design and one with no design. The image from &quot;Design Stamina Hypothesis&quot; by Martin Fowler. https://martinfowler.com/bliki/DesignStaminaHypothesis.html" src="../../../../../../_images/design-stamina-graph.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-text">The pseudo-graph plots delivered functionality (cumulative) versus time for two imaginary stereotypical projects: one with good design and one with no design. The image from &quot;<a class="reference external" href="https://martinfowler.com/bliki/DesignStaminaHypothesis.html">Design Stamina Hypothesis</a>&quot; by Martin Fowler.</span><a class="headerlink" href="#id6" title="Постоянная ссылка на рисунок">¶</a></p>
+<p class="caption"><span class="caption-text">The pseudo-graph plots delivered functionality (cumulative) versus time for two imaginary stereotypical projects: one with good design and one with no design. The image from &quot;<a class="reference external" href="https://martinfowler.com/bliki/DesignStaminaHypothesis.html">Design Stamina Hypothesis</a>&quot; by Martin Fowler.</span><a class="headerlink" href="#id8" title="Постоянная ссылка на рисунок">¶</a></p>
 </div>
 <blockquote>
 <div><p>📝 &quot;... the true value of internal quality - that it's the enabler to speed. The purpose of internal quality is to go faster.&quot;</p>
@@ -261,23 +273,23 @@ But understanding it is critical to developing software at maximum efficiency.&q
 <p>This sounds counterintuitive.
 When I talk about refactoring, people can easily see that it improves quality.
 Better internal design, readability, reducing bugs—all theseimprove quality.
-But doesn’t the time I spend on refactoring reduce the speed of development?</p>
+But doesn't the time I spend on refactoring reduce the speed of development?</p>
 <p>When I talk to software developers who have been working on a system for a while, I often hear that they were able to make progress rapidly at first, but now it takes much longer to add new features.
-Every new feature requires more and more time to understand how to fit it into the existing code base, and once it’s added, bugs often crop up that take even longer to fix.
+Every new feature requires more and more time to understand how to fit it into the existing code base, and once it's added, bugs often crop up that take even longer to fix.
 The code base starts looking like a series of patches covering patches, and it takes an exercise in archaeology to figure out how things work.
 This burden slows down adding new features — to the point that developers wish they could start again from a blank slate.</p>
 <p>I can visualize this state of affairs with <a class="reference internal" href="#emacsway-design-stamina-graph"><span class="std std-ref">the following pseudograph</span></a>.</p>
 <p>But some teams report a different experience.
-They find they can add new features faster because they can leverage the existing things by quickly building on what’s already there.</p>
+They find they can add new features faster because they can leverage the existing things by quickly building on what's already there.</p>
 <p>The difference between these two is the internal quality of the software.
 Software with a good internal design allows me to easily find how and where I need to make changes to add a new feature.
 Good modularity allows me to only have to understand a small subset of the code base to make a change.
-If the code is clear, I’m less likely to introduce a bug, and if I do, the debugging effort is much easier.
+If the code is clear, I'm less likely to introduce a bug, and if I do, the debugging effort is much easier.
 Done well, my code base turns into a platform for building new features for its domain.</p>
 <p>I refer to this effect as the <a class="reference external" href="https://martinfowler.com/bliki/DesignStaminaHypothesis.html">Design Stamina Hypothesis</a>:
 By putting our effort into a good internal design, we increase the stamina of the software effort, allowing us to go faster for longer.
-I can’t prove that this is the case, which is why I refer to it as a hypothesis.
-But it explains my experience, together with the experience of hundreds of great programmers that I’ve got to know over my career.</p>
+I can't prove that this is the case, which is why I refer to it as a hypothesis.
+But it explains my experience, together with the experience of hundreds of great programmers that I've got to know over my career.</p>
 <p>Twenty years ago, the conventional wisdom was that to get this kind of good design, it had to be completed before starting to program — because once we wrote the code, we could only face decay.
 Refactoring changes this picture.
 We now know we can improve the design of existing code—so we can form and improve a design over time, even as the needs of the program change.
@@ -308,7 +320,7 @@ In my keynote at the first-ever agile conference, I pointed out that design was 
 </div></blockquote>
 </div>
 <div class="section" id="kent-beck">
-<h3><a class="toc-backref" href="#id13">Kent Beck</a><a class="headerlink" href="#kent-beck" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id15">Kent Beck</a><a class="headerlink" href="#kent-beck" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>📝 &quot;Nothing kills speed more effectively than poor internal quality.&quot;</p>
 <p class="attribution">—&quot;Planning Extreme Programming&quot; by Kent Beck, Martin Fowler</p>
@@ -351,7 +363,7 @@ Good design puts the logic near the data it operates allows the extension of the
 </div></blockquote>
 </div>
 <div class="section" id="robert-martin">
-<h3><a class="toc-backref" href="#id14">Robert Martin</a><a class="headerlink" href="#robert-martin" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id16">Robert Martin</a><a class="headerlink" href="#robert-martin" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>📝 &quot;The way to go fast, and to keep the deadlines at bay, is to stay clean.
 Professionals do not succumb to the temptation to create a mess in order to move quickly.
@@ -367,8 +379,8 @@ Dirty always means slow!&quot;</p>
 <p>The measure of design quality is simply the measure of the effort required to meet the needs of the customer.
 If that effort is low, and stays low throughout the lifetime of the system, the design is good.
 If that effort grows with each new release, the design is bad.
-It’s as simple as that.&quot;</p>
-<p class="attribution">—&quot;Clean Architecture: A Craftsman’s Guide to Software Structure and Design&quot; by Robert C. Martin</p>
+It's as simple as that.&quot;</p>
+<p class="attribution">—&quot;Clean Architecture: A Craftsman's Guide to Software Structure and Design&quot; by Robert C. Martin</p>
 </div></blockquote>
 <blockquote>
 <div><p>📝 &quot;Напомню, что целью архитектора является минимизация трудозатрат на создание и сопровождение системы.
@@ -377,15 +389,15 @@ It’s as simple as that.&quot;</p>
 <p>Recall that the goal of an architect is to minimize the human resources required to build and maintain the required system.
 What it is that saps this kind of peoplepower?
 Coupling—and especially coupling to premature decisions.&quot;</p>
-<p class="attribution">—&quot;Clean Architecture: A Craftsman’s Guide to Software Structure and Design&quot; by Robert C. Martin, перевод ООО Издательство &quot;Питер&quot;</p>
+<p class="attribution">—&quot;Clean Architecture: A Craftsman's Guide to Software Structure and Design&quot; by Robert C. Martin, перевод ООО Издательство &quot;Питер&quot;</p>
 </div></blockquote>
 </div>
 <div class="section" id="ralph-johnson">
-<h3><a class="toc-backref" href="#id15">Ralph Johnson</a><a class="headerlink" href="#ralph-johnson" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id17">Ralph Johnson</a><a class="headerlink" href="#ralph-johnson" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>📝 &quot;In most successful software projects, the expert developers working on that project have
 a shared understanding of the system design.
-<strong>This shared understanding is called ‘architecture.’</strong>
+<strong>This shared understanding is called 'architecture.'</strong>
 This understanding includes how the system is divided into components and how the components interact through interfaces.
 These components are usually composed of smaller components, but the architecture only
 includes the components and interfaces that are understood by all the developers.&quot;</p>
@@ -393,7 +405,7 @@ includes the components and interfaces that are understood by all the developers
 </div></blockquote>
 </div>
 <div class="section" id="steve-mcconnell">
-<h3><a class="toc-backref" href="#id16">Steve McConnell</a><a class="headerlink" href="#steve-mcconnell" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id18">Steve McConnell</a><a class="headerlink" href="#steve-mcconnell" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>📝 &quot;The General Principle of Software Quality is that improving quality reduces development costs.</p>
 <p>Understanding this principle depends on understanding a key observation: the best way
@@ -466,7 +478,7 @@ That is truly a worthy goal!&quot;</p>
 </div></blockquote>
 </div>
 <div class="section" id="randy-shoup">
-<h3><a class="toc-backref" href="#id17">Randy Shoup</a><a class="headerlink" href="#randy-shoup" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id19">Randy Shoup</a><a class="headerlink" href="#randy-shoup" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">- We don't have time to do it right!</div>
@@ -474,9 +486,9 @@ That is truly a worthy goal!&quot;</p>
 </div>
 <p class="attribution">—<a class="reference external" href="https://www.infoq.com/presentations/microservices-data-centric">Randy Shoup</a>, VP Engineering at Stitch Fix in San Francisco</p>
 </div></blockquote>
-<div class="figure align-left" id="id7">
+<div class="figure align-left" id="id9">
 <a class="reference internal image-reference" href="../../../../../../_images/do-it-right.png"><img alt="Do it right! Иллюстрация из открытых источников неизвестного автора." src="../../../../../../_images/do-it-right.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-text">Do it right! Иллюстрация из открытых источников неизвестного автора.</span><a class="headerlink" href="#id7" title="Постоянная ссылка на рисунок">¶</a></p>
+<p class="caption"><span class="caption-text">Do it right! Иллюстрация из открытых источников неизвестного автора.</span><a class="headerlink" href="#id9" title="Постоянная ссылка на рисунок">¶</a></p>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">См.также</p>

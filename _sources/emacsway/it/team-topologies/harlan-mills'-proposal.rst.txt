@@ -149,7 +149,7 @@ Frederick Brooks формулирует противоречие. С одной 
 
 Решение этой дилеммы становится возможным с качественным отделением архитектуры от реализации (с чем отлично справляются сетевые границы Bounded Contexts):
 
-    📝 "**Архитектура и разработка должны быть тщательно разделены.** Как сказал Блау (Blaauw), «архитектура говорит, что должно произойти, а разработка - как сделать, чтобы это произошло». В качестве простого примера он приводит часы, архитектура которых состоит из циферблата, стрелок и заводной головки. Ребенок, освоивший это архитектуру, с одинаковой легкостью может узнать время и по ручным часам, и по часам на колокольне. Исполнение же и его реализация описывают, что происходит внутри: передача усилий и управление точностью каждым из многих механизмов.
+    📝 "**Архитектура и разработка должны быть тщательно разделены.** Как сказал Блау (Blaauw), "архитектура говорит, что должно произойти, а разработка - как сделать, чтобы это произошло". В качестве простого примера он приводит часы, архитектура которых состоит из циферблата, стрелок и заводной головки. Ребенок, освоивший это архитектуру, с одинаковой легкостью может узнать время и по ручным часам, и по часам на колокольне. Исполнение же и его реализация описывают, что происходит внутри: передача усилий и управление точностью каждым из многих механизмов.
 
     **Architecture must be carefully distinguished from implementation.** As Blaauw has said, "Where architecture tells what happens, implementation tells how it is made to happen." He gives as a simple example a clock, whose architecture consists of the face, the hands, and the winding knob. When a child has learned this architecture, he can tell time as easily from a wristwatch as from a church tower. The implementation, however, and its realization, describe what goes on inside the case—powering by any of many mechanisms and accuracy control by any of many."
 
@@ -216,9 +216,9 @@ Harlan Mills' Proposal (Предложение Харлана Миллза) бы
 
 На самом деле, если у вас армейская дисциплина среди разработчиков, то нет необходимости укреплять сетевыми границами пределы автономности команд, поскольку границами автономности команды является Bounded Context, который не обязательно должен быть выражен микорсервисом(-ами).
 
-    📝 "In theory, you don’t need microservices for this if you simply have the discipline to follow clear rules and establish clear boundaries within your monolithic application; in practice, I’ve found this to be the case only very rarely.)"
+    📝 "In theory, you don't need microservices for this if you simply have the discipline to follow clear rules and establish clear boundaries within your monolithic application; in practice, I've found this to be the case only very rarely.)"
 
-    -- "`Don’t start with a monolith <https://martinfowler.com/articles/dont-start-monolith.html>`__" by Stefan Tilkov
+    -- "`Don't start with a monolith <https://martinfowler.com/articles/dont-start-monolith.html>`__" by Stefan Tilkov
 
 Сетевые границы решают проблему, известную как creeping coupling или abstraction leak. А это позволяет снизить квалификационные требования к разработчикам, тем более, что Microservices First обычно имеет экономическую целесообразность только при задействовании большого количества разработчиков.
 
@@ -248,7 +248,7 @@ Program Management
 
 Если предыдущий пример показался вам неубедительным, то давайте попробуем представить себе управление воздушным движением без диспетчеров.
 Ну, такие... самоорганизующиеся экипажи.
-Чтобы пилоты во время полета сами между собой договаривались, как они будут расходиться, какие эшелоны они будут занимать, в какой очередности они будут производить посадку и взлет...
+Чтобы пилоты во время полета сами между собой договаривались о том, как они будут расходиться, какие эшелоны они будут занимать, в какой очередности они будут производить посадку и взлет...
 Причем, гипотетически это еще было бы возможно где-то в районе малозагруженных аэропортов.
 Но насколько при этом возрастет когнитивная нагрузка на пилота?
 Ни один из пилотов, в условиях управления воздушным судном, не обладает ресурсами внимания, необходимыми для достижения целостного понимания картины воздушного движения.
@@ -262,7 +262,7 @@ Spotify
 
 Даже в Spotify существует такой "опорный скелет":
 
-    📝 "At Spotify there is a separate operations team, but their job is not to make releases for the squads -­ their job is to give the squads the support they need to release code themselves; support in the form of infrastructure, scripts, and routines. They are, in a sense, “building the road to production”.
+    📝 "At Spotify there is a separate operations team, but their job is not to make releases for the squads -­ their job is to give the squads the support they need to release code themselves; support in the form of infrastructure, scripts, and routines. They are, in a sense, "building the road to production".
 
     <...>
 
@@ -282,17 +282,17 @@ Agile Software Requirements: Lean Requirements Practices for Teams, Programs, an
 
     📝 "Architects: Many agile teams do not contain people with titles containing the word architect [The best architectures, requirements, and designs emerge from self-organizing teams.], and yet architecture does matter to agile teams.
     In these cases, the local architecture (that of the component, service, or feature that the team is accountable for) is most often determined by the local teams in a collaborative model.
-    In this way, it can be said that “architecture emerges” from the activities of those teams.
+    In this way, it can be said that "architecture emerges" from the activities of those teams.
 
     At the system level, however, **architecture is often coordinated among system architects and business analysts who are responsible for determining the overall structure (components and services) of the system**, as well as the system-level use cases and performance criteria that are to be imposed on the system as a whole. For this reason, it is likely that the **agile team has a key interface to one or more architects who may live outside the team**.
-    (We’ll discuss this in depth in Chapter 20.)
+    (We'll discuss this in depth in Chapter 20.)
 
     <...>
 
     Some of these QA personnel will live outside the team, while others (primarily testers) will have likely been dispatched to live with the product team.
     There, they work daily with developers to test new code and thereby help assure new code quality on a real-time basis.
 
-    In addition, as we’ll see later, QA personnel are involved with the development of the system-level testing required to assure overall system quality and conformance to nonfunctional, as well as functional, requirements.
+    In addition, as we'll see later, QA personnel are involved with the development of the system-level testing required to assure overall system quality and conformance to nonfunctional, as well as functional, requirements.
 
     <...>
 
@@ -354,7 +354,7 @@ Scaled Agile Framework (SAFe)
 
     📝 "Figure 8-8. Architecture impacts the ability to release system elements independently"
 
-    -- "SAFe® 5.0: The World’s Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell
+    -- "SAFe® 5.0: The World's Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell
 
 
 "Agile Practice Guide" by PMI
@@ -406,14 +406,14 @@ Nexus
 
 Одним из наиболее узких мест Nexus является отсутствие масштабирования архитектурной работы в problem space (сбор требований, аналитика...):
 
-    📝 "it’s hard for one Product Owner to deal with too many teams...
+    📝 "it's hard for one Product Owner to deal with too many teams...
     In real life, these Product Owners are typically accountable for the value delivered by these multiple teams and rely upon a lot of assistance from the Development Teams in order to deal with the challenge of scale."
 
     -- "`Comparing Nexus and SAFe - Similarities, Differences, potential synergies <https://www.scrum.org/resources/blog/comparing-nexus-and-safe-similarities-differences-potential-synergies>`__" by Yuval Yeret
 
 Статья подчеркивает ограниченность Nexus и предлагает к рассмотрению SAFe-практики:
 
-    📝 "As Nexus is designed to be a lightweight framework, with a more limited scope than SAFe, its not surprising that there are a lot more elements in SAFe that Nexus doesn’t say anything about.
+    📝 "As Nexus is designed to be a lightweight framework, with a more limited scope than SAFe, its not surprising that there are a lot more elements in SAFe that Nexus doesn't say anything about.
     Some of these can be useful in your context, some not necessarily.
     Think Architectural Runway, Innovation and Planning iteration, Team-level Kanbans, DevOps, Continuous Delivery pipeline, System Architect, Business Owner, Features/Enablers, Epics."
 
@@ -423,7 +423,7 @@ Nexus
 
 В статье много лестных отзывов о Program Kanban:
 
-    📝 "Program Kanban. SAFe includes one of the most powerful techniques to help improve flow and collaboration across a team of teams - a Kanban Board that takes a cross-team perspective. I started using this technique back in 2009 and it’s one I “don’t leave home without”. Nexus doesn’t include a Nexus-level Kanban board but it's a very nice complementary practice to consider. `Read more here <https://www.scrum.org/resources/blog/scaling-scrum-nexus-and-kanban>`__"
+    📝 "Program Kanban. SAFe includes one of the most powerful techniques to help improve flow and collaboration across a team of teams - a Kanban Board that takes a cross-team perspective. I started using this technique back in 2009 and it's one I "don't leave home without". Nexus doesn't include a Nexus-level Kanban board but it's a very nice complementary practice to consider. `Read more here <https://www.scrum.org/resources/blog/scaling-scrum-nexus-and-kanban>`__"
 
     -- "`Comparing Nexus and SAFe - Similarities, Differences, potential synergies <https://www.scrum.org/resources/blog/comparing-nexus-and-safe-similarities-differences-potential-synergies>`__" by Yuval Yeret
 
@@ -479,11 +479,11 @@ RUP реализует :ref:`спиральную <emacsway-spiral-development>`
 Социальная роль архитектуры
 ===========================
 
-📝 "By keeping things team sized, we help to achieve what MacCormack and colleagues call “an ‘**architecture for participation**’ that promotes ease of understanding by limiting module size, and ease of contribution by minimizing the propagation of design changes.”[MacCormack et al., “Exploring the Structure of Complex Software Designs.”] In other words, we need **a team-first software architecture that maximizes people’s ability to work with it**.
+📝 "By keeping things team sized, we help to achieve what MacCormack and colleagues call "an '**architecture for participation**' that promotes ease of understanding by limiting module size, and ease of contribution by minimizing the propagation of design changes."[MacCormack et al., "Exploring the Structure of Complex Software Designs."] In other words, we need **a team-first software architecture that maximizes people's ability to work with it**.
 
 <...>
 
-More than ever I believe that someone who claims to be an **Architect needs both technical and social skills, they need to understand people and work within the social framework**. They also need a remit that is broader than pure technology—they need to have a say in **organizational structures and personnel issues, i.e. they need to be a manager too**.[Kelly, “Return to Conway’s Law.”]"
+More than ever I believe that someone who claims to be an **Architect needs both technical and social skills, they need to understand people and work within the social framework**. They also need a remit that is broader than pure technology—they need to have a say in **organizational structures and personnel issues, i.e. they need to be a manager too**.[Kelly, "Return to Conway's Law."]"
 
 -- "Team Topologies: Organizing Business and Technology Teams for Fast Flow" by Matthew Skelton
 
@@ -499,7 +499,7 @@ More than ever I believe that someone who claims to be an **Architect needs both
 - "Team Topologies: Organizing Business and Technology Teams for Fast Flow" by Matthew Skelton
 - "Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise" by Dean Leffingwell
 - "Scaling Software Agility: Best Practices for Large Enterprises" by Dean Leffingwell
-- "SAFe® 5.0: The World’s Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell
+- "SAFe® 5.0: The World's Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell
 - "`Agile Practice Guide <https://www.pmi.org/pmbok-guide-standards/practice-guides/agile>`__" by Project Management Institute, 2017
 - "`Architecture Modernization with Strategic Domain-Driven Design. A Guide for Technology Leaders. <https://leanpub.com/arch-modernization-ddd>`__" by Nick Tune
 - "`Open Agile Architecture. A Standard of The Open Group <https://pubs.opengroup.org/architecture/o-aa-standard/>`__"
