@@ -63,6 +63,8 @@ language = 'ru'
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['.*', '_build', 'Thumbs.db', '.DS_Store']
 
+smartquotes_action = 'd'
+
 # -- Options for HTML output -------------------------------------------------
 
 html_title = project
