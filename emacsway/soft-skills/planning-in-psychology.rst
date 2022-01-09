@@ -80,7 +80,7 @@
 Для того, чтобы стать сильным специалистом, достаточно осваивать всего 5 страниц в день:
 
     📝 "A little reading goes a long way toward professional advancement.
-    If you read even one good programming book every two months, roughly 35 pages a week, you’ll soon have a firm grasp on the industry and distinguish yourself from nearly everyone around you."
+    If you read even one good programming book every two months, roughly 35 pages a week, you'll soon have a firm grasp on the industry and distinguish yourself from nearly everyone around you."
 
     -- "Code Complete" by Steve McConnell
 

@@ -242,9 +242,9 @@ Eventual Consistency предпочтительней
     **Frankly, neither of those tendencies provides a domain-specific answer, only a technical preference. Is there a better way to break the tie?**
 
     Discussing this with Eric Evans revealed a very simple and sound guideline.
-    When examining the use case (or story), ask whether it’s the job of the user executing the use case to make the data consistent.
+    When examining the use case (or story), ask whether it's the job of the user executing the use case to make the data consistent.
     **If it is, try to make it transactionally consistent, but only by adhering to the other rules of Aggregates.**
-    If it is another user’s job, or the job of the system, allow it to be eventually consistent.
+    If it is another user's job, or the job of the system, allow it to be eventually consistent.
     That bit of wisdom not only provides a convenient tie breaker, but it helps us gain a deeper understanding of our domain.
     It exposes the real system invariants: the ones that must be kept transactionally consistent.
     That understanding is much more valuable than defaulting to a technical leaning.
@@ -253,15 +253,15 @@ Eventual Consistency предпочтительней
 
 В цитате Вона Вернона видно, что Эрик Эванс не спешит разделять стремление к одному агрегату на транзакцию, и предлагает рассматривать каждый случай отдельно.
 
-Можно заметить, что принцип "When examining the use case (or story), ask whether it’s the job of the user executing the use case to make the data consistent. **If it is, try to make it transactionally consistent, but only by adhering to the other rules of Aggregates.**" не противоречит приведенному ниже принципу "developers and architects like Jimmy Bogard are okay with spanning a single transaction across several aggregates - but only **when those additional aggregates are related to side effects for the same original command**."
+Можно заметить, что принцип "When examining the use case (or story), ask whether it's the job of the user executing the use case to make the data consistent. **If it is, try to make it transactionally consistent, but only by adhering to the other rules of Aggregates.**" не противоречит приведенному ниже принципу "developers and architects like Jimmy Bogard are okay with spanning a single transaction across several aggregates - but only **when those additional aggregates are related to side effects for the same original command**."
 
 Здесь же Vaughn Vernon напоминает нам, что во главе угла стоит, опять же, масштабирование и распределенность:
 
-    We’ll have **consistency** where necessary [имеется ввиду CAP-theorem], and support for optimally performing and **highly scalable systems**.
+    We'll have **consistency** where necessary [имеется ввиду CAP-theorem], and support for optimally performing and **highly scalable systems**.
 
     \- "Implementing Domain-Driven Design" [#fniddd]_ by Vaughn Vernon, Chapter "10 Aggregates :: Reasons to Break the Rules :: Adhering to the Rules"
 
-Далее, в главе "Chapter 10 Aggregates :: Gaining Insight through Discovery :: Is It the Team Member’s Job?" книги, он демонстрирует применение принципа "Ask Whose Job It Is" на практике.
+Далее, в главе "Chapter 10 Aggregates :: Gaining Insight through Discovery :: Is It the Team Member's Job?" книги, он демонстрирует применение принципа "Ask Whose Job It Is" на практике.
 
 
 Strong Consistency - новичкам
@@ -319,7 +319,7 @@ Strong Consistency - новичкам
     It is of note here that each insert is a transaction.
     What this means is Postgres is doing some extra coordination to make sure the transaction is completed before returning.
     On every single write this takes some overhead.
-    Instead of single row transactions, if we wrap all of our inserts in a transaction like below, we’ll see some nice performance gains::
+    Instead of single row transactions, if we wrap all of our inserts in a transaction like below, we'll see some nice performance gains::
 
         begin;
         insert 1;
@@ -329,7 +329,7 @@ Strong Consistency - новичкам
         commit;
 
     This took my inserts down from 15 minutes 30 seconds to 5 minutes and 4 seconds.
-    We’ve suddenly boosted our throughput by 3x to about 3k inserts per second.
+    We've suddenly boosted our throughput by 3x to about 3k inserts per second.
 
     <...>
 
@@ -338,7 +338,7 @@ Strong Consistency - новичкам
 
     <...>
 
-    Running this \copy completes in 82 seconds! We’re now processing over 10k writes per second on some fairly modest hardware.
+    Running this \copy completes in 82 seconds! We're now processing over 10k writes per second on some fairly modest hardware.
 
     \- "`Faster bulk loading in Postgres with copy <https://www.citusdata.com/blog/2017/11/08/faster-bulk-loading-in-postgresql-with-copy/>`__" by Craig Kerstiens, CitusData
 
@@ -358,7 +358,7 @@ Strong Consistency - новичкам
 В контексте этого вопроса можно еще раз вспомнить утверждение Eric Evans:
 
     Discussing this with Eric Evans revealed a very simple and sound guideline.
-    When examining the use case (or story), ask whether it’s the job of the user executing the use case to make the data consistent.
+    When examining the use case (or story), ask whether it's the job of the user executing the use case to make the data consistent.
     **If it is, try to make it transactionally consistent, but only by adhering to the other rules of Aggregates.**
 
     \- "Implementing Domain-Driven Design" [#fniddd]_ by Vaughn Vernon, Chapter "10 Aggregates :: Rule: Use Eventual Consistency Outside the Boundary :: Ask Whose Job It Is"
@@ -419,14 +419,14 @@ Strong Consistency - новичкам
 --------------------------------
 
     **Sometimes it is actually good practice to modify multiple aggregates within a transaction.**
-    But it’s important to understand why the guidelines exist in the first place so that you can be aware of the consequences of ignoring them.
+    But it's important to understand why the guidelines exist in the first place so that you can be aware of the consequences of ignoring them.
 
-    **When the cost of eventual consistency is too high, it’s acceptable to consider modifying two objects in the same transaction.**
+    **When the cost of eventual consistency is too high, it's acceptable to consider modifying two objects in the same transaction.**
     Exceptional circumstances will usually be when the business tells you that the customer experience will be too unsatisfactory.
-    You shouldn’t just accept the business’s decision, though; it never wants to accept eventual consistency.
+    You shouldn't just accept the business's decision, though; it never wants to accept eventual consistency.
     You should elaborate on the scalability, performance, and other costs involved when not using eventual consistency so that the business can make an informed, customer‐focused decision.
 
-    **Another time it’s acceptable to avoid eventual consistency is when the complexity is too great.**
+    **Another time it's acceptable to avoid eventual consistency is when the complexity is too great.**
     You will see later in this chapter that robust eventually consistent implementations often utilize asynchronous, out‐of‐process workflows that add more complexity and dependencies.
 
     **To summarize, saving one aggregate per transaction is the default approach.**
@@ -487,9 +487,9 @@ Strong Consistency - новичкам
 ..
 
     With our domain event in place, we can ensure that our entire **domain model stays consistent with the business rules applied, even when we need to notify other aggregate roots** in our system when something happens.
-    We’ve also locked down all the ways the risk status could change (charged a new fee), so **we can keep our Customer aggregate consistent even in the face of changes in a separate aggregate (Fee)**.
+    We've also locked down all the ways the risk status could change (charged a new fee), so **we can keep our Customer aggregate consistent even in the face of changes in a separate aggregate (Fee)**.
 
-    This pattern isn’t always applicable.
+    This pattern isn't always applicable.
     If I need to do something like send an email, notify a web service or any other potentially blocking tasks, I should revert back to normal asynchronous messaging.
     But for synchronous messaging across disconnected aggregates, **domain events are a great way to ensure aggregate root consistency across the entire model**.
     The alternative would be transaction script design, where consistency is enforced not by the domain model but by some other (non-intuitive) layer.
@@ -498,9 +498,9 @@ Strong Consistency - новичкам
 
 ..
 
-    Typically, I want the side effects of a domain event to occur within the same logical transaction, but not necessarily in the same scope of raising the domain event. If I cared enough to have the side effects occur, I would instead just couple myself directly to that other service as an argument to my domain’s method.
+    Typically, I want the side effects of a domain event to occur within the same logical transaction, but not necessarily in the same scope of raising the domain event. If I cared enough to have the side effects occur, I would instead just couple myself directly to that other service as an argument to my domain's method.
 
-    Instead of dispatching to a domain event handler immediately, what if instead we recorded our domain events, and before committing our transaction, dispatch those domain events at that point? This will have a number of benefits, besides us not tearing our hair out. Instead of raising domain events, let’s define a container for events on our domain object:
+    Instead of dispatching to a domain event handler immediately, what if instead we recorded our domain events, and before committing our transaction, dispatch those domain events at that point? This will have a number of benefits, besides us not tearing our hair out. Instead of raising domain events, let's define a container for events on our domain object:
 
     <...>
 
@@ -519,7 +519,7 @@ Strong Consistency - новичкам
     In other two cases you control when events are published as well handlers execution – in or outside existing transaction.
 
     In my opinion **it is good approach to always handle domain events in existing transaction** and treat aggregate method execution and handlers processing as atomic operation.
-    This is good because if you have a lot of events and handlers you do not have to think about initializing connections, transactions and what should be treat in “all-or-nothing” way and what not.
+    This is good because if you have a lot of events and handlers you do not have to think about initializing connections, transactions and what should be treat in "all-or-nothing" way and what not.
 
     \- "How to publish and handle Domain Events" [#fnkgde1]_ by Kamil Grzybek
 
@@ -549,7 +549,7 @@ Strong Consistency - новичкам
 
 ..
 
-    Let’s assume that in this particular case **both Order placement and Payment creation should take place in the same transaction**.
+    Let's assume that in this particular case **both Order placement and Payment creation should take place in the same transaction**.
     If transaction is successful, we need to send 2 emails – about the Order and Payment.
 
     <...>
@@ -581,7 +581,7 @@ Strong Consistency - новичкам
 Мнение Udi Dahan
 ----------------
 
-    > This might be a bit of a late question. But shouldn’t domain events be handled after the transaction ends?
+    > This might be a bit of a late question. But shouldn't domain events be handled after the transaction ends?
     Is there any specific reason for handle domain events within the same transaction scoping DoSomething?
 
     Domain events get handled by service layer objects in the same process which usually send out other messages – as such, we want those messages to be sent (or not) in the same transactional context.
@@ -591,31 +591,31 @@ Strong Consistency - новичкам
 ..
 
     > In message number 120 above, Lars asks about how to access the data if the event is fired before the commit.
-    I didn’t understand your response.
-    Maybe my situation is different so I’ll explain.
+    I didn't understand your response.
+    Maybe my situation is different so I'll explain.
 
     > I have 2 BCs.
     One context deals with the merging of employee information.
-    I’d like to fire a domain event specifying that the employee was merged.
-    I’d like the 2nd BC to react to this event.
-    The issue is that the data won’t be committed at that point, and this data that changed is vital to the 2nd BC to react.
+    I'd like to fire a domain event specifying that the employee was merged.
+    I'd like the 2nd BC to react to this event.
+    The issue is that the data won't be committed at that point, and this data that changed is vital to the 2nd BC to react.
 
     > Am I going down the wrong path by attempting to use domain events? Is there another solution you could suggest?
 
     The question is whether you need both your BCs to be consistent with each other at \*all\* times – ergo in the same transaction.
 
-    **If the answer is yes, then you absolutely do want the event to be raised and handled in the same transaction – you’d also be deploying both BCs together.**
+    **If the answer is yes, then you absolutely do want the event to be raised and handled in the same transaction – you'd also be deploying both BCs together.**
 
     If the answer is no, then you should use some kind of message bus between the BCs.
-    The handler for the domain event would publish a message using the bus, and that would be enlisted in the same transaction – thus is the first BC rolled back, the message wouldn’t be sent.
+    The handler for the domain event would publish a message using the bus, and that would be enlisted in the same transaction – thus is the first BC rolled back, the message wouldn't be sent.
     The second BC would be invoked by the bus when the message arrives at its queue where its handling would then be done in a separate transaction.
 
     \- "`Domain Events – Salvation <http://udidahan.com/2009/06/14/domain-events-salvation/#comment-4730>`__" [#fnudde3]_ comment of Udi Dahan
 
 ..
 
-    > Shouldn’t the event only be handled when the transaction commits?
-    Until the transaction commits, the change to the domain object isn’t really permanent, right?
+    > Shouldn't the event only be handled when the transaction commits?
+    Until the transaction commits, the change to the domain object isn't really permanent, right?
 
     Not necessarily – sometimes you want loose-coupling within the same transaction.
 
@@ -626,10 +626,10 @@ Strong Consistency - новичкам
 
 ..
 
-    > Domain event could alter multiple aggregates which is common, wouldn’t you be updating multiple aggregates in a single transaction?
+    > Domain event could alter multiple aggregates which is common, wouldn't you be updating multiple aggregates in a single transaction?
 
     **The more common case is where those multiple aggregates are updated in separate transactions**, usually as a result of some kind of "service bus" event being transmitted from the domain events.
-    That service bus event gets routed to multiple subscribers, behind which you’d have each of the respective aggregates that would updated in their own transactions.
+    That service bus event gets routed to multiple subscribers, behind which you'd have each of the respective aggregates that would updated in their own transactions.
 
     \- "`Domain Events – Salvation <http://udidahan.com/2009/06/14/domain-events-salvation/#comment-74959>`__" [#fnudde3]_ comment of Udi Dahan
 
@@ -696,7 +696,7 @@ Domain Events могут покидать пределы Bounded Context:
 
     Are Domain Event Consumers Conformists?
     **You may be wondering how Domain Events can be consumed by another Bounded Context [это и есть тот самый волнующий вопрос - прим. мое] and not force that consuming Bounded Context into a Conformist relationship.**
-    As recommended in Implementing Domain-Driven Design [IDDD] , and specifically in Chapter 13, “Integrating Bounded Contexts,” **consumers should not use the event types (e.g., classes) of an event publisher**.
+    As recommended in Implementing Domain-Driven Design [IDDD] , and specifically in Chapter 13, "Integrating Bounded Contexts," **consumers should not use the event types (e.g., classes) of an event publisher**.
     Rather, **they should depend only on the schema of the events**, that is, **their Published Language**.
     This generally means that if the events are published as JSON, or perhaps a more economical object format, the consumer should consume the events by parsing them to obtain their data attributes."
 
@@ -818,7 +818,7 @@ My approach is similar to Vaughn Vernon - I try always handle event in separate 
     Conversely, external events tend to be flat in structure, exposing just a few properties—most of the time just correlational IDs, as typified in Listing 18‐3.
 
     You learned in Part II that external events need to be versioned to avoid breaking changes.
-    This is another differentiator with internal events, because if you make breaking changes to an internal  event your code will not compile (if using a compiled programming language). So there’s no need to  version internal events.
+    This is another differentiator with internal events, because if you make breaking changes to an internal  event your code will not compile (if using a compiled programming language). So there's no need to  version internal events.
 
     As you start to implement domain events, you will see that in a typical business use case there may  be a number of internal events raised, and just one or two external events that are raised by the  service layer.
     Figure 18-2 illustrates how the sequence of events may occur in a typical use case.
@@ -886,9 +886,9 @@ My approach is similar to Vaughn Vernon - I try always handle event in separate 
 
     In general, my feeling is that the problem seldom occurs when the Domain Events have been chosen carefully to reflect the business domain, using Ubiquitous Language, and at the right granularity.
     These events then tend to become stable very quickly during development, and rarely need to be altered.
-    When there are significant changes in the domain, the events may need to change, but in these cases you’ll need an API change anyway.
+    When there are significant changes in the domain, the events may need to change, but in these cases you'll need an API change anyway.
 
-    That said, it’s a universally useful heuristic in software design to keep everything as closed off as possible, and only open up things where there’s a good case for it.
+    That said, it's a universally useful heuristic in software design to keep everything as closed off as possible, and only open up things where there's a good case for it.
 
     \- "Patterns for Decoupling in Distributed Systems: Explicit Public Events" [#fnmvpe]_ by Mathias Verraes
 
@@ -901,13 +901,13 @@ One-phase vs Two-phase
 Хотя у Vaughn Vernon такое разделение не совсем очевидное, он разделяет реализацию доставки  для подписчиков внутри Bounded Context за его пределами.
 
 .. figure:: _media/domain-events-in-ddd/iddd-8.1.png
-   :alt: Figure 8.1. Aggregates create Events and publish them. Subscribers may store Events and then forward them to remote subscribers, or just forward them without storing. Immediate forwarding requires XA (two-phase commit) unless messaging middleware shares the model’s data store. The image source is "Implementing Domain-Driven Design" by Vaughn Vernon
+   :alt: Figure 8.1. Aggregates create Events and publish them. Subscribers may store Events and then forward them to remote subscribers, or just forward them without storing. Immediate forwarding requires XA (two-phase commit) unless messaging middleware shares the model's data store. The image source is "Implementing Domain-Driven Design" by Vaughn Vernon
    :align: center
    :width: 70%
 
    Figure 8.1. Aggregates create Events and publish them.
    **Subscribers may store Events and then forward them to remote subscribers, or just forward them without storing.**
-   Immediate forwarding requires XA (two-phase commit) unless messaging middleware shares the model’s data store.
+   Immediate forwarding requires XA (two-phase commit) unless messaging middleware shares the model's data store.
    The image source is "Implementing Domain-Driven Design" [#fniddd]_ by Vaughn Vernon
 
 ..
@@ -929,7 +929,7 @@ One-phase vs Two-phase
 
     Avoid exposing the domain model to any kind of middleware messaging infrastructure.
     Those kinds of components live only in the infrastructure.
-    And while the domain model might at times use such infrastructure indirectly, it would never explicitly couple to it. We’ll use an approach that completely avoids the use of infrastructure.
+    And while the domain model might at times use such infrastructure indirectly, it would never explicitly couple to it. We'll use an approach that completely avoids the use of infrastructure.
 
     One of the simplest and most effective ways to publish Domain Events without coupling to components outside the domain model is to create a lightweight Observer [Gamma et al.].
     For the sake of naming I use Publish-Subscribe, which is acknowledged by [Gamma et al.] as another name for the same pattern.
@@ -1004,8 +1004,8 @@ Kamil Grzybek вводит явное разделение механизма д
     Although often it is a user-based command emitted by the user interface that causes an event to occur, sometimes Domain Events
     can be caused by a different source.
     This might be from a timer that expires, such as at the end of the business day or the end of a week, month, or year.
-    In cases like this it won’t be a command that causes the event, because the ending of some time period is a matter of fact.
-    You can’t reject the fact that some time frame has expired, and if the business cares about this fact, the time expiration is modeled as a Domain Event, and not as a command.
+    In cases like this it won't be a command that causes the event, because the ending of some time period is a matter of fact.
+    You can't reject the fact that some time frame has expired, and if the business cares about this fact, the time expiration is modeled as a Domain Event, and not as a command.
 
     \- "Domain-Driven Design Distilled" [#fndddd]_ by Vaughn Vernon, Chapter "6. Tactical Design with Domain Events  :: Designing, Implementing, and Using Domain Events"
 
@@ -1016,7 +1016,7 @@ Kamil Grzybek вводит явное разделение механизма д
     Possibly a user of the system initiates some action that is considered an Event in its own right.
     When that happens, the Event can be modeled as an Aggregate and retained in its own Repository.
     Since it represents some past occurrence, its Repository would not permit its removal.
-    When Events are modeled in this way, like Aggregates they become part of the model’s structure.
+    When Events are modeled in this way, like Aggregates they become part of the model's structure.
     Thus, they are not just a record of some past occurrence, although they are that also.
 
     \-"Implementing Domain-Driven Design" [#fniddd]_ by Vaughn Vernon, Chapter "Chapter 8. Domain Events :: Modeling Events :: With Aggregate Characteristics"
@@ -1067,11 +1067,11 @@ Kamil Grzybek вводит явное разделение механизма д
 Однако, рассмотрение `компенсационных транзакций <https://docs.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction>`__ уже выходит за рамки данного поста.
 
     Eventual consistency can lead to undesirable scenarios.
-    For example, if a payment has been rejected, you can’t just roll back the transaction and not create the order (as many non‐eventually consistent systems would); the order was already created as part of a previous transaction in a different component and currently lives in that component’s database.
+    For example, if a payment has been rejected, you can't just roll back the transaction and not create the order (as many non‐eventually consistent systems would); the order was already created as part of a previous transaction in a different component and currently lives in that component's database.
     What you can do, though, is roll forward into a new state.
-    You’d probably tell the customer the order could not be completed because payment failed.
+    You'd probably tell the customer the order could not be completed because payment failed.
     Ideally you would tell her immediately when she tries to place an order.
-    However, you have to remember that you’re trying to build a scalable fault‐tolerant solution and you need to make sacrifices.
+    However, you have to remember that you're trying to build a scalable fault‐tolerant solution and you need to make sacrifices.
     Upsetting the few customers who cannot successfully place orders so that everybody else gets a superior user experience is often an acceptable trade‐off.
     When you are in an inconsistent state, you need to roll forward into a new state that represents the wishes of the business or the real‐world domain processes you are modeling.
 
@@ -1093,9 +1093,9 @@ Kamil Grzybek вводит явное разделение механизма д
 
 Хорошим примером, демонстрирующим архитектурную гибкость мышления, является ответ Jimmy Bogard по поводу того, может ли Команда в CQRS возвращать результат?
 
-    It might seem rather strange that commands always have a result, but it’s much, much easier to deal with side effects of commands through return parameters than through some other means (global registry, static field, re-querying some object, collecting parameter, etc.). **For commands that create an item, I usually want to redirect to a screen showing that item, very easily accomplished when I can get the created item and as for its ID.**
+    It might seem rather strange that commands always have a result, but it's much, much easier to deal with side effects of commands through return parameters than through some other means (global registry, static field, re-querying some object, collecting parameter, etc.). **For commands that create an item, I usually want to redirect to a screen showing that item, very easily accomplished when I can get the created item and as for its ID.**
 
-    This is a bit controversial, but don’t frankly care, as it’s the simplest thing that could possibly work. If I want to have a command that returns Void, I could steal a page from F# and have a Command base class that returns a Unit type:
+    This is a bit controversial, but don't frankly care, as it's the simplest thing that could possibly work. If I want to have a command that returns Void, I could steal a page from F# and have a Command base class that returns a Unit type:
 
     \- "`Put your controllers on a diet: POSTs and commands <https://lostechies.com/jimmybogard/2013/12/19/put-your-controllers-on-a-diet-posts-and-commands/>`__" by Jimmy Bogard
 
@@ -1105,15 +1105,15 @@ Kamil Grzybek вводит явное разделение механизма д
 
     No, it does not. You can make your read store immediately consistent. That is, your read store can be updated when your command side succeeds (in the same transaction).
 
-    For many legacy/existing apps, transitioning to eventually consistent read stores will either force you to go through bogus hoops of mimicking synchronous calls. Users will bang down on your door with pitchforks and torches if you try and transition to an asynchronous model if you don’t change their business process first.
+    For many legacy/existing apps, transitioning to eventually consistent read stores will either force you to go through bogus hoops of mimicking synchronous calls. Users will bang down on your door with pitchforks and torches if you try and transition to an asynchronous model if you don't change their business process first.
 
-    Instead, you can start with immediate consistency and transition where and when it’s needed. Unless a user expects a confirmation page, making every command page have a series of confirmations of “your request was received” is going to annoy the snot out of your users.
+    Instead, you can start with immediate consistency and transition where and when it's needed. Unless a user expects a confirmation page, making every command page have a series of confirmations of "your request was received" is going to annoy the snot out of your users.
 
     Myth #3 – CQRS requires a bus/queues/asynchronous messaging
 
-    See above myth. **Nothing about CQRS says “thou shalt use NServiceBus”. It’s just not there. You’re merely separating infrastructure between handling commands and queries, but the how is quite varied. Don’t start with a bus until you prove you need eventual consistency.**
+    See above myth. **Nothing about CQRS says "thou shalt use NServiceBus". It's just not there. You're merely separating infrastructure between handling commands and queries, but the how is quite varied. Don't start with a bus until you prove you need eventual consistency.**
 
-    Consistency models are a business decision because it directly impacts user experience. An eventually consistent model requires a different user experience than an immediate one, and this is not something you can just "slip in" to your users, or try to emulate. If you’re attempting to emulate immediate consistency in an eventually consistent model, you’re doing something wrong.
+    Consistency models are a business decision because it directly impacts user experience. An eventually consistent model requires a different user experience than an immediate one, and this is not something you can just "slip in" to your users, or try to emulate. If you're attempting to emulate immediate consistency in an eventually consistent model, you're doing something wrong.
 
     \- "`Busting some CQRS myths <https://lostechies.com/jimmybogard/2012/08/22/busting-some-cqrs-myths/>`__" by Jimmy Bogard
 
@@ -1225,7 +1225,7 @@ Kamil Grzybek вводит явное разделение механизма д
 
     representation.put (some_value, count + 1)
 
-    (with the guarantee that the array’s capacity is at least count + 1).
+    (with the guarantee that the array's capacity is at least count + 1).
     **This side effect changes a value above the stack-significant section of the array; it can do no ill.**
 
     \- "Object-Oriented Software Construction" [#fnoosc]_ 2nd edition by Bertrand Meyer, chapter "23.1 SIDE EFFECTS IN FUNCTIONS :: Abstract state, concrete state"
@@ -1274,7 +1274,7 @@ Vaughn Vernon посвящает этой проблеме главу "8 Domain 
 Подписчики не всегда получают Integration Events в той же последовательности, в которой они были отправлены, по ряду причин.
 Одно из решений этой проблемы заключается в том, что, если получатель обнаруживает, что сообщение не соответствует ожидаемому порядку, то он просто не забирает его из очереди.
 
-    Note that just saving the Domain Event in its causal order doesn’t guarantee that it will arrive at other distributed nodes in the same order.
+    Note that just saving the Domain Event in its causal order doesn't guarantee that it will arrive at other distributed nodes in the same order.
     Thus, it is also the responsibility of the consuming Bounded Context to recognize proper causality.
     It might be the Domain Event type itself that can indicate causality, or it may be metadata associated with the Domain Event, such as a sequence or causal identifier.
     The **sequence** or **causal identifier** would indicate **what caused this Domain Event**, and **if the cause was not yet seen, the consumer must wait to apply the newly arrived event until its cause arrives**.
@@ -1285,7 +1285,7 @@ Vaughn Vernon посвящает этой проблеме главу "8 Domain 
 В книге "Reactive Messaging Patterns with the Actor Model: Applications and Integration in Scala and Akka" [#fnrmp]_ by Vaughn Vernon также говорится о том, что Actor должен сам решать, принимать ли ему сообщение:
 
     Actors must be prepared to accept and reject messages based on their current state, which is reflected by the order in which previous messages were received.
-    Sometimes a latent message could be accepted even if it is not perfect timing, but the actor’s reaction to the latent message may have to carefully take into account its current state beforehand.
+    Sometimes a latent message could be accepted even if it is not perfect timing, but the actor's reaction to the latent message may have to carefully take into account its current state beforehand.
     This may be dealt with more gracefully by using the actors become() capabilities.
 
     \- "Reactive Messaging Patterns with the Actor Model: Applications and Integration in Scala and Akka" [#fnrmp]_ by Vaughn Vernon, Chapter "5. Messaging Channels :: Point-to-Point Channel"

@@ -23,7 +23,7 @@
 
 ..
 
-    📝 "\"Agile\" methods actually can be applied within a variety of models.
+    📝 ""Agile" methods actually can be applied within a variety of models.
     While Agile methods are common in executing an evolutionary lifecycle model, they can be used in other lifecycle models at various stages.
     What the methods have in common is an emphasis on continuous inspection and collaboration in the rapid production of working software in an environment where changes, including changes to requirements, are expected."
 
@@ -107,7 +107,7 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
 
     📝 "At the core of understanding this argument is the software change curve.
     The change curve says that as the project runs, it becomes exponentially more expensive to make changes.
-    The change curve is usually expressed in terms of phases \"a change made in analysis for $1 would cost thousands to fix in production\".
+    The change curve is usually expressed in terms of phases "a change made in analysis for $1 would cost thousands to fix in production".
     This is ironic as most projects still work in an ad-hoc process that doesn't have an analysis phase, but the exponentiation is still there.
     **The exponential change curve means that evolutionary design cannot possibly work.**
     It also conveys why planned design must be done carefully because any mistakes in planned design face the same exponentiation.
@@ -168,6 +168,7 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
 Вернемся еще раз к выражению Kent Beck "*сделайте изменение легким, а потом делай легко изменение*".
 Оно состоит из двух частей, причем, первая из них предшествует второй.
 Как раз именно первую часть нередко забывают сделать на современном рынке, а без первой части вторая часть работает не будет, как это нетрудно догадаться.
+Так недалеко и до полного Уроборос.
 
     📝 "Scrum is ok if you do it right."
 
@@ -175,8 +176,8 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
 
 ..
 
-    📝 "One pattern I see time and time again on software teams is that they adopt Scrum, pay little attention to technical practices, and they’re able to consistently increase their velocity for the first few years.
-    But after about three or four years the technical debt they’ve accumulated in their code is so great that their velocity starts to grind to a halt and they find it difficult to even get simple features implemented.
+    📝 "One pattern I see time and time again on software teams is that they adopt Scrum, pay little attention to technical practices, and they're able to consistently increase their velocity for the first few years.
+    But after about three or four years the technical debt they've accumulated in their code is so great that their velocity starts to grind to a halt and they find it difficult to even get simple features implemented.
     This is a place you do not want to get to, though I see it far too often in the software community—teams stuck there without a clue how to get out."
 
     -- "`How to Increase Velocity <https://www.agilealliance.org/how-to-increase-velocity/>`__" by David Bernstein
@@ -237,7 +238,7 @@ Impossible. Точка.
     📝 "Grady Booch has also provided a set of guidelines for an agile architecture (which in turn imply some duties for the agile architect).
     Booch claims that all good software-intensive architectures are agile.
     What does he mean by this? He means that a successful architecture is resilient and loosely coupled.
-    It is composed of a core set of well-reasoned design decisions but still contains some “wiggle room” that allows modifications to be made and refactorings to be done, without ruining the original structure.
+    It is composed of a core set of well-reasoned design decisions but still contains some "wiggle room" that allows modifications to be made and refactorings to be done, without ruining the original structure.
 
     Booch also notes that an effective agile process will allow the architecture to grow incrementally as the system is developed and matures.
     The key to success is to have decomposability, separation of concerns, and near-independence of the parts.
@@ -245,7 +246,7 @@ Impossible. Точка.
 
     Finally, Booch notes that to be agile, the architecture should be visible and self-evident in the code; this means making the design patterns, cross-cutting concerns, and other important decisions obvious, well communicated, and defended.
     This may, in turn, require documentation.
-    But whatever architectural decisions are made, the architect must make an effort to “socialize” the architecture."
+    But whatever architectural decisions are made, the architect must make an effort to "socialize" the architecture."
 
     -- "Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman
 

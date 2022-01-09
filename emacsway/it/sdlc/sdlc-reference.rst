@@ -12,7 +12,7 @@ Grady Booch выделяет два ключевых критерия, кото�
 
     📝 "Traits of Successful Projects 
 
-    A successful software project is one in which the deliverables satisfy and possibly exceed the customer’s expectations, the development occurred in a timely and economical fashion, and the result is resilient to change and adaptation. By this measure, we have observed several traits that are common to virtually all of the successful object-oriented systems we have encountered and noticeably absent from the ones that we count as failures: 
+    A successful software project is one in which the deliverables satisfy and possibly exceed the customer's expectations, the development occurred in a timely and economical fashion, and the result is resilient to change and adaptation. By this measure, we have observed several traits that are common to virtually all of the successful object-oriented systems we have encountered and noticeably absent from the ones that we count as failures: 
 
     - Existence of a strong architectural vision
     - Application of a well-managed iterative and incremental development lifecycle"
@@ -53,7 +53,7 @@ Grady Booch выделяет два ключевых критерия, кото�
 
 - "Scaling Software Agility: Best Practices for Large Enterprises" by Dean Leffingwell - о проблемах масштабирования команд.
 - "Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise" by Dean Leffingwell - о проблемах интегрирования аналитической и архитектурной работы в Agile.
-- "SAFe® 5.0: The World’s Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell - наиболее удачная масштабируемая Agile-модель на сегодня.
+- "SAFe® 5.0: The World's Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell - наиболее удачная масштабируемая Agile-модель на сегодня.
 
 ..
 

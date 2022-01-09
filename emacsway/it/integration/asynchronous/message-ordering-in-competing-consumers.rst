@@ -168,14 +168,14 @@ Vaughn Vernon в "Reactive Messaging Patterns with the Actor Model: Applications
 
 Тут нужно сделать короткое отступление. Хотя, как говорилось ранее, "*Хьюитт был против включения требований о том, что сообщения должны прибывать в том порядке, в котором они отправлены на модель актора*", в современных реализациях Actor Model mailbox представлен как FIFO-queue:
 
-    📝 "One of the guarantees of the Actor model is sequential message delivery. That is, by default actor mailboxes are first-in, first-out (FIFO) channels. When a message arrives through the actor’s channel, it will be received in the order in which it was sent. Thus, if actor A sends a message to actor B and then actor A sends a second message to actor B, the message that was sent first will be the first message received by actor B."
+    📝 "One of the guarantees of the Actor model is sequential message delivery. That is, by default actor mailboxes are first-in, first-out (FIFO) channels. When a message arrives through the actor's channel, it will be received in the order in which it was sent. Thus, if actor A sends a message to actor B and then actor A sends a second message to actor B, the message that was sent first will be the first message received by actor B."
 
 Однако, вопрос все-равно остается открытым:
 
     📝 "What if you introduce a third actor, C? Now actor A and actor C both send one or more messages to actor B. There is no guarantee which message actor B will receive first, either the first from actor A or the first from actor C. Nevertheless, the first message from actor A will always be received by actor B before the second message that actor A sends, and the first message from actor C will always
     be received by actor B before the second message that actor C sends...
 
-    What is implied? Actors must be prepared to accept and reject messages based on their current state, which is reflected by the order in which previous messages were received. Sometimes a latent message could be accepted even if it is not perfect timing, but the actor’s reaction to the latent message may have to carefully take into account its current state beforehand. This may be dealt with more gracefully by using the actors become() capabilities."
+    What is implied? Actors must be prepared to accept and reject messages based on their current state, which is reflected by the order in which previous messages were received. Sometimes a latent message could be accepted even if it is not perfect timing, but the actor's reaction to the latent message may have to carefully take into account its current state beforehand. This may be dealt with more gracefully by using the actors become() capabilities."
 
     -- "Reactive Messaging Patterns with the Actor Model: Applications and Integration in Scala and Akka" by Vaughn Vernon, Chapter "5. Messaging Channels :: Point-to-Point Channel"
 
@@ -219,7 +219,7 @@ Vaughn Vernon в "Reactive Messaging Patterns with the Actor Model: Applications
 Реализация Vector Clock на Golang - `vclock <https://labix.org/vclock>`__.
 Статья об этой библиотеке на сайте автора: "`Vector clock support for Go <https://blog.labix.org/2010/12/21/vector-clock-support-for-go>`__" by Gustavo Niemeyer.
 
-    📝 "Note that just **saving the Domain Event in its causal order doesn’t guarantee that it will arrive at other distributed nodes in the same order**. Thus, it is also the responsibility of the consuming Bounded Context to recognize proper **causality**. It might be the Domain Event type itself that can indicate causality, or it may be **metadata** associated with the Domain Event, such as a **sequence** or **causal identifier**. The **sequence** or **causal identifier** would **indicate what caused this Domain Event, and if the cause was not yet seen, the consumer must wait to apply the newly arrived event until its cause arrives**. In some cases it is possible to ignore latent Domain Events that have already been superseded by the actions associated with a later one; in this case causality has a dismissible impact [об этом способе уже говорилось ранее, прим. моё]."
+    📝 "Note that just **saving the Domain Event in its causal order doesn't guarantee that it will arrive at other distributed nodes in the same order**. Thus, it is also the responsibility of the consuming Bounded Context to recognize proper **causality**. It might be the Domain Event type itself that can indicate causality, or it may be **metadata** associated with the Domain Event, such as a **sequence** or **causal identifier**. The **sequence** or **causal identifier** would **indicate what caused this Domain Event, and if the cause was not yet seen, the consumer must wait to apply the newly arrived event until its cause arrives**. In some cases it is possible to ignore latent Domain Events that have already been superseded by the actions associated with a later one; in this case causality has a dismissible impact [об этом способе уже говорилось ранее, прим. моё]."
 
     -- "Domain-Driven Design Distilled" by Vaughn Vernon, Chapter "6. Tactical Design with Domain Events:: Designing, Implementing, and Using Domain Events"
 
@@ -232,7 +232,7 @@ Vaughn Vernon в "Reactive Messaging Patterns with the Actor Model: Applications
 
 ..
 
-    📝 "**Actors must be prepared to accept and reject messages based on their current state, which is reflected by the order in which previous messages were received.** Sometimes a latent message could be accepted even if it is not perfect timing, but the actor’s reaction to the latent message may have to carefully take into account its current state beforehand. This may be dealt with more gracefully by using the actors become() capabilities."
+    📝 "**Actors must be prepared to accept and reject messages based on their current state, which is reflected by the order in which previous messages were received.** Sometimes a latent message could be accepted even if it is not perfect timing, but the actor's reaction to the latent message may have to carefully take into account its current state beforehand. This may be dealt with more gracefully by using the actors become() capabilities."
 
     -- "Reactive Messaging Patterns with the Actor Model: Applications and Integration in Scala and Akka" by Vaughn Vernon, Chapter "5. Messaging Channels :: Point-to-Point Channel"
 
@@ -287,7 +287,7 @@ Vaughn Vernon в "Reactive Messaging Patterns with the Actor Model: Applications
 
 Но даже если подписчик всего один, и сообщения доставляются последовательно, то и тогда очередность обработки сообщений может быть нарушена. Пример из NATS Streaming Server:
 
-    📝 "With the redelivery feature, order can’t be guaranteed, since by definition server will resend messages that have not been acknowledged after a period of time. Suppose your consumer receives messages 1, 2 and 3, does not acknowledge 2. Then message 4 is produced, server sends this message to the consumer. The redelivery timer then kicks in and server will resend message 2. The consumer would see messages: 1, 2, 3, 4, 2, 5, etc...
+    📝 "With the redelivery feature, order can't be guaranteed, since by definition server will resend messages that have not been acknowledged after a period of time. Suppose your consumer receives messages 1, 2 and 3, does not acknowledge 2. Then message 4 is produced, server sends this message to the consumer. The redelivery timer then kicks in and server will resend message 2. The consumer would see messages: 1, 2, 3, 4, 2, 5, etc...
 
     In conclusion, the server does not offer this guarantee although it tries to redeliver messages first thing on startup. That being said, if the durable is stalled (number of outstanding messages >= MaxInflight), then the redelivery will also be stalled, and new messages will be allowed to be sent. When the consumer resumes acking messages, then it may receive redelivered and new messages interleaved (new messages will be in order though)."
 

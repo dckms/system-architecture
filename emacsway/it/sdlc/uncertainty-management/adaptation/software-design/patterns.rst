@@ -85,7 +85,7 @@ Role of Design Patterns in Agile
 
     The effect that I have noticed, and which I hope others find, is that by reducing repeatable behavior to rules, applying the rules becomes rote and mechanical.
     This is quicker than redebating everything from first principles all the time.
-    When along comes an exception, or a problem that just doesn’t fit any of the rules, you have more time and energy to generate and apply creativity.
+    When along comes an exception, or a problem that just doesn't fit any of the rules, you have more time and energy to generate and apply creativity.
 
     This happened to me when writing the Smalltalk Best Practice Patterns.
     At some point I decided just to follow the rules I was writing.
@@ -129,7 +129,7 @@ Role of Design Patterns in Agile
 Однако, сам факт достижения высокой экономической эффективности от использования паттернов PoEAA был очевиден, и этот факт оказал существенное влияние на формирование современного состояния области знаний системной архитектуры.
 
     📝 "In most successful software projects, the expert developers working on that project have a shared understanding of the system design.
-    **This shared understanding is called ‘architecture.’**
+    **This shared understanding is called 'architecture.'**
     This understanding includes how the system is divided into components and how the components interact through interfaces.
     These components are usually composed of smaller components, but the architecture only includes the components and interfaces that are understood by all the developers."
 

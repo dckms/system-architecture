@@ -90,7 +90,7 @@ TDD именно именно это и делает - декомпозируе�
 
 Здесь хорошо прослеживается аналогия с рефакторингом, который, в значительной мере, был основан тем же самым человеком - Кент Беком.
 
-    Мой первый опыт проведения дисциплинированного «поэтапного» рефакторинга связан с программированием на пару с Кентом Беком (Kent Beck) на высоте 30 000 футов.
+    Мой первый опыт проведения дисциплинированного "поэтапного" рефакторинга связан с программированием на пару с Кентом Беком (Kent Beck) на высоте 30 000 футов.
 
     My first experience with disciplined, "one step at a time" refactoring was when I was pair-programming at 30,000 feet with Kent Beck.
 
@@ -238,7 +238,7 @@ TDD, как и рефакторинг, расщепляет сложность �
 
     -- "Test-Driven Development By Example" [#fntdd]_ by Kent Beck, перевод П. Анджан
 
-Jason Gorman публиковал свою статистику прохождения кат как по TDD, так и без TDD (см. "Clean Architecture: A Craftsman’s Guide to Software Structure and Design" [#fncarch]_ by Robert C. Martin).
+Jason Gorman публиковал свою статистику прохождения кат как по TDD, так и без TDD (см. "Clean Architecture: A Craftsman's Guide to Software Structure and Design" [#fncarch]_ by Robert C. Martin).
 TDD всегда оказывался существенно быстрее, причем, даже при многократном прохождении одних и тех же кат.
 
 Я перепроверял эту особенность на личном опыте, и убедился, что это действительно работает.
@@ -297,10 +297,10 @@ TDD - основной катализатор Clean Code
 Каким образом тестирование улучшает качество кода?
 
     "The problem with testing code is that you have to isolate that code. It is often difficult to test a function if that function calls other functions.
-    To write that test you’ve got to figure out some way to decouple the function from all the others.
+    To write that test you've got to figure out some way to decouple the function from all the others.
     In other words, the need to test first forces you to think about good design.
 
-    If you don’t write your tests first, there is no force preventing you from coupling the functions together into an untestable mass.
+    If you don't write your tests first, there is no force preventing you from coupling the functions together into an untestable mass.
     If you write your tests later, you may be able to test the inputs and the outputs of the total mass, but it will probably be quite difficult to test the individual functions."
 
     -- "Clean Coder" [#fnccoder]_ by Robert Martin
@@ -514,14 +514,14 @@ Black Box or White Box?
 
     The role of the testing API is to hide the structure of the application from the tests. 
 
-    This allows the production code to be refactored and evolved in ways that don’t affect the tests.
-    It also allows the tests to be refactored and evolved in ways that don’t affect the production code.
+    This allows the production code to be refactored and evolved in ways that don't affect the tests.
+    It also allows the tests to be refactored and evolved in ways that don't affect the production code.
 
     This separation of evolution is necessary because as time passes, the tests tend to become increasingly more concrete and specific.
     In contrast, the production code tends to become increasingly more abstract and general.
     Strong structural coupling prevents - or at least impedes - this necessary evolution, and prevents the production code from being as general, and flexible, as it could be.
 
-    -- "Clean Architecture: A Craftsman’s Guide to Software Structure and Design" [#fncarch]_ by Robert C. Martin
+    -- "Clean Architecture: A Craftsman's Guide to Software Structure and Design" [#fncarch]_ by Robert C. Martin
 
 ..
 
@@ -637,7 +637,7 @@ TDD и Design Patterns
     Сообщество ХР интенсивно работает над тем, чтобы добавить в общую картину паттерны.
     Со всей очевидностью можно сказать, что сообщество ХР любит паттерны.
     В конце концов, между множеством приверженцев ХР и множеством приверженцев паттернов существует значительное пересечение: Уорд и Кент являются лидерами обоих направлений.
-    Наверное, копирование паттерна — это третий монологический режим программирования наряду с разработкой в стиле «тесты вначале» и рефакторингом.
+    Наверное, копирование паттерна — это третий монологический режим программирования наряду с разработкой в стиле "тесты вначале" и рефакторингом.
     Как и первые два режима, копирование паттерна — опасная штука, если ее использовать отдельно от двух других режимов.
     Все три вида программирования проявляют свою мощь только тогда, когда используются совместно друг с другом.
 
@@ -702,13 +702,13 @@ One assertion per test?
     Of course, we can often comply with this interpretation by extracting a "Custom Assertion" (page 474)
     or "Verification Method" (see "Custom Assertion") that allows us to reduce the multiple assertion method calls to a single call.
     Sometimes that approach makes the test more readable.
-    When it doesn’t, I wouldn’t be too dogmatic about insisting on a single assertion.
+    When it doesn't, I wouldn't be too dogmatic about insisting on a single assertion.
 
     -- "xUnit Test Patterns. Refactoring Test Code." by Gerard Meszaros
 
 Эту же тему рассматривает и Robert C. Martin в главе "Chapter 9: Unit Tests :: One Assert per Test" книги "Clean Code: A Handbook of Agile Software Craftsmanship":
 
-    Я думаю, что правило «одного assert» является хорошей рекомендацией.
+    Я думаю, что правило "одного assert" является хорошей рекомендацией.
     Обычно я стараюсь создать предметно-ориентированный язык тестирования, который это правило поддерживает, как в листинге 9.5.
     Но при этом я не боюсь включать в свои тесты более одной директивы assert.
     Вероятно, лучше всего сказать, что количество директив assert в тесте должно быть сведено к минимуму.
@@ -728,6 +728,6 @@ One assertion per test?
 .. [#fntdd] "Test-Driven Development By Example" by Kent Beck
 .. [#fnccoder] "The Clean Coder: a code of conduct for professional programmers" by Robert C. Martin
 .. [#fnccode] "Clean Code: A Handbook of Agile Software Craftsmanship" by Robert C. Martin
-.. [#fncarch] "Clean Architecture: A Craftsman’s Guide to Software Structure and Design" by Robert C. Martin
+.. [#fncarch] "Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin
 .. [#fnrefactoring] "Refactoring: Improving the Design of Existing Code" by Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts
 
