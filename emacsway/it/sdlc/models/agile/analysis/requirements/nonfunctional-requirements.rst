@@ -13,20 +13,20 @@ Agile nonfunctional Requirements
 
 Если вы знакомы с ATAM, ADD, QAW, то вы знакомы со сценариями атрибутов качеств ("Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman, глава 16), и легко поймете, о чем пишет K.Wigers - один из топовых авторов по требованиям и аналитике:
 
-    📝 "**Nonfunctional requirements need to have priority alongside user stories; you can’t defer their implementation until a later iteration.**
-    It’s possible to specify quality attributes in the form of stories: "As a help desk technician, I want the knowledge base to respond to queries **within five seconds** so the customer doesn’t get frustrated and hang up."
+    📝 "**Nonfunctional requirements need to have priority alongside user stories; you can't defer their implementation until a later iteration.**
+    It's possible to specify quality attributes in the form of stories: "As a help desk technician, I want the knowledge base to respond to queries **within five seconds** so the customer doesn't get frustrated and hang up."
 
     <...>
 
     Developers need to keep nonfunctional requirements in mind as they consider the implications of implementing individual user stories.
-    As more functionality is added through a series of iterations, the system’s efficiency and hence performance can deteriorate.
+    As more functionality is added through a series of iterations, the system's efficiency and hence performance can deteriorate.
     Specify performance goals and begin performance testing **with early iterations**, so you can become aware of concerns early enough to take corrective actions.
 
     <...>
 
-    As with user stories, it’s possible to write acceptance tests for quality attributes.
+    As with user stories, it's possible to write acceptance tests for quality attributes.
     This is a way to quantify the quality attributes.
-    If a performance goal is stated simply as “The knowledge base must return search results quickly,” you can’t write tests to define what constitutes “quickly.” A better acceptance test would be: "Keyword search of the knowledge base **takes less than 5 seconds**, and preferably **less than 3 seconds**, to return a result.
+    If a performance goal is stated simply as "The knowledge base must return search results quickly," you can't write tests to define what constitutes "quickly." A better acceptance test would be: "Keyword search of the knowledge base **takes less than 5 seconds**, and preferably **less than 3 seconds**, to return a result.
 
     <...>
 
@@ -43,7 +43,7 @@ Agile nonfunctional Requirements
 
     System Architect/Engineering is an individual or team that defines the overall architecture of the system. They work at a level of abstraction above the teams and components and define Non-Functional Requirements (NFRs), major system elements, subsystems, and interfaces.
 
-    -- "SAFe® 5.0: The World’s Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell
+    -- "SAFe® 5.0: The World's Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell
 
 Вообще говоря, в Scrum этим не обязательно должен заниматься Product Owner.
 По офф.гайду команда должна сотрудничать со стейкхолдерами, а Product Owner может делегировать свои полномочия команде, например, аналитику или архитектору.
@@ -61,9 +61,9 @@ Agile nonfunctional Requirements
     <...>
 
     The team must also decide when to test all of the browsers.
-    Each nonfunctional requirement is a prime target for inclusion in the team’s definition of done.
-    If the team includes the “Web Browser Support” nonfunctional requirement in the definition of done, the team will have to test any new features added in the sprint with all of the listed browsers.
-    If it doesn’t work with all of them, the story isn’t done.
+    Each nonfunctional requirement is a prime target for inclusion in the team's definition of done.
+    If the team includes the "Web Browser Support" nonfunctional requirement in the definition of done, the team will have to test any new features added in the sprint with all of the listed browsers.
+    If it doesn't work with all of them, the story isn't done.
 
     I recommend that teams try to include as many of the nonfunctional requirements in their definitions of done as they possibly can.
     Waiting to test nonfunctional requirements until late in the development effort defers getting fast feedback on critical system performance characteristics.
@@ -97,7 +97,7 @@ Agile nonfunctional Requirements
 
     Persisting nonfunctional requirements
 
-    Another difference between user stories and nonfunctional requirements is that they typically need to persist differently in the development life cycle. We’ve described how user stories are lightweight and generally don’t have to be maintained, which is one of the key benefits. We’ve also shown that the details of a user story are captured in the acceptance test, which persist inside the team’s automated or manual regression test environment. That is why we can throw the user story away after implementation—because we have memorialized the important details in our test cases.
+    Another difference between user stories and nonfunctional requirements is that they typically need to persist differently in the development life cycle. We've described how user stories are lightweight and generally don't have to be maintained, which is one of the key benefits. We've also shown that the details of a user story are captured in the acceptance test, which persist inside the team's automated or manual regression test environment. That is why we can throw the user story away after implementation—because we have memorialized the important details in our test cases.
 
     That can work for some NFRs, too, but it gets a bit riskier. For example, if a system must support 1000 concurrent users, we could develop an automated test that simulated that load and build it in the regression test suite. That would be an excellent practice because we could refactor the code at will, and if we accidentally created a performance bottleneck, it would be quickly discovered. In that case, we could forget about the NFR once we have seen it the fi rst time, because the automated test remembers it for us.
 
@@ -107,16 +107,16 @@ Agile nonfunctional Requirements
     - Localize the application in all then-current, supported languages prior to release in any language 
     - No open source without a CFO license review
 
-    We surely can’t forget these, and we can’t write automated test cases for them, either. 
-    So, the teams must have an organized way to save them, find them, and review them when necessary. In practice, we’ve seen agile teams take a number of approaches to persisting NFRs.
+    We surely can't forget these, and we can't write automated test cases for them, either. 
+    So, the teams must have an organized way to save them, find them, and review them when necessary. In practice, we've seen agile teams take a number of approaches to persisting NFRs.
 
     - Create a separate backlog in the agile project management tool. Most enterprises will adopt agile project management tooling as a central repository for stories and tasks, as well as iteration and release objects that support scheduling, burndown, and feature status reporting. Teams can create a special project/product backlog to hold and maintain the NFRs within the tool. Access privileges must be granted to all team members who are working on the program.
 
-    - Store and manage them in a wiki. This method works well because it provides continuous visibility; is available to all team members; is persistent; fosters communication, comments, and interaction; and doesn’t require any special tooling.
+    - Store and manage them in a wiki. This method works well because it provides continuous visibility; is available to all team members; is persistent; fosters communication, comments, and interaction; and doesn't require any special tooling.
 
-    - Maintain a supplementary specification. This label/document was originally developed as an auxiliary document to RUP’s use case models and use case specifications and served exactly this role (organizing nonfunctional requirements). Remember, as agilists, we “favor working software over comprehensive documentation,” but that doesn’t mean we can’t create the documentation we need. Even more importantly, we like to do the simplest thing that can possibly work, and when we know something is important, it makes sense to write it down. Table 17–3 later in this chapter provides an example template for a supplemental specif i cation.
+    - Maintain a supplementary specification. This label/document was originally developed as an auxiliary document to RUP's use case models and use case specifications and served exactly this role (organizing nonfunctional requirements). Remember, as agilists, we "favor working software over comprehensive documentation," but that doesn't mean we can't create the documentation we need. Even more importantly, we like to do the simplest thing that can possibly work, and when we know something is important, it makes sense to write it down. Table 17–3 later in this chapter provides an example template for a supplemental specif i cation.
 
-    - Build the NFRs into the definition of done, and point to the special backlog, wiki, or supplemental specification that contains the details. In this approach, a team can’t be done until the NFRs are satisfied as well. Different definitions of done, requiring different amounts of regression testing, inspection, and so on, can be established for various iteration, potentially shippable increment, and release milestones.
+    - Build the NFRs into the definition of done, and point to the special backlog, wiki, or supplemental specification that contains the details. In this approach, a team can't be done until the NFRs are satisfied as well. Different definitions of done, requiring different amounts of regression testing, inspection, and so on, can be established for various iteration, potentially shippable increment, and release milestones.
 
     No matter the approach, it is mandatory that the teams do something to maintain and manage these specif i cations, because they could make the difference between success and failure.
 

@@ -12,7 +12,7 @@ Evolutionary Development
 
 ..
 
-    📝 "The \"evolutionary model\" is intended to deal with incomplete knowledge of requirements.
+    📝 "The "evolutionary model" is intended to deal with incomplete knowledge of requirements.
     It provides for initial planning and initial architecture definition, but allocates requirements analysis, design, construction, verification, validation and delivery to a series of stages.
     Delivered capabilities that do not meet user needs can be reworked in subsequent stages of the evolution."
 

@@ -20,7 +20,7 @@
 
 Полученные практическим способом знания, снижающие неопределенность, являются входными аргументами для следующей :ref:`итерации <emacsway-iterative-development>`.
 
-    📝 "\"Iteration\" here means applying a function to itself."
+    📝 ""Iteration" here means applying a function to itself."
 
     -- "Concrete Mathematics: A Foundation for Computer Science" 2nd edition by Ronald L. Graham, Donald E. Knuth, Oren Patashnik
 
@@ -52,7 +52,7 @@ Prediction при этом не исчезает полностью, а пони
     When dealing with important or irreversible decisions, if we decide too early and are wrong, we will be on the exponential part of the cost-of-deciding curve in Figure 3.6.
     As we acquire a better understanding regarding the decision, the cost of deciding declines (the likelihood of making a bad
     decision declines because of increasing market or technical certainty).
-    That’s why we should wait until we have better information before committing to a decision."
+    That's why we should wait until we have better information before committing to a decision."
 
     -- "Essential Scrum: A Practical Guide to the Most Popular Agile Process" by Kenneth Rubin, "Chapter 3 Agile Principles :: Prediction and Adaptation"
 
@@ -94,7 +94,7 @@ Prediction при этом не исчезает полностью, а пони
 
     <...>
 
-    The \":ref:`evolutionary model <emacsway-evolutionary-development>`\" is intended to deal with **incomplete knowledge of requirements**."
+    The ":ref:`evolutionary model <emacsway-evolutionary-development>`" is intended to deal with **incomplete knowledge of requirements**."
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
 

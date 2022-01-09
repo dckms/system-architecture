@@ -395,7 +395,7 @@ API-Design
 - "`Good Practices for Capability URLs <https://w3ctag.github.io/capability-urls/>`__", W3C Draft
 - "`Web API Design - Crafting Interfaces that Developers Love <https://pages.apigee.com/rs/apigee/images/api-design-ebook-2012-03.pdf>`__"
 - "`REST vs. GraphQL: A Critical Review <https://goodapi.co/blog/rest-vs-graphql>`__"
-- "`5 reasons you shouldn’t be using GraphQL <https://blog.logrocket.com/5-reasons-you-shouldnt-be-using-graphql-61c7846e7ed3/?gi=f67074d77004>`__" (`перевод на Русский <https://medium.com/devschacht/esteban-herrera-5-reasons-you-shouldnt-use-graphql-bae94ab105bc>`__)
+- "`5 reasons you shouldn't be using GraphQL <https://blog.logrocket.com/5-reasons-you-shouldnt-be-using-graphql-61c7846e7ed3/?gi=f67074d77004>`__" (`перевод на Русский <https://medium.com/devschacht/esteban-herrera-5-reasons-you-shouldnt-use-graphql-bae94ab105bc>`__)
 - "`OpenAPIs <https://www.openapis.org/>`__"
 - "`AsyncAPI <https://www.asyncapi.com/>`__"
 - "`Resource Query Language (RQL) <http://www.persvr.org/rql/>`__"
@@ -405,7 +405,7 @@ API-Design
 - "`Cheat Sheet a.k.a. API Design Heuristics <https://microservice-api-patterns.org/cheatsheet>`__" - шпаргалка по "Microservices API Patterns"
 - "`REST API Design - Resource Modeling  <https://www.thoughtworks.com/insights/blog/rest-api-design-resource-modeling>`__" by Prakash Subramaniam, WhoughtWorks
 - "`CQRS and REST: the perfect match <https://lostechies.com/jimmybogard/2016/06/01/cqrs-and-rest-the-perfect-match/>`__" by Jimmy Bogard
-- "`Entities aren’t resources, resources aren’t representations <https://lostechies.com/jimmybogard/2016/05/12/entities-arent-resources-resources-arent-representations/>`__" by Jimmy Bogard
+- "`Entities aren't resources, resources aren't representations <https://lostechies.com/jimmybogard/2016/05/12/entities-arent-resources-resources-arent-representations/>`__" by Jimmy Bogard
 
 
 
@@ -486,7 +486,7 @@ Scaled Agile
 
 - "Scaling Software Agility: Best Practices for Large Enterprises" by Dean Leffingwell
 - "Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise" by Dean Leffingwell
-- "SAFe® 5.0: The World’s Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell
+- "SAFe® 5.0: The World's Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell
 - "Large-Scale Scrum: More with LeSS" by Craig Larman
 - "`LeSS <https://less.works/less/framework/introduction>`__" (`перевод на Русский <https://less.works/ru/less/framework/introduction>`__)
 - "`Agile Practice Guide <https://www.pmi.org/pmbok-guide-standards/practice-guides/agile>`__" by Project Management Institute
@@ -583,7 +583,7 @@ PostgresPro представил `три книги <https://postgrespro.ru/educ
 - "`Understand data store models <https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/data-store-comparison>`__"
 - "`Select an Azure data store for your application <https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/data-store-decision-tree>`__"
 
-Jepsen's analysis over two dozen databases, coordination services, and queues—and we’ve found replica divergence, data loss, stale reads, read skew, lock conflicts, and much more:
+Jepsen's analysis over two dozen databases, coordination services, and queues—and we've found replica divergence, data loss, stale reads, read skew, lock conflicts, and much more:
 
 - "`Analyses <https://jepsen.io/analyses>`__"
 - "`Everything Tagged "Jepsen" <https://aphyr.com/tags/jepsen>`__"
@@ -942,8 +942,8 @@ Code Smell catalogs
 - `Список книг от Сергея Теплякова <https://sergeyteplyakov.blogspot.com/2013/08/blog-post.html>`__
 - `Список книг от Grady Booch <https://handbookofsoftwarearchitecture.com/books/>`__
 - `Книги по направлению Архитектура и проектирование ПО от эксперта luxoft <https://www.luxoft-training.ru/about/experts/answers/302/30945/>`__
-- `The Architect’s Path (Part 1 - Model) <https://architectelevator.com/architecture/architect-path/>`__ by Gregor Hohpe
-- `The Architect’s Path (Part 2 - Implementation) <https://architectelevator.com/architecture/architect-bookshelf/>`__ by Gregor Hohpe
+- `The Architect's Path (Part 1 - Model) <https://architectelevator.com/architecture/architect-path/>`__ by Gregor Hohpe
+- `The Architect's Path (Part 2 - Implementation) <https://architectelevator.com/architecture/architect-bookshelf/>`__ by Gregor Hohpe
 - `Software Architecture Book References <https://www.developertoarchitect.com/books.html>`__ by Mark Richards
 - `Как прокачаться в проектировании программного обеспечения — список книг <https://apolomodov.medium.com/software-design-books-743be52e4c71>`__ by Alexander Polomodov
 - `Искусство спора (обучающие материалы) <https://ruxpert.ru/%D0%98%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE_%D1%81%D0%BF%D0%BE%D1%80%D0%B0_(%D0%BE%D0%B1%D1%83%D1%87%D0%B0%D1%8E%D1%89%D0%B8%D0%B5_%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8B)>`__

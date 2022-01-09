@@ -28,7 +28,7 @@
     - "Chapter 23. Economic analysis of architectures"
 - "Refactoring: Improving the Design of Existing Code" 1st (and 2nd) edition by Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts
     - "Chapter 2. Principles in Refactoring"
-- "Clean Architecture: A Craftsman’s Guide to Software Structure and Design" by Robert C. Martin
+- "Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin
     - "Chapter 1. What Is Design and Architecture?"
 - "Working Effectively with Legacy Code" by Michael C. Feathers
 - "`Yagni <https://martinfowler.com/bliki/Yagni.html>`__" (хорошо разъясняет виды экономических ущербов: "cost of build", "cost of delay", "cost of carry", "cost of repair", "cost of removing")
@@ -39,7 +39,8 @@
 - "`Design Stamina Hypothesis <https://martinfowler.com/bliki/DesignStaminaHypothesis.html>`__"
 - "`Is High Quality Software Worth the Cost? <https://martinfowler.com/articles/is-quality-worth-cost.html>`__"
 - "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler.
-- "`Принцип YAGNI <http://sergeyteplyakov.blogspot.com/2016/08/yagni.html>`__"
+- "`Принцип YAGNI <http://sergeyteplyakov.blogspot.com/2016/08/yagni.html>`__" / Сегей Тепляков
+- "`О повторном использовании кода <http://sergeyteplyakov.blogspot.com/2012/04/blog-post_19.html>`__" / Сегей Тепляков
 - "`Systems thinking <https://less.works/less/principles/systems-thinking.html>`__" (`на русском <https://less.works/ru/less/principles/systems-thinking.html>`__)
 - "`Modifiability <https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8299>`__"
 - "`Making Architecture Matter - Martin Fowler Keynote <https://youtu.be/DngAZyWMGR0>`_" - превосходное 14-ти минутное видео.

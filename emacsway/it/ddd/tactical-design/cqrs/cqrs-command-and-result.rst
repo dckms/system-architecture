@@ -25,7 +25,7 @@
 
     All race conditions, deadlock conditions, and concurrent update problems are due to mutable variables. You cannot have a race condition or a concurrent update problem if no variable is ever updated. You cannot have deadlocks without mutable locks."
 
-    -- "Clean Architecture: A Craftsman’s Guide to Software Structure and Design" by Robert C. Martin, перевод ООО Издательство "Питер"
+    -- "Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin, перевод ООО Издательство "Питер"
 
 Однако, индустрия не готова отказаться от императивных подвидов парадигм, таких как OOP.
 
@@ -93,7 +93,7 @@ B.Meyer утверждает, что OOP и FP не противопоставл
 
     📝 "Command and Query Responsibility Segregation was originally considered just to be an extension of this [CQS] concept."
 
-    📝 "Command and Query Responsibility Segregation (CQRS) originated with Bertrand Meyer’s Command and Query Separation Principle."
+    📝 "Command and Query Responsibility Segregation (CQRS) originated with Bertrand Meyer's Command and Query Separation Principle."
 
     📝 "Command and Query Responsibility Segregation uses the same definition of Commands and Queries that Meyer used and maintains the viewpoint that they should be pure. **The fundamental difference is that in CQRS objects are split into two objects, one containing the Commands one containing the Queries.**"
 
@@ -157,11 +157,11 @@ CQS - это больше о referential transparency для Query
 
 ..
 
-    📝 "Since not every class definition is accompanied by a full-fledged specification of the underlying abstract data type, we need a more directly usable definition of “abstract side effect”. This is not difficult. In practice, the abstract data type is defined by the interface offered by a class to its clients (expressed for example as the short form of the class). A side effect will affect the abstract object if it changes the result of any query accessible to these clients. Hence the definition:
+    📝 "Since not every class definition is accompanied by a full-fledged specification of the underlying abstract data type, we need a more directly usable definition of "abstract side effect". This is not difficult. In practice, the abstract data type is defined by the interface offered by a class to its clients (expressed for example as the short form of the class). A side effect will affect the abstract object if it changes the result of any query accessible to these clients. Hence the definition:
 
     Definition: abstract side effect: An abstract side effect is a concrete side effect that can change the value of a non-secret query.
 
-    The definition refers to “non-secret” rather than exported queries. The reason is that in-between generally exported and fully secret status, we must permit a query to be selectively exported to a set of clients. As soon as a query is non-secret — exported to any client other than NONE — we consider that changing its result is an abstract side effect, since the change will be visible to at least some clients."
+    The definition refers to "non-secret" rather than exported queries. The reason is that in-between generally exported and fully secret status, we must permit a query to be selectively exported to a set of clients. As soon as a query is non-secret — exported to any client other than NONE — we consider that changing its result is an abstract side effect, since the change will be visible to at least some clients."
 
     -- "Object-Oriented Software Construction" 2nd edition by Bertrand Meyer, chapter "23.1 SIDE EFFECTS IN FUNCTIONS"
 
@@ -194,7 +194,7 @@ CQS - это больше о referential transparency для Query
 
     how_did_it_go := targetGstatus
 
-    Note that the technique of returning a status as function result is lame anyway. It transforms a procedure into a function by adding the status as a result; **but it does not work if the routine was already a function, which already has a result of its own**. It is also problematic if you need more than one status indicator. In such cases the C approach is either to return a “structure” (the equivalent of an object) with several components, which is getting close to the above scheme, or to use global variables — which raises a whole set of new problems, especially in a large system where many modules can trigger errors."
+    Note that the technique of returning a status as function result is lame anyway. It transforms a procedure into a function by adding the status as a result; **but it does not work if the routine was already a function, which already has a result of its own**. It is also problematic if you need more than one status indicator. In such cases the C approach is either to return a "structure" (the equivalent of an object) with several components, which is getting close to the above scheme, or to use global variables — which raises a whole set of new problems, especially in a large system where many modules can trigger errors."
 
     -- "Object-Oriented Software Construction" 2nd edition by Bertrand Meyer, chapter "23.1 SIDE EFFECTS IN FUNCTIONS"
 
@@ -209,7 +209,7 @@ CQS - это больше о referential transparency для Query
 
     A few reminders on terminology will be useful. The features that characterize a class are divided into commands and queries. **A command serves to modify objects, a query to return information about objects. A command is implemented as a procedure.** A query may be implemented either as an attribute, that is to say by reserving a field in each run-time instance of the class to hold the corresponding value, or as a function, that is to say through an algorithm that computes the value when needed. Procedures (which also have an associated algorithm) and functions are together called routines.
 
-    **The definition of queries does not specify whether in the course of producing its result a query may change objects.** For commands, the answer is obviously yes, since it is the role of commands (procedures) to change things. Among queries, the question only makes sense for functions, since accessing an attribute cannot change anything. A change performed by a function is known as a side effect to indicate that it is ancillary to the function’s official purpose of answering a query. Should we permit side effects?"
+    **The definition of queries does not specify whether in the course of producing its result a query may change objects.** For commands, the answer is obviously yes, since it is the role of commands (procedures) to change things. Among queries, the question only makes sense for functions, since accessing an attribute cannot change anything. A change performed by a function is known as a side effect to indicate that it is ancillary to the function's official purpose of answering a query. Should we permit side effects?"
 
     -- "Object-Oriented Software Construction" 2nd edition by Bertrand Meyer, chapter "23.1 SIDE EFFECTS IN FUNCTIONS"
 
@@ -237,7 +237,7 @@ CQS - это больше о referential transparency для Query
 
     A technical point needs to be clarified before we examine further consequences of the Command-Query Separation principle: **should we treat object creation as a side effect**?
 
-    The answer is yes, as we have seen, if the target of the creation is an attribute a: in this case, the instruction !! a changes the value of an object’s field. The answer is no if the target is a local entity of the routine. But what if the target is the result of the function itself, as in !! Result or the more general form !! Result.make (...)?
+    The answer is yes, as we have seen, if the target of the creation is an attribute a: in this case, the instruction !! a changes the value of an object's field. The answer is no if the target is a local entity of the routine. But what if the target is the result of the function itself, as in !! Result or the more general form !! Result.make (...)?
 
     Such a creation instruction need not be considered a side effect. It does not change any existing object and so does not endanger referential transparency (at least if we assume that there is enough memory to allocate all the objects we need).
 
@@ -263,7 +263,7 @@ Query не должен иметь abstract side effect, но может име�
 
     <...>
 
-    Side effects of the second acceptable category may change the state of the object, but only affecting properties that are not visible to clients. To understand the concepts in depth, it will be useful to make sure that you are familiar with the discussion of “abstraction function” and “implementation invariants” in the presentation of Design by Contract. (In particular, take a look at the accompanying figures to refresh your memory.)
+    Side effects of the second acceptable category may change the state of the object, but only affecting properties that are not visible to clients. To understand the concepts in depth, it will be useful to make sure that you are familiar with the discussion of "abstraction function" and "implementation invariants" in the presentation of Design by Contract. (In particular, take a look at the accompanying figures to refresh your memory.)
 
     We saw then that an object of our software (a concrete object) is the representation of an abstract object, and that two concrete objects may represent the same abstract object.
 
@@ -273,7 +273,7 @@ Query не должен иметь abstract side effect, но может име�
 
     representation.put (some_value, count + 1)
 
-    (with the guarantee that the array’s capacity is at least count + 1). **This side effect changes a value above the stack-significant section of the array; it can do no ill.**
+    (with the guarantee that the array's capacity is at least count + 1). **This side effect changes a value above the stack-significant section of the array; it can do no ill.**
 
     More generally, a concrete side effect which changes the concrete state of an object c is an abstract side effect if it also changes its abstract state, that is to say the value of a (c) (a more directly usable definition of abstract side effects will appear shortly). If a side effect is only concrete — does not affect the abstract state — it is harmless.
 
@@ -456,9 +456,9 @@ Referential Transparency означает, что вызов функции мо
 
 Ответ Jimmy Bogard по поводу того, может ли CQRS-Команда возвращать результат:
 
-    📝 "It might seem rather strange that commands always have a result, but it’s much, much easier to deal with side effects of commands through return parameters than through some other means (global registry, static field, re-querying some object, collecting parameter, etc.). **For commands that create an item, I usually want to redirect to a screen showing that item, very easily accomplished when I can get the created item and as for its ID.**
+    📝 "It might seem rather strange that commands always have a result, but it's much, much easier to deal with side effects of commands through return parameters than through some other means (global registry, static field, re-querying some object, collecting parameter, etc.). **For commands that create an item, I usually want to redirect to a screen showing that item, very easily accomplished when I can get the created item and as for its ID.**
 
-    This is a bit controversial, but don’t frankly care, as it’s the simplest thing that could possibly work. If I want to have a command that returns Void, I could steal a page from F# and have a Command base class that returns a Unit type:"
+    This is a bit controversial, but don't frankly care, as it's the simplest thing that could possibly work. If I want to have a command that returns Void, I could steal a page from F# and have a Command base class that returns a Unit type:"
 
     -- "`Put your controllers on a diet: POSTs and commands <https://lostechies.com/jimmybogard/2013/12/19/put-your-controllers-on-a-diet-posts-and-commands/>`__" by Jimmy Bogard
 
@@ -471,22 +471,22 @@ Referential Transparency означает, что вызов функции мо
 
     No, it does not. You can make your read store immediately consistent. That is, your read store can be updated when your command side succeeds (in the same transaction).
 
-    For many legacy/existing apps, transitioning to eventually consistent read stores will either force you to go through bogus hoops of mimicking synchronous calls. Users will bang down on your door with pitchforks and torches if you try and transition to an asynchronous model if you don’t change their business process first.
+    For many legacy/existing apps, transitioning to eventually consistent read stores will either force you to go through bogus hoops of mimicking synchronous calls. Users will bang down on your door with pitchforks and torches if you try and transition to an asynchronous model if you don't change their business process first.
 
-    Instead, you can start with immediate consistency and transition where and when it’s needed. Unless a user expects a confirmation page, making every command page have a series of confirmations of “your request was received” is going to annoy the snot out of your users.
+    Instead, you can start with immediate consistency and transition where and when it's needed. Unless a user expects a confirmation page, making every command page have a series of confirmations of "your request was received" is going to annoy the snot out of your users.
 
     Myth #3 – CQRS requires a bus/queues/asynchronous messaging
 
-    See above myth. **Nothing about CQRS says “thou shalt use NServiceBus”. It’s just not there. You’re merely separating infrastructure between handling commands and queries, but the how is quite varied. Don’t start with a bus until you prove you need eventual consistency.**
+    See above myth. **Nothing about CQRS says "thou shalt use NServiceBus". It's just not there. You're merely separating infrastructure between handling commands and queries, but the how is quite varied. Don't start with a bus until you prove you need eventual consistency.**
 
-    Consistency models are a business decision because it directly impacts user experience. An eventually consistent model requires a different user experience than an immediate one, and this is not something you can just “slip in” to your users, or try to emulate. If you’re attempting to emulate immediate consistency in an eventually consistent model, you’re doing something wrong.
+    Consistency models are a business decision because it directly impacts user experience. An eventually consistent model requires a different user experience than an immediate one, and this is not something you can just "slip in" to your users, or try to emulate. If you're attempting to emulate immediate consistency in an eventually consistent model, you're doing something wrong.
 
     -- "`Busting some CQRS myths <https://lostechies.com/jimmybogard/2012/08/22/busting-some-cqrs-myths/>`__" by Jimmy Bogard
 
 
 Что он также подтверждает своим комментарием к этой статье:
 
-    📝 "Scaling and CQRS are orthogonal, it’s highly contextual and certainly doesn’t require async."
+    📝 "Scaling and CQRS are orthogonal, it's highly contextual and certainly doesn't require async."
 
     -- "`Busting some CQRS myths <https://lostechies.com/jimmybogard/2012/08/22/busting-some-cqrs-myths/#comment-3422377189>`__" by Jimmy Bogard
 
