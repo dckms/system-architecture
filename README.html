@@ -122,8 +122,8 @@
 <h3><a class="toc-backref" href="#id27">Коллективность</a><a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Опыт показал, что высокое качество объемного материала легче достигают <strong>коллективы авторов</strong>, как, например:</p>
 <ul class="simple">
-<li><p>«<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/">.NET Microservices: Architecture for Containerized .NET Applications</a>» (<a class="reference external" href="https://github.com/dotnet/docs">более 4.5 тыс. форков</a>)</p></li>
-<li><p>«<a class="reference external" href="https://docs.microsoft.com/en-us/azure/architecture/">Azure Architecture Center</a> (<a class="reference external" href="https://github.com/MicrosoftDocs/architecture-center">более 1.1 тыс. форков</a>)</p></li>
+<li><p>&quot;<a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/">.NET Microservices: Architecture for Containerized .NET Applications</a>&quot; (<a class="reference external" href="https://github.com/dotnet/docs">более 4.5 тыс. форков</a>)</p></li>
+<li><p>&quot;<a class="reference external" href="https://docs.microsoft.com/en-us/azure/architecture/">Azure Architecture Center</a> (<a class="reference external" href="https://github.com/MicrosoftDocs/architecture-center">более 1.1 тыс. форков</a>)</p></li>
 </ul>
 <p>Опыт Microsoft продемонстрировал высокую эффективность распределенных коллективных систем управления знаниями с открытым и неограниченным авторским кругом.</p>
 <p>Можно заметить, что некоторые пользователи ведут автономные версии форков, периодически вливая в них главный бранч.
@@ -168,7 +168,7 @@
 Несмотря на факт своего существования, эта информация быстро становится бесполезной в условиях отсутствия навигации.
 Возникает потребность комбинировать Telegram с другими формами управления знаниями, и желательно, чтоб эти формы обеспечивали бы как приватный, так и коллективный способ управления знаниями.</p>
 <p>Вы, наверное, замечали, как в профессиональных Telegram-чатах молодые ребята регулярно задают один и тот же вопрос.
-И если на первый вопрос кто-то из экспертов ответит, то на следующий вопрос «попугайничать» уже никто из экспертов не хочет.
+И если на первый вопрос кто-то из экспертов ответит, то на следующий вопрос &quot;попугайничать&quot; уже никто из экспертов не хочет.
 Тогда пытаются отвечать другие малоопытные ребята, и, зачастую, вреда от таких ответов больше, чем пользы.
 Через время, отыскать правильный ответ от эксперта становится практически невозможно, так как его становится сложно выявить среди наплодившейся дезинформации.</p>
 </div>
@@ -180,7 +180,7 @@
 Навигация позволяет повысить реиспользуемость качественных ответов.</p>
 <p>Система управления знаниями - это, своего рода, скелет, на который налипают знания.
 Без такого скелета знания просто тонут в бесструктурном и распределенном океане информационных помех.
-Вы, наверное, слышали о таком антипаттерне как «коллекционер знаний» - это когда информации накапливается много, но найти что-нибудь в этом мессиве становится нереально.</p>
+Вы, наверное, слышали о таком антипаттерне как &quot;коллекционер знаний&quot; - это когда информации накапливается много, но найти что-нибудь в этом мессиве становится нереально.</p>
 <p>Навигация обеспечивается комплексом средств:</p>
 <ul class="simple">
 <li><p>Полнотекстовый offline поиск с морфологией.</p></li>
@@ -198,14 +198,14 @@
 <div class="section" id="id10">
 <h3><a class="toc-backref" href="#id33">Реализация</a><a class="headerlink" href="#id10" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Система представляет собой минималистичный набор принципов и соглашений, реализованный на Open Source системе документирования <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx-doc</a> и использущий reStructuredText и Markdown форматы разметок.
-Sphinx-doc предоставляет и тегирование/индексирование (директива «<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#index-generating-markup">index</a>»), и перекрестные ссылки, и Table of Content (ToC, директива «<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-of-contents">toctree</a>»), и неограниченную иерархию файлов, и перекрестные связи между иерархиями файлов и иерархиями ToC, и клиентский полнотекстовый поиск (средствами JS браузера), и <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/todo.html">TODO</a>-листы, и RSS (в виде стороннего расширения), и подсветку синтаксиса языков программирования, и расширяемость с большим количеством готовых к использованию расширений.</p>
+Sphinx-doc предоставляет и тегирование/индексирование (директива &quot;<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#index-generating-markup">index</a>&quot;), и перекрестные ссылки, и Table of Content (ToC, директива &quot;<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-of-contents">toctree</a>&quot;), и неограниченную иерархию файлов, и перекрестные связи между иерархиями файлов и иерархиями ToC, и клиентский полнотекстовый поиск (средствами JS браузера), и <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/todo.html">TODO</a>-листы, и RSS (в виде стороннего расширения), и подсветку синтаксиса языков программирования, и расширяемость с большим количеством готовых к использованию расширений.</p>
 <p>Критически важной является <a class="reference internal" href="#using-dckms-on-mobile-devices"><span class="std std-ref">возможность работать offline на мобильном устройстве</span></a> (используя, при этом, полнотекстовый поиск с морфологией).</p>
 </div>
 <div class="section" id="id11">
 <h3><a class="toc-backref" href="#id34">Влияние на качество обучения</a><a class="headerlink" href="#id11" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Вот что пишет Евгений Пешков, основатель российского DDD-сообщества, руководитель в ЦИАН:</p>
 <blockquote>
-<div><p>Летом 2020 я проходил курс по Системному мышлению Левенчука. Анатолий с первых же занятий всячески рекомендует «мышление письмом».</p>
+<div><p>Летом 2020 я проходил курс по Системному мышлению Левенчука. Анатолий с первых же занятий всячески рекомендует &quot;мышление письмом&quot;.</p>
 <p>Что это?
 Мышление письмом подразумевает создание конспектов занятий, статей, книг.
 Но не просто переписывание слов автора, а своё собственное понимание пройденного.</p>
@@ -216,16 +216,16 @@ Sphinx-doc предоставляет и тегирование/индексир
 <li><p>Можно вернуться и доосмыслить. У нас остается артефакт, пригодный для дальнейшей проработки.</p></li>
 <li><p>Наше знание становится отчуждаемым. Мы легко можем запостить наши мысли в телеграм или отправить другу.</p></li>
 </ol>
-<p>Сложно взять и начать записывать, и как одна из рекомендаций в курсе была указана книга «<a class="reference external" href="https://www.goodreads.com/book/show/34507927-how-to-take-smart-notes">How to Take Smart Notes</a>».
+<p>Сложно взять и начать записывать, и как одна из рекомендаций в курсе была указана книга &quot;<a class="reference external" href="https://www.goodreads.com/book/show/34507927-how-to-take-smart-notes">How to Take Smart Notes</a>&quot;.
 И в этой книге есть еще классный поинт: если мы привыкаем делать заметки, то нам становится проще писать в целом.
 Тут срабатывает привычка, но кроме этого, как я и указывал ранее, у нас накапливается определенное количество артефактов, которые мы можем легко переиспользовать.</p>
 <p>Источник: <a class="reference external" href="https://t.me/dddevotion/176">https://t.me/dddevotion/176</a></p>
 </div></blockquote>
-<p>На меня, в свое время, произвела сильное впечатление небольшая, и уже не самая молодая, книжечка «Как читать книги» / Поварнин Сергей, которую можно прочесть всего за один день.
+<p>На меня, в свое время, произвела сильное впечатление небольшая, и уже не самая молодая, книжечка &quot;Как читать книги&quot; / Поварнин Сергей, которую можно прочесть всего за один день.
 Скачать можно <a class="reference external" href="https://royallib.com/book/povarnin_s/kak_chitat_knigi.html">здесь</a> или <a class="reference external" href="https://m.vk.com/wall-56611080_127534">здесь</a>.
 Эту книжечку сложно переоценить - она на вес золота.</p>
 <p>Также нужно упомянуть про особое значение возможности применять принципы <a class="reference internal" href="#zettelkasten"><span class="std std-ref">Zettelkasten</span></a> для запоминания информации и легкой навигации по ней.</p>
-<p>Ну и, раз была затронута тема, не лишне будет упомянуть «A Mind for Numbers: How to Excel at Math and Science» by Barbara Ann Oakley, перевод: «Думай как математик. Как решать любые проблемы быстрее и эффективнее.» / Барбара Оакли.</p>
+<p>Ну и, раз была затронута тема, не лишне будет упомянуть &quot;A Mind for Numbers: How to Excel at Math and Science&quot; by Barbara Ann Oakley, перевод: &quot;Думай как математик. Как решать любые проблемы быстрее и эффективнее.&quot; / Барбара Оакли.</p>
 </div>
 <div class="section" id="id12">
 <h3><a class="toc-backref" href="#id35">Легкость переключения контекста</a><a class="headerlink" href="#id12" title="Ссылка на этот заголовок">¶</a></h3>
@@ -242,15 +242,15 @@ Sphinx-doc предоставляет и тегирование/индексир
 <p>Система работает следующим образом:</p>
 <ol class="arabic">
 <li><p>Создайте форк <a class="reference external" href="https://github.com/emacsway/dckms-template">репозитария</a>.</p></li>
-<li><p>Перейдите в приватный бранч «private».</p></li>
-<li><p>Свои приватные заметки ведите в пространстве имен «private» (<code class="docutils literal notranslate"><span class="pre">/private</span></code>, <code class="docutils literal notranslate"><span class="pre">_html_extra/private</span></code>).</p></li>
-<li><p>Создайте свой публичный бранч, например, «ivan.ivanov». Приватные директории сразу же внесите в файл «.gitignore» в этом бранче.</p></li>
-<li><p>Создайте пространство имен для своих публичных заметок, которыми вы хотите поделиться, например, «ivan.ivanov» (<code class="docutils literal notranslate"><span class="pre">/ivan.ivanov</span></code>, <code class="docutils literal notranslate"><span class="pre">_html_extra/ivan.ivanov</span></code>). Таким образом вы облегчите читателям навигацию по вашим заметкам и сохраните очевидность авторства за собой (можно еще использовать директиву «<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-sectionauthor">sectionauthor</a>»). Создание персонального пространства имен необходимо еще и потому, что древовидное устройство файловой системы сложно унифицировать для всех авторов - у каждого автора есть свое видение на классификацию его материала. Благодаря гибкости директивы «<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-of-contents">toctree</a>», вы легко можете включать в дерево своего содержания поддеревья или страницы других авторов.</p></li>
-<li><p>Тегируйте свой материал с помощью директивы «<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#index-generating-markup">index</a>»</p></li>
+<li><p>Перейдите в приватный бранч &quot;private&quot;.</p></li>
+<li><p>Свои приватные заметки ведите в пространстве имен &quot;private&quot; (<code class="docutils literal notranslate"><span class="pre">/private</span></code>, <code class="docutils literal notranslate"><span class="pre">_html_extra/private</span></code>).</p></li>
+<li><p>Создайте свой публичный бранч, например, &quot;ivan.ivanov&quot;. Приватные директории сразу же внесите в файл &quot;.gitignore&quot; в этом бранче.</p></li>
+<li><p>Создайте пространство имен для своих публичных заметок, которыми вы хотите поделиться, например, &quot;ivan.ivanov&quot; (<code class="docutils literal notranslate"><span class="pre">/ivan.ivanov</span></code>, <code class="docutils literal notranslate"><span class="pre">_html_extra/ivan.ivanov</span></code>). Таким образом вы облегчите читателям навигацию по вашим заметкам и сохраните очевидность авторства за собой (можно еще использовать директиву &quot;<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-sectionauthor">sectionauthor</a>&quot;). Создание персонального пространства имен необходимо еще и потому, что древовидное устройство файловой системы сложно унифицировать для всех авторов - у каждого автора есть свое видение на классификацию его материала. Благодаря гибкости директивы &quot;<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-of-contents">toctree</a>&quot;, вы легко можете включать в дерево своего содержания поддеревья или страницы других авторов.</p></li>
+<li><p>Тегируйте свой материал с помощью директивы &quot;<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#index-generating-markup">index</a>&quot;</p></li>
 <li><p>Ненужные вам заметки других авторов вы можете удалить в своем приватном бранче. А нужные - добавить, как целиком, так и выборочно, используя <a class="reference external" href="https://git-scm.com/docs/git-cherry-pick">cherry-pick</a>.</p></li>
 <li><p>Используя <a class="reference external" href="https://www.uuidgenerator.net/version4">UUID4</a>, создавайте <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#ref-role">перекрестные ссылки</a> между связанными заметками, следуя лучшим практикам <a class="reference internal" href="#zettelkasten"><span class="std std-ref">Zettelkasten</span></a>. Вместо UUID можно использовать префиксирование своих label-names, используя в качестве префикса - пространство имен своих публичных заметок (поскольку заметка может быть перемещена из приватного простанства имен в публичное). Так же можно использовать расширение <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autosectionlabel.html">sphinx.ext.autosectionlabel</a> – Allow reference sections using its title (но оно не облегчает изменение локации заметки). И можно даже организовывать ссылки между отдельными проектами, используя директиву <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-seealso">seealso</a> и расширение <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html">sphinx.ext.intersphinx</a>.</p></li>
 <li><p>Ведите <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/todo.html">TODO</a>.</p></li>
-<li><p>Создайте Pull Request из своего именного публичного бранча («ivan.ivanov») в trunk-branch. Может быть множество trunk-бранчей, и, в качестве одного из них, можете использовать <a class="reference external" href="https://github.com/dckms/system-architecture">этот</a>. Trunk-branch можно сравнить с шиной событий в Event Sourcing системе.</p></li>
+<li><p>Создайте Pull Request из своего именного публичного бранча (&quot;ivan.ivanov&quot;) в trunk-branch. Может быть множество trunk-бранчей, и, в качестве одного из них, можете использовать <a class="reference external" href="https://github.com/dckms/system-architecture">этот</a>. Trunk-branch можно сравнить с шиной событий в Event Sourcing системе.</p></li>
 <li><p>Когда вы делитесь своим контентом в публичном пространстве, важно понимать, что он может оказаться доступным в интернете на других доменах. Чтобы сохранить поисковый траффик за оригинальным адресом предоставляемых страниц, вначале каждой такой страницы используйте <a class="reference external" href="https://www.sphinx-doc.org/en/master/development/theming.html#use-custom-page-metadata-in-html-templates">custom page metadata</a> <code class="docutils literal notranslate"><span class="pre">canonical-url</span></code>:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">canonical</span><span class="o">-</span><span class="n">url</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">my</span><span class="o">-</span><span class="n">domain</span><span class="o">.</span><span class="n">ru</span><span class="o">/</span><span class="n">my</span><span class="o">-</span><span class="n">path</span>
@@ -308,7 +308,7 @@ Sphinx-doc предоставляет и тегирование/индексир
 <h3><a class="toc-backref" href="#id41">Obsidian</a><a class="headerlink" href="#obsidian" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>In our age when cloud services can shut down, get bought, or change privacy policy any day, the last thing you want is proprietary formats and data lock-in.</p>
-<p>With Obsidian, your data sits in a local folder. Never leave your life’s work held hostage in the cloud again.</p>
+<p>With Obsidian, your data sits in a local folder. Never leave your life's work held hostage in the cloud again.</p>
 <p>Plain text Markdown also gives you the unparalleled interoperability to use any kind of sync, encryption, or data processing that works with plain text files.</p>
 <p class="attribution">—<a class="reference external" href="https://obsidian.md/">https://obsidian.md/</a></p>
 </div></blockquote>
@@ -330,7 +330,7 @@ Sphinx-doc предоставляет и тегирование/индексир
 <h3><a class="toc-backref" href="#id43">GitJournal</a><a class="headerlink" href="#gitjournal" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>Compatible with your favorite Desktop Apps. GitJournal aims to be extremely configurable and work with your favorite apps. The idea is to not build another silo and instead integrate into your existing workflow.</p>
-<p>No two people are the same…</p>
+<p>No two people are the same...</p>
 <p>Multiple Editors. All your notes are stored in Markdown. However you can edit the notes in many different ways depending on the task.</p>
 <p>100% Open Source. GitJournal will always be completely Open Source. Join the community and help us build your ideal note taking app.</p>
 <p class="attribution">—<a class="reference external" href="https://gitjournal.io/">https://gitjournal.io/</a></p>
@@ -361,7 +361,7 @@ markdown файлов на Github Pаges обрабатываются Jekyll.</p
 <p>У многих генераторов есть темы оформления, связанные с документацией,
 например, очень красивый дизайн у <a class="reference external" href="https://squidfunk.github.io/mkdocs-material/">mkdocs-material</a>, <a class="reference external" href="https://getdoks.org/">doks</a>, <a class="reference external" href="https://github.com/google/docsy">Docsy</a>
 для Hugo, а также у <a class="reference external" href="https://github.com/pmarsceill/just-the-docs">just-the-docs</a> и <a class="reference external" href="https://github.com/google/docsy">Docsy Jekyll Theme</a> для Jekyll.</p>
-<p>Ряд статических генераторов нацелены преимущественно на «книжный» формат
+<p>Ряд статических генераторов нацелены преимущественно на &quot;книжный&quot; формат
 представления документов c оглавлением слева:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://rust-lang.github.io/mdBook/">mdbook</a> - очень лаконичный и быстрый в развертывании генератор,
@@ -377,10 +377,10 @@ markdown файлов на Github Pаges обрабатываются Jekyll.</p
 <div class="section" id="id18">
 <h3><a class="toc-backref" href="#id45">Другие интересные проекты</a><a class="headerlink" href="#id18" title="Ссылка на этот заголовок">¶</a></h3>
 <ul class="simple">
-<li><p>«<a class="reference external" href="https://github.com/imdone/imdone-core">imdone-core</a>» - Text based kanban processor (<a class="reference external" href="https://github.com/imdone/imdone-core#resources">Why?</a>).</p></li>
-<li><p>«<a class="reference external" href="https://github.com/coddx-hq/coddx-alpha">coddx-alpha</a>» - Todo Kanban Board manages tasks and save them as TODO.md - a simple plain text file.</p></li>
-<li><p>«<a class="reference external" href="http://www.orgzly.com/">Orgzly</a>» - Outliner for notes and tasks. Notebooks in plain text (<a class="reference external" href="https://github.com/orgzly">Source Code</a>).</p></li>
-<li><p>«<a class="reference external" href="https://joplinapp.org/">Joplin</a>» - an open source note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS (<a class="reference external" href="https://github.com/laurent22/joplin/">Source Code</a>).</p></li>
+<li><p>&quot;<a class="reference external" href="https://github.com/imdone/imdone-core">imdone-core</a>&quot; - Text based kanban processor (<a class="reference external" href="https://github.com/imdone/imdone-core#resources">Why?</a>).</p></li>
+<li><p>&quot;<a class="reference external" href="https://github.com/coddx-hq/coddx-alpha">coddx-alpha</a>&quot; - Todo Kanban Board manages tasks and save them as TODO.md - a simple plain text file.</p></li>
+<li><p>&quot;<a class="reference external" href="http://www.orgzly.com/">Orgzly</a>&quot; - Outliner for notes and tasks. Notebooks in plain text (<a class="reference external" href="https://github.com/orgzly">Source Code</a>).</p></li>
+<li><p>&quot;<a class="reference external" href="https://joplinapp.org/">Joplin</a>&quot; - an open source note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS (<a class="reference external" href="https://github.com/laurent22/joplin/">Source Code</a>).</p></li>
 </ul>
 </div>
 </div>
