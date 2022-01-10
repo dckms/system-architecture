@@ -59,32 +59,33 @@
             
     
   <div class="section" id="tdd">
-<span id="emacsway-tdd"></span><h1><a class="toc-backref" href="#id31">TDD - Разработка через тестирование</a><a class="headerlink" href="#tdd" title="Ссылка на этот заголовок">¶</a></h1>
+<span id="emacsway-tdd"></span><h1><a class="toc-backref" href="#id32">TDD - Разработка через тестирование</a><a class="headerlink" href="#tdd" title="Ссылка на этот заголовок">¶</a></h1>
 <p>Вокруг TDD (Test-Driven Development) сложилось немало мифов и заблуждений, и здесь я попытаюсь восстановить изначальный его смысл.
 Для этого придется обратиться к первоисточникам.</p>
 <div class="contents topic" id="id1">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#tdd" id="id31">TDD - Разработка через тестирование</a></p>
+<li><p><a class="reference internal" href="#tdd" id="id32">TDD - Разработка через тестирование</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id2" id="id32">Что такое TDD?</a></p>
+<li><p><a class="reference internal" href="#id2" id="id33">Что такое TDD?</a></p>
 <ul>
-<li><p><a class="reference internal" href="#tdd-software-design" id="id33">TDD - это о Software Design</a></p></li>
-<li><p><a class="reference internal" href="#id8" id="id34">TDD - это способ управления сложностью</a></p></li>
-<li><p><a class="reference internal" href="#tdd-clean-code" id="id35">TDD - основной катализатор Clean Code</a></p></li>
+<li><p><a class="reference internal" href="#tdd-software-design" id="id34">TDD - это о Software Design</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id35">TDD - это способ управления сложностью</a></p></li>
+<li><p><a class="reference internal" href="#emacsway-why-is-tdd-faster" id="id36">Почему TDD быстрее</a></p></li>
+<li><p><a class="reference internal" href="#tdd-clean-code" id="id37">TDD - основной катализатор Clean Code</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id24" id="id36">Влияние TDD на темпы разработки</a></p></li>
-<li><p><a class="reference internal" href="#black-box-or-white-box" id="id37">Black Box or White Box?</a></p></li>
-<li><p><a class="reference internal" href="#sociable-or-solitary" id="id38">Sociable or Solitary?</a></p></li>
-<li><p><a class="reference internal" href="#tdd-design-patterns" id="id39">TDD и Design Patterns</a></p></li>
-<li><p><a class="reference internal" href="#one-assertion-per-test" id="id40">One assertion per test?</a></p></li>
+<li><p><a class="reference internal" href="#id25" id="id38">Влияние TDD на темпы разработки</a></p></li>
+<li><p><a class="reference internal" href="#black-box-or-white-box" id="id39">Black Box or White Box?</a></p></li>
+<li><p><a class="reference internal" href="#sociable-or-solitary" id="id40">Sociable or Solitary?</a></p></li>
+<li><p><a class="reference internal" href="#tdd-design-patterns" id="id41">TDD и Design Patterns</a></p></li>
+<li><p><a class="reference internal" href="#one-assertion-per-test" id="id42">One assertion per test?</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="id2">
-<h2><a class="toc-backref" href="#id32">Что такое TDD?</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id33">Что такое TDD?</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Прежде всего, что такое TDD (Test-Driven Development)?</p>
 <blockquote>
 <div><p>Чистый код, который работает (clean code that works), — в этой короткой, но содержательной фразе, придуманной Роном Джеффризом (Ron Jeffries), кроется весь смысл методики Test-Driven Development (TDD).
@@ -95,7 +96,7 @@ Test-driven development replies to this contradiction with a paradox-test the pr
 <p class="attribution">—&quot;Test-Driven Development By Example&quot; <a class="footnote-reference brackets" href="#fntdd" id="id3">1</a> by Kent Beck, перевод П. Анджан</p>
 </div></blockquote>
 <div class="section" id="tdd-software-design">
-<h3><a class="toc-backref" href="#id33">TDD - это о Software Design</a><a class="headerlink" href="#tdd-software-design" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id34">TDD - это о Software Design</a><a class="headerlink" href="#tdd-software-design" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Классическое заблуждение заключается в том, что TDD - это методика тестирования.
 На самом же деле, TDD - это, прежде всего, методика разработки и проектирования:</p>
 <blockquote>
@@ -130,7 +131,7 @@ Better just to think about what you want the system to do, and let the design so
 </div></blockquote>
 </div>
 <div class="section" id="id8">
-<h3><a class="toc-backref" href="#id34">TDD - это способ управления сложностью</a><a class="headerlink" href="#id8" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id35">TDD - это способ управления сложностью</a><a class="headerlink" href="#id8" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Согласно закономерности <a class="reference external" href="https://en.wikipedia.org/wiki/The_Magical_Number_Seven,_Plus_or_Minus_Two">Магического числа семь плюс-минус два</a>, обнаруженной американским учёным-психологом Джорджем Миллером, кратковременная человеческая память, как правило, не может запомнить и повторить более 7 ± 2 элементов.
 Превышение этого порога замедляет темпы разработки, так как мозг не может преодолеть высокую концентрацию сложности.</p>
 <p>Тут можно провести аналогию с народной пословицей: веник сложно поломать пока он связан, но, развязав его на отдельные прутики, их можно легко переломать по отдельности.
@@ -255,21 +256,14 @@ Customers of my systems became more positive, too.
 A new release of the system just meant more functionality, not a host of new defects to identify among all of their old favorite bugs.</p>
 <p class="attribution">—&quot;Test-Driven Development By Example&quot; <a class="footnote-reference brackets" href="#fntdd" id="id17">1</a> by Kent Beck, перевод П. Анджан</p>
 </div></blockquote>
-<p>Jason Gorman публиковал свою статистику прохождения кат как по TDD, так и без TDD (см. &quot;Clean Architecture: A Craftsman's Guide to Software Structure and Design&quot; <a class="footnote-reference brackets" href="#fncarch" id="id18">4</a> by Robert C. Martin).
-TDD всегда оказывался существенно быстрее, причем, даже при многократном прохождении одних и тех же кат.</p>
-<p>Я перепроверял эту особенность на личном опыте, и убедился, что это действительно работает.</p>
-<p>Иногда можно слышать, что при TDD приходится больше кодировать.
-Используя TDD, разработчик, действительно, вводит больше символов с клавиатуры.
-Но суть в том, что во время кодирования, ввод символов с клавиатуры занимает, в лучшем случае, 10% времени.
-А 90% времени занимает обдумывание.
-Иногда мозгу сложно удержать все в голове, и разработчик берется за листочек и ручку.
+<p>Иногда мозгу сложно удержать все в голове, и разработчик берется за листочек и ручку.
 При TDD, вместо листочка и ручки используется файловый редактор.
 TDD позволяет сфокусировать мозг на минимально возможной единице сложности, которую можно рассмотреть изолированно, что приводит к перераспределению умственных ресурсов.
 Кстати, именно это является одной из ключевых особенностей, благодаря которой, практикование TDD делает код чище.</p>
 <p>Если рефакторинг помогает сосредоточиться на одной обязанности, выполняемой функцией, то TDD идет еще дальше, и помогает сосредоточиться на одном конкретном значении функции, а значит, - на одном из ее внутренних состояний.
 Это позволяет выводить алгоритм функции путем обобщения пересекаемых триангуляцией ее внутренних состояний (и поведений, производящих эти состояния).
 А это, в свою очередь, позволяет моделировать поведение функции небольшими законченными фрагментами, удовлетворяющими конкретным значениям функции, и визуализировать формирование поведения функции прямо в редакторе.
-Наглядно это демонстрируется на примере <a class="reference download internal" download="" href="../../../_downloads/ab3bcac3e843b3925d3fa4bcadf08fbe/tdd-fibonacci.txt"><code class="xref download docutils literal notranslate"><span class="pre">выведения</span> <span class="pre">функции</span> <span class="pre">Фибоначи</span></code></a> в приложении книги, см. Appendix II. Fibonacci <a class="footnote-reference brackets" href="#fntdd" id="id19">1</a>.</p>
+Наглядно это демонстрируется на примере <a class="reference download internal" download="" href="../../../_downloads/ab3bcac3e843b3925d3fa4bcadf08fbe/tdd-fibonacci.txt"><code class="xref download docutils literal notranslate"><span class="pre">выведения</span> <span class="pre">функции</span> <span class="pre">Фибоначи</span></code></a> в приложении книги, см. Appendix II. Fibonacci <a class="footnote-reference brackets" href="#fntdd" id="id18">1</a>.</p>
 <blockquote>
 <div><p>Это еще один паттерн рефакторинга: <strong>разработать код, который работает с некоторым конкретным экземпляром, и обобщить этот код так, чтобы он мог работать со всеми остальными экземплярами</strong>, для этого константы заменяются переменными.
 В данном случае роль константы играет не некоторое значение, а жестко фиксированный код (имя конкретного метода).
@@ -279,7 +273,7 @@ TDD позволяет сфокусировать мозг на минималь
 <p>Here is another general pattern of refactoring: <strong>take code that works in one instance and generalize it to work in many</strong> by replacing constants with variables.
 Here the constant was hardwired code, not a data value, but the principle is the same.
 <strong>TDD makes this work well by giving you running concrete examples from which to generalize</strong>, instead of having to generalize purely with reasoning.</p>
-<p class="attribution">—&quot;Test-Driven Development By Example&quot; <a class="footnote-reference brackets" href="#fntdd" id="id20">1</a> by Kent Beck, перевод П. Анджан</p>
+<p class="attribution">—&quot;Test-Driven Development By Example&quot; <a class="footnote-reference brackets" href="#fntdd" id="id19">1</a> by Kent Beck, перевод П. Анджан</p>
 </div></blockquote>
 <blockquote>
 <div><p>Контроль над объемом работы.
@@ -291,22 +285,42 @@ Here the constant was hardwired code, not a data value, but the principle is the
 Starting with one concrete example and <strong>generalizing</strong> from there prevents you from prematurely confusing yourself with extraneous concerns.
 You can do a better job of solving the immediate problem <strong>because you are focused</strong>.
 When you go to implement the next test case, you can focus on that one, too, knowing that the previous test is guaranteed to work.</p>
-<p class="attribution">—&quot;Test-Driven Development By Example&quot; <a class="footnote-reference brackets" href="#fntdd" id="id21">1</a> by Kent Beck, перевод П. Анджан</p>
+<p class="attribution">—&quot;Test-Driven Development By Example&quot; <a class="footnote-reference brackets" href="#fntdd" id="id20">1</a> by Kent Beck, перевод П. Анджан</p>
 </div></blockquote>
 <p>Математическое объяснение этого явления можно найти в главе &quot;1. Recurrent Problems : 1.1. The Tower of Hanoi&quot; книги &quot;Concrete Mathematics: A Foundation for Computer Science&quot; 2nd edition by Ronald L. Graham, Donald E. Knuth, Oren Patashnik.</p>
 <p>Кроме того, при TDD хорошо отслеживается ниточка, за которую можно распутать клубок сложности, и вопрос &quot;с какого конца подступиться&quot; решается сам собой.</p>
-<p>При TDD Вы больше работаете пальцами, но меньше работаете головой. А поскольку 90% при кодировании занимает именно обдумывание, отсюда и бОльшее влияние на темпы разработки.</p>
+</div>
+<div class="section" id="emacsway-why-is-tdd-faster">
+<span id="id21"></span><h3><a class="toc-backref" href="#id36">Почему TDD быстрее</a><a class="headerlink" href="#emacsway-why-is-tdd-faster" title="Ссылка на этот заголовок">¶</a></h3>
+<p>При TDD разработка осуществляется быстрее, хотя объема кода пишется больше.
+Суть в том, что в процессе конструирования кода, <a class="reference internal" href="../sdlc/uncertainty-management/adaptation/software-design/software-design.html#emacsway-who-reads-the-code"><span class="std std-ref">91% времени занимает чтение кода и борьба со сложностью, и только 9% времени (1:10) занимает ввод символов с клавиатуры</span></a>.</p>
+<p>TDD является эффективным средством управления сложностью и снижения когнитивной нагрузки.
+А поскольку чтение кода и борьба со сложностью (обдумывание) занимает более 91% времени конструирования кода, то время на написание тестов полностью перекрывается повышением темпов разработки, т.е. разработка с тестами получается даже быстрей.
+Пальцы работают больше, а голова меньше.
+Происходит перераспределение составляющих разработки.</p>
+<p>Допустим, что разработчику нужно написать вдвое больше кода без роста когнитивной нагрузки (написание тестов не требует борьбы со сложностью).
+Т.е. вместо соотношения 1:10 (где 1 - это часть времени ввода символов с клавиатуры, а 10 - это часть времени чтения кода и борьбы со сложностью) получится соотношение 2:10, что равно 17%:83% вместо 9%:91%.
+Совокупное время увеличится на <code class="docutils literal notranslate"><span class="pre">100%*(12</span> <span class="pre">-</span> <span class="pre">11)/11</span> <span class="pre">=</span> <span class="pre">9%</span></code> - ровно столько времени потребуется свеху для того, чтобы написать вдвое больше кода без роста когнитивной нагрузки.</p>
+<p>А теперь представим, что удалось снизить когнитивную нагрузку вдвое.
+Т.е. вместо соотношения 1:10 (где 1 - это часть времени ввода символов с клавиатуры, а 10 - это часть времени чтения кода и борьбы со сложностью) получится соотношение 1:5, что равно 17%:83% вместо 9%:91%.
+Совокупное время уменьшится на <code class="docutils literal notranslate"><span class="pre">100%*(6</span> <span class="pre">-</span> <span class="pre">11)/11</span> <span class="pre">=</span> <span class="pre">-45%</span></code> - ровно столько времени сэкономится, если разработчик будет тратить вдвое меньше времени на борьбу со сложностью.</p>
+<p>9% (вдвое больше кода) против 45% (вдвое меньше думать).</p>
+<p>Конечно, коэффициенты в этом примере сильно завышены, но они хорошо раскрывают механизм ускорения темпов разработки с использованием TDD.
+На практике TDD дает прирост разработки около 10% - Jason Gorman публиковал свою статистику многократного прохождения кат как по TDD, так и без TDD (см. главу &quot;Chapter 1. What Is Design and Architecture? :: What went wrong?&quot; книги &quot;Clean Architecture: A Craftsman's Guide to Software Structure and Design&quot; <a class="footnote-reference brackets" href="#fncarch" id="id22">4</a> by Robert C. Martin).</p>
+<p>Я перепроверял эту особенность на личном опыте, и убедился в том, что это, действительно, работает.</p>
+<p>Кроме того, время на написание тестов можно прогнозировать, в отличии от отладки.</p>
 </div>
 <div class="section" id="tdd-clean-code">
-<h3><a class="toc-backref" href="#id35">TDD - основной катализатор Clean Code</a><a class="headerlink" href="#tdd-clean-code" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id37">TDD - основной катализатор Clean Code</a><a class="headerlink" href="#tdd-clean-code" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Каким образом тестирование улучшает качество кода?</p>
 <blockquote>
-<div><p>&quot;The problem with testing code is that you have to isolate that code. It is often difficult to test a function if that function calls other functions.
+<div><p>&quot;The problem with testing code is that you have to isolate that code.
+It is often difficult to test a function if that function calls other functions.
 To write that test you've got to figure out some way to decouple the function from all the others.
 In other words, the need to test first forces you to think about good design.</p>
 <p>If you don't write your tests first, there is no force preventing you from coupling the functions together into an untestable mass.
 If you write your tests later, you may be able to test the inputs and the outputs of the total mass, but it will probably be quite difficult to test the individual functions.&quot;</p>
-<p class="attribution">—&quot;Clean Coder&quot; <a class="footnote-reference brackets" href="#fnccoder" id="id22">2</a> by Robert Martin</p>
+<p class="attribution">—&quot;Clean Coder&quot; <a class="footnote-reference brackets" href="#fnccoder" id="id23">2</a> by Robert Martin</p>
 </div></blockquote>
 <p>Однако, нужно учитывать:</p>
 <blockquote>
@@ -319,12 +333,12 @@ If you write your tests later, you may be able to test the inputs and the output
 What's naive is assuming that clean code is all there is to success.
 Good engineering is maybe 20 percent of a project's success.
 Bad engineering will certainly sink projects, but modest engineering can enable project success as long as the other 80 percent lines up right.</p>
-<p class="attribution">—&quot;Test-Driven Development By Example&quot; <a class="footnote-reference brackets" href="#fntdd" id="id23">1</a> by Kent Beck, перевод П. Анджан</p>
+<p class="attribution">—&quot;Test-Driven Development By Example&quot; <a class="footnote-reference brackets" href="#fntdd" id="id24">1</a> by Kent Beck, перевод П. Анджан</p>
 </div></blockquote>
 </div>
 </div>
-<div class="section" id="id24">
-<h2><a class="toc-backref" href="#id36">Влияние TDD на темпы разработки</a><a class="headerlink" href="#id24" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="id25">
+<h2><a class="toc-backref" href="#id38">Влияние TDD на темпы разработки</a><a class="headerlink" href="#id25" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Я уже перечислял <a class="reference external" href="https://emacsway.github.io/ru/it/agile/easily-about-agile-way-to-rapid-development/#self-testing-code-for-agile-ru">превосходства TDD для быстрой разработки</a>, поэтому повторяться не буду.</p>
 <p>Однако, перечислю основные методики, которые используются для быстрой разработки:</p>
 <ul class="simple">
@@ -349,7 +363,7 @@ I prefer the term continuous design because it emphasizes the core of the proces
 </div></blockquote>
 </div>
 <div class="section" id="black-box-or-white-box">
-<span id="index-1"></span><h2><a class="toc-backref" href="#id37">Black Box or White Box?</a><a class="headerlink" href="#black-box-or-white-box" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="index-1"></span><h2><a class="toc-backref" href="#id39">Black Box or White Box?</a><a class="headerlink" href="#black-box-or-white-box" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Тесты по возможности должны быть черным ящиком, т.е. тестируем поведение, а не реализацию.
 Это позволяет безболезненно подменять реализацию при рефакторинге.
 Опускаться в глубь реализации нужно тогда, когда это требуется для сокращения комбинаций условий тестирования, например, класс использует несколько подключаемых стратегий, и нам проще протестировать стратегии по одной.
@@ -424,7 +438,7 @@ There is even a package that extends JUnit called JXUnit, which allows testing t
 Anytime I want to use a variable as a way of checking to see whether code ran correctly or not, I have an opportunity to improve the design.
 If I give in to my fear and just check the variable, then I lose that opportunity.
 That said, if the design idea doesn't come, it doesn't come. I'll check the variable, shed a tear, make a note to come back on one of my smarter days, and move on.</p>
-<p class="attribution">—&quot;Test-Driven Development By Example&quot; <a class="footnote-reference brackets" href="#fntdd" id="id25">1</a> by Kent Beck, перевод П. Анджан</p>
+<p class="attribution">—&quot;Test-Driven Development By Example&quot; <a class="footnote-reference brackets" href="#fntdd" id="id26">1</a> by Kent Beck, перевод П. Анджан</p>
 </div></blockquote>
 <blockquote>
 <div><p>Взгляд на тестирование в рамках TDD прагматичен.
@@ -440,7 +454,7 @@ If our knowledge of the implementation gives us confidence even without a test, 
 Black box testing, where we deliberately choose to ignore the implementation, has some advantages.
 By ignoring the code, it demonstrates a different value system—the tests are valuable alone.
 It's an appropriate attitude to take in some circumstances, but that is different from TDD.</p>
-<p class="attribution">—&quot;Test-Driven Development By Example&quot; <a class="footnote-reference brackets" href="#fntdd" id="id26">1</a> by Kent Beck, перевод П. Анджан</p>
+<p class="attribution">—&quot;Test-Driven Development By Example&quot; <a class="footnote-reference brackets" href="#fntdd" id="id27">1</a> by Kent Beck, перевод П. Анджан</p>
 </div></blockquote>
 <blockquote>
 <div><p>Many people make bad trade-offs, especially with heavy mocking.
@@ -477,7 +491,7 @@ It also allows the tests to be refactored and evolved in ways that don't affect 
 <p>This separation of evolution is necessary because as time passes, the tests tend to become increasingly more concrete and specific.
 In contrast, the production code tends to become increasingly more abstract and general.
 Strong structural coupling prevents - or at least impedes - this necessary evolution, and prevents the production code from being as general, and flexible, as it could be.</p>
-<p class="attribution">—&quot;Clean Architecture: A Craftsman's Guide to Software Structure and Design&quot; <a class="footnote-reference brackets" href="#fncarch" id="id27">4</a> by Robert C. Martin</p>
+<p class="attribution">—&quot;Clean Architecture: A Craftsman's Guide to Software Structure and Design&quot; <a class="footnote-reference brackets" href="#fncarch" id="id28">4</a> by Robert C. Martin</p>
 </div></blockquote>
 <blockquote>
 <div><p>&quot;Mock across architecturally significant boundaries, but not within those boundaries.&quot;</p>
@@ -485,7 +499,7 @@ Strong structural coupling prevents - or at least impedes - this necessary evolu
 </div></blockquote>
 </div>
 <div class="section" id="sociable-or-solitary">
-<span id="index-2"></span><h2><a class="toc-backref" href="#id38">Sociable or Solitary?</a><a class="headerlink" href="#sociable-or-solitary" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="index-2"></span><h2><a class="toc-backref" href="#id40">Sociable or Solitary?</a><a class="headerlink" href="#sociable-or-solitary" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Наверное, самое часто заблуждение, которое мне приходилось слышать, это то, тесты должны быть полностью изолированы, и должны взаимодействовать только с <a class="reference external" href="https://martinfowler.com/bliki/TestDouble.html">дублерами</a>.
 Этот вопрос известен как &quot;Solitary or Sociable?&quot;.</p>
 <blockquote>
@@ -510,7 +524,7 @@ Strong structural coupling prevents - or at least impedes - this necessary evolu
 <p>Лично я считаю что нужно ограничивать использование современных средства мокирования, активно эксплуатирующих Monkey Patch,  поскольку они позволяют создавать и тестировать низкокачественный код.</p>
 </div>
 <div class="section" id="tdd-design-patterns">
-<span id="index-3"></span><h2><a class="toc-backref" href="#id39">TDD и Design Patterns</a><a class="headerlink" href="#tdd-design-patterns" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="index-3"></span><h2><a class="toc-backref" href="#id41">TDD и Design Patterns</a><a class="headerlink" href="#tdd-design-patterns" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Почему-то многие начинающие программисты, не знакомые с первоисточниками по TDD, думают, что TDD подразумевает только Evolutionary Design, а Simple Design противопоставляется паттернам программирования.</p>
 <blockquote>
 <div><p>Я обратил внимание на один важный эффект, который, я надеюсь, смогут принять во внимание и другие.
@@ -547,7 +561,7 @@ Robert Martin and I did some research into this style of TDD.
 The problem is that the design keeps surprising you.
 Perfectly sensible design ideas turn out to be wrong.
 Better just to think about what you want the system to do, and let the design sort itself out later.</p>
-<p class="attribution">—&quot;Test-Driven Development By Example&quot; <a class="footnote-reference brackets" href="#fntdd" id="id28">1</a> by Kent Beck, перевод П. Анджан</p>
+<p class="attribution">—&quot;Test-Driven Development By Example&quot; <a class="footnote-reference brackets" href="#fntdd" id="id29">1</a> by Kent Beck, перевод П. Анджан</p>
 </div></blockquote>
 <blockquote>
 <div><p>Добавление новой функциональности при помощи тестов и рефакторинг — это две монологические разновидности программирования.
@@ -579,7 +593,7 @@ That way when you're doing the pattern-copying, you can concentrate on just the 
 The XP community has struggled with where patterns fit into the picture.
 Clearly the XP community is in favor of patterns, after all there is huge intersection between XP advocates and patterns advocates — Ward and Kent were leaders in both.
 Perhaps pattern copying is a third monological mode to go with test-first and refactoring, and like those two is dangerous on its own but powerful in concert.</p>
-<p class="attribution">—Martin Fowler, Afterword, &quot;Test-Driven Development By Example&quot; <a class="footnote-reference brackets" href="#fntdd" id="id29">1</a>, перевод П. Анджан</p>
+<p class="attribution">—Martin Fowler, Afterword, &quot;Test-Driven Development By Example&quot; <a class="footnote-reference brackets" href="#fntdd" id="id30">1</a>, перевод П. Анджан</p>
 </div></blockquote>
 <blockquote>
 <div><p>Patterns and XP</p>
@@ -604,7 +618,7 @@ Perhaps pattern copying is a third monological mode to go with test-first and re
 </ul>
 </div>
 <div class="section" id="one-assertion-per-test">
-<h2><a class="toc-backref" href="#id40">One assertion per test?</a><a class="headerlink" href="#one-assertion-per-test" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id42">One assertion per test?</a><a class="headerlink" href="#one-assertion-per-test" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Я часто слышу это распространенное убеждение, что один тестовый метод должен содержать только одно утверждение (assertion) и не больше.
 И это интересно, потому что Кент Бек этому правилу не очень-то и следует, что заставило меня найти первоисточник этого убеждения.
 Источник я нашел, и он, действительно, авторитетный - это &quot;xUnit Test Patterns. Refactoring Test Code.&quot; by Gerard Meszaros, глава &quot;Principle: Verify One Condition per Test&quot;, но там есть кое-что еще, о чем это широко распространенное убеждение умалчивает:</p>
@@ -631,21 +645,21 @@ When it doesn't, I wouldn't be too dogmatic about insisting on a single assertio
 I usually try to create a domainspeciﬁc testing language that supports it, as in Listing 9-5.
 But I am not afraid to put more than one assert in a test.
 I think the best thing we can say is that the number of asserts in a test ought to be minimized.</p>
-<p class="attribution">—&quot;Clean Code: A Handbook of Agile Software Craftsmanship&quot; <a class="footnote-reference brackets" href="#fnccode" id="id30">3</a> by Robert C. Martin, перевод Е. Матвеев</p>
+<p class="attribution">—&quot;Clean Code: A Handbook of Agile Software Craftsmanship&quot; <a class="footnote-reference brackets" href="#fnccode" id="id31">3</a> by Robert C. Martin, перевод Е. Матвеев</p>
 </div></blockquote>
 <p>Здесь он отсылает к статье &quot;<a class="reference external" href="https://www.artima.com/weblogs/viewpost.jsp?thread=35578">One Assertion Per Test</a>&quot; by Dave Astels в качестве первоисточника.</p>
 <p class="rubric">Footnotes</p>
 <dl class="footnote brackets">
-<dt class="label" id="fntdd"><span class="brackets">1</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id4">2</a>,<a href="#id5">3</a>,<a href="#id6">4</a>,<a href="#id7">5</a>,<a href="#id10">6</a>,<a href="#id12">7</a>,<a href="#id13">8</a>,<a href="#id15">9</a>,<a href="#id16">10</a>,<a href="#id17">11</a>,<a href="#id19">12</a>,<a href="#id20">13</a>,<a href="#id21">14</a>,<a href="#id23">15</a>,<a href="#id25">16</a>,<a href="#id26">17</a>,<a href="#id28">18</a>,<a href="#id29">19</a>)</span></dt>
+<dt class="label" id="fntdd"><span class="brackets">1</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id4">2</a>,<a href="#id5">3</a>,<a href="#id6">4</a>,<a href="#id7">5</a>,<a href="#id10">6</a>,<a href="#id12">7</a>,<a href="#id13">8</a>,<a href="#id15">9</a>,<a href="#id16">10</a>,<a href="#id17">11</a>,<a href="#id18">12</a>,<a href="#id19">13</a>,<a href="#id20">14</a>,<a href="#id24">15</a>,<a href="#id26">16</a>,<a href="#id27">17</a>,<a href="#id29">18</a>,<a href="#id30">19</a>)</span></dt>
 <dd><p>&quot;Test-Driven Development By Example&quot; by Kent Beck</p>
 </dd>
-<dt class="label" id="fnccoder"><span class="brackets"><a class="fn-backref" href="#id22">2</a></span></dt>
+<dt class="label" id="fnccoder"><span class="brackets"><a class="fn-backref" href="#id23">2</a></span></dt>
 <dd><p>&quot;The Clean Coder: a code of conduct for professional programmers&quot; by Robert C. Martin</p>
 </dd>
-<dt class="label" id="fnccode"><span class="brackets"><a class="fn-backref" href="#id30">3</a></span></dt>
+<dt class="label" id="fnccode"><span class="brackets"><a class="fn-backref" href="#id31">3</a></span></dt>
 <dd><p>&quot;Clean Code: A Handbook of Agile Software Craftsmanship&quot; by Robert C. Martin</p>
 </dd>
-<dt class="label" id="fncarch"><span class="brackets">4</span><span class="fn-backref">(<a href="#id18">1</a>,<a href="#id27">2</a>)</span></dt>
+<dt class="label" id="fncarch"><span class="brackets">4</span><span class="fn-backref">(<a href="#id22">1</a>,<a href="#id28">2</a>)</span></dt>
 <dd><p>&quot;Clean Architecture: A Craftsman's Guide to Software Structure and Design&quot; by Robert C. Martin</p>
 </dd>
 <dt class="label" id="fnrefactoring"><span class="brackets">5</span><span class="fn-backref">(<a href="#id9">1</a>,<a href="#id11">2</a>,<a href="#id14">3</a>)</span></dt>
