@@ -306,6 +306,7 @@ Some companies are training facilitators who work out of a facilitation center a
 "&lt;/p&gt;
 &lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://web.archive.org/web/20090221042620/http://www.bee.net/bluebird/jaddoc.htm"&gt;Joint Application Design. Business Requirements Analysis for Successful Re-engineering&lt;/a&gt;" by Bill Jennerich&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Баланс краткосрочных бизнес-интересов и долгосрочных технических интересов Kent Beck находит в сглаживании по времени "&lt;a class="reference external" href="https://martinfowler.com/bliki/DesignPayoffLine.html"&gt;Design Payoff Line&lt;/a&gt;" посредством применения принципа YAGNI, см. "&lt;a class="reference internal" href="../../../../uncertainty-management/adaptation/crash-course-in-software-development-economics.html"&gt;&lt;span class="doc"&gt;Краткий курс по экономике разработки программного обеспечения&lt;/span&gt;&lt;/a&gt;".&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="scrum"&gt;
@@ -550,6 +551,115 @@ switched to points because ideal time confused people (why did 2 day story take 
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="business-concerns/common-planning-errors.html#emacsway-agile-common-planning-errors"&gt;&lt;span class="std std-ref"&gt;Наиболее частые управленческие ошибки&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../../../../../soft-skills/cognitive-biases.html#emacsway-cognitive-biases"&gt;&lt;span class="std std-ref"&gt;Список психологических эффектов&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../../../uncertainty-management/adaptation/crash-course-in-software-development-economics.html"&gt;&lt;span class="doc"&gt;Краткий курс по экономике разработки программного обеспечения&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description><pubDate>Wed, 12 Jan 2022 00:00:00 </pubDate></item><item><title>Наиболее частые управленческие ошибки</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/requirements/business-concerns/common-planning-errors.html</link><description>
+&lt;span id="id1"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;div class="contents topic" id="id2"&gt;
+&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-agile-common-planning-errors" id="id9"&gt;Наиболее частые управленческие ошибки&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id10"&gt;Список ошибок&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-planning-error-false-commutativity" id="id11"&gt;Ложная коммутативность&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id5" id="id12"&gt;Техдолг является константной величиной по отношению ко времени&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id6" id="id13"&gt;Накопление техдолга увеличивает стоимость разработки линейно&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id7" id="id14"&gt;Вера в то, что разработчикам безразлично качество кода&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-planning-technical-task" id="id15"&gt;Как взять в релиз техническую задачу&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id10"&gt;Список ошибок&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Четыре наиболее частые управленческие ошибки, которые мне приходилось наблюдать на практике.&lt;/p&gt;
+&lt;div class="section" id="emacsway-planning-error-false-commutativity"&gt;
+&lt;span id="id4"/&gt;&lt;h3&gt;&lt;a class="toc-backref" href="#id11"&gt;Ложная коммутативность&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Представители бизнеса склонны думать, что если выполнить задачи в последовательности "b", "c", "a", то стоимость их реализации будет такой же, как если бы они были выполнены в последовательности "a", "b", "c".
+На самом деле, стоимость может отличаться кратно, если даже не на порядок, потому что задача "a" может удешевить стоимость реализации последующих задач.
+Эта ошибка особенно удивительна на фоне того, как много управленческой литературы освещает этот вопрос.
+Некоторые книги даже включают в себя даже целый раздел управленческой математики, как, например, "Менеджмент: Учебник для вузов." 3-е изд., Глухов В.В.&lt;/p&gt;
+&lt;p&gt;Особенно хорошо эта проблема освещена в статье "&lt;a class="reference external" href="https://less.works/less/principles/systems-thinking.html"&gt;Systems Thinking&lt;/a&gt;" by Craig Larman (&lt;a class="reference external" href="https://less.works/ru/less/principles/systems-thinking.html"&gt;на русском&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Шахматы - лучшая метафора для опровержения этой иллюзии.
+В начале игры оба игрока имеют равное количество фигур, но выигрывает только один.
+Все дело в том, в какой последовательности они двигают эти фигуры.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id12"&gt;Техдолг является константной величиной по отношению ко времени&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Представители бизнеса склонны полагать, что стоимость исправления техдолга является константной величиной по отношению ко времени, а поэтому, его можно безболезненно отложить.
+Такие виды техдолга действительно могут иметь место, но это не исключает существования других видов техдолга, где &lt;a class="reference internal" href="compound-interest.html#emacsway-compound-interest"&gt;&lt;span class="std std-ref"&gt;стоимость исправления через пару месяцев может вырасти кратно, если даже не на порядки&lt;/span&gt;&lt;/a&gt;.
+Именно этот критерий является ключевым при применении &lt;a class="reference external" href="http://sergeyteplyakov.blogspot.com/2016/08/yagni.html"&gt;принципа YAGNI&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id13"&gt;Накопление техдолга увеличивает стоимость разработки линейно&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Исходя из предыдущего пункта, у представителей бизнеса нередко формируется иллюзия, что накопление техдолга увеличивает стоимость разработки линейно.
+Как показывает практика, и как демонстрируют исследования авторитетных авторов в области архитектуры, характер роста стоимости разработки имеет тенденцию приближаться к экспоненциальной зависимости.
+Статистику конкретного проекта смотрите в "Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin.
+В таком случае &lt;a class="reference internal" href="../../../../iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;итеративная&lt;/span&gt;&lt;/a&gt; (&lt;a class="reference internal" href="../../../agile.html#emacsway-agile-development"&gt;&lt;span class="std std-ref"&gt;Agile&lt;/span&gt;&lt;/a&gt;) модель разработки может вообще утратить свою экономическую целесообразность перед &lt;a class="reference internal" href="../../../../spiral.html#emacsway-spiral-development"&gt;&lt;span class="std std-ref"&gt;спиральными&lt;/span&gt;&lt;/a&gt; моделями, или даже BDUF.
+Как уже говорилось, &lt;a class="reference internal" href="../../../agile.html#emacsway-agile-development-essence"&gt;&lt;span class="std std-ref"&gt;Agile имеет экономическую целесообразность только при пологом характере роста изменения кода&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Зачастую, эта иллюзия подкрепляется отсутствием мониторинга объективных индикативных показателей здоровья проекта, что не позволяет зафиксировать падение экономики разработки на ранних стадиях, в силу особенностей работы человеческого мозга (когнитивных искажений).&lt;/p&gt;
+&lt;p&gt;Поскольку представители бизнеса склонны руководствоваться краткосрочными бизнес-интересами в ущерб долгосрочным техническим интересам, сбалансированность решений должна гарантироваться процессами, о чем частично упоминалось &lt;a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-agile-solution-of-balancing-business-technical-concerns"&gt;&lt;span class="std std-ref"&gt;здесь&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Современные Agile методики имеют тенденцию перестраховки, которая выражена в том, что внутреннее качество программы является вообще &lt;a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-xp2-balancing-business-technical-concerns"&gt;&lt;span class="std std-ref"&gt;константной величиной&lt;/span&gt;&lt;/a&gt;, а не переменной управления разработкой.&lt;/p&gt;
+&lt;p&gt;Я согласен с этим лишь отчасти, и только потому, что технические специалисты лучше разбираются в экономических основах разработки, чем представители бизнеса.
+И тем не менее, есть риск скатиться к "&lt;a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-second-system-effect"&gt;&lt;span class="std std-ref"&gt;Эффекту второй системы&lt;/span&gt;&lt;/a&gt;", т.е. к неоправданному оверинжинирингу.&lt;/p&gt;
+&lt;p&gt;Я все-таки склоняюсь к тому, что сбалансированность решений должна гарантироваться орг.процессами, а решения должны приниматься в сбалансированном кругу стейкхолдеров.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id7"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id14"&gt;Вера в то, что разработчикам безразлично качество кода&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;На самом деле, никто не хочет работать в "мусорнике", которому иногда может уподобляться код.
+Код - это рабочее место программиста.
+И ничто не деморализует разработчиков так сильно, как запрет на собственную компетентность.
+Об этом говорят многие известные авторы.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="emacsway-planning-technical-task"&gt;
+&lt;span id="id8"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id15"&gt;Как взять в релиз техническую задачу&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Один из частых аргументов представителей бизнеса в оправдание дисбаланса решений в пользу краткосрочных бизнес-интересов и в ущерб долгосрочным техническим интересам, звучит примерно так: "&lt;em&gt;покажите, какую бизнес-сторю мы можем выбросить из плана релиза, чтобы вместо неё взять техническую задачу&lt;/em&gt;".&lt;/p&gt;
+&lt;p&gt;Эта ментальная ловушка основана на предположении о постоянстве скорости разработки и коммутативности (переместительности) задач в последовательности их выполнения.&lt;/p&gt;
+&lt;p&gt;На самом деле, &lt;strong&gt;скорость разработки вариативна, и сильно зависит от последовательности выполнения задач&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Технические задачи можно условно разделить на две категории:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;Направленные на достижение Modifiability.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Направленные на достижение всех остальных Quality Attributes.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Почему так?
+Потому что все остальные Quality Attributes достигаются, как правило, путем изменения кода, а значит, находятся в зависимости от Modifiability (я, конечно, немного обобщаю, поскольку есть еще Evolvability, Flexibility, Modularity, Testabilty, Deployability etc.).
+Кроме того, все остальные Quality Attributes требуют, как правило, каких-то однократных или линейных затрат, в то время как &lt;strong&gt;Modifiability имеет тенденцию влиять на стоимость разработки экспоненциально&lt;/strong&gt;.
+Утрата Modifiability означает утрату всего.&lt;/p&gt;
+&lt;p&gt;Итак, перефразируем вопрос.
+Теперь вопрос не в том, чтобы выкинуть что-то из плана релиза, а в том, "&lt;strong&gt;как взять в релиз техническую задачу&lt;/strong&gt;".
+Чувствуете разницу?
+А это зависит от скорости разработки, на которую можно влиять техническими задачами (зачастую - кратно).
+Как говорится, долго запрягать, но быстро ехать.&lt;/p&gt;
+&lt;p&gt;Вообще говоря, в хорошо отлаженных процессах технические задачи возникают редко.&lt;/p&gt;
+&lt;p&gt;Задачи на Modifiability возникают редко, потому что существуют методики для того, чтобы сгладить по времени "&lt;a class="reference external" href="https://martinfowler.com/bliki/DesignPayoffLine.html"&gt;Design Payoff Line&lt;/a&gt;" и минимизировать в краткосрочной перспективе стоимость решения:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://martinfowler.com/bliki/TechnicalDebt.html"&gt;TechnicalDebt&lt;/a&gt;" by Martin Fowler&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://martinfowler.com/bliki/Yagni.html"&gt;Yagni&lt;/a&gt;" by Martin Fowler&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../../../../uncertainty-management/adaptation/crash-course-in-software-development-economics.html"&gt;&lt;span class="doc"&gt;Краткий курс по экономике разработки программного обеспечения&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;При использовании этих методик, редко возникают технические задачи на Modifiability, которые не окупятся в пределах релиза.
+Martin Fowler даже советует не говорить менеджерам о таких технических задачах, так как они все равно не затягивают выполнение графика работ (см. "Refactoring: Improving the Design of Existing Code" by Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts).&lt;/p&gt;
+&lt;p&gt;А задачи на другие нефункциональные требования возникают редко, так как функциональные и нефункциональные требования нужно, по мере возможности, достигать &lt;a class="reference internal" href="../nonfunctional-requirements.html#emacsway-agile-nonfunctional-requirements"&gt;&lt;span class="std std-ref"&gt;одновременно&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Проблемным в этом вопросе оказывается обычно Scrum, так как он, с одной стороны, имеет тенденцию сосредоточить все полномочия в руках Product Owner (хотя в "The 2020 Scrum Guide™" появилась такая фраза &lt;em&gt;"Adaptation becomes more difficult when the people involved are not empowered or self-managing."&lt;/em&gt;), который часто выполняет роль стейкхолдера категории Business, что лишает его нейтральной позиции в пользу краткосрочных бизнес-интересов.
+А с другой стороны, "The 2020 Scrum Guide™" &lt;a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-scrum-balancing-business-technical-concerns"&gt;&lt;span class="std std-ref"&gt;не допускает техдолга вообще&lt;/span&gt;&lt;/a&gt;, чем встает на защиту долгосрочных технических интересов.&lt;/p&gt;
+&lt;p&gt;Иными словами, Scrum, скорее, разогревает противоречия требований различных групп стейкхолдеров, нежели разрешает их.
+Начинается перетягивание одеяла.
+Кто кого.&lt;/p&gt;
+&lt;p&gt;Но вернемся к нашему главному вопросу.
+Преследование краткосрочных бизнес-интересов в ущерб долгосрочным техническим интересам приводит к положительной обратной связи, т.е. приводит систему в разнос.
+Об этом хорошо пишется в статье "&lt;a class="reference external" href="https://less.works/less/principles/systems-thinking.html"&gt;Systems Thinking&lt;/a&gt;" by Craig Larman (&lt;a class="reference external" href="https://less.works/ru/less/principles/systems-thinking.html"&gt;на русском&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;В таком случае, чем дольше откладывается выполнение технических задач, тем больше падает скорость разработки, и тем меньше остается ресурсов на технические задачи.
+А в таком случае, если у компании нет ресурсов решить задачу правильно, то решать ее дважды - и подавно &lt;a class="reference internal" href="../../../../../uncertainty-management/adaptation/software-design/software-design.html#emacsway-agile-software-design"&gt;&lt;span class="std std-ref"&gt;не будет&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="admonition seealso"&gt;
+&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../../../../uncertainty-management/adaptation/crash-course-in-software-development-economics.html"&gt;&lt;span class="doc"&gt;Краткий курс по экономике разработки программного обеспечения&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2165,115 +2275,6 @@ If you don't know them, your decisions are much more arbitrary."&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../crash-course-in-software-development-economics.html"&gt;&lt;span class="doc"&gt;Краткий курс по экономике разработки программного обеспечения&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description><pubDate>Tue, 11 Jan 2022 00:00:00 </pubDate></item><item><title>Наиболее частые управленческие ошибки</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/requirements/business-concerns/common-planning-errors.html</link><description>
-&lt;span id="id1"/&gt; 
-&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
-&lt;div class="contents topic" id="id2"&gt;
-&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-agile-common-planning-errors" id="id9"&gt;Наиболее частые управленческие ошибки&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id10"&gt;Список ошибок&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-planning-error-false-commutativity" id="id11"&gt;Ложная коммутативность&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id5" id="id12"&gt;Техдолг является константной величиной по отношению ко времени&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id6" id="id13"&gt;Накопление техдолга увеличивает стоимость разработки линейно&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id7" id="id14"&gt;Вера в то, что разработчикам безразлично качество кода&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-planning-technical-task" id="id15"&gt;Как взять в релиз техническую задачу&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id3"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id10"&gt;Список ошибок&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Четыре наиболее частые управленческие ошибки, которые мне приходилось наблюдать на практике.&lt;/p&gt;
-&lt;div class="section" id="emacsway-planning-error-false-commutativity"&gt;
-&lt;span id="id4"/&gt;&lt;h3&gt;&lt;a class="toc-backref" href="#id11"&gt;Ложная коммутативность&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Представители бизнеса склонны думать, что если выполнить задачи в последовательности "b", "c", "a", то стоимость их реализации будет такой же, как если бы они были выполнены в последовательности "a", "b", "c".
-На самом деле, стоимость может отличаться кратно, если даже не на порядок, потому что задача "a" может удешевить стоимость реализации последующих задач.
-Эта ошибка особенно удивительна на фоне того, как много управленческой литературы освещает этот вопрос.
-Некоторые книги даже включают в себя даже целый раздел управленческой математики, как, например, "Менеджмент: Учебник для вузов." 3-е изд., Глухов В.В.&lt;/p&gt;
-&lt;p&gt;Особенно хорошо эта проблема освещена в статье "&lt;a class="reference external" href="https://less.works/less/principles/systems-thinking.html"&gt;Systems Thinking&lt;/a&gt;" by Craig Larman (&lt;a class="reference external" href="https://less.works/ru/less/principles/systems-thinking.html"&gt;на русском&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;Шахматы - лучшая метафора для опровержения этой иллюзии.
-В начале игры оба игрока имеют равное количество фигур, но выигрывает только один.
-Все дело в том, в какой последовательности они двигают эти фигуры.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id5"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id12"&gt;Техдолг является константной величиной по отношению ко времени&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Представители бизнеса склонны полагать, что стоимость исправления техдолга является константной величиной по отношению ко времени, а поэтому, его можно безболезненно отложить.
-Такие виды техдолга действительно могут иметь место, но это не исключает существования других видов техдолга, где &lt;a class="reference internal" href="compound-interest.html#emacsway-compound-interest"&gt;&lt;span class="std std-ref"&gt;стоимость исправления через пару месяцев может вырасти кратно, если даже не на порядки&lt;/span&gt;&lt;/a&gt;.
-Именно этот критерий является ключевым при применении &lt;a class="reference external" href="http://sergeyteplyakov.blogspot.com/2016/08/yagni.html"&gt;принципа YAGNI&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id6"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id13"&gt;Накопление техдолга увеличивает стоимость разработки линейно&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Исходя из предыдущего пункта, у представителей бизнеса нередко формируется иллюзия, что накопление техдолга увеличивает стоимость разработки линейно.
-Как показывает практика, и как демонстрируют исследования авторитетных авторов в области архитектуры, характер роста стоимости разработки имеет тенденцию приближаться к экспоненциальной зависимости.
-Статистику конкретного проекта смотрите в "Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin.
-В таком случае &lt;a class="reference internal" href="../../../../iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;итеративная&lt;/span&gt;&lt;/a&gt; (&lt;a class="reference internal" href="../../../agile.html#emacsway-agile-development"&gt;&lt;span class="std std-ref"&gt;Agile&lt;/span&gt;&lt;/a&gt;) модель разработки может вообще утратить свою экономическую целесообразность перед &lt;a class="reference internal" href="../../../../spiral.html#emacsway-spiral-development"&gt;&lt;span class="std std-ref"&gt;спиральными&lt;/span&gt;&lt;/a&gt; моделями, или даже BDUF.
-Как уже говорилось, &lt;a class="reference internal" href="../../../agile.html#emacsway-agile-development-essence"&gt;&lt;span class="std std-ref"&gt;Agile имеет экономическую целесообразность только при пологом характере роста изменения кода&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Зачастую, эта иллюзия подкрепляется отсутствием мониторинга объективных индикативных показателей здоровья проекта, что не позволяет зафиксировать падение экономики разработки на ранних стадиях, в силу особенностей работы человеческого мозга (когнитивных искажений).&lt;/p&gt;
-&lt;p&gt;Поскольку представители бизнеса склонны руководствоваться краткосрочными бизнес-интересами в ущерб долгосрочным техническим интересам, сбалансированность решений должна гарантироваться процессами, о чем частично упоминалось &lt;a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-agile-solution-of-balancing-business-technical-concerns"&gt;&lt;span class="std std-ref"&gt;здесь&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Современные Agile методики имеют тенденцию перестраховки, которая выражена в том, что внутреннее качество программы является вообще &lt;a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-xp2-balancing-business-technical-concerns"&gt;&lt;span class="std std-ref"&gt;константной величиной&lt;/span&gt;&lt;/a&gt;, а не переменной управления разработкой.&lt;/p&gt;
-&lt;p&gt;Я согласен с этим лишь отчасти, и только потому, что технические специалисты лучше разбираются в экономических основах разработки, чем представители бизнеса.
-И тем не менее, есть риск скатиться к "&lt;a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-second-system-effect"&gt;&lt;span class="std std-ref"&gt;Эффекту второй системы&lt;/span&gt;&lt;/a&gt;", т.е. к неоправданному оверинжинирингу.&lt;/p&gt;
-&lt;p&gt;Я все-таки склоняюсь к тому, что сбалансированность решений должна гарантироваться орг.процессами, а решения должны приниматься в сбалансированном кругу стейкхолдеров.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id7"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id14"&gt;Вера в то, что разработчикам безразлично качество кода&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;На самом деле, никто не хочет работать в "мусорнике", которому иногда может уподобляться код.
-Код - это рабочее место программиста.
-И ничто не деморализует разработчиков так сильно, как запрет на собственную компетентность.
-Об этом говорят многие известные авторы.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="emacsway-planning-technical-task"&gt;
-&lt;span id="id8"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id15"&gt;Как взять в релиз техническую задачу&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Один из частых аргументов представителей бизнеса в оправдание дисбаланса решений в пользу краткосрочных бизнес-интересов и в ущерб долгосрочным техническим интересам, звучит примерно так: "&lt;em&gt;покажите, какую бизнес-сторю мы можем выбросить из плана релиза, чтобы вместо неё взять техническую задачу&lt;/em&gt;".&lt;/p&gt;
-&lt;p&gt;Эта ментальная ловушка основана на предположении о постоянстве скорости разработки и коммутативности (переместительности) задач в последовательности их выполнения.&lt;/p&gt;
-&lt;p&gt;На самом деле, &lt;strong&gt;скорость разработки вариативна, и сильно зависит от последовательности выполнения задач&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Технические задачи можно условно разделить на две категории:&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;&lt;p&gt;Направленные на достижение Modifiability.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Направленные на достижение всех остальных Quality Attributes.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Почему так?
-Потому что все остальные Quality Attributes достигаются, как правило, путем изменения кода, а значит, находятся в зависимости от Modifiability (я, конечно, немного обобщаю, поскольку есть еще Evolvability, Flexibility, Modularity, Testabilty, Deployability etc.).
-Кроме того, все остальные Quality Attributes требуют, как правило, каких-то однократных или линейных затрат, в то время как &lt;strong&gt;Modifiability имеет тенденцию влиять на стоимость разработки экспоненциально&lt;/strong&gt;.
-Утрата Modifiability означает утрату всего.&lt;/p&gt;
-&lt;p&gt;Итак, перефразируем вопрос.
-Теперь вопрос не в том, чтобы выкинуть что-то из плана релиза, а в том, "&lt;strong&gt;как взять в релиз техническую задачу&lt;/strong&gt;".
-Чувствуете разницу?
-А это зависит от скорости разработки, на которую можно влиять техническими задачами (зачастую - кратно).
-Как говорится, долго запрягать, но быстро ехать.&lt;/p&gt;
-&lt;p&gt;Вообще говоря, в хорошо отлаженных процессах технические задачи возникают редко.&lt;/p&gt;
-&lt;p&gt;Задачи на Modifiability возникают редко, потому что существуют методики для того, чтобы снизить "&lt;a class="reference external" href="https://martinfowler.com/bliki/DesignPayoffLine.html"&gt;Design Payoff Line&lt;/a&gt;" и минимизировать в краткосрочной перспективе стоимость решения:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://martinfowler.com/bliki/TechnicalDebt.html"&gt;TechnicalDebt&lt;/a&gt;" by Martin Fowler&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://martinfowler.com/bliki/Yagni.html"&gt;Yagni&lt;/a&gt;" by Martin Fowler&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../../../../uncertainty-management/adaptation/crash-course-in-software-development-economics.html"&gt;&lt;span class="doc"&gt;Краткий курс по экономике разработки программного обеспечения&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;При использовании этих методик, редко возникают технические задачи на Modifiability, которые не окупятся в пределах релиза.
-Martin Fowler даже советует не говорить менеджерам о таких технических задачах, так как они все равно не затягивают выполнение графика работ (см. "Refactoring: Improving the Design of Existing Code" by Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts).&lt;/p&gt;
-&lt;p&gt;А задачи на другие нефункциональные требования возникают редко, так как функциональные и нефункциональные требования нужно, по мере возможности, достигать &lt;a class="reference internal" href="../nonfunctional-requirements.html#emacsway-agile-nonfunctional-requirements"&gt;&lt;span class="std std-ref"&gt;одновременно&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Проблемным в этом вопросе оказывается обычно Scrum, так как он, с одной стороны, имеет тенденцию сосредоточить все полномочия в руках Product Owner (хотя в "The 2020 Scrum Guide™" появилась такая фраза &lt;em&gt;"Adaptation becomes more difficult when the people involved are not empowered or self-managing."&lt;/em&gt;), который часто выполняет роль стейкхолдера категории Business, что лишает его нейтральной позиции в пользу краткосрочных бизнес-интересов.
-А с другой стороны, "The 2020 Scrum Guide™" &lt;a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-scrum-balancing-business-technical-concerns"&gt;&lt;span class="std std-ref"&gt;не допускает техдолга вообще&lt;/span&gt;&lt;/a&gt;, чем встает на защиту долгосрочных технических интересов.&lt;/p&gt;
-&lt;p&gt;Иными словами, Scrum, скорее, разогревает противоречия требований различных групп стейкхолдеров, нежели разрешает их.
-Начинается перетягивание одеяла.
-Кто кого.&lt;/p&gt;
-&lt;p&gt;Но вернемся к нашему главному вопросу.
-Преследование краткосрочных бизнес-интересов в ущерб долгосрочным техническим интересам приводит к положительной обратной связи, т.е. приводит систему в разнос.
-Об этом хорошо пишется в статье "&lt;a class="reference external" href="https://less.works/less/principles/systems-thinking.html"&gt;Systems Thinking&lt;/a&gt;" by Craig Larman (&lt;a class="reference external" href="https://less.works/ru/less/principles/systems-thinking.html"&gt;на русском&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;В таком случае, чем дольше откладывается выполнение технических задач, тем больше падает скорость разработки, и тем меньше остается ресурсов на технические задачи.
-А в таком случае, если у компании нет ресурсов решить задачу правильно, то решать ее дважды - и подавно &lt;a class="reference internal" href="../../../../../uncertainty-management/adaptation/software-design/software-design.html#emacsway-agile-software-design"&gt;&lt;span class="std std-ref"&gt;не будет&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="admonition seealso"&gt;
-&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../../../../uncertainty-management/adaptation/crash-course-in-software-development-economics.html"&gt;&lt;span class="doc"&gt;Краткий курс по экономике разработки программного обеспечения&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 </description><pubDate>Tue, 11 Jan 2022 00:00:00 </pubDate></item><item><title>TDD - Разработка через тестирование</title><link>https://dckms.github.io/system-architecture/emacsway/it/tdd/tdd.html</link><description>
