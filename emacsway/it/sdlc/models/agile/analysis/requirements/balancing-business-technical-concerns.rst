@@ -14,6 +14,18 @@
 
 Существует довольно распространенная проблема поиска баланса между краткосрочными бизнес-интересами и долгосрочными техническими интересами проекта.
 
+    📝 "Краткосрочные индивидуальные цели часто конфликтуют с долгосрочными социальными целями.
+    Общество решает эту проблему при помощи набора ценностей, подкрепленных мифами, ритуалами, наказаниями и наградами.
+    Без уважения к этим ценностям люди забывают о социальных нуждах и стремятся реализовать свой собственный индивидуальный краткосрочный интерес.
+    Четыре ценности для ХР — это: коммуникация (communication), простота (simplicity), обратная связь (feedback), храбрость (courage).
+
+    Short-term individual goals often conflict with long-term social goals.
+    Societies have learned to deal with this problem by developing shared sets of values, backed up by myths, rituals, punishments, and rewards.
+    Without these values, humans tend to revert to their own short-term best interest.
+    The four values of XP are: Communication, Simplicity, Feedback, Courage."
+
+    -- "Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 7. Four Values", перевод ООО Издательство "Питер"
+
 
 Поиск баланса
 =============
@@ -83,7 +95,19 @@ Frederick Brooks в своем бестселлере "Мифический че
 
     So, the net result of the "Development in Charge" scenario is too much effort and way, way **too much risk for too little return**."
 
-    -- "Extreme Programming Explained" 1st edition by Kent Beck, перевод ООО Издательство "Питер"
+    -- "Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 14. Splitting Business and Technical Responsibility", перевод ООО Издательство "Питер"
+
+..
+
+    📝 "Программист является сердцем ХР.
+    На самом деле если бы программисты могли всегда принимать решения, в которых тщательно балансировались краткосрочные и долгосрочные приоритеты, в рамках проекта не нужны были бы никакие другие технические работники, кроме программистов.
+    Конечно же если заказчику не требуется программное обеспечение для того, чтобы поддерживать функционирование бизнеса, то никакой надобности в программистах не было бы.
+
+    The programmer is the heart of XP.
+    Actually, if programmers could always make decisions that carefully balanced short-term and long-term priorities, there would be no need for any other technical people on the project besides programmers.
+    Of course, if the customer didn't absolutely need software to keep the business running, there would be no need for the programmers, so it won't do to get too big-headed about being the vital programmer."
+
+    -- "Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 22. Roles for People", перевод ООО Издательство "Питер"
 
 ..
 
@@ -186,6 +210,12 @@ Frederick Brooks в своем бестселлере "Мифический че
 Решение
 -------
 
+Разрешение противоречий требований различных групп стейкхолдеров хорошо изучены анализом и архитектурой.
+Существует целый ряд достаточно зрелых методик, направленных на достижение сбалансированных решений.
+Четвертое издание книги "Software Architecture in Practice" 4th edition by Len Bass, Paul Clements, Rick Kazman наглядно демонстрирует, как их интегрировать в итеративную (agile) разработку.
+
+Появились легковесные варианты этих методик: Lightweight Architecture Evaluation (LAE), Mini-QAW etc.
+Многие из этих методик описаны в "`ISO/IEC/IEEE 42030:2019 Software, systems and enterprise — Architecture evaluation framework <https://www.iso.org/standard/73436.html>`__".
 
 .. index::
    single: Requirements; in balancing business and technical concerns in XP
@@ -332,6 +362,27 @@ Extreme Programming
 
     -- "Extreme Programming Explained" 2nd edition by Kent Beck, "Annotated Bibliography :: Project Management"
 
+..
+
+    📝 "The facilitated **JAD workshop brings key users (stakeholders) and systems professionals together to resolve their differences in a neutral, non-hostile atmosphere**.
+    **Key to the workshop is a specially trained, unbiased facilitator who is not a member of the project team and therefore has no political stake in the outcome of the workshop.**
+    The workshop will build a team that will stay together, psychologically at least, for the life of the project.
+
+    <...>
+
+    The Key Players
+
+    1) The Facilitator
+
+    The facilitator is in charge of the workshop - the guardian of the process.
+    It is the facilitator's responsibility to ensure that the expected workshop deliverables are produced and the expected consensus is achieved.
+    The facilitator is an unbiased leader who has no ties to the project.
+    He can come from some other department or from outside the company.
+    Some companies are training facilitators who work out of a facilitation center attached to the human resources department.
+    "
+
+    -- "`Joint Application Design. Business Requirements Analysis for Successful Re-engineering <https://web.archive.org/web/20090221042620/http://www.bee.net/bluebird/jaddoc.htm>`__" by Bill Jennerich 
+
 
 .. index::
    single: Requirements; in balancing business and technical concerns in Scrum
@@ -343,6 +394,15 @@ Scrum
 
 The Scrum Guide™
 """"""""""""""""
+
+Dean Leffingwell выдвигает вопрос к обязанностям Product Owner:
+
+    📝 "Each project stakeholder will have their own vision, requirements, and priorities. As the primary representative to all those stakeholders, this provides a particular challenge to product owners—because all those requirements must be aligned and expectations must be managed toward a single solution.
+
+    **The product owner's primary job is to merge these diverse stakeholder voices into a single prioritized backlog for the team.**
+    They can do this by facilitating or leading, or some appropriate mix of each."
+
+    -- "Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise" by Dean Leffingwell
 
 Ответственен ли Product Owner за финансовую успешность продукта?
 
@@ -404,6 +464,14 @@ The Scrum Guide™
     -- "`The 2020 Scrum Guide™ <https://scrumguides.org/scrum-guide.html>`__"
 
 , где Scrum Team уже включает в себя и Product Owner тоже, что вносит путаницу в распределение обязанностей, так как получается, что Product Owner может влиять на реализацию (how).
+Причем, сделано это было, как можно догадаться, из-за сложности достижения консенсуса между Product Owner и Development Teams:
+
+    📝 "One Team, Focused on One Product
+
+       The goal was to eliminate the concept of a separate team within a team that has led to "proxy" or "us and them" behavior between the PO and Dev Team.
+       There is now just one Scrum Team focused on the same objective, with three different sets of accountabilities: PO, SM, and Developers."
+
+    -- "`Changes between 2017 and 2020 Scrum Guides <https://scrumguides.org/revisions.html>`__"
 
 Однако, при этом Quality сделали константой, :ref:`как и в XP2 <emacsway-xp2-balancing-business-technical-concerns>`:
 
@@ -511,13 +579,56 @@ Jeffrey Sutherland о том, как и зачем он ввел роль Produc
 
     -- "Scrum: The Art of Doing Twice the Work in Half the Time" by Jeffrey Sutherland
 
-P.S.: От себя добавлю, что я пробовал различные Agile-методологии, и XP - это единственное, что у нас работало эффективно, из числа non-scaled методик.
+
+ATAM in Agile
+^^^^^^^^^^^^^
+
+Использование ATAM в Agile-разработке (свободное скачивание):
+
+- "`Insights from 15 Years of ATAM Data: Towards Agile Architecture <https://www.researchgate.net/publication/276317148_Insights_from_15_Years_of_ATAM_Data_Towards_Agile_Architecture>`__" by Stephany Bellomo, Ian Gorton, and Rick Kazman, IEEE Software, September/October, 2015, 32:5, 38-45
+
+    📝 "Agile teams strive to **balance short term feature development with longer term quality concerns**.
+    These evolutionary approaches often hit a "complexity wall" from the cumulative effects of unplanned changes, resulting in unreliable, poorly performing software.
+    Consequently, there is renewed focus on approaches to address architectural concerns within the Agile community.
+    We present an analysis of quality attribute concerns from 15 years of Architecture Trade-off Analysis Method data, gathered from 31 projects.
+    We found that modifiability is the dominant concern across all project types; additionally there was considerable focus on performance, availability, and interoperability.
+    For information technology projects, a relatively new quality—deployability—has emerged as a key concern.
+    Our results provide insights for Agile teams allocating architecture-related tasks to iterations.
+    For example they can use these results to create checklists for release planning or retrospectives to help assess whether a given quality should be addressed to support future needs.
+
+    <...>
+
+    One of the major challenges Agile teams face in building an architecture foundation is balancing the competing concerns of delivery of near-term functional requirements (based on the Agile philosophy of delivering user value early and often) and near and long term quality attribute goals (without which the project can grind to a halt as system complexity makes efficient modifications impossible).
+    In particular, quality attribute (QA) prioritization can be especially difficult in early increments, and a wrong decision can have serious ramifications resulting in hard-to-modify, unreliable, slow, or insecure systems [5].
+
+    5. S. Bellomo, R. Nord, and I. Ozkaya. A Study of Enabling Factors for Rapid Fielding; Combined Practices to Balance Tension between Speed and Stability Proceedings of International Conference on Software Engineering 2013."
+
+    -- "`Insights from 15 Years of ATAM Data: Towards Agile Architecture <https://www.researchgate.net/publication/276317148_Insights_from_15_Years_of_ATAM_Data_Towards_Agile_Architecture>`__" by Stephany Bellomo, Ian Gorton, and Rick Kazman, IEEE Software, September/October, 2015
+
+Подробнее про ATAM можно узнать здесь:
+
+- "`ATAM: Method for Architecture Evaluation <https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=5177>`__" by  Rick Kazman, Mark H. Klein, Paul C. Clements (`pdf <https://resources.sei.cmu.edu/asset_files/TechnicalReport/2000_005_001_13706.pdf>`__, `collection <https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=513908>`__)
+
+Интересно, что обе эти статьи упоминаются в стандарте "`ISO/IEC/IEEE 42030:2019 Software, systems and enterprise — Architecture evaluation framework <https://www.iso.org/standard/73436.html>`__".
+
+Смотрите так же статьи про Mini-QAW в Agile:
+
+- "`Discover Quality Requirements with the Mini-QAW. A short and fun elicitation workshop for Agile teams and architects. <https://re-magazine.ireb.org/articles/discover-quality-requirements-with-the-mini-qaw>`__" by Thijmen de Gooijer Michael Keeling Will Chaparro
+- "`Quality Attribute Workshop Participants Handbook <https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=4995>`__" by Mario R. Barbacci, Robert J. Ellison, Charles B. Weinstock, William G. Wood (`pdf <https://resources.sei.cmu.edu/asset_files/SpecialReport/2000_003_001_13640.pdf>`__)
+- "`Facilitating the Mini-Quality Attributes Workshop. A Lightweight, Architecture-Focused Method. <https://resources.sei.cmu.edu/asset_files/Presentation/2014_017_101_89563.pdf>`__" by Will Chaparro IBM, Michael Keeling IBM
+
+Смотрите так же о "Lightweight Architecture Evaluation (LAE)" в "Software Architecture in Practice" 4th edition by Len Bass, Paul Clements, Rick Kazman.
+
+P.S.: От себя добавлю, что я пробовал различные Agile-методологии, и XP - это единственное, что у нас работало эффективно в малочисленных, немасштабируемых коллективах.
+
+.. seealso::
+
+   - ":ref:`emacsway-agile-nonfunctional-requirements`"
 
 .. todo::
 
    here
 
-      - https://t.me/emacsway_log/531
       - https://t.me/emacsway_log/488
 
    TechDebt
@@ -544,3 +655,4 @@ P.S.: От себя добавлю, что я пробовал различны�
    ???
 
       - https://t.me/emacsway_log/552
+      - https://t.me/emacsway_log/157

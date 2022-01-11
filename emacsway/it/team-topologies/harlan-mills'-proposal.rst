@@ -525,6 +525,13 @@ RUP реализует :ref:`спиральную <emacsway-spiral-development>`
 
     -- "Software Architecture in Practice" 4th edition by Len Bass, Paul Clements, Rick Kazman
 
+..
+
+    📝 "The output of ADD is not an architecture complete in every detail, but an architecture in which the main design approaches have been selected and vetted.
+    **It produces a "workable" architecture early and quickly, one that can be given to other project teams so they can begin their work while the architect or architecture team continues to elaborate and refine.**"
+
+    -- "Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman
+
 Т.е. речь идет опять же, об отдельном Backlog для активностей, предшествующих фазе реализации Системного Инкремента.
 
 
