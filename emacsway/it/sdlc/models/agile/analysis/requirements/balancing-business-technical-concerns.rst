@@ -173,7 +173,7 @@ Frederick Brooks в своем бестселлере "Мифический че
 
     Weinberg-Brooks' Law: More software projects have gone awry from management's taking action based on incorrect system models than for all other causes combined."
 
-    -- "`Systems Thinking <https://less.works/ru/less/principles/systems-thinking.html>`__ by Craig Larman
+    -- "`Systems Thinking <https://less.works/less/principles/systems-thinking.html>`__" by Craig Larman (`на русском <https://less.works/ru/less/principles/systems-thinking.html>`__)
 
 ..
 
@@ -182,6 +182,9 @@ Frederick Brooks в своем бестселлере "Мифический че
     -- "`Better Scrum with Essence <https://www.scruminc.com/better-scrum-with-essence/>`__" Jeff Sutherland
 
 
+.. index::
+   single: Requirements; in solution of balancing business and technical concerns in Agile
+   :name: emacsway-agile-solution-of-balancing-business-technical-concerns
 
 Решение
 -------
@@ -193,6 +196,11 @@ Frederick Brooks в своем бестселлере "Мифический че
 
 Extreme Programming
 ^^^^^^^^^^^^^^^^^^^
+
+
+.. index::
+   single: Requirements; in balancing business and technical concerns in XP 1st edition
+   :name: emacsway-xp1-balancing-business-technical-concerns
 
 Первая версия XP
 """"""""""""""""
@@ -260,6 +268,10 @@ Extreme Programming
 
     -- "Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 4. Four Variables", перевод ООО Издательство "Питер"
 
+
+.. index::
+   single: Requirements; in balancing business and technical concerns in XP 2d edition
+   :name: emacsway-xp2-balancing-business-technical-concerns
 
 Вторая версия XP
 """"""""""""""""
@@ -430,8 +442,6 @@ P.S.: От себя добавлю, что я пробовал различны�
 
       - https://t.me/emacsway_log/125
       - https://t.me/emacsway_log/130
-      - https://t.me/emacsway_log/785
-      - https://t.me/emacsway_log/662
       - https://t.me/emacsway_log/393
 
    Refactoring
@@ -444,8 +454,6 @@ P.S.: От себя добавлю, что я пробовал различны�
       - https://t.me/emacsway_log/135
       - https://t.me/emacsway_log/136
 
-   common planning mistakes (in reguirements)
+   business-concerns
 
-      - https://t.me/emacsway_log/458
-      - https://t.me/emacsway_log/462
-
+      - https://t.me/emacsway_log/785

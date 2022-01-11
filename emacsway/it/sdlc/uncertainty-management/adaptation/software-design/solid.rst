@@ -309,10 +309,7 @@ Ad hominem
 Мое же мнение сводится к тому, что говорить о влиянии внутреннего качества кода на характер роста стоимости изменения кода - нужно.
 Именно этим и занимается Robert C. Martin.
 И это `важнее манеры донесения информации <https://en.m.wikipedia.org/wiki/Ad_hominem>`__.
-Потому что это - один из наиболее чувствительных вопросов индустрии:
-
-- https://t.me/emacsway_log/458
-- https://t.me/emacsway_log/462
+Потому что это - один из наиболее чувствительных вопросов индустрии, см. ":ref:`emacsway-agile-common-planning-errors`".
 
 
 SOLID and Agile
@@ -499,10 +496,3 @@ No Silver Bullet
 .. seealso::
 
    - ":doc:`../crash-course-in-software-development-economics`"
-
-
-.. todo::
-
-   - https://t.me/emacsway_log/458
-   - https://t.me/emacsway_log/462
-   - https://t.me/emacsway_log/393
