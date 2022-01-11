@@ -75,6 +75,10 @@
 Об этом говорят многие известные авторы.
 
 
+.. index::
+   single: Technical Task; in agile planning
+   :name: emacsway-planning-technical-task
+
 Как взять в релиз техническую задачу
 ====================================
 
