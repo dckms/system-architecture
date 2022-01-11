@@ -1188,8 +1188,6 @@ In an unconstrained implementing group, most thought and debate goes into archit
 &lt;div class="section" id="emacsway-agile-business-concerns-predominance"&gt;
 &lt;span id="id5"/&gt;&lt;h3&gt;&lt;a class="toc-backref" href="#id13"&gt;Преобладание бизнес-интересов&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Но есть и обратная проблема - когда технические специалисты ущемлены в своих полномочиях в пользу представителей бизнеса, проект неизменно загнивает, а &lt;a class="reference internal" href="../../agile.html#emacsway-agile-development-difficulties"&gt;&lt;span class="std std-ref"&gt;экономика разработки деградирует с зависимостью, приближенной к экспоненциальной&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Решение этой проблемы хорошо описано в главе "Chapter 14. Splitting Business and Technical Responsibility" книги "Extreme Programming Explained" 1st edition by Kent Beck.
-Решение слишком объемное, чтобы его сюда поместить.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div&gt;&lt;p&gt;📝 "Когда бизнесмены получают слишком много полномочий, они начинают диктовать разработчиком значения для всех четырех переменных.
 "Вот то, что ты должен сделать.
@@ -1239,6 +1237,8 @@ Somehow, they also tend to be technically riskier.&lt;/p&gt;
 &lt;span id="emacsway-xp-balancing-business-technical-concerns"/&gt;&lt;h4&gt;&lt;a class="toc-backref" href="#id15"&gt;Extreme Programming&lt;/a&gt;&lt;/h4&gt;
 &lt;div class="section" id="xp"&gt;
 &lt;span id="emacsway-xp1-balancing-business-technical-concerns"/&gt;&lt;h5&gt;&lt;a class="toc-backref" href="#id16"&gt;Первая версия XP&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;Решение этой проблемы хорошо описано в главе "Chapter 14. Splitting Business and Technical Responsibility" книги "Extreme Programming Explained" 1st edition by Kent Beck.
+Решение слишком объемное, чтобы поместить его сюда полностью, поэтому, я приведу только ключевые его моменты.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div&gt;&lt;p&gt;📝 "Что делать?&lt;/p&gt;
 &lt;p&gt;Решение состоит в том, чтобы определенным образом &lt;strong&gt;разделить полномочия и ответственность между бизнесом и разработчиками&lt;/strong&gt;.
