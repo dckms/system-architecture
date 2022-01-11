@@ -11,3 +11,4 @@ Requirements in Agile
    /emacsway/it/sdlc/models/agile/analysis/requirements/nonfunctional-requirements
    /emacsway/it/sdlc/models/agile/analysis/requirements/documenting
    /emacsway/it/sdlc/models/agile/analysis/requirements/requirements-criteria
+   /emacsway/it/sdlc/models/agile/analysis/requirements/balancing-business-technical-concerns

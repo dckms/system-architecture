@@ -160,7 +160,9 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
     -- "`Extreme Programming <https://martinfowler.com/bliki/ExtremeProgramming.html>`__" by Martin Fowler
 
 
-.. _emacsway-agile-development-difficulties:
+.. index::
+   single: Agile Development; difficulties
+   :name: emacsway-agile-development-difficulties
 
 О сложностях
 ============
@@ -262,5 +264,6 @@ Impossible. Точка.
    - ":ref:`emacsway-adaptation`"
    - ":ref:`emacsway-prediction`"
    - ":ref:`emacsway-balancing-prediction-adaptation`"
+   - ":ref:`emacsway-agile-business-concerns-predominance`"
    - ":doc:`../../uncertainty-management/adaptation/software-design/software-design`"
    - ":doc:`../../uncertainty-management/adaptation/crash-course-in-software-development-economics`"
