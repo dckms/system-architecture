@@ -106,7 +106,7 @@
 
 Вообще говоря, в хорошо отлаженных процессах технические задачи возникают редко.
 
-Задачи на Modifiability возникают редко, потому что существуют методики для того, чтобы снизить "`Design Payoff Line <https://martinfowler.com/bliki/DesignPayoffLine.html>`__" и минимизировать в краткосрочной перспективе стоимость решения:
+Задачи на Modifiability возникают редко, потому что существуют методики для того, чтобы сгладить по времени "`Design Payoff Line <https://martinfowler.com/bliki/DesignPayoffLine.html>`__" и минимизировать в краткосрочной перспективе стоимость решения:
 
 - "`TechnicalDebt <https://martinfowler.com/bliki/TechnicalDebt.html>`__" by Martin Fowler
 - "`Yagni <https://martinfowler.com/bliki/Yagni.html>`__" by Martin Fowler
