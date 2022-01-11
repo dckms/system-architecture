@@ -219,6 +219,31 @@ Kent Beck
 
     -- Kent Beck at "Refactoring: Improving the Design of Existing Code" 1st edition by Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts
 
+..
+
+    📝 "Solution Complexity
+
+    Sometimes systems grow big and complicated, out of proportion to the problem they solve.
+    The challenge is to stop making the problem worse.
+    It is difficult for a struggling team to keep going when every defect fixed creates three more.
+    XP can help.
+
+    One client began by getting the build process under control.
+    The team improved the build so instead of taking 24 hours on a dedicated machine with lots of manual intervention, the build took an hour and could run completely automatically on any machine.
+    Then, the team instituted stories and a story board so everyone knew who was working on what and how long they were taking.
+    After two years of steady improvement the team reduced costs 60%, going from seventy engineers to twenty; reduced the time to fix defects 66%; and reduced the time to release for major and minor point releases by 75%, from ten weeks to two weeks.
+    Once the team had stopped digging itself in deeper, it began to climb out by eliminating excess complexity while also fixing defects.
+
+    The XP strategy for dealing with excess complexity is always the same: chip away at the complexity while continuing to deliver.
+    Brighten the corner where you are.
+    If you are fixing a defect in an area, clean up while you are there.
+    One objection is that this "extra" cleanup takes too long.
+    The team is likely wasting time on interruptions to fix defects.
+    Cleaning up helps reduce the overhead of work.
+    Visible planning can make it easier for every one to see where the time is already going so it is easier to accept the estimates necessary to do the job right."
+
+    -- "Extreme Programming Explained" 2nd edition by Kent Beck, "Chapter 15. Scaling XP :: Solution Complexity"
+
 
 Martin Fowler
 -------------

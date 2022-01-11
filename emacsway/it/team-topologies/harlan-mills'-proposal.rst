@@ -262,11 +262,14 @@ Spotify
 
 Даже в Spotify существует такой "опорный скелет":
 
-    📝 "At Spotify there is a separate operations team, but their job is not to make releases for the squads -­ their job is to give the squads the support they need to release code themselves; support in the form of infrastructure, scripts, and routines. They are, in a sense, "building the road to production".
+    📝 "At Spotify there is a separate operations team, but their job is not to make releases for the squads -­ their job is to give the squads the support they need to release code themselves; support in the form of infrastructure, scripts, and routines.
+    They are, in a sense, "building the road to production".
 
     <...>
 
-    We also have a chief architect role, a person who coordinates work on high-­level architectural issues that cut across multiple systems. He reviews development of new systems to make sure they avoid common mistakes, and that they are aligned with our architectural vision. The feedback is always just suggestions and input -­ the decision for the final design of the system still lies with the squad building it."
+    We also have a chief architect role, a person who coordinates work on high-­level architectural issues that cut across multiple systems.
+    He reviews development of new systems to make sure they avoid common mistakes, and that they are aligned with our architectural vision.
+    The feedback is always just suggestions and input -­ the decision for the final design of the system still lies with the squad building it."
 
     -- "`Scaling Agile @ Spotify with Tribes, Squads, Chapters & Guilds <https://www.scrumatscale.com/wp-content/uploads/2020/09/S@S_Spotify_Scaling.pdf>`__" by Henrik Kniberg & Anders Ivarsson, Oct 2012
 
@@ -284,7 +287,8 @@ Agile Software Requirements: Lean Requirements Practices for Teams, Programs, an
     In these cases, the local architecture (that of the component, service, or feature that the team is accountable for) is most often determined by the local teams in a collaborative model.
     In this way, it can be said that "architecture emerges" from the activities of those teams.
 
-    At the system level, however, **architecture is often coordinated among system architects and business analysts who are responsible for determining the overall structure (components and services) of the system**, as well as the system-level use cases and performance criteria that are to be imposed on the system as a whole. For this reason, it is likely that the **agile team has a key interface to one or more architects who may live outside the team**.
+    At the system level, however, **architecture is often coordinated among system architects and business analysts who are responsible for determining the overall structure (components and services) of the system**, as well as the system-level use cases and performance criteria that are to be imposed on the system as a whole.
+    For this reason, it is likely that the **agile team has a key interface to one or more architects who may live outside the team**.
     (We'll discuss this in depth in Chapter 20.)
 
     <...>
@@ -342,15 +346,21 @@ Scaled Agile Framework (SAFe)
 - "`Architectural Runway <https://www.scaledagileframework.com/architectural-runway/>`__"
 - "`Agile Architecture in SAFe <https://www.scaledagileframework.com/agile-architecture/>`__"
 
-    📝 "The second dimension of the team and technical agility competency is teams of Agile teams. Even with good, local execution, building enterprise-class solutions typically requires more scope and breadth of skills than a single Agile team can provide. Therefore, Agile teams operate in the context of an ART, which is a long-lived team of Agile teams. The ART incrementally develops, delivers, and (where applicable) operates one or more solutions (Figure 6-5)."
+    📝 "The second dimension of the team and technical agility competency is teams of Agile teams.
+    Even with good, local execution, building enterprise-class solutions typically requires more scope and breadth of skills than a single Agile team can provide.
+    Therefore, Agile teams operate in the context of an ART, which is a long-lived team of Agile teams.
+    The ART incrementally develops, delivers, and (where applicable) operates one or more solutions (Figure 6-5)."
 
-    📝 "System Architect/Engineering is an individual or team that defines the overall architecture of the system. They work at a level of abstraction above the teams and components and define Non-Functional Requirements (NFRs), major system elements, subsystems, and interfaces."
+    📝 "System Architect/Engineering is an individual or team that defines the overall architecture of the system.
+    They work at a level of abstraction above the teams and components and define Non-Functional Requirements (NFRs), major system elements, subsystems, and interfaces."
 
-    📝 "System Teams typically assist in building and supporting DevOps infrastructure for development, continuous integration, automated testing, and deployment into the staging environment. In larger systems they may do end-to-end testing, which cannot be readily accomplished by individual Agile teams."
+    📝 "System Teams typically assist in building and supporting DevOps infrastructure for development, continuous integration, automated testing, and deployment into the staging environment.
+    In larger systems they may do end-to-end testing, which cannot be readily accomplished by individual Agile teams."
 
     📝 "Shared Services are specialists—for example, data security, information architects, Database Administrators (DBAs)—who are necessary for the success of an ART but cannot be dedicated to a specific train."
 
-    📝 "With the right architecture, elements of the system may be released independently. Figure 8-8 illustrates an autonomous delivery system that was architected to enable system elements to be released independently."
+    📝 "With the right architecture, elements of the system may be released independently.
+    Figure 8-8 illustrates an autonomous delivery system that was architected to enable system elements to be released independently."
 
     📝 "Figure 8-8. Architecture impacts the ability to release system elements independently"
 
@@ -365,7 +375,7 @@ Scaled Agile Framework (SAFe)
 Книга достаточно грамотная, и затрагивает острые вопросы интеграции аналитической и архитектурной активности в Agile-разработку.
 В общем, если вы где-то услышите фразу "Architecture vs. Agile", то самое время вспомнить об этой книге.
 
-- "`A Lean and Scalable Requirements Information Model for the Agile Enterprise <https://scalingsoftwareagility.files.wordpress.com/2007/03/a-lean-and-scalable-requirements-information-model-for-agile-enterprises-pdf.pdf>`__" by Dean Leffingwell with Juha‐Markus Aalto 
+- "`A Lean and Scalable Requirements Information Model for the Agile Enterprise <https://scalingsoftwareagility.files.wordpress.com/2007/03/a-lean-and-scalable-requirements-information-model-for-agile-enterprises-pdf.pdf>`__" by Dean Leffingwell with Juha‐Markus Aalto
 
 
 Disciplined agile delivery (DAD)
@@ -423,7 +433,11 @@ Nexus
 
 В статье много лестных отзывов о Program Kanban:
 
-    📝 "Program Kanban. SAFe includes one of the most powerful techniques to help improve flow and collaboration across a team of teams - a Kanban Board that takes a cross-team perspective. I started using this technique back in 2009 and it's one I "don't leave home without". Nexus doesn't include a Nexus-level Kanban board but it's a very nice complementary practice to consider. `Read more here <https://www.scrum.org/resources/blog/scaling-scrum-nexus-and-kanban>`__"
+    📝 "Program Kanban.
+    SAFe includes one of the most powerful techniques to help improve flow and collaboration across a team of teams - a Kanban Board that takes a cross-team perspective.
+    I started using this technique back in 2009 and it's one I "don't leave home without".
+    Nexus doesn't include a Nexus-level Kanban board but it's a very nice complementary practice to consider.
+    `Read more here <https://www.scrum.org/resources/blog/scaling-scrum-nexus-and-kanban>`__"
 
     -- "`Comparing Nexus and SAFe - Similarities, Differences, potential synergies <https://www.scrum.org/resources/blog/comparing-nexus-and-safe-similarities-differences-potential-synergies>`__" by Yuval Yeret
 
@@ -437,6 +451,44 @@ Nexus
 
 - "`Six SAFe Practices for S-Sized Teams <https://www.scaledagileframework.com/guidance-six-safe-practices-for-s-sized-teams/>`__" by Juha-Markus Aalto, Director Product Development, Qentinel Group
 - "`Essential SAFe <https://www.scaledagileframework.com/essential-safe/>`__"
+
+
+Extreme Programming
+-------------------
+
+    📝 "With awareness and appropriate adaptations, **XP does scale**.
+    Some problems can be simplified to be easily handled by a small XP team.
+    For others, XP must be augmented.
+    The basic values and principles apply at all scales.
+    The practices can be modified to suit your situation."
+
+    -- "Extreme Programming Explained" 2nd edition by Kent Beck, "Chapter 15. Scaling XP :: Conclusion"
+
+Во втором издании "Extreme Programming Explained", Kent Beck предлагает механизм масштабирования команд, который в точности реализует Program Management на основе :ref:`Harlan Mills' Proposal <emacsway-harlan-mills'-proposal>`.
+
+    📝 "Creating and maintaining a community of one hundred is a much different job than creating and maintaining a community of twelve, but it is done all the time."
+
+    -- "Extreme Programming Explained" 2nd edition by Kent Beck, "Chapter 15. Scaling XP"
+
+..
+
+    📝 "If just using a smaller team doesn't work, turn the big programming problem into several smaller problems, each solvable by a small team.
+    First solve a small part of the problem with a small team.
+    Then divide the system along its natural fracture lines and begin working on it with a few teams.
+    **Partitioning introduces the risk that the pieces won't fit on integration, so integrate frequently to reconcile differing assumptions between teams.**
+    This is a conquer-and-divide strategy instead of a divide-and-conquer strategy.
+    Sabre Airline Solutions, profiled in the next chapter, uses this strategy extensively.
+
+    The goal of conquer-and-divide is **to have teams that can each be managed as if they are the only team to limit coordination costs**.
+    Even so, the whole **system needs to be integrated frequently**.
+    The occasional exceptions to this illusion of independence are managed as exceptions.
+    **If the exceptions become the norm and the teams have to spend too much time coordinating, look to the system to see if there are ways of restructuring it to return the teams to independence.**
+    **Only if this fails is the overhead of large-project management appropriate.**
+
+    In summary, faced with the apparent need for a large team, first ask if a small team can solve the problem.
+    If that doesn't work, **begin the project with a small team, then split the work among autonomous teams.**"
+
+    -- "Extreme Programming Explained" 2nd edition by Kent Beck, "Chapter 15. Scaling XP :: Number of People"
 
 
 Scrum of Scrums
