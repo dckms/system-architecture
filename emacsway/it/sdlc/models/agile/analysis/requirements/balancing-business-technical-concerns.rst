@@ -315,6 +315,23 @@ Extreme Programming
 
     -- "Extreme Programming Explained" 2nd edition by Kent Beck
 
+Кроме того, во втором издании Kent Beck упоминает книгу "Joint Application Development", и сопровождает её таким комментарием:
+
+    📝 "Annotated Bibliography
+
+    Reading a wide range of books around a topic adds to the richness of my understanding. Here are a few suggestions for interesting reading on ideas related to XP."
+
+    -- "Extreme Programming Explained" 2nd edition by Kent Beck, "Annotated Bibliography :: Project Management"
+
+..
+
+    📝 "Jane Wood and Denise Silver , Joint Application Development, 2nd edition, John Wiley and Sons, 1995; ISBN 0471042994. 
+
+    JAD facilitators facilitate without directing, give power to people who know best how to make a decision, and eventually fade away.
+    **JAD is focused on creating a requirements document that the developers and customers agree can and should be implemented.**"
+
+    -- "Extreme Programming Explained" 2nd edition by Kent Beck, "Annotated Bibliography :: Project Management"
+
 
 .. index::
    single: Requirements; in balancing business and technical concerns in Scrum
