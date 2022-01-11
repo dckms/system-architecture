@@ -59,42 +59,55 @@
             
     
   <div class="section" id="emacsway-agile-balancing-business-technical-concerns">
-<span id="id1"></span><h1><a class="toc-backref" href="#id10">Достижение баланса Бизнес/Технических интересов</a><a class="headerlink" href="#emacsway-agile-balancing-business-technical-concerns" title="Ссылка на этот заголовок">¶</a></h1>
+<span id="id1"></span><h1><a class="toc-backref" href="#id11">Достижение баланса Бизнес/Технических интересов</a><a class="headerlink" href="#emacsway-agile-balancing-business-technical-concerns" title="Ссылка на этот заголовок">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
 <div class="contents topic" id="id2">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#emacsway-agile-balancing-business-technical-concerns" id="id10">Достижение баланса Бизнес/Технических интересов</a></p>
+<li><p><a class="reference internal" href="#emacsway-agile-balancing-business-technical-concerns" id="id11">Достижение баланса Бизнес/Технических интересов</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id3" id="id11">Поиск баланса</a></p>
+<li><p><a class="reference internal" href="#id3" id="id12">Поиск баланса</a></p>
 <ul>
-<li><p><a class="reference internal" href="#emacsway-agile-technical-concerns-predominance" id="id12">Преобладание технических интересов</a></p></li>
-<li><p><a class="reference internal" href="#emacsway-agile-business-concerns-predominance" id="id13">Преобладание бизнес-интересов</a></p></li>
-<li><p><a class="reference internal" href="#emacsway-agile-solution-of-balancing-business-technical-concerns" id="id14">Решение</a></p>
+<li><p><a class="reference internal" href="#emacsway-agile-technical-concerns-predominance" id="id13">Преобладание технических интересов</a></p></li>
+<li><p><a class="reference internal" href="#emacsway-agile-business-concerns-predominance" id="id14">Преобладание бизнес-интересов</a></p></li>
+<li><p><a class="reference internal" href="#emacsway-agile-solution-of-balancing-business-technical-concerns" id="id15">Решение</a></p>
 <ul>
-<li><p><a class="reference internal" href="#extreme-programming" id="id15">Extreme Programming</a></p>
+<li><p><a class="reference internal" href="#extreme-programming" id="id16">Extreme Programming</a></p>
 <ul>
-<li><p><a class="reference internal" href="#xp" id="id16">Первая версия XP</a></p></li>
-<li><p><a class="reference internal" href="#emacsway-xp2-balancing-business-technical-concerns" id="id17">Вторая версия XP</a></p></li>
+<li><p><a class="reference internal" href="#xp" id="id17">Первая версия XP</a></p></li>
+<li><p><a class="reference internal" href="#emacsway-xp2-balancing-business-technical-concerns" id="id18">Вторая версия XP</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#scrum" id="id18">Scrum</a></p>
+<li><p><a class="reference internal" href="#scrum" id="id19">Scrum</a></p>
 <ul>
-<li><p><a class="reference internal" href="#the-scrum-guide" id="id19">The Scrum Guide™</a></p></li>
-<li><p><a class="reference internal" href="#id8" id="id20">Суть от первоисточника</a></p></li>
+<li><p><a class="reference internal" href="#the-scrum-guide" id="id20">The Scrum Guide™</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id21">К первоисточнику за сутью</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#atam-in-agile" id="id22">ATAM in Agile</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-</li>
+<li><p><a class="reference internal" href="#id9" id="id23">Психологическая сторона вопроса</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <p>Существует довольно распространенная проблема поиска баланса между краткосрочными бизнес-интересами и долгосрочными техническими интересами проекта.</p>
+<blockquote>
+<div><p>📝 &quot;Краткосрочные индивидуальные цели часто конфликтуют с долгосрочными социальными целями.
+Общество решает эту проблему при помощи набора ценностей, подкрепленных мифами, ритуалами, наказаниями и наградами.
+Без уважения к этим ценностям люди забывают о социальных нуждах и стремятся реализовать свой собственный индивидуальный краткосрочный интерес.
+Четыре ценности для ХР — это: коммуникация (communication), простота (simplicity), обратная связь (feedback), храбрость (courage).</p>
+<p>Short-term individual goals often conflict with long-term social goals.
+Societies have learned to deal with this problem by developing shared sets of values, backed up by myths, rituals, punishments, and rewards.
+Without these values, humans tend to revert to their own short-term best interest.
+The four values of XP are: Communication, Simplicity, Feedback, Courage.&quot;</p>
+<p class="attribution">—&quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 7. Four Values&quot;, перевод ООО Издательство &quot;Питер&quot;</p>
+</div></blockquote>
 <div class="section" id="id3">
-<h2><a class="toc-backref" href="#id11">Поиск баланса</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Поиск баланса</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
 <p>В первой версии XP управление разработкой осуществлялось посредством четырех переменных:</p>
 <ul class="simple">
 <li><p>затраты (cost)</p></li>
@@ -116,7 +129,7 @@ The project must be driven by business decisions, but the business decisions mus
 <p class="attribution">—&quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 14. Splitting Business and Technical Responsibility&quot;, перевод ООО Издательство &quot;Питер&quot;</p>
 </div></blockquote>
 <div class="section" id="emacsway-agile-technical-concerns-predominance">
-<span id="id4"></span><h3><a class="toc-backref" href="#id12">Преобладание технических интересов</a><a class="headerlink" href="#emacsway-agile-technical-concerns-predominance" title="Ссылка на этот заголовок">¶</a></h3>
+<span id="id4"></span><h3><a class="toc-backref" href="#id13">Преобладание технических интересов</a><a class="headerlink" href="#emacsway-agile-technical-concerns-predominance" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Начнем с преобладания технических интересов.</p>
 <p id="emacsway-second-system-effect">Frederick Brooks в своем бестселлере &quot;Мифический человеко-месяц&quot; говорит об &quot;<a class="reference external" href="https://ru.m.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%B2%D1%82%D0%BE%D1%80%D0%BE%D0%B9_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B">Эффекте второй системы</a>&quot;.
 Я приведу небольшой фрагмент:</p>
@@ -139,7 +152,16 @@ And the tools, languages, and technologies are chosen because they are interesti
 Cutting edge implies risk.
 (If we haven't learned that by now, when will we?)</p>
 <p>So, the net result of the &quot;Development in Charge&quot; scenario is too much effort and way, way <strong>too much risk for too little return</strong>.&quot;</p>
-<p class="attribution">—&quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, перевод ООО Издательство &quot;Питер&quot;</p>
+<p class="attribution">—&quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 14. Splitting Business and Technical Responsibility&quot;, перевод ООО Издательство &quot;Питер&quot;</p>
+</div></blockquote>
+<blockquote>
+<div><p>📝 &quot;Программист является сердцем ХР.
+На самом деле если бы программисты могли всегда принимать решения, в которых тщательно балансировались краткосрочные и долгосрочные приоритеты, в рамках проекта не нужны были бы никакие другие технические работники, кроме программистов.
+Конечно же если заказчику не требуется программное обеспечение для того, чтобы поддерживать функционирование бизнеса, то никакой надобности в программистах не было бы.</p>
+<p>The programmer is the heart of XP.
+Actually, if programmers could always make decisions that carefully balanced short-term and long-term priorities, there would be no need for any other technical people on the project besides programmers.
+Of course, if the customer didn't absolutely need software to keep the business running, there would be no need for the programmers, so it won't do to get too big-headed about being the vital programmer.&quot;</p>
+<p class="attribution">—&quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 22. Roles for People&quot;, перевод ООО Издательство &quot;Питер&quot;</p>
 </div></blockquote>
 <blockquote>
 <div><p>📝 &quot;Есть масса примеров, подсказанных другими искусствами и ремеслами, которые
@@ -167,10 +189,10 @@ In an unconstrained implementing group, most thought and debate goes into archit
 <p>К этой же категории относится и т.н. Resume-Driven Development, когда разработчики безобоснованно переусложняют проект сложными технологиями ради достижения в резюме.</p>
 </div>
 <div class="section" id="emacsway-agile-business-concerns-predominance">
-<span id="id5"></span><h3><a class="toc-backref" href="#id13">Преобладание бизнес-интересов</a><a class="headerlink" href="#emacsway-agile-business-concerns-predominance" title="Ссылка на этот заголовок">¶</a></h3>
+<span id="id5"></span><h3><a class="toc-backref" href="#id14">Преобладание бизнес-интересов</a><a class="headerlink" href="#emacsway-agile-business-concerns-predominance" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Но есть и обратная проблема - когда технические специалисты ущемлены в своих полномочиях в пользу представителей бизнеса, проект неизменно загнивает, а <a class="reference internal" href="../../agile.html#emacsway-agile-development-difficulties"><span class="std std-ref">экономика разработки деградирует с зависимостью, приближенной к экспоненциальной</span></a>.</p>
 <blockquote>
-<div><p>📝 &quot;Когда бизнесмены получают слишком много полномочий, они начинают диктовать разработчиком значения для всех четырех переменных.
+<div><p>📝 &quot;Когда бизнесмены получают слишком много полномочий, они начинают диктовать разработчикам значения для всех четырех переменных.
 &quot;Вот то, что ты должен сделать.
 Это должно быть сделано тогда-то и тогда-то.
 Нет, тебе не дадут ни одной дополнительной рабочей станции.
@@ -199,7 +221,7 @@ So Development dutifully goes to work, heads down, on the impossible task they h
 <p>It seems to be in the nature of the less important requirements that they entail the greatest risk.
 They are typically the poorest understood, so there is great risk that the requirements will change all during development.
 Somehow, they also tend to be technically riskier.</p>
-<p><strong>The result of the &quot;Business in Charge&quot; scenario, then, is that the project takes on too much effort and way, way too much risk for :ref:too little return</strong> &lt;emacsway-agile-development-difficulties&gt;`.&quot;</p>
+<p><strong>The result of the &quot;Business in Charge&quot; scenario, then, is that the project takes on too much effort and way, way too much risk for</strong> <a class="reference internal" href="../../agile.html#emacsway-agile-development-difficulties"><span class="std std-ref">too little return</span></a>.&quot;</p>
 <p class="attribution">—&quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 14. Splitting Business and Technical Responsibility&quot;, перевод ООО Издательство &quot;Питер&quot;</p>
 </div></blockquote>
 <blockquote>
@@ -213,11 +235,18 @@ Somehow, they also tend to be technically riskier.</p>
 </div></blockquote>
 </div>
 <div class="section" id="emacsway-agile-solution-of-balancing-business-technical-concerns">
-<span id="id6"></span><h3><a class="toc-backref" href="#id14">Решение</a><a class="headerlink" href="#emacsway-agile-solution-of-balancing-business-technical-concerns" title="Ссылка на этот заголовок">¶</a></h3>
+<span id="id6"></span><h3><a class="toc-backref" href="#id15">Решение</a><a class="headerlink" href="#emacsway-agile-solution-of-balancing-business-technical-concerns" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Хорошая организация процессов должна взаимокомпенсировать эти перекосы.</p>
+<p>Разрешение противоречий требований различных групп стейкхолдеров хорошо изучены анализом и архитектурой.
+Существует целый ряд достаточно зрелых методик, направленных на достижение сбалансированных решений.
+Четвертое издание книги &quot;Software Architecture in Practice&quot; 4th edition by Len Bass, Paul Clements, Rick Kazman наглядно демонстрирует, как их интегрировать в итеративную (agile) разработку.</p>
+<p>Появились легковесные варианты этих методик: Lightweight Architecture Evaluation (LAE), Mini-QAW etc.
+Многие из этих методик описаны в &quot;<a class="reference external" href="https://www.iso.org/standard/73436.html">ISO/IEC/IEEE 42030:2019 Software, systems and enterprise — Architecture evaluation framework</a>&quot;.</p>
+<p>Однако, легковесные реализации agile-модели разработки предлагают свои, предельно упрощенные, процессы достижения баланса между краткосрочными бизнес-интересами и долгосрочными техническими интересами.</p>
 <div class="section" id="extreme-programming">
-<span id="emacsway-xp-balancing-business-technical-concerns"></span><h4><a class="toc-backref" href="#id15">Extreme Programming</a><a class="headerlink" href="#extreme-programming" title="Ссылка на этот заголовок">¶</a></h4>
+<span id="emacsway-xp-balancing-business-technical-concerns"></span><h4><a class="toc-backref" href="#id16">Extreme Programming</a><a class="headerlink" href="#extreme-programming" title="Ссылка на этот заголовок">¶</a></h4>
 <div class="section" id="xp">
-<span id="emacsway-xp1-balancing-business-technical-concerns"></span><h5><a class="toc-backref" href="#id16">Первая версия XP</a><a class="headerlink" href="#xp" title="Ссылка на этот заголовок">¶</a></h5>
+<span id="emacsway-xp1-balancing-business-technical-concerns"></span><h5><a class="toc-backref" href="#id17">Первая версия XP</a><a class="headerlink" href="#xp" title="Ссылка на этот заголовок">¶</a></h5>
 <p>Решение этой проблемы хорошо описано в главе &quot;Chapter 14. Splitting Business and Technical Responsibility&quot; книги &quot;Extreme Programming Explained&quot; 1st edition by Kent Beck.
 Решение слишком объемное, чтобы поместить его сюда полностью, поэтому, я приведу только ключевые его моменты.</p>
 <blockquote>
@@ -275,7 +304,7 @@ If they don't like the result implied for the fourth variable, they can change t
 </div></blockquote>
 </div>
 <div class="section" id="emacsway-xp2-balancing-business-technical-concerns">
-<span id="id7"></span><h5><a class="toc-backref" href="#id17">Вторая версия XP</a><a class="headerlink" href="#emacsway-xp2-balancing-business-technical-concerns" title="Ссылка на этот заголовок">¶</a></h5>
+<span id="id7"></span><h5><a class="toc-backref" href="#id18">Вторая версия XP</a><a class="headerlink" href="#emacsway-xp2-balancing-business-technical-concerns" title="Ссылка на этот заголовок">¶</a></h5>
 <p>Сам же Kent Beck и преобразовал позже квадрат (Quality, Cost, Time, Scope) в треугольник (Cost, Time, Scope), путем преобразования качества (Quality) из переменной в константу.</p>
 <p>Если в первой версии XP он боролся за то, чтобы качество (или хотя бы любую одну из 4-х переменных контроля разработки) контролировали технические специалисты, то во второй версии он и вовсе преобразовал качество в константу.</p>
 <p>Вот что он пишет во втором издании:</p>
@@ -307,17 +336,54 @@ This often occurs during architectural evolution, where you have to live with tw
 Then the transition itself becomes a demonstration of quality: making a big change efficiently in small, safe steps.&quot;</p>
 <p class="attribution">—&quot;Extreme Programming Explained&quot; 2nd edition by Kent Beck</p>
 </div></blockquote>
+<p>Кроме того, во втором издании Kent Beck упоминает книгу &quot;Joint Application Development&quot;, и сопровождает её таким комментарием:</p>
+<blockquote>
+<div><p>📝 &quot;Annotated Bibliography</p>
+<p>Reading a wide range of books around a topic adds to the richness of my understanding. Here are a few suggestions for interesting reading on ideas related to XP.&quot;</p>
+<p class="attribution">—&quot;Extreme Programming Explained&quot; 2nd edition by Kent Beck, &quot;Annotated Bibliography :: Project Management&quot;</p>
+</div></blockquote>
+<blockquote>
+<div><p>📝 &quot;Jane Wood and Denise Silver , Joint Application Development, 2nd edition, John Wiley and Sons, 1995; ISBN 0471042994.</p>
+<p>JAD facilitators facilitate without directing, give power to people who know best how to make a decision, and eventually fade away.
+<strong>JAD is focused on creating a requirements document that the developers and customers agree can and should be implemented.</strong>&quot;</p>
+<p class="attribution">—&quot;Extreme Programming Explained&quot; 2nd edition by Kent Beck, &quot;Annotated Bibliography :: Project Management&quot;</p>
+</div></blockquote>
+<blockquote>
+<div><p>📝 &quot;The facilitated <strong>JAD workshop brings key users (stakeholders) and systems professionals together to resolve their differences in a neutral, non-hostile atmosphere</strong>.
+<strong>Key to the workshop is a specially trained, unbiased facilitator who is not a member of the project team and therefore has no political stake in the outcome of the workshop.</strong>
+The workshop will build a team that will stay together, psychologically at least, for the life of the project.</p>
+<p>&lt;...&gt;</p>
+<p>The Key Players</p>
+<ol class="arabic simple">
+<li><p>The Facilitator</p></li>
+</ol>
+<p>The facilitator is in charge of the workshop - the guardian of the process.
+It is the facilitator's responsibility to ensure that the expected workshop deliverables are produced and the expected consensus is achieved.
+The facilitator is an unbiased leader who has no ties to the project.
+He can come from some other department or from outside the company.
+Some companies are training facilitators who work out of a facilitation center attached to the human resources department.
+&quot;</p>
+<p class="attribution">—&quot;<a class="reference external" href="https://web.archive.org/web/20090221042620/http://www.bee.net/bluebird/jaddoc.htm">Joint Application Design. Business Requirements Analysis for Successful Re-engineering</a>&quot; by Bill Jennerich</p>
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="scrum">
-<span id="emacsway-scrum-balancing-business-technical-concerns"></span><h4><a class="toc-backref" href="#id18">Scrum</a><a class="headerlink" href="#scrum" title="Ссылка на этот заголовок">¶</a></h4>
+<span id="emacsway-scrum-balancing-business-technical-concerns"></span><h4><a class="toc-backref" href="#id19">Scrum</a><a class="headerlink" href="#scrum" title="Ссылка на этот заголовок">¶</a></h4>
 <div class="section" id="the-scrum-guide">
-<h5><a class="toc-backref" href="#id19">The Scrum Guide™</a><a class="headerlink" href="#the-scrum-guide" title="Ссылка на этот заголовок">¶</a></h5>
-<p>Ответственен ли Product Owner за финансовую успешность продукта?</p>
-<p>Официальный &quot;The 2020 Scrum Guide™&quot; обязывает его в &quot;<em>maximizing the value of the product</em>&quot;.
+<h5><a class="toc-backref" href="#id20">The Scrum Guide™</a><a class="headerlink" href="#the-scrum-guide" title="Ссылка на этот заголовок">¶</a></h5>
+<p>Dean Leffingwell возлагает на Product Owner обязанность по разрешению противоречий требований:</p>
+<blockquote>
+<div><p>📝 &quot;Each project stakeholder will have their own vision, requirements, and priorities. As the primary representative to all those stakeholders, this provides a particular challenge to product owners—because all those requirements must be aligned and expectations must be managed toward a single solution.</p>
+<p><strong>The product owner's primary job is to merge these diverse stakeholder voices into a single prioritized backlog for the team.</strong>
+They can do this by facilitating or leading, or some appropriate mix of each.&quot;</p>
+<p class="attribution">—&quot;Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise&quot; by Dean Leffingwell</p>
+</div></blockquote>
+<p>Но обладает ли Product Owner достаточным нейтралитетом для этого, или же он сам находится в сфере интересов одной из групп стейкхолдеров?
+Ответственнен ли он за финансовую успешность продукта?</p>
+<p>Официальный &quot;The 2020 Scrum Guide™&quot; возлагает на Product Owner обязанность по &quot;<em>maximizing the value of the product</em>&quot;.
 Слово &quot;value&quot; - полисемантическое, которое слишком часто встречается в тексте гайда, в т.ч. и в обязанностях Scrum Master и Scrum Team.
 Из гайда установить значение этого слова весьма затруднительно.</p>
-<p>Из других источников можно сделать вывод, что ответственнен, по крайней мере, был ответственным, ибо в 2020 году модель ролей существенно изменилась, и, вероятно, еще продолжит меняться.</p>
+<p>Из других источников можно сделать вывод о том, что ответственнен, по крайней мере, был ответственным, ибо в 2020 году модель ролей существенно изменилась, и, вероятно, еще продолжит меняться.</p>
 <blockquote>
 <div><p>📝 &quot;The Product Owner is responsible to those funding the project for delivering the vision in a manner that maximizes their ROI.
 &lt;...&gt;
@@ -347,20 +413,29 @@ I measure a Product Owner by how much revenue they deliver per &quot;point&quot;
 </ol>
 </div></blockquote>
 <p>Какие выводы можно сделать?</p>
-<p>С точки зрения архитектуры, Product Owner становится заинтересованным лицом и теряет нейтральность своей позиции, а значит, в силу когнитивных искажений и давления обстоятельств, он всегда будет предвзят, и будет руководствоваться краткосрочными бизнес-интересами в ущерб долгосрочным техническим, если только не обладает развитым <a class="reference internal" href="business-concerns/common-planning-errors.html#emacsway-planning-technical-task"><span class="std std-ref">системным мышлением и волей</span></a>.</p>
+<p>С точки зрения архитектуры, Product Owner становится заинтересованным лицом и теряет нейтралитет своей позиции, а значит, в силу когнитивных искажений и давления обстоятельств, он всегда будет предвзят, и будет руководствоваться краткосрочными бизнес-интересами в ущерб долгосрочным техническим, если только не обладает развитым <a class="reference internal" href="business-concerns/common-planning-errors.html#emacsway-planning-technical-task"><span class="std std-ref">системным мышлением и волей</span></a>.</p>
 <p>Ну а поскольку никаких методик разрешения противоречий требований стейкхолдеров Scrum не предлагает, то в ранней версии &quot;The 2011 Scrum Guide™&quot; этот конфликт разрешался тем, что Product Owner не мог навязывать конкретную реализацию, оставляя переменную управления разработкой Quality на усмотрение разработчиков, <a class="reference internal" href="#emacsway-xp1-balancing-business-technical-concerns"><span class="std std-ref">как и в XP1</span></a>:</p>
 <blockquote>
 <div><p>📝 &quot;They [The Development Team] are self-organizing.
 No one (not even the Scrum Master) tells the Development Team how to turn Product Backlog into Increments of potentially releasable functionality;&quot;</p>
 <p class="attribution">—&quot;The 2011 Scrum Guide™&quot;</p>
 </div></blockquote>
-<p>Именно об этом говорит Jeffrey Sutherland в высказывании, которое приводится ниже по тексту.</p>
+<p>Именно об этом говорит Jeffrey Sutherland в высказывании, к которому мы скоро вернемся.</p>
 <p>А вот в гайде 2020 года это звучит уже так:</p>
 <blockquote>
 <div><p>📝 &quot;They [Scrum Team] are also self-managing, meaning they internally decide who does what, when, and how.&quot;</p>
 <p class="attribution">—&quot;<a class="reference external" href="https://scrumguides.org/scrum-guide.html">The 2020 Scrum Guide™</a>&quot;</p>
 </div></blockquote>
-<p>, где Scrum Team уже включает в себя и Product Owner тоже, что вносит путаницу в распределение обязанностей, так как получается, что Product Owner может влиять на реализацию (how).</p>
+<p>, где Scrum Team уже включает в себя и Product Owner тоже, что вносит путаницу в распределение обязанностей, так как получается, что Product Owner может влиять на реализацию (how).
+Причем, сделано это было, как можно догадаться, из-за сложности достижения консенсуса между Product Owner и Development Teams:</p>
+<blockquote>
+<div><p>📝 &quot;One Team, Focused on One Product</p>
+<blockquote>
+<div><p>The goal was to eliminate the concept of a separate team within a team that has led to &quot;proxy&quot; or &quot;us and them&quot; behavior between the PO and Dev Team.
+There is now just one Scrum Team focused on the same objective, with three different sets of accountabilities: PO, SM, and Developers.&quot;</p>
+</div></blockquote>
+<p class="attribution">—&quot;<a class="reference external" href="https://scrumguides.org/revisions.html">Changes between 2017 and 2020 Scrum Guides</a>&quot;</p>
+</div></blockquote>
 <p>Однако, при этом Quality сделали константой, <a class="reference internal" href="#emacsway-xp2-balancing-business-technical-concerns"><span class="std std-ref">как и в XP2</span></a>:</p>
 <blockquote>
 <div><p>📝 &quot;During the Sprint: Quality does not decrease;&quot;</p>
@@ -403,7 +478,7 @@ and what has changed in their environment.&quot;</p>
 В больших коллективах лучше работают практики для работы со стейкхолдерами типа QAW, Mini-QAW, etc.</p>
 </div>
 <div class="section" id="id8">
-<h5><a class="toc-backref" href="#id20">Суть от первоисточника</a><a class="headerlink" href="#id8" title="Ссылка на этот заголовок">¶</a></h5>
+<h5><a class="toc-backref" href="#id21">К первоисточнику за сутью</a><a class="headerlink" href="#id8" title="Ссылка на этот заголовок">¶</a></h5>
 <p>Bertrand Meyer был прав - лучший способ понять суть вещей - это обратиться к первоисточнику.
 Jeffrey Sutherland о том, как и зачем он ввел роль Product Owner:</p>
 <blockquote>
@@ -450,9 +525,91 @@ They needed to spend half their time talking to the people buying the product (g
 The Product Owner is accountable for <strong>translating the team's productivity into value</strong>.&quot;</p>
 <p class="attribution">—&quot;Scrum: The Art of Doing Twice the Work in Half the Time&quot; by Jeffrey Sutherland</p>
 </div></blockquote>
-<p>P.S.: От себя добавлю, что я пробовал различные Agile-методологии, и XP - это единственное, что у нас работало эффективно, из числа non-scaled методик.</p>
 </div>
 </div>
+<div class="section" id="atam-in-agile">
+<h4><a class="toc-backref" href="#id22">ATAM in Agile</a><a class="headerlink" href="#atam-in-agile" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Использование ATAM в Agile-разработке (свободное скачивание):</p>
+<ul class="simple">
+<li><p>&quot;<a class="reference external" href="https://www.researchgate.net/publication/276317148_Insights_from_15_Years_of_ATAM_Data_Towards_Agile_Architecture">Insights from 15 Years of ATAM Data: Towards Agile Architecture</a>&quot; by Stephany Bellomo, Ian Gorton, and Rick Kazman, IEEE Software, September/October, 2015, 32:5, 38-45</p></li>
+</ul>
+<blockquote>
+<div><p>📝 &quot;Agile teams strive to <strong>balance short term feature development with longer term quality concerns</strong>.
+These evolutionary approaches often hit a &quot;complexity wall&quot; from the cumulative effects of unplanned changes, resulting in unreliable, poorly performing software.
+Consequently, there is renewed focus on approaches to address architectural concerns within the Agile community.
+We present an analysis of quality attribute concerns from 15 years of Architecture Trade-off Analysis Method data, gathered from 31 projects.
+We found that modifiability is the dominant concern across all project types; additionally there was considerable focus on performance, availability, and interoperability.
+For information technology projects, a relatively new quality—deployability—has emerged as a key concern.
+Our results provide insights for Agile teams allocating architecture-related tasks to iterations.
+For example they can use these results to create checklists for release planning or retrospectives to help assess whether a given quality should be addressed to support future needs.</p>
+<p>&lt;...&gt;</p>
+<p>One of the major challenges Agile teams face in building an architecture foundation is balancing the competing concerns of delivery of near-term functional requirements (based on the Agile philosophy of delivering user value early and often) and near and long term quality attribute goals (without which the project can grind to a halt as system complexity makes efficient modifications impossible).
+In particular, quality attribute (QA) prioritization can be especially difficult in early increments, and a wrong decision can have serious ramifications resulting in hard-to-modify, unreliable, slow, or insecure systems [5].</p>
+<ol class="arabic simple" start="5">
+<li><ol class="upperalpha simple" start="19">
+<li><p>Bellomo, R. Nord, and I. Ozkaya. A Study of Enabling Factors for Rapid Fielding; Combined Practices to Balance Tension between Speed and Stability Proceedings of International Conference on Software Engineering 2013.&quot;</p></li>
+</ol>
+</li>
+</ol>
+<p class="attribution">—&quot;<a class="reference external" href="https://www.researchgate.net/publication/276317148_Insights_from_15_Years_of_ATAM_Data_Towards_Agile_Architecture">Insights from 15 Years of ATAM Data: Towards Agile Architecture</a>&quot; by Stephany Bellomo, Ian Gorton, and Rick Kazman, IEEE Software, September/October, 2015</p>
+</div></blockquote>
+<p>Подробнее про ATAM можно узнать здесь:</p>
+<ul class="simple">
+<li><p>&quot;<a class="reference external" href="https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=5177">ATAM: Method for Architecture Evaluation</a>&quot; by  Rick Kazman, Mark H. Klein, Paul C. Clements (<a class="reference external" href="https://resources.sei.cmu.edu/asset_files/TechnicalReport/2000_005_001_13706.pdf">pdf</a>, <a class="reference external" href="https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=513908">collection</a>)</p></li>
+</ul>
+<p>Интересно, что обе эти статьи упоминаются в стандарте &quot;<a class="reference external" href="https://www.iso.org/standard/73436.html">ISO/IEC/IEEE 42030:2019 Software, systems and enterprise — Architecture evaluation framework</a>&quot;.</p>
+<p>Смотрите также статьи про Mini-QAW в Agile:</p>
+<ul class="simple">
+<li><p>&quot;<a class="reference external" href="https://re-magazine.ireb.org/articles/discover-quality-requirements-with-the-mini-qaw">Discover Quality Requirements with the Mini-QAW. A short and fun elicitation workshop for Agile teams and architects.</a>&quot; by Thijmen de Gooijer Michael Keeling Will Chaparro</p></li>
+<li><p>&quot;<a class="reference external" href="https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=4995">Quality Attribute Workshop Participants Handbook</a>&quot; by Mario R. Barbacci, Robert J. Ellison, Charles B. Weinstock, William G. Wood (<a class="reference external" href="https://resources.sei.cmu.edu/asset_files/SpecialReport/2000_003_001_13640.pdf">pdf</a>)</p></li>
+<li><p>&quot;<a class="reference external" href="https://resources.sei.cmu.edu/asset_files/Presentation/2014_017_101_89563.pdf">Facilitating the Mini-Quality Attributes Workshop. A Lightweight, Architecture-Focused Method.</a>&quot; by Will Chaparro IBM, Michael Keeling IBM</p></li>
+</ul>
+<p>Смотрите также о &quot;Lightweight Architecture Evaluation (LAE)&quot; в &quot;Software Architecture in Practice&quot; 4th edition by Len Bass, Paul Clements, Rick Kazman.</p>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2><a class="toc-backref" href="#id23">Психологическая сторона вопроса</a><a class="headerlink" href="#id9" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Проблеме достижения понимания между представителями бизнеса и техническими специалистами посвятили свои статьи даже такие всемирно-известные светила, как Gregor Hohpe, который пытался объяснить бизнесу важность архитектурных решений на примере <a class="reference internal" href="business-concerns/architecture-options.html#emacsway-architecture-options"><span class="std std-ref">фондовых опционов</span></a>.</p>
+<p>А Ward Cunningham предложил использовать метафору <a class="reference internal" href="business-concerns/compound-interest.html#emacsway-compound-interest"><span class="std std-ref">сложного процента (TechnicalDebt)</span></a>, хорошо демонстрирующую экспоненциальную деградацию velocity при дисбалансе решений в пользу краткосрочных бизнес-интересов.</p>
+<p>Даже основатели Agile, такие, как Ron Jeffries, имели сложности в достижении понимания с представителями бизнеса, и термин Story Point возник именно потому, что они <a class="reference external" href="https://twitter.com/RonJeffries/status/1052858860539658240?s=20">не смогли объяснить представителю бизнеса, почему 2 идеальных дня занимали 5 календарных дней</a>:</p>
+<blockquote>
+<div><p>📝 &quot;we estimated stories initially in &quot;ideal time&quot;, later in points, tracked number accomplished to adjust how many to pull each iteration.
+switched to points because ideal time confused people (why did 2 day story take 5 days).</p>
+<p>it worked, i think, because we had low politics.&quot;</p>
+<p class="attribution">—<a class="reference external" href="https://twitter.com/RonJeffries/status/1052858860539658240?s=20">Ron Jeffries</a></p>
+</div></blockquote>
+<p>По словам Craig Larman, проблемы могут возникать даже в таких компаниях, как Microsoft, являющихся &quot;колыбелью архитектуры&quot; (откуда вышли такие авторы, как Steve McConnell), см. &quot;<a class="reference external" href="https://less.works/less/principles/systems-thinking.html">Systems Thinking</a>&quot; by Craig Larman (<a class="reference external" href="https://less.works/ru/less/principles/systems-thinking.html">на русском</a>).</p>
+<p>Нужно учитывать еще и психологическую составляющую.</p>
+<p>Технарь всегда будет отстаивать внутреннее качество программы потому, что от этого зависит его velocity.
+Он понимает, что за сорванные сроки виноватым будет именно он.
+И даже, если руководство не обвинит его явно, но оно может это запомнить и учесть это в будущем при принятии кадровых решений (что вызывает еще больше ежедневного страха за неопределенность будущего).</p>
+<p>Наконец, представитель бизнеса, который сегодня выдает индульгенции на снижение внутреннего качества программы, завтра может быть заменен другим представителем, который эти индульгенции может легко отозвать, и технари останутся с проблемой наедине.
+Эти риски создают неопределенность, которая, в результате действия психологического &quot;<a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%BD%D0%B5%D0%BE%D0%B4%D0%BD%D0%BE%D0%B7%D0%BD%D0%B0%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Эффекта Неоднозначности</a>&quot;, вынуждает технаря отстаивать решение, обладающее наименьшей неопределенностью (т.е. настаивать техническом решении).
+Возникает &quot;<a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%89%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC">Психологическая Защита</a>&quot;, которая может перерасти в открытый конфликт.
+Этот эффект дополнительно еще мультиплицируется распространенным среди технарей &quot;<a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC_%D1%81%D0%B0%D0%BC%D0%BE%D0%B7%D0%B2%D0%B0%D0%BD%D1%86%D0%B0">Эффектом Самозванца</a>&quot;.</p>
+<p>Страх неопределенности возникает и у представителя бизнеса.
+Зачастую они не уверены в том, хватит ли команде квалификации, чтобы эффективно использовать выделенные ресурсы на технические задачи, и зачастую эта неуверенность подкреплена негативным опытом в прошлом.
+В силу психологического &quot;<a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%BD%D0%B5%D0%BE%D0%B4%D0%BD%D0%BE%D0%B7%D0%BD%D0%B0%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Эффекта Неоднозначности</a>&quot;, возникает стремление к варианту, обладающему наименьшей неопределенностью, т.е. лучше &quot;запилить еще одну осязаемую бизнес-фичу&quot; вместо того, чтобы потратить ресурсы на призрачную возможность повысить velocity.</p>
+<p>Так же нужно учитывать и &quot;<a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%BD%D0%B5%D0%B4%D0%B0%D0%B2%D0%BD%D0%B5%D0%B3%D0%BE">Эффект Недавнего</a>&quot;.
+Психолог, нобелевский лауреат Даниэль Канеман выделил «правило пик-конец» нашей памяти.
+Мы помним прошлое неравномерно.
+Наибольший вес мы придаем двум видам событий: тем, что вызвали максимальные эмоции и тем, которые произошли недавно.</p>
+<p>В силу <a class="reference internal" href="../../../../../../soft-skills/cognitive-biases.html#emacsway-cognitive-biases"><span class="std std-ref">когнитивных искажений</span></a>, технарь всегда будет недооценивать бизнес-потребности, а бизнесмен - технические потребности.
+Это нормально.
+К тому же, представители бизнеса всегда находится под давлением других стейкхолдеров бизнес-группы.
+Хорошая организация процессов должна взаимокомпенсировать эти перекосы.</p>
+<p>P.S.: От себя добавлю, что я пробовал различные Agile-методологии, и XP - это единственное, что у нас работало эффективно в малочисленных, немасштабируемых коллективах.</p>
+<div class="admonition seealso">
+<p class="admonition-title">См.также</p>
+<ul class="simple">
+<li><p>&quot;<a class="reference internal" href="nonfunctional-requirements.html#emacsway-agile-nonfunctional-requirements"><span class="std std-ref">Agile nonfunctional Requirements</span></a>&quot;</p></li>
+<li><p>&quot;<a class="reference internal" href="business-concerns/compound-interest.html#emacsway-compound-interest"><span class="std std-ref">Technical Debt и сложный процент</span></a>&quot;</p></li>
+<li><p>&quot;<a class="reference internal" href="business-concerns/architecture-options.html#emacsway-architecture-options"><span class="std std-ref">Architecture: Selling Options</span></a>&quot;</p></li>
+<li><p>&quot;<a class="reference internal" href="business-concerns/common-planning-errors.html#emacsway-agile-common-planning-errors"><span class="std std-ref">Наиболее частые управленческие ошибки</span></a>&quot;</p></li>
+<li><p>&quot;<a class="reference internal" href="../../../../../../soft-skills/cognitive-biases.html#emacsway-cognitive-biases"><span class="std std-ref">Список психологических эффектов</span></a>&quot;</p></li>
+<li><p>&quot;<a class="reference internal" href="../../../../uncertainty-management/adaptation/crash-course-in-software-development-economics.html"><span class="doc">Краткий курс по экономике разработки программного обеспечения</span></a>&quot;</p></li>
+</ul>
 </div>
 </div>
 </div>

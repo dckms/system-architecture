@@ -9,3 +9,4 @@
 
    /emacsway/it/sdlc/models/agile/analysis/requirements/business-concerns/common-planning-errors
    /emacsway/it/sdlc/models/agile/analysis/requirements/business-concerns/compound-interest
+   /emacsway/it/sdlc/models/agile/analysis/requirements/business-concerns/architecture-options
