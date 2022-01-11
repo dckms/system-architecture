@@ -1099,7 +1099,7 @@ If you don't know them, your decisions are much more arbitrary."&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#scrum" id="id18"&gt;Scrum&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#scrum-guide" id="id19"&gt;Scrum Guide™&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#the-scrum-guide" id="id19"&gt;The Scrum Guide™&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id8" id="id20"&gt;Суть от первоисточника&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -1330,9 +1330,57 @@ Then the transition itself becomes a demonstration of quality: making a big chan
 &lt;/div&gt;
 &lt;div class="section" id="scrum"&gt;
 &lt;span id="emacsway-scrum-balancing-business-technical-concerns"/&gt;&lt;h4&gt;&lt;a class="toc-backref" href="#id18"&gt;Scrum&lt;/a&gt;&lt;/h4&gt;
-&lt;div class="section" id="scrum-guide"&gt;
-&lt;h5&gt;&lt;a class="toc-backref" href="#id19"&gt;Scrum Guide™&lt;/a&gt;&lt;/h5&gt;
-&lt;p&gt;А как обстоят дела в Scrum? Официальный Scrum Guide™ не допускает технического долга вообще, как и XP второй версии:&lt;/p&gt;
+&lt;div class="section" id="the-scrum-guide"&gt;
+&lt;h5&gt;&lt;a class="toc-backref" href="#id19"&gt;The Scrum Guide™&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;Ответственен ли Product Owner за финансовую успешность продукта?&lt;/p&gt;
+&lt;p&gt;Официальный "The 2020 Scrum Guide™" обязывает его в "&lt;em&gt;maximizing the value of the product&lt;/em&gt;".
+Слово "value" - полисемантическое, которое слишком часто встречается в тексте гайда, в т.ч. и в обязанностях Scrum Master и Scrum Team.
+Из гайда установить значение этого слова весьма затруднительно.&lt;/p&gt;
+&lt;p&gt;Из других источников можно сделать вывод, что ответственнен, по крайней мере, был ответственным, ибо в 2020 году модель ролей существенно изменилась, и, вероятно, еще продолжит меняться.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "The Product Owner is responsible to those funding the project for delivering the vision in a manner that maximizes their ROI.
+&amp;lt;...&amp;gt;
+The Product Owner's focus is return on investment (ROI)."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Agile Project Management with Scrum" by Ken Schwaber&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Four, the Product Owner needs to be accountable for value.
+In a business context what matters is revenue.
+I measure a Product Owner by how much revenue they deliver per "point" of effort."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Scrum: The Art of Doing Twice the Work in Half the Time" by Jeffrey Sutherland&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "The product owner is responsible for ensuring that good economic decisions are continuously being made at the release, sprint, and product backlog levels."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Essential Scrum: A Practical Guide to the Most Popular Agile Process" by Kenneth Rubin&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "The Product Owner is responsible for maximizing return on investment (ROI)"&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://less.works/less/scrum/roles"&gt;Scrum Roles&lt;/a&gt;" by Craig Larman&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Однако, значение термина Value гораздо шире, о чем пишет Ken Schwaber в статье "&lt;a class="reference external" href="https://kenschwaber.wordpress.com/2014/03/28/evidence-of-softwares-value-to-an-organization/"&gt;Evidence of Software's Value to an Organization&lt;/a&gt;", где Value состоит из трех составляющих:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;Current value&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Time-to-market&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Ability to innovate&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Какие выводы можно сделать?&lt;/p&gt;
+&lt;p&gt;С точки зрения архитектуры, Product Owner становится заинтересованным лицом и теряет нейтральность своей позиции, а значит, в силу когнитивных искажений и давления обстоятельств, он всегда будет предвзят, и будет руководствоваться краткосрочными бизнес-интересами в ущерб долгосрочным техническим, если только не обладает развитым &lt;a class="reference internal" href="business-concerns/common-planning-errors.html#emacsway-planning-technical-task"&gt;&lt;span class="std std-ref"&gt;системным мышлением и волей&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ну а поскольку никаких методик разрешения противоречий требований стейкхолдеров Scrum не предлагает, то в ранней версии "The 2011 Scrum Guide™" этот конфликт разрешался тем, что Product Owner не мог навязывать конкретную реализацию, оставляя переменную управления разработкой Quality на усмотрение разработчиков, &lt;a class="reference internal" href="#emacsway-xp1-balancing-business-technical-concerns"&gt;&lt;span class="std std-ref"&gt;как и в XP1&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "They [The Development Team] are self-organizing.
+No one (not even the Scrum Master) tells the Development Team how to turn Product Backlog into Increments of potentially releasable functionality;"&lt;/p&gt;
+&lt;p class="attribution"&gt;—"The 2011 Scrum Guide™"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Именно об этом говорит Jeffrey Sutherland в высказывании, которое приводится ниже по тексту.&lt;/p&gt;
+&lt;p&gt;А вот в гайде 2020 года это звучит уже так:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "They [Scrum Team] are also self-managing, meaning they internally decide who does what, when, and how."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://scrumguides.org/scrum-guide.html"&gt;The 2020 Scrum Guide™&lt;/a&gt;"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;, где Scrum Team уже включает в себя и Product Owner тоже, что вносит путаницу в распределение обязанностей, так как получается, что Product Owner может влиять на реализацию (how).&lt;/p&gt;
+&lt;p&gt;Однако, при этом Quality сделали константой, &lt;a class="reference internal" href="#emacsway-xp2-balancing-business-technical-concerns"&gt;&lt;span class="std std-ref"&gt;как и в XP2&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div&gt;&lt;p&gt;📝 "During the Sprint: Quality does not decrease;"&lt;/p&gt;
 &lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://scrumguides.org/scrum-guide.html"&gt;The 2020 Scrum Guide™&lt;/a&gt;"&lt;/p&gt;
@@ -1343,6 +1391,11 @@ Then the transition itself becomes a demonstration of quality: making a big chan
 The adjustment must be made &lt;strong&gt;as soon as possible to minimize further deviation&lt;/strong&gt;".&lt;/p&gt;
 &lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://scrumguides.org/scrum-guide.html"&gt;The 2020 Scrum Guide™&lt;/a&gt;"&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;И предупредили о проблеме дисбаланса интересов:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Adaptation becomes more difficult when the people involved are not empowered or self-managing."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://scrumguides.org/scrum-guide.html"&gt;The 2020 Scrum Guide™&lt;/a&gt;"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
 &lt;p&gt;Сам Ken Schwaber под "прозрачностью" понимает полное отсутствие техдолга:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div&gt;&lt;p&gt;📝 "Transparency means the software is ready.
@@ -1350,7 +1403,7 @@ It can either be immediately deployed or built upon without regression.
 &lt;strong&gt;It has no technical debt.&lt;/strong&gt;"&lt;/p&gt;
 &lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://kenschwaber.wordpress.com/2014/04/09/can-software-developers-meet-the-needs/"&gt;Can Software Developers Meet the Need?&lt;/a&gt; by Ken Schwaber&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;А баланс бизнес и технических интересов обеспечивается тем, что решения PO инспектируемы:&lt;/p&gt;
+&lt;p&gt;А баланс бизнес и технических интересов обеспечивается тем, что решения Product Owner инспектируемы:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div&gt;&lt;p&gt;📝 "For Product Owners to succeed, the entireorganization must respect their decisions.
 These decisions are visible in the content and ordering of the Product Backlog,
@@ -1437,7 +1490,7 @@ The Product Owner is accountable for &lt;strong&gt;translating the team's produc
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id7" id="id14"&gt;Вера в то, что разработчикам безразлично качество кода&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id8" id="id15"&gt;Как взять в релиз техническую задачу&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-planning-technical-task" id="id15"&gt;Как взять в релиз техническую задачу&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -1484,8 +1537,8 @@ The Product Owner is accountable for &lt;strong&gt;translating the team's produc
 Об этом говорят многие известные авторы.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id8"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id15"&gt;Как взять в релиз техническую задачу&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="emacsway-planning-technical-task"&gt;
+&lt;span id="id8"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id15"&gt;Как взять в релиз техническую задачу&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Один из частых аргументов представителей бизнеса в оправдание дисбаланса решений в пользу краткосрочных бизнес-интересов и в ущерб долгосрочным техническим интересам, звучит примерно так: "&lt;em&gt;покажите, какую бизнес-сторю мы можем выбросить из плана релиза, чтобы вместо неё взять техническую задачу&lt;/em&gt;".&lt;/p&gt;
 &lt;p&gt;Эта ментальная ловушка основана на предположении о постоянстве скорости разработки и коммутативности (переместительности) задач в последовательности их выполнения.&lt;/p&gt;
 &lt;p&gt;На самом деле, &lt;strong&gt;скорость разработки вариативна, и сильно зависит от последовательности выполнения задач&lt;/strong&gt;.&lt;/p&gt;
