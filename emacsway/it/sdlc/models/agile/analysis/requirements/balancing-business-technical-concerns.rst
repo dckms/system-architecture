@@ -124,7 +124,7 @@ Frederick Brooks в своем бестселлере "Мифический че
 
 Но есть и обратная проблема - когда технические специалисты ущемлены в своих полномочиях в пользу представителей бизнеса, проект неизменно загнивает, а :ref:`экономика разработки деградирует с зависимостью, приближенной к экспоненциальной <emacsway-agile-development-difficulties>`.
 
-    📝 "Когда бизнесмены получают слишком много полномочий, они начинают диктовать разработчиком значения для всех четырех переменных.
+    📝 "Когда бизнесмены получают слишком много полномочий, они начинают диктовать разработчикам значения для всех четырех переменных.
     "Вот то, что ты должен сделать.
     Это должно быть сделано тогда-то и тогда-то.
     Нет, тебе не дадут ни одной дополнительной рабочей станции.
@@ -160,7 +160,7 @@ Frederick Brooks в своем бестселлере "Мифический че
     They are typically the poorest understood, so there is great risk that the requirements will change all during development.
     Somehow, they also tend to be technically riskier.
 
-    **The result of the "Business in Charge" scenario, then, is that the project takes on too much effort and way, way too much risk for :ref:too little return** <emacsway-agile-development-difficulties>`."
+    **The result of the "Business in Charge" scenario, then, is that the project takes on too much effort and way, way too much risk for** :ref:too little return <emacsway-agile-development-difficulties>`."
 
     -- "Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 14. Splitting Business and Technical Responsibility", перевод ООО Издательство "Питер"
 
