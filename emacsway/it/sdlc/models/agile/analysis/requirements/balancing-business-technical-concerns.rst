@@ -679,6 +679,7 @@ P.S.: От себя добавлю, что я пробовал различны�
    - ":ref:`emacsway-compound-interest`"
    - ":ref:`emacsway-architecture-options`"
    - ":ref:`emacsway-agile-common-planning-errors`"
+   - ":ref:`emacsway-cognitive-biases`"
    - ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`"
 
 .. todo::
