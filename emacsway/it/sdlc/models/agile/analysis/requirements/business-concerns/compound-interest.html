@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Debt и сложный процент &#8212; System Architecture</title>
+    <link rel="stylesheet" href="../../../../../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../../../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../../../../../../" src="../../../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../../../_static/jquery.js"></script>
+    <script src="../../../../../../../../_static/underscore.js"></script>
+    <script src="../../../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../../../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../../../../../../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../../../../../../search.html" />
+    <link rel="next" title="Agile Requirements" href="../requirements.html" />
+    <link rel="prev" title="Наиболее частые управленческие ошибки" href="common-planning-errors.html" />
+    
+   
+  <link rel="stylesheet" href="../../../../../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+
+
+    
+        
+            <link rel="canonical" href="https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/requirements/business-concerns/compound-interest.html" />
+        
+    
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+              <div class="related top">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="common-planning-errors.html" title="Previous document">Наиболее частые управленческие ошибки</a>
+        </li>
+        <li>
+          <a href="../requirements.html" title="Next document">Agile Requirements</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+
+          <div class="body" role="main">
+            
+    
+  <div class="section" id="technical-debt">
+<span id="emacsway-compound-interest"></span><h1><a class="toc-backref" href="#id2">Technical Debt и сложный процент</a><a class="headerlink" href="#technical-debt" title="Ссылка на этот заголовок">¶</a></h1>
+<p><em>Автор раздела: Ivan Zakrevsky</em></p>
+<div class="contents topic" id="id1">
+<p class="topic-title">Содержание</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#technical-debt" id="id2">Technical Debt и сложный процент</a></p></li>
+</ul>
+</div>
+<p>&quot;<a class="reference internal" href="common-planning-errors.html#emacsway-planning-error-false-commutativity"><span class="std std-ref">Ложная Коммутативность</span></a>&quot; в управленческих решениях - это когда совокупная стоимость реализации нескольких задач зависит от последовательности их выполнения.
+Особенно это касается платформенных (технических) задач, которые иногда нужно уметь &quot;продать&quot; бизнесу, если только у вас нет выделенной <a class="reference external" href="https://www.scaledagileframework.com/agile-teams/">платформенной команды</a>.</p>
+<p>И, зачастую, представителям бизнеса, находящимся в контексте бизнес-проблем, а не технических проблем, сложно понять, почему первой должна выполняться задача &quot;А&quot;, если задача &quot;Б&quot; более востребована бизнесом.
+Это называется <a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-agile-balancing-business-technical-concerns"><span class="std std-ref">поиском баланса между бизнес-интересами и техническими интересами</span></a>.
+Острота этого вопроса в Agile даже привела к тому, что Quality, изначально бывшее 4-ой переменной управления разработкой (наряду с Cost, Time, Scope), очень быстро было <a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-xp2-balancing-business-technical-concerns"><span class="std std-ref">преобразовано  в константу</span></a>.</p>
+<p>Выявлением причинно-следственных циклов занимается &quot;Системное Мышление&quot;, и вам сильно повезло, если ваши представители бизнеса знакомы с этой наукой.
+В противном случае, как пишет Craig Larman, проблемы могут возникать даже в таких компаниях, как Microsoft, являющихся &quot;колыбелью архитектуры&quot; (откуда вышли такие авторы, как Steve McConnell), см. &quot;<a class="reference external" href="https://less.works/less/principles/systems-thinking.html">Systems Thinking</a>&quot; by Craig Larman (<a class="reference external" href="https://less.works/ru/less/principles/systems-thinking.html">на русском</a>).</p>
+<p>Наилучшим образом помочь донести представителям бизнеса проблему &quot;Ложной Коммутативности&quot; может &quot;<a class="reference external" href="https://quote.rbc.ru/news/training/5e280d059a7947eb63f54970">Сложный Процент</a>&quot;.</p>
+<p>Основная проблема термина &quot;Technical Debt&quot; в русском менталитете заключается в том, что зачастую его влияние на стоимость разработки воспринимается представителями бизнеса как константная величина - сколько сегодня позаимствовали, столько и завтра вернем.</p>
+<p>На самом же деле, основная суть термина &quot;<a class="reference external" href="https://martinfowler.com/bliki/TechnicalDebt.html">Technical Debt</a>&quot;, вложенная в этот термин by Ward Cunningham, заключается в &quot;interest on the debt&quot;:</p>
+<blockquote>
+<div><p>📝 &quot;Thinking of this as paying interest versus paying of principal can help decide which cruft to tackle.&quot;</p>
+<p class="attribution">—&quot;<a class="reference external" href="https://martinfowler.com/bliki/TechnicalDebt.html">Technical Debt</a>&quot; by Martin Fowler</p>
+</div></blockquote>
+<p>А он рассчитывается по правилу &quot;сложного процента&quot;.
+Вся суть в том, чтобы перенести внимание бизнеса с тела долга на геометрическую прогрессию роста его процента:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">P</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span> <span class="n">i</span><span class="p">)</span><span class="o">^</span><span class="n">n</span> <span class="p">(</span><span class="n">в</span> <span class="n">степени</span> <span class="n">n</span><span class="p">),</span>
+</pre></div>
+</div>
+<p>где S – получаемая сумма, P – цена облигации при покупке, i – процент в сотых долях, а n – число выплат.</p>
+<p class="attribution">—&quot;<a class="reference external" href="https://bankiros.ru/wiki/term/kak-rasscitat-dohodnost-obligacij">Как рассчитать доходность облигаций</a>&quot; / Редакция Bankiros.ru</p>
+</div></blockquote>
+<p>По утверждению ряда авторитетных авторов (Kent Beck, Martin Fowler, Robert C. Martin и др.), рост стоимости разработки при накоплении техдолга может обретать характер, близкий именно к геометрической прогрессии (или к экспоненте).
+Статистику конкретного проекта смотрите в &quot;Clean Architecture: A Craftsman's Guide to Software Structure and Design&quot; by Robert C. Martin.</p>
+<p>Термин &quot;TechnicalDebt&quot; у нас воспринимается несколько по-иному, безобиднее, еще и потому, что он ассоциируется в нашем менталитете с &quot;академической задолженностью&quot; в ВУЗе, где в центре внимания лежит тело долга (paying of principal), а не геометрический характер роста процентов (paying interest).
+А так же находит отражение традиция безпроцентного долга в виде взаимовыручки &quot;до зарплаты&quot;, который является распространенным явлением в дружеской среде.
+Поэтому, термин &quot;TechnicalDebt&quot; не несет своего изначального смысла в нашем менталитете, и не выполняет своей функции как метафоры надлежащим образом, что приводит к росту напряженности и недопонимания между представителями бизнеса и техническими специалистами.
+Для разработчика техдолг означает экспоненциальный рост стоимости изменения кода, в то время, как для представителя бизнеса, - это просто отложенное выполнение задачи.</p>
+</div>
+
+
+
+    
+        
+            <div class="section" style="text-align: right;">
+                <p><a href="https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/requirements/business-concerns/compound-interest.html">Canonical URL</a></p>
+            </div>
+        
+    
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="common-planning-errors.html" title="Previous document">Наиболее частые управленческие ошибки</a>
+        </li>
+        <li>
+          <a href="../requirements.html" title="Next document">Agile Requirements</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../../../../index.html">System Architecture</a></h1>
+
+
+
+<p class="blurb">Distributed Collaborative Knowledge Management System for System Architecture</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dckms&repo=system-architecture&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Общее пространство:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../../../../trunk/it/index.html">IT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../../../../trunk/index.html">Общее пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Авторские пространства:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../index.html">Пространство Emacsway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Приватное пространствo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../private/index.html">Приватное пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Прочее:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../README.html">Как пользоваться</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../../../../../trunk/it/index.html">IT</a><ul>
+  <li><a href="../../../../../../../../trunk/it/sdlc/index.html">SDLC</a><ul>
+  <li><a href="../../../../../../../../trunk/it/sdlc/models/index.html">SDLC Models</a><ul>
+  <li><a href="../../../../../../../../trunk/it/sdlc/models/agile/index.html">Agile</a><ul>
+  <li><a href="../../../../../../../../trunk/it/sdlc/models/agile/analysis/index.html">Analysis in Agile</a><ul>
+  <li><a href="../../../../../../../../trunk/it/sdlc/models/agile/analysis/requirements/index.html">Requirements in Agile</a><ul>
+  <li><a href="../../../../../../../../trunk/it/sdlc/models/agile/analysis/requirements/business-concerns/index.html">Бизнес-интересы</a><ul>
+      <li>Previous: <a href="common-planning-errors.html" title="предыдущая глава">Наиболее частые управленческие ошибки</a></li>
+      <li>Next: <a href="../requirements.html" title="следующая глава">Agile Requirements</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="footer">
+      &copy;2022, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE" rel="nofollow">License</a>).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../../../../../_sources/emacsway/it/sdlc/models/agile/analysis/requirements/business-concerns/compound-interest.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/dckms/system-architecture" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+
+    
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+           ym(87033138, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true,
+                trackHash:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/87033138" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    
+
+  </body>
+</html>
