@@ -443,6 +443,7 @@ P.S.: От себя добавлю, что я пробовал различны�
       - https://t.me/emacsway_log/125
       - https://t.me/emacsway_log/130
       - https://t.me/emacsway_log/393
+      - https://t.me/emacsway_log/542
 
    Refactoring
 
