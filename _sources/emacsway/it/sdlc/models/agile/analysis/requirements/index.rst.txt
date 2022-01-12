@@ -7,5 +7,4 @@ Requirements in Agile
    :caption: Оглавление:
    :glob:
 
-   */index
    *
