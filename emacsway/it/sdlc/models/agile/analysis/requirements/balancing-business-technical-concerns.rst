@@ -702,7 +702,7 @@ ATAM in Agile
 
     -- "Planning Extreme Programming" by Kent Beck, Martin Fowler, "Chapter 2. Fear"
 
-Глава "Chapter 2. Fear" книги "Planning Extreme Programming" by Kent Beck, Martin Fowler обладает уникальной ценностью, но немного великовата чтобы поместить её сюда полностью.
+Глава "Chapter 2. Fear" книги "Planning Extreme Programming" by Kent Beck, Martin Fowler обладает уникальной ценностью, но немного великовата для того, чтобы поместить её сюда полностью.
 
 
 .. seealso::
