@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Наиболее частые управленческие ошибки &#8212; System Architecture</title>
+    <title>Наиболее частые ошибки планирования &#8212; System Architecture</title>
     <link rel="stylesheet" href="../../../../../../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../../../../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" type="text/css" />
@@ -60,18 +60,18 @@
             
     
   <div class="section" id="emacsway-agile-common-planning-errors">
-<span id="id1"></span><h1><a class="toc-backref" href="#id9">Наиболее частые управленческие ошибки</a><a class="headerlink" href="#emacsway-agile-common-planning-errors" title="Ссылка на этот заголовок">¶</a></h1>
+<span id="id1"></span><h1><a class="toc-backref" href="#id9">Наиболее частые ошибки планирования</a><a class="headerlink" href="#emacsway-agile-common-planning-errors" title="Ссылка на этот заголовок">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
 <div class="contents topic" id="id2">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#emacsway-agile-common-planning-errors" id="id9">Наиболее частые управленческие ошибки</a></p>
+<li><p><a class="reference internal" href="#emacsway-agile-common-planning-errors" id="id9">Наиболее частые ошибки планирования</a></p>
 <ul>
 <li><p><a class="reference internal" href="#id3" id="id10">Список ошибок</a></p>
 <ul>
 <li><p><a class="reference internal" href="#emacsway-planning-error-false-commutativity" id="id11">Ложная коммутативность</a></p></li>
-<li><p><a class="reference internal" href="#id5" id="id12">Техдолг является константной величиной по отношению ко времени</a></p></li>
-<li><p><a class="reference internal" href="#id6" id="id13">Накопление техдолга увеличивает стоимость разработки линейно</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id12">Вера в то, что техдолг является константной величиной по отношению ко времени</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id13">Вера в то, что накопление техдолга увеличивает стоимость разработки линейно</a></p></li>
 <li><p><a class="reference internal" href="#id7" id="id14">Вера в то, что разработчикам безразлично качество кода</a></p></li>
 </ul>
 </li>
@@ -82,10 +82,10 @@
 </div>
 <div class="section" id="id3">
 <h2><a class="toc-backref" href="#id10">Список ошибок</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
-<p>Четыре наиболее частые управленческие ошибки, которые мне приходилось наблюдать на практике.</p>
+<p>Четыре наиболее частые ошибки планирования, которые мне приходилось наблюдать на практике.</p>
 <div class="section" id="emacsway-planning-error-false-commutativity">
 <span id="id4"></span><h3><a class="toc-backref" href="#id11">Ложная коммутативность</a><a class="headerlink" href="#emacsway-planning-error-false-commutativity" title="Ссылка на этот заголовок">¶</a></h3>
-<p>Представители бизнеса склонны думать, что если выполнить задачи в последовательности &quot;b&quot;, &quot;c&quot;, &quot;a&quot;, то стоимость их реализации будет такой же, как если бы они были выполнены в последовательности &quot;a&quot;, &quot;b&quot;, &quot;c&quot;.
+<p>Представители бизнеса зачастую склонны думать, что если выполнить задачи в последовательности &quot;b&quot;, &quot;c&quot;, &quot;a&quot;, то стоимость их реализации будет такой же, как если бы они были выполнены в последовательности &quot;a&quot;, &quot;b&quot;, &quot;c&quot;.
 На самом деле, стоимость может отличаться кратно, если даже не на порядок, потому что задача &quot;a&quot; может удешевить стоимость реализации последующих задач.
 Эта ошибка особенно удивительна на фоне того, как много управленческой литературы освещает этот вопрос.
 Некоторые книги даже включают в себя даже целый раздел управленческой математики, как, например, &quot;Менеджмент: Учебник для вузов.&quot; 3-е изд., Глухов В.В.</p>
@@ -95,20 +95,20 @@
 Все дело в том, в какой последовательности они двигают эти фигуры.</p>
 </div>
 <div class="section" id="id5">
-<h3><a class="toc-backref" href="#id12">Техдолг является константной величиной по отношению ко времени</a><a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h3>
-<p>Представители бизнеса склонны полагать, что стоимость исправления техдолга является константной величиной по отношению ко времени, а поэтому, его можно безболезненно отложить.
+<h3><a class="toc-backref" href="#id12">Вера в то, что техдолг является константной величиной по отношению ко времени</a><a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Представители бизнеса зачастую склонны полагать, что стоимость исправления техдолга является константной величиной по отношению ко времени, а поэтому, его можно безболезненно отложить.
 Такие виды техдолга действительно могут иметь место, но это не исключает существования других видов техдолга, где <a class="reference internal" href="compound-interest.html#emacsway-compound-interest"><span class="std std-ref">стоимость исправления через пару месяцев может вырасти кратно, если даже не на порядки</span></a>.
 Именно этот критерий является ключевым при применении <a class="reference external" href="http://sergeyteplyakov.blogspot.com/2016/08/yagni.html">принципа YAGNI</a>.</p>
 </div>
 <div class="section" id="id6">
-<h3><a class="toc-backref" href="#id13">Накопление техдолга увеличивает стоимость разработки линейно</a><a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">Вера в то, что накопление техдолга увеличивает стоимость разработки линейно</a><a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Исходя из предыдущего пункта, у представителей бизнеса нередко формируется иллюзия, что накопление техдолга увеличивает стоимость разработки линейно.
 Как показывает практика, и как демонстрируют исследования авторитетных авторов в области архитектуры, характер роста стоимости разработки имеет тенденцию приближаться к экспоненциальной зависимости.
 Статистику конкретного проекта смотрите в &quot;Clean Architecture: A Craftsman's Guide to Software Structure and Design&quot; by Robert C. Martin.
 В таком случае <a class="reference internal" href="../../../../iterative.html#emacsway-iterative-development"><span class="std std-ref">итеративная</span></a> (<a class="reference internal" href="../../../agile.html#emacsway-agile-development"><span class="std std-ref">Agile</span></a>) модель разработки может вообще утратить свою экономическую целесообразность перед <a class="reference internal" href="../../../../spiral.html#emacsway-spiral-development"><span class="std std-ref">спиральными</span></a> моделями, или даже BDUF.
 Как уже говорилось, <a class="reference internal" href="../../../agile.html#emacsway-agile-development-essence"><span class="std std-ref">Agile имеет экономическую целесообразность только при пологом характере роста изменения кода</span></a>.</p>
 <p>Зачастую, эта иллюзия подкрепляется отсутствием мониторинга объективных индикативных показателей здоровья проекта, что не позволяет зафиксировать падение экономики разработки на ранних стадиях, в силу особенностей работы человеческого мозга (когнитивных искажений).</p>
-<p>Поскольку представители бизнеса склонны руководствоваться краткосрочными бизнес-интересами в ущерб долгосрочным техническим интересам, сбалансированность решений должна гарантироваться процессами, о чем частично упоминалось <a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-agile-solution-of-balancing-business-technical-concerns"><span class="std std-ref">здесь</span></a>.</p>
+<p>Поскольку представители бизнеса склонны руководствоваться краткосрочными бизнес-интересами в ущерб долгосрочным техническим интересам, сбалансированность решений должна гарантироваться процессами, о чем частично упоминалось <a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-agile-solution-to-balancing-business-technical-concerns"><span class="std std-ref">здесь</span></a>.</p>
 <p>Современные Agile методики имеют тенденцию перестраховки, которая выражена в том, что внутреннее качество программы является вообще <a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-xp2-balancing-business-technical-concerns"><span class="std std-ref">константной величиной</span></a>, а не переменной управления разработкой.</p>
 <p>Я согласен с этим лишь отчасти, и только потому, что технические специалисты лучше разбираются в экономических основах разработки, чем представители бизнеса.
 И тем не менее, есть риск скатиться к &quot;<a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-second-system-effect"><span class="std std-ref">Эффекту второй системы</span></a>&quot;, т.е. к неоправданному оверинжинирингу.</p>

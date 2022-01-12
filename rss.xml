@@ -1,5 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0"><channel><title>System Architecture</title><link>https://dckms.github.io/system-architecture</link><description /><language>ru</language><copyright>2022, @dckms (&lt;a href="https://dckms.github.io/system-architecture/LICENSE" rel="nofollow"&gt;License&lt;/a&gt;)</copyright><item><title>Балансирование Бизнес/Технических интересов</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/concerns/balancing-business-technical-concerns.html</link><description>
+<rss version="2.0"><channel><title>System Architecture</title><link>https://dckms.github.io/system-architecture</link><description /><language>ru</language><copyright>2022, @dckms (&lt;a href="https://dckms.github.io/system-architecture/LICENSE" rel="nofollow"&gt;License&lt;/a&gt;)</copyright><item><title>Как осуществлять изменения в коллективе</title><link>https://dckms.github.io/system-architecture/emacsway/soft-skills/change-making.html</link><description>&lt;span class="target" id="index-0"/&gt;&lt;div class="section" id="emacsway-change-making-in-psychology"&gt;
+&lt;span id="id1"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;На протяжении своей практики я регулярно наблюдал одну и ту же картину: кто-то из сотрудников узнал что-то новое, или же был принят на работу сотрудник с новыми знаниями (например, DDD, архитектурные, методологические, процессные подходы и т.п.), но, странное дело, новая идея получает не поддержку, а сопротивление коллектива, хотя и могла бы облегчить жизнь многим.&lt;/p&gt;
+&lt;p&gt;Далее одно из двух - либо напряженность нарастает, и наступает разрыв отношений, либо человек смиряется, проявив "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%BD%D0%BE%D1%81%D1%82%D1%8C"&gt;Внешний конформизм&lt;/a&gt;".&lt;/p&gt;
+&lt;p&gt;Последний вариант опасен тем, что для человека намного проще согласиться с существующим положением дел, и, чтобы подавить "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%B3%D0%BD%D0%B8%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9_%D0%B4%D0%B8%D1%81%D1%81%D0%BE%D0%BD%D0%B0%D0%BD%D1%81"&gt;Когнитивный диссонанс&lt;/a&gt;", человек старается всеми силами преувеличить существенность принятого им решения, одновременно приуменьшая важность отвергнутого.
+Вследствие этого альтернатива теряет всякую привлекательность в его глазах.&lt;/p&gt;
+&lt;p&gt;Далее наступает "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%98%D1%81%D0%BA%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B2_%D0%B2%D0%BE%D1%81%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D0%B8_%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%D0%B0"&gt;Искажение в восприятии сделанного выбора&lt;/a&gt;" и "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%98%D1%80%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D1%83%D1%81%D0%B8%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5"&gt;Закон иррационального усиления&lt;/a&gt;", и, из сторонника изменений, человек превращается в реакциониста, находя в этом "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%89%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC"&gt;Психологическую защиту&lt;/a&gt;".&lt;/p&gt;
+&lt;p&gt;Наверняка вы слышали в своей практике такие фразы, как "я тоже был таким когда-то...", "юношеский максимализм" и т.п.&lt;/p&gt;
+&lt;p&gt;Но бывает и третий вариант - человеку удается изменить среду.
+В конце концов, существующая среда была кем-то создана.
+Почему одним это удается, а другим нет?&lt;/p&gt;
+&lt;p&gt;По моим наблюдениям, условием снижения напряженности является выравнивание уровня знаний.
+Вероятность разрыва отношений выше в ригидных коллективах с низкой обучаемостью.
+Поэтому, первая задача, которую предстоит решить, - это изменить систему ценностей коллектива, и возвести знания в элемент престижа.&lt;/p&gt;
+&lt;p&gt;Никогда не предлагайте внедрения какого-либо нового подхода, например, DDD.
+Для коллектива это - еще одна неопределенность, которая может превратиться в еще одну проблему на их шее.
+В силу "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%BD%D0%B5%D0%BE%D0%B4%D0%BD%D0%BE%D0%B7%D0%BD%D0%B0%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%B8"&gt;Эффекта неоднозначности&lt;/a&gt;" предлагаемые изменения будут отвергнуты.&lt;/p&gt;
+&lt;p&gt;Не пытайтесь доказать собеседнику его неправоту, потому что:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BB%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5_%D0%B2%D0%BE%D1%81%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D0%B5"&gt;Селективное восприятие&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BA%D0%BB%D0%BE%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%BA_%D0%BF%D0%BE%D0%B4%D1%82%D0%B2%D0%B5%D1%80%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8E_%D1%81%D0%B2%D0%BE%D0%B5%D0%B9_%D1%82%D0%BE%D1%87%D0%BA%D0%B8_%D0%B7%D1%80%D0%B5%D0%BD%D0%B8%D1%8F"&gt;Склонность к подтверждению своей точки зрения&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%94%D0%B0%D0%BD%D0%BD%D0%B8%D0%BD%D0%B3%D0%B0_%E2%80%94_%D0%9A%D1%80%D1%8E%D0%B3%D0%B5%D1%80%D0%B0"&gt;Эффект Даннинга — Крюгера&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://architectelevator.com/strategy/always-be-right/"&gt;Вы и сами можете ошибаться.&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Мне известен только один действенный способ провести изменения, это - &lt;a class="reference external" href="https://less.works/ru/less/principles/systems-thinking.html"&gt;идентифицировать проблемы&lt;/a&gt;, и в ответ на &lt;strong&gt;конкретные проблемы&lt;/strong&gt; предлагать &lt;strong&gt;конкретные решения&lt;/strong&gt;.
+Например, если проблему решает один из тактических паттернов DDD, то не нужно настаивать на переходе на DDD полностью.
+Если проблему решает "&lt;a class="reference external" href="https://www.pmi.org/disciplined-agile/lifecycle/program"&gt;Program Management&lt;/a&gt;", то &lt;a class="reference external" href="https://www.scrum.org/resources/blog/scaling-scrum-nexus-and-kanban"&gt;не нужно настаивать на переходе на SAFe или DAD полностью&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Также учтите, что &lt;a class="reference external" href="https://www.hindawi.com/journals/np/2009/482696/"&gt;мозгу нужно время&lt;/a&gt;, чтобы осознать решение и рассеять неопределенность.
+Поэтому, не спешите.
+Вернитесь к вопросу несколько раз через время.
+Вода камень точит.
+Видели как море режет скалы?
+Обязательно посмотрите - вдохновляет.
+Стекающие капельки воды прорезают в камне бороздки и углубляют их до тех пор, пока глыба не обрушится.
+Капля против скалы!
+А вы - больше, чем капля.
+Терпенье и труд, как говорится...&lt;/p&gt;
+&lt;p&gt;Этот пример учит еще одному - чем меньше гранулярность изменений, тем выше вероятность их принятия.
+Это важно, ибо силовое превосходство не на вашей стороне.
+Чтобы повысить удельное давление, нужно уменьшить площадь воздействия.
+Побеждает не тот, кто сильнее, а тот, кто способен создать силовое превосходство в нужное время в нужном месте.&lt;/p&gt;
+&lt;p&gt;В крайнем случае, сработает "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%81%D0%BA%D0%B0%D0%B4_%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%BD%D0%BE%D0%B9_%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8"&gt;Каскад доступной информации&lt;/a&gt;".&lt;/p&gt;
+&lt;p&gt;Как говорил Генри Форд, &lt;em&gt;"качество — это делать что-либо правильно, даже когда никто не смотрит"&lt;/em&gt;.
+Единственный способ этого достигнуть - это единое понимание и полнота информированности коллектива.
+Достигается это проливанием света на недостающие связи между причиной и следствием.
+Изменения должны происходить снизу, от самоорганизующегося коллектива, а не спускаться директивно сверху.
+Важно уметь не внедрить изменения, а инициировать и подпитывать их.
+Больше слушать, спрашивать, меньше говорить.&lt;/p&gt;
+&lt;p&gt;Отличная книга по теме:
+- "Social psychology" 13th edition by David G. Myers. Перевод: "Социальная психология" / Майерс Д. Пер. с англ. З. Замчук; Зав. ред. кол. Л. Винокуров. — 7-е изд. — СПб.: Питер, 2006.&lt;/p&gt;
+&lt;div class="admonition seealso"&gt;
+&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="icebreaker-principle.html"&gt;&lt;span class="doc"&gt;Принцип ледокола&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description><pubDate>Thu, 13 Jan 2022 00:00:00 </pubDate></item><item><title>Балансирование Бизнес/Технических интересов</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/concerns/balancing-business-technical-concerns.html</link><description>
 &lt;span id="id1"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
 &lt;div class="contents topic" id="id2"&gt;
@@ -11,7 +69,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-agile-technical-concerns-predominance" id="id13"&gt;Преобладание технических интересов&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-agile-business-concerns-predominance" id="id14"&gt;Преобладание бизнес-интересов&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-agile-solution-of-balancing-business-technical-concerns" id="id15"&gt;Решение&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-agile-solution-to-balancing-business-technical-concerns" id="id15"&gt;Решение&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#extreme-programming" id="id16"&gt;Extreme Programming&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -175,7 +233,7 @@ Somehow, they also tend to be technically riskier.&lt;/p&gt;
 &lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://www.scruminc.com/better-scrum-with-essence/"&gt;Better Scrum with Essence&lt;/a&gt;" Jeff Sutherland&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
 &lt;/div&gt;
-&lt;div class="section" id="emacsway-agile-solution-of-balancing-business-technical-concerns"&gt;
+&lt;div class="section" id="emacsway-agile-solution-to-balancing-business-technical-concerns"&gt;
 &lt;span id="id6"/&gt;&lt;h3&gt;&lt;a class="toc-backref" href="#id15"&gt;Решение&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Хорошая организация процессов должна взаимокомпенсировать эти перекосы.&lt;/p&gt;
 &lt;p&gt;Разрешение противоречий требований различных групп стейкхолдеров хорошо изучены анализом и архитектурой.
@@ -569,7 +627,7 @@ We will have the courage to do only what is necessary and no more, to spend our 
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../requirements/nonfunctional-requirements.html#emacsway-agile-nonfunctional-requirements"&gt;&lt;span class="std std-ref"&gt;Agile nonfunctional Requirements&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="business-concerns/compound-interest.html#emacsway-compound-interest"&gt;&lt;span class="std std-ref"&gt;Technical Debt и сложный процент&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="business-concerns/architecture-options.html#emacsway-architecture-options"&gt;&lt;span class="std std-ref"&gt;Architecture: Selling Options&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="business-concerns/common-planning-errors.html#emacsway-agile-common-planning-errors"&gt;&lt;span class="std std-ref"&gt;Наиболее частые управленческие ошибки&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="business-concerns/common-planning-errors.html#emacsway-agile-common-planning-errors"&gt;&lt;span class="std std-ref"&gt;Наиболее частые ошибки планирования&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../../../../../soft-skills/cognitive-biases.html#emacsway-cognitive-biases"&gt;&lt;span class="std std-ref"&gt;Список психологических эффектов&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../../../uncertainty-management/adaptation/crash-course-in-software-development-economics.html"&gt;&lt;span class="doc"&gt;Краткий курс по экономике разработки программного обеспечения&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="technical-concerns/when-to-refactor.html#emacsway-when-to-refactor"&gt;&lt;span class="std std-ref"&gt;Когда делать refactoring в legacy&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
@@ -608,19 +666,19 @@ The value of the option originates from being able to defer the decision until y
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="compound-interest.html#emacsway-compound-interest"&gt;&lt;span class="std std-ref"&gt;Technical Debt и сложный процент&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</description><pubDate>Thu, 13 Jan 2022 00:00:00 </pubDate></item><item><title>Наиболее частые управленческие ошибки</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/concerns/business-concerns/common-planning-errors.html</link><description>
+</description><pubDate>Thu, 13 Jan 2022 00:00:00 </pubDate></item><item><title>Наиболее частые ошибки планирования</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/concerns/business-concerns/common-planning-errors.html</link><description>
 &lt;span id="id1"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
 &lt;div class="contents topic" id="id2"&gt;
 &lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-agile-common-planning-errors" id="id9"&gt;Наиболее частые управленческие ошибки&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-agile-common-planning-errors" id="id9"&gt;Наиболее частые ошибки планирования&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id10"&gt;Список ошибок&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-planning-error-false-commutativity" id="id11"&gt;Ложная коммутативность&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id5" id="id12"&gt;Техдолг является константной величиной по отношению ко времени&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id6" id="id13"&gt;Накопление техдолга увеличивает стоимость разработки линейно&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id5" id="id12"&gt;Вера в то, что техдолг является константной величиной по отношению ко времени&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id6" id="id13"&gt;Вера в то, что накопление техдолга увеличивает стоимость разработки линейно&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id7" id="id14"&gt;Вера в то, что разработчикам безразлично качество кода&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -631,10 +689,10 @@ The value of the option originates from being able to defer the decision until y
 &lt;/div&gt;
 &lt;div class="section" id="id3"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#id10"&gt;Список ошибок&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Четыре наиболее частые управленческие ошибки, которые мне приходилось наблюдать на практике.&lt;/p&gt;
+&lt;p&gt;Четыре наиболее частые ошибки планирования, которые мне приходилось наблюдать на практике.&lt;/p&gt;
 &lt;div class="section" id="emacsway-planning-error-false-commutativity"&gt;
 &lt;span id="id4"/&gt;&lt;h3&gt;&lt;a class="toc-backref" href="#id11"&gt;Ложная коммутативность&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Представители бизнеса склонны думать, что если выполнить задачи в последовательности "b", "c", "a", то стоимость их реализации будет такой же, как если бы они были выполнены в последовательности "a", "b", "c".
+&lt;p&gt;Представители бизнеса зачастую склонны думать, что если выполнить задачи в последовательности "b", "c", "a", то стоимость их реализации будет такой же, как если бы они были выполнены в последовательности "a", "b", "c".
 На самом деле, стоимость может отличаться кратно, если даже не на порядок, потому что задача "a" может удешевить стоимость реализации последующих задач.
 Эта ошибка особенно удивительна на фоне того, как много управленческой литературы освещает этот вопрос.
 Некоторые книги даже включают в себя даже целый раздел управленческой математики, как, например, "Менеджмент: Учебник для вузов." 3-е изд., Глухов В.В.&lt;/p&gt;
@@ -644,20 +702,20 @@ The value of the option originates from being able to defer the decision until y
 Все дело в том, в какой последовательности они двигают эти фигуры.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id5"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id12"&gt;Техдолг является константной величиной по отношению ко времени&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Представители бизнеса склонны полагать, что стоимость исправления техдолга является константной величиной по отношению ко времени, а поэтому, его можно безболезненно отложить.
+&lt;h3&gt;&lt;a class="toc-backref" href="#id12"&gt;Вера в то, что техдолг является константной величиной по отношению ко времени&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Представители бизнеса зачастую склонны полагать, что стоимость исправления техдолга является константной величиной по отношению ко времени, а поэтому, его можно безболезненно отложить.
 Такие виды техдолга действительно могут иметь место, но это не исключает существования других видов техдолга, где &lt;a class="reference internal" href="compound-interest.html#emacsway-compound-interest"&gt;&lt;span class="std std-ref"&gt;стоимость исправления через пару месяцев может вырасти кратно, если даже не на порядки&lt;/span&gt;&lt;/a&gt;.
 Именно этот критерий является ключевым при применении &lt;a class="reference external" href="http://sergeyteplyakov.blogspot.com/2016/08/yagni.html"&gt;принципа YAGNI&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id6"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id13"&gt;Накопление техдолга увеличивает стоимость разработки линейно&lt;/a&gt;&lt;/h3&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id13"&gt;Вера в то, что накопление техдолга увеличивает стоимость разработки линейно&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Исходя из предыдущего пункта, у представителей бизнеса нередко формируется иллюзия, что накопление техдолга увеличивает стоимость разработки линейно.
 Как показывает практика, и как демонстрируют исследования авторитетных авторов в области архитектуры, характер роста стоимости разработки имеет тенденцию приближаться к экспоненциальной зависимости.
 Статистику конкретного проекта смотрите в "Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin.
 В таком случае &lt;a class="reference internal" href="../../../../iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;итеративная&lt;/span&gt;&lt;/a&gt; (&lt;a class="reference internal" href="../../../agile.html#emacsway-agile-development"&gt;&lt;span class="std std-ref"&gt;Agile&lt;/span&gt;&lt;/a&gt;) модель разработки может вообще утратить свою экономическую целесообразность перед &lt;a class="reference internal" href="../../../../spiral.html#emacsway-spiral-development"&gt;&lt;span class="std std-ref"&gt;спиральными&lt;/span&gt;&lt;/a&gt; моделями, или даже BDUF.
 Как уже говорилось, &lt;a class="reference internal" href="../../../agile.html#emacsway-agile-development-essence"&gt;&lt;span class="std std-ref"&gt;Agile имеет экономическую целесообразность только при пологом характере роста изменения кода&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Зачастую, эта иллюзия подкрепляется отсутствием мониторинга объективных индикативных показателей здоровья проекта, что не позволяет зафиксировать падение экономики разработки на ранних стадиях, в силу особенностей работы человеческого мозга (когнитивных искажений).&lt;/p&gt;
-&lt;p&gt;Поскольку представители бизнеса склонны руководствоваться краткосрочными бизнес-интересами в ущерб долгосрочным техническим интересам, сбалансированность решений должна гарантироваться процессами, о чем частично упоминалось &lt;a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-agile-solution-of-balancing-business-technical-concerns"&gt;&lt;span class="std std-ref"&gt;здесь&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Поскольку представители бизнеса склонны руководствоваться краткосрочными бизнес-интересами в ущерб долгосрочным техническим интересам, сбалансированность решений должна гарантироваться процессами, о чем частично упоминалось &lt;a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-agile-solution-to-balancing-business-technical-concerns"&gt;&lt;span class="std std-ref"&gt;здесь&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Современные Agile методики имеют тенденцию перестраховки, которая выражена в том, что внутреннее качество программы является вообще &lt;a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-xp2-balancing-business-technical-concerns"&gt;&lt;span class="std std-ref"&gt;константной величиной&lt;/span&gt;&lt;/a&gt;, а не переменной управления разработкой.&lt;/p&gt;
 &lt;p&gt;Я согласен с этим лишь отчасти, и только потому, что технические специалисты лучше разбираются в экономических основах разработки, чем представители бизнеса.
 И тем не менее, есть риск скатиться к "&lt;a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-second-system-effect"&gt;&lt;span class="std std-ref"&gt;Эффекту второй системы&lt;/span&gt;&lt;/a&gt;", т.е. к неоправданному оверинжинирингу.&lt;/p&gt;
@@ -4381,7 +4439,7 @@ Thus, it is related to the potential for the system to adapt to external needs."
 &lt;p&gt;Мое же мнение сводится к тому, что говорить о влиянии внутреннего качества кода на характер роста стоимости изменения кода - нужно.
 Именно этим и занимается Robert C. Martin.
 И это &lt;a class="reference external" href="https://en.m.wikipedia.org/wiki/Ad_hominem"&gt;важнее манеры донесения информации&lt;/a&gt;.
-Потому что это - один из наиболее чувствительных вопросов индустрии, см. "&lt;a class="reference internal" href="../../../models/agile/analysis/concerns/business-concerns/common-planning-errors.html#emacsway-agile-common-planning-errors"&gt;&lt;span class="std std-ref"&gt;Наиболее частые управленческие ошибки&lt;/span&gt;&lt;/a&gt;".&lt;/p&gt;
+Потому что это - один из наиболее чувствительных вопросов индустрии, см. "&lt;a class="reference internal" href="../../../models/agile/analysis/concerns/business-concerns/common-planning-errors.html#emacsway-agile-common-planning-errors"&gt;&lt;span class="std std-ref"&gt;Наиболее частые ошибки планирования&lt;/span&gt;&lt;/a&gt;".&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="solid-and-agile"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#id12"&gt;SOLID and Agile&lt;/a&gt;&lt;/h2&gt;
@@ -9214,65 +9272,7 @@ classes (Riel 1996).&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</description><pubDate>Thu, 06 Jan 2022 00:00:00 </pubDate></item><item><title>Как осуществлять изменения в коллективе</title><link>https://dckms.github.io/system-architecture/emacsway/soft-skills/change-making.html</link><description>&lt;span class="target" id="index-0"/&gt;&lt;div class="section" id="emacsway-change-making-in-psychology"&gt;
-&lt;span id="id1"/&gt; 
-&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;На протяжении своей практики я регулярно наблюдал одну и ту же картину: кто-то из сотрудников узнал что-то новое, или же был принят на работу сотрудник с новыми знаниями (например, DDD, архитектурные, методологические, процессные подходы и т.п.), но, странное дело, новая идея получает не поддержку, а сопротивление коллектива, хотя и могла бы облегчить жизнь многим.&lt;/p&gt;
-&lt;p&gt;Далее одно из двух - либо напряженность нарастает, и наступает разрыв отношений, либо человек смиряется, проявив "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%BD%D0%BE%D1%81%D1%82%D1%8C"&gt;Внешний конформизм&lt;/a&gt;".&lt;/p&gt;
-&lt;p&gt;Последний вариант опасен тем, что для человека намного проще согласиться с существующим положением дел, и, чтобы подавить "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%B3%D0%BD%D0%B8%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9_%D0%B4%D0%B8%D1%81%D1%81%D0%BE%D0%BD%D0%B0%D0%BD%D1%81"&gt;Когнитивный диссонанс&lt;/a&gt;", человек старается всеми силами преувеличить существенность принятого им решения, одновременно приуменьшая важность отвергнутого.
-Вследствие этого альтернатива теряет всякую привлекательность в его глазах.&lt;/p&gt;
-&lt;p&gt;Далее наступает "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%98%D1%81%D0%BA%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B2_%D0%B2%D0%BE%D1%81%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D0%B8_%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%D0%B0"&gt;Искажение в восприятии сделанного выбора&lt;/a&gt;" и "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%98%D1%80%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D1%83%D1%81%D0%B8%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5"&gt;Закон иррационального усиления&lt;/a&gt;", и, из сторонника изменений, человек превращается в реакциониста, находя в этом "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%89%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC"&gt;Психологическую защиту&lt;/a&gt;".&lt;/p&gt;
-&lt;p&gt;Наверняка вы слышали в своей практике такие фразы, как "я тоже был таким когда-то...", "юношеский максимализм" и т.п.&lt;/p&gt;
-&lt;p&gt;Но бывает и третий вариант - человеку удается изменить среду.
-В конце концов, существующая среда была кем-то создана.
-Почему одним это удается, а другим нет?&lt;/p&gt;
-&lt;p&gt;По моим наблюдениям, условием снижения напряженности является выравнивание уровня знаний.
-Вероятность разрыва отношений выше в ригидных коллективах с низкой обучаемостью.
-Поэтому, первая задача, которую предстоит решить, - это изменить систему ценностей коллектива, и возвести знания в элемент престижа.&lt;/p&gt;
-&lt;p&gt;Никогда не предлагайте внедрения какого-либо нового подхода, например, DDD.
-Для коллектива это - еще одна неопределенность, которая может превратиться в еще одну проблему на их шее.
-В силу "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%BD%D0%B5%D0%BE%D0%B4%D0%BD%D0%BE%D0%B7%D0%BD%D0%B0%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%B8"&gt;Эффекта неоднозначности&lt;/a&gt;" предлагаемые изменения будут отвергнуты.&lt;/p&gt;
-&lt;p&gt;Не пытайтесь доказать собеседнику его неправоту, потому что:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BB%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5_%D0%B2%D0%BE%D1%81%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D0%B5"&gt;Селективное восприятие&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BA%D0%BB%D0%BE%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%BA_%D0%BF%D0%BE%D0%B4%D1%82%D0%B2%D0%B5%D1%80%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8E_%D1%81%D0%B2%D0%BE%D0%B5%D0%B9_%D1%82%D0%BE%D1%87%D0%BA%D0%B8_%D0%B7%D1%80%D0%B5%D0%BD%D0%B8%D1%8F"&gt;Склонность к подтверждению своей точки зрения&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%94%D0%B0%D0%BD%D0%BD%D0%B8%D0%BD%D0%B3%D0%B0_%E2%80%94_%D0%9A%D1%80%D1%8E%D0%B3%D0%B5%D1%80%D0%B0"&gt;Эффект Даннинга — Крюгера&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://architectelevator.com/strategy/always-be-right/"&gt;Вы и сами можете ошибаться.&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Мне известен только один действенный способ провести изменения, это - &lt;a class="reference external" href="https://less.works/ru/less/principles/systems-thinking.html"&gt;идентифицировать проблемы&lt;/a&gt;, и в ответ на &lt;strong&gt;конкретные проблемы&lt;/strong&gt; предлагать &lt;strong&gt;конкретные решения&lt;/strong&gt;.
-Например, если проблему решает один из тактических паттернов DDD, то не нужно настаивать на переходе на DDD полностью.
-Если проблему решает "&lt;a class="reference external" href="https://www.pmi.org/disciplined-agile/lifecycle/program"&gt;Program Management&lt;/a&gt;", то &lt;a class="reference external" href="https://www.scrum.org/resources/blog/scaling-scrum-nexus-and-kanban"&gt;не нужно настаивать на переходе на SAFe или DAD полностью&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Также учтите, что &lt;a class="reference external" href="https://www.hindawi.com/journals/np/2009/482696/"&gt;мозгу нужно время&lt;/a&gt;, чтобы осознать решение и рассеять неопределенность.
-Поэтому, не спешите.
-Вернитесь к вопросу несколько раз через время.
-Вода камень точит.
-Видели как море режет скалы?
-Обязательно посмотрите - вдохновляет.
-Стекающие капельки воды прорезают в камне бороздки и углубляют их до тех пор, пока глыба не обрушится.
-Капля против скалы!
-А вы - больше, чем капля.
-Терпенье и труд, как говорится...&lt;/p&gt;
-&lt;p&gt;Этот пример учит еще одному - чем меньше гранулярность изменений, тем выше вероятность их принятия.
-Это важно, ибо силовое превосходство не на вашей стороне.
-Чтобы повысить удельное давление, нужно уменьшить площадь воздействия.
-Побеждает не тот, кто сильнее, а тот, кто способен создать силовое превосходство в нужное время в нужном месте.&lt;/p&gt;
-&lt;p&gt;В крайнем случае, сработает "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%81%D0%BA%D0%B0%D0%B4_%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%BD%D0%BE%D0%B9_%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8"&gt;Каскад доступной информации&lt;/a&gt;".&lt;/p&gt;
-&lt;p&gt;Как говорил Генри Форд, &lt;em&gt;"качество — это делать что-либо правильно, даже когда никто не смотрит"&lt;/em&gt;.
-Единственный способ этого достигнуть - это единое понимание и полнота информированности коллектива.
-Достигается это проливанием света на недостающие связи между причиной и следствием.
-Изменения должны происходить снизу, от самоорганизующегося коллектива, а не спускаться директивно сверху.
-Важно уметь не внедрить изменения, а инициировать и подпитывать их.
-Больше слушать, спрашивать, меньше говорить.&lt;/p&gt;
-&lt;p&gt;Отличная книга по теме:
-- "Social psychology" 13th edition by David G. Myers. Перевод: "Социальная психология" / Майерс Д. Пер. с англ. З. Замчук; Зав. ред. кол. Л. Винокуров. — 7-е изд. — СПб.: Питер, 2006.&lt;/p&gt;
-&lt;div class="admonition seealso"&gt;
-&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="icebreaker-principle.html"&gt;&lt;span class="doc"&gt;Принцип ледокола&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description><pubDate>Sun, 02 Jan 2022 00:00:00 </pubDate></item><item><title>Критерии качества Agile Requirements</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/requirements/requirements-criteria.html</link><description>
+</description><pubDate>Thu, 06 Jan 2022 00:00:00 </pubDate></item><item><title>Критерии качества Agile Requirements</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/requirements/requirements-criteria.html</link><description>
 &lt;span id="emacsway-agile-requirements-criteria"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Существуют критерии качества к User Story, известные под акронимом INVEST (Independent, Negotiable, Valuable, Estimable, Small, Testable).&lt;/p&gt;
