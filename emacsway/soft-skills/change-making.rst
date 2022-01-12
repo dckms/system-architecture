@@ -1,8 +1,9 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
-.. index:: Cognitive Bias, Soft Skills
+.. index:: Soft Skills
 
 .. index::
+   single: Cognitive Bias; in Change-making
    single: Change-making; in psychology
    :name: emacsway-change-making-in-psychology
 
