@@ -726,13 +726,13 @@ ATAM in Agile
 
    TechDebt
 
-      - https://t.me/emacsway_log/125
-      - https://t.me/emacsway_log/130
       - https://t.me/emacsway_log/393
 
 
    YAGNI /emacsway/it/sdlc/uncertainty-management/adaptation/software-construction/yagni.rst
 
+      - https://t.me/emacsway_log/125
+      - https://t.me/emacsway_log/130
       - https://t.me/emacsway_log/131
       - https://t.me/emacsway_log/132
       - https://t.me/emacsway_log/133
