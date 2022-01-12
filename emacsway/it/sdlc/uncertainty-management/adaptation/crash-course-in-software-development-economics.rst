@@ -17,6 +17,7 @@
 - "Extreme Programming Explained" 1st edition by Kent Beck
     - "Chapter 3. Economics of Software Development"
     - "Chapter 17. Design Strategy"
+    - "Chapter 20. Retrofitting XP"
     - "Chapter 24. What Makes XP Hard"
 - "Essential Scrum: A Practical Guide to the Most Popular Agile Process" by Kenneth Rubin
     - "Chapter 3. Agile Principles"

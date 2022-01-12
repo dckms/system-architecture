@@ -4,9 +4,9 @@
    single: Requirements; in balancing business and technical concerns in Agile
    :name: emacsway-agile-balancing-business-technical-concerns
 
-===============================================
-Достижение баланса Бизнес/Технических интересов
-===============================================
+===========================================
+Балансирование Бизнес/Технических интересов
+===========================================
 
 .. sectionauthor:: Ivan Zakrevsky
 
@@ -652,7 +652,7 @@ ATAM in Agile
 
 Технарь всегда будет отстаивать внутреннее качество программы потому, что от этого зависит его velocity.
 Он понимает, что за сорванные сроки виноватым будет именно он.
-И даже, если руководство не обвинит его явно, но оно может это запомнить и учесть это в будущем при принятии кадровых решений (что вызывает еще больше ежедневного страха за неопределенность будущего).
+И даже, если руководство не обвинит его явно, но оно может это запомнить и учесть это в будущем при принятии кадровых решений (что вызывает еще больше ежедневного страха из-за неопределенности будущего).
 
 Наконец, представитель бизнеса, который сегодня выдает индульгенции на снижение внутреннего качества программы, завтра может быть заменен другим представителем, который эти индульгенции может легко отозвать, и технари останутся с проблемой наедине.
 Эти риски создают неопределенность, которая, в результате действия психологического "`Эффекта Неоднозначности <https://ru.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%BD%D0%B5%D0%BE%D0%B4%D0%BD%D0%BE%D0%B7%D0%BD%D0%B0%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%B8>`__", вынуждает технаря отстаивать решение, обладающее наименьшей неопределенностью (т.е. настаивать техническом решении).
@@ -702,7 +702,7 @@ ATAM in Agile
 
     -- "Planning Extreme Programming" by Kent Beck, Martin Fowler, "Chapter 2. Fear"
 
-Глава "Chapter 2. Fear" книги "Planning Extreme Programming" by Kent Beck, Martin Fowler обладает уникальной ценностью, но немного великовата чтобы поместить её сюда полностью.
+Глава "Chapter 2. Fear" книги "Planning Extreme Programming" by Kent Beck, Martin Fowler обладает уникальной ценностью, но немного великовата для того, чтобы поместить её сюда полностью.
 
 
 .. seealso::
@@ -714,6 +714,10 @@ ATAM in Agile
    - ":ref:`emacsway-cognitive-biases`"
    - ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`"
 
+
+   - ":ref:`emacsway-when-to-refactor`"
+   - ":ref:`emacsway-when-to-write-unit-tests`"
+
 .. todo::
 
    here
@@ -722,18 +726,16 @@ ATAM in Agile
 
    TechDebt
 
+      - https://t.me/emacsway_log/393
+
+
+   YAGNI /emacsway/it/sdlc/uncertainty-management/adaptation/software-construction/yagni.rst
+
       - https://t.me/emacsway_log/125
       - https://t.me/emacsway_log/130
-      - https://t.me/emacsway_log/393
-      - https://t.me/emacsway_log/542
-
-   Refactoring
-
       - https://t.me/emacsway_log/131
       - https://t.me/emacsway_log/132
-
-   YAGNI
-
+      - https://t.me/emacsway_log/133
       - https://t.me/emacsway_log/135
       - https://t.me/emacsway_log/136
 
