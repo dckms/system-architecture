@@ -104,7 +104,7 @@ html_theme_options = {
     # Google Analytics ID
     'analytics_id': os.environ.get('GOOGLE_ANALITICS_ID', None),
     'extra_nav_links': {
-        '<i class="fab fa-telegram" style="color:blue;"></i> Telegram': 'https://t.me/emacsway_log',
+        '<i class="fab fa-telegram" style="color:#54a9eb;"></i> Telegram': 'https://t.me/emacsway_log',
     },
 
 }
