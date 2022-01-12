@@ -58,6 +58,25 @@
 
     -- "Extreme Programming Explained" 1st edition by Kent Beck, перевод ООО Издательство "Питер"
 
+..
+
+    📝 "Правило трех раз
+
+    Дон Робертс (Don Roberts) однажды сказал мне следующее.
+    Когда вы делаете что-то в первый раз, вы просто это делаете.
+    Во второй раз вы морщитесь от повторения тех же действий, но все же делаете их.
+    Наконец, делая это же в третий раз, вы начинаете рефакторинг.
+    Начинайте рефакторинг после трех повторов.
+
+    The Rule of Three
+
+    Here's a guideline Don Roberts gave me: The first time you do something, you just do it.
+    The second time you do something similar, you wince at the duplication, but you do the duplicate thing anyway.
+    The third time you do something similar, you refactor.
+    Or for those who like baseball: Three strikes, then you refactor."
+
+    -- "Refactoring: Improving the Design of Existing Code" 2nd edition by Martin Fowler, Kent Beck переовд И.В. Красикова под редакцией С.Н. Тригуб
+
 
 Что делать, если бизнес не выделяет ресурсов на рефакторинг кода?
 =================================================================
@@ -78,13 +97,13 @@
     Самый быстрый путь – рефакторинг, поэтому я и буду им заниматься.
 
     Of course, many people say they are driven by quality but are more driven by schedule.
-    In these cases I give my more controversial advice: Don’t tell!
+    In these cases I give my more controversial advice: Don't tell!
 
-    Subversive? I don’t think so.
+    Subversive? I don't think so.
     Software developers are professionals.
     Our job is to build effective software as rapidly as we can.
     My experience is that refactoring is a big aid to building software quickly.
-    If I need to add a new function and the design does not suit the change, I find it’s quicker to refactor first and then add the function.
+    If I need to add a new function and the design does not suit the change, I find it's quicker to refactor first and then add the function.
     If I need to fix a bug, I need to understand how the software works—and I find refactoring is the fastest way to do this.
     A schedule-driven manager wants me to do things the fastest way I can; how I do it is my business.
     The fastest way is to refactor; therefore I refactor."

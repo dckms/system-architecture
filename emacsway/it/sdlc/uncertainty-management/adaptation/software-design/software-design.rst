@@ -300,7 +300,7 @@ Martin Fowler
     We now know we can improve the design of existing code—so we can form and improve a design over time, even as the needs of the program change.
     Since it is very difficult to do a good design up front, refactoring becomes vital to achieving that virtuous path of rapid functionality."
 
-    -- "Refactoring: Improving the Design of Existing Code" 2nd edition by Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts
+    -- "Refactoring: Improving the Design of Existing Code" 2nd edition by Martin Fowler, Kent Beck
 
 ..
 
