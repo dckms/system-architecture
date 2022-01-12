@@ -1,7 +1,7 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
 .. index::
-   single: Requirements; in balancing business and technical concerns in Agile
+   single: Concerns; balancing business and technical concerns in Agile
    :name: emacsway-agile-balancing-business-technical-concerns
 
 ===========================================
@@ -56,7 +56,7 @@ Iron Triangle изначально был квадратом, и только в
 
 
 .. index::
-   single: Requirements; in predominance of technical concerns in Agile
+   single: Concerns; predominance of technical concerns in Agile
    :name: emacsway-agile-technical-concerns-predominance
 
 Преобладание технических интересов
@@ -140,7 +140,7 @@ Frederick Brooks в своем бестселлере "Мифический че
 
 
 .. index::
-   single: Requirements; in predominance of business concerns in Agile
+   single: Concerns; predominance of business concerns in Agile
    :name: emacsway-agile-business-concerns-predominance
 
 Преобладание бизнес-интересов
@@ -204,8 +204,8 @@ Frederick Brooks в своем бестселлере "Мифический че
 
 
 .. index::
-   single: Requirements; in solution of balancing business and technical concerns in Agile
-   :name: emacsway-agile-solution-of-balancing-business-technical-concerns
+   single: Concerns; solution to balancing business and technical concerns in Agile
+   :name: emacsway-agile-solution-to-balancing-business-technical-concerns
 
 Решение
 -------
@@ -223,7 +223,7 @@ Frederick Brooks в своем бестселлере "Мифический че
 
 
 .. index::
-   single: Requirements; in balancing business and technical concerns in XP
+   single: Concerns; balancing business and technical concerns in XP
    :name: emacsway-xp-balancing-business-technical-concerns
 
 Extreme Programming
@@ -231,7 +231,7 @@ Extreme Programming
 
 
 .. index::
-   single: Requirements; in balancing business and technical concerns in XP 1st edition
+   single: Concerns; balancing business and technical concerns in XP 1st edition
    :name: emacsway-xp1-balancing-business-technical-concerns
 
 Первая версия XP
@@ -305,7 +305,7 @@ Extreme Programming
 
 
 .. index::
-   single: Requirements; in balancing business and technical concerns in XP 2d edition
+   single: Concerns; balancing business and technical concerns in XP 2d edition
    :name: emacsway-xp2-balancing-business-technical-concerns
 
 Вторая версия XP
@@ -392,7 +392,7 @@ Extreme Programming
 
 
 .. index::
-   single: Requirements; in balancing business and technical concerns in Scrum
+   single: Concerns; balancing business and technical concerns in Scrum
    :name: emacsway-scrum-balancing-business-technical-concerns
 
 Scrum
