@@ -2,6 +2,13 @@
   https://alabaster.readthedocs.io/en/latest/customization.html#custom-stylesheet
 */
 
+div.body h1 {
+    font-size: 220%;
+}
+div.sphinxsidebarwrapper h1.logo {
+    font-size: 120%;
+}
+
 div.body p, div.body dd, div.body li, div.body blockquote {
     hyphens: none;
 }
