@@ -730,13 +730,12 @@ ATAM in Agile
       - https://t.me/emacsway_log/130
       - https://t.me/emacsway_log/393
 
-   Refactoring
-
-      - https://t.me/emacsway_log/131
-      - https://t.me/emacsway_log/132
 
    YAGNI
 
+      - https://t.me/emacsway_log/131
+      - https://t.me/emacsway_log/132
+      - https://t.me/emacsway_log/133
       - https://t.me/emacsway_log/135
       - https://t.me/emacsway_log/136
 

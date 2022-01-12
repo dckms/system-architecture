@@ -75,7 +75,7 @@
     The third time you do something similar, you refactor.
     Or for those who like baseball: Three strikes, then you refactor."
 
-    -- "Refactoring: Improving the Design of Existing Code" 2nd edition by Martin Fowler, Kent Beck переовд И.В. Красикова под редакцией С.Н. Тригуб
+    -- "Refactoring: Improving the Design of Existing Code" 2nd edition by Martin Fowler, Kent Beck перевод И.В. Красикова под редакцией С.Н. Тригуб
 
 
 Что делать, если бизнес не выделяет ресурсов на рефакторинг кода?
