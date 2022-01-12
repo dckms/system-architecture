@@ -673,7 +673,37 @@ ATAM in Agile
 К тому же, представители бизнеса всегда находится под давлением других стейкхолдеров бизнес-группы.
 Хорошая организация процессов должна взаимокомпенсировать эти перекосы.
 
-P.S.: От себя добавлю, что я пробовал различные Agile-методологии, и XP - это единственное, что у нас работало эффективно в малочисленных, немасштабируемых коллективах.
+    📝 "Software development is risky.
+    **People involved have many fears of what may go wrong.**
+    To develop effectively we must acknowledge these fears.
+
+    **Why do we need a software process? For the same reason that we need laws, governments, and taxes: fear.**
+
+    <...>
+
+    Unacknowledged Fear Is the Source of All Software Project Failures
+
+    <...>
+
+    **In order to be successful, a development process must be instituted among customers and developers that secures certain inalienable rights.**
+
+    <...>
+
+    If we are going to develop well, we must create a culture that makes it possible for programmers and customers to acknowledge their fears and accept their rights and responsibilities.
+    Without such guarantees, we cannot be courageous.
+    We huddle in fear behind fortress walls, building them ever stronger, adding ever more weight to the development processes we have adopted.
+    We continually add cannonades and battlements, documents and reviews, procedures and sign-offs, moats with crocodiles,
+    torture chambers, and huge pots of boiling oil.
+
+    But when our fears are acknowledged and our rights are accepted, then we can be courageous.
+    We can set goals that are hard to reach and collaborate to make those goals.
+    We can tear down the structures that we built out of fear and that impede us.
+    We will have the courage to do only what is necessary and no more, to spend our time on what's important rather than on protecting ourselves."
+
+    -- "Planning Extreme Programming" by Kent Beck, Martin Fowler, "Chapter 2. Fear"
+
+Глава "Chapter 2. Fear" книги "Planning Extreme Programming" by Kent Beck, Martin Fowler обладает уникальной ценностью, но немного великовата чтобы поместить её сюда полностью.
+
 
 .. seealso::
 
