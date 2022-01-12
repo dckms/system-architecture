@@ -4,9 +4,9 @@
    single: Requirements; in balancing business and technical concerns in Agile
    :name: emacsway-agile-balancing-business-technical-concerns
 
-===============================================
-Достижение баланса Бизнес/Технических интересов
-===============================================
+===========================================
+Балансирование Бизнес/Технических интересов
+===========================================
 
 .. sectionauthor:: Ivan Zakrevsky
 
@@ -714,6 +714,10 @@ ATAM in Agile
    - ":ref:`emacsway-cognitive-biases`"
    - ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`"
 
+
+   - ":ref:`emacsway-when-to-refactor`"
+   - ":ref:`emacsway-when-to-write-unit-tests`"
+
 .. todo::
 
    here
@@ -725,7 +729,6 @@ ATAM in Agile
       - https://t.me/emacsway_log/125
       - https://t.me/emacsway_log/130
       - https://t.me/emacsway_log/393
-      - https://t.me/emacsway_log/542
 
    Refactoring
 

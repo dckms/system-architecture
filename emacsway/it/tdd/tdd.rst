@@ -94,7 +94,7 @@ TDD именно именно это и делает - декомпозируе�
 
     My first experience with disciplined, "one step at a time" refactoring was when I was pair-programming at 30,000 feet with Kent Beck.
 
-    -- Martin Fowler, the key author of "Refactoring: Improving the Design of Existing Code" [#fnrefactoring]_, перевод С. Маккавеева
+    -- Martin Fowler, the key author of "Refactoring: Improving the Design of Existing Code" [#fnrefactoring]_ by Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts, перевод С. Маккавеева
 
 К тому же, рефакторинг является необъемлемой частью цикла TDD:
 
@@ -170,7 +170,7 @@ TDD именно именно это и делает - декомпозируе�
 
     Refactoring is the process of changing a software system in such a way that it does not alter the external behavior of the code yet improves its internal structure.
 
-    -- Martin Fowler in "Refactoring: Improving the Design of Existing Code" [#fnrefactoring]_, перевод С. Маккавеева
+    -- Martin Fowler in "Refactoring: Improving the Design of Existing Code" [#fnrefactoring]_ by Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts, перевод С. Маккавеева
 
 TDD, как и рефакторинг, расщепляет сложность таким образом, чтобы минимизировать объем сложности, рассматриваемый разработчиком в единицу времени.
 Это как песочные часы - одна песчинка в единицу времени.
