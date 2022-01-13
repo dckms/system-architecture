@@ -116,7 +116,7 @@ Martin Fowler дает совет по этому вопросу:
 
 .. seealso::
 
-   - https://t.me/emacsway_log/131
+   - ":ref:`emacsway-yagni`"
    - ":ref:`emacsway-when-to-write-unit-tests`"
    - ":ref:`emacsway-planning-technical-task`"
    - ":ref:`emacsway-agile-balancing-business-technical-concerns`"

@@ -260,7 +260,7 @@ But whatever architectural decisions are made, the architect must make an effort
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#atam-in-agile" id="id23"&gt;ATAM in Agile&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-agile-balancing-business-technical-concerns-with-fixed-iteration-ratio" id="id24"&gt;Фиксированное время на технические задачи&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-agile-balancing-business-technical-concerns-with-fixed-iteration-ratio" id="id24"&gt;Фиксированная часть итерации на технические задачи&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -779,7 +779,7 @@ In particular, quality attribute (QA) prioritization can be especially difficult
 &lt;p&gt;Смотрите также о "Lightweight Architecture Evaluation (LAE)" в "Software Architecture in Practice" 4th edition by Len Bass, Paul Clements, Rick Kazman.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="emacsway-agile-balancing-business-technical-concerns-with-fixed-iteration-ratio"&gt;
-&lt;span id="id9"/&gt;&lt;h4&gt;&lt;a class="toc-backref" href="#id24"&gt;Фиксированное время на технические задачи&lt;/a&gt;&lt;/h4&gt;
+&lt;span id="id9"/&gt;&lt;h4&gt;&lt;a class="toc-backref" href="#id24"&gt;Фиксированная часть итерации на технические задачи&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;div&gt;&lt;p&gt;📝 "Business should sequence stories.
 Business people understand uncertainty in estimates.
@@ -829,7 +829,7 @@ switched to points because ideal time confused people (why did 2 day story take 
 &lt;p&gt;Страх неопределенности возникает и у представителя бизнеса.
 Зачастую он не уверен в том, хватит ли команде квалификации, чтобы эффективно использовать выделенные ресурсы на технические задачи, и зачастую эта неуверенность подкреплена негативным опытом в прошлом.
 В силу психологического "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%BD%D0%B5%D0%BE%D0%B4%D0%BD%D0%BE%D0%B7%D0%BD%D0%B0%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%B8"&gt;Эффекта Неоднозначности&lt;/a&gt;", возникает стремление к варианту, обладающему наименьшей неопределенностью, т.е. лучше "запилить еще одну осязаемую бизнес-фичу" вместо того, чтобы потратить ресурсы на призрачную возможность повысить velocity.&lt;/p&gt;
-&lt;p&gt;Так же нужно учитывать и "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%BD%D0%B5%D0%B4%D0%B0%D0%B2%D0%BD%D0%B5%D0%B3%D0%BE"&gt;Эффект Недавнего&lt;/a&gt;".
+&lt;p&gt;Также нужно учитывать и "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%BD%D0%B5%D0%B4%D0%B0%D0%B2%D0%BD%D0%B5%D0%B3%D0%BE"&gt;Эффект Недавнего&lt;/a&gt;".
 Психолог, нобелевский лауреат Даниэль Канеман выделил «правило пик-конец» нашей памяти.
 Мы помним прошлое неравномерно.
 Наибольший вес мы придаем двум видам событий: тем, что вызвали максимальные эмоции и тем, которые произошли недавно.&lt;/p&gt;
@@ -1154,7 +1154,7 @@ The fastest way is to refactor; therefore I refactor."&lt;/p&gt;
 &lt;div class="admonition seealso"&gt;
 &lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://t.me/emacsway_log/131"&gt;https://t.me/emacsway_log/131&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../../../../uncertainty-management/adaptation/software-construction/yagni.html#emacsway-yagni"&gt;&lt;span class="std std-ref"&gt;YAGNI&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="when-to-write-unit-tests.html#emacsway-when-to-write-unit-tests"&gt;&lt;span class="std std-ref"&gt;Когда писать Unit Tests в legacy&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../business-concerns/common-planning-errors.html#emacsway-planning-technical-task"&gt;&lt;span class="std std-ref"&gt;Как взять в релиз техническую задачу&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../balancing-business-technical-concerns.html#emacsway-agile-balancing-business-technical-concerns"&gt;&lt;span class="std std-ref"&gt;Балансирование Бизнес/Технических интересов&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
