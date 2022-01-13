@@ -18,6 +18,10 @@
 =======================================
 
 
+.. index::
+   single: Brooks's law; definition
+   :name: emacsway-brooks's-law
+
 Закон Брукса
 ------------
 
