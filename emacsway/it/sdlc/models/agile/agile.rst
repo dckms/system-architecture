@@ -219,6 +219,14 @@ Impossible. Точка.
 
     -- "`Agile Software Development <https://martinfowler.com/agile.html>`__" by Martin Fowler
 
+..
+
+    📝 "We need to stress that you shouldn't worry too much about the issue of reworking.
+    **XP's practices are all about reducing the cost of reworking to manageable levels.**
+    If you find yourself in a situation **where the cost of reworking is prohibitive, then you should either not use XP or you should use an environment that makes rework easier**."
+
+    -- "Planning Extreme Programming" by Kent Beck, Martin Fowler
+
 Этому вопросу посвящена статья "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler.
 
     📝 "In its common usage, evolutionary design is a disaster.
