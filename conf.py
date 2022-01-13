@@ -36,6 +36,7 @@ copyright = '{}, {} (<a href="{}" rel="nofollow">License</a>)'.format(
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'myst_parser',
     'yasfb',
