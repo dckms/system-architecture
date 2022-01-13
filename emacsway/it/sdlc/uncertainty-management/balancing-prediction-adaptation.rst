@@ -197,7 +197,7 @@ Grady Booch даже назвал :doc:`качество управления м
 А поскольку модель SDLC призвана решать проблему управления неопределенностью требований, то `выбор модели становится архитектурной задачей <https://itabok.iasaglobal.org/itabok3_0/architecture-methodologies-and-frameworks/>`__.
 
 Здесь Prediction сфокусирован, главным образом, на разрешении неопределенности в problem-space (т.е. требований), что влияет на выбор SDLC-модели.
-За разрешение неопределенности в solution-space на уровне Implementation и Software Design отвечает принцип YAGNI, целью которого является само снижение стоимости Adaptation.
+За разрешение неопределенности в solution-space на уровне Implementation и Software Design отвечает принцип :ref:`YAGNI <emacsway-yagni>`, целью которого является само снижение стоимости Adaptation.
 
 О том, как интегрировать активности по анализу и проектированию в Agile-модель разработки, см. также в разделе :ref:`emacsway-program-management`.
 
