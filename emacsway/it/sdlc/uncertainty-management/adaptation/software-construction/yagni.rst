@@ -206,7 +206,7 @@ Martin Fowler о выборе момента реализации проектн
 Литература о YAGNI
 ==================
 
-- "`Принцип YAGNI <http://sergeyteplyakov.blogspot.com/2016/08/yagni.html>`__" / Сегей Тепляков
+- "`Принцип YAGNI <http://sergeyteplyakov.blogspot.com/2016/08/yagni.html>`__" / Сергей Тепляков
 - "`Yagni <https://martinfowler.com/bliki/Yagni.html>`__" (хорошо разъясняет виды экономических ущербов: "cost of build", "cost of delay", "cost of carry", "cost of repair", "cost of removing")
 - "`Technical Debt <https://martinfowler.com/bliki/TechnicalDebt.html>`__"
 - "`Technical Debt Quadrant <https://martinfowler.com/bliki/TechnicalDebtQuadrant.html>`__"
