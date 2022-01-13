@@ -235,7 +235,7 @@ Harlan Mills' Proposal (Предложение Харлана Миллза) бы
 
 .. index::
    single: Program Management; in Team Topologies at scale
-   :name: emacsway-team-topologies-at-scale-program-management
+   :name: emacsway-program-management
 
 Program Management
 ==================
