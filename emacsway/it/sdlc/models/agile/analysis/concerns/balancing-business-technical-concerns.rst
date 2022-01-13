@@ -419,7 +419,7 @@ Extreme Programming
 
     -- "`Joint Application Design. Business Requirements Analysis for Successful Re-engineering <https://web.archive.org/web/20090221042620/http://www.bee.net/bluebird/jaddoc.htm>`__" by Bill Jennerich 
 
-Баланс краткосрочных бизнес-интересов и долгосрочных технических интересов Kent Beck находит в сглаживании по времени "`Design Payoff Line <https://martinfowler.com/bliki/DesignPayoffLine.html>`__" посредством применения принципа YAGNI, см. ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`".
+Баланс краткосрочных бизнес-интересов и долгосрочных технических интересов Kent Beck находит в сглаживании по времени "`Design Payoff Line <https://martinfowler.com/bliki/DesignPayoffLine.html>`__" посредством применения принципа :ref:`YAGNI <emacsway-yagni>`, см. ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`".
 
 
 .. index::
