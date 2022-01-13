@@ -682,8 +682,8 @@ ATAM in Agile
    single: Concerns; balancing business and technical concerns with fixed iteration ratio
    :name: emacsway-agile-balancing-business-technical-concerns-with-fixed-iteration-ratio
 
-Фиксированное время на технические задачи
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Фиксированная часть итерации на технические задачи
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     📝 "Business should sequence stories.
     Business people understand uncertainty in estimates.
