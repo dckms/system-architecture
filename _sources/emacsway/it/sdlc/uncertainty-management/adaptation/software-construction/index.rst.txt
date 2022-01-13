@@ -7,3 +7,4 @@ Software Construction
    :caption: Оглавление:
    :glob:
 
+   *

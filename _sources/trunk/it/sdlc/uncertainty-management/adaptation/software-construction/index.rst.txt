@@ -7,3 +7,5 @@ Software Construction
    :caption: Оглавление:
    :glob:
 
+   /emacsway/it/sdlc/uncertainty-management/adaptation/software-construction/borrowing-trouble
+   /emacsway/it/sdlc/uncertainty-management/adaptation/software-construction/yagni
