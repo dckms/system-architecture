@@ -39,7 +39,7 @@
 - "`Design Payoff Line <https://martinfowler.com/bliki/DesignPayoffLine.html>`__"
 - "`Design Stamina Hypothesis <https://martinfowler.com/bliki/DesignStaminaHypothesis.html>`__"
 - "`Is High Quality Software Worth the Cost? <https://martinfowler.com/articles/is-quality-worth-cost.html>`__"
-- "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler.
+- "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler
 - "`Принцип YAGNI <http://sergeyteplyakov.blogspot.com/2016/08/yagni.html>`__" / Сегей Тепляков
 - "`О повторном использовании кода <http://sergeyteplyakov.blogspot.com/2012/04/blog-post_19.html>`__" / Сегей Тепляков
 - "`Systems thinking <https://less.works/less/principles/systems-thinking.html>`__" (`на русском <https://less.works/ru/less/principles/systems-thinking.html>`__)
