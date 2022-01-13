@@ -241,6 +241,18 @@ Frederick Brooks в своем бестселлере "Мифический че
 
     -- "Planning Extreme Programming" by Kent Beck, Martin Fowler
 
+..
+
+    📝 "Это достаточно сложно — разработать процесс, в рамках которого краткосрочные личные интересы служат долгосрочным интересам всей команды.
+    Вы можете сколько угодно рассуждать на тему, насколько та или иная методика способствует достижению долгосрочной всеобщей цели, однако как только вы оказываетесь под давлением, вы обнаруживаете, что если методика не способствует решению конкретной проблемы, стоящей перед вами в настоящий момент, вы отбрасываете ее в сторону.
+    Если дисциплина ХР не будет удовлетворять краткосрочным личным интересам людей, она обречена на провал.
+
+    It's been tricky, designing a process where following short-term self-interest also serves long-term team interest.
+    You can expound all you want on how some practice or other is in everybody's best interest long-term, but when the pressure mounts, if the practice doesn't solve an immediate problem it will be discarded.
+    If XP can't work with people's short-term interest, it is doomed to the outer methodological darkness."
+
+    -- "Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 8. Basic Principles", перевод ООО Издательство "Питер"
+
 Хорошая организация процессов должна взаимокомпенсировать эти перекосы.
 
 Разрешение противоречий требований различных групп стейкхолдеров хорошо изучены анализом и архитектурой.
@@ -419,7 +431,7 @@ Extreme Programming
 
     -- "`Joint Application Design. Business Requirements Analysis for Successful Re-engineering <https://web.archive.org/web/20090221042620/http://www.bee.net/bluebird/jaddoc.htm>`__" by Bill Jennerich 
 
-Баланс краткосрочных бизнес-интересов и долгосрочных технических интересов Kent Beck находит в сглаживании по времени "`Design Payoff Line <https://martinfowler.com/bliki/DesignPayoffLine.html>`__" посредством применения принципа YAGNI, см. ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`".
+Баланс краткосрочных бизнес-интересов и долгосрочных технических интересов Kent Beck находит в сглаживании по времени "`Design Payoff Line <https://martinfowler.com/bliki/DesignPayoffLine.html>`__" посредством применения принципа :ref:`YAGNI <emacsway-yagni>`, см. ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`".
 
 
 .. index::
@@ -798,17 +810,6 @@ ATAM in Agile
    TechDebt
 
       - https://t.me/emacsway_log/393
-
-
-   YAGNI /emacsway/it/sdlc/uncertainty-management/adaptation/software-construction/yagni.rst
-
-      - https://t.me/emacsway_log/125
-      - https://t.me/emacsway_log/130
-      - https://t.me/emacsway_log/131
-      - https://t.me/emacsway_log/132
-      - https://t.me/emacsway_log/133
-      - https://t.me/emacsway_log/135
-      - https://t.me/emacsway_log/136
 
    ???
 

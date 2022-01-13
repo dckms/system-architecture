@@ -353,7 +353,7 @@ TDD - основной катализатор Clean Code
 
 - Emergent Design
 - Evolutionary (Incremental, Continuous) Design
-- YAGNI
+- :ref:`YAGNI <emacsway-yagni>`
 - Очевидная Реализация (Obvious Implementation)
 - Копирование Паттернов (Pattern Copying)
 
