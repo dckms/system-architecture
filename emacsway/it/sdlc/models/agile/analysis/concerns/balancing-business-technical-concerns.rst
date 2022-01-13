@@ -202,6 +202,30 @@ Frederick Brooks в своем бестселлере "Мифический че
 
     -- "`Better Scrum with Essence <https://www.scruminc.com/better-scrum-with-essence/>`__" Jeff Sutherland
 
+..
+
+    📝 "Мы попробовали различные варианты работы с техническими историями.
+    Мы пробовали считать их самыми обычными user story.
+    Это была неудачная идея: для product owner'а приоритезировать их в product backlog'е было всё равно, что сравнить тёплое с мягким.
+    По очевидным причинам технические истории получали самый низкий приоритет с объяснением:
+    "Да, ребята, несомненно, ваш сервер непрерывной интеграции – очень важная штука, но давайте сперва реализуем кое-какие прибыльные функции?
+    После этого вы можете прикрутить вашу техническую конфетку, окей?"
+
+    В некоторых случаях product owner действительно прав, но чаще все-таки нет.
+    Мы пришли к выводу, что product owner не всегда компетентен, чтобы идти на компромисс.
+
+    We've experimented a lot with different ways of handling tech stories.
+    We tried treating them as first-class stories, just like any others.
+    That was no good; when the product owner prioritized the product backlog, it was like comparing apples with oranges.
+    In fact, for obvious reasons, the tech stories were often given low priority with the motivation like
+    "Yeah guys, I'm sure a continuous-build server is important and all, but let's build some revenue-driving features first shall we?
+    Then you can add your tech candy later, OK?"
+
+    In some cases the product owner is right, but often not.
+    We've concluded that the product owner is not always qualified to be making that tradeoff."
+
+    -- "Scrum and XP from the Trenches: How We Do Scrum" 2nd edition by Henrik Kniberg, перевод под редакцией Алексея Кривицкого
+
 
 .. index::
    single: Concerns; solution to balancing business and technical concerns in Agile
@@ -209,6 +233,13 @@ Frederick Brooks в своем бестселлере "Мифический че
 
 Решение
 -------
+
+    📝 "You notice we have two different criteria set by two different groups of people.
+    How do we resolve the two of them?
+    Programmers want to tackle high-risk stories first, and customers want to tackle high-value stories first.
+    There are plenty of times when these conflicting priorities have to be resolved."
+
+    -- "Planning Extreme Programming" by Kent Beck, Martin Fowler
 
 Хорошая организация процессов должна взаимокомпенсировать эти перекосы.
 
@@ -588,6 +619,11 @@ Jeffrey Sutherland о том, как и зачем он ввел роль Produc
     -- "Scrum: The Art of Doing Twice the Work in Half the Time" by Jeffrey Sutherland
 
 
+.. index::
+   single: ATAM; in Agile
+   single: Concerns; balancing business and technical concerns with ATAM
+   :name: emacsway-agile-atam
+
 ATAM in Agile
 ^^^^^^^^^^^^^
 
@@ -628,6 +664,41 @@ ATAM in Agile
 - "`Facilitating the Mini-Quality Attributes Workshop. A Lightweight, Architecture-Focused Method. <https://resources.sei.cmu.edu/asset_files/Presentation/2014_017_101_89563.pdf>`__" by Will Chaparro IBM, Michael Keeling IBM
 
 Смотрите также о "Lightweight Architecture Evaluation (LAE)" в "Software Architecture in Practice" 4th edition by Len Bass, Paul Clements, Rick Kazman.
+
+
+.. index::
+   single: Concerns; balancing business and technical concerns with fixed iteration ratio
+   :name: emacsway-agile-balancing-business-technical-concerns-with-fixed-iteration-ratio
+
+Фиксированное время на технические задачи
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    📝 "Business should sequence stories.
+    Business people understand uncertainty in estimates.
+    They face risk all the time with financial projections.
+    They also understand the cost of reworking in the cases where reworking is an issue.
+    If they wish to run a risk in order to get better value now, it is really their call.
+    It is the programmers' task to make the risk visible, not to make the decision for the customer.
+
+    While this arrangement is the ideal, sometimes you need something extra to make it work, perhaps allowing developers to choose a certain amount of [technical high-risk] stories per iteration so that they can bring the risk forward."
+
+    -- "Planning Extreme Programming" by Kent Beck, Martin Fowler
+
+..
+
+    📝 "Я всё еще считаю технику технических историй классной и часто её использую.
+    Мелкие тех-истории, просто встраиваются в ежедневную работу, в то время как большие записываются в тех беклог, видимый product owner'у, но управляемый командой.
+    Команда и product owner договариваются о правиле, к примеру: 10-20% нашего времени мы используем на тех-истории.
+    Такой подход не требует придумывать сложные схемы, как focus factor или time reports, просто используйте интуицию.
+    Спросите на ретроспективе: "Грубо, сколько нашей ёмкости спринта ушло на тех-истории, и кажется ли, что это была хорошая инвестиция?
+
+    I still find tech stories to be a great pattern and use it a lot.
+    Smaller tech stories are just embedded into the day-to-day work, while larger stories are written down and placed in a tech backlog, visible to the product owner but managed by the team.
+    The team and product owner agree on a guideline such as "10-20% of our time is spent on tech stories".
+    No need for elaborate tracking schemes like focus factor or time reports, just use gut feel.
+    Ask at the retro, "Roughly how much of our sprint capacity did we spend on tech stories, and did that feel about right?"".
+
+    -- "Scrum and XP from the Trenches: How We Do Scrum" 2nd edition by Henrik Kniberg, перевод под редакцией Алексея Кривицкого
 
 
 Психологическая сторона вопроса
