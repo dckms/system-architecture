@@ -664,6 +664,11 @@ Jeffrey Sutherland о том, как и зачем он ввел роль Produc
 Чем больше накапливается технический долг, тем меньше остается ресурсов на именно это исправление, и тем больше :ref:`возрастает стоимость исправления <emacsway-compound-interest>`.
 Потом будет менее выгодное положение, чем сейчас.
 
+    | \- We don't have time to do it right!
+    | \- Do you have time to do it twice?
+
+    -- `Randy Shoup <https://www.infoq.com/presentations/microservices-data-centric>`_, VP Engineering at Stitch Fix in San Francisco
+
 Эту ситуацию следует отличать от принципа :ref:`YAGNI <emacsway-yagni>`, который отличается тем, что:
 
 1. YAGNI управляет неопределенностью в отношении востребованности реализации.
