@@ -223,4 +223,9 @@ Martin Fowler о выборе момента реализации проектн
 
 .. seealso::
 
+   - ":ref:`emacsway-borrowing-trouble`"
+   - ":ref:`emacsway-when-to-refactor`"
+   - ":ref:`emacsway-when-to-write-unit-tests`"
+   - ":ref:`emacsway-agile-solid`"
+   - ":ref:`emacsway-agile-software-design`"
    - ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`"

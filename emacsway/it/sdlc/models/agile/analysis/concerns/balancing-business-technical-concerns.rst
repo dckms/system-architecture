@@ -795,6 +795,7 @@ ATAM in Agile
    - ":ref:`emacsway-architecture-options`"
    - ":ref:`emacsway-agile-common-planning-errors`"
    - ":ref:`emacsway-cognitive-biases`"
+   - ":ref:`emacsway-yagni`"
    - ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`"
 
 
