@@ -496,3 +496,4 @@ No Silver Bullet
 .. seealso::
 
    - ":doc:`../crash-course-in-software-development-economics`"
+   - ":ref:`emacsway-yagni`"
