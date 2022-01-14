@@ -535,8 +535,9 @@ The Product Owner is accountable for &lt;strong&gt;translating the team's produc
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;p&gt;YAGNI управляет неопределенностью в отношении востребованности реализации.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;YAGNI оправдан лишь в том случае, когда стоимость реализации в будущем не будет существенно дороже, чем сейчас.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;YAGNI имеет целью сгладить "&lt;a class="reference external" href="https://martinfowler.com/bliki/DesignPayoffLine.html"&gt;Design Payoff Line&lt;/a&gt;" верного решения, а не подменить его костылем.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;YAGNI имеет целью достижение наилучшей экономики разработки в балансе краткосрочных и долгосрочных интересов, а не пожертвование долгосрочными интересами в угоду краткосрочным.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;YAGNI имеет целью сгладить "&lt;a class="reference external" href="https://martinfowler.com/bliki/DesignPayoffLine.html"&gt;Design Payoff Line&lt;/a&gt;" верного решения, а не подменить его неверным.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;YAGNI имеет целью достигнуть наилучшей экономики разработки в балансе краткосрочных и долгосрочных интересов, а не пожертвовать долгосрочными интересами в угоду краткосрочным.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;YAGNI должен способствовать эволюции программы, а не препятствовать ей.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;/div&gt;
