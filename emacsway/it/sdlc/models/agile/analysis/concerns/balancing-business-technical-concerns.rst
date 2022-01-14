@@ -99,6 +99,15 @@ Frederick Brooks в своем бестселлере "Мифический че
 
 ..
 
+    📝 "Doing infrastructure without customer function leads to the following risks:
+
+    - You spend a lot of time not delivering things that are valuable to the customer, which strains the relationship with the customer.
+    - You try to make the infrastructure cover everything you think you might need, which leads to an overly complex infrastructure."
+
+    -- "Planning Extreme Programming" by Kent Beck, Martin Fowler, "Chapter 10. Release Planning :: How Do You Plan Infrastructure?"
+
+..
+
     📝 "Программист является сердцем ХР.
     На самом деле если бы программисты могли всегда принимать решения, в которых тщательно балансировались краткосрочные и долгосрочные приоритеты, в рамках проекта не нужны были бы никакие другие технические работники, кроме программистов.
     Конечно же если заказчику не требуется программное обеспечение для того, чтобы поддерживать функционирование бизнеса, то никакой надобности в программистах не было бы.
@@ -239,7 +248,20 @@ Frederick Brooks в своем бестселлере "Мифический че
     Programmers want to tackle high-risk stories first, and customers want to tackle high-value stories first.
     There are plenty of times when these conflicting priorities have to be resolved."
 
-    -- "Planning Extreme Programming" by Kent Beck, Martin Fowler
+    -- "Planning Extreme Programming" by Kent Beck, Martin Fowler, "Chapter 13. Ordering the Stories :: Negotiating Between the Two"
+
+..
+
+    📝 "Our planning process relies on clearly separating the roles of business people and software people.
+    This ensures that business people make all the business decisions and software people make all the technical decisions.
+
+    The key to project management is balancing power between the business people and the programmers.
+    Done right, software project management has
+
+    - Business people making business decisions
+    - Technical people making technical decisions"
+
+    -- "Planning Extreme Programming" by Kent Beck, Martin Fowler, "Chapter 4. Balancing Power"
 
 ..
 
@@ -370,7 +392,7 @@ Extreme Programming
 
     One of my biggest surprises since the first edition of Extreme Programming Explained was released has been just how far teams have been able to push quality as measured in defects, design quality, and the experience of development.
     Each increase in quality leads to improvements in other desirable project properties, like productivity and effectiveness, as well.
-    There is no apparent limit to the benefits of quality, only limits in our ability to understand how to achieve higher quality.
+    **There is no apparent limit to the benefits of quality, only limits in our ability to understand how to achieve higher quality.**
 
     Quality isn't a purely economic factor.
     People need to do work they are proud of.
@@ -378,7 +400,7 @@ Extreme Programming
     He went home on the weekends and made fancy ironwork as a blacksmith.
     He met his need for quality; he just met it outside of work.
 
-    If you can't control projects by controlling quality, how can you control them?
+    **If you can't control projects by controlling quality, how can you control them?**
     Time and cost are most often fixed.
     XP chooses scope as the primary means of planning, tracking, and steering projects.
     Since scope is never known precisely in advance, it makes a good lever.
@@ -426,12 +448,12 @@ Extreme Programming
     It is the facilitator's responsibility to ensure that the expected workshop deliverables are produced and the expected consensus is achieved.
     The facilitator is an unbiased leader who has no ties to the project.
     He can come from some other department or from outside the company.
-    Some companies are training facilitators who work out of a facilitation center attached to the human resources department.
-    "
+    Some companies are training facilitators who work out of a facilitation center attached to the human resources department."
 
     -- "`Joint Application Design. Business Requirements Analysis for Successful Re-engineering <https://web.archive.org/web/20090221042620/http://www.bee.net/bluebird/jaddoc.htm>`__" by Bill Jennerich 
 
 Баланс краткосрочных бизнес-интересов и долгосрочных технических интересов Kent Beck находит в сглаживании по времени "`Design Payoff Line <https://martinfowler.com/bliki/DesignPayoffLine.html>`__" посредством применения принципа :ref:`YAGNI <emacsway-yagni>`, см. ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`".
+Иными словами, вопрос поиска баланса краткосрочных бизнес-интересов и долгосрочных технических интересов перешел полностью под контроль технических специалистов, и вместо разрешения противоречия между двумя группами стейкхолдеров превратился в вопрос минимизации ущерба краткосрочным бизнес-интересам от осуществления технических решений.
 
 
 .. index::
@@ -694,7 +716,7 @@ ATAM in Agile
 
     While this arrangement is the ideal, sometimes you need something extra to make it work, perhaps allowing developers to choose a certain amount of [technical high-risk] stories per iteration so that they can bring the risk forward."
 
-    -- "Planning Extreme Programming" by Kent Beck, Martin Fowler
+    -- "Planning Extreme Programming" by Kent Beck, Martin Fowler, "Chapter 13. Ordering the Stories :: Negotiating Between the Two"
 
 ..
 
