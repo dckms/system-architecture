@@ -580,3 +580,4 @@ Randy Shoup
    - ":ref:`emacsway-icebreaker-principle`"
    - ":ref:`emacsway-adaptation`"
    - ":ref:`emacsway-agile-development`"
+   - ":ref:`emacsway-agile-patterns`"

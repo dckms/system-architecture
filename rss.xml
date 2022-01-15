@@ -522,12 +522,13 @@ They needed to spend half their time talking to the people buying the product (g
 The Product Owner is accountable for &lt;strong&gt;translating the team's productivity into value&lt;/strong&gt;."&lt;/p&gt;
 &lt;p class="attribution"&gt;—"Scrum: The Art of Doing Twice the Work in Half the Time" by Jeffrey Sutherland&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Иными словами, Product Owner отвечает за то, что нужно сделать (problem space), а команда отвечает за правильный выбор надлежащей реализации (solution space).
-С команды не снимается ответственность за падение темпов их разработки, если причиной этого падения стали решения о реализации, которые команда сама же и предложила Product Owner в надежде снять с себя ответственность.
-Именно эту ошибку я нередко наблюдал у малоопытных разработчиков, и, увы, когда падение внутреннего качества программы начинало вызывать проблемы со сроками, то аргументы типа "вы же сами так решили" и "вас же предупреждали" не помогали им переложить вину на Product Owner.
-Как правило, за этим следовали определенные кадровые решения.&lt;/p&gt;
+&lt;p&gt;Иными словами, Product Owner отвечает за то, что нужно сделать (problem space), а команда отвечает за правильный выбор надлежащей реализации (solution space).&lt;/p&gt;
+&lt;p&gt;С команды не снимается ответственность за ухудшение темпов разработки, если причиной этого ухудшения стали технические решения о реализации, на которые команда согласилась против своего желания под давлением Product Owner, полагая, что тем самым она делегирует ему свою ответственность.
+Именно эту ошибку я нередко наблюдал у малоопытных разработчиков, и, увы, когда падение внутреннего качества программы начинало вызывать проблемы со сроками, то аргументы типа "Вы же сами так решили" и "Вас же предупреждали" не помогали им переложить вину на Product Owner.
+Как правило, за этим следовали кадровые решения.
+Зачастую Product Owner уверен в том, что, если команда согласилась, то она знает что делает и трезво оценивает ситуацию.&lt;/p&gt;
 &lt;p&gt;Тут нужно заметить, что Product Owner в Scrum отвечает как за функциональные, так и за нефункциональные требования, в отличии от, например, SAFe, где за NFR отвечает системный архитектор.&lt;/p&gt;
-&lt;p&gt;Другое проявление этой ловушки - это когда все думают, что "&lt;a class="reference internal" href="business-concerns/common-planning-errors.html#emacsway-agile-common-planning-errors"&gt;&lt;span class="std std-ref"&gt;позже исправим&lt;/span&gt;&lt;/a&gt;".
+&lt;p&gt;Другое проявление этой же ловушки - это когда все думают, что "&lt;a class="reference internal" href="business-concerns/common-planning-errors.html#emacsway-agile-common-planning-errors"&gt;&lt;span class="std std-ref"&gt;позже исправим&lt;/span&gt;&lt;/a&gt;".
 Однако, самый выгодный момент для исправления, если смотреть сугубо с математической точки зрения, - это именно сейчас, пока величина технического долга наименьшая.
 Чем больше накапливается технический долг, тем меньше остается ресурсов на именно это исправление, и тем больше &lt;a class="reference internal" href="business-concerns/compound-interest.html#emacsway-compound-interest"&gt;&lt;span class="std std-ref"&gt;возрастает стоимость исправления&lt;/span&gt;&lt;/a&gt;.
 Потом будет менее выгодное положение, чем сейчас.&lt;/p&gt;
@@ -546,6 +547,7 @@ The Product Owner is accountable for &lt;strong&gt;translating the team's produc
 &lt;li&gt;&lt;p&gt;YAGNI имеет целью достигнуть наилучшей экономики разработки в балансе краткосрочных и долгосрочных интересов, а не пожертвовать долгосрочными интересами в угоду краткосрочным.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;YAGNI должен способствовать эволюции программы, а не препятствовать ей.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;YAGNI как раз и является тем самым инструментом, который позволяет максимально удовлетворить требования Product Owner, не жертвуя при этом качеством программы.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="atam-in-agile"&gt;
@@ -681,6 +683,479 @@ We will have the courage to do only what is necessary and no more, to spend our 
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="technical-concerns/when-to-refactor.html#emacsway-when-to-refactor"&gt;&lt;span class="std std-ref"&gt;Когда делать refactoring в legacy&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="technical-concerns/when-to-write-unit-tests.html#emacsway-when-to-write-unit-tests"&gt;&lt;span class="std std-ref"&gt;Когда писать Unit Tests в legacy&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description><pubDate>Sat, 15 Jan 2022 00:00:00 </pubDate></item><item><title>Role of Software Design in Agile</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/adaptation/software-design/software-design.html</link><description>
+&lt;span id="emacsway-agile-software-design"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;div class="figure align-center" id="id6"&gt;
+&lt;a class="reference internal image-reference" href="../../../../../../_images/ouroboros.jpg"&gt;&lt;img alt="Уроборос. Иллюстрация из открытых источников неизвестного автора." src="../../../../../../_images/ouroboros.jpg" style="width: 40%;"/&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Уроборос. Иллюстрация из открытых источников неизвестного автора.&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#role-of-software-design-in-agile" id="id11"&gt;Role of Software Design in Agile&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-who-reads-the-code" id="id12"&gt;Кто читает код?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#primary-technical-imperative" id="id13"&gt;Primary Technical Imperative&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id14"&gt;Оправдано ли качество?&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#martin-fowler" id="id15"&gt;Martin Fowler&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#kent-beck" id="id16"&gt;Kent Beck&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#robert-martin" id="id17"&gt;Robert Martin&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#ralph-johnson" id="id18"&gt;Ralph Johnson&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#steve-mcconnell" id="id19"&gt;Steve McConnell&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id4" id="id20"&gt;Сергей Тепляков&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#randy-shoup" id="id21"&gt;Randy Shoup&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="emacsway-who-reads-the-code"&gt;
+&lt;span id="id2"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id12"&gt;Кто читает код?&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Среди малоопытных разработчиков иногда можно услышать, что им некогда писать качественный код, так как у них мало времени, а этот код все равно читать никто не будет.&lt;/p&gt;
+&lt;p&gt;Истина в том, что в процессе конструирования кода, 91% времени занимает именно чтение кода и борьба со сложностью, и только 9% времени (1:10) занимает ввод символов с клавиатуры.
+И это соотношение дано еще для качественного кода.&lt;/p&gt;
+&lt;p&gt;Причем, разработчик пишет код в одиночку и лишь единожды.
+Зато читают код все разработчики команды и по много раз.&lt;/p&gt;
+&lt;p&gt;Таким образом, плохо написанный код более чем на 91% (т.е. более чем на порядок!) влияет на снижение темпов разработки всей команды.&lt;/p&gt;
+&lt;p&gt;Кстати, этот момент хорошо объясняет то, почему &lt;a class="reference internal" href="../../../../tdd/tdd.html#emacsway-why-is-tdd-faster"&gt;&lt;span class="std std-ref"&gt;при TDD разработка осуществляется быстрее&lt;/span&gt;&lt;/a&gt;, хотя объема кода пишется больше.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "You might ask: How much is code really read? Doesn't most of the effort go into
+writing it?&lt;/p&gt;
+&lt;p&gt;Have you ever played back an edit session? In the 80s and 90s we had editors like Emacs that kept track of every keystroke.
+You could work for an hour and then play back your whole edit session like a high-speed movie.
+When I did this, the results were fascinating.&lt;/p&gt;
+&lt;p&gt;The vast majority of the playback was scrolling and navigating to other modules!&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Bob enters the module.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;He scrolls down to the function needing change.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;He pauses, considering his options.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Oh, he's scrolling up to the top of the module to check the initialization of a variable.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Now he scrolls back down and begins to type.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Ooops, he's erasing what he typed!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;He types it again.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;He erases it again!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;He types half of something else but then erases that!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;He scrolls down to another function that calls the function he's changing to see how it is called.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;He scrolls back up and types the same code he just erased.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;He pauses.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;He erases that code again!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;He pops up another window and looks at a subclass. Is that function overridden?&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;lt;...&amp;gt;&lt;/p&gt;
+&lt;p&gt;You get the drift. Indeed, the ratio of time spent reading vs. writing is well over 10:1.
+We are constantly reading old code as part of the effort to write new code.&lt;/p&gt;
+&lt;p&gt;Because this ratio is so high, we want the reading of code to be easy, even if it makes the writing harder.
+Of course there's no way to write code without reading it, so making it easy to read actually makes it easier to write.&lt;/p&gt;
+&lt;p&gt;There is no escape from this logic.
+You cannot write code if you cannot read the surrounding code.
+The code you are trying to write today will be hard or easy to write depending on how hard or easy the surrounding code is to read.
+So if you want to go fast, if you want to get done quickly, if you want your code to be easy to write, make it easy to read."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Clean Code: A Handbook of Agile Software Craftsmanship" by Robert C. Martin&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="primary-technical-imperative"&gt;
+&lt;span id="emacsway-primary-technical-imperative"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id13"&gt;Primary Technical Imperative&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "There are two ways of constructing a software design: one way is to make it so simple that there are obviously no deficiencies, and the other is to make it so complicated that there are no obvious deficiencies."&lt;/p&gt;
+&lt;p class="attribution"&gt;—C. A. R. Hoare&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Managing complexity is the most important technical topic in software development.
+In my view, it's so important that Software's Primary Technical Imperative has to be managing complexity."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Code Complete" by Steve McConnell&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Dijkstra pointed out that no one's skull is really big enough to contain a modern
+computer program (Dijkstra 1972), which means that we as software developers
+shouldn't try to cram whole programs into our skulls at once; we should try to organize
+our programs in such a way that we can safely focus on one part of it at a time.
+The goal is to minimize the amount of a program you have to think about at any one time.
+You might think of this as mental juggling—the more mental balls the program requires you
+to keep in the air at once, the more likely you'll drop one of the balls, leading to a design
+or coding error.&lt;/p&gt;
+&lt;p&gt;At the software-architecture level, the complexity of a problem is reduced by dividing the system into subsystems.
+Humans have an easier time comprehending several simple pieces of information than one complicated piece.
+The goal of all software-design techniques is to break a complicated problem into simple pieces.
+The more independent the subsystems are, the more you make it safe to focus on one bit of complexity at a time.
+Carefully defined objects separate concerns so that you can focus on one thing at a time.
+Packages provide the same benefit at a higher level of aggregation.&lt;/p&gt;
+&lt;p&gt;Keeping routines short helps reduce your mental workload.
+Writing programs in terms of the problem domain, rather than in terms of low-level implementation details, and
+working at the highest level of abstraction reduce the load on your brain.&lt;/p&gt;
+&lt;p&gt;The bottom line is that programmers who compensate for inherent human limitations
+write code that's easier for themselves and others to understand and that has fewer errors."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Code Complete" by Steve McConnell&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "&lt;strong&gt;Software's Primary Technical Imperative is managing complexity.&lt;/strong&gt;
+This is greatly aided by a design focus on simplicity.
+Simplicity is achieved in two general ways: minimizing the amount of essential
+complexity that anyone's brain has to deal with at any one time, and keeping
+accidental complexity from proliferating needlessly."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Code Complete" by Steve McConnell&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;"The number "7±2" has been found to be a number of discrete items a person can remember while performing other tasks (Miller 1956).
+If a class contains more than about seven data members, consider whether the class should be decomposed into multiple smaller classes (Riel 1996)."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Code Complete" by Steve McConnell&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;По поводу последнего изречения - лучше один раз увидеть:&lt;/p&gt;
+&lt;div class="figure align-left" id="id7"&gt;
+&lt;a class="reference internal image-reference" href="../../../../../../_images/12-points.jpg"&gt;&lt;img alt="Просто ваши глаза не могут увидеть все 12 точек одновременно. Ninio's extinction illusion. Twelve black dots cannot be seen at once. Ninio, J. and Stevens, K. A. (2000) Variations on the Hermann grid: an extinction illusion. Perception, 29, 1209-1217. The image source is a post by Akiyoshi Kitaoka https://www.facebook.com/akiyoshi.kitaoka/posts/10207806663219295" src="../../../../../../_images/12-points.jpg" style="width: 90%;"/&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Просто ваши глаза не могут увидеть все 12 точек одновременно.
+Ninio's extinction illusion. Twelve black dots cannot be seen at once.
+Ninio, J. and Stevens, K. A. (2000) Variations on the Hermann grid: an extinction illusion. Perception, 29, 1209-1217.
+The image source is "&lt;a class="reference external" href="https://www.facebook.com/akiyoshi.kitaoka/posts/10207806663219295"&gt;a post&lt;/a&gt;" by Akiyoshi Kitaoka.&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;См. также "&lt;a class="reference internal" href="../../../../../soft-skills/icebreaker-principle.html#emacsway-icebreaker-principle"&gt;&lt;span class="std std-ref"&gt;Принцип ледокола&lt;/span&gt;&lt;/a&gt;".&lt;/p&gt;
+&lt;blockquote id="emacsway-kent-beck-constantine-s-law"&gt;
+&lt;div&gt;&lt;p&gt;📝 "These were elucidated in the mid-70s by Yourdon &amp;amp; Constantine in &lt;a class="reference external" href="https://amzn.to/2GsuXvQ"&gt;Structured Design&lt;/a&gt; and haven't changed.
+Their argument goes like this:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;We design software to reduce its cost.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The cost of software is ≈ the cost of changing the software.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The cost of changing the software is ≈ the cost of the expensive changes (power laws and all that).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The cost of the expensive changes is generated by cascading changes — if I change this then I have to change that and that, and if I change that then…&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Coupling between elements of a design is this propensity for a change to propagate.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;So, design ≈ cost ≈ change ≈ big change ≈ coupling. Transitively, software design ≈ managing coupling.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;(This skips loads of interesting stuff, but I'm just trying to set up the argument for why rapid decomposition of a monolith into micro-services is counter-productive.)"&lt;/p&gt;
+&lt;p&gt;Managing Coupling&lt;/p&gt;
+&lt;p&gt;Note I don't say, "Eliminating coupling."
+Decoupling comes with its own costs, both the cost of the decoupling itself and the future costs of unanticipated changes.
+The more perfectly a design is adapted to one set of changes, the more likely it is to be blind-sided by novel changes. And so we have the classic tradeoff curve:&lt;/p&gt;
+&lt;div class="figure align-left" id="id8"&gt;
+&lt;a class="reference internal image-reference" href="../../../../../../_images/balancing-coupling-decoupling.jpeg"&gt;&lt;img alt="Classic tradeoff curve of balancing cost of Coupling vs. cost of Decoupling. The image source is article &amp;quot;Monolith -&amp;gt; Services: Theory &amp;amp; Practice&amp;quot; by Kent Beck https://medium.com/@kentbeck_7670/monolith-services-theory-practice-617e4546a879" src="../../../../../../_images/balancing-coupling-decoupling.jpeg" style="width: 90%;"/&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Classic tradeoff curve of balancing cost of Coupling vs. cost of Decoupling. The image source is article "&lt;a class="reference external" href="https://medium.com/@kentbeck_7670/monolith-services-theory-practice-617e4546a879"&gt;Monolith -&amp;gt; Services: Theory &amp;amp; Practice&lt;/a&gt;" by Kent Beck.&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;You manage coupling one of two ways:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;Eliminate coupling. A client and server with hard-coded read() and write() functions are coupled with respect to protocol changes. Change a write() and you'll have to change the read(). Introduce an interface definition language, though, and you can add to the protocol in one place and have the change propagate automatically to read() and write().&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Reduce coupling's scope. If changing one element implies changing ten others, then it's better if those elements are together than if they are scattered all over the system —less to navigate, less to examine, less to test. The number of elements to change is the same, but the cost per change is smaller. (This is also known as the "manure in one pile" principle, or less-aromatically "cohesion".)&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://medium.com/@kentbeck_7670/monolith-services-theory-practice-617e4546a879"&gt;Monolith -&amp;gt; Services: Theory &amp;amp; Practice&lt;/a&gt;" by Kent Beck&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id14"&gt;Оправдано ли качество?&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="martin-fowler"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id15"&gt;Martin Fowler&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "In most contexts higher quality ⇒ expensive. But high internal quality of software allows us to develop features faster and cheaper."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/bliki/TradableQualityHypothesis.html"&gt;Tradable Quality Hypothesis&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;div class="figure align-left" id="id9"&gt;
+&lt;span id="emacsway-design-stamina-graph"/&gt;&lt;a class="reference internal image-reference" href="../../../../../../_images/design-stamina-graph.png"&gt;&lt;img alt="The pseudo-graph plots delivered functionality (cumulative) versus time for two imaginary stereotypical projects: one with good design and one with no design. The image from &amp;quot;Design Stamina Hypothesis&amp;quot; by Martin Fowler. https://martinfowler.com/bliki/DesignStaminaHypothesis.html" src="../../../../../../_images/design-stamina-graph.png" style="width: 90%;"/&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;The pseudo-graph plots delivered functionality (cumulative) versus time for two imaginary stereotypical projects: one with good design and one with no design. The image from "&lt;a class="reference external" href="https://martinfowler.com/bliki/DesignStaminaHypothesis.html"&gt;Design Stamina Hypothesis&lt;/a&gt;" by Martin Fowler.&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "... the true value of internal quality - that it's the enabler to speed. The purpose of internal quality is to go faster."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/bliki/TradableQualityHypothesis.html"&gt;Tradable Quality Hypothesis&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "The value of good software design is economic: you can continue to add new functionality quickly even as the code-base grows in size."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/bliki/DesignStaminaHypothesis.html"&gt;Design Stamina Hypothesis&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "We usually perceive that it costs more to get higher quality, but software internal quality actually reduces costs."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/articles/is-quality-worth-cost.html"&gt;Is High Quality Software Worth the Cost?&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "The fundamental role of internal quality is that it lowers the cost of future change.
+But there is some extra effort required to write good software, which does impose some cost in the short term."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/articles/is-quality-worth-cost.html"&gt;Is High Quality Software Worth the Cost?&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "The whole point of good design and clean code is to make you go faster - if it didn't people like Uncle Bob, Kent Beck, and Ward Cunningham wouldn't be spending time talking about it."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/bliki/TechnicalDebtQuadrant.html"&gt;Technical Debt Quadrant&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Sadly, software developers usually don't do a good job of explaining this situation.
+Countless times I've talked to development teams who say "they (management) won't let us write good quality code because it takes too long".
+Developers often justify attention to quality by justifying through the need for proper professionalism.
+But this moralistic argument implies that this quality comes at a cost - dooming their argument.
+The annoying thing is that the resulting crufty code both makes developers' lives harder, and costs the customer money.
+When thinking about internal quality, I stress that we should only approach it as an economic argument.
+High internal quality reduces the cost of future features, meaning that putting the time into writing good code actually reduces cost.&lt;/p&gt;
+&lt;p&gt;This is why the question that heads this article misses the point.
+The "cost" of high internal quality software is negative.
+The usual trade-off between cost and quality, one that we are used to for most decisions in our life, does not make sense with the internal quality of software.
+(It does for external quality, such as a carefully crafted user-experience.)
+Because the relationship between cost and internal quality is an unusual and counter-intuitive relationship, it's usually hard to absorb.
+But understanding it is critical to developing software at maximum efficiency."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/articles/is-quality-worth-cost.html"&gt;Is High Quality Software Worth the Cost?&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Рефакторинг ускоряет написание программ&lt;/p&gt;
+&lt;p&gt;В конечном итоге все сказанное сводится к одному: рефакторинг ускоряет написание программ.&lt;/p&gt;
+&lt;p&gt;Создается впечатление внутреннего противоречия.
+Когда я рассказываю о рефакторинге, становится очевидно, что он повышает качество кода.
+Улучшение проекта, повышение удобочитаемости, уменьшение количества ошибок — все это способствует качеству кода.
+Но разве скорость разработки не снижается из-за всего этого?&lt;/p&gt;
+&lt;p&gt;Когда я общаюсь с разработчиками программного обеспечения, которые какое-то время работали над системой, я часто слышу, что сначала им удалось быстро продвинуться вперед, но теперь добавление новых функциональных возможностей занимает гораздо больше времени.
+Каждая новая функция требует все больше и больше времени, чтобы понять, как вписать ее в существующую кодовую базу, а после ее добавления часто возникают ошибки, исправление которых занимает еще больше времени.
+Кодовая база начинает выглядеть как серия исправлений, исправляющих предыдущие исправления, и требуются навыки археолога, чтобы выяснить, как все это работает.
+Все это замедляет добавление новых функциональных возможностей до такой степени, что зачастую разработчики хотят начать все заново с чистого листа.&lt;/p&gt;
+&lt;p&gt;Визуализировать это положение вещей можно с помощью следующего псевдографика.&lt;/p&gt;
+&lt;p&gt;Но некоторые команды сообщают о другом опыте.
+Они утверждают, что могут добавлять новые функциональные возможности быстрее, потому что они могут использовать уже существующий код, опираясь на то, что уже имеется в наличии.&lt;/p&gt;
+&lt;p&gt;Разница между этими проектами заключается во внутреннем качестве программного обеспечения.
+Программное обеспечение с хорошим внутренним проектом позволяет легко найти, какие нужно внести изменения, чтобы добавить новую функциональную возможность, и где.
+Хорошая модульность позволяет понять только небольшое подмножество кода, в которое нужно вносить изменения.
+Если код понятен, меньше вероятность внести ошибку, а если это и произойдет, процесс отладки будет намного проще.
+Так кодовая база превращается в платформу для создания новых функциональных возможностей для своей предметной области.&lt;/p&gt;
+&lt;p&gt;Я называю этот эффект гипотезой стойкости проекта (&lt;a class="reference external" href="https://martinfowler.com/bliki/DesignStaminaHypothesis.html"&gt;Design Stamina Hypothesis&lt;/a&gt;):
+создавая хороший внутренний проект, мы повышаем стойкость программного обеспечения, позволяющую двигаться быстрее.
+Я не могу доказать, что это так, поэтому называю это утверждение гипотезой.
+Но так подсказывает мой опыт, а также опыт сотен отличных программистов, с которыми я познакомился за свою карьеру.&lt;/p&gt;
+&lt;p&gt;Двадцать лет назад общепринятым было мнение, что для создания хорошего проекта нужно завершить проектирование до начала кодирования, потому что, как только мы написали код, мы можем столкнуться только с ухудшением и упадком.
+Рефакторинг меняет эту картину.
+Теперь мы знаем, что можем улучшить проект существующего кода, так что мы можем формировать и улучшать проект с течением времени, даже когда меняются потребности программы.
+Поскольку очень сложно сделать хороший проект заранее, рефакторинг становится жизненно важным.&lt;/p&gt;
+&lt;p&gt;Refactoring Helps Me Program Faster&lt;/p&gt;
+&lt;p&gt;In the end, all the earlier points come down to this: Refactoring helps me develop code more quickly.&lt;/p&gt;
+&lt;p&gt;This sounds counterintuitive.
+When I talk about refactoring, people can easily see that it improves quality.
+Better internal design, readability, reducing bugs—all theseimprove quality.
+But doesn't the time I spend on refactoring reduce the speed of development?&lt;/p&gt;
+&lt;p&gt;When I talk to software developers who have been working on a system for a while, I often hear that they were able to make progress rapidly at first, but now it takes much longer to add new features.
+Every new feature requires more and more time to understand how to fit it into the existing code base, and once it's added, bugs often crop up that take even longer to fix.
+The code base starts looking like a series of patches covering patches, and it takes an exercise in archaeology to figure out how things work.
+This burden slows down adding new features — to the point that developers wish they could start again from a blank slate.&lt;/p&gt;
+&lt;p&gt;I can visualize this state of affairs with &lt;a class="reference internal" href="#emacsway-design-stamina-graph"&gt;&lt;span class="std std-ref"&gt;the following pseudograph&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But some teams report a different experience.
+They find they can add new features faster because they can leverage the existing things by quickly building on what's already there.&lt;/p&gt;
+&lt;p&gt;The difference between these two is the internal quality of the software.
+Software with a good internal design allows me to easily find how and where I need to make changes to add a new feature.
+Good modularity allows me to only have to understand a small subset of the code base to make a change.
+If the code is clear, I'm less likely to introduce a bug, and if I do, the debugging effort is much easier.
+Done well, my code base turns into a platform for building new features for its domain.&lt;/p&gt;
+&lt;p&gt;I refer to this effect as the &lt;a class="reference external" href="https://martinfowler.com/bliki/DesignStaminaHypothesis.html"&gt;Design Stamina Hypothesis&lt;/a&gt;:
+By putting our effort into a good internal design, we increase the stamina of the software effort, allowing us to go faster for longer.
+I can't prove that this is the case, which is why I refer to it as a hypothesis.
+But it explains my experience, together with the experience of hundreds of great programmers that I've got to know over my career.&lt;/p&gt;
+&lt;p&gt;Twenty years ago, the conventional wisdom was that to get this kind of good design, it had to be completed before starting to program — because once we wrote the code, we could only face decay.
+Refactoring changes this picture.
+We now know we can improve the design of existing code—so we can form and improve a design over time, even as the needs of the program change.
+Since it is very difficult to do a good design up front, refactoring becomes vital to achieving that virtuous path of rapid functionality."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Refactoring: Improving the Design of Existing Code" 2nd edition by Martin Fowler, Kent Beck, перевод И.В. Красикова под редакцией С.Н. Тригуб&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "In its common usage, evolutionary design is a disaster.
+The design ends up being the aggregation of a bunch of ad-hoc tactical decisions, each of which makes the code harder to alter.
+In many ways you might argue this is no design, certainly it usually leads to a poor design.
+As Kent puts it, &lt;strong&gt;design is there to enable you to keep changing the software easily in the long term.&lt;/strong&gt;
+&lt;strong&gt;As design deteriorates, so does your ability to make changes effectively.&lt;/strong&gt;
+You have the state of software entropy, over time the design gets worse and worse.
+Not only does this make the software harder to change, it also makes bugs both easier to breed and harder to find and safely kill.
+This is the "code and fix" nightmare, where the bugs become exponentially more expensive to fix as the project goes on."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/articles/designDead.html"&gt;Is Design Dead?&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "If you're a manager or customer how can you tell if the software is well designed?
+It matters to you because poorly designed software will be more expensive to modify in the future."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/articles/designDead.html"&gt;Is Design Dead?&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "From the very earliest days of agile methods, people have asked what role there is for architectural or design thinking.
+A common misconception is that since agile methods drop the notion of a detailed up-front design artifact, that there is no room for architecture in an agile project.
+In my keynote at the first-ever agile conference, I pointed out that design was every bit as important for agile projects, but it manifests itself differently, becoming an evolutionary approach."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/agile.html"&gt;Agile Software Development&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="kent-beck"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id16"&gt;Kent Beck&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Nothing kills speed more effectively than poor internal quality."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Planning Extreme Programming" by Kent Beck, Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "... the activity of design is not an option. It must be given serious thought for software development to be effective."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Extreme Programming Explained" by Kent Beck&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Quality is another strange variable.
+Often, by insisting on better quality you can get projects done sooner, or you can get more done in a given amount of time.
+This happened to me when I started writing unit tests (as described in Chapter 2, A Development Episode, page 7).
+As soon as I had my tests, I had so much more confidence in my code that I wrote faster, without stress.
+I could clean up my system more easily, which made further development easier.
+I've also seen this happen with teams.
+As soon as they start testing, or as soon as they agree on coding standards, they start going faster.&lt;/p&gt;
+&lt;p&gt;There is a strange relationship between internal and external quality.
+External quality is quality as measured by the customer.
+Internal quality is quality as measured by the programmers.
+Temporarily sacrificing internal quality to reduce time to market in hopes that external quality won't suffer too much is a tempting short-term play.
+And you can often get away with making a mess for a matter of weeks or months.
+Eventually, though, internal quality problems will catch up with you and make your software prohibitively expensive to maintain, or unable to reach a competitive level of external quality."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Extreme Programming Explained" by Kent Beck&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Why can't you just listen, write a test case, make it run, listen, write a test case, make it run indefinitely?
+Because we know it doesn't work that way.
+You can do that for a while.
+In a forgiving language you may even be able to do that for a long while.
+Eventually, though, you get stuck.
+The only way to make the next test case run is to break another.
+Or the only way to make the test case run is far more trouble than it is worth.
+Entropy claims another victim.&lt;/p&gt;
+&lt;p&gt;The only way to avoid this is to design.
+Designing is creating a structure that organizes the logic in the system.
+Good design organizes the logic so that a change 45 in one part of the system doesn't always require a change in another part of the system.
+Good design ensures that every piece of logic in the system has one and only one home.
+Good design puts the logic near the data it operates allows the extension of the system with changes in only one place."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Extreme Programming Explained" by Kent Beck&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="robert-martin"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id17"&gt;Robert Martin&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "The way to go fast, and to keep the deadlines at bay, is to stay clean.
+Professionals do not succumb to the temptation to create a mess in order to move quickly.
+Professionals realize that "quick and dirty" is an oxymoron.
+Dirty always means slow!"&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Clean Coder" by Robert Martin&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "The goal of good software design? That goal is nothing less than my utopian description:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;The goal of software architecture is to minimize the human resources required to build and maintain the required system.&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;The measure of design quality is simply the measure of the effort required to meet the needs of the customer.
+If that effort is low, and stays low throughout the lifetime of the system, the design is good.
+If that effort grows with each new release, the design is bad.
+It's as simple as that."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Напомню, что целью архитектора является минимизация трудозатрат на создание и сопровождение системы.
+Что может помешать достижению этой цели?
+Зависимость — и особенно зависимость от преждевременных решений.&lt;/p&gt;
+&lt;p&gt;Recall that the goal of an architect is to minimize the human resources required to build and maintain the required system.
+What it is that saps this kind of peoplepower?
+Coupling—and especially coupling to premature decisions."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin, перевод ООО Издательство "Питер"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="ralph-johnson"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id18"&gt;Ralph Johnson&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "In most successful software projects, the expert developers working on that project have
+a shared understanding of the system design.
+&lt;strong&gt;This shared understanding is called 'architecture.'&lt;/strong&gt;
+This understanding includes how the system is divided into components and how the components interact through interfaces.
+These components are usually composed of smaller components, but the architecture only
+includes the components and interfaces that are understood by all the developers."&lt;/p&gt;
+&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf"&gt;Ralph Johnson&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="steve-mcconnell"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id19"&gt;Steve McConnell&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "The General Principle of Software Quality is that improving quality reduces development costs.&lt;/p&gt;
+&lt;p&gt;Understanding this principle depends on understanding a key observation: the best way
+to improve productivity and quality is to reduce the time spent reworking code, whether
+the rework arises from changes in requirements, changes in design, or debugging.
+The industry-average productivity for a software product is about 10 to 50 of lines of
+delivered code per person per day (including all noncoding overhead).
+It takes only a matter of minutes to type in 10 to 50 lines of code, so how is the rest of the day spent?
+Part of the reason for these seemingly low productivity figures is that industry average
+numbers like these factor nonprogrammer time into the lines-of-code-per-day figure.
+Tester time, project manager time, and administrative support time are all included.
+Noncoding activities, such as requirements development and architecture work, are also
+typically factored into those lines-of-code-per-day figures.
+But none of that is what takes up so much time.&lt;/p&gt;
+&lt;p&gt;The single biggest activity on most projects is debugging and correcting code that
+doesn't work properly.
+Debugging and associated refactoring and other rework consume
+about 50 percent of the time on a traditional, naive software-development cycle.
+(See Section 3.1, "Importance of Prerequisites," for more details.) Reducing debugging by
+preventing errors improves productivity.
+Therefore, the most obvious method of shortening a development schedule is to improve the quality of the product and decrease
+the amount of time spent debugging and reworking the software.
+This analysis is confirmed by field data.
+In a review of 50 development projects involving over 400 work-years of effort and
+almost 3 million lines of code, a study at NASA's Software
+Engineering Laboratory found that increased quality assurance was
+associated with decreased error rate but did not increase overalldevelopment cost (Card 1987).&lt;/p&gt;
+&lt;p&gt;A study at IBM produced similar findings:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;Software projects with the lowest levels of defects had the shortest development
+schedules and the highest development productivity.... software defect removal is
+actually the most expensive and time-consuming form of work for software (Jones 2000).&lt;/p&gt;
+&lt;p class="attribution"&gt;—Jones, Capers. 2000. Software Assessments, Benchmarks, and Best Practices. Reading, MA: Addison-Wesley.&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;The same effect holds true at the small end of the scale.
+In a 1985 study, 166 professional programmers wrote programs from the
+same specification.
+The resulting programs averaged 220 lines of
+code and a little under five hours to write.
+The fascinating result was that programmers who took the median time to complete their
+programs produced programs with the greatest number of errors.
+The programmers who took more or less than the median time
+produced programs with significantly fewer errors (DeMarco and Lister 1985).&lt;/p&gt;
+&lt;p&gt;The two slowest groups took about five times as long to achieve roughly the same
+defect rate as the fastest group.
+It's not necessarily the case that writing software without
+defects takes more time than writing software with defects.
+As the graph shows, it can take less."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Code Complete" by Steve McConnell&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Watts Humphrey reports that teams using the Team Software Process
+(TSP) have achieved defect levels of about 0.06 defects per 1000 lines of code.
+TSP focuses on training developers not to create defects in the first place (Weber 2003).
+[Morales, Alexandra Weber. 2003. "The Consummate Coach: Watts Humphrey, Father of Cmm and Author of Winning with Software, Explains How to Get Better at What You Do," SD Show Daily, September 16, 2003.]&lt;/p&gt;
+&lt;p&gt;The results of the TSP and cleanroom projects confirm another version of the General
+Principle of Software Quality: it's cheaper to build high-quality software than it is to build and fix low-quality software.
+Productivity for a fully checked-out, 80,000-line cleanroom project was 740 lines of code per work-month.
+The industry average rate for fully checked-out code is closer to 250–300 lines per work-month, including all noncoding overhead (Cusumano et al 2003).
+[Cusumano, Michael , et al. 2003. "Software Development Worldwide: The State of the Practice," IEEE Software, November/ December 2003, 28–34.]
+The cost savings and productivity come from the fact that virtually no time is devoted to debugging on TSP or cleanroom projects.
+No time spent on debugging?
+That is truly a worthy goal!"&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Code Complete" by Steve McConnell&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "A six-month study conducted by IBM found that maintenance programmers "most often said that &lt;strong&gt;understanding the original programmer's intent was the most difficult problem&lt;/strong&gt;" (Fjelstad and Hamlen 1979).
+[Fjelstad, R. K. , and W. T. Hamlen. 1979. "Applications Program Maintenance Study: Report to our Respondents." Proceedings Guide 48, Philadelphia. Reprinted in Tutorial on Software Maintenance, G. Parikh and N. Zvegintzov eds. Los Alamitos, CA: CS Press, 1983: 13–27.]"&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Code Complete" by Steve McConnell&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id20"&gt;Сергей Тепляков&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Хороший дизайн заключается в простом решении, когда изменения требований ведут к линейным трудозатратам."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="http://sergeyteplyakov.blogspot.com/2016/08/yagni.html"&gt;Принцип YAGNI&lt;/a&gt;", Сергей Тепляков&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="randy-shoup"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id21"&gt;Randy Shoup&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;- We don't have time to do it right!&lt;/div&gt;
+&lt;div class="line"&gt;- Do you have time to do it twice?&lt;/div&gt;
+&lt;/div&gt;
+&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://www.infoq.com/presentations/microservices-data-centric"&gt;Randy Shoup&lt;/a&gt;, VP Engineering at Stitch Fix in San Francisco&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;div class="figure align-left" id="id10"&gt;
+&lt;a class="reference internal image-reference" href="../../../../../../_images/do-it-right.png"&gt;&lt;img alt="Do it right! Иллюстрация из открытых источников неизвестного автора." src="../../../../../../_images/do-it-right.png" style="width: 90%;"/&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Do it right! Иллюстрация из открытых источников неизвестного автора.&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="admonition seealso"&gt;
+&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../crash-course-in-software-development-economics.html"&gt;&lt;span class="doc"&gt;Краткий курс по экономике разработки программного обеспечения&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../../../../soft-skills/icebreaker-principle.html#emacsway-icebreaker-principle"&gt;&lt;span class="std std-ref"&gt;Принцип ледокола&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Что такое Adaptation&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../../models/agile/agile.html#emacsway-agile-development"&gt;&lt;span class="std std-ref"&gt;Что такое Agile Development&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="patterns.html#emacsway-agile-patterns"&gt;&lt;span class="std std-ref"&gt;Role of Design Patterns in Agile&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 </description><pubDate>Sat, 15 Jan 2022 00:00:00 </pubDate></item><item><title>YAGNI</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/adaptation/software-construction/yagni.html</link><description>
@@ -2310,478 +2785,6 @@ your code is stupid simple, so you don't have to be a genius to work with it."&l
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../../../../soft-skills/icebreaker-principle.html#emacsway-icebreaker-principle"&gt;&lt;span class="std std-ref"&gt;Принцип ледокола&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="software-design.html#emacsway-agile-software-design"&gt;&lt;span class="std std-ref"&gt;Role of Software Design in Agile&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="patterns.html#emacsway-agile-patterns"&gt;&lt;span class="std std-ref"&gt;Role of Design Patterns in Agile&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description><pubDate>Thu, 13 Jan 2022 00:00:00 </pubDate></item><item><title>Role of Software Design in Agile</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/adaptation/software-design/software-design.html</link><description>
-&lt;span id="emacsway-agile-software-design"/&gt; 
-&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
-&lt;div class="figure align-center" id="id6"&gt;
-&lt;a class="reference internal image-reference" href="../../../../../../_images/ouroboros.jpg"&gt;&lt;img alt="Уроборос. Иллюстрация из открытых источников неизвестного автора." src="../../../../../../_images/ouroboros.jpg" style="width: 40%;"/&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Уроборос. Иллюстрация из открытых источников неизвестного автора.&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="contents topic" id="id1"&gt;
-&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#role-of-software-design-in-agile" id="id11"&gt;Role of Software Design in Agile&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-who-reads-the-code" id="id12"&gt;Кто читает код?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#primary-technical-imperative" id="id13"&gt;Primary Technical Imperative&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id14"&gt;Оправдано ли качество?&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#martin-fowler" id="id15"&gt;Martin Fowler&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#kent-beck" id="id16"&gt;Kent Beck&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#robert-martin" id="id17"&gt;Robert Martin&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#ralph-johnson" id="id18"&gt;Ralph Johnson&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#steve-mcconnell" id="id19"&gt;Steve McConnell&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id4" id="id20"&gt;Сергей Тепляков&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#randy-shoup" id="id21"&gt;Randy Shoup&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="emacsway-who-reads-the-code"&gt;
-&lt;span id="id2"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id12"&gt;Кто читает код?&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Среди малоопытных разработчиков иногда можно услышать, что им некогда писать качественный код, так как у них мало времени, а этот код все равно читать никто не будет.&lt;/p&gt;
-&lt;p&gt;Истина в том, что в процессе конструирования кода, 91% времени занимает именно чтение кода и борьба со сложностью, и только 9% времени (1:10) занимает ввод символов с клавиатуры.
-И это соотношение дано еще для качественного кода.&lt;/p&gt;
-&lt;p&gt;Причем, разработчик пишет код в одиночку и лишь единожды.
-Зато читают код все разработчики команды и по много раз.&lt;/p&gt;
-&lt;p&gt;Таким образом, плохо написанный код более чем на 91% (т.е. более чем на порядок!) влияет на снижение темпов разработки всей команды.&lt;/p&gt;
-&lt;p&gt;Кстати, этот момент хорошо объясняет то, почему &lt;a class="reference internal" href="../../../../tdd/tdd.html#emacsway-why-is-tdd-faster"&gt;&lt;span class="std std-ref"&gt;при TDD разработка осуществляется быстрее&lt;/span&gt;&lt;/a&gt;, хотя объема кода пишется больше.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "You might ask: How much is code really read? Doesn't most of the effort go into
-writing it?&lt;/p&gt;
-&lt;p&gt;Have you ever played back an edit session? In the 80s and 90s we had editors like Emacs that kept track of every keystroke.
-You could work for an hour and then play back your whole edit session like a high-speed movie.
-When I did this, the results were fascinating.&lt;/p&gt;
-&lt;p&gt;The vast majority of the playback was scrolling and navigating to other modules!&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;Bob enters the module.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;He scrolls down to the function needing change.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;He pauses, considering his options.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Oh, he's scrolling up to the top of the module to check the initialization of a variable.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Now he scrolls back down and begins to type.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Ooops, he's erasing what he typed!&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;He types it again.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;He erases it again!&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;He types half of something else but then erases that!&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;He scrolls down to another function that calls the function he's changing to see how it is called.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;He scrolls back up and types the same code he just erased.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;He pauses.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;He erases that code again!&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;He pops up another window and looks at a subclass. Is that function overridden?&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&amp;lt;...&amp;gt;&lt;/p&gt;
-&lt;p&gt;You get the drift. Indeed, the ratio of time spent reading vs. writing is well over 10:1.
-We are constantly reading old code as part of the effort to write new code.&lt;/p&gt;
-&lt;p&gt;Because this ratio is so high, we want the reading of code to be easy, even if it makes the writing harder.
-Of course there's no way to write code without reading it, so making it easy to read actually makes it easier to write.&lt;/p&gt;
-&lt;p&gt;There is no escape from this logic.
-You cannot write code if you cannot read the surrounding code.
-The code you are trying to write today will be hard or easy to write depending on how hard or easy the surrounding code is to read.
-So if you want to go fast, if you want to get done quickly, if you want your code to be easy to write, make it easy to read."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Clean Code: A Handbook of Agile Software Craftsmanship" by Robert C. Martin&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="primary-technical-imperative"&gt;
-&lt;span id="emacsway-primary-technical-imperative"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id13"&gt;Primary Technical Imperative&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "There are two ways of constructing a software design: one way is to make it so simple that there are obviously no deficiencies, and the other is to make it so complicated that there are no obvious deficiencies."&lt;/p&gt;
-&lt;p class="attribution"&gt;—C. A. R. Hoare&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Managing complexity is the most important technical topic in software development.
-In my view, it's so important that Software's Primary Technical Imperative has to be managing complexity."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Code Complete" by Steve McConnell&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Dijkstra pointed out that no one's skull is really big enough to contain a modern
-computer program (Dijkstra 1972), which means that we as software developers
-shouldn't try to cram whole programs into our skulls at once; we should try to organize
-our programs in such a way that we can safely focus on one part of it at a time.
-The goal is to minimize the amount of a program you have to think about at any one time.
-You might think of this as mental juggling—the more mental balls the program requires you
-to keep in the air at once, the more likely you'll drop one of the balls, leading to a design
-or coding error.&lt;/p&gt;
-&lt;p&gt;At the software-architecture level, the complexity of a problem is reduced by dividing the system into subsystems.
-Humans have an easier time comprehending several simple pieces of information than one complicated piece.
-The goal of all software-design techniques is to break a complicated problem into simple pieces.
-The more independent the subsystems are, the more you make it safe to focus on one bit of complexity at a time.
-Carefully defined objects separate concerns so that you can focus on one thing at a time.
-Packages provide the same benefit at a higher level of aggregation.&lt;/p&gt;
-&lt;p&gt;Keeping routines short helps reduce your mental workload.
-Writing programs in terms of the problem domain, rather than in terms of low-level implementation details, and
-working at the highest level of abstraction reduce the load on your brain.&lt;/p&gt;
-&lt;p&gt;The bottom line is that programmers who compensate for inherent human limitations
-write code that's easier for themselves and others to understand and that has fewer errors."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Code Complete" by Steve McConnell&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "&lt;strong&gt;Software's Primary Technical Imperative is managing complexity.&lt;/strong&gt;
-This is greatly aided by a design focus on simplicity.
-Simplicity is achieved in two general ways: minimizing the amount of essential
-complexity that anyone's brain has to deal with at any one time, and keeping
-accidental complexity from proliferating needlessly."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Code Complete" by Steve McConnell&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;"The number "7±2" has been found to be a number of discrete items a person can remember while performing other tasks (Miller 1956).
-If a class contains more than about seven data members, consider whether the class should be decomposed into multiple smaller classes (Riel 1996)."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Code Complete" by Steve McConnell&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;По поводу последнего изречения - лучше один раз увидеть:&lt;/p&gt;
-&lt;div class="figure align-left" id="id7"&gt;
-&lt;a class="reference internal image-reference" href="../../../../../../_images/12-points.jpg"&gt;&lt;img alt="Просто ваши глаза не могут увидеть все 12 точек одновременно. Ninio's extinction illusion. Twelve black dots cannot be seen at once. Ninio, J. and Stevens, K. A. (2000) Variations on the Hermann grid: an extinction illusion. Perception, 29, 1209-1217. The image source is a post by Akiyoshi Kitaoka https://www.facebook.com/akiyoshi.kitaoka/posts/10207806663219295" src="../../../../../../_images/12-points.jpg" style="width: 90%;"/&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Просто ваши глаза не могут увидеть все 12 точек одновременно.
-Ninio's extinction illusion. Twelve black dots cannot be seen at once.
-Ninio, J. and Stevens, K. A. (2000) Variations on the Hermann grid: an extinction illusion. Perception, 29, 1209-1217.
-The image source is "&lt;a class="reference external" href="https://www.facebook.com/akiyoshi.kitaoka/posts/10207806663219295"&gt;a post&lt;/a&gt;" by Akiyoshi Kitaoka.&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;См. также "&lt;a class="reference internal" href="../../../../../soft-skills/icebreaker-principle.html#emacsway-icebreaker-principle"&gt;&lt;span class="std std-ref"&gt;Принцип ледокола&lt;/span&gt;&lt;/a&gt;".&lt;/p&gt;
-&lt;blockquote id="emacsway-kent-beck-constantine-s-law"&gt;
-&lt;div&gt;&lt;p&gt;📝 "These were elucidated in the mid-70s by Yourdon &amp;amp; Constantine in &lt;a class="reference external" href="https://amzn.to/2GsuXvQ"&gt;Structured Design&lt;/a&gt; and haven't changed.
-Their argument goes like this:&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;&lt;p&gt;We design software to reduce its cost.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The cost of software is ≈ the cost of changing the software.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The cost of changing the software is ≈ the cost of the expensive changes (power laws and all that).&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The cost of the expensive changes is generated by cascading changes — if I change this then I have to change that and that, and if I change that then…&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Coupling between elements of a design is this propensity for a change to propagate.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;So, design ≈ cost ≈ change ≈ big change ≈ coupling. Transitively, software design ≈ managing coupling.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;(This skips loads of interesting stuff, but I'm just trying to set up the argument for why rapid decomposition of a monolith into micro-services is counter-productive.)"&lt;/p&gt;
-&lt;p&gt;Managing Coupling&lt;/p&gt;
-&lt;p&gt;Note I don't say, "Eliminating coupling."
-Decoupling comes with its own costs, both the cost of the decoupling itself and the future costs of unanticipated changes.
-The more perfectly a design is adapted to one set of changes, the more likely it is to be blind-sided by novel changes. And so we have the classic tradeoff curve:&lt;/p&gt;
-&lt;div class="figure align-left" id="id8"&gt;
-&lt;a class="reference internal image-reference" href="../../../../../../_images/balancing-coupling-decoupling.jpeg"&gt;&lt;img alt="Classic tradeoff curve of balancing cost of Coupling vs. cost of Decoupling. The image source is article &amp;quot;Monolith -&amp;gt; Services: Theory &amp;amp; Practice&amp;quot; by Kent Beck https://medium.com/@kentbeck_7670/monolith-services-theory-practice-617e4546a879" src="../../../../../../_images/balancing-coupling-decoupling.jpeg" style="width: 90%;"/&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Classic tradeoff curve of balancing cost of Coupling vs. cost of Decoupling. The image source is article "&lt;a class="reference external" href="https://medium.com/@kentbeck_7670/monolith-services-theory-practice-617e4546a879"&gt;Monolith -&amp;gt; Services: Theory &amp;amp; Practice&lt;/a&gt;" by Kent Beck.&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;You manage coupling one of two ways:&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;&lt;p&gt;Eliminate coupling. A client and server with hard-coded read() and write() functions are coupled with respect to protocol changes. Change a write() and you'll have to change the read(). Introduce an interface definition language, though, and you can add to the protocol in one place and have the change propagate automatically to read() and write().&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Reduce coupling's scope. If changing one element implies changing ten others, then it's better if those elements are together than if they are scattered all over the system —less to navigate, less to examine, less to test. The number of elements to change is the same, but the cost per change is smaller. (This is also known as the "manure in one pile" principle, or less-aromatically "cohesion".)&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://medium.com/@kentbeck_7670/monolith-services-theory-practice-617e4546a879"&gt;Monolith -&amp;gt; Services: Theory &amp;amp; Practice&lt;/a&gt;" by Kent Beck&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id3"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id14"&gt;Оправдано ли качество?&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="section" id="martin-fowler"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id15"&gt;Martin Fowler&lt;/a&gt;&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "In most contexts higher quality ⇒ expensive. But high internal quality of software allows us to develop features faster and cheaper."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/bliki/TradableQualityHypothesis.html"&gt;Tradable Quality Hypothesis&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;div class="figure align-left" id="id9"&gt;
-&lt;span id="emacsway-design-stamina-graph"/&gt;&lt;a class="reference internal image-reference" href="../../../../../../_images/design-stamina-graph.png"&gt;&lt;img alt="The pseudo-graph plots delivered functionality (cumulative) versus time for two imaginary stereotypical projects: one with good design and one with no design. The image from &amp;quot;Design Stamina Hypothesis&amp;quot; by Martin Fowler. https://martinfowler.com/bliki/DesignStaminaHypothesis.html" src="../../../../../../_images/design-stamina-graph.png" style="width: 90%;"/&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;The pseudo-graph plots delivered functionality (cumulative) versus time for two imaginary stereotypical projects: one with good design and one with no design. The image from "&lt;a class="reference external" href="https://martinfowler.com/bliki/DesignStaminaHypothesis.html"&gt;Design Stamina Hypothesis&lt;/a&gt;" by Martin Fowler.&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "... the true value of internal quality - that it's the enabler to speed. The purpose of internal quality is to go faster."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/bliki/TradableQualityHypothesis.html"&gt;Tradable Quality Hypothesis&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "The value of good software design is economic: you can continue to add new functionality quickly even as the code-base grows in size."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/bliki/DesignStaminaHypothesis.html"&gt;Design Stamina Hypothesis&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "We usually perceive that it costs more to get higher quality, but software internal quality actually reduces costs."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/articles/is-quality-worth-cost.html"&gt;Is High Quality Software Worth the Cost?&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "The fundamental role of internal quality is that it lowers the cost of future change.
-But there is some extra effort required to write good software, which does impose some cost in the short term."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/articles/is-quality-worth-cost.html"&gt;Is High Quality Software Worth the Cost?&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "The whole point of good design and clean code is to make you go faster - if it didn't people like Uncle Bob, Kent Beck, and Ward Cunningham wouldn't be spending time talking about it."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/bliki/TechnicalDebtQuadrant.html"&gt;Technical Debt Quadrant&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Sadly, software developers usually don't do a good job of explaining this situation.
-Countless times I've talked to development teams who say "they (management) won't let us write good quality code because it takes too long".
-Developers often justify attention to quality by justifying through the need for proper professionalism.
-But this moralistic argument implies that this quality comes at a cost - dooming their argument.
-The annoying thing is that the resulting crufty code both makes developers' lives harder, and costs the customer money.
-When thinking about internal quality, I stress that we should only approach it as an economic argument.
-High internal quality reduces the cost of future features, meaning that putting the time into writing good code actually reduces cost.&lt;/p&gt;
-&lt;p&gt;This is why the question that heads this article misses the point.
-The "cost" of high internal quality software is negative.
-The usual trade-off between cost and quality, one that we are used to for most decisions in our life, does not make sense with the internal quality of software.
-(It does for external quality, such as a carefully crafted user-experience.)
-Because the relationship between cost and internal quality is an unusual and counter-intuitive relationship, it's usually hard to absorb.
-But understanding it is critical to developing software at maximum efficiency."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/articles/is-quality-worth-cost.html"&gt;Is High Quality Software Worth the Cost?&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Рефакторинг ускоряет написание программ&lt;/p&gt;
-&lt;p&gt;В конечном итоге все сказанное сводится к одному: рефакторинг ускоряет написание программ.&lt;/p&gt;
-&lt;p&gt;Создается впечатление внутреннего противоречия.
-Когда я рассказываю о рефакторинге, становится очевидно, что он повышает качество кода.
-Улучшение проекта, повышение удобочитаемости, уменьшение количества ошибок — все это способствует качеству кода.
-Но разве скорость разработки не снижается из-за всего этого?&lt;/p&gt;
-&lt;p&gt;Когда я общаюсь с разработчиками программного обеспечения, которые какое-то время работали над системой, я часто слышу, что сначала им удалось быстро продвинуться вперед, но теперь добавление новых функциональных возможностей занимает гораздо больше времени.
-Каждая новая функция требует все больше и больше времени, чтобы понять, как вписать ее в существующую кодовую базу, а после ее добавления часто возникают ошибки, исправление которых занимает еще больше времени.
-Кодовая база начинает выглядеть как серия исправлений, исправляющих предыдущие исправления, и требуются навыки археолога, чтобы выяснить, как все это работает.
-Все это замедляет добавление новых функциональных возможностей до такой степени, что зачастую разработчики хотят начать все заново с чистого листа.&lt;/p&gt;
-&lt;p&gt;Визуализировать это положение вещей можно с помощью следующего псевдографика.&lt;/p&gt;
-&lt;p&gt;Но некоторые команды сообщают о другом опыте.
-Они утверждают, что могут добавлять новые функциональные возможности быстрее, потому что они могут использовать уже существующий код, опираясь на то, что уже имеется в наличии.&lt;/p&gt;
-&lt;p&gt;Разница между этими проектами заключается во внутреннем качестве программного обеспечения.
-Программное обеспечение с хорошим внутренним проектом позволяет легко найти, какие нужно внести изменения, чтобы добавить новую функциональную возможность, и где.
-Хорошая модульность позволяет понять только небольшое подмножество кода, в которое нужно вносить изменения.
-Если код понятен, меньше вероятность внести ошибку, а если это и произойдет, процесс отладки будет намного проще.
-Так кодовая база превращается в платформу для создания новых функциональных возможностей для своей предметной области.&lt;/p&gt;
-&lt;p&gt;Я называю этот эффект гипотезой стойкости проекта (&lt;a class="reference external" href="https://martinfowler.com/bliki/DesignStaminaHypothesis.html"&gt;Design Stamina Hypothesis&lt;/a&gt;):
-создавая хороший внутренний проект, мы повышаем стойкость программного обеспечения, позволяющую двигаться быстрее.
-Я не могу доказать, что это так, поэтому называю это утверждение гипотезой.
-Но так подсказывает мой опыт, а также опыт сотен отличных программистов, с которыми я познакомился за свою карьеру.&lt;/p&gt;
-&lt;p&gt;Двадцать лет назад общепринятым было мнение, что для создания хорошего проекта нужно завершить проектирование до начала кодирования, потому что, как только мы написали код, мы можем столкнуться только с ухудшением и упадком.
-Рефакторинг меняет эту картину.
-Теперь мы знаем, что можем улучшить проект существующего кода, так что мы можем формировать и улучшать проект с течением времени, даже когда меняются потребности программы.
-Поскольку очень сложно сделать хороший проект заранее, рефакторинг становится жизненно важным.&lt;/p&gt;
-&lt;p&gt;Refactoring Helps Me Program Faster&lt;/p&gt;
-&lt;p&gt;In the end, all the earlier points come down to this: Refactoring helps me develop code more quickly.&lt;/p&gt;
-&lt;p&gt;This sounds counterintuitive.
-When I talk about refactoring, people can easily see that it improves quality.
-Better internal design, readability, reducing bugs—all theseimprove quality.
-But doesn't the time I spend on refactoring reduce the speed of development?&lt;/p&gt;
-&lt;p&gt;When I talk to software developers who have been working on a system for a while, I often hear that they were able to make progress rapidly at first, but now it takes much longer to add new features.
-Every new feature requires more and more time to understand how to fit it into the existing code base, and once it's added, bugs often crop up that take even longer to fix.
-The code base starts looking like a series of patches covering patches, and it takes an exercise in archaeology to figure out how things work.
-This burden slows down adding new features — to the point that developers wish they could start again from a blank slate.&lt;/p&gt;
-&lt;p&gt;I can visualize this state of affairs with &lt;a class="reference internal" href="#emacsway-design-stamina-graph"&gt;&lt;span class="std std-ref"&gt;the following pseudograph&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;But some teams report a different experience.
-They find they can add new features faster because they can leverage the existing things by quickly building on what's already there.&lt;/p&gt;
-&lt;p&gt;The difference between these two is the internal quality of the software.
-Software with a good internal design allows me to easily find how and where I need to make changes to add a new feature.
-Good modularity allows me to only have to understand a small subset of the code base to make a change.
-If the code is clear, I'm less likely to introduce a bug, and if I do, the debugging effort is much easier.
-Done well, my code base turns into a platform for building new features for its domain.&lt;/p&gt;
-&lt;p&gt;I refer to this effect as the &lt;a class="reference external" href="https://martinfowler.com/bliki/DesignStaminaHypothesis.html"&gt;Design Stamina Hypothesis&lt;/a&gt;:
-By putting our effort into a good internal design, we increase the stamina of the software effort, allowing us to go faster for longer.
-I can't prove that this is the case, which is why I refer to it as a hypothesis.
-But it explains my experience, together with the experience of hundreds of great programmers that I've got to know over my career.&lt;/p&gt;
-&lt;p&gt;Twenty years ago, the conventional wisdom was that to get this kind of good design, it had to be completed before starting to program — because once we wrote the code, we could only face decay.
-Refactoring changes this picture.
-We now know we can improve the design of existing code—so we can form and improve a design over time, even as the needs of the program change.
-Since it is very difficult to do a good design up front, refactoring becomes vital to achieving that virtuous path of rapid functionality."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Refactoring: Improving the Design of Existing Code" 2nd edition by Martin Fowler, Kent Beck, перевод И.В. Красикова под редакцией С.Н. Тригуб&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "In its common usage, evolutionary design is a disaster.
-The design ends up being the aggregation of a bunch of ad-hoc tactical decisions, each of which makes the code harder to alter.
-In many ways you might argue this is no design, certainly it usually leads to a poor design.
-As Kent puts it, &lt;strong&gt;design is there to enable you to keep changing the software easily in the long term.&lt;/strong&gt;
-&lt;strong&gt;As design deteriorates, so does your ability to make changes effectively.&lt;/strong&gt;
-You have the state of software entropy, over time the design gets worse and worse.
-Not only does this make the software harder to change, it also makes bugs both easier to breed and harder to find and safely kill.
-This is the "code and fix" nightmare, where the bugs become exponentially more expensive to fix as the project goes on."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/articles/designDead.html"&gt;Is Design Dead?&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "If you're a manager or customer how can you tell if the software is well designed?
-It matters to you because poorly designed software will be more expensive to modify in the future."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/articles/designDead.html"&gt;Is Design Dead?&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "From the very earliest days of agile methods, people have asked what role there is for architectural or design thinking.
-A common misconception is that since agile methods drop the notion of a detailed up-front design artifact, that there is no room for architecture in an agile project.
-In my keynote at the first-ever agile conference, I pointed out that design was every bit as important for agile projects, but it manifests itself differently, becoming an evolutionary approach."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/agile.html"&gt;Agile Software Development&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="kent-beck"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id16"&gt;Kent Beck&lt;/a&gt;&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Nothing kills speed more effectively than poor internal quality."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Planning Extreme Programming" by Kent Beck, Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "... the activity of design is not an option. It must be given serious thought for software development to be effective."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Extreme Programming Explained" by Kent Beck&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Quality is another strange variable.
-Often, by insisting on better quality you can get projects done sooner, or you can get more done in a given amount of time.
-This happened to me when I started writing unit tests (as described in Chapter 2, A Development Episode, page 7).
-As soon as I had my tests, I had so much more confidence in my code that I wrote faster, without stress.
-I could clean up my system more easily, which made further development easier.
-I've also seen this happen with teams.
-As soon as they start testing, or as soon as they agree on coding standards, they start going faster.&lt;/p&gt;
-&lt;p&gt;There is a strange relationship between internal and external quality.
-External quality is quality as measured by the customer.
-Internal quality is quality as measured by the programmers.
-Temporarily sacrificing internal quality to reduce time to market in hopes that external quality won't suffer too much is a tempting short-term play.
-And you can often get away with making a mess for a matter of weeks or months.
-Eventually, though, internal quality problems will catch up with you and make your software prohibitively expensive to maintain, or unable to reach a competitive level of external quality."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Extreme Programming Explained" by Kent Beck&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Why can't you just listen, write a test case, make it run, listen, write a test case, make it run indefinitely?
-Because we know it doesn't work that way.
-You can do that for a while.
-In a forgiving language you may even be able to do that for a long while.
-Eventually, though, you get stuck.
-The only way to make the next test case run is to break another.
-Or the only way to make the test case run is far more trouble than it is worth.
-Entropy claims another victim.&lt;/p&gt;
-&lt;p&gt;The only way to avoid this is to design.
-Designing is creating a structure that organizes the logic in the system.
-Good design organizes the logic so that a change 45 in one part of the system doesn't always require a change in another part of the system.
-Good design ensures that every piece of logic in the system has one and only one home.
-Good design puts the logic near the data it operates allows the extension of the system with changes in only one place."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Extreme Programming Explained" by Kent Beck&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="robert-martin"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id17"&gt;Robert Martin&lt;/a&gt;&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "The way to go fast, and to keep the deadlines at bay, is to stay clean.
-Professionals do not succumb to the temptation to create a mess in order to move quickly.
-Professionals realize that "quick and dirty" is an oxymoron.
-Dirty always means slow!"&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Clean Coder" by Robert Martin&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "The goal of good software design? That goal is nothing less than my utopian description:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;The goal of software architecture is to minimize the human resources required to build and maintain the required system.&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;The measure of design quality is simply the measure of the effort required to meet the needs of the customer.
-If that effort is low, and stays low throughout the lifetime of the system, the design is good.
-If that effort grows with each new release, the design is bad.
-It's as simple as that."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Напомню, что целью архитектора является минимизация трудозатрат на создание и сопровождение системы.
-Что может помешать достижению этой цели?
-Зависимость — и особенно зависимость от преждевременных решений.&lt;/p&gt;
-&lt;p&gt;Recall that the goal of an architect is to minimize the human resources required to build and maintain the required system.
-What it is that saps this kind of peoplepower?
-Coupling—and especially coupling to premature decisions."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin, перевод ООО Издательство "Питер"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="ralph-johnson"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id18"&gt;Ralph Johnson&lt;/a&gt;&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "In most successful software projects, the expert developers working on that project have
-a shared understanding of the system design.
-&lt;strong&gt;This shared understanding is called 'architecture.'&lt;/strong&gt;
-This understanding includes how the system is divided into components and how the components interact through interfaces.
-These components are usually composed of smaller components, but the architecture only
-includes the components and interfaces that are understood by all the developers."&lt;/p&gt;
-&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf"&gt;Ralph Johnson&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="steve-mcconnell"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id19"&gt;Steve McConnell&lt;/a&gt;&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "The General Principle of Software Quality is that improving quality reduces development costs.&lt;/p&gt;
-&lt;p&gt;Understanding this principle depends on understanding a key observation: the best way
-to improve productivity and quality is to reduce the time spent reworking code, whether
-the rework arises from changes in requirements, changes in design, or debugging.
-The industry-average productivity for a software product is about 10 to 50 of lines of
-delivered code per person per day (including all noncoding overhead).
-It takes only a matter of minutes to type in 10 to 50 lines of code, so how is the rest of the day spent?
-Part of the reason for these seemingly low productivity figures is that industry average
-numbers like these factor nonprogrammer time into the lines-of-code-per-day figure.
-Tester time, project manager time, and administrative support time are all included.
-Noncoding activities, such as requirements development and architecture work, are also
-typically factored into those lines-of-code-per-day figures.
-But none of that is what takes up so much time.&lt;/p&gt;
-&lt;p&gt;The single biggest activity on most projects is debugging and correcting code that
-doesn't work properly.
-Debugging and associated refactoring and other rework consume
-about 50 percent of the time on a traditional, naive software-development cycle.
-(See Section 3.1, "Importance of Prerequisites," for more details.) Reducing debugging by
-preventing errors improves productivity.
-Therefore, the most obvious method of shortening a development schedule is to improve the quality of the product and decrease
-the amount of time spent debugging and reworking the software.
-This analysis is confirmed by field data.
-In a review of 50 development projects involving over 400 work-years of effort and
-almost 3 million lines of code, a study at NASA's Software
-Engineering Laboratory found that increased quality assurance was
-associated with decreased error rate but did not increase overalldevelopment cost (Card 1987).&lt;/p&gt;
-&lt;p&gt;A study at IBM produced similar findings:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;Software projects with the lowest levels of defects had the shortest development
-schedules and the highest development productivity.... software defect removal is
-actually the most expensive and time-consuming form of work for software (Jones 2000).&lt;/p&gt;
-&lt;p class="attribution"&gt;—Jones, Capers. 2000. Software Assessments, Benchmarks, and Best Practices. Reading, MA: Addison-Wesley.&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;The same effect holds true at the small end of the scale.
-In a 1985 study, 166 professional programmers wrote programs from the
-same specification.
-The resulting programs averaged 220 lines of
-code and a little under five hours to write.
-The fascinating result was that programmers who took the median time to complete their
-programs produced programs with the greatest number of errors.
-The programmers who took more or less than the median time
-produced programs with significantly fewer errors (DeMarco and Lister 1985).&lt;/p&gt;
-&lt;p&gt;The two slowest groups took about five times as long to achieve roughly the same
-defect rate as the fastest group.
-It's not necessarily the case that writing software without
-defects takes more time than writing software with defects.
-As the graph shows, it can take less."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Code Complete" by Steve McConnell&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Watts Humphrey reports that teams using the Team Software Process
-(TSP) have achieved defect levels of about 0.06 defects per 1000 lines of code.
-TSP focuses on training developers not to create defects in the first place (Weber 2003).
-[Morales, Alexandra Weber. 2003. "The Consummate Coach: Watts Humphrey, Father of Cmm and Author of Winning with Software, Explains How to Get Better at What You Do," SD Show Daily, September 16, 2003.]&lt;/p&gt;
-&lt;p&gt;The results of the TSP and cleanroom projects confirm another version of the General
-Principle of Software Quality: it's cheaper to build high-quality software than it is to build and fix low-quality software.
-Productivity for a fully checked-out, 80,000-line cleanroom project was 740 lines of code per work-month.
-The industry average rate for fully checked-out code is closer to 250–300 lines per work-month, including all noncoding overhead (Cusumano et al 2003).
-[Cusumano, Michael , et al. 2003. "Software Development Worldwide: The State of the Practice," IEEE Software, November/ December 2003, 28–34.]
-The cost savings and productivity come from the fact that virtually no time is devoted to debugging on TSP or cleanroom projects.
-No time spent on debugging?
-That is truly a worthy goal!"&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Code Complete" by Steve McConnell&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "A six-month study conducted by IBM found that maintenance programmers "most often said that &lt;strong&gt;understanding the original programmer's intent was the most difficult problem&lt;/strong&gt;" (Fjelstad and Hamlen 1979).
-[Fjelstad, R. K. , and W. T. Hamlen. 1979. "Applications Program Maintenance Study: Report to our Respondents." Proceedings Guide 48, Philadelphia. Reprinted in Tutorial on Software Maintenance, G. Parikh and N. Zvegintzov eds. Los Alamitos, CA: CS Press, 1983: 13–27.]"&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Code Complete" by Steve McConnell&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id4"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id20"&gt;Сергей Тепляков&lt;/a&gt;&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Хороший дизайн заключается в простом решении, когда изменения требований ведут к линейным трудозатратам."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="http://sergeyteplyakov.blogspot.com/2016/08/yagni.html"&gt;Принцип YAGNI&lt;/a&gt;", Сергей Тепляков&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="randy-shoup"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id21"&gt;Randy Shoup&lt;/a&gt;&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;- We don't have time to do it right!&lt;/div&gt;
-&lt;div class="line"&gt;- Do you have time to do it twice?&lt;/div&gt;
-&lt;/div&gt;
-&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://www.infoq.com/presentations/microservices-data-centric"&gt;Randy Shoup&lt;/a&gt;, VP Engineering at Stitch Fix in San Francisco&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;div class="figure align-left" id="id10"&gt;
-&lt;a class="reference internal image-reference" href="../../../../../../_images/do-it-right.png"&gt;&lt;img alt="Do it right! Иллюстрация из открытых источников неизвестного автора." src="../../../../../../_images/do-it-right.png" style="width: 90%;"/&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Do it right! Иллюстрация из открытых источников неизвестного автора.&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="admonition seealso"&gt;
-&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../crash-course-in-software-development-economics.html"&gt;&lt;span class="doc"&gt;Краткий курс по экономике разработки программного обеспечения&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../../../../soft-skills/icebreaker-principle.html#emacsway-icebreaker-principle"&gt;&lt;span class="std std-ref"&gt;Принцип ледокола&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Что такое Adaptation&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../../models/agile/agile.html#emacsway-agile-development"&gt;&lt;span class="std std-ref"&gt;Что такое Agile Development&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
