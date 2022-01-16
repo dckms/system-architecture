@@ -546,8 +546,22 @@ Dean Leffingwell возлагает на Product Owner обязанность п
     2. Time-to-market
     3. Ability to innovate
 
+Интересно, что таким образом они пытались решить другую проблему, которая тоже связана с балансированием долгосрочных и краткосрочных интересов:
+
+    📝 "One common approach is to hire a project manager to oversee the team's day-to-day work.
+    The project manager does the work that management may feel is too important to ignore but not important enough to distract from their own pressing agendas.
+    Though this is very common—almost ubiquitous—the approach in fact slows product delivery and may reduce quality and profitability.
+    First, the organization is building a product rather than carrying out a project.
+    When project development completes, the product is still in the field and questions of maintenance and added feature development find only awkward answers.
+    **Organizationally separating product creation from ongoing development ("maintenance") creates many problems.**
+    Secondly, the company rarely gives the project manager responsibility for value such as ROI or net present value (see Value and ROI), so his or her incentive is to deliver as fast as possible within the financial constraints.
+    **Without this responsibility, the project manager is more likely to make short-term decisions with long-term consequences, and short-term decisions tend not to have positive long-term consequences.**"
+
+    -- "A Scrum Book: The Spirit of the Game" by Jeff Sutherland, James Coplie, chapter "11 Product Owner"
+
 Какие выводы можно сделать?
 
+Решая одну проблему, они создали другую.
 С точки зрения архитектуры, Product Owner становится заинтересованным лицом и теряет нейтралитет своей позиции, а значит, в силу когнитивных искажений и давления обстоятельств, он всегда будет предвзят, и будет руководствоваться краткосрочными бизнес-интересами в ущерб долгосрочным техническим, если только не обладает развитым :ref:`системным мышлением и волей <emacsway-planning-technical-task>`.
 
 Ну а поскольку никаких методик разрешения противоречий требований стейкхолдеров Scrum не предлагает, то в ранней версии "The 2011 Scrum Guide™" этот конфликт разрешался тем, что Product Owner не мог навязывать конкретную реализацию, оставляя переменную управления разработкой Quality на усмотрение разработчиков, :ref:`как и в XP1 <emacsway-xp1-balancing-business-technical-concerns>`:
