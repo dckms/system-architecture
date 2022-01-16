@@ -576,13 +576,23 @@ Dean Leffingwell возлагает на Product Owner обязанность п
 
     -- "`The 2020 Scrum Guide™ <https://scrumguides.org/scrum-guide.html>`__"
 
-Сам Ken Schwaber под "прозрачностью" понимает полное отсутствие техдолга:
+Сам Ken Schwaber под "прозрачностью" понимает полное отсутствие Technical Debt:
 
     📝 "Transparency means the software is ready.
     It can either be immediately deployed or built upon without regression.
     **It has no technical debt.**"
 
     -- "`Can Software Developers Meet the Need? <https://kenschwaber.wordpress.com/2014/04/09/can-software-developers-meet-the-needs/>`__ by Ken Schwaber
+
+А Jeff Sutherland возлагает устранение Technical Debt на Definition of Done:
+
+    📝 "In the long run, Definition of Done helps to remove technical debt."
+
+    <...>
+
+    With a good Definition of Done, the team will avoid technical debt."
+
+    -- "A Scrum Book: The Spirit of the Game" by Jeff Sutherland, James Coplie, chapter "82 Definition of Done"
 
 А баланс бизнес и технических интересов обеспечивается тем, что решения Product Owner инспектируемы:
 
