@@ -486,7 +486,9 @@ Dean Leffingwell возлагает на Product Owner обязанность п
 Из других источников можно сделать вывод о том, что ответственнен, по крайней мере, был ответственным, ибо в 2020 году модель ролей существенно изменилась, и, вероятно, еще продолжит меняться.
 
     📝 "The Product Owner is responsible to those funding the project for delivering the vision in a manner that maximizes their ROI.
+
     <...>
+
     The Product Owner's focus is return on investment (ROI)."
 
     -- "Agile Project Management with Scrum" by Ken Schwaber
@@ -498,6 +500,15 @@ Dean Leffingwell возлагает на Product Owner обязанность п
     I measure a Product Owner by how much revenue they deliver per "point" of effort."
 
     -- "Scrum: The Art of Doing Twice the Work in Half the Time" by Jeffrey Sutherland
+
+..
+
+    📝 "The Product Owner is responsible for maximizing return on investment (ROI) by identifying product features, translating these into a prioritized feature list, deciding which should be at the top of the list for the next Sprint, and continually re-prioritizing and refining the list.
+
+    The Product Owner has profit and loss responsibility for the product, assuming it is a commercial product.
+    In the case of an internal application, the Product Owner is not responsible for ROI in the sense of a commercial product (that will generate revenue), but they are still responsible for maximizing ROI in the sense of choosing – each Sprint – the highest-business-value lowest-cost items."
+
+    -- "Jeff Sutherland's Scrum Handbook" by Jeff Sutherland
 
 ..
 
