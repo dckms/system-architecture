@@ -296,7 +296,7 @@ Frederick Brooks в своем бестселлере "Мифический че
 
 Хорошая организация процессов должна взаимокомпенсировать эти перекосы.
 
-Под техническими интересами понимаются, в первую очередь, такие Quality Attributes, как `Modifiability <https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8299>`__, Evolvability, Flexibility, Modularity, Testabilty, Deployability etc.
+Под техническими интересами в данном случае понимаются, в первую очередь, такие Quality Attributes, как `Modifiability <https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8299>`__, Evolvability, Flexibility, Modularity, Testabilty, Deployability etc.
 
 Разрешение противоречий требований различных групп стейкхолдеров хорошо изучены анализом и архитектурой.
 
@@ -648,7 +648,7 @@ Jeff Sutherland возлагает устранение Technical Debt на Defi
 
     -- "A Scrum Book: The Spirit of the Game" by Jeff Sutherland, James Coplie, chapter "82 Definition of Done"
 
-Jeff Sutherland так же советует устранять технические проблемы немедленно в главе "81 Whack the Mole" книги "A Scrum Book: The Spirit of the Game" by Jeff Sutherland, James Coplie (текст слишком объемный для его цитирования).
+Jeff Sutherland так же советует устранять технические проблемы немедленно, в главе "81 Whack the Mole" книги "A Scrum Book: The Spirit of the Game" by Jeff Sutherland, James Coplie (текст слишком объемный для его цитирования).
 
 А баланс бизнес и технических интересов обеспечивается тем, что решения Product Owner инспектируемы:
 

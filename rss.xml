@@ -18,7 +18,7 @@
 &lt;div class="section" id="id2"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#id9"&gt;Определение&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Agile development - software development approach based on &lt;a class="reference internal" href="../iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative development&lt;/span&gt;&lt;/a&gt;, frequent inspection and &lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;adaptation&lt;/span&gt;&lt;/a&gt;, and &lt;a class="reference internal" href="../incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental&lt;/span&gt;&lt;/a&gt; deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback."&lt;/p&gt;
+&lt;div&gt;&lt;p&gt;📝 "Agile development - software development approach based on &lt;a class="reference internal" href="../iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative&lt;/span&gt;&lt;/a&gt; development, frequent inspection and &lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;adaptation&lt;/span&gt;&lt;/a&gt;, and &lt;a class="reference internal" href="../incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental&lt;/span&gt;&lt;/a&gt; deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback."&lt;/p&gt;
 &lt;p class="attribution"&gt;—"ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
@@ -130,7 +130,7 @@ But if change stays cheap, the additional value and reduced risk of early concre
 &lt;p&gt;Иными словами, внутреннее качество программы является первичным условием в Agile, как и в любой другой итеративной разработке.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div&gt;&lt;p&gt;📝 "Engineers who don't understand exponential growth and the cost curve as economies of scale kick in come to wildly incorrect conclusions."&lt;/p&gt;
-&lt;p class="attribution"&gt;—Kent Beck, &lt;a class="reference external" href="https://twitter.com/KentBeck/status/1402276528910704655?s=19"&gt;https://twitter.com/KentBeck/status/1402276528910704655?s=19&lt;/a&gt;&lt;/p&gt;
+&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://twitter.com/KentBeck/status/1402276528910704655?s=19"&gt;Kent Beck&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;div&gt;&lt;p&gt;📝 "Continuous attention to technical excellence and good design enhances agility."&lt;/p&gt;
@@ -141,7 +141,7 @@ But if change stays cheap, the additional value and reduced risk of early concre
 In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project."&lt;/p&gt;
 &lt;p class="attribution"&gt;—"ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;При соблюдении этого условия становится экономически целесообразным использование &lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Adaptation&lt;/span&gt;&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;При соблюдении этого условия, использование &lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Adaptation&lt;/span&gt;&lt;/a&gt; обретает экономическую целесообразность:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div&gt;&lt;p&gt;📝 "Responding to change over following a plan"&lt;/p&gt;
 &lt;p class="attribution"&gt;—"&lt;a class="reference external" href="http://agilemanifesto.org/"&gt;Manifesto for Agile Software Development&lt;/a&gt;"&lt;/p&gt;
@@ -500,7 +500,7 @@ If XP can't work with people's short-term interest, it is doomed to the outer me
 &lt;p class="attribution"&gt;—"Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 8. Basic Principles", перевод ООО Издательство "Питер"&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
 &lt;p&gt;Хорошая организация процессов должна взаимокомпенсировать эти перекосы.&lt;/p&gt;
-&lt;p&gt;Под техническими интересами понимаются, в первую очередь, такие Quality Attributes, как &lt;a class="reference external" href="https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8299"&gt;Modifiability&lt;/a&gt;, Evolvability, Flexibility, Modularity, Testabilty, Deployability etc.&lt;/p&gt;
+&lt;p&gt;Под техническими интересами в данном случае понимаются, в первую очередь, такие Quality Attributes, как &lt;a class="reference external" href="https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8299"&gt;Modifiability&lt;/a&gt;, Evolvability, Flexibility, Modularity, Testabilty, Deployability etc.&lt;/p&gt;
 &lt;p&gt;Разрешение противоречий требований различных групп стейкхолдеров хорошо изучены анализом и архитектурой.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div&gt;&lt;p&gt;📝 "It is important to continue to perform requirements negotiation during the analysis and allocation of requirements, &lt;strong&gt;because conflicts will occur&lt;/strong&gt;.
@@ -768,7 +768,7 @@ It can either be immediately deployed or built upon without regression.
 &lt;p&gt;With a good Definition of Done, the team will avoid technical debt."&lt;/p&gt;
 &lt;p class="attribution"&gt;—"A Scrum Book: The Spirit of the Game" by Jeff Sutherland, James Coplie, chapter "82 Definition of Done"&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Jeff Sutherland так же советует устранять технические проблемы немедленно в главе "81 Whack the Mole" книги "A Scrum Book: The Spirit of the Game" by Jeff Sutherland, James Coplie (текст слишком объемный для его цитирования).&lt;/p&gt;
+&lt;p&gt;Jeff Sutherland так же советует устранять технические проблемы немедленно, в главе "81 Whack the Mole" книги "A Scrum Book: The Spirit of the Game" by Jeff Sutherland, James Coplie (текст слишком объемный для его цитирования).&lt;/p&gt;
 &lt;p&gt;А баланс бизнес и технических интересов обеспечивается тем, что решения Product Owner инспектируемы:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;div&gt;&lt;p&gt;📝 "For Product Owners to succeed, the entireorganization must respect their decisions.
