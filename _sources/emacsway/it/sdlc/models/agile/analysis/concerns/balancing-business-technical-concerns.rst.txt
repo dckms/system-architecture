@@ -321,7 +321,7 @@ Frederick Brooks в своем бестселлере "Мифический че
 Если разобраться во всех этих обстоятельствах, то можно убедиться в невозможности избежать конфликта интересов.
 Это нормально, так как это отражает неизбежный конфликт ресурсов и невозможность одновременного удовлетворения всех требований различных групп стейкхолдеров, которые зачастую обратно коррелируют.
 Нужно не предотвращать этот конфликт, - эта задача есть невозможная, а управлять им путем разрешения противоречий.
-В противном случае, вполне естественный конфликт интересов может перерасти в неестественный конфликт межличностный (в лучшем случае), или даже привести к потере кадров (в худшем случае).
+В противном случае, вполне естественный конфликт интересов может перерасти в неестественный конфликт межличностный (в лучшем случае), или даже привести к :ref:`потере кадров <emacsway-developer-motivation>` (в худшем случае).
 
 
 .. index::
@@ -432,7 +432,7 @@ Extreme Programming
     **There is no apparent limit to the benefits of quality, only limits in our ability to understand how to achieve higher quality.**
 
     Quality isn't a purely economic factor.
-    People need to do work they are proud of.
+    People need to do work :ref:`they are proud of <emacsway-developer-motivation>`.
     I remember talking to the manager of a mediocre team.
     He went home on the weekends and made fancy ironwork as a blacksmith.
     He met his need for quality; he just met it outside of work.

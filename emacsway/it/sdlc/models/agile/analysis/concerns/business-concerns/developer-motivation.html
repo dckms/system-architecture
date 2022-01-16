@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Технические интересы &#8212; System Architecture</title>
+    <title>Мотивация разработчиков &#8212; System Architecture</title>
     <link rel="stylesheet" href="../../../../../../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../../../../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" type="text/css" />
@@ -16,8 +16,8 @@
     <script src="../../../../../../../../_static/translations.js"></script>
     <link rel="index" title="Алфавитный указатель" href="../../../../../../../../genindex.html" />
     <link rel="search" title="Поиск" href="../../../../../../../../search.html" />
-    <link rel="next" title="Requirements in Agile" href="../../requirements/index.html" />
-    <link rel="prev" title="Мотивация разработчиков" href="../business-concerns/developer-motivation.html" />
+    <link rel="next" title="Технические интересы" href="../technical-concerns/index.html" />
+    <link rel="prev" title="Бизнес-интересы" href="index.html" />
     
    
   <link rel="stylesheet" href="../../../../../../../../_static/custom.css" type="text/css" />
@@ -28,6 +28,8 @@
 
 
     
+        
+            <link rel="canonical" href="https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/concerns/business-concerns/developer-motivation.html" />
         
     
 
@@ -43,10 +45,10 @@
     <ul>
         <li>
           &larr;
-          <a href="../business-concerns/developer-motivation.html" title="Previous document">Мотивация разработчиков</a>
+          <a href="index.html" title="Previous document">Бизнес-интересы</a>
         </li>
         <li>
-          <a href="../../requirements/index.html" title="Next document">Requirements in Agile</a>
+          <a href="../technical-concerns/index.html" title="Next document">Технические интересы</a>
           &rarr;
         </li>
     </ul>
@@ -57,20 +59,56 @@
           <div class="body" role="main">
             
     
-  <div class="section" id="id1">
-<h1>Технические интересы<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Оглавление:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="when-to-refactor.html">Когда делать refactoring в legacy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="when-to-write-unit-tests.html">Когда писать Unit Tests в legacy</a></li>
-</ul>
-</div>
+  <div class="section" id="emacsway-developer-motivation">
+<span id="id1"></span><h1>Мотивация разработчиков<a class="headerlink" href="#emacsway-developer-motivation" title="Ссылка на этот заголовок">¶</a></h1>
+<p><em>Автор раздела: Ivan Zakrevsky</em></p>
+<blockquote>
+<div><p>📝 &quot;Quality means doing it right when no one is looking.&quot;</p>
+<p class="attribution">—Henry Ford</p>
+</div></blockquote>
+<blockquote>
+<div><p>📝 &quot;С качеством связан значительный человеческий фактор.
+Каждый желает делать свою работу хорошо и каждый работает существенно лучше, если чувствует, что он делает свою работу хорошо.
+Если же вы намеренно жертвуете качеством, возможно, в первое время ваша команда действительно будет работать быстрее, однако в скором времени вступит в действие деморализация.
+На людей начнет давить ощущение, что они заняты производством бракованного продукта.
+Если вы откажетесь от тестирования или от пересмотра кода или от соответствия стандартам, возможно, на некоторое время вы добьетесь некоторого преимущества, однако в дальнейшем вы можете потерять его за счет человеческого фактора.</p>
+<p>There is a human effect from quality.
+Everybody wants to do a good job, and they work much better if they feel they are doing good work.
+If you deliberately downgrade quality, your team might go faster at first, but soon the demoralization of
+producing crap will overwhelm any gains you temporarily made from not testing, or
+not reviewing, or not sticking to standards.&quot;</p>
+<p class="attribution">—&quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 4. Four Variables :: Interactions Between the Variables&quot;, перевод ООО Издательство &quot;Питер&quot;</p>
+</div></blockquote>
+<blockquote>
+<div><p>📝 &quot;Не указывает ли это на еще одну ценность?
+Ценность, которая лежит глубже, чем четыре рассмотренные нами ценности.
+Эта ценность есть уважение.
+Если члены команды не заботятся друг о друге и о том, чем они заняты, методика ХР обречена.
+Скорее всего, это справедливо не только
+в отношении ХР, но и в отношении других подходов к разработке программ (равно как и многим другим занятиям), однако ХР наиболее чувствительна к этому.
+При должном сочувствии и интересе ХР снижает трение между всеми рассмотренными элементами, обеспечивая их более гладкое взаимодействие.
+Если члены команды не заботятся о проекте, ничто не сможет спасти его.
+При минимальном сочувствии ХР обеспечивает позитивную отдачу.
+Это не вопрос воздействия.
+Это своего рода удовольствие — быть частью чего-то, что работает, вместо того, чтобы быть частью чего-то, что не работает.</p>
+<p>This points to a deeper value, one that lies below the surface of the other four—respect.
+If members of a team don't care about each other and what they are doing, XP is doomed.
+So probably are most other approaches to writing software (or getting anything done), but XP is extremely sensitive to this.
+Given some basic compassion and interest, XP might provide some ongoing lubrication for all those pieces moving against each other.
+If members of a team don't care about the project, nothing can save it.
+Given some minimal passion, XP provides some positive feedback.
+This is not manipulative; it's just enjoying being part of something that works, instead of part of something that doesn't work.&quot;</p>
+<p class="attribution">—&quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 7. Four Values :: The Values in Practice&quot;, перевод ООО Издательство &quot;Питер&quot;</p>
+</div></blockquote>
 </div>
 
 
 
     
+        
+            <div class="section" style="text-align: right;">
+                <p><a href="https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/concerns/business-concerns/developer-motivation.html">Canonical URL</a></p>
+            </div>
         
     
 
@@ -81,10 +119,10 @@
     <ul>
         <li>
           &larr;
-          <a href="../business-concerns/developer-motivation.html" title="Previous document">Мотивация разработчиков</a>
+          <a href="index.html" title="Previous document">Бизнес-интересы</a>
         </li>
         <li>
-          <a href="../../requirements/index.html" title="Next document">Requirements in Agile</a>
+          <a href="../technical-concerns/index.html" title="Next document">Технические интересы</a>
           &rarr;
         </li>
     </ul>
@@ -152,9 +190,10 @@
   <li><a href="../../../index.html">Agile</a></li>
   <li><a href="../../index.html">Analysis in Agile</a></li>
   <li><a href="../index.html">Сoncerns in Agile</a></li>
+  <li><a href="index.html">Бизнес-интересы</a></li>
     <ul>
-      <li>Previous: <a href="../business-concerns/developer-motivation.html" title="предыдущая глава">Мотивация разработчиков</a></li>
-      <li>Next: <a href="../../requirements/index.html" title="следующая глава">Requirements in Agile</a></li>
+      <li>Previous: <a href="index.html" title="предыдущая глава">Бизнес-интересы</a></li>
+      <li>Next: <a href="../technical-concerns/index.html" title="следующая глава">Технические интересы</a></li>
     </ul>
   </ul></li>
 </ul>
@@ -190,7 +229,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="../../../../../../../../_sources/emacsway/it/sdlc/models/agile/analysis/concerns/technical-concerns/index.rst.txt"
+      <a href="../../../../../../../../_sources/emacsway/it/sdlc/models/agile/analysis/concerns/business-concerns/developer-motivation.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
