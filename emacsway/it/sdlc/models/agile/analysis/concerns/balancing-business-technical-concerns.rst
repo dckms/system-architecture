@@ -277,7 +277,20 @@ Frederick Brooks в своем бестселлере "Мифический че
 
 Хорошая организация процессов должна взаимокомпенсировать эти перекосы.
 
+Под техническими интересами понимаются, в первую очередь, такие Quality Attributes, как `Modifiability <https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8299>`__, Evolvability, Flexibility, Modularity, Testabilty, Deployability etc.
+
 Разрешение противоречий требований различных групп стейкхолдеров хорошо изучены анализом и архитектурой.
+
+    📝 "It is important to continue to perform requirements negotiation during the analysis and allocation of requirements, **because conflicts will occur**.
+    Negotiation might be needed among stakeholders requiring mutually incompatible features, or due to **conflicts between desired performance requirements, constraints, available budget, and delivery schedule**.
+    In most cases, it is necessary to consult with the stakeholder(s) **to reach a consensus on an appropriate trade-off**.
+    It is often important for contractual reasons that such decisions are traceable to the stakeholder.
+    **Various analysis methods and conflict resolution techniques may be applicable to facilitate the resolution and are dependent on the specific situation.**
+    Some organizations consider requirements negotiation to be part of requirements validation.
+    The specific process subcategory is not important as long as the conflict resolution occurs as early as possible in the requirements analysis task."
+
+    -- "ISO/IEC/IEEE 29148:2011 Systems and software engineering — Life cycle processes — Requirements engineering", "6.2.3.3 Analyze and maintain stakeholder requirements."
+
 Существует целый ряд достаточно зрелых методик, направленных на достижение сбалансированных решений.
 Четвертое издание книги "Software Architecture in Practice" 4th edition by Len Bass, Paul Clements, Rick Kazman наглядно демонстрирует, как можно интегрировать их в итеративную (agile) разработку.
 
