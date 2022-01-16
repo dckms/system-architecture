@@ -17,7 +17,7 @@
 ===========
 
 
-    📝 "Agile development - software development approach based on :ref:`iterative development <emacsway-iterative-development>`, frequent inspection and :ref:`adaptation <emacsway-adaptation>`, and :ref:`incremental <emacsway-incremental-development>` deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback."
+    📝 "Agile development - software development approach based on :ref:`iterative <emacsway-iterative-development>` development, frequent inspection and :ref:`adaptation <emacsway-adaptation>`, and :ref:`incremental <emacsway-incremental-development>` deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback."
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
 
@@ -168,7 +168,7 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
 
     📝 "Engineers who don't understand exponential growth and the cost curve as economies of scale kick in come to wildly incorrect conclusions."
 
-    -- Kent Beck, https://twitter.com/KentBeck/status/1402276528910704655?s=19
+    -- `Kent Beck <https://twitter.com/KentBeck/status/1402276528910704655?s=19>`__
 
 ..
 
@@ -184,7 +184,7 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
 
 
-При соблюдении этого условия становится экономически целесообразным использование :ref:`Adaptation <emacsway-adaptation>`:
+При соблюдении этого условия, использование :ref:`Adaptation <emacsway-adaptation>` обретает экономическую целесообразность:
 
     📝 "Responding to change over following a plan"
 
