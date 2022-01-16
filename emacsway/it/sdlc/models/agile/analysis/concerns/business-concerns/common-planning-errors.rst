@@ -106,14 +106,11 @@
 
 Вообще говоря, в хорошо отлаженных процессах технические задачи возникают редко.
 
-Задачи на Modifiability возникают редко, потому что существуют методики для того, чтобы сгладить по времени "`Design Payoff Line <https://martinfowler.com/bliki/DesignPayoffLine.html>`__" и минимизировать в краткосрочной перспективе стоимость решения:
-
-- "`TechnicalDebt <https://martinfowler.com/bliki/TechnicalDebt.html>`__" by Martin Fowler
-- "`Yagni <https://martinfowler.com/bliki/Yagni.html>`__" by Martin Fowler
-- ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`"
+Задачи на Modifiability возникают редко, потому что существуют методики, такие как :ref:`YAGNI <emacsway-yagni>`, позволяющие сгладить по времени "`Design Payoff Line <https://martinfowler.com/bliki/DesignPayoffLine.html>`__" и минимизировать в краткосрочной перспективе стоимость решения.
+См. также ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`".
 
 При использовании этих методик, редко возникают технические задачи на Modifiability, которые не окупятся в пределах релиза.
-Martin Fowler даже советует не говорить менеджерам о таких технических задачах, так как они все равно не затягивают выполнение графика работ (см. "Refactoring: Improving the Design of Existing Code" by Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts).
+Martin Fowler даже советует :ref:`не говорить менеджерам о таких технических задачах <emacsway-refactoring-don't-tell-to-manager>`, так как они все равно не затягивают выполнение графика работ.
 
 А задачи на другие нефункциональные требования возникают редко, так как функциональные и нефункциональные требования нужно, по мере возможности, достигать :ref:`одновременно <emacsway-agile-nonfunctional-requirements>`.
 
@@ -130,6 +127,7 @@ Martin Fowler даже советует не говорить менеджера
 
 В таком случае, чем дольше откладывается выполнение технических задач, тем больше падает скорость разработки, и тем меньше остается ресурсов на технические задачи.
 А в таком случае, если у компании нет ресурсов решить задачу правильно, то решать ее дважды - и подавно :ref:`не будет <emacsway-agile-software-design>`.
+
 
 .. seealso::
 

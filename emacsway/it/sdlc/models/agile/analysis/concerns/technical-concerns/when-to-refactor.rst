@@ -78,6 +78,10 @@
     -- "Refactoring: Improving the Design of Existing Code" 2nd edition by Martin Fowler, Kent Beck перевод И.В. Красикова под редакцией С.Н. Тригуб
 
 
+.. index::
+   single: Refactoring; don't tell to manager
+   :name: emacsway-refactoring-don't-tell-to-manager
+
 Что делать, если бизнес не выделяет ресурсов на рефакторинг кода?
 =================================================================
 
