@@ -648,7 +648,7 @@ Jeff Sutherland возлагает устранение Technical Debt на Defi
 
     -- "A Scrum Book: The Spirit of the Game" by Jeff Sutherland, James Coplie, chapter "82 Definition of Done"
 
-Jeff Sutherland так же советует устранять технические проблемы немедленно в главе "81 Whack the Mole" книги "A Scrum Book: The Spirit of the Game" by Jeff Sutherland, James Coplie (текст слишком объемный для его цитирования).
+Jeff Sutherland так же советует устранять технические проблемы немедленно, в главе "81 Whack the Mole" книги "A Scrum Book: The Spirit of the Game" by Jeff Sutherland, James Coplie (текст слишком объемный для его цитирования).
 
 А баланс бизнес и технических интересов обеспечивается тем, что решения Product Owner инспектируемы:
 
