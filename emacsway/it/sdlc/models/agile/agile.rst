@@ -17,9 +17,17 @@
 ===========
 
 
-    📝 "Agile development - software development approach based on :ref:`iterative development <emacsway-iterative-development>`, frequent inspection and adaptation, and incremental deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback."
+    📝 "Agile development - software development approach based on :ref:`iterative development <emacsway-iterative-development>`, frequent inspection and :ref:`adaptation <emacsway-adaptation>`, and :ref:`incremental <emacsway-incremental-development>` deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback."
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
+
+..
+
+    📝 "Scrum is, as the reader supposedly knows, an agile method.
+    The agile family of development methods evolved from the old and well-known :ref:`iterative <emacsway-iterative-development>` and :ref:`incremental <emacsway-incremental-development>` life-cycle approaches.
+    They were born out of a belief that an approach more grounded in human reality – and the product development reality of learning, innovation, and change – would yield better results."
+
+    -- "Jeff Sutherland's Scrum Handbook" by Jeff Sutherland
 
 ..
 
