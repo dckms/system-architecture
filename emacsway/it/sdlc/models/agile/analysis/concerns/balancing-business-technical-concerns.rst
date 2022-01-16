@@ -296,7 +296,7 @@ Frederick Brooks в своем бестселлере "Мифический че
 
 Хорошая организация процессов должна взаимокомпенсировать эти перекосы.
 
-Под техническими интересами понимаются, в первую очередь, такие Quality Attributes, как `Modifiability <https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8299>`__, Evolvability, Flexibility, Modularity, Testabilty, Deployability etc.
+Под техническими интересами в данном случае понимаются, в первую очередь, такие Quality Attributes, как `Modifiability <https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8299>`__, Evolvability, Flexibility, Modularity, Testabilty, Deployability etc.
 
 Разрешение противоречий требований различных групп стейкхолдеров хорошо изучены анализом и архитектурой.
 
