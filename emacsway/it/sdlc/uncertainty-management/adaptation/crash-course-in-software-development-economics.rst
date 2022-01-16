@@ -39,9 +39,9 @@
 - "`Design Payoff Line <https://martinfowler.com/bliki/DesignPayoffLine.html>`__"
 - "`Design Stamina Hypothesis <https://martinfowler.com/bliki/DesignStaminaHypothesis.html>`__"
 - "`Is High Quality Software Worth the Cost? <https://martinfowler.com/articles/is-quality-worth-cost.html>`__"
-- "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler.
-- "`Принцип YAGNI <http://sergeyteplyakov.blogspot.com/2016/08/yagni.html>`__" / Сегей Тепляков
-- "`О повторном использовании кода <http://sergeyteplyakov.blogspot.com/2012/04/blog-post_19.html>`__" / Сегей Тепляков
+- "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler
+- "`Принцип YAGNI <http://sergeyteplyakov.blogspot.com/2016/08/yagni.html>`__" / Сергей Тепляков
+- "`О повторном использовании кода <http://sergeyteplyakov.blogspot.com/2012/04/blog-post_19.html>`__" / Сергей Тепляков
 - "`Systems thinking <https://less.works/less/principles/systems-thinking.html>`__" (`на русском <https://less.works/ru/less/principles/systems-thinking.html>`__)
 - "`Modifiability <https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8299>`__"
 - "`Making Architecture Matter - Martin Fowler Keynote <https://youtu.be/DngAZyWMGR0>`_" - превосходное 14-ти минутное видео.

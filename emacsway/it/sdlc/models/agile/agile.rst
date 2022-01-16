@@ -17,9 +17,17 @@
 ===========
 
 
-    📝 "Agile development - software development approach based on :ref:`iterative development <emacsway-iterative-development>`, frequent inspection and adaptation, and incremental deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback."
+    📝 "Agile development - software development approach based on :ref:`iterative <emacsway-iterative-development>` development, frequent inspection and :ref:`adaptation <emacsway-adaptation>`, and :ref:`incremental <emacsway-incremental-development>` deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback."
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
+
+..
+
+    📝 "Scrum is, as the reader supposedly knows, an agile method.
+    The agile family of development methods evolved from the old and well-known :ref:`iterative <emacsway-iterative-development>` and :ref:`incremental <emacsway-incremental-development>` life-cycle approaches.
+    They were born out of a belief that an approach more grounded in human reality – and the product development reality of learning, innovation, and change – would yield better results."
+
+    -- "Jeff Sutherland's Scrum Handbook" by Jeff Sutherland
 
 ..
 
@@ -128,7 +136,21 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
 
 ..
 
-    📝 "**This is one of the premises of XP. It is the technical premise of XP.**
+    📝 "**Именно это является одним из** *предпосылок* [в оригинальном переводе: основных предположений] **ХР**.
+    **Это техническое предположение ХР.**
+    Если стоимость внесения в систему изменений со временем растет достаточно медленно, стратегия разработки программы должна быть совершенно другой, отличной от той, которая используется в случае, если стоимость внесения в систему изменений со временем растет экспоненциально.
+    В подобной ситуации вы можете откладывать решение важных задач на более поздние сроки.
+    Вы получаете возможность принимать важные решения настолько поздно, насколько это возможно.
+    Это делается для того, чтобы осуществлять связанные с этим затраты как можно позже.
+    Кроме того, если вы откладываете решение важных вопросов на более поздний срок, тем самым вы повышаете вероятность того, что выбранное вами решение окажется правильным.
+    Другими словами, сегодня вы должны реализовать только то, без чего сегодня не обойтись, при этом вы можете рассчитывать на то, что проблемы, решение которых вы отложили до завтра, развеются сами собой, то есть перестанут быть актуальными.
+    Вы можете добавлять в дизайн новые элементы только в случае, если эти новые элементы упрощают код или делают написание следующего фрагмента кода более простым.
+
+    **Если пологая кривая роста затрат делает ХР возможным, то экспоненциальная кривая роста затрат делает ХР невозможным.**
+    Если изменение обойдется вам в кругленькую сумму, вы сойдете с ума, пытаясь предугадать, каким образом это изменение повлияет на работу системы.
+    Если же изменение обходится вам дешево, вы всегда можете рискнуть и проверить, что будет, если вы тем или иным образом измените код, — позже вы всегда можете изменить систему так, как это будет лучше.
+
+    **This is one of the premises of XP. It is the technical premise of XP.**
     If the cost of change rose slowly over time, you would act completely differently from how you do under the assumption that costs rise exponentially.
     You would make big decisions as late in the process as possible, to defer the cost of making the decisions and to have the greatest possible chance that they would be right.
     You would only implement what you had to, in hopes that the needs you anticipate for tomorrow wouldn't come true.
@@ -138,15 +160,21 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
     If change is ruinously expensive, you would be crazy to charge ahead without careful forethought.
     But if change stays cheap, the additional value and reduced risk of early concrete feedback outweighs the additional cost of early change."
 
-    -- "Extreme Programming Explained" 1st edition by Kent Beck
+    -- "Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 5. Cost of Change", перевод ООО Издательство "Питер"
 
 Поскольку это было произнесено еще до встречи 2001 года и принятия Agile Manifesto, то под XP следует понимать Agile (или даже любую итератиную модель разработки) в принципе, поскольку XP - это частный случай Agile.
 
-Иными словами, внутреннее качество программы является первичным условием в Agile и в любой другой итеративной разработке.
+Иными словами, внутреннее качество программы является первичным условием в Agile, как и в любой другой итеративной разработке.
 
     📝 "Engineers who don't understand exponential growth and the cost curve as economies of scale kick in come to wildly incorrect conclusions."
 
-    -- Kent Beck, https://twitter.com/KentBeck/status/1402276528910704655?s=19
+    -- `Kent Beck <https://twitter.com/KentBeck/status/1402276528910704655?s=19>`__
+
+..
+
+    📝 "Continuous attention to technical excellence and good design enhances agility."
+
+    -- "`Principles behind the Agile Manifesto <http://agilemanifesto.org/principles.html>`__"
 
 ..
 
@@ -154,6 +182,19 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
     In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project."
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
+
+
+При соблюдении этого условия, использование :ref:`Adaptation <emacsway-adaptation>` обретает экономическую целесообразность:
+
+    📝 "Responding to change over following a plan"
+
+    -- "`Manifesto for Agile Software Development <http://agilemanifesto.org/>`__"
+
+..
+
+    📝 "Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage."
+
+    -- "`Principles behind the Agile Manifesto <http://agilemanifesto.org/principles.html>`__"
 
 О том, почему я обратился к высказываю Kent Beck в этом вопросе, неплохо поясняет Martin Fowler:
 
@@ -218,6 +259,14 @@ Impossible. Точка.
     This is one of the reasons that I still think that Extreme Programming is the most valuable of the named agile methods as a core and starting point."
 
     -- "`Agile Software Development <https://martinfowler.com/agile.html>`__" by Martin Fowler
+
+..
+
+    📝 "We need to stress that you shouldn't worry too much about the issue of reworking.
+    **XP's practices are all about reducing the cost of reworking to manageable levels.**
+    If you find yourself in a situation **where the cost of reworking is prohibitive, then you should either not use XP or you should use an environment that makes rework easier**."
+
+    -- "Planning Extreme Programming" by Kent Beck, Martin Fowler
 
 Этому вопросу посвящена статья "`Is Design Dead? <https://martinfowler.com/articles/designDead.html>`__" by Martin Fowler.
 

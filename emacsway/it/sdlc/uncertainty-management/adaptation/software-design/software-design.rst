@@ -454,6 +454,14 @@ Robert Martin
     -- "Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin, перевод ООО Издательство "Питер"
 
 
+Agile Manifesto
+---------------
+
+    📝 "Continuous attention to technical excellence and good design enhances agility."
+
+    -- "`Principles behind the Agile Manifesto <http://agilemanifesto.org/principles.html>`__"
+
+
 Ralph Johnson
 -------------
 
@@ -551,6 +559,14 @@ Steve McConnell
     -- "Code Complete" by Steve McConnell
 
 
+Сергей Тепляков
+---------------
+
+    📝 "Хороший дизайн заключается в простом решении, когда изменения требований ведут к линейным трудозатратам."
+
+    -- "`Принцип YAGNI <http://sergeyteplyakov.blogspot.com/2016/08/yagni.html>`__", Сергей Тепляков
+
+
 Randy Shoup
 -----------
 
@@ -572,3 +588,4 @@ Randy Shoup
    - ":ref:`emacsway-icebreaker-principle`"
    - ":ref:`emacsway-adaptation`"
    - ":ref:`emacsway-agile-development`"
+   - ":ref:`emacsway-agile-patterns`"

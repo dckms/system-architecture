@@ -284,6 +284,12 @@ Bjarne Stroustrup
 Другие
 ------
 
+    📝 "Simplicity--the art of maximizing the amount of work not done--is essential."
+
+    -- "`Principles behind the Agile Manifesto <http://agilemanifesto.org/principles.html>`__"
+
+..
+
     📝 "The design goal for Eventlet's API is simplicity and readability.
     You should be able to read its code and understand what it's doing.
     Fewer lines of code are preferred over excessively clever implementations."
@@ -297,6 +303,13 @@ Bjarne Stroustrup
     your code is stupid simple, so you don't have to be a genius to work with it."
 
     -- "`KISS principle <https://people.apache.org/~fhanik/kiss.html>`__"
+
+..
+
+    📝 "Когда кто-либо привязывается к одной какой-нибудь, хотя бы и верной, идее, то он, в сущности, попадает в то же положение, в каком находился бы человек, привязавший себя к столбу, для того чтобы не заблудиться.
+    То, что может быть желанной истиной на известной ступени духовного роста, может быть помехой к этому росту и заблуждением на другой, более высокой ступени."
+
+    -- Люси Малори
 
 
 .. seealso::
