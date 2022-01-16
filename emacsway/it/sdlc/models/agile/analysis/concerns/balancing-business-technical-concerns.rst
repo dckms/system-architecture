@@ -496,7 +496,7 @@ Extreme Programming
 
     -- "Programmer Bill of Rights", "Planning Extreme Programming" by Kent Beck, Martin Fowler, "Chapter 2. Fear"
 
-Вот как комментирует эту фразу организатор создения Agile Manifesto:
+Вот как комментирует эту фразу организатор создания Agile Manifesto:
 
     📝
 
