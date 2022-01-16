@@ -284,6 +284,12 @@ Bjarne Stroustrup
 Другие
 ------
 
+    📝 "Simplicity--the art of maximizing the amount of work not done--is essential."
+
+    -- "`Principles behind the Agile Manifesto <http://agilemanifesto.org/principles.html>`__"
+
+..
+
     📝 "The design goal for Eventlet's API is simplicity and readability.
     You should be able to read its code and understand what it's doing.
     Fewer lines of code are preferred over excessively clever implementations."
