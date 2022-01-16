@@ -496,6 +496,18 @@ Extreme Programming
 
     -- "Programmer Bill of Rights", "Planning Extreme Programming" by Kent Beck, Martin Fowler, "Chapter 2. Fear"
 
+Вот как комментирует эту фразу организатор создения Agile Manifesto:
+
+    📝
+
+        "Developers have the right to produce high-quality work at all times." -- Kent Beck
+
+    This may be the most profound of all these rights. Developers have the right to do good work.
+    The business has no right to tell developers to cut corners or do low-quality work.
+    Or, to say this differently, the business has no right to force developers to ruin their professional reputations or violate their professional ethics.
+
+    -- "Clean Agile: Back to Basics" by Robert C. Martin
+
 .. index::
    single: Concerns; balancing business and technical concerns in Scrum
    :name: emacsway-scrum-balancing-business-technical-concerns
