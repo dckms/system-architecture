@@ -17,9 +17,17 @@
 ===========
 
 
-    📝 "Agile development - software development approach based on :ref:`iterative development <emacsway-iterative-development>`, frequent inspection and adaptation, and incremental deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback."
+    📝 "Agile development - software development approach based on :ref:`iterative development <emacsway-iterative-development>`, frequent inspection and :ref:`adaptation <emacsway-adaptation>`, and :ref:`incremental <emacsway-incremental-development>` deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback."
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
+
+..
+
+    📝 "Scrum is, as the reader supposedly knows, an agile method.
+    The agile family of development methods evolved from the old and well-known :ref:`iterative <emacsway-iterative-development>` and :ref:`incremental <emacsway-incremental-development>` life-cycle approaches.
+    They were born out of a belief that an approach more grounded in human reality – and the product development reality of learning, innovation, and change – would yield better results."
+
+    -- "Jeff Sutherland's Scrum Handbook" by Jeff Sutherland
 
 ..
 
@@ -156,7 +164,7 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
 
 Поскольку это было произнесено еще до встречи 2001 года и принятия Agile Manifesto, то под XP следует понимать Agile (или даже любую итератиную модель разработки) в принципе, поскольку XP - это частный случай Agile.
 
-Иными словами, внутреннее качество программы является первичным условием в Agile и в любой другой итеративной разработке.
+Иными словами, внутреннее качество программы является первичным условием в Agile, как и в любой другой итеративной разработке.
 
     📝 "Engineers who don't understand exponential growth and the cost curve as economies of scale kick in come to wildly incorrect conclusions."
 
@@ -164,10 +172,29 @@ Thanks to Vladik Khononov for https://youtu.be/ybYtgII151g?t=9808
 
 ..
 
+    📝 "Continuous attention to technical excellence and good design enhances agility."
+
+    -- "`Principles behind the Agile Manifesto <http://agilemanifesto.org/principles.html>`__"
+
+..
+
     📝 "The incremental and iterative nature of Agile development can facilitate **efficient technical and management processes and practices to reduce the cost associated with change**.
     In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project."
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
+
+
+При соблюдении этого условия становится экономически целесообразным использование :ref:`Adaptation <emacsway-adaptation>`:
+
+    📝 "Responding to change over following a plan"
+
+    -- "`Manifesto for Agile Software Development <http://agilemanifesto.org/>`__"
+
+..
+
+    📝 "Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage."
+
+    -- "`Principles behind the Agile Manifesto <http://agilemanifesto.org/principles.html>`__"
 
 О том, почему я обратился к высказываю Kent Beck в этом вопросе, неплохо поясняет Martin Fowler:
 

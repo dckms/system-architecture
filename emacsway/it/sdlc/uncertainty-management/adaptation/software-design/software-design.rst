@@ -454,6 +454,14 @@ Robert Martin
     -- "Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin, перевод ООО Издательство "Питер"
 
 
+Agile Manifesto
+---------------
+
+    📝 "Continuous attention to technical excellence and good design enhances agility."
+
+    -- "`Principles behind the Agile Manifesto <http://agilemanifesto.org/principles.html>`__"
+
+
 Ralph Johnson
 -------------
 

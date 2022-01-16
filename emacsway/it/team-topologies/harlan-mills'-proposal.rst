@@ -418,14 +418,34 @@ Nexus
 
 Интересна она, прежде всего, тем, что открыто говорит о проблемах Nexus, которые можно решить путем заимствования практик у SAFe.
 
-Одним из наиболее узких мест Nexus является отсутствие масштабирования архитектурной работы в problem space (сбор требований, аналитика...):
+Одним из наиболее узких мест Nexus является отсутствие масштабирования аналитической работы (сбор требований) в problem space.
+Команды масштабируются, а бизнес-анализ, в лице единственного Product Owner, - нет.
+Scrum, как известно, оставляет Product Owner с этой проблемой наедине, предлагая ему самостоятельно решать эту проблему путем делегации полномочий в случаях, когда аналитическая работа становится узким горлышком.
 
     📝 "it's hard for one Product Owner to deal with too many teams...
     In real life, these Product Owners are typically accountable for the value delivered by these multiple teams and rely upon a lot of assistance from the Development Teams in order to deal with the challenge of scale."
 
     -- "`Comparing Nexus and SAFe - Similarities, Differences, potential synergies <https://www.scrum.org/resources/blog/comparing-nexus-and-safe-similarities-differences-potential-synergies>`__" by Yuval Yeret
 
-Статья подчеркивает ограниченность Nexus и предлагает к рассмотрению SAFe-практики:
+..
+
+    📝 "A Nexus has a single Product Owner who manages a single Product Backlog from which the Scrum Teams work."
+
+    -- "`The 2021 Nexus™ Guide <https://www.scrum.org/resources/online-nexus-guide>`__
+
+..
+
+    📝 "The Product Owner may do the above work or may delegate the responsibility to others. Regardless, the Product Owner remains accountable."
+
+    -- "`The 2020 Scrum Guide™ <https://scrumguides.org/scrum-guide.html>`__"
+
+..
+
+    📝 "In multi-team programs, this one Product Owner may delegate the work to Product Owners that represent him or her on subordinate teams, but all decisions and direction come from the top-level, single Product Owner.
+
+    -- "Jeff Sutherland's Scrum Handbook" by Jeff Sutherland
+
+Статья подчеркивает ограниченность масштабирования Nexus по этой причине и предлагает к рассмотрению SAFe-практики:
 
     📝 "As Nexus is designed to be a lightweight framework, with a more limited scope than SAFe, its not surprising that there are a lot more elements in SAFe that Nexus doesn't say anything about.
     Some of these can be useful in your context, some not necessarily.
