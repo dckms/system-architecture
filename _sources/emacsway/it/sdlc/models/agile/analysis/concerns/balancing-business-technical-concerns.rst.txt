@@ -26,6 +26,25 @@
 
     -- "Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 7. Four Values", перевод ООО Издательство "Питер"
 
+..
+
+    📝 "There is **always a tension between advancing product functionality and raising product quality**.
+
+    Business pressures tend to make us view engineering problems, software bugs, and manufacturing line irregularities as necessary evils.
+    We see them as distractions that lie outside the Sprint.
+    And because developers really like to do new stuff, they often smooth over current product problems, or they postpone resolving them until **the tomorrow that never comes**.
+
+    <...>
+
+    Fixing issues takes time, so we often defer such work.
+    We believe that the market benefit is not worth the effort to fix them, or that they displace the "more important," revenue-generating work.
+    However, McConnell (Software Development 4 [McC96]) has shown that bugs in software :ref:`slow down the Development Team <emacsway-agile-development-difficulties>` because they cause "stumbling" and work-arounds that create a drag on development.
+    These impediments actually **slow down other development that isn't directly related to fixing bugs**.
+
+    [McC96]Steve McConnell. The XP Customer Role in Practice: Three Studies. Software Development. 4[8]:38--42, 1996, August."
+
+    -- "A Scrum Book: The Spirit of the Game" by Jeff Sutherland, James Coplie, chapter "81 Whack the Mole"
+
 
 Поиск баланса
 =============
@@ -277,7 +296,20 @@ Frederick Brooks в своем бестселлере "Мифический че
 
 Хорошая организация процессов должна взаимокомпенсировать эти перекосы.
 
+Под техническими интересами понимаются, в первую очередь, такие Quality Attributes, как `Modifiability <https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8299>`__, Evolvability, Flexibility, Modularity, Testabilty, Deployability etc.
+
 Разрешение противоречий требований различных групп стейкхолдеров хорошо изучены анализом и архитектурой.
+
+    📝 "It is important to continue to perform requirements negotiation during the analysis and allocation of requirements, **because conflicts will occur**.
+    Negotiation might be needed among stakeholders requiring mutually incompatible features, or due to **conflicts between desired performance requirements, constraints, available budget, and delivery schedule**.
+    In most cases, it is necessary to consult with the stakeholder(s) **to reach a consensus on an appropriate trade-off**.
+    It is often important for contractual reasons that such decisions are traceable to the stakeholder.
+    **Various analysis methods and conflict resolution techniques may be applicable to facilitate the resolution and are dependent on the specific situation.**
+    Some organizations consider requirements negotiation to be part of requirements validation.
+    The specific process subcategory is not important as long as the conflict resolution occurs as early as possible in the requirements analysis task."
+
+    -- "ISO/IEC/IEEE 29148:2011 Systems and software engineering — Life cycle processes — Requirements engineering", "6.2.3.3 Analyze and maintain stakeholder requirements."
+
 Существует целый ряд достаточно зрелых методик, направленных на достижение сбалансированных решений.
 Четвертое издание книги "Software Architecture in Practice" 4th edition by Len Bass, Paul Clements, Rick Kazman наглядно демонстрирует, как можно интегрировать их в итеративную (agile) разработку.
 
@@ -285,6 +317,11 @@ Frederick Brooks в своем бестселлере "Мифический че
 Многие из этих методик описаны в "`ISO/IEC/IEEE 42030:2019 Software, systems and enterprise — Architecture evaluation framework <https://www.iso.org/standard/73436.html>`__".
 
 Однако, легковесные реализации agile-модели разработки предлагают свои, предельно упрощенные, процессы достижения баланса между краткосрочными бизнес-интересами и долгосрочными техническими интересами.
+
+Если разобраться во всех этих обстоятельствах, то можно убедиться в невозможности избежать конфликта интересов.
+Это нормально, так как это отражает неизбежный конфликт ресурсов и невозможность одновременного удовлетворения всех требований различных групп стейкхолдеров, которые зачастую обратно коррелируют.
+Нужно не предотвращать этот конфликт, - эта задача есть невозможная, а управлять им путем разрешения противоречий.
+В противном случае, вполне естественный конфликт интересов может перерасти в неестественный конфликт межличностный (в лучшем случае), или даже привести к потере кадров (в худшем случае).
 
 
 .. index::
@@ -455,6 +492,9 @@ Extreme Programming
 Баланс краткосрочных бизнес-интересов и долгосрочных технических интересов Kent Beck теперь уже находит в сглаживании по времени "`Design Payoff Line <https://martinfowler.com/bliki/DesignPayoffLine.html>`__" посредством применения принципа :ref:`YAGNI <emacsway-yagni>`, см. ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`".
 Иными словами, вопрос поиска баланса краткосрочных бизнес-интересов и долгосрочных технических интересов перешел полностью под контроль технических специалистов, и вместо разрешения противоречия между двумя группами стейкхолдеров превратился в вопрос минимизации ущерба краткосрочным бизнес-интересам от осуществления технических решений.
 
+    📝 "You have the right to produce quality work at all times."
+
+    -- "Programmer Bill of Rights", "Planning Extreme Programming" by Kent Beck, Martin Fowler, "Chapter 2. Fear"
 
 .. index::
    single: Concerns; balancing business and technical concerns in Scrum
@@ -486,7 +526,9 @@ Dean Leffingwell возлагает на Product Owner обязанность п
 Из других источников можно сделать вывод о том, что ответственнен, по крайней мере, был ответственным, ибо в 2020 году модель ролей существенно изменилась, и, вероятно, еще продолжит меняться.
 
     📝 "The Product Owner is responsible to those funding the project for delivering the vision in a manner that maximizes their ROI.
+
     <...>
+
     The Product Owner's focus is return on investment (ROI)."
 
     -- "Agile Project Management with Scrum" by Ken Schwaber
@@ -498,6 +540,15 @@ Dean Leffingwell возлагает на Product Owner обязанность п
     I measure a Product Owner by how much revenue they deliver per "point" of effort."
 
     -- "Scrum: The Art of Doing Twice the Work in Half the Time" by Jeffrey Sutherland
+
+..
+
+    📝 "The Product Owner is responsible for maximizing return on investment (ROI) by identifying product features, translating these into a prioritized feature list, deciding which should be at the top of the list for the next Sprint, and continually re-prioritizing and refining the list.
+
+    The Product Owner has profit and loss responsibility for the product, assuming it is a commercial product.
+    In the case of an internal application, the Product Owner is not responsible for ROI in the sense of a commercial product (that will generate revenue), but they are still responsible for maximizing ROI in the sense of choosing – each Sprint – the highest-business-value lowest-cost items."
+
+    -- "Jeff Sutherland's Scrum Handbook" by Jeff Sutherland
 
 ..
 
@@ -517,8 +568,22 @@ Dean Leffingwell возлагает на Product Owner обязанность п
     2. Time-to-market
     3. Ability to innovate
 
+Интересно, что таким образом они пытались решить другую проблему, которая тоже связана с балансированием долгосрочных и краткосрочных интересов:
+
+    📝 "One common approach is to hire a project manager to oversee the team's day-to-day work.
+    The project manager does the work that management may feel is too important to ignore but not important enough to distract from their own pressing agendas.
+    Though this is very common—almost ubiquitous—the approach in fact slows product delivery and may reduce quality and profitability.
+    First, the organization is building a product rather than carrying out a project.
+    When project development completes, the product is still in the field and questions of maintenance and added feature development find only awkward answers.
+    **Organizationally separating product creation from ongoing development ("maintenance") creates many problems.**
+    Secondly, the company rarely gives the project manager responsibility for value such as ROI or net present value (see Value and ROI), so his or her incentive is to deliver as fast as possible within the financial constraints.
+    **Without this responsibility, the project manager is more likely to make short-term decisions with long-term consequences, and short-term decisions tend not to have positive long-term consequences.**"
+
+    -- "A Scrum Book: The Spirit of the Game" by Jeff Sutherland, James Coplie, chapter "11 Product Owner"
+
 Какие выводы можно сделать?
 
+Решая одну проблему, они создали другую (см. другие цитаты Jeff Sutherland на этой же странице).
 С точки зрения архитектуры, Product Owner становится заинтересованным лицом и теряет нейтралитет своей позиции, а значит, в силу когнитивных искажений и давления обстоятельств, он всегда будет предвзят, и будет руководствоваться краткосрочными бизнес-интересами в ущерб долгосрочным техническим, если только не обладает развитым :ref:`системным мышлением и волей <emacsway-planning-technical-task>`.
 
 Ну а поскольку никаких методик разрешения противоречий требований стейкхолдеров Scrum не предлагает, то в ранней версии "The 2011 Scrum Guide™" этот конфликт разрешался тем, что Product Owner не мог навязывать конкретную реализацию, оставляя переменную управления разработкой Quality на усмотрение разработчиков, :ref:`как и в XP1 <emacsway-xp1-balancing-business-technical-concerns>`:
@@ -565,13 +630,25 @@ Dean Leffingwell возлагает на Product Owner обязанность п
 
     -- "`The 2020 Scrum Guide™ <https://scrumguides.org/scrum-guide.html>`__"
 
-Сам Ken Schwaber под "прозрачностью" понимает полное отсутствие техдолга:
+Сам Ken Schwaber под "прозрачностью" понимает полное отсутствие Technical Debt:
 
     📝 "Transparency means the software is ready.
     It can either be immediately deployed or built upon without regression.
     **It has no technical debt.**"
 
     -- "`Can Software Developers Meet the Need? <https://kenschwaber.wordpress.com/2014/04/09/can-software-developers-meet-the-needs/>`__ by Ken Schwaber
+
+Jeff Sutherland возлагает устранение Technical Debt на Definition of Done:
+
+    📝 "In the long run, Definition of Done helps to remove technical debt."
+
+    <...>
+
+    With a good Definition of Done, the team will avoid technical debt."
+
+    -- "A Scrum Book: The Spirit of the Game" by Jeff Sutherland, James Coplie, chapter "82 Definition of Done"
+
+Jeff Sutherland так же советует устранять технические проблемы немедленно в главе "81 Whack the Mole" книги "A Scrum Book: The Spirit of the Game" by Jeff Sutherland, James Coplie (текст слишком объемный для его цитирования).
 
 А баланс бизнес и технических интересов обеспечивается тем, что решения Product Owner инспектируемы:
 
@@ -584,7 +661,9 @@ Dean Leffingwell возлагает на Product Owner обязанность п
 А инспектирует их сбалансированный круг внутренних (команда) и внешних стейкхолдеров:
 
     📝 "Scrum Definition: The **Scrum Team and its stakeholders inspect** the results and adjust for the next Sprint.
+
     <...>
+
     Sprint Review: During the event, the **Scrum Team and stakeholders review** what was accomplished in the Sprint
     and what has changed in their environment."
 
@@ -764,6 +843,12 @@ ATAM in Agile
     -- "Scrum and XP from the Trenches: How We Do Scrum" 2nd edition by Henrik Kniberg, перевод под редакцией Алексея Кривицкого
 
 
+Системное мышление
+^^^^^^^^^^^^^^^^^^
+
+См. "`Systems Thinking <https://less.works/less/principles/systems-thinking.html>`__" by Craig Larman (`на русском <https://less.works/ru/less/principles/systems-thinking.html>`__).
+
+
 Психологическая сторона вопроса
 ===============================
 
@@ -789,12 +874,15 @@ ATAM in Agile
 И даже, если руководство не обвинит его явно, но оно может это запомнить и учесть это в будущем при принятии кадровых решений (что вызывает еще больше ежедневного страха из-за неопределенности будущего).
 
 Наконец, представитель бизнеса, который сегодня выдает индульгенции на снижение внутреннего качества программы, завтра может быть заменен другим представителем, который эти индульгенции может легко отозвать, и технари останутся с проблемой наедине.
-Эти риски создают неопределенность, которая, в результате действия психологического "`Эффекта Неоднозначности <https://ru.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%BD%D0%B5%D0%BE%D0%B4%D0%BD%D0%BE%D0%B7%D0%BD%D0%B0%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%B8>`__", вынуждает технаря отстаивать решение, обладающее наименьшей неопределенностью (т.е. настаивать техническом решении).
+Качество кода не исправляется так же быстро, как отзываются индульгенции, что ставит разработчиков в зависимое положение от конкретной персоны, которая, вероятно, не будет работать в одной и той же должности вечно.
+
+Эти риски создают неопределенность, которая, в результате действия психологического "`Эффекта Неоднозначности <https://ru.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%BD%D0%B5%D0%BE%D0%B4%D0%BD%D0%BE%D0%B7%D0%BD%D0%B0%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%B8>`__", вынуждает технаря отстаивать решение, обладающее наименьшей неопределенностью (т.е. настаивать на выполнении технической задачи).
 Возникает "`Психологическая Защита <https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%89%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC>`__", которая может перерасти в открытый конфликт.
 Этот эффект дополнительно еще мультиплицируется распространенным среди технарей "`Эффектом Самозванца <https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC_%D1%81%D0%B0%D0%BC%D0%BE%D0%B7%D0%B2%D0%B0%D0%BD%D1%86%D0%B0>`__".
 
 Страх неопределенности возникает и у представителя бизнеса.
 Зачастую он не уверен в том, хватит ли команде квалификации, чтобы эффективно использовать выделенные ресурсы на технические задачи, и зачастую эта неуверенность подкреплена негативным опытом в прошлом.
+Эти страхи, действительно, обоснованы, поскольку на рынке не так уж и много специалистов, способных писать экономически высокоэффективный код.
 В силу психологического "`Эффекта Неоднозначности <https://ru.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%BD%D0%B5%D0%BE%D0%B4%D0%BD%D0%BE%D0%B7%D0%BD%D0%B0%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%B8>`__", возникает стремление к варианту, обладающему наименьшей неопределенностью, т.е. лучше "запилить еще одну осязаемую бизнес-фичу" вместо того, чтобы потратить ресурсы на призрачную возможность повысить velocity.
 
 Также нужно учитывать и "`Эффект Недавнего <https://ru.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%BD%D0%B5%D0%B4%D0%B0%D0%B2%D0%BD%D0%B5%D0%B3%D0%BE>`__".

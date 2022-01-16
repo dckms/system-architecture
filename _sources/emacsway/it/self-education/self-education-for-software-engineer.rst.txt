@@ -479,6 +479,7 @@ Single-Team Agile
 - "Essential Scrum: A Practical Guide to the Most Popular Agile Process" by Kenneth Rubin
 - "Succeeding with Agile: Software Development Using Scrum" by Mike Cohn
 - "User Stories Applied: For Agile Software Development" by Mike Cohn
+- "Jeff Sutherland's Scrum Handbook" by Jeff Sutherland
 
 
 Scaled Agile
@@ -768,6 +769,7 @@ Donald E. Knuth:
 - "`ISO/IEC/IEEE 42010:2011(en) Systems and software engineering — Architecture description <https://www.iso.org/standard/50508.html>`__"
 - "`ISO/IEC/IEEE 42020:2019 Software, systems and enterprise — Architecture processes <https://www.iso.org/standard/68982.html>`__"
 - "`ISO/IEC/IEEE 42030:2019 Software, systems and enterprise — Architecture evaluation framework <https://www.iso.org/standard/73436.html>`__"
+- "`ISO/IEC 25010:2011 Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — System and software quality models <https://www.iso.org/standard/35733.html>`__"
 - `ГОСТ Р 57100-2016 Системная и программная инженерия. Описание архитектуры <https://allgosts.ru/35/080/gost_r_57100-2016>`__
 
 Рейтинг инструментов для упраления требованиями/архитектурой/SDLC/etc. от Gartner по категориям: "`Reviews Organized by Markets <https://www.gartner.com/reviews/markets>`__".
