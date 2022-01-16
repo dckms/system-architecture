@@ -425,6 +425,24 @@ Nexus
 
     -- "`Comparing Nexus and SAFe - Similarities, Differences, potential synergies <https://www.scrum.org/resources/blog/comparing-nexus-and-safe-similarities-differences-potential-synergies>`__" by Yuval Yeret
 
+..
+
+    📝 "A Nexus has a single Product Owner who manages a single Product Backlog from which the Scrum Teams work."
+
+    -- "`The 2021 Nexus™ Guide <https://www.scrum.org/resources/online-nexus-guide>`__
+
+..
+
+    📝 "The Product Owner may do the above work or may delegate the responsibility to others. Regardless, the Product Owner remains accountable."
+
+    -- "`The 2020 Scrum Guide™ <https://scrumguides.org/scrum-guide.html>`__"
+
+..
+
+    📝 "In multi-team programs, this one Product Owner may delegate the work to Product Owners that represent him or her on subordinate teams, but all decisions and direction come from the top-level, single Product Owner.
+
+    -- "Jeff Sutherland's Scrum Handbook" by Jeff Sutherland
+
 Статья подчеркивает ограниченность Nexus и предлагает к рассмотрению SAFe-практики:
 
     📝 "As Nexus is designed to be a lightweight framework, with a more limited scope than SAFe, its not surprising that there are a lot more elements in SAFe that Nexus doesn't say anything about.
