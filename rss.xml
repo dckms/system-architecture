@@ -538,7 +538,7 @@ What if tomorrow's software engineering professor draws Figure 3 on the board?"&
 &lt;blockquote&gt;
 &lt;div&gt;&lt;p&gt;📝 "Сделайте изменение легким, а потом делай легко изменение.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Make the change easy then make the easy change.&lt;/strong&gt;"&lt;/p&gt;
-&lt;p class="attribution"&gt;—Kent Beck, dddeu 20&lt;/p&gt;
+&lt;p class="attribution"&gt;—Kent Beck, "&lt;a class="reference external" href="https://youtu.be/3gib0hKYjB0?t=2662"&gt;Continued Learning: The Beauty of Maintenance - Kent Beck - DDD Europe 2020&lt;/a&gt;"&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
 &lt;p&gt;Невероятный талант Kent Beck объяснять сложные вещи простым языком.
 Именно об этом я говорил в статье "&lt;a class="reference internal" href="../../../../soft-skills/learning.html#emacsway-learning-in-psychology"&gt;&lt;span class="std std-ref"&gt;Кристаллизация знаний. Как читать и не превратиться в коллекционера информации.&lt;/span&gt;&lt;/a&gt;".
@@ -710,7 +710,7 @@ But whatever architectural decisions are made, the architect must make an effort
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</description><pubDate>Sun, 16 Jan 2022 00:00:00 </pubDate></item><item><title>Балансирование Бизнес/Технических интересов</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/concerns/balancing-business-technical-concerns.html</link><description>
+</description><pubDate>Mon, 17 Jan 2022 00:00:00 </pubDate></item><item><title>Балансирование Бизнес/Технических интересов</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/concerns/balancing-business-technical-concerns.html</link><description>
 &lt;span id="id1"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
 &lt;div class="contents topic" id="id2"&gt;
