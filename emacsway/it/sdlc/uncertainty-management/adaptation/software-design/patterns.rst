@@ -113,7 +113,7 @@ Role of Design Patterns in Agile
 Когда в печать вышла книга "Patterns of Enterprise Application Architecture" (PoEAA) by Martin Fowler, David Rice, Matthew Foemmel, Edward Hieatt, Robert Mee, Randy Stafford, то David Heinemeier Hansson прочитал ее одним из первых, и реализовал эти паттерны в виде Ruby On Rails (RoR).
 Использование этого фреймворка, и реализованных им паттернов, позволило:
 
-- снизить негативный эффект ":ref:`Закона Брукса <emacsway-team-topologies-at-scale>`"
+- снизить негативный эффект ":ref:`Закона Брукса <emacsway-brooks's-law>`"
 - уменьшить порог вхождения новых разработчиков в проект
 - переместить фокус внимания разработчиков от Domain-independent knowledge к `Domain knowledge <https://en.wikipedia.org/wiki/Domain_knowledge>`__
 
