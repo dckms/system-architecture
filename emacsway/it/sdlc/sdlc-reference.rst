@@ -1,6 +1,9 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
-.. index:: SDLC, Literature
+.. index::
+   single: SDLC; Literature
+   single: Literature; in SDLC
+   :name: emacsway-sdlc-literature
 
 ===============================================
 Systems Development Life Cycle (SDLC) Reference
@@ -29,6 +32,10 @@ Grady Booch выделяет два ключевых критерия, кото�
 - "`ITABoK: Architecture Methodologies and Frameworks <https://itabok.iasaglobal.org/itabok3_0/architecture-methodologies-and-frameworks/>`__"
 - "`ITABoK: What is Agility <https://itabok.iasaglobal.org/itabok3_0/digital-outcome-model/agility/>`__"
 - "`Systems engineering handbook. A guide for System Life Cycle Processes and activities <https://www.incose.org/products-and-publications/se-handbook>`__" by INCOSE
+- "`The Project Management Body of Knowledge (PMBoK) <https://www.pmi.org/pmbok-guide-standards/foundational/pmbok>`__" by Project Management Institute (PMI)
+- "`Agile Practice Guide <https://www.pmi.org/pmbok-guide-standards/practice-guides/agile>`__" by Project Management Institute (PMI), 2017
+- "`Agile Extension to the BABOK® Guide <https://www.iiba.org/career-resources/business-analysis-resources/iiba-bookstore/>`__"
+- "`Handbook of RE@Agile According to the IREB Standard Education and Training for IREB Certified Professional for Requirements Engineering Advanced Level RE@Agile <https://www.ireb.org/content/downloads/22-cpre-advanced-level-re-agile-handbook/handbook_cpre_al_re%40agile_en_v1.0.2.pdf>`__" Version 1.0.2
 
 - "`ISO/IEC/IEEE 12207:2017 Systems and software engineering — Software life cycle processes <https://www.iso.org/standard/63712.html>`__"
 - "`ISO/IEC/IEEE 15288:2015 Systems and software engineering — System life cycle processes <https://www.iso.org/standard/63711.html>`__"
@@ -47,6 +54,7 @@ Grady Booch выделяет два ключевых критерия, кото�
 
 - "Object-Oriented Analysis and Design with Applications" 3rd edition by Grady Booch, Robert A. Maksimchuk, Michael W. Engle, Bobbi J. Young Ph.D., Jim Conallen, Kelli A. Houston - "Chapter 6. Process"
 - "Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman - "Chapter 15. Architecture in agile projects"
+- "Software Architecture in Practice" 4th edition by Len Bass, Paul Clements, Rick Kazman
 - "Extreme Programming Explained" 1st edition by Kent Beck (именно первое издание) - кто этой книги не читал, тот ничего в Agile не понимает.
 
 Три превосходные книги Dean Leffingwell:
@@ -58,10 +66,9 @@ Grady Booch выделяет два ключевых критерия, кото�
 ..
 
 - "Essential Scrum: A Practical Guide to the Most Popular Agile Process" by Kenneth Rubin - главы 3 и 8 просто необходимы для понимания области применения Scrum.
+  Очень хорошо в этой книге рассматриваются экономические аспекты разработки - выбор :ref:`Pediction vs. Adaptation <emacsway-balancing-prediction-adaptation>`, влияние :ref:`характера роста стоимости изменения кода (Modifiability) <emacsway-agile-development-essence>` на экономическую целесообразность Agile.
 
-- https://t.me/emacsway_log/431
-- https://t.me/emacsway_log/35
-- https://t.me/emacsway_log/151
+..
 
 - "`Краткая история итеративной разработки <https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf>`__" by Craig Larman
 - "`LeSS by Craig Larman <https://less.works/less/framework/introduction>`__" - куча полезной информации, которую можно использовать автономно. (`на русском <https://less.works/ru/less/framework/introduction>`__)

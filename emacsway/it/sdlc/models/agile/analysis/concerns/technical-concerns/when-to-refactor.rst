@@ -124,4 +124,4 @@ Martin Fowler дает совет по этому вопросу:
    - ":ref:`emacsway-when-to-write-unit-tests`"
    - ":ref:`emacsway-planning-technical-task`"
    - ":ref:`emacsway-agile-balancing-business-technical-concerns`"
-   - ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`"
+   - ":ref:`emacsway-software-development-economics-literature`"

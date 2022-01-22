@@ -184,11 +184,6 @@ Bertrand Meyer о том, в чем отличия между User Story и Requ
 
 - "`Library of IREB artifacts <https://www.ireb.org/en/downloads/tag:handbook>`__"
 
-TODO:
-
-- https://t.me/emacsway_log/531
-- https://t.me/emacsway_log/157
-- https://t.me/emacsway_log/158
 
 .. seealso::
 

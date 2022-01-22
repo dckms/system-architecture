@@ -169,7 +169,7 @@
 - "Extreme Programming Explained" 1st edition by Kent Beck
 
 На данном этапе, этой книги достаточно.
-Обратите внимание, я советую именно первое издание, так как оно лучше раскрывает смысл и назначение `Agile разработки <https://emacsway.github.io/ru/it/agile/easily-about-agile-way-to-rapid-development/>`__.
+Обратите внимание, я советую именно первое издание, так как оно лучше раскрывает смысл и назначение :ref:`Agile разработки <emacsway-agile-development-essence>`.
 
 
 Изучаем операционную систему
