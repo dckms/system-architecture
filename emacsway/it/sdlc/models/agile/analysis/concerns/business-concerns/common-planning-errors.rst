@@ -107,7 +107,7 @@
 Вообще говоря, в хорошо отлаженных процессах технические задачи возникают редко.
 
 Задачи на Modifiability возникают редко, потому что существуют методики, такие как :ref:`YAGNI <emacsway-yagni>`, позволяющие сгладить по времени "`Design Payoff Line <https://martinfowler.com/bliki/DesignPayoffLine.html>`__" и минимизировать в краткосрочной перспективе стоимость решения.
-См. также ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`".
+См. также ":ref:`emacsway-software-development-economics-literature`".
 
 При использовании этих методик, редко возникают технические задачи на Modifiability, которые не окупятся в пределах релиза.
 Martin Fowler даже советует :ref:`не говорить менеджерам о таких технических задачах <emacsway-refactoring-don't-tell-to-manager>`, так как они все равно не затягивают выполнение графика работ.
@@ -131,5 +131,5 @@ Martin Fowler даже советует :ref:`не говорить менедж
 
 .. seealso::
 
-   - ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`"
+   - ":ref:`emacsway-software-development-economics-literature`"
 
