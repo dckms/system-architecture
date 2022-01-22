@@ -46,4 +46,18 @@
 - "`Modifiability <https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8299>`__"
 - "`Making Architecture Matter - Martin Fowler Keynote <https://youtu.be/DngAZyWMGR0>`_" - превосходное 14-ти минутное видео.
 
-См. также: https://t.me/emacsway_log/125
+
+.. seealso::
+
+   - ":ref:`emacsway-yagni`
+   - ":ref:`emacsway-when-to-refactor`"
+   - ":ref:`emacsway-when-to-write-unit-tests`"
+   - ":ref:`emacsway-agile-software-design`"
+   - ":ref:`emacsway-agile-patterns`"
+   - ":ref:`emacsway-icebreaker-principle`"
+   - ":ref:`emacsway-adaptation`"
+   - ":ref:`emacsway-agile-development`"
+   - ":ref:`emacsway-agile-balancing-business-technical-concerns`"
+   - ":ref:`emacsway-agile-common-planning-errors`"
+   - ":ref:`emacsway-compound-interest`"
+   - ":ref:`emacsway-architecture-options`"

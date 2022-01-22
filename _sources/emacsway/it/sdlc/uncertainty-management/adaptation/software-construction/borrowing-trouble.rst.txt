@@ -66,4 +66,4 @@ Borrowing trouble
 .. seealso::
 
    - ":ref:`emacsway-yagni`
-   - ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`"
+   - ":ref:`emacsway-software-development-economics-literature`"

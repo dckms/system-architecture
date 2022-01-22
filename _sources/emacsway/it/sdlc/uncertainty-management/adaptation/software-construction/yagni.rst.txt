@@ -229,4 +229,4 @@ Martin Fowler о выборе момента реализации проектн
    - ":ref:`emacsway-agile-solid`"
    - ":ref:`emacsway-agile-software-design`"
    - ":ref:`emacsway-agile-balancing-business-technical-concerns`"
-   - ":doc:`/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics`"
+   - ":ref:`emacsway-software-development-economics-literature`"
