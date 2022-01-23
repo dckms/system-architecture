@@ -30,6 +30,7 @@ Role of Design Patterns in Agile
     -- "Design Patterns: Elements of Reusable Object-Oriented Software" by Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 
 Лекарство не должно быть хуже болезни.
+А цель должна оправдывать средства.
 Внося сложность в систему, мы должны обретать возможность управлять еще большим уровнем сложности, т.е. решение должно быть оправданным.
 
 По этому поводу хорошо :ref:`рассуждал Kent Beck <emacsway-kent-beck-constantine's-law>`.
