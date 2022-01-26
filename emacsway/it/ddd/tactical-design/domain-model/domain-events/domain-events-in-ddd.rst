@@ -1086,7 +1086,9 @@ Kamil Grzybek вводит явное разделение механизма д
 Нужно понимать причину решения, решаемую им проблему, и применять его сообразно стоящими перед конкретным проектом проблемами.
 
 
-.. _emacsway-de-cqrs-command-and-result:
+.. index::
+   single: CQRS; can Command return a Result?
+   :name: emacsway-domain-event-cqrs-command-result
 
 Может ли CQRS-команда возвращать результат?
 -------------------------------------------
