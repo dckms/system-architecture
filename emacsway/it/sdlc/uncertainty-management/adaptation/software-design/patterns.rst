@@ -137,3 +137,8 @@ Role of Design Patterns in Agile
     -- `Ralph Johnson <https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf>`__
 
 
+.. seealso::
+
+   - ":ref:`emacsway-knowledge-vs-opinion-in-psychology`"
+   - ":ref:`emacsway-brooks's-law`"
+

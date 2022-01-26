@@ -40,21 +40,21 @@
 Дисциплина - мать победы, говорил А.В. Суворов.
 Гнаться за количеством не нужно.
 
-    "A little reading goes a long way toward professional advancement. If you read even one
+    📝 "A little reading goes a long way toward professional advancement. If you read even one
     good programming book every two months, roughly 35 pages a week, you'll soon have
     a firm grasp on the industry and distinguish yourself from nearly everyone around you."
 
-    \- "Code Complete" by Steve McConnell
+    -- "Code Complete" by Steve McConnell
 
 ..
 
-    "We become authorities and experts in the practical and scientific spheres
+    📝 "We become authorities and experts in the practical and scientific spheres
     by so many separate acts and hours of work.
     If a person keeps faithfully busy each hour of the working day,
     he can count on waking up some morning to find himself one of the competent
     ones of his generation."
 
-    \- William James, cited by Steve McConnell in "Code Complete"
+    -- William James, cited by Steve McConnell in "Code Complete"
 
 И, желательно, чтобы читаемая книга совпадала с тематикой текущего проекта, чтобы через практику хорошо легла в память.
 Я по этой причине часто изменял свой график чтения.
@@ -75,6 +75,11 @@
 В любом случае, не надейтесь на то, что профессиональные проекты предоставят вам достаточную практику для закрепления знаний.
 А Open Source проекты - очень даже предоставят.
 Я даже считаю, что практика должна предшествовать теории, потому что трудно запомнить какое-то решение, если вам на практике не знакома решаемая проблема.
+
+    📝 "Если лечиться по справочнику, то рискуешь умереть от опечатки."
+
+    -- Марк Твен
+
 Потребность в теории должна назреть.
 Когда я приступал к теории, то у меня был накоплен уже солидный багаж проблем, решение которых я искал.
 Когда я впервые прочитал о мотивации паттерна Bridge, у меня в голове промелькнуло: "так вот, оказывается, как решается та самая проблема".
@@ -90,6 +95,12 @@
 Путешествие должно быть на легке, как говорил Кент Бек.
 По сути, знания нужны только для того, чтобы избавиться от всего лишнего.
 Архитектура - это, на самом деле, наука об ограничениях (т.е. о том, как не надо делать).
+
+
+.. seealso::
+
+   - ":ref:`emacsway-knowledge-vs-opinion-in-psychology`"
+   - ":ref:`emacsway-planning-in-psychology`"
 
 
 Кандидатский минимум
@@ -518,6 +529,8 @@ Scaled Agile
 - "Art of Project Management" by Scott Berkun
 - "Менеджмент: Учебник для вузов." 3-е изд. Глухов В. В.
 - "Оргуправленческое мышление. Идеология, методология, технология" / Щедровицкий Георгий Петрович
+- "The Leadership Experience" 7th edition by Richard L. Daft
+- "Management" 013 edition by Richard L. Daft
 - "`Managing Digital Concepts and Practices <https://publications.opengroup.org/g183>`__"
 
 
@@ -960,7 +973,8 @@ Code Smell catalogs
 - `Microservice Weekly <https://microserviceweekly.com/>`__
 
 
-.. _reference-applications-ru:
+.. index:: Reference Applications
+   :name: emacsway-reference-applications
 
 Эталонные демонстрационные приложения
 =====================================
