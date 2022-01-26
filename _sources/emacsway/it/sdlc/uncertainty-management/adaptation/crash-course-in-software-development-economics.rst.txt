@@ -15,22 +15,34 @@
 Краткий курс по экономике разработки программного обеспечения:
 
 - "Extreme Programming Explained" 1st edition by Kent Beck
-    - "Chapter 3. Economics of Software Development"
-    - "Chapter 17. Design Strategy"
-    - "Chapter 20. Retrofitting XP"
-    - "Chapter 24. What Makes XP Hard"
+
+  - "Chapter 3. Economics of Software Development"
+  - "Chapter 17. Design Strategy"
+  - "Chapter 20. Retrofitting XP"
+  - "Chapter 24. What Makes XP Hard"
+
 - "Essential Scrum: A Practical Guide to the Most Popular Agile Process" by Kenneth Rubin
-    - "Chapter 3. Agile Principles"
-    - "Chapter 8. Technical Debt"
+
+  - "Chapter 3. Agile Principles"
+  - "Chapter 8. Technical Debt"
+
 - "Software Engineering: A Practitioner's Approach" 9th edition by Roger S. Pressman, Bruce Maxim
-    - "3.2 Agility and the cost of change"
+
+  - "3.2 Agility and the cost of change"
+
 - "Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman
-    - "Chapter 7. Modifiability"
-    - "Chapter 23. Economic analysis of architectures"
+
+  - "Chapter 7. Modifiability"
+  - "Chapter 23. Economic analysis of architectures"
+
 - "Refactoring: Improving the Design of Existing Code" 1st (and 2nd) edition by Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts
-    - "Chapter 2. Principles in Refactoring"
+
+  - "Chapter 2. Principles in Refactoring"
+
 - "Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin
-    - "Chapter 1. What Is Design and Architecture?"
+
+  - "Chapter 1. What Is Design and Architecture?"
+
 - "Working Effectively with Legacy Code" by Michael C. Feathers
 - "`Yagni <https://martinfowler.com/bliki/Yagni.html>`__" (хорошо разъясняет виды экономических ущербов: "cost of build", "cost of delay", "cost of carry", "cost of repair", "cost of removing")
 - "`Technical Debt <https://martinfowler.com/bliki/TechnicalDebt.html>`__"
