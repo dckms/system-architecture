@@ -85,7 +85,7 @@ Code Review
 
 В-третьих, он начинает лучше понимать контекст применимости каждого решения, и начинает меньше верить в `"серебрянную пулю <https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B5%D0%B1%D1%80%D1%8F%D0%BD%D0%BE%D0%B9_%D0%BF%D1%83%D0%BB%D0%B8_%D0%BD%D0%B5%D1%82>`__".
 
-Да и без обучения (Collaborative Development) невозможно впринципе достигнуть "`Collective Code Ownership <https://martinfowler.com/bliki/CodeOwnership.html>`__" (это четко следует из карты зависимостей Agile-практик, см. "Extreme Programming Explained" 1st edition by Kent Beck, "Figure 4. The practices support each other"), зато можно легко достигнуть "`Эффект разбитых окон <https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F_%D1%80%D0%B0%D0%B7%D0%B1%D0%B8%D1%82%D1%8B%D1%85_%D0%BE%D0%BA%D0%BE%D0%BD>`__".
+Да и без обучения (Collaborative Development) невозможно впринципе достигнуть "`Collective Code Ownership <https://martinfowler.com/bliki/CodeOwnership.html>`__" (это четко следует из карты зависимостей Agile-практик, см. "Extreme Programming Explained" 1st edition by Kent Beck, "Figure 4. The practices support each other"), зато можно легко достигнуть "`Эффекта разбитых окон <https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F_%D1%80%D0%B0%D0%B7%D0%B1%D0%B8%D1%82%D1%8B%D1%85_%D0%BE%D0%BA%D0%BE%D0%BD>`__".
 
 Понимание - единственный способ достигнуть требуемую реализацию.
 Нет большого смысла пытаться управлять качеством кода - это уже слишком поздно.
