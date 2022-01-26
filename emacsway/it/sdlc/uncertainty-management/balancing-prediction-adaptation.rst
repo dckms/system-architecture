@@ -84,6 +84,43 @@ Balancing Prediction/Adaptation
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
 
 
+Влияние архитектуры на требования
+=================================
+
+    📝 "On the other hand, agile and lean projects implicitly rely on short iterations and early delivery of executable code into customer hands.
+    Architectural design emerges incrementally in response to customer needs.
+    Although agile processes bring numerous benefits to a project, the somewhat shorterterm perspective means that developers could be forced into expensive refactoring efforts to deliver new functionality late in the project.
+    Agile processes that elicit architecturally significant user stories in early iterations can balance the way in which functionality is delivered to the customer and enable developers to make informed decisions about the design and construction of the architecture."
+
+    -- "`The Twin Peaks of Requirements and Architecture <https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6470589>`__" by Jane Cleland-Huang, DePaul University; Robert S. Hanmer, Alcatel-Lucent; Sam Supakkul, Sabre; Mehdi Mirakhorli, DePaul University
+
+.. figure:: _media/balancing-prediction-adaptation/figure-a-the-twin-peaks-model.png
+   :alt: Figure A. The twin peaks model. Though a series of iterations, the model captures the progression from general to detailed understanding. The image source is "The Twin Peaks of Requirements and Architecture" by Jane Cleland-Huang, DePaul University; Robert S. Hanmer, Alcatel-Lucent; Sam Supakkul, Sabre; Mehdi Mirakhorli, DePaul University https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6470589
+   :align: left
+   :width: 90%
+
+   Figure A. The twin peaks model. Though a series of iterations, the model captures the progression from general to detailed understanding. The image source is "`The Twin Peaks of Requirements and Architecture <https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6470589>`__" by Jane Cleland-Huang, DePaul University; Robert S. Hanmer, Alcatel-Lucent; Sam Supakkul, Sabre; Mehdi Mirakhorli, DePaul University
+
+..
+
+    📝 "5.3.2 Iteration and recursion in requirements engineering
+
+    Since different groups of stakeholders often view the system from differing levels of system structure, it is necessary to define and document requirements statements at lower, more detailed levels than just the overall system-of-interest.
+    Allocating or distributing the system requirements to the system elements accomplishes this.
+    The activity of allocating requirements to system elements is part of the Architecture Definition process and proceeds in parallel with the definition of the system architecture.
+    **There may be multiple iterations between the requirements processes and other processes in the life cycle (e.g., architecture, design) to resolve trade-offs between the requirements and architecture.**
+    The main forms of appropriate iteration within requirements engineering include:
+
+    - purposeful iteration within requirements analysis, between analysis activities;
+    - planned iteration from downstream activities back to requirements analysis because of a predicted, significant, genuine rate of change of requirements that reflect change of need;
+    - planned or unplanned iteration from downstream activities back to requirements because of feasibility and balance issues arising from risk due to technology or implementation issues, or **risk due to limited knowledge of them**;
+    - unplanned iteration from downstream activities back to requirements because of other solution issues, such as changes to or defects in non-developmental system elements, or obsolescence of system elements;
+    - reverse engineering of requirements for reasons of regulatory compliance; and
+    - limited iteration from downstream activities back to requirements analysis because of the reality that requirements can never be perfect, nor is it cost-effective to try to make them so."
+
+    -- "ISO/IEC/IEEE 29148:2018 Systems and software engineering - Life cycle processes - Requirements engineering"
+
+
 Open Agile Architecture™ Standard by The Open Group
 ===================================================
 
@@ -225,7 +262,11 @@ Alberto Brandolini about Prediction/Adaptation
 
 Cм. также:
 
-- "Essential Scrum: A Practical Guide to the Most Popular Agile Process" by Kenneth Rubin, "Chapter 3 Agile Principles :: Prediction and Adaptation"
-- "Essential Scrum: A Practical Guide to the Most Popular Agile Process" by Kenneth Rubin, "Chapter 3 Agile Principles :: Balance Predictive Up-Front Work with Adaptive Just-in-Time Work"
+- "Essential Scrum: A Practical Guide to the Most Popular Agile Process" by Kenneth Rubin
+
+  - "Chapter 3 Agile Principles :: Prediction and Adaptation"
+  - "Chapter 3 Agile Principles :: Balance Predictive Up-Front Work with Adaptive Just-in-Time Work"
+
 - "Succeeding with Agile: Software Development Using Scrum" by Mike Cohn, "Chapter 9 Technical Practices :: Design: intentional yet Emergent"
+- "`The Twin Peaks of Requirements and Architecture <https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6470589>`__" by Jane Cleland-Huang, DePaul University; Robert S. Hanmer, Alcatel-Lucent; Sam Supakkul, Sabre; Mehdi Mirakhorli, DePaul University
 

@@ -116,5 +116,5 @@
 
 .. seealso::
 
-   - ":doc:`./icebreaker-principle`"
+   - ":ref:`emacsway-icebreaker-principle`"
 
