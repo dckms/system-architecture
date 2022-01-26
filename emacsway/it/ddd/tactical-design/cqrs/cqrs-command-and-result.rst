@@ -1,6 +1,8 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
-.. index:: CQRS
+.. index::
+   single: CQRS; can Command return a Result?
+   :name: emacsway-cqrs-command-result
 
 ===========================================
 Может ли CQRS-команда возвращать результат?
@@ -13,6 +15,10 @@
 
 .. contents:: Содержание
 
+
+.. index::
+   single: Reference Transparency; in Distributed Systems
+   :name: emacsway-reference-transparency-in-distributed-systems
 
 Значение Reference Transparency в распределенной среде
 ======================================================
@@ -80,6 +86,10 @@ B.Meyer утверждает, что OOP и FP не противопоставл
 Хорошая статья "`What is functional programming? <https://enterprisecraftsmanship.com/posts/what-is-functional-programming/>`__" by Vladimir Khorikov.
 
 
+.. index::
+   single: CQRS; difference from CQS
+   :name: emacsway-cqrs-vs-cqs
+
 Чем отличается CQRS от CQS?
 ===========================
 
@@ -138,6 +148,10 @@ B.Meyer утверждает, что OOP и FP не противопоставл
 Ответ на этот вопрос мы попытаемся найти в этой статье.
 
 
+.. index::
+   single: CQS; Referential Transparency of Query
+   :name: emacsway-cqs-query-referential-transparency
+
 CQS - это больше о referential transparency для Query
 =====================================================
 
@@ -147,6 +161,11 @@ CQS - это больше о referential transparency для Query
 
     -- "Object-Oriented Software Construction" 2nd edition by Bertrand Meyer, chapter "23.1 SIDE EFFECTS IN FUNCTIONS"
 
+
+.. index::
+   single: CQS; Concrete Side Effect
+   :name: emacsway-cqs-concrete-side-effect
+
 Обратите внимание на термин abstract. B.Meyer различает abstract и concrete side effects.
 
     📝 "Definition: concrete side effect: A function produces a concrete side effect if its body contains any of the following: 
@@ -154,6 +173,11 @@ CQS - это больше о referential transparency для Query
     2. A procedure call."
 
     -- "Object-Oriented Software Construction" 2nd edition by Bertrand Meyer, chapter "23.1 SIDE EFFECTS IN FUNCTIONS"
+
+
+.. index::
+   single: CQS; Abstract Side Effect
+   :name: emacsway-cqs-abstract-side-effect
 
 ..
 
@@ -171,6 +195,11 @@ CQS - это больше о referential transparency для Query
 
     -- "Object-Oriented Software Construction" 2nd edition by Bertrand Meyer, chapter "23.1 SIDE EFFECTS IN FUNCTIONS"
 
+
+.. index::
+   single: Reference Transparency; definition
+   :name: emacsway-reference-transparency
+
 ..
 
     📝 "Definition: referential transparency: An expression e is referentially transparent if it is possible to exchange any subexpression with its value without changing the value of e."ients."
@@ -179,6 +208,10 @@ CQS - это больше о referential transparency для Query
 
 Подведу короткое резюме всему ранее сказанному: CQS не запрещает изменять состояние, если оно не нарушает ссылочную прозрачность. Соблюдение этого условия открывает нам возможность пользоваться всеми преимуществами функционального программирования. Это и есть цель CQS.
 
+
+.. index::
+   single: CQS; can Command return a status code?
+   :name: emacsway-cqs-command-status-code
 
 Может ли Command возвращать служебную информацию (код ошибки или успешность выполнения)?
 ========================================================================================
@@ -224,6 +257,10 @@ CQS - это больше о referential transparency для Query
 Тем более, она не актуальна при переносе этого вопроса на способы сетевого взаимодействия.
 
 
+.. index::
+   single: CQS; can Factory return a Result?
+   :name: emacsway-cqs-factory-result
+
 Кроме Command и Query существуют еще и функции-конструкторы
 ===========================================================
 
@@ -254,10 +291,17 @@ CQS - это больше о referential transparency для Query
     -- "`Section 4.3.3. POST of RFC-7231 <https://tools.ietf.org/html/rfc7231#section-4.3.3>`__"
 
 
+.. index::
+   single: CQS; can Query produce an Abstract Side Effect?
+   single: CQS; can Query produce a Concrete Side Effect?
+   :name: emacsway-cqs-query-side-effect
+
 Query не должен иметь abstract side effect, но может иметь concrete side effect
 ===============================================================================
 
-Говоря о `side effect <https://t.me/emacsway_log/278>`__, B.Meyer накладывает ограничение на "abstract side effect", и поясняет на примере. Сразу скажу, без прочтения главы 11 вряд ли можно понять о чем здесь идет речь. Но обойти вниманием этот пример тоже нельзя.
+Говоря о ":ref:`side effect <emacsway-cqs-query-referential-transparency>`", B.Meyer накладывает ограничение на ":ref:`abstract side effect <emacsway-cqs-abstract-side-effect>`", и поясняет на примере.
+Сразу скажу, без прочтения главы 11 вряд ли можно понять о чем здесь идет речь.
+Но обойти вниманием этот пример тоже нельзя.
 
     📝 "Unfortunately, this would be unacceptably restrictive, explaining why the Command-Query Separation principle only prohibits abstract side effects, a notion that will now be defined. The problem is that some concrete side effects are not only harmless but necessary. They are of two kinds.
 
@@ -289,11 +333,19 @@ Query не должен иметь abstract side effect, но может име�
 И за один день её точно не освоить.
 
 
+.. index::
+   single: CQS; atomic routine
+   :name: emacsway-cqs-atomic-routine
+
 Что делать с атомарными операциями?
 ===================================
 
 Для погружения в CQRS нужно обратить внимание на еще два существенных момента.
 
+
+.. index::
+   single: CQS; reference argument
+   :name: emacsway-cqs-reference-argument
 
 Процедура не возвращает значения, но может изменить ссылочный аргумент
 ----------------------------------------------------------------------
@@ -309,6 +361,10 @@ Query не должен иметь abstract side effect, но может име�
 Как можно организовать ссылочную связь через сетевое взаимодействие?
 Через идентификатор адресации в виде callback url.
 
+
+.. index::
+   single: CQS; buffer
+   :name: emacsway-cqs-buffer
 
 Концепция буфера для разделения атомарных операций Command и Query
 ------------------------------------------------------------------
@@ -333,11 +389,15 @@ B.Meyer решает эту проблему с помощью концепци�
 Вы уже, наверное, догадались, что я подвожу к паттерну "`Asynchronous Request-Reply pattern <https://docs.microsoft.com/en-us/azure/architecture/patterns/async-request-reply>`__", использующему "`202 Response Status Code <https://tools.ietf.org/html/rfc7231#section-6.3.3>`__".
 
 
+.. index::
+   single: CQRS; can Command return a Resource Id?
+   :name: emacsway-cqrs-command-resource-id
+
 Что делать, если CQRS-команда должна вернуть идентификатор созданного ресурса?
 ==============================================================================
 
 Вернемся к вопросу о возврате ID созданного ресурса в ответ на POST запрос REST-API.
-Как говорилось `ранее <https://t.me/emacsway_log/282>`__, RFC-7231 требует, чтобы REST API вернул идентификатор созданного ресурса в ответ на HTTP POST запрос.
+Как говорилось :ref:`ранее <emacsway-cqs-factory-result>`, RFC-7231 требует, чтобы REST API вернул идентификатор созданного ресурса в ответ на HTTP POST запрос.
 
 Какие вообще есть альтернативы?
 
@@ -353,10 +413,14 @@ B.Meyer решает эту проблему с помощью концепци�
     -- "`Section 4.3.4. PUT of RFC-7231 <https://tools.ietf.org/html/rfc7231#section-4.3.4>`__"
 
 
-Другим вариантом, как говорилось `ранее <https://t.me/emacsway_log/284>`__, может быть "`Asynchronous Request-Reply pattern <https://docs.microsoft.com/en-us/azure/architecture/patterns/async-request-reply>`__", использующий `202 Response Status Code <https://tools.ietf.org/html/rfc7231#section-6.3.3>`__.
+Другим вариантом, как говорилось :ref:`ранее <emacsway-cqs-buffer>`, может быть "`Asynchronous Request-Reply pattern <https://docs.microsoft.com/en-us/azure/architecture/patterns/async-request-reply>`__", использующий `202 Response Status Code <https://tools.ietf.org/html/rfc7231#section-6.3.3>`__.
 
 Но действительно ли нам нужно получать идентификатор в ответ на команду? Часто такая потребность возникает просто из-за недостаточного понимания тех выгод, которые предоставляет CQS и Referential Transparency - однонаправленный поток изменений и единственный источник истины.
 
+
+.. index::
+   single: CQRS; one-way data flow
+   :name: emacsway-cqrs-one-way-data-flow
 
 Однонаправленный поток изменений
 ================================
@@ -438,15 +502,13 @@ Referential Transparency означает, что вызов функции мо
 И если мы нарушим здесь CQS, то никто этого не заметит.
 На ресурс распространяется **concrete side effect**:
 
-- https://t.me/emacsway_log/278
-- https://t.me/emacsway_log/283
+- ":ref:`emacsway-cqs-query-referential-transparency`"
+- ":ref:`emacsway-cqs-query-side-effect`"
 
 Другое дело, когда мы должны опубликовать этот ресурс - тогда он должен появиться у всех, кто просматривает коллекцию, содержащую опубликованный ресурс (если, разумеется, это имеет ценность с точки зрения предметной области), а не только инициатор публикации.
 И все пользователи, включая автора, должны получить уведомление о публикации ресурса, через единый однонаправленный канал потока изменений.
 
-Такой же вывод возникает и из принципа **функции-конструктора** - до тех пор, пока ресурс не принадлежит ни к одной из публичных коллекций, доступной остальным пользователям, side effect не имеет последствий:
-
-- https://t.me/emacsway_log/281
+Такой же вывод возникает и из принципа **функции-конструктора** - до тех пор, пока ресурс не принадлежит ни к одной из публичных коллекций, доступной остальным пользователям, :ref:`side effect не имеет последствий <emacsway-cqs-factory-result>`.
 
 Но когда коллекция изменилась, то все пользователи, просматривающие эту коллекцию, должны быть уведомлены единовременно.
 
@@ -463,7 +525,7 @@ Referential Transparency означает, что вызов функции мо
     -- "`Put your controllers on a diet: POSTs and commands <https://lostechies.com/jimmybogard/2013/12/19/put-your-controllers-on-a-diet-posts-and-commands/>`__" by Jimmy Bogard
 
 Обратите внимание, в последнем предложении он говорит о том, как вернуть и результат, и ошибку одновременно.
-Это является решением именно того вопроса, который пытался разрешить B.Meyer с помощью side-effect-free style здесь: https://t.me/emacsway_log/279
+Это является решением именно того вопроса, который пытался разрешить B.Meyer с помощью :ref:`side-effect-free style <emacsway-cqs-command-status-code>`.
 
 Причины такого решения он раскрывает в другой своей статье:
 
@@ -507,5 +569,5 @@ Referential Transparency означает, что вызов функции мо
 - "`CQS versus server generated IDs <https://blog.ploeh.dk/2014/08/11/cqs-versus-server-generated-ids/>`__" by Mark Seemann
 - "`Returning data from command handlers <https://blogs.cuttingedge.it/steven/posts/2012/returning-data-from-command-handlers/>`__" by Steven van Deursen
 
-Ранее, этот вопрос :ref:`частично уже рассматривался <emacsway-de-cqrs-command-and-result>`.
+Ранее, этот вопрос :ref:`частично уже рассматривался <emacsway-domain-event-cqrs-command-result>`.
 

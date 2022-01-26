@@ -32,6 +32,10 @@ Iterative Development
 
 Ключевым элементом итеративной разработки является :ref:`Adaptation <emacsway-adaptation>`.
 
+См. также:
+
+- "`Iteration <https://www.agilealliance.org/glossary/iteration>`__" at Glossary of agilealliance.org
+
 .. seealso::
 
    - ":ref:`emacsway-adaptation`"
