@@ -1,5 +1,70 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0"><channel><title>System Architecture</title><link>https://dckms.github.io/system-architecture</link><description /><language>ru</language><copyright>2022, @dckms (&lt;a href="https://dckms.github.io/system-architecture/LICENSE" rel="nofollow"&gt;License&lt;/a&gt;)</copyright><item><title>Что такое Adaptation</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/adaptation/adaptation.html</link><description>
+<rss version="2.0"><channel><title>System Architecture</title><link>https://dckms.github.io/system-architecture</link><description /><language>ru</language><copyright>2022, @dckms (&lt;a href="https://dckms.github.io/system-architecture/LICENSE" rel="nofollow"&gt;License&lt;/a&gt;)</copyright><item><title>Systems Development Life Cycle (SDLC) Reference</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/sdlc-reference.html</link><description>
+&lt;span id="emacsway-sdlc-literature"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Grady Booch выделяет два ключевых критерия, которые определяют успех или неудачу проекта:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Traits of Successful Projects&lt;/p&gt;
+&lt;p&gt;A successful software project is one in which the deliverables satisfy and possibly exceed the customer's expectations, the development occurred in a timely and economical fashion, and the result is resilient to change and adaptation. By this measure, we have observed several traits that are common to virtually all of the successful object-oriented systems we have encountered and noticeably absent from the ones that we count as failures:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Existence of a strong architectural vision&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Application of a well-managed iterative and incremental development lifecycle"&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="attribution"&gt;—"Object-Oriented Analysis and Design with Applications" 3rd edition by Grady Booch, Robert A. Maksimchuk, Michael W. Engle, Bobbi J. Young Ph.D., Jim Conallen, Kelli A. Houston&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Если с "architectural vision" все понятно, то с "well-managed development lifecycle" у многих могут возникать вопросы. Тем не менее, для успешности проекта процессы должны быть грамотно выбраны и качественно отлажены.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://book4cio.ru/#page-14"&gt;Учебник 4CIO&lt;/a&gt;" - глава 3.4. Управление разработкой ПО&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.sebokwiki.org/wiki/Life_Cycle_Models"&gt;SEBoK: Life Cycle Models&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.sebokwiki.org/wiki/System_Life_Cycle_Process_Models:_Iterative"&gt;SEBoK: System Life Cycle Process Models: Iterative&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://mellarius.ru/processes"&gt;Процессы&lt;/a&gt;" at mellarius.ru - превосходный минималистичный и самодостаточный справочник.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Неплохой "&lt;a class="reference external" href="https://www.tutorialspoint.com/sdlc/index.htm"&gt;SDLC Tutorial&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.tutorialspoint.com/sdlc/sdlc_quick_guide.htm"&gt;SDLC - Quick Guide&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://itabok.iasaglobal.org/itabok3_0/architecture-methodologies-and-frameworks/"&gt;ITABoK: Architecture Methodologies and Frameworks&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://itabok.iasaglobal.org/itabok3_0/digital-outcome-model/agility/"&gt;ITABoK: What is Agility&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.incose.org/products-and-publications/se-handbook"&gt;Systems engineering handbook. A guide for System Life Cycle Processes and activities&lt;/a&gt;" by INCOSE&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.pmi.org/pmbok-guide-standards/foundational/pmbok"&gt;The Project Management Body of Knowledge (PMBoK)&lt;/a&gt;" by Project Management Institute (PMI)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.pmi.org/pmbok-guide-standards/practice-guides/agile"&gt;Agile Practice Guide&lt;/a&gt;" by Project Management Institute (PMI), 2017&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.iiba.org/career-resources/business-analysis-resources/iiba-bookstore/"&gt;Agile Extension to the BABOK® Guide&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.ireb.org/content/downloads/22-cpre-advanced-level-re-agile-handbook/handbook_cpre_al_re%40agile_en_v1.0.2.pdf"&gt;Handbook of RE@Agile According to the IREB Standard Education and Training for IREB Certified Professional for Requirements Engineering Advanced Level RE@Agile&lt;/a&gt;" Version 1.0.2&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.iso.org/standard/63712.html"&gt;ISO/IEC/IEEE 12207:2017 Systems and software engineering — Software life cycle processes&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.iso.org/standard/63711.html"&gt;ISO/IEC/IEEE 15288:2015 Systems and software engineering — System life cycle processes&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"ISO/IEC/IEEE 29148:2011 Systems and software engineering — Life cycle processes — Requirements engineering"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"ISO/IEC/IEEE 15289:2019 Systems and software engineering — Content of life-cycle information items (documentation)"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"ISO/IEC/IEEE 24765:2017 Systems and software engineering — Vocabulary"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"ISO 9000:2005 Quality management systems — Fundamentals and vocabulary"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"ISO/IEC 33001:2015 Information technology — Process assessment — Concepts and terminology"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"ГОСТ Р ИСО/МЭК 12207-2010 Информационная технология. Системная и программная инженерия. Процессы жизненного цикла программных средств."&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"ГОСТ Р 57193-2016 Системная и программная инженерия. Процессы жизненного цикла систем."&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"Object-Oriented Analysis and Design with Applications" 3rd edition by Grady Booch, Robert A. Maksimchuk, Michael W. Engle, Bobbi J. Young Ph.D., Jim Conallen, Kelli A. Houston - "Chapter 6. Process"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman - "Chapter 15. Architecture in agile projects"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"Software Architecture in Practice" 4th edition by Len Bass, Paul Clements, Rick Kazman&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"Extreme Programming Explained" 1st edition by Kent Beck (именно первое издание) - кто этой книги не читал, тот ничего в Agile не понимает.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Три превосходные книги Dean Leffingwell:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;"Scaling Software Agility: Best Practices for Large Enterprises" by Dean Leffingwell - о проблемах масштабирования команд.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise" by Dean Leffingwell - о проблемах интегрирования аналитической и архитектурной работы в Agile.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"SAFe® 5.0: The World's Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell - наиболее удачная масштабируемая Agile-модель на сегодня.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;"Essential Scrum: A Practical Guide to the Most Popular Agile Process" by Kenneth Rubin - главы 3 и 8 просто необходимы для понимания области применения Scrum.
+Очень хорошо в этой книге рассматриваются экономические аспекты разработки - выбор &lt;a class="reference internal" href="uncertainty-management/balancing-prediction-adaptation.html#emacsway-balancing-prediction-adaptation"&gt;&lt;span class="std std-ref"&gt;Pediction vs. Adaptation&lt;/span&gt;&lt;/a&gt;, влияние &lt;a class="reference internal" href="models/agile/agile.html#emacsway-agile-development-essence"&gt;&lt;span class="std std-ref"&gt;характера роста стоимости изменения кода (Modifiability)&lt;/span&gt;&lt;/a&gt; на экономическую целесообразность Agile.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf"&gt;Краткая история итеративной разработки&lt;/a&gt;" by Craig Larman&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://less.works/less/framework/introduction"&gt;LeSS by Craig Larman&lt;/a&gt;" - куча полезной информации, которую можно использовать автономно. (&lt;a class="reference external" href="https://less.works/ru/less/framework/introduction"&gt;на русском&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Нужно заметить, что Software является подмножеством System.
+Раньше и Software, и System описывались одним стандартом ISO/IEC 12207:2008.
+Потом их разделили на ISO/IEC/IEEE 12207:2017 и ISO/IEC/IEEE 15288:2015.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "This document has a strong relationship with ISO/IEC/IEEE 15288:2015, Systems and Software Engineering System Life Cycle Processes, and is more applicable to software systems.
+To account for situations in which both ISO/IEC/IEEE 15288:2015 and ISO/IEC/IEEE 12207:2017 are applied (e.g., a development of a system containing software, or the development of a software system containing hardware), their process structures are harmonized to be identical.
+The processes of this document directly correspond to processes of ISO/IEC/IEEE 15288 with specialization for software products and services."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+</description><pubDate>Wed, 26 Jan 2022 00:00:00 </pubDate></item><item><title>Что такое Adaptation</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/adaptation/adaptation.html</link><description>
 &lt;span id="emacsway-adaptation"/&gt; 
 &lt;div class="contents topic" id="id1"&gt;
 &lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
@@ -1403,6 +1468,7 @@ ones of his generation."&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.incose.org/products-and-publications/se-handbook"&gt;Systems engineering handbook. A guide for System Life Cycle Processes and activities.&lt;/a&gt;" by INCOSE&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://sfia-online.org/en"&gt;The global skills and competency framework for a digital world&lt;/a&gt;" by SFIA Foundation&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://sfia-online.org/en/tools-and-resources/bodies-of-knowledge/list-of-bodies-of-knowledge"&gt;List of Bodies of Knowledge&lt;/a&gt;" by SFIA Foundation&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://mellarius.ru/"&gt;mellarius.ru&lt;/a&gt;" - превосходный минималистичный и самодостаточный справочник по архитектуре, анализу, организации процессов, тестированию и т.п.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id35"&gt;
@@ -3510,70 +3576,6 @@ The two matters are separate."&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</description><pubDate>Sat, 22 Jan 2022 00:00:00 </pubDate></item><item><title>Systems Development Life Cycle (SDLC) Reference</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/sdlc-reference.html</link><description>
-&lt;span id="emacsway-sdlc-literature"/&gt; 
-&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Grady Booch выделяет два ключевых критерия, которые определяют успех или неудачу проекта:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Traits of Successful Projects&lt;/p&gt;
-&lt;p&gt;A successful software project is one in which the deliverables satisfy and possibly exceed the customer's expectations, the development occurred in a timely and economical fashion, and the result is resilient to change and adaptation. By this measure, we have observed several traits that are common to virtually all of the successful object-oriented systems we have encountered and noticeably absent from the ones that we count as failures:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;Existence of a strong architectural vision&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Application of a well-managed iterative and incremental development lifecycle"&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p class="attribution"&gt;—"Object-Oriented Analysis and Design with Applications" 3rd edition by Grady Booch, Robert A. Maksimchuk, Michael W. Engle, Bobbi J. Young Ph.D., Jim Conallen, Kelli A. Houston&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Если с "architectural vision" все понятно, то с "well-managed development lifecycle" у многих могут возникать вопросы. Тем не менее, для успешности проекта процессы должны быть грамотно выбраны и качественно отлажены.&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://book4cio.ru/#page-14"&gt;Учебник 4CIO&lt;/a&gt;" - глава 3.4. Управление разработкой ПО&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.sebokwiki.org/wiki/Life_Cycle_Models"&gt;SEBoK: Life Cycle Models&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.sebokwiki.org/wiki/System_Life_Cycle_Process_Models:_Iterative"&gt;SEBoK: System Life Cycle Process Models: Iterative&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Неплохой "&lt;a class="reference external" href="https://www.tutorialspoint.com/sdlc/index.htm"&gt;SDLC Tutorial&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.tutorialspoint.com/sdlc/sdlc_quick_guide.htm"&gt;SDLC - Quick Guide&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://itabok.iasaglobal.org/itabok3_0/architecture-methodologies-and-frameworks/"&gt;ITABoK: Architecture Methodologies and Frameworks&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://itabok.iasaglobal.org/itabok3_0/digital-outcome-model/agility/"&gt;ITABoK: What is Agility&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.incose.org/products-and-publications/se-handbook"&gt;Systems engineering handbook. A guide for System Life Cycle Processes and activities&lt;/a&gt;" by INCOSE&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.pmi.org/pmbok-guide-standards/foundational/pmbok"&gt;The Project Management Body of Knowledge (PMBoK)&lt;/a&gt;" by Project Management Institute (PMI)&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.pmi.org/pmbok-guide-standards/practice-guides/agile"&gt;Agile Practice Guide&lt;/a&gt;" by Project Management Institute (PMI), 2017&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.iiba.org/career-resources/business-analysis-resources/iiba-bookstore/"&gt;Agile Extension to the BABOK® Guide&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.ireb.org/content/downloads/22-cpre-advanced-level-re-agile-handbook/handbook_cpre_al_re%40agile_en_v1.0.2.pdf"&gt;Handbook of RE@Agile According to the IREB Standard Education and Training for IREB Certified Professional for Requirements Engineering Advanced Level RE@Agile&lt;/a&gt;" Version 1.0.2&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.iso.org/standard/63712.html"&gt;ISO/IEC/IEEE 12207:2017 Systems and software engineering — Software life cycle processes&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.iso.org/standard/63711.html"&gt;ISO/IEC/IEEE 15288:2015 Systems and software engineering — System life cycle processes&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"ISO/IEC/IEEE 29148:2011 Systems and software engineering — Life cycle processes — Requirements engineering"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"ISO/IEC/IEEE 15289:2019 Systems and software engineering — Content of life-cycle information items (documentation)"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"ISO/IEC/IEEE 24765:2017 Systems and software engineering — Vocabulary"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"ISO 9000:2005 Quality management systems — Fundamentals and vocabulary"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"ISO/IEC 33001:2015 Information technology — Process assessment — Concepts and terminology"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"ГОСТ Р ИСО/МЭК 12207-2010 Информационная технология. Системная и программная инженерия. Процессы жизненного цикла программных средств."&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"ГОСТ Р 57193-2016 Системная и программная инженерия. Процессы жизненного цикла систем."&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"Object-Oriented Analysis and Design with Applications" 3rd edition by Grady Booch, Robert A. Maksimchuk, Michael W. Engle, Bobbi J. Young Ph.D., Jim Conallen, Kelli A. Houston - "Chapter 6. Process"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman - "Chapter 15. Architecture in agile projects"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"Software Architecture in Practice" 4th edition by Len Bass, Paul Clements, Rick Kazman&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"Extreme Programming Explained" 1st edition by Kent Beck (именно первое издание) - кто этой книги не читал, тот ничего в Agile не понимает.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Три превосходные книги Dean Leffingwell:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;"Scaling Software Agility: Best Practices for Large Enterprises" by Dean Leffingwell - о проблемах масштабирования команд.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise" by Dean Leffingwell - о проблемах интегрирования аналитической и архитектурной работы в Agile.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"SAFe® 5.0: The World's Leading Framework for Business Agility" by Richard Knaster, Dean Leffingwell - наиболее удачная масштабируемая Agile-модель на сегодня.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;"Essential Scrum: A Practical Guide to the Most Popular Agile Process" by Kenneth Rubin - главы 3 и 8 просто необходимы для понимания области применения Scrum.
-Очень хорошо в этой книге рассматриваются экономические аспекты разработки - выбор &lt;a class="reference internal" href="uncertainty-management/balancing-prediction-adaptation.html#emacsway-balancing-prediction-adaptation"&gt;&lt;span class="std std-ref"&gt;Pediction vs. Adaptation&lt;/span&gt;&lt;/a&gt;, влияние &lt;a class="reference internal" href="models/agile/agile.html#emacsway-agile-development-essence"&gt;&lt;span class="std std-ref"&gt;характера роста стоимости изменения кода (Modifiability)&lt;/span&gt;&lt;/a&gt; на экономическую целесообразность Agile.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf"&gt;Краткая история итеративной разработки&lt;/a&gt;" by Craig Larman&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://less.works/less/framework/introduction"&gt;LeSS by Craig Larman&lt;/a&gt;" - куча полезной информации, которую можно использовать автономно. (&lt;a class="reference external" href="https://less.works/ru/less/framework/introduction"&gt;на русском&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Нужно заметить, что Software является подмножеством System.
-Раньше и Software, и System описывались одним стандартом ISO/IEC 12207:2008.
-Потом их разделили на ISO/IEC/IEEE 12207:2017 и ISO/IEC/IEEE 15288:2015.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "This document has a strong relationship with ISO/IEC/IEEE 15288:2015, Systems and Software Engineering System Life Cycle Processes, and is more applicable to software systems.
-To account for situations in which both ISO/IEC/IEEE 15288:2015 and ISO/IEC/IEEE 12207:2017 are applied (e.g., a development of a system containing software, or the development of a software system containing hardware), their process structures are harmonized to be identical.
-The processes of this document directly correspond to processes of ISO/IEC/IEEE 15288 with specialization for software products and services."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
 </description><pubDate>Sat, 22 Jan 2022 00:00:00 </pubDate></item><item><title>Краткий курс по экономике разработки программного обеспечения</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/adaptation/crash-course-in-software-development-economics.html</link><description>&lt;span class="target" id="index-0"/&gt;&lt;div class="section" id="emacsway-software-development-economics-literature"&gt;
 &lt;span id="id1"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;

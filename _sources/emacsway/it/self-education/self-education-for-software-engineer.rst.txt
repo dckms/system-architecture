@@ -887,6 +887,7 @@ Body of Knowledge
 - "`Systems engineering handbook. A guide for System Life Cycle Processes and activities. <https://www.incose.org/products-and-publications/se-handbook>`__" by INCOSE
 - "`The global skills and competency framework for a digital world <https://sfia-online.org/en>`__" by SFIA Foundation
 - "`List of Bodies of Knowledge <https://sfia-online.org/en/tools-and-resources/bodies-of-knowledge/list-of-bodies-of-knowledge>`__" by SFIA Foundation
+- "`mellarius.ru <https://mellarius.ru/>`__" - превосходный минималистичный и самодостаточный справочник по архитектуре, анализу, организации процессов, тестированию и т.п.
 
 
 ГОСТы
