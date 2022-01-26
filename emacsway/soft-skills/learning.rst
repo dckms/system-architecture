@@ -72,6 +72,6 @@ P.S.: Бесподобная книга о том, как читать и не �
 .. seealso::
 
    - ":ref:`emacsway-planning-in-psychology`"
-   - ":doc:`icebreaker-principle`"
+   - ":ref:`emacsway-icebreaker-principle`"
    - ":doc:`/README`"
-   - ":doc:`/emacsway/it/self-education/self-education-for-software-engineer`"
+   - ":ref:`emacsway-self-education-literature`"

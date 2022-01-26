@@ -18,7 +18,7 @@ Agile Requirements
 ====================
 
 Следует различать значения терминов **needs**, **requirements** и **specification**.
-Вопросы возникают, как правило, там, где их не различают, и под требованиями зачастую понимают System Requirements Specification (SyRS), на который распространяется стандарт "ISO/IEC/IEEE 29148:2011 Systems and software engineering - Life cycle processes - Requirements engineering".
+Вопросы возникают, как правило, там, где их не различают, и под требованиями зачастую понимают System Requirements Specification (SyRS), на который распространяется стандарт "ISO/IEC/IEEE 29148:2018 Systems and software engineering - Life cycle processes - Requirements engineering".
 
 Однако, на сами требования распространяются стандарты SDLC:
 

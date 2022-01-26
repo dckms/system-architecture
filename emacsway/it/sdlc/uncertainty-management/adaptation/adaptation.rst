@@ -99,7 +99,20 @@ Prediction при этом не исчезает полностью, а пони
 
 Итеративная разработка востребована, когда невозможно достигнуть полноты (Complete) требований (set of :ref:`requirements <emacsway-agile-requirements>`).
 
-    📝 "Complete. The set of requirements needs no further amplification because it contains everything pertinent to the definition of the system or system element being specified. In addition, the set contains no To Be Defined (TBD), To Be Specified (TBS), or To Be Resolved (TBR) clauses. Resolution of the TBx designations may be iterative and there is an acceptable timeframe for TBx items, determined by risks and dependencies."
+..
+    📝 "Complete.
+    The set of requirements needs no further amplification because it contains everything pertinent to the definition of the system or system element being specified.
+    In addition, the set contains no To Be Defined (TBD), To Be Specified (TBS), or To Be Resolved (TBR) clauses.
+    Resolution of the TBx designations may be iterative and there is an acceptable timeframe for TBx items, determined by risks and dependencies."
+
+    -- "ISO/IEC/IEEE 29148:2011 Systems and software engineering - Life cycle processes - Requirements engineering"
+
+..
+
+    📝 "Complete.
+    The set of requirements stands alone such that it sufficiently describes the necessary capabilities, characteristics, constraints or quality factors to meet entity needs without needing further information.
+    In addition, the set does not contain any To Be Defined (TBD), To Be Specified (TBS), or To Be Resolved (TBR) clauses.
+    Resolution of the TBx designations may be iterative and there is an acceptable timeframe for TBx items, determined by risks and dependencies."
 
     -- "ISO/IEC/IEEE 29148:2018 Systems and software engineering - Life cycle processes - Requirements engineering"
 
@@ -131,6 +144,7 @@ Prediction при этом не исчезает полностью, а пони
 См. также:
 
 - "`The New Methodology :: Predictive versus Adaptive <https://www.martinfowler.com/articles/newMethodology.html#PredictiveVersusAdaptive>`__" by Martin Fowler
+
 
 .. seealso::
 

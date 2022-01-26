@@ -41,7 +41,7 @@ Grady Booch выделяет два ключевых критерия, кото�
 - "`ISO/IEC/IEEE 12207:2017 Systems and software engineering — Software life cycle processes <https://www.iso.org/standard/63712.html>`__"
 - "`ISO/IEC/IEEE 15288:2015 Systems and software engineering — System life cycle processes <https://www.iso.org/standard/63711.html>`__"
 
-- "ISO/IEC/IEEE 29148:2011 Systems and software engineering — Life cycle processes — Requirements engineering"
+- "ISO/IEC/IEEE 29148:2018 Systems and software engineering — Life cycle processes — Requirements engineering"
 - "ISO/IEC/IEEE 15289:2019 Systems and software engineering — Content of life-cycle information items (documentation)"
 
 - "ISO/IEC/IEEE 24765:2017 Systems and software engineering — Vocabulary"
