@@ -60,7 +60,7 @@
             
     
   <div class="section" id="cqrs">
-<span id="index-0"></span><h1><a class="toc-backref" href="#id10">Может ли CQRS-команда возвращать результат?</a><a class="headerlink" href="#cqrs" title="Ссылка на этот заголовок">¶</a></h1>
+<span id="emacsway-cqrs-command-result"></span><h1><a class="toc-backref" href="#id10">Может ли CQRS-команда возвращать результат?</a><a class="headerlink" href="#cqrs" title="Ссылка на этот заголовок">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
 <p>Статья посвящена довольно дискуссионному вопросу о том, может ли CQRS-команда возвращать результат.</p>
 <div class="contents topic" id="id1">
@@ -75,14 +75,14 @@
 <li><p><a class="reference internal" href="#command" id="id15">Может ли Command возвращать служебную информацию (код ошибки или успешность выполнения)?</a></p></li>
 <li><p><a class="reference internal" href="#command-query" id="id16">Кроме Command и Query существуют еще и функции-конструкторы</a></p></li>
 <li><p><a class="reference internal" href="#query-abstract-side-effect-concrete-side-effect" id="id17">Query не должен иметь abstract side effect, но может иметь concrete side effect</a></p></li>
-<li><p><a class="reference internal" href="#id3" id="id18">Что делать с атомарными операциями?</a></p>
+<li><p><a class="reference internal" href="#emacsway-cqs-atomic-routine" id="id18">Что делать с атомарными операциями?</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id4" id="id19">Процедура не возвращает значения, но может изменить ссылочный аргумент</a></p></li>
-<li><p><a class="reference internal" href="#id5" id="id20">Концепция буфера для разделения атомарных операций Command и Query</a></p></li>
+<li><p><a class="reference internal" href="#emacsway-cqs-reference-argument" id="id19">Процедура не возвращает значения, но может изменить ссылочный аргумент</a></p></li>
+<li><p><a class="reference internal" href="#emacsway-cqs-buffer" id="id20">Концепция буфера для разделения атомарных операций Command и Query</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id6" id="id21">Что делать, если CQRS-команда должна вернуть идентификатор созданного ресурса?</a></p></li>
-<li><p><a class="reference internal" href="#id7" id="id22">Однонаправленный поток изменений</a></p></li>
+<li><p><a class="reference internal" href="#emacsway-cqrs-command-resource-id" id="id21">Что делать, если CQRS-команда должна вернуть идентификатор созданного ресурса?</a></p></li>
+<li><p><a class="reference internal" href="#emacsway-cqrs-one-way-data-flow" id="id22">Однонаправленный поток изменений</a></p></li>
 <li><p><a class="reference internal" href="#jimmy-bogard" id="id23">Точка зрения Jimmy Bogard</a></p></li>
 <li><p><a class="reference internal" href="#id8" id="id24">Вывод</a></p></li>
 </ul>
@@ -90,7 +90,7 @@
 </ul>
 </div>
 <div class="section" id="reference-transparency">
-<h2><a class="toc-backref" href="#id11">Значение Reference Transparency в распределенной среде</a><a class="headerlink" href="#reference-transparency" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="emacsway-reference-transparency-in-distributed-systems"></span><h2><a class="toc-backref" href="#id11">Значение Reference Transparency в распределенной среде</a><a class="headerlink" href="#reference-transparency" title="Ссылка на этот заголовок">¶</a></h2>
 <p>В последнее время наметилась определенная поляризация парадигм программирования в индустрии.</p>
 <p>Стремительный рост объема обрабатываемых данных, потребность в масштабировании, распределенном хранении и параллельной обработке данных, пробудили интерес к функциональному программированию.</p>
 <blockquote>
@@ -134,7 +134,7 @@
 <p>Хорошая статья &quot;<a class="reference external" href="https://enterprisecraftsmanship.com/posts/what-is-functional-programming/">What is functional programming?</a>&quot; by Vladimir Khorikov.</p>
 </div>
 <div class="section" id="cqrs-cqs">
-<h2><a class="toc-backref" href="#id12">Чем отличается CQRS от CQS?</a><a class="headerlink" href="#cqrs-cqs" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="emacsway-cqrs-vs-cqs"></span><h2><a class="toc-backref" href="#id12">Чем отличается CQRS от CQS?</a><a class="headerlink" href="#cqrs-cqs" title="Ссылка на этот заголовок">¶</a></h2>
 <p><a class="reference external" href="https://martinfowler.com/bliki/CQRS.html">CQRS</a> лишь немного отличается от <a class="reference external" href="https://martinfowler.com/bliki/CommandQuerySeparation.html">CQS</a> по исполнению.
 Ввел этот термин Greg Young, поэтому, к нему и обратимся:</p>
 <blockquote>
@@ -179,20 +179,20 @@
 <p>Ответ на этот вопрос мы попытаемся найти в этой статье.</p>
 </div>
 <div class="section" id="cqs-referential-transparency-query">
-<h2><a class="toc-backref" href="#id14">CQS - это больше о referential transparency для Query</a><a class="headerlink" href="#cqs-referential-transparency-query" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="emacsway-cqs-query-referential-transparency"></span><h2><a class="toc-backref" href="#id14">CQS - это больше о referential transparency для Query</a><a class="headerlink" href="#cqs-referential-transparency-query" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Итак, начнем по порядку, с принципа CQS:</p>
 <blockquote>
 <div><p>📝 &quot;Command-Query Separation <strong>principle - Functions should not produce abstract side effects</strong>.&quot;</p>
 <p class="attribution">—&quot;Object-Oriented Software Construction&quot; 2nd edition by Bertrand Meyer, chapter &quot;23.1 SIDE EFFECTS IN FUNCTIONS&quot;</p>
 </div></blockquote>
-<p>Обратите внимание на термин abstract. B.Meyer различает abstract и concrete side effects.</p>
+<p id="emacsway-cqs-concrete-side-effect">Обратите внимание на термин abstract. B.Meyer различает abstract и concrete side effects.</p>
 <blockquote>
 <div><p>📝 &quot;Definition: concrete side effect: A function produces a concrete side effect if its body contains any of the following:
 1. An assignment, assignment attempt or creation instruction whose target is an attribute.
 2. A procedure call.&quot;</p>
 <p class="attribution">—&quot;Object-Oriented Software Construction&quot; 2nd edition by Bertrand Meyer, chapter &quot;23.1 SIDE EFFECTS IN FUNCTIONS&quot;</p>
 </div></blockquote>
-<blockquote>
+<span class="target" id="emacsway-cqs-abstract-side-effect"></span><blockquote>
 <div><p>📝 &quot;Since not every class definition is accompanied by a full-fledged specification of the underlying abstract data type, we need a more directly usable definition of &quot;abstract side effect&quot;. This is not difficult. In practice, the abstract data type is defined by the interface offered by a class to its clients (expressed for example as the short form of the class). A side effect will affect the abstract object if it changes the result of any query accessible to these clients. Hence the definition:</p>
 <p>Definition: abstract side effect: An abstract side effect is a concrete side effect that can change the value of a non-secret query.</p>
 <p>The definition refers to &quot;non-secret&quot; rather than exported queries. The reason is that in-between generally exported and fully secret status, we must permit a query to be selectively exported to a set of clients. As soon as a query is non-secret — exported to any client other than NONE — we consider that changing its result is an abstract side effect, since the change will be visible to at least some clients.&quot;</p>
@@ -202,14 +202,14 @@
 <div><p>📝 &quot;The Command-Query Separation principle brings <strong>referential transparency</strong> back.&quot;ients.&quot;</p>
 <p class="attribution">—&quot;Object-Oriented Software Construction&quot; 2nd edition by Bertrand Meyer, chapter &quot;23.1 SIDE EFFECTS IN FUNCTIONS&quot;</p>
 </div></blockquote>
-<blockquote>
+<span class="target" id="emacsway-reference-transparency"></span><blockquote>
 <div><p>📝 &quot;Definition: referential transparency: An expression e is referentially transparent if it is possible to exchange any subexpression with its value without changing the value of e.&quot;ients.&quot;</p>
 <p class="attribution">—&quot;Object-Oriented Software Construction&quot; 2nd edition by Bertrand Meyer, chapter &quot;23.1 SIDE EFFECTS IN FUNCTIONS&quot;</p>
 </div></blockquote>
 <p>Подведу короткое резюме всему ранее сказанному: CQS не запрещает изменять состояние, если оно не нарушает ссылочную прозрачность. Соблюдение этого условия открывает нам возможность пользоваться всеми преимуществами функционального программирования. Это и есть цель CQS.</p>
 </div>
 <div class="section" id="command">
-<h2><a class="toc-backref" href="#id15">Может ли Command возвращать служебную информацию (код ошибки или успешность выполнения)?</a><a class="headerlink" href="#command" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="emacsway-cqs-command-status-code"></span><h2><a class="toc-backref" href="#id15">Может ли Command возвращать служебную информацию (код ошибки или успешность выполнения)?</a><a class="headerlink" href="#command" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Не Команде запрещено возвращать информацию об объекте, а Запросу на получение информации об объекте запрещено нарушать ссылочную прозрачность.
 На это указывает и сам B. Meyer (учтите, что <a class="reference external" href="https://fsharpforfunandprofit.com/rop/">Railway Oriented Programming</a> и <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/results">Result type</a> в то время еще не было):</p>
 <blockquote>
@@ -239,7 +239,7 @@
 Тем более, она не актуальна при переносе этого вопроса на способы сетевого взаимодействия.</p>
 </div>
 <div class="section" id="command-query">
-<h2><a class="toc-backref" href="#id16">Кроме Command и Query существуют еще и функции-конструкторы</a><a class="headerlink" href="#command-query" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="emacsway-cqs-factory-result"></span><h2><a class="toc-backref" href="#id16">Кроме Command и Query существуют еще и функции-конструкторы</a><a class="headerlink" href="#command-query" title="Ссылка на этот заголовок">¶</a></h2>
 <p>А теперь самое важное.
 При обсуждении CQRS этот момент часто незаслуженно опускается.
 Кроме процедур-команд и функций-запросов, Bertrand Meyer вводит еще и <strong>функции-конструкторы</strong>!
@@ -261,8 +261,10 @@
 </div></blockquote>
 </div>
 <div class="section" id="query-abstract-side-effect-concrete-side-effect">
-<h2><a class="toc-backref" href="#id17">Query не должен иметь abstract side effect, но может иметь concrete side effect</a><a class="headerlink" href="#query-abstract-side-effect-concrete-side-effect" title="Ссылка на этот заголовок">¶</a></h2>
-<p>Говоря о <a class="reference external" href="https://t.me/emacsway_log/278">side effect</a>, B.Meyer накладывает ограничение на &quot;abstract side effect&quot;, и поясняет на примере. Сразу скажу, без прочтения главы 11 вряд ли можно понять о чем здесь идет речь. Но обойти вниманием этот пример тоже нельзя.</p>
+<span id="emacsway-cqs-query-side-effect"></span><h2><a class="toc-backref" href="#id17">Query не должен иметь abstract side effect, но может иметь concrete side effect</a><a class="headerlink" href="#query-abstract-side-effect-concrete-side-effect" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Говоря о &quot;<a class="reference internal" href="#emacsway-cqs-query-referential-transparency"><span class="std std-ref">side effect</span></a>&quot;, B.Meyer накладывает ограничение на &quot;<a class="reference internal" href="#emacsway-cqs-abstract-side-effect"><span class="std std-ref">abstract side effect</span></a>&quot;, и поясняет на примере.
+Сразу скажу, без прочтения главы 11 вряд ли можно понять о чем здесь идет речь.
+Но обойти вниманием этот пример тоже нельзя.</p>
 <blockquote>
 <div><p>📝 &quot;Unfortunately, this would be unacceptably restrictive, explaining why the Command-Query Separation principle only prohibits abstract side effects, a notion that will now be defined. The problem is that some concrete side effects are not only harmless but necessary. They are of two kinds.</p>
 <p>&lt;...&gt;</p>
@@ -282,11 +284,11 @@
 Как видим, тема CQS намного более обширна и тонка, чем может показаться на первый взгляд.
 И за один день её точно не освоить.</p>
 </div>
-<div class="section" id="id3">
-<h2><a class="toc-backref" href="#id18">Что делать с атомарными операциями?</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="emacsway-cqs-atomic-routine">
+<span id="id3"></span><h2><a class="toc-backref" href="#id18">Что делать с атомарными операциями?</a><a class="headerlink" href="#emacsway-cqs-atomic-routine" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Для погружения в CQRS нужно обратить внимание на еще два существенных момента.</p>
-<div class="section" id="id4">
-<h3><a class="toc-backref" href="#id19">Процедура не возвращает значения, но может изменить ссылочный аргумент</a><a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h3>
+<div class="section" id="emacsway-cqs-reference-argument">
+<span id="id4"></span><h3><a class="toc-backref" href="#id19">Процедура не возвращает значения, но может изменить ссылочный аргумент</a><a class="headerlink" href="#emacsway-cqs-reference-argument" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Момент первый - routine может возвращать информацию наружу не только в виде возвращаемого значения, но и путем изменения объекта, переданного аргументом по ссылке.</p>
 <blockquote>
 <div><p>📝 &quot;Function clone creates a new object as a carbon copy of an existing one. Sometimes the target object already exists; all we want to do is to overwrite its fields. Procedure copy achieves this. It is called through the instruction x.copy (y)&quot;</p>
@@ -296,8 +298,8 @@
 <p>Как можно организовать ссылочную связь через сетевое взаимодействие?
 Через идентификатор адресации в виде callback url.</p>
 </div>
-<div class="section" id="id5">
-<h3><a class="toc-backref" href="#id20">Концепция буфера для разделения атомарных операций Command и Query</a><a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h3>
+<div class="section" id="emacsway-cqs-buffer">
+<span id="id5"></span><h3><a class="toc-backref" href="#id20">Концепция буфера для разделения атомарных операций Command и Query</a><a class="headerlink" href="#emacsway-cqs-buffer" title="Ссылка на этот заголовок">¶</a></h3>
 <p>И второй момент - это известный кейс с примером, широко известным как метод .pop(), который одновременно и удаляет, и возвращает элемент списка.</p>
 <p>B.Meyer решает эту проблему с помощью концепции буффера:</p>
 <blockquote>
@@ -314,10 +316,10 @@ buffer.remove</p>
 <p>Вы уже, наверное, догадались, что я подвожу к паттерну &quot;<a class="reference external" href="https://docs.microsoft.com/en-us/azure/architecture/patterns/async-request-reply">Asynchronous Request-Reply pattern</a>&quot;, использующему &quot;<a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-6.3.3">202 Response Status Code</a>&quot;.</p>
 </div>
 </div>
-<div class="section" id="id6">
-<h2><a class="toc-backref" href="#id21">Что делать, если CQRS-команда должна вернуть идентификатор созданного ресурса?</a><a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="emacsway-cqrs-command-resource-id">
+<span id="id6"></span><h2><a class="toc-backref" href="#id21">Что делать, если CQRS-команда должна вернуть идентификатор созданного ресурса?</a><a class="headerlink" href="#emacsway-cqrs-command-resource-id" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Вернемся к вопросу о возврате ID созданного ресурса в ответ на POST запрос REST-API.
-Как говорилось <a class="reference external" href="https://t.me/emacsway_log/282">ранее</a>, RFC-7231 требует, чтобы REST API вернул идентификатор созданного ресурса в ответ на HTTP POST запрос.</p>
+Как говорилось <a class="reference internal" href="#emacsway-cqs-factory-result"><span class="std std-ref">ранее</span></a>, RFC-7231 требует, чтобы REST API вернул идентификатор созданного ресурса в ответ на HTTP POST запрос.</p>
 <p>Какие вообще есть альтернативы?</p>
 <blockquote>
 <div><p>📝 &quot;If the data is needed by the client as soon as it is submitted, it is there – on the client that submitted it. No need to poll the query side. The only thing that might not have been there is an ID from the database – which is easily solved with client-generated GUIDs instead of database-generated IDs.&quot;</p>
@@ -329,11 +331,11 @@ buffer.remove</p>
 <div><p>📝 &quot;The PUT method requests that the state of the target resource be created or replaced with the state defined by the representation enclosed in the request message payload. &lt;...&gt; If the target resource does not have a current representation and the PUT successfully creates one, then the origin server MUST inform the user agent by sending a 201 (Created) response.&quot;</p>
 <p class="attribution">—&quot;<a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-4.3.4">Section 4.3.4. PUT of RFC-7231</a>&quot;</p>
 </div></blockquote>
-<p>Другим вариантом, как говорилось <a class="reference external" href="https://t.me/emacsway_log/284">ранее</a>, может быть &quot;<a class="reference external" href="https://docs.microsoft.com/en-us/azure/architecture/patterns/async-request-reply">Asynchronous Request-Reply pattern</a>&quot;, использующий <a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-6.3.3">202 Response Status Code</a>.</p>
+<p>Другим вариантом, как говорилось <a class="reference internal" href="#emacsway-cqs-buffer"><span class="std std-ref">ранее</span></a>, может быть &quot;<a class="reference external" href="https://docs.microsoft.com/en-us/azure/architecture/patterns/async-request-reply">Asynchronous Request-Reply pattern</a>&quot;, использующий <a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-6.3.3">202 Response Status Code</a>.</p>
 <p>Но действительно ли нам нужно получать идентификатор в ответ на команду? Часто такая потребность возникает просто из-за недостаточного понимания тех выгод, которые предоставляет CQS и Referential Transparency - однонаправленный поток изменений и единственный источник истины.</p>
 </div>
-<div class="section" id="id7">
-<h2><a class="toc-backref" href="#id22">Однонаправленный поток изменений</a><a class="headerlink" href="#id7" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="emacsway-cqrs-one-way-data-flow">
+<span id="id7"></span><h2><a class="toc-backref" href="#id22">Однонаправленный поток изменений</a><a class="headerlink" href="#emacsway-cqrs-one-way-data-flow" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Referential Transparency означает, что вызов функции можно многократно повторять без какого-либо ущерба, и она всегда будет возвращать один и тот же результат.</p>
 <p>Более того, - возникает возможность легко управлять потоком изменений, сделав его однонаправленным, и сформировав единственный источник истины (single source of truth - один из ключевых принципов <a class="reference external" href="https://redux.js.org/understanding/thinking-in-redux/three-principles">Redux</a>, который <a class="reference external" href="https://redux.js.org/understanding/thinking-in-redux/motivation">следует принципам CQRS</a>).</p>
 <blockquote>
@@ -387,15 +389,12 @@ buffer.remove</p>
 И если мы нарушим здесь CQS, то никто этого не заметит.
 На ресурс распространяется <strong>concrete side effect</strong>:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://t.me/emacsway_log/278">https://t.me/emacsway_log/278</a></p></li>
-<li><p><a class="reference external" href="https://t.me/emacsway_log/283">https://t.me/emacsway_log/283</a></p></li>
+<li><p>&quot;<a class="reference internal" href="#emacsway-cqs-query-referential-transparency"><span class="std std-ref">CQS - это больше о referential transparency для Query</span></a>&quot;</p></li>
+<li><p>&quot;<a class="reference internal" href="#emacsway-cqs-query-side-effect"><span class="std std-ref">Query не должен иметь abstract side effect, но может иметь concrete side effect</span></a>&quot;</p></li>
 </ul>
 <p>Другое дело, когда мы должны опубликовать этот ресурс - тогда он должен появиться у всех, кто просматривает коллекцию, содержащую опубликованный ресурс (если, разумеется, это имеет ценность с точки зрения предметной области), а не только инициатор публикации.
 И все пользователи, включая автора, должны получить уведомление о публикации ресурса, через единый однонаправленный канал потока изменений.</p>
-<p>Такой же вывод возникает и из принципа <strong>функции-конструктора</strong> - до тех пор, пока ресурс не принадлежит ни к одной из публичных коллекций, доступной остальным пользователям, side effect не имеет последствий:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://t.me/emacsway_log/281">https://t.me/emacsway_log/281</a></p></li>
-</ul>
+<p>Такой же вывод возникает и из принципа <strong>функции-конструктора</strong> - до тех пор, пока ресурс не принадлежит ни к одной из публичных коллекций, доступной остальным пользователям, <a class="reference internal" href="#emacsway-cqs-factory-result"><span class="std std-ref">side effect не имеет последствий</span></a>.</p>
 <p>Но когда коллекция изменилась, то все пользователи, просматривающие эту коллекцию, должны быть уведомлены единовременно.</p>
 </div>
 <div class="section" id="jimmy-bogard">
@@ -407,7 +406,7 @@ buffer.remove</p>
 <p class="attribution">—&quot;<a class="reference external" href="https://lostechies.com/jimmybogard/2013/12/19/put-your-controllers-on-a-diet-posts-and-commands/">Put your controllers on a diet: POSTs and commands</a>&quot; by Jimmy Bogard</p>
 </div></blockquote>
 <p>Обратите внимание, в последнем предложении он говорит о том, как вернуть и результат, и ошибку одновременно.
-Это является решением именно того вопроса, который пытался разрешить B.Meyer с помощью side-effect-free style здесь: <a class="reference external" href="https://t.me/emacsway_log/279">https://t.me/emacsway_log/279</a></p>
+Это является решением именно того вопроса, который пытался разрешить B.Meyer с помощью <a class="reference internal" href="#emacsway-cqs-command-status-code"><span class="std std-ref">side-effect-free style</span></a>.</p>
 <p>Причины такого решения он раскрывает в другой своей статье:</p>
 <blockquote>
 <div><p>📝 &quot;Myth #2 – CQRS requires an eventual consistent read store</p>
@@ -438,7 +437,7 @@ buffer.remove</p>
 <li><p>&quot;<a class="reference external" href="https://blog.ploeh.dk/2014/08/11/cqs-versus-server-generated-ids/">CQS versus server generated IDs</a>&quot; by Mark Seemann</p></li>
 <li><p>&quot;<a class="reference external" href="https://blogs.cuttingedge.it/steven/posts/2012/returning-data-from-command-handlers/">Returning data from command handlers</a>&quot; by Steven van Deursen</p></li>
 </ul>
-<p>Ранее, этот вопрос <a class="reference internal" href="../domain-model/domain-events/domain-events-in-ddd.html#emacsway-de-cqrs-command-and-result"><span class="std std-ref">частично уже рассматривался</span></a>.</p>
+<p>Ранее, этот вопрос <a class="reference internal" href="../domain-model/domain-events/domain-events-in-ddd.html#emacsway-domain-event-cqrs-command-result"><span class="std std-ref">частично уже рассматривался</span></a>.</p>
 </div>
 </div>
 
