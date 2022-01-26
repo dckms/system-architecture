@@ -8,6 +8,8 @@
 Что такое Adaptation
 ====================
 
+.. sectionauthor:: Ivan Zakrevsky
+
 .. contents:: Содержание
 
 

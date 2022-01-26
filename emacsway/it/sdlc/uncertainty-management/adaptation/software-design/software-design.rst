@@ -96,7 +96,7 @@ Primary Technical Imperative
     📝 "Managing complexity is the most important technical topic in software development.
     In my view, it's so important that Software's Primary Technical Imperative has to be managing complexity."
 
-    -- "Code Complete" by Steve McConnell
+    -- "Code Complete" 2nd edition by Steve McConnell
 
 ..
 
@@ -123,7 +123,7 @@ Primary Technical Imperative
     The bottom line is that programmers who compensate for inherent human limitations
     write code that's easier for themselves and others to understand and that has fewer errors."
 
-    -- "Code Complete" by Steve McConnell
+    -- "Code Complete" 2nd edition by Steve McConnell
 
 ..
 
@@ -133,14 +133,14 @@ Primary Technical Imperative
     complexity that anyone's brain has to deal with at any one time, and keeping
     accidental complexity from proliferating needlessly."
 
-    -- "Code Complete" by Steve McConnell
+    -- "Code Complete" 2nd edition by Steve McConnell
 
 ..
 
     "The number "7±2" has been found to be a number of discrete items a person can remember while performing other tasks (Miller 1956).
     If a class contains more than about seven data members, consider whether the class should be decomposed into multiple smaller classes (Riel 1996)."
 
-    -- "Code Complete" by Steve McConnell
+    -- "Code Complete" 2nd edition by Steve McConnell
 
 По поводу последнего изречения - лучше один раз увидеть:
 
@@ -547,7 +547,7 @@ Steve McConnell
     defects takes more time than writing software with defects.
     As the graph shows, it can take less."
 
-    -- "Code Complete" by Steve McConnell
+    -- "Code Complete" 2nd edition by Steve McConnell
 
 ..
 
@@ -565,14 +565,14 @@ Steve McConnell
     No time spent on debugging?
     That is truly a worthy goal!"
 
-    -- "Code Complete" by Steve McConnell
+    -- "Code Complete" 2nd edition by Steve McConnell
 
 ..
 
     📝 "A six-month study conducted by IBM found that maintenance programmers "most often said that **understanding the original programmer's intent was the most difficult problem**" (Fjelstad and Hamlen 1979).
     [Fjelstad, R. K. , and W. T. Hamlen. 1979. "Applications Program Maintenance Study: Report to our Respondents." Proceedings Guide 48, Philadelphia. Reprinted in Tutorial on Software Maintenance, G. Parikh and N. Zvegintzov eds. Los Alamitos, CA: CS Press, 1983: 13–27.]"
 
-    -- "Code Complete" by Steve McConnell
+    -- "Code Complete" 2nd edition by Steve McConnell
 
 
 Сергей Тепляков
