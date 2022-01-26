@@ -27,6 +27,7 @@ Grady Booch выделяет два ключевых критерия, кото�
 - "`Учебник 4CIO <https://book4cio.ru/#page-14>`__" - глава 3.4. Управление разработкой ПО
 - "`SEBoK: Life Cycle Models <https://www.sebokwiki.org/wiki/Life_Cycle_Models>`__"
 - "`SEBoK: System Life Cycle Process Models: Iterative <https://www.sebokwiki.org/wiki/System_Life_Cycle_Process_Models:_Iterative>`__"
+- "`Процессы <https://mellarius.ru/processes>`__" at mellarius.ru - превосходный минималистичный и самодостаточный справочник.
 - Неплохой "`SDLC Tutorial <https://www.tutorialspoint.com/sdlc/index.htm>`__"
 - "`SDLC - Quick Guide <https://www.tutorialspoint.com/sdlc/sdlc_quick_guide.htm>`__"
 - "`ITABoK: Architecture Methodologies and Frameworks <https://itabok.iasaglobal.org/itabok3_0/architecture-methodologies-and-frameworks/>`__"
