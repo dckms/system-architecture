@@ -25,7 +25,7 @@ Balancing Top-Down/Bottom-Up Design Approaches
 
     -- "`The Twin Peaks of Requirements and Architecture <https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6470589>`__" by Jane Cleland-Huang, DePaul University; Robert S. Hanmer, Alcatel-Lucent; Sam Supakkul, Sabre; Mehdi Mirakhorli, DePaul University
 
-.. figure:: _media/balancing-prediction-adaptation/figure-a-the-twin-peaks-model.png
+.. figure:: _media/balancing-top-down-bottom-up-design-approaches/figure-a-the-twin-peaks-model.png
    :alt: Figure A. The twin peaks model. Though a series of iterations, the model captures the progression from general to detailed understanding. The image source is "The Twin Peaks of Requirements and Architecture" by Jane Cleland-Huang, DePaul University; Robert S. Hanmer, Alcatel-Lucent; Sam Supakkul, Sabre; Mehdi Mirakhorli, DePaul University https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6470589
    :align: left
    :width: 90%
