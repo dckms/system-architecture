@@ -214,6 +214,6 @@ Grady Booch говорил, что архитектура - это многоу�
 
 .. seealso::
 
-   - ":doc:`./change-making`"
-   - ":doc:`./planning-in-psychology`"
+   - ":ref:`emacsway-change-making-in-psychology`"
+   - ":ref:`emacsway-planning-in-psychology`"
 
