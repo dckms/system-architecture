@@ -1677,6 +1677,132 @@ Here we are discussing what takes over &lt;strong&gt;where the lightweight mecha
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="agile/agile.html#emacsway-agile-development"&gt;&lt;span class="std std-ref"&gt;Что такое Agile Development&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
+</description><pubDate>Thu, 27 Jan 2022 00:00:00 </pubDate></item><item><title>Balancing Top-Down/Bottom-Up Design Approaches</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/balancing-top-down-bottom-up-design-approaches.html</link><description>
+&lt;span id="emacsway-design-balancing-top-down-bottom-up"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#balancing-top-down-bottom-up-design-approaches" id="id4"&gt;Balancing Top-Down/Bottom-Up Design Approaches&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id2" id="id5"&gt;Влияние архитектуры на требования&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id5"&gt;Влияние архитектуры на требования&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "On the other hand, agile and lean projects implicitly rely on short iterations and early delivery of executable code into customer hands.
+Architectural design emerges incrementally in response to customer needs.
+Although agile processes bring numerous benefits to a project, the somewhat shorterterm perspective means that developers could be forced into expensive refactoring efforts to deliver new functionality late in the project.
+Agile processes that elicit architecturally significant user stories in early iterations can balance the way in which functionality is delivered to the customer and enable developers to make informed decisions about the design and construction of the architecture."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6470589"&gt;The Twin Peaks of Requirements and Architecture&lt;/a&gt;" by Jane Cleland-Huang, DePaul University; Robert S. Hanmer, Alcatel-Lucent; Sam Supakkul, Sabre; Mehdi Mirakhorli, DePaul University&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;div class="figure align-left" id="id3"&gt;
+&lt;a class="reference internal image-reference" href="../../../../_images/figure-a-the-twin-peaks-model.png"&gt;&lt;img alt="Figure A. The twin peaks model. Though a series of iterations, the model captures the progression from general to detailed understanding. The image source is &amp;quot;The Twin Peaks of Requirements and Architecture&amp;quot; by Jane Cleland-Huang, DePaul University; Robert S. Hanmer, Alcatel-Lucent; Sam Supakkul, Sabre; Mehdi Mirakhorli, DePaul University https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6470589" src="../../../../_images/figure-a-the-twin-peaks-model.png" style="width: 90%;"/&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Figure A. The twin peaks model. Though a series of iterations, the model captures the progression from general to detailed understanding. The image source is "&lt;a class="reference external" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6470589"&gt;The Twin Peaks of Requirements and Architecture&lt;/a&gt;" by Jane Cleland-Huang, DePaul University; Robert S. Hanmer, Alcatel-Lucent; Sam Supakkul, Sabre; Mehdi Mirakhorli, DePaul University&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "5.3.2 Iteration and recursion in requirements engineering&lt;/p&gt;
+&lt;p&gt;Since different groups of stakeholders often view the system from differing levels of system structure, it is necessary to define and document requirements statements at lower, more detailed levels than just the overall system-of-interest.
+Allocating or distributing the system requirements to the system elements accomplishes this.
+The activity of allocating requirements to system elements is part of the Architecture Definition process and proceeds in parallel with the definition of the system architecture.
+&lt;strong&gt;There may be multiple iterations between the requirements processes and other processes in the life cycle (e.g., architecture, design) to resolve trade-offs between the requirements and architecture.&lt;/strong&gt;
+The main forms of appropriate iteration within requirements engineering include:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;purposeful iteration within requirements analysis, between analysis activities;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;planned iteration from downstream activities back to requirements analysis because of a predicted, significant, genuine rate of change of requirements that reflect change of need;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;planned or unplanned iteration from downstream activities back to requirements because of feasibility and balance issues arising from risk due to technology or implementation issues, or &lt;strong&gt;risk due to limited knowledge of them&lt;/strong&gt;;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;unplanned iteration from downstream activities back to requirements because of other solution issues, such as changes to or defects in non-developmental system elements, or obsolescence of system elements;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;reverse engineering of requirements for reasons of regulatory compliance; and&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;limited iteration from downstream activities back to requirements analysis because of the reality that requirements can never be perfect, nor is it cost-effective to try to make them so."&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="attribution"&gt;—"ISO/IEC/IEEE 29148:2018 Systems and software engineering - Life cycle processes - Requirements engineering"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Используйте итерацию&lt;/p&gt;
+&lt;p&gt;Возможно, у вас были случаи, когда вы так много узнали во время написания программы, что желали бы написать ее заново, опираясь на полученные знания.
+Этот же феномен наблюдается и при проектировании, но этап проектирования короче, тогда как влияние, оказываемое им на последующие этапы, выражено сильнее, поэтому вы вполне можете выполнить этап проектирования несколько раз.
+Проектирование — итеративный процесс.&lt;/p&gt;
+&lt;p&gt;Выйдя из точки А и достигнув точки Б, не останавливайтесь, а вернитесь в точку А.
+Изучая возможные варианты проектирования и пробуя разные подходы, вы будете рассматривать и высокоуровневые, и низкоуровневые аспекты.&lt;/p&gt;
+&lt;p&gt;Общая картина, которую вы получаете при работе над высокоуровневыми вопросами, поможет вам лучше понять низкоуровневые детали.
+Детали, которые вы узнаете при работе над низкоуровневыми вопросами, помогут вам создать прочный фундамент для принятия высокоуровневых решений.
+Некоторые конфликты между высокоуровневыми и низкоуровневыми соображениями — вполне здоровое явление; это напряжение способствует созданию структуры, более стабильной, чем структура, полностью созданная "сверху вниз" или "снизу вверх".&lt;/p&gt;
+&lt;p&gt;Iterate&lt;/p&gt;
+&lt;p&gt;You might have had an experience in which you learned so much from writing a program that you wished you could write it again, armed with the insights you gained from writing it the first time.
+The same phenomenon applies to design, but the design cycles are shorter and the effects downstream are bigger, so you can afford to whirl through the design loop a few times.&lt;/p&gt;
+&lt;p&gt;Design is an iterative process.
+You don't usually go from point A only to point B; you go from point A to point B and back to point A.&lt;/p&gt;
+&lt;p&gt;As you cycle through candidate designs and try different approaches, you'll look at both high-level and low-level views.
+The big picture you get from working with high-level issues will help you to put the low-level details in perspective.
+The details you get from working with low-level issues will provide a foundation in solid reality for the high-level decisions.
+The tug and pull between top-level and bottom-level considerations is a healthy dynamic; it creates a stressed structure that's more stable than one built wholly from the top down or the bottom up."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Code Complete" 2nd edition by Steve McConnell, перевод: Издательско-торговый дом "Русская Редакция"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Нисходящий и восходящий подходы к проектированию&lt;/p&gt;
+&lt;p&gt;Слова «нисходящий» и «восходящий» могут казаться устаревшими, но они предоставляют много ценной информации об объектно-ориентированных способах проектирования.
+Нисходящее (top-down) проектирование начинается на высоком уровне абстракции.
+Например, вы сначала определяете базовые классы или другие неспецифические элементы проекта.
+По ходу работы вы повышаете уровень детальности и определяете производные классы, сотрудничающие классы и другие детали.&lt;/p&gt;
+&lt;p&gt;Восходящее (bottom-up) проектирование начинается со специфики и постепенно переходит ко все большей общности.
+Как правило, оно начинается с определения конкретных объектов, на основе которых затем разрабатываются более общие объединения объектов и базовые классы.&lt;/p&gt;
+&lt;p&gt;&amp;lt;...&amp;gt;&lt;/p&gt;
+&lt;p&gt;Никакого конфликта нет&lt;/p&gt;
+&lt;p&gt;Главное различие между нисходящей и восходящей стратегиями в том, что одна является стратегией декомпозиции, а вторая — композиции.
+В первом случае вы начинаете работу с общей проблемы, разбивая ее на управляемые фрагменты, во втором вы начинаете с управляемых фрагментов, составляя из них общее решение.
+Оба подхода имеют достоинства и недостатки, которые следует рассмотреть в контексте конкретной проблемы.&lt;/p&gt;
+&lt;p&gt;&amp;lt;...&amp;gt;&lt;/p&gt;
+&lt;p&gt;Подведем итог: нисходящее проектирование обычно начинается с простого, но иногда низкоуровневые сложности прорываются на вершину, и это может приводить к усложнению системы, которого можно было избежать.
+Восходящее проектирование начинается со сложных аспектов, но определение этой сложности на ранних этапах позволяет лучше спроектировать высокоуровневые классы... если к этому моменту сложность не потопит всю систему!&lt;/p&gt;
+&lt;p&gt;В конечном счете это не конкурирующие стратегии — они дополняют друг друга.
+Проектирование — эвристический процесс, а значит, универсальных решений не существует.
+Проектирование содержит элементы метода проб и ошибок.
+Пробуйте разные подходы, пока не найдете тот, что вас устроит.&lt;/p&gt;
+&lt;p&gt;Top-Down and Bottom-Up Design Approaches&lt;/p&gt;
+&lt;p&gt;"Top down" and "bottom up" might have an old-fashioned sound, but they provide valuable insight into the creation of object-oriented designs.
+Top-down design begins at a high level of abstraction.
+You define base classes or other nonspecific design elements.
+As you develop the design, you increase the level of detail, identifying derived classes, collaborating classes, and other detailed design elements.
+Bottom-up design starts with specifics and works toward generalities.
+It typically begins by identifying concrete objects and then generalizes aggregations of objects and base classes from those specifics.&lt;/p&gt;
+&lt;p&gt;&amp;lt;...&amp;gt;&lt;/p&gt;
+&lt;p&gt;No Argument, Really&lt;/p&gt;
+&lt;p&gt;The key difference between top-down and bottom-up strategies is that one is a decomposition strategy and the other is a composition strategy.
+One starts from the general problem and breaks it into manageable pieces;
+the other starts with manageable pieces and builds up a general solution.
+Both approaches have strengths and weaknesses that you'll want to consider as you apply them to your design problems.&lt;/p&gt;
+&lt;p&gt;&amp;lt;...&amp;gt;&lt;/p&gt;
+&lt;p&gt;To summarize, top down tends to start simple, but sometimes low-level complexity ripples back to the top, and those ripples can make things more complex than they really needed to be.
+Bottom up tends to start complex, but identifying that complexity early on leads to better design of the higher-level classes—if the complexity doesn't torpedo the whole system first!&lt;/p&gt;
+&lt;p&gt;In the final analysis, top-down and bottom-up design aren't competing strategies—they're mutually beneficial.
+Design is a heuristic process, which means that no solution is guaranteed to work every time.
+Design contains elements of trial and error.
+Try a variety of approaches until you find one that works well."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Code Complete" 2nd edition by Steve McConnell, "Chapter 5.4. Design Practices :: Top-Down and Bottom-Up Design Approaches", перевод: Издательско-торговый дом "Русская Редакция"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Cм. также:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6470589"&gt;The Twin Peaks of Requirements and Architecture&lt;/a&gt;" by Jane Cleland-Huang, DePaul University; Robert S. Hanmer, Alcatel-Lucent; Sam Supakkul, Sabre; Mehdi Mirakhorli, DePaul University&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"Code Complete" 2nd edition by Steve McConnell&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;"Chapter 5.4. Design Practices :: Top-Down and Bottom-Up Design Approaches"&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"Software Architecture in Practice" 4th edition by Len Bass, Paul Clements, Rick Kazman&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;"20.2 The Steps of ADD"&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Step 2: Establish Iteration Goal by Selecting Drivers&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Step 3: Choose One or More Elements of the System to Refine&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 </description><pubDate>Thu, 27 Jan 2022 00:00:00 </pubDate></item><item><title>Список психологических эффектов</title><link>https://dckms.github.io/system-architecture/emacsway/soft-skills/cognitive-biases.html</link><description>
 &lt;span id="id1"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
@@ -1816,7 +1942,7 @@ Here we are discussing what takes over &lt;strong&gt;where the lightweight mecha
 &lt;p&gt;Во-первых, каждая последующая книга имеет меньший, чем предыдущая, относительный прирост знаний по отношению к уже освоенным знаниям, что снижает меру "заноса" под впечатлением нового инкремента знаний, а это снижает противостояние на почве несовпадения фаз спиралей обучения.&lt;/p&gt;
 &lt;p&gt;Во-вторых, по мере роста знаний, разработчик начинает ассоциировать свои решения с их первоисточниками, а не со своей собственной гениальностью, и уже не воспринимает критику решений как угрозу имиджу собственного интеллекта.&lt;/p&gt;
 &lt;p&gt;В-третьих, он начинает лучше понимать контекст применимости каждого решения, и начинает меньше верить в &lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B5%D0%B1%D1%80%D1%8F%D0%BD%D0%BE%D0%B9_%D0%BF%D1%83%D0%BB%D0%B8_%D0%BD%D0%B5%D1%82"&gt;"серебрянную пулю&lt;/a&gt;".&lt;/p&gt;
-&lt;p&gt;Да и без обучения (Collaborative Development) невозможно впринципе достигнуть "&lt;a class="reference external" href="https://martinfowler.com/bliki/CodeOwnership.html"&gt;Collective Code Ownership&lt;/a&gt;" (это четко следует из карты зависимостей Agile-практик, см. "Extreme Programming Explained" 1st edition by Kent Beck, "Figure 4. The practices support each other"), зато можно легко достигнуть "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F_%D1%80%D0%B0%D0%B7%D0%B1%D0%B8%D1%82%D1%8B%D1%85_%D0%BE%D0%BA%D0%BE%D0%BD"&gt;Эффект разбитых окон&lt;/a&gt;".&lt;/p&gt;
+&lt;p&gt;Да и без обучения (Collaborative Development) невозможно впринципе достигнуть "&lt;a class="reference external" href="https://martinfowler.com/bliki/CodeOwnership.html"&gt;Collective Code Ownership&lt;/a&gt;" (это четко следует из карты зависимостей Agile-практик, см. "Extreme Programming Explained" 1st edition by Kent Beck, "Figure 4. The practices support each other"), зато можно легко достигнуть "&lt;a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F_%D1%80%D0%B0%D0%B7%D0%B1%D0%B8%D1%82%D1%8B%D1%85_%D0%BE%D0%BA%D0%BE%D0%BD"&gt;Эффекта разбитых окон&lt;/a&gt;".&lt;/p&gt;
 &lt;p&gt;Понимание - единственный способ достигнуть требуемую реализацию.
 Нет большого смысла пытаться управлять качеством кода - это уже слишком поздно.
 Post-Review - это как хождение наощуп.&lt;/p&gt;
@@ -4115,132 +4241,6 @@ Grady Booch даже назвал &lt;a class="reference internal" href="../sdlc
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"Succeeding with Agile: Software Development Using Scrum" by Mike Cohn, "Chapter 9 Technical Practices :: Design: intentional yet Emergent"&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-</description><pubDate>Wed, 26 Jan 2022 00:00:00 </pubDate></item><item><title>Balancing Top-Down/Bottom-Up Design Approaches</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/balancing-top-down-bottom-up-design-approaches.html</link><description>
-&lt;span id="emacsway-design-balancing-top-down-bottom-up"/&gt; 
-&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
-&lt;div class="contents topic" id="id1"&gt;
-&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#balancing-top-down-bottom-up-design-approaches" id="id4"&gt;Balancing Top-Down/Bottom-Up Design Approaches&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id2" id="id5"&gt;Влияние архитектуры на требования&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id2"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id5"&gt;Влияние архитектуры на требования&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "On the other hand, agile and lean projects implicitly rely on short iterations and early delivery of executable code into customer hands.
-Architectural design emerges incrementally in response to customer needs.
-Although agile processes bring numerous benefits to a project, the somewhat shorterterm perspective means that developers could be forced into expensive refactoring efforts to deliver new functionality late in the project.
-Agile processes that elicit architecturally significant user stories in early iterations can balance the way in which functionality is delivered to the customer and enable developers to make informed decisions about the design and construction of the architecture."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6470589"&gt;The Twin Peaks of Requirements and Architecture&lt;/a&gt;" by Jane Cleland-Huang, DePaul University; Robert S. Hanmer, Alcatel-Lucent; Sam Supakkul, Sabre; Mehdi Mirakhorli, DePaul University&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;div class="figure align-left" id="id3"&gt;
-&lt;a class="reference internal image-reference" href="../../../../_images/figure-a-the-twin-peaks-model.png"&gt;&lt;img alt="Figure A. The twin peaks model. Though a series of iterations, the model captures the progression from general to detailed understanding. The image source is &amp;quot;The Twin Peaks of Requirements and Architecture&amp;quot; by Jane Cleland-Huang, DePaul University; Robert S. Hanmer, Alcatel-Lucent; Sam Supakkul, Sabre; Mehdi Mirakhorli, DePaul University https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6470589" src="../../../../_images/figure-a-the-twin-peaks-model.png" style="width: 90%;"/&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Figure A. The twin peaks model. Though a series of iterations, the model captures the progression from general to detailed understanding. The image source is "&lt;a class="reference external" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6470589"&gt;The Twin Peaks of Requirements and Architecture&lt;/a&gt;" by Jane Cleland-Huang, DePaul University; Robert S. Hanmer, Alcatel-Lucent; Sam Supakkul, Sabre; Mehdi Mirakhorli, DePaul University&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "5.3.2 Iteration and recursion in requirements engineering&lt;/p&gt;
-&lt;p&gt;Since different groups of stakeholders often view the system from differing levels of system structure, it is necessary to define and document requirements statements at lower, more detailed levels than just the overall system-of-interest.
-Allocating or distributing the system requirements to the system elements accomplishes this.
-The activity of allocating requirements to system elements is part of the Architecture Definition process and proceeds in parallel with the definition of the system architecture.
-&lt;strong&gt;There may be multiple iterations between the requirements processes and other processes in the life cycle (e.g., architecture, design) to resolve trade-offs between the requirements and architecture.&lt;/strong&gt;
-The main forms of appropriate iteration within requirements engineering include:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;purposeful iteration within requirements analysis, between analysis activities;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;planned iteration from downstream activities back to requirements analysis because of a predicted, significant, genuine rate of change of requirements that reflect change of need;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;planned or unplanned iteration from downstream activities back to requirements because of feasibility and balance issues arising from risk due to technology or implementation issues, or &lt;strong&gt;risk due to limited knowledge of them&lt;/strong&gt;;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;unplanned iteration from downstream activities back to requirements because of other solution issues, such as changes to or defects in non-developmental system elements, or obsolescence of system elements;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;reverse engineering of requirements for reasons of regulatory compliance; and&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;limited iteration from downstream activities back to requirements analysis because of the reality that requirements can never be perfect, nor is it cost-effective to try to make them so."&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p class="attribution"&gt;—"ISO/IEC/IEEE 29148:2018 Systems and software engineering - Life cycle processes - Requirements engineering"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Используйте итерацию&lt;/p&gt;
-&lt;p&gt;Возможно, у вас были случаи, когда вы так много узнали во время написания программы, что желали бы написать ее заново, опираясь на полученные знания.
-Этот же феномен наблюдается и при проектировании, но этап проектирования короче, тогда как влияние, оказываемое им на последующие этапы, выражено сильнее, поэтому вы вполне можете выполнить этап проектирования несколько раз.
-Проектирование — итеративный процесс.&lt;/p&gt;
-&lt;p&gt;Выйдя из точки А и достигнув точки Б, не останавливайтесь, а вернитесь в точку А.
-Изучая возможные варианты проектирования и пробуя разные подходы, вы будете рассматривать и высокоуровневые, и низкоуровневые аспекты.&lt;/p&gt;
-&lt;p&gt;Общая картина, которую вы получаете при работе над высокоуровневыми вопросами, поможет вам лучше понять низкоуровневые детали.
-Детали, которые вы узнаете при работе над низкоуровневыми вопросами, помогут вам создать прочный фундамент для принятия высокоуровневых решений.
-Некоторые конфликты между высокоуровневыми и низкоуровневыми соображениями — вполне здоровое явление; это напряжение способствует созданию структуры, более стабильной, чем структура, полностью созданная "сверху вниз" или "снизу вверх".&lt;/p&gt;
-&lt;p&gt;Iterate&lt;/p&gt;
-&lt;p&gt;You might have had an experience in which you learned so much from writing a program that you wished you could write it again, armed with the insights you gained from writing it the first time.
-The same phenomenon applies to design, but the design cycles are shorter and the effects downstream are bigger, so you can afford to whirl through the design loop a few times.&lt;/p&gt;
-&lt;p&gt;Design is an iterative process.
-You don't usually go from point A only to point B; you go from point A to point B and back to point A.&lt;/p&gt;
-&lt;p&gt;As you cycle through candidate designs and try different approaches, you'll look at both high-level and low-level views.
-The big picture you get from working with high-level issues will help you to put the low-level details in perspective.
-The details you get from working with low-level issues will provide a foundation in solid reality for the high-level decisions.
-The tug and pull between top-level and bottom-level considerations is a healthy dynamic; it creates a stressed structure that's more stable than one built wholly from the top down or the bottom up."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Code Complete" 2nd edition by Steve McConnell, перевод: Издательско-торговый дом "Русская Редакция"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Нисходящий и восходящий подходы к проектированию&lt;/p&gt;
-&lt;p&gt;Слова «нисходящий» и «восходящий» могут казаться устаревшими, но они предоставляют много ценной информации об объектно-ориентированных способах проектирования.
-Нисходящее (top-down) проектирование начинается на высоком уровне абстракции.
-Например, вы сначала определяете базовые классы или другие неспецифические элементы проекта.
-По ходу работы вы повышаете уровень детальности и определяете производные классы, сотрудничающие классы и другие детали.&lt;/p&gt;
-&lt;p&gt;Восходящее (bottom-up) проектирование начинается со специфики и постепенно переходит ко все большей общности.
-Как правило, оно начинается с определения конкретных объектов, на основе которых затем разрабатываются более общие объединения объектов и базовые классы.&lt;/p&gt;
-&lt;p&gt;&amp;lt;...&amp;gt;&lt;/p&gt;
-&lt;p&gt;Никакого конфликта нет&lt;/p&gt;
-&lt;p&gt;Главное различие между нисходящей и восходящей стратегиями в том, что одна является стратегией декомпозиции, а вторая — композиции.
-В первом случае вы начинаете работу с общей проблемы, разбивая ее на управляемые фрагменты, во втором вы начинаете с управляемых фрагментов, составляя из них общее решение.
-Оба подхода имеют достоинства и недостатки, которые следует рассмотреть в контексте конкретной проблемы.&lt;/p&gt;
-&lt;p&gt;&amp;lt;...&amp;gt;&lt;/p&gt;
-&lt;p&gt;Подведем итог: нисходящее проектирование обычно начинается с простого, но иногда низкоуровневые сложности прорываются на вершину, и это может приводить к усложнению системы, которого можно было избежать.
-Восходящее проектирование начинается со сложных аспектов, но определение этой сложности на ранних этапах позволяет лучше спроектировать высокоуровневые классы... если к этому моменту сложность не потопит всю систему!&lt;/p&gt;
-&lt;p&gt;В конечном счете это не конкурирующие стратегии — они дополняют друг друга.
-Проектирование — эвристический процесс, а значит, универсальных решений не существует.
-Проектирование содержит элементы метода проб и ошибок.
-Пробуйте разные подходы, пока не найдете тот, что вас устроит.&lt;/p&gt;
-&lt;p&gt;Top-Down and Bottom-Up Design Approaches&lt;/p&gt;
-&lt;p&gt;"Top down" and "bottom up" might have an old-fashioned sound, but they provide valuable insight into the creation of object-oriented designs.
-Top-down design begins at a high level of abstraction.
-You define base classes or other nonspecific design elements.
-As you develop the design, you increase the level of detail, identifying derived classes, collaborating classes, and other detailed design elements.
-Bottom-up design starts with specifics and works toward generalities.
-It typically begins by identifying concrete objects and then generalizes aggregations of objects and base classes from those specifics.&lt;/p&gt;
-&lt;p&gt;&amp;lt;...&amp;gt;&lt;/p&gt;
-&lt;p&gt;No Argument, Really&lt;/p&gt;
-&lt;p&gt;The key difference between top-down and bottom-up strategies is that one is a decomposition strategy and the other is a composition strategy.
-One starts from the general problem and breaks it into manageable pieces;
-the other starts with manageable pieces and builds up a general solution.
-Both approaches have strengths and weaknesses that you'll want to consider as you apply them to your design problems.&lt;/p&gt;
-&lt;p&gt;&amp;lt;...&amp;gt;&lt;/p&gt;
-&lt;p&gt;To summarize, top down tends to start simple, but sometimes low-level complexity ripples back to the top, and those ripples can make things more complex than they really needed to be.
-Bottom up tends to start complex, but identifying that complexity early on leads to better design of the higher-level classes—if the complexity doesn't torpedo the whole system first!&lt;/p&gt;
-&lt;p&gt;In the final analysis, top-down and bottom-up design aren't competing strategies—they're mutually beneficial.
-Design is a heuristic process, which means that no solution is guaranteed to work every time.
-Design contains elements of trial and error.
-Try a variety of approaches until you find one that works well."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Code Complete" 2nd edition by Steve McConnell, "Chapter 5.4. Design Practices :: Top-Down and Bottom-Up Design Approaches", перевод: Издательско-торговый дом "Русская Редакция"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Cм. также:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6470589"&gt;The Twin Peaks of Requirements and Architecture&lt;/a&gt;" by Jane Cleland-Huang, DePaul University; Robert S. Hanmer, Alcatel-Lucent; Sam Supakkul, Sabre; Mehdi Mirakhorli, DePaul University&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"Code Complete" 2nd edition by Steve McConnell&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;"Chapter 5.4. Design Practices :: Top-Down and Bottom-Up Design Approaches"&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"Software Architecture in Practice" 4th edition by Len Bass, Paul Clements, Rick Kazman&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;"20.2 The Steps of ADD"&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Step 2: Establish Iteration Goal by Selecting Drivers&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Step 3: Choose One or More Elements of the System to Refine&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 </description><pubDate>Wed, 26 Jan 2022 00:00:00 </pubDate></item><item><title>Что такое Prediction</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/prediction/prediction.html</link><description>
