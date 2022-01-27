@@ -107,6 +107,10 @@
     -- Mike Cohn, "`My Favorite Resource for Agile Advice, Support, and Answers <https://www.mountaingoatsoftware.com/blog/my-favorite-resource-for-agile-advice-support-and-answers>`__".
     Isaac Newton wrote in a 1675 letter to fellow scientist Robert Hooke.
 
+
+Решение
+=======
+
 Мне известны два способа решения такого рода конфликтов:
 
 1. Восполнить информационный вакуум путем обращения к расширенному обобщенному опыту, т.е. к теории, дабы восполнить недостающие точки зрения, возникшие в силу заведомой ограниченности индивидуального опыта.
