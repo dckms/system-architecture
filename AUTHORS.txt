@@ -1,0 +1,5 @@
+Distributed Collaborative Knowledge Management System is written and maintained by Ivan Zakrevskii <emacsway@gmail.com>.
+This is based on the Spinx Doc (see AUTHORS file https://github.com/sphinx-doc/sphinx/blob/master/AUTHORS ).
+
+Other contributors, listed alphabetically, are:
+
