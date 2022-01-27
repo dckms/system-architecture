@@ -47,7 +47,7 @@
 В программировании
 ------------------
 
-    "Software design is a constant battle with complexity."
+    📝 "Software design is a constant battle with complexity."
 
     -- "Domain-Driven Design: Tackling Complexity in the Heart of Software" by Eric Evans
 
@@ -61,72 +61,130 @@ Grady Booch говорил, что архитектура - это многоу�
 
 А Len Bass говорил, что
 
-    Architecture Is an Abstraction
+    📝 "Architecture Is an Abstraction
 
-    This abstraction is essential to taming the complexity of a system - we simply cannot, and do not want to, deal with all of the complexity all of the time.
+    This abstraction is essential to taming the complexity of a system - we simply cannot, and do not want to, deal with all of the complexity all of the time."
 
     -- "Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman
 
 И Thomas H. Cormen:
 
-    In software design, separating what operations do from how they do it is known as abstraction.
+    📝 "In software design, separating what operations do from how they do it is known as abstraction."
 
     -- "Algorithms Unlocked" 3d edition by Thomas H. Cormen
 
 Ну и как же здесь не вспомнить Steve McConnell:
 
-    Managing complexity is the most important technical topic in software development. In my view, it's so important that Software's Primary Technical Imperative has to be managing complexity.
+    📝 "Управление сложностью — самый важный технический аспект разработки ПО.
+    По-моему, управление сложностью настолько важно, что оно должно быть Главным Техническим Императивом Разработки ПО.
 
-    -- "Code Complete" by Steve McConnell
+    Managing complexity is the most important technical topic in software development.
+    In my view, it's so important that Software's Primary Technical Imperative has to be managing complexity."
+
+    -- "Code Complete" 2nd edition by Steve McConnell, перевод: Издательско-торговый дом "Русская Редакция"
 
 ..
 
-    "Dijkstra pointed out that no one's skull is really big enough to contain a modern
-    computer program (Dijkstra 1972), which means that we as software developers
-    shouldn't try to cram whole programs into our skulls at once; we should try to organize
-    our programs in such a way that we can safely focus on one part of it at a time. The goal
-    is to minimize the amount of a program you have to think about at any one time. You
-    might think of this as mental juggling—the more mental balls the program requires you
-    to keep in the air at once, the more likely you'll drop one of the balls, leading to a design
-    or coding error.
+    📝 "Дейкстра пишет, что ни один человек не обладает интеллектом, способным вместить все детали современной компьютерной программы (Dijkstra, 1972), поэтому нам - разработчикам ПО — не следует пытаться охватить всю программу сразу.
+    Вместо этого мы должны попытаться организовать программы так, чтобы можно было безопасно работать с их отдельными фрагментами по очереди.
+    Целью этого является минимизация объема программы, о котором нужно думать в конкретный момент времени.
+    Можете считать это своеобразным умственным жонглированием: чем больше умственных шаров программа заставляет поддерживать в воздухе,
+    тем выше вероятность того, что вы уроните один из них и допустите ошибку при проектировании или кодировании.
 
-    At the software-architecture level, the complexity of a problem is reduced by dividing
-    the system into subsystems. Humans have an easier time comprehending several simple
-    pieces of information than one complicated piece. The goal of all software-design
-    techniques is to break a complicated problem into simple pieces. The more independent
-    the subsystems are, the more you make it safe to focus on one bit of complexity at a
-    time. Carefully defined objects separate concerns so that you can focus on one thing at a
-    time. Packages provide the same benefit at a higher level of aggregation.
+    На уровне архитектуры ПО сложность проблемы можно снизить, разделив систему на подсистемы.
+    Несколько несложных фрагментов информации понять проще, чем один сложный.
+    В разбиении сложной проблемы на простые фрагменты и заключается цель всех методик проектирования ПО.
+    Чем более независимы подсистемы, тем безопаснее сосредоточиться на одном аспекте сложности в конкретный момент времени.
+    Грамотно определенные объекты разделяют аспекты проблемы так, чтобы вы могли решать их по очереди.
+    Пакеты обеспечивают такое же преимущество на более высоком уровне агрегации.
 
-    Keeping routines short helps reduce your mental workload. Writing programs in terms
-    of the problem domain, rather than in terms of low-level implementation details, and
+    Стремление к краткости методов программы помогает снизить нагрузку на интеллект.
+    Этому же способствует написание программы в терминах проблемной области, а не низкоуровневых деталей реализации,
+    а также работа на самом высоком уровне абстракции.
+
+    Суть сказанного в том, что программисты, компенсирующие изначальные ограничения человеческого ума,
+    пишут более понятный и содержащий меньшее число ошибок код.
+
+    Dijkstra pointed out that no one's skull is really big enough to contain a modern computer program (Dijkstra 1972),
+    which means that we as software developers shouldn't try to cram whole programs into our skulls at once;
+    we should try to organize our programs in such a way that we can safely focus on one part of it at a time.
+    The goal is to minimize the amount of a program you have to think about at any one time.
+    You might think of this as mental juggling—the more mental balls the program requires you
+    to keep in the air at once, the more likely you'll drop one of the balls, leading to a design or coding error.
+
+    At the software-architecture level, the complexity of a problem is reduced by dividing the system into subsystems.
+    Humans have an easier time comprehending several simple pieces of information than one complicated piece.
+    The goal of all software-design techniques is to break a complicated problem into simple pieces.
+    The more independent the subsystems are, the more you make it safe to focus on one bit of complexity at a time.
+    Carefully defined objects separate concerns so that you can focus on one thing at a time.
+    Packages provide the same benefit at a higher level of aggregation.
+
+    Keeping routines short helps reduce your mental workload.
+    Writing programs in terms of the problem domain, rather than in terms of low-level implementation details, and
     working at the highest level of abstraction reduce the load on your brain.
 
     The bottom line is that programmers who compensate for inherent human limitations
-    write code that's easier for themselves and others to understand and that has fewer
-    errors."
+    write code that's easier for themselves and others to understand and that has fewer errors."
 
-    -- "Code Complete" by Steve McConnell
-
-..
-
-    Software's Primary Technical Imperative is managing complexity. This is greatly
-    aided by a design focus on simplicity.
-    Simplicity is achieved in two general ways: minimizing the amount of essential
-    complexity that anyone's brain has to deal with at any one time, and keeping
-    accidental complexity from proliferating needlessly.
-
-    -- "Code Complete" by Steve McConnell
+    -- "Code Complete" 2nd edition by Steve McConnell, перевод: Издательско-торговый дом "Русская Редакция"
 
 ..
 
-    The number
-    "7±2" has been found to be a number of discrete items a person can remember while
-    performing other tasks (Miller 1956). If a class contains more than about seven data
-    members, consider whether the class should be decomposed into multiple smaller
-    classes (Riel 1996).
+    📝 "Главным Техническим Императивом Разработки ПО является управление сложностью.
+    Управлять сложностью будет гораздо легче, если при проектировании вы будете стремиться к простоте.
 
-    -- "Code Complete" by Steve McConnell
+    Есть два общих способа достижения простоты:
+    минимизация объема существенной сложности, с которой приходится иметь дело в любой конкретный момент времени,
+    и подавление необязательного роста несущественной сложности.
+
+    Software's Primary Technical Imperative is managing complexity.
+    This is greatly aided by a design focus on simplicity.
+
+    Simplicity is achieved in two general ways:
+    minimizing the amount of essential complexity that anyone's brain has to deal with at any one time,
+    and keeping accidental complexity from proliferating needlessly."
+
+    -- "Code Complete" 2nd edition by Steve McConnell, перевод: Издательско-торговый дом "Русская Редакция"
+
+..
+
+    📝 "При выполнении других заданий человек может удерживать в памяти 7±2 дискретных элементов [Miller, 1956].
+    Если класс содержит более семи элементов данных-членов, подумайте, не разделить ли его на несколько менее крупных классов [Riel, 1996].
+
+    The number "7±2" has been found to be a number of discrete items a person can remember while performing other tasks [Miller 1956].
+    If a class contains more than about seven data members, consider whether the class should be decomposed into multiple smaller classes [Riel 1996].
+
+    [Miller, 1956]
+        Miller, G. A. 1956. "The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for Processing Information."
+        The Psychological Review 63, no. 2 (2): 81–97.
+    [Riel 1996]
+        Riel, Arthur J. 1996. Object-Oriented Design Heuristics. Reading, MA: Addison-Wesley."
+
+    -- "Code Complete" 2nd edition by Steve McConnell, перевод: Издательско-торговый дом "Русская Редакция"
+
+..
+
+    📝 "Разделяй и властвуй
+
+    Как указал Эдсгер Дейкстра, никто не обладает умом, способным вместить все детали сложной программы.
+    То же можно сказать и о проектировании.
+    Разделите пропрограмму на разные области и спроектируйте их по отдельности.
+    Если, работая над одной из областей, вы попадете в тупик, вспомните про итерацию!
+    Инкрементное улучшение — мощное средство управления сложностью.
+    Вспомните, как Полья советовал решать математические задачи: поймите задачу, составьте план решения, осуществите план и оглянитесь назад, чтобы лучше понять, что и как вы сделали [Polya, 1957].
+
+    Divide and Conquer
+
+    As Edsger Dijkstra pointed out, no one's skull is big enough to contain all the details of a complex program, and that applies just as well to design.
+    Divide the program into different areas of concern, and then tackle each of those areas individually.
+    If you run into a dead end in one of the areas, iterate!
+    Incremental refinement is a powerful tool for managing complexity.
+    As Polya recommended in mathematical problem solving, understand the problem, devise a plan, carry out the plan, and then look back to see how you did [Polya 1957].
+
+    [Polya 1957]
+        Polya, G. 1957. How to Solve It: A New Aspect of Mathematical Method, 2d ed. Princeton, NJ: Princeton University Press."
+
+    -- "Code Complete" 2nd edition by Steve McConnell, перевод: Издательско-торговый дом "Русская Редакция"
 
 
 В борьбе
@@ -145,7 +203,7 @@ Grady Booch говорил, что архитектура - это многоу�
 
 В одном фильме (уже не помню его названия) было красиво сказано:
 
-    Искусство воевать заключается в том, чтобы быть сильным в нужное время в нужном месте.
+    📝 "Искусство воевать заключается в том, чтобы быть сильным в нужное время в нужном месте."
 
 Но отсюда можно сделать еще один интересный вывод - суть победы в борьбе заключается в умелом использовании потенциальной энергии в поле тяготения Земли.
 Тот, кто повален, существенно ограничен в использовании потенциальной энергии.
