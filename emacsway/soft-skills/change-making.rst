@@ -187,4 +187,5 @@ Nick Tune поделился `историей конфликта с одним 
 .. seealso::
 
    - ":ref:`emacsway-icebreaker-principle`"
+   - ":ref:`emacsway-knowledge-vs-opinion-in-psychology`"
 
