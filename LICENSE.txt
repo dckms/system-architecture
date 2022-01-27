@@ -1,5 +1,5 @@
-See files LICENSE-CONTENT for content and LICENSE-CODE for code.
+See files LICENSE-CONTENT.txt for content and LICENSE-CODE.txt for code.
 
-The project is a personal notebook and all content is available for educational and research purposes only.
+All content of the project is a personal notebook and is available for educational and research purposes only.
 For the full text of the license, see the following web site: https://creativecommons.org/licenses/by/4.0/
 For quotes, media and other content with a named author you must respect the rights of its copyright holders. Their content may be licensed differently.
