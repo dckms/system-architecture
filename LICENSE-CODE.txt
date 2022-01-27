@@ -3,7 +3,7 @@ License for Distributed Collaborative Knowledge Management System
 
 The system is based on Sphinx Doc ( https://www.sphinx-doc.org/ ).
 
-Copyright (c) 2007-2021 by the Sphinx team (see AUTHORS file https://github.com/sphinx-doc/sphinx/blob/master/AUTHORS ) and by the team of Distributed Collaborative Knowledge Management System (see local AUTHORS file).
+Copyright (c) 2007-2021 by the Sphinx team (see AUTHORS file at https://github.com/sphinx-doc/sphinx/blob/master/AUTHORS ) and by the team of Distributed Collaborative Knowledge Management System (see local AUTHORS.txt file).
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
