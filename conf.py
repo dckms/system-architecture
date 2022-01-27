@@ -27,7 +27,7 @@ author = 'Your Full Name'
 copyright = '{}, {} (<a href="{}" rel="nofollow">License</a>)'.format(
     datetime.datetime.now().strftime('%Y'),
     author,
-    escape(posixpath.join(BASE_URL, 'LICENSE'))
+    escape(posixpath.join(BASE_URL, 'LICENSE.txt'))
 )
 
 # -- General configuration ---------------------------------------------------
@@ -82,9 +82,10 @@ html_static_path = ['_static']
 
 html_extra_path = [
     '_html_extra',
-    'LICENSE',
-    'LICENSE-CONTENT',
-    'LICENSE-CODE',
+    'LICENSE.txt',
+    'LICENSE-CONTENT.txt',
+    'LICENSE-CODE.txt',
+    'AUTHORS.txt',
 ]
 
 html_theme_options = {
