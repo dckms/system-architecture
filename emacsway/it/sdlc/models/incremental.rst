@@ -43,7 +43,7 @@ Incremental Development
     Incremental refinement is a powerful tool for managing complexity.
     As Polya recommended in mathematical problem solving, understand the problem, devise a plan, carry out the plan, and then look back to see how you did [Polya 1957].
 
-    Polya 1957.
+    [Polya 1957]
         Polya, G. 1957. How to Solve It: A New Aspect of Mathematical Method, 2d ed. Princeton, NJ: Princeton University Press."
 
     -- "Code Complete" 2nd edition by Steve McConnell, перевод: Издательско-торговый дом "Русская Редакция"
