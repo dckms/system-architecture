@@ -49,6 +49,7 @@
 - "`HighLoad++, Михаил Тюленев (MongoDB): Causal consistency: от теории к практике <https://habr.com/ru/company/ua-hosting/blog/487638/>`__"
 - "`Version Vector <https://martinfowler.com/articles/patterns-of-distributed-systems/version-vector.html>`__" by Unmesh Joshi
 - "`Nobody Needs Reliable Messaging <https://www.infoq.com/articles/no-reliable-messaging/>`__" by Marc de Graauw
+- "`Error Handling Patterns for Apache Kafka Applications <https://www.confluent.io/blog/error-handling-patterns-in-kafka/>`__" by Gerardo Villeda
 
 Список литературы по интеграционным паттернам:
 
