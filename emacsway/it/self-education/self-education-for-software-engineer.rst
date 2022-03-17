@@ -382,6 +382,7 @@ Bounded Context and Microservices
 - "`Domain, Subdomain, Bounded Context, Problem/Solution Space in DDD: Clearly Defined <https://medium.com/nick-tune-tech-strategy-blog/domains-subdomain-problem-solution-space-in-ddd-clearly-defined-e0b49c7b586c>`__" by Nick Tune
 
 - "`Monolith -> Services: Theory & Practice <https://medium.com/@kentbeck_7670/monolith-services-theory-practice-617e4546a879>`__" by Kent Beck
+- "`tl;dr Coupling (& later Cohesion) <https://tidyfirst.substack.com/p/tldr-coupling-and-later-cohesion>`__" by Kent Beck
 
 - "`How to break a Monolith into Microservices :: Go Macro First, then Micro <https://martinfowler.com/articles/break-monolith-into-microservices.html#GoMacroFirstThenMicro>`__" by Zhamak Dehghani
 
