@@ -77,6 +77,23 @@
 </ul>
 </div>
 <p>Например, <a class="reference external" href="https://docs.nats.io/nats-concepts/queue">NATS использует Round-robin для балансировки подписчиков группы</a>, и там эта проблема хорошо проявляется. Партиционирование каналов <a class="reference external" href="https://bravenewgeek.com/building-a-distributed-log-from-scratch-part-5-sketching-a-new-system/">появилось</a> только в пока еще нестабильном <a class="reference external" href="https://github.com/nats-io/jetstream">jetstream</a>.</p>
+<blockquote>
+<div><p>Scaling with queue subscribers</p>
+<p>This is ideal <strong>if you do not rely on message order</strong>.</p>
+<p class="attribution">—&quot;<a class="reference external" href="https://docs.nats.io/running-a-nats-service/nats_admin/slow_consumers#handling-slow-consumers">Slow Consumers - NATS Docs</a>&quot;</p>
+</div></blockquote>
+<p>Обходной путь:</p>
+<blockquote>
+<div><p>Create a subject namespace that can scale</p>
+<p>You can distribute work further through the subject namespace, with some forethought in design. This approach is useful if you need to preserve message order. The general idea is to publish to a deep subject namespace, and consume with wildcard subscriptions while giving yourself room to expand and distribute work in the future.</p>
+<p>For a simple example, if you have a service that receives telemetry data from IoT devices located throughout a city, you can publish to a subject namespace like Sensors.North, Sensors.South, Sensors.East and Sensors.West. Initially, you'll subscribe to Sensors.&gt; to process everything in one consumer. As your enterprise grows and data rates exceed what one consumer can handle, you can replace your single consumer with four consuming applications to subscribe to each subject representing a smaller segment of your data. Note that your publishing applications remain untouched.</p>
+<p class="attribution">—&quot;<a class="reference external" href="https://docs.nats.io/running-a-nats-service/nats_admin/slow_consumers#handling-slow-consumers">Slow Consumers - NATS Docs</a>&quot;</p>
+</div></blockquote>
+<p>Еще одина возможная причина нарушения очередности обработки сообщений:</p>
+<blockquote>
+<div><p>Note: For a given subscription, messages are dispatched serially, one message at a time. If your application <strong>does not care about processing ordering</strong> and would prefer the messages to be dispatched concurrently, it is the application's responsibility to move them to some internal queue to be picked up by threads/go routines.</p>
+<p class="attribution">—&quot;<a class="reference external" href="https://docs.nats.io/using-nats/developer/receiving/async">Asynchronous Subscriptions - NATS Docs</a>&quot;</p>
+</div></blockquote>
 <p>Кроме того, доставка сообщений может пакетироваться из соображений оптимизации.</p>
 <p>Один из примеров, который мне запомнился (с какой-то статьи) - это когда один из пользователей соц.сети удаляет из списка друзей другого пользователя, и тут же шлет оставшимся друзьям письмо, в котором дискредитирует удаленного друга. Возникает два события, первое - на удаление друга, второе - на отправку сообщения списку оставшихся друзей. Причем, второе сообщение находится в причинной зависимости от первого, и должно быть обработано после первого. Возникает гонка событий.</p>
 <p>В условиях конкурирующих подписчиков, хронология обработки событий может измениться. И тогда, в момент отправки дискредитирующего письма списку друзей, удаленный пользователь все еще будет присутствовать в списке получателей.</p>
@@ -91,7 +108,7 @@
 <p>А пока - список литературы, который хорошо освещает эту проблему:</p>
 <ul class="simple">
 <li><p>&quot;Designing Data-Intensive Applications. The Big Ideas Behind Reliable, Scalable, and Maintainable Systems&quot; by Martin Kleppmann</p></li>
-<li><p>&quot;<a class="reference external" href="https://martin.kleppmann.com/2020/11/18/distributed-systems-and-elliptic-curves.html">Lecture notes (PDF) (including exercises)</a>&quot; by Martin Kleppman (<a class="reference external" href="https://www.cl.cam.ac.uk/teaching/2021/ConcDisSys/dist-sys-notes.pdf">download</a>, <a class="reference external" href="https://github.com/ept/dist-sys">source code</a>, <a class="reference external" href="https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB">video</a>)</p></li>
+<li><p>&quot;<a class="reference external" href="https://martin.kleppmann.com/2020/11/18/distributed-systems-and-elliptic-curves.html">Lecture notes (PDF) (including exercises)</a>&quot; by Martin Kleppmann (<a class="reference external" href="https://www.cl.cam.ac.uk/teaching/2021/ConcDisSys/dist-sys-notes.pdf">download</a>, <a class="reference external" href="https://github.com/ept/dist-sys">source code</a>, <a class="reference external" href="https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB">video</a>)</p></li>
 <li><p>&quot;Database Internals: A Deep Dive into How Distributed Data Systems Work&quot; by Alex Petrov</p></li>
 <li><p>&quot;Distributed systems: principles and paradigms&quot; 3d edition by Andrew S. Tanenbaum, Maarten Van Steen</p></li>
 <li><p>&quot;<a class="reference external" href="http://books.ifmo.ru/file/pdf/1551.pdf">Введение в распределенные вычисления</a>&quot; / Косяков М. С. — СПб: НИУ ИТМО, 2014. — С. 75-82. — 155 с.</p></li>
@@ -108,6 +125,7 @@
 <li><p>&quot;<a class="reference external" href="https://habr.com/ru/company/ua-hosting/blog/487638/">HighLoad++, Михаил Тюленев (MongoDB): Causal consistency: от теории к практике</a>&quot;</p></li>
 <li><p>&quot;<a class="reference external" href="https://martinfowler.com/articles/patterns-of-distributed-systems/version-vector.html">Version Vector</a>&quot; by Unmesh Joshi</p></li>
 <li><p>&quot;<a class="reference external" href="https://www.infoq.com/articles/no-reliable-messaging/">Nobody Needs Reliable Messaging</a>&quot; by Marc de Graauw</p></li>
+<li><p>&quot;<a class="reference external" href="https://www.confluent.io/blog/error-handling-patterns-in-kafka/">Error Handling Patterns for Apache Kafka Applications</a>&quot; by Gerardo Villeda</p></li>
 </ul>
 <p>Список литературы по интеграционным паттернам:</p>
 <ul class="simple">

@@ -14,6 +14,28 @@
 
 Например, `NATS использует Round-robin для балансировки подписчиков группы <https://docs.nats.io/nats-concepts/queue>`__, и там эта проблема хорошо проявляется. Партиционирование каналов `появилось <https://bravenewgeek.com/building-a-distributed-log-from-scratch-part-5-sketching-a-new-system/>`__ только в пока еще нестабильном `jetstream <https://github.com/nats-io/jetstream>`__.
 
+    Scaling with queue subscribers
+
+    This is ideal **if you do not rely on message order**.
+
+    -- "`Slow Consumers - NATS Docs <https://docs.nats.io/running-a-nats-service/nats_admin/slow_consumers#handling-slow-consumers>`__"
+
+Обходной путь:
+
+    Create a subject namespace that can scale
+
+    You can distribute work further through the subject namespace, with some forethought in design. This approach is useful if you need to preserve message order. The general idea is to publish to a deep subject namespace, and consume with wildcard subscriptions while giving yourself room to expand and distribute work in the future.
+
+    For a simple example, if you have a service that receives telemetry data from IoT devices located throughout a city, you can publish to a subject namespace like Sensors.North, Sensors.South, Sensors.East and Sensors.West. Initially, you'll subscribe to Sensors.> to process everything in one consumer. As your enterprise grows and data rates exceed what one consumer can handle, you can replace your single consumer with four consuming applications to subscribe to each subject representing a smaller segment of your data. Note that your publishing applications remain untouched.
+
+    -- "`Slow Consumers - NATS Docs <https://docs.nats.io/running-a-nats-service/nats_admin/slow_consumers#handling-slow-consumers>`__"
+
+Еще одина возможная причина нарушения очередности обработки сообщений:
+
+    Note: For a given subscription, messages are dispatched serially, one message at a time. If your application **does not care about processing ordering** and would prefer the messages to be dispatched concurrently, it is the application's responsibility to move them to some internal queue to be picked up by threads/go routines.
+
+    -- "`Asynchronous Subscriptions - NATS Docs <https://docs.nats.io/using-nats/developer/receiving/async>`__"
+
 Кроме того, доставка сообщений может пакетироваться из соображений оптимизации.
 
 Один из примеров, который мне запомнился (с какой-то статьи) - это когда один из пользователей соц.сети удаляет из списка друзей другого пользователя, и тут же шлет оставшимся друзьям письмо, в котором дискредитирует удаленного друга. Возникает два события, первое - на удаление друга, второе - на отправку сообщения списку оставшихся друзей. Причем, второе сообщение находится в причинной зависимости от первого, и должно быть обработано после первого. Возникает гонка событий.
@@ -32,7 +54,7 @@
 А пока - список литературы, который хорошо освещает эту проблему:
 
 - "Designing Data-Intensive Applications. The Big Ideas Behind Reliable, Scalable, and Maintainable Systems" by Martin Kleppmann
-- "`Lecture notes (PDF) (including exercises) <https://martin.kleppmann.com/2020/11/18/distributed-systems-and-elliptic-curves.html>`__" by Martin Kleppman (`download <https://www.cl.cam.ac.uk/teaching/2021/ConcDisSys/dist-sys-notes.pdf>`__, `source code <https://github.com/ept/dist-sys>`__, `video <https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB>`__)
+- "`Lecture notes (PDF) (including exercises) <https://martin.kleppmann.com/2020/11/18/distributed-systems-and-elliptic-curves.html>`__" by Martin Kleppmann (`download <https://www.cl.cam.ac.uk/teaching/2021/ConcDisSys/dist-sys-notes.pdf>`__, `source code <https://github.com/ept/dist-sys>`__, `video <https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB>`__)
 - "Database Internals: A Deep Dive into How Distributed Data Systems Work" by Alex Petrov
 - "Distributed systems: principles and paradigms" 3d edition by Andrew S. Tanenbaum, Maarten Van Steen
 - "`Введение в распределенные вычисления <http://books.ifmo.ru/file/pdf/1551.pdf>`__" / Косяков М. С. — СПб: НИУ ИТМО, 2014. — С. 75-82. — 155 с.
@@ -49,6 +71,7 @@
 - "`HighLoad++, Михаил Тюленев (MongoDB): Causal consistency: от теории к практике <https://habr.com/ru/company/ua-hosting/blog/487638/>`__"
 - "`Version Vector <https://martinfowler.com/articles/patterns-of-distributed-systems/version-vector.html>`__" by Unmesh Joshi
 - "`Nobody Needs Reliable Messaging <https://www.infoq.com/articles/no-reliable-messaging/>`__" by Marc de Graauw
+- "`Error Handling Patterns for Apache Kafka Applications <https://www.confluent.io/blog/error-handling-patterns-in-kafka/>`__" by Gerardo Villeda
 
 Список литературы по интеграционным паттернам:
 

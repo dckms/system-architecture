@@ -32,6 +32,12 @@ Technical Debt и сложный процент
 
     -- "`Technical Debt <https://martinfowler.com/bliki/TechnicalDebt.html>`__" by Martin Fowler
 
+..
+
+    📝 "...that would slow us down which is like paying interest on a loan."
+
+    -- "`Debt Metaphor <https://youtu.be/pqeJFYwnkjE?t=90>`__" by Ward Cunningham
+
 А он рассчитывается по правилу "сложного процента".
 Вся суть в том, чтобы перенести внимание бизнеса с тела долга на геометрическую прогрессию роста его процента:
 
