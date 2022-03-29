@@ -386,6 +386,20 @@ Bounded Context and Microservices
 
 - "`How to break a Monolith into Microservices :: Go Macro First, then Micro <https://martinfowler.com/articles/break-monolith-into-microservices.html#GoMacroFirstThenMicro>`__" by Zhamak Dehghani
 
+Tools:
+
+- См. Context Map средствами Archi на диаграмме "Views : Tactical Architecture : Program Level : Context Map" of `Model <https://community.opengroup.org/archimate-user-community/home/-/issues/8>`__ used for presentation "Enterprise Architecture Modelling with ArchiMate in an Agile at Scale Programme":
+- "`Context Mapping <https://github.com/ddd-crew/context-mapping>`__" by Nick Tune and DDD-Crew
+- "`Context Map Cheat Sheet <https://github.com/ddd-crew/ddd-starter-modelling-process#organise>`__" by Nick Tune and DDD-Crew
+- "`Context Map Cheat Sheet (Miro template) <https://miro.com/app/board/o9J_kqrI8ck=/>`__" by Nick Tune and DDD-Crew
+- "`Context Mapping Quiz <https://github.com/ddd-crew/context-mapping-quiz>`__" by Nick Tune and DDD-Crew
+- "`Context Mapping Quiz (Miro template) <https://miro.com/app/board/o9J_lzWf14U=/>`__" by Nick Tune and DDD-Crew
+- "`ContextMapper - a Modeling Framework for Strategic Domain-driven Design <https://contextmapper.org/>`__"
+- "`Context Mapper - a Modeling Framework for Strategic Domain-driven Design (DDD) and Service Decomposition (at Github) <https://github.com/ContextMapper>`__"
+- "`ServiceCutter - a Structured Way to Service Decomposition <https://github.com/ServiceCutter/ServiceCutter>`__"
+- "`DomoRoboto - strategic, rapid, learning for teams using Domain-Driven Design and Architecture modeling <https://domorobo.to/>`__" (EventStorming, Bounded Contexts, Context Mapping, Topo Architecture) by Vaughn Vernon
+- "`Visualizing sociotechnical architectures with Context Maps <https://speakerdeck.com/mploed/visualizing-sociotechnical-architectures-with-context-maps?slide=56>`__"
+
 
 Domain Events
 ~~~~~~~~~~~~~
@@ -444,16 +458,18 @@ Others:
 - "`Event Storming на практических кейсах <http://agilemindset.ru/event-storming-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85-%D0%BA%D0%B5%D0%B9%D1%81%D0%B0%D1%85/>`__", Сергей Баранов (`видео <https://www.youtube.com/watch?v=kJjuTuviZ-E>`__)
 - "`Reactive in practice, Unit 1: Event storming the stock trader domain <https://developer.ibm.com/tutorials/reactive-in-practice-1/>`__" by Kevin Webber, Dana Harrington
 - "`Event storming at ibm.com <https://www.ibm.com/cloud/architecture/architecture/practices/event-storming-methodology-architecture/>`__"
+- "`Event storming & domain-driven design: Reactive in practice -- Event storming the stock trader domain -- IBM Developer <https://developer.ibm.com/tutorials/reactive-in-practice-1/>__`" by Kevin Webber, Dana Harrington
 - "`Event driven solution implementation methodology <https://ibm-cloud-architecture.github.io/refarch-eda/methodology/event-storming/>`__"
 - "`Awesome EventStorming <https://github.com/mariuszgil/awesome-eventstorming>`__"
 
 
 Tools:
 
+- "`DomoRoboto - strategic, rapid, learning for teams using Domain-Driven Design and Architecture modeling <https://domorobo.to/>`__" (EventStorming, Bounded Contexts, Context Mapping, Topo Architecture) by Vaughn Vernon
 - `EventStorming для PlantUML <https://github.com/tmorin/plantuml-libs/blob/master/dist/eventstorming/README.md>`__
 - `miro.com <https://miro.com/>`__, см. `Event Storming template <https://miro.com/miroverse/category/ideation-and-brainstorming/event-storming>`__
 - EventStorming для ArchiMate:
-    - см. "`Figure 13: Event Storming Model <https://nicea.nic.in/download-files.php?nid=247>`__"
+    - C4-Model & Event Storming with ArchiMate, см. "Figure 13: Event Storming Model" of "Agile Architecture Modeling Using the ArchiMate® Language" (см. `здесь <https://publications.opengroup.org/g20e>`__, `здесь <https://nicea.nic.in/sites/default/files/Agile_Architecture_Modelling_Using_Archimate.pdf>`__ или `здесь <https://nicea.nic.in/download-files.php?nid=247>`__)
     - `Model used by Jean-Baptiste Sarrodie for presentation "Enterprise Architecture Modelling with ArchiMate in an Agile at Scale Programme" <https://community.opengroup.org/archimate-user-community/home/-/issues/8>`__
 
 
