@@ -212,7 +212,7 @@ Sphinx-doc предоставляет и тегирование/индексир
 #. Если не установлен Python, то `установите его <https://docs.python.org/3/installing/index.html>`__.
 #. Установите зависимости. Для этого, из корневой директории проекта выполните команду: ``pip install -r requirements.freeze.txt``
 #. Отредактируйте файл conf.py, подробности смотрите в `документации <https://www.sphinx-doc.org/en/master/usage/configuration.html>`__.
-#. Произведите сборку: ``make html``
+#. Произведите сборку: ``make html`` или ``sphinx-build -D language=ru -b html . _build``
 #. Подробнее `здесь <https://www.sphinx-doc.org/en/master/usage/quickstart.html>`__.
 
 Так же существует возможность собрать PDF-файл или электронную книгу EPUB.
@@ -387,6 +387,7 @@ Markdown - популярный язык разметки.
 - Markor - популярный Markdown-редактор на Android: `GitHub <https://github.com/gsantner/markor>`__, `F-Droid <https://f-droid.org/packages/net.gsantner.markor>`__, `Google Play <https://play.google.com/store/apps/details?id=net.gsantner.markor>`__.
 - `Termux <https://termux.com/>`__ - a unix-like environment for Android, for git and python3.
 - `GitJournal <https://gitjournal.io/>`__ - mobile first Markdown Notes integrated with Git: `GitHub <https://github.com/GitJournal/GitJournal>`__, `Google Play <https://play.google.com/store/apps/details?id=io.gitjournal.gitjournal&pcampaignid=website>`__.
+- `MGit <https://manichord.com/projects/mgit.html>`__ is a Git client Android App: `GitHub <https://github.com/maks/MGit>`__, `Google Play <https://play.google.com/store/apps/details?id=com.manichord.mgit>`__, `F-Droid <https://f-droid.org/packages/com.manichord.mgit>`__.
 
 
 Как работать на iPhone
