@@ -136,6 +136,19 @@ Simon Brown тоже обратил внимание на тот факт, чт�
 В конце 90-х -- в начале 2000-х, когда ведущим умам архитектуры своего времени удалось достигнуть :ref:`пологого графика роста стоимости изменения (адаптации) кода, максимально приближенного к горизонтальной асимтоте <emacsway-agile-development>`, что открыло широкие возможности по удешевлению разработки путем :ref:`эмпирического (т.е. опытным путем) разрешения неопределенности <emacsway-adaptation>` (т.е. итеративно).
 Это означало, что стоимость реализации решения больше не зависело от момента его принятия, что позволило отказаться от заблаговременного проектирования и откладывать принятие решения до момента наибольшей полноты информированности, даже после частичной реализации продукта.
 
+Основной фокус архитектуры сместился с
+
+    📝 "Architecture is the decisions that you wish you could get right early in a project, but that you are not necessarily more likely to get them right than any other." -- Ralph Johnson
+
+на
+
+    📝 "A good architect pretends that the decision has not been made, and shapes the system such that those decisions can still be deferred or changed for 
+as long as possible. 
+
+    A good architect maximizes the number of decisions not made."
+
+    -- "Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin
+
 Маятник отклонился от Prediction к Adaptation с большим заносом.
 Хотя в то время уже были модели разработки того, что мы сегодня называем моделями масштабируемого Agile (RUP, MSF, RAD, FDD, Crystal Clear etc.), но они не занимали значительной части рынка.
 
@@ -233,4 +246,8 @@ Cм. также:
   - "Chapter 3 Agile Principles :: Balance Predictive Up-Front Work with Adaptive Just-in-Time Work"
 
 - "Succeeding with Agile: Software Development Using Scrum" by Mike Cohn, "Chapter 9 Technical Practices :: Design: intentional yet Emergent"
+
+- "`Software Architecture Guide <https://martinfowler.com/architecture/>`__" by Martin Fowler
+- "`Agile Software Guide <https://martinfowler.com/agile.html>`__" by Martin Fowler
+- "`The New Methodology :: Predictive versus Adaptive <https://www.martinfowler.com/articles/newMethodology.html#PredictiveVersusAdaptive>`__" by Martin Fowler
 
