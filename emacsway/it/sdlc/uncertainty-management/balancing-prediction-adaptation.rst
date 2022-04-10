@@ -142,8 +142,7 @@ Simon Brown тоже обратил внимание на тот факт, чт�
 
 на
 
-    📝 "A good architect pretends that the decision has not been made, and shapes the system such that those decisions can still be deferred or changed for 
-as long as possible. 
+    📝 "A good architect pretends that the decision has not been made, and shapes the system such that those decisions can still be deferred or changed for as long as possible. 
 
     A good architect maximizes the number of decisions not made."
 
