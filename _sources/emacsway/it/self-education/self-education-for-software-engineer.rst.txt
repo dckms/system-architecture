@@ -388,7 +388,7 @@ Bounded Context and Microservices
 
 Tools:
 
-- См. Context Map средствами Archi на диаграмме "Views : Tactical Architecture : Program Level : Context Map" of `Model <https://community.opengroup.org/archimate-user-community/home/-/issues/8>`__ used for presentation "Enterprise Architecture Modelling with ArchiMate in an Agile at Scale Programme":
+- См. Context Map средствами Archi на диаграмме "Views : Tactical Architecture : Program Level : Context Map" of `Model <https://community.opengroup.org/archimate-user-community/home/-/issues/8>`__ used for presentation "Enterprise Architecture Modelling with ArchiMate in an Agile at Scale Programme"
 - "`Context Mapping <https://github.com/ddd-crew/context-mapping>`__" by Nick Tune and DDD-Crew
 - "`Context Map Cheat Sheet <https://github.com/ddd-crew/ddd-starter-modelling-process#organise>`__" by Nick Tune and DDD-Crew
 - "`Context Map Cheat Sheet (Miro template) <https://miro.com/app/board/o9J_kqrI8ck=/>`__" by Nick Tune and DDD-Crew

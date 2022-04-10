@@ -1,5 +1,508 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0"><channel><title>System Architecture</title><link>https://dckms.github.io/system-architecture</link><description /><language>ru</language><copyright>2022, @dckms (&lt;a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow"&gt;License&lt;/a&gt;)</copyright><item><title>Как пользоваться</title><link>https://dckms.github.io/system-architecture/README.html</link><description>
+<rss version="2.0"><channel><title>System Architecture</title><link>https://dckms.github.io/system-architecture</link><description /><language>ru</language><copyright>2022, @dckms (&lt;a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow"&gt;License&lt;/a&gt;)</copyright><item><title>Что такое Agile Development</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/agile.html</link><description>
+&lt;span id="emacsway-agile-development"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#agile-development" id="id8"&gt;Что такое Agile Development&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id2" id="id9"&gt;Определение&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id10"&gt;История&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-agile-development-essence" id="id11"&gt;Суть&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-agile-development-difficulties" id="id12"&gt;О сложностях&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id9"&gt;Определение&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Agile development - software development approach based on &lt;a class="reference internal" href="../iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative&lt;/span&gt;&lt;/a&gt; development, frequent inspection and &lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;adaptation&lt;/span&gt;&lt;/a&gt;, and &lt;a class="reference internal" href="../incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental&lt;/span&gt;&lt;/a&gt; deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Scrum is, as the reader supposedly knows, an agile method.
+The agile family of development methods evolved from the old and well-known &lt;a class="reference internal" href="../iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative&lt;/span&gt;&lt;/a&gt; and &lt;a class="reference internal" href="../incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental&lt;/span&gt;&lt;/a&gt; life-cycle approaches.
+They were born out of a belief that an approach more grounded in human reality – and the product development reality of learning, innovation, and change – would yield better results."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Jeff Sutherland's Scrum Handbook" by Jeff Sutherland&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 ""Agile" methods actually can be applied within a variety of models.
+While Agile methods are common in executing an evolutionary lifecycle model, they can be used in other lifecycle models at various stages.
+What the methods have in common is an emphasis on continuous inspection and collaboration in the rapid production of working software in an environment where changes, including changes to requirements, are expected."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "As discussed in 5.4.2, the life cycle models used in agile projects are often highly &lt;a class="reference internal" href="../incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental&lt;/span&gt;&lt;/a&gt; and &lt;a class="reference internal" href="../evolutionary.html#emacsway-evolutionary-development"&gt;&lt;span class="std std-ref"&gt;evolutionary&lt;/span&gt;&lt;/a&gt;."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id10"&gt;История&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Agile является естественным следствием эволюции итеративной разработки, краткий обзор которой можно посмотреть в превосходной статье Craig Larman "&lt;a class="reference external" href="https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf"&gt;Iterative and Incremental Development: A Brief History&lt;/a&gt;".&lt;/p&gt;
+&lt;p&gt;Как уже говорилось ранее, итеративная модель разработки открывает широкие возможности для &lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;удешевления обработки неопределенности&lt;/span&gt;&lt;/a&gt;.
+Однако долгое время эти возможности оставались экономически нецелесообразными по причине быстрорастущего характера роста стоимости &lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Adaptation&lt;/span&gt;&lt;/a&gt;, приближющегося к экспоненциальному.
+При таком характере роста возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования (BDUF).&lt;/p&gt;
+&lt;div class="figure align-left" id="id6"&gt;
+&lt;a class="reference internal image-reference" href="../../../../../_images/exponential-cost-of-change.png"&gt;&lt;img alt="Figure 1. The cost of change rising exponentially over time. The image source is &amp;quot;Extreme Programming Explained&amp;quot; 1st edition by Kent Beck, &amp;quot;Chapter 5. Cost of Change&amp;quot;." src="../../../../../_images/exponential-cost-of-change.png" style="width: 90%;"/&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Figure 1. The cost of change rising exponentially over time. The image source is "Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 5. Cost of Change".&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Однако, в конце 1990-х - начале 2000-х, в архитектурном мире произошли существенные изменения - обрели массовую популярность высокоуровневые объектно-ориентированные языки, появились &lt;a class="reference internal" href="../../uncertainty-management/adaptation/software-design/patterns.html#emacsway-agile-patterns"&gt;&lt;span class="std std-ref"&gt;шаблоны&lt;/span&gt;&lt;/a&gt; и принципы проектирования, методики управления сложностью (ROM, POSA, GOF, OOAD, &lt;a class="reference internal" href="../../uncertainty-management/adaptation/software-design/solid.html#emacsway-agile-solid"&gt;&lt;span class="std std-ref"&gt;SOLID&lt;/span&gt;&lt;/a&gt;, Use Case Driven Approach, Object-Oriented Software Construction etc.), появились &lt;a class="reference internal" href="../../../tdd/tdd.html#emacsway-tdd"&gt;&lt;span class="std std-ref"&gt;TDD&lt;/span&gt;&lt;/a&gt;, Refactoring и т.п.&lt;/p&gt;
+&lt;p&gt;Унификация знаний в области архитектуры, переход ментального оперирования на элементы унифицированных шаблонных конструкций более высокого уровня абстракции, позволили сократить когнитивную и коммуникативную нагрузку на разработчика, уменьшить порог вхождения в новый проект, смягчить негативное воздействие &lt;a class="reference internal" href="../../../team-topologies/harlan-mills%27-proposal.html#emacsway-brooks-s-law"&gt;&lt;span class="std std-ref"&gt;Закона Брукса&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Рост количественных изменений привел к изменениям качественным - ведущим умам архитектуры своего времени удалось снизить характер роста стоимости адаптации вплоть до пологого графика, максимально приближенного к горизонтальной асимптоте.
+Это означало, что стоимость реализации решения больше не зависело от момента его принятия, что позволило отказаться от заблаговременного проектирования и откладывать принятие решения до момента наибольшей полноты информированности, даже после частичной реализации продукта.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "What would we do if all that investment paid off?
+What if all that work on languages and databases and whatnot actually got somewhere?
+What if the cost of change didn't rise exponentially overtime, but rose much more slowly, &lt;strong&gt;eventually reaching an asymptote&lt;/strong&gt;?
+What if tomorrow's software engineering professor draws Figure 3 on the board?"&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 5. Cost of Change"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;div class="figure align-left" id="id7"&gt;
+&lt;a class="reference internal image-reference" href="../../../../../_images/flatten-cost-of-change.png"&gt;&lt;img alt="Figure 3. The cost of change may not rise dramatically over time. The image source is &amp;quot;Extreme Programming Explained&amp;quot; 1st edition by Kent Beck, &amp;quot;Chapter 5. Cost of Change&amp;quot;." src="../../../../../_images/flatten-cost-of-change.png" style="width: 90%;"/&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Figure 3. The cost of change may not rise dramatically over time. The image source is "Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 5. Cost of Change".&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Что такое асимтота, можно посмотреть в "§284 Асимтоты" Справочника по высшей математике / М.Я. Выгодский:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Прямая АВ называется асимптотой линии L, если расстояние МК (черт. 297) от точки М линии L до прямой АВ стремится к нулю при удалении точки М в бесконечность."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Справочник по высшей математике" / М.Я. Выгодский&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;В нашем случае, нас интересует Асимптоты, параллельная оси абсцисс (там же):&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Для разыскания горизонтальных асимптот линии y = f(х) ищем пределы f(х) при х -&amp;gt; +∞ и при х -&amp;gt; -∞. Если lim х-&amp;gt;∞ f(x) = b, то прямая у = b - асимптота (при бесконечном удалении вправо; черт. 299)."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Справочник по высшей математике" / М.Я. Выгодский&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="emacsway-agile-development-essence"&gt;
+&lt;span id="id4"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id11"&gt;Суть&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Вся суть Agile (итеративной) модели разработки была лаконично и метко выражена Кент Беком всего одним предложением:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Сделайте изменение легким, а потом делай легко изменение.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Make the change easy then make the easy change.&lt;/strong&gt;"&lt;/p&gt;
+&lt;p class="attribution"&gt;—Kent Beck, "&lt;a class="reference external" href="https://youtu.be/3gib0hKYjB0?t=2662"&gt;Continued Learning: The Beauty of Maintenance - Kent Beck - DDD Europe 2020&lt;/a&gt;"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;Thanks to Vladik Khononov for &lt;a class="reference external" href="https://youtu.be/ybYtgII151g?t=9808"&gt;https://youtu.be/ybYtgII151g?t=9808&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Невероятный талант Kent Beck объяснять сложные вещи простым языком.
+Именно об этом я говорил в статье "&lt;a class="reference internal" href="../../../../soft-skills/learning.html#emacsway-learning-in-psychology"&gt;&lt;span class="std std-ref"&gt;Кристаллизация знаний. Как читать и не превратиться в коллекционера информации.&lt;/span&gt;&lt;/a&gt;".
+И это при необычайной эрудированности Kent Beck. Cписок использованной литературы в его книгах просто ошеломляет.&lt;/p&gt;
+&lt;p&gt;Более развернутый вариант его фразы:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "At the core of understanding this argument is the software change curve.
+The change curve says that as the project runs, it becomes exponentially more expensive to make changes.
+The change curve is usually expressed in terms of phases "a change made in analysis for $1 would cost thousands to fix in production".
+This is ironic as most projects still work in an ad-hoc process that doesn't have an analysis phase, but the exponentiation is still there.
+&lt;strong&gt;The exponential change curve means that evolutionary design cannot possibly work.&lt;/strong&gt;
+It also conveys why planned design must be done carefully because any mistakes in planned design face the same exponentiation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The fundamental assumption underlying XP is that it is possible to flatten the change curve enough to make evolutionary design work.&lt;/strong&gt;
+This flattening is both enabled by XP and exploited by XP.
+This is part of the coupling of the XP practices: specifically &lt;strong&gt;you can't do those parts of XP that exploit the flattened curve without doing those things that enable the flattening.&lt;/strong&gt;
+This is a common source of the controversy over XP.
+Many people criticize the exploitation without understanding the enabling.
+Often the criticisms stem from critics' own experience where they didn't do the enabling practices that allow the exploiting practices to work.
+As a result they got burned and when they see XP they remember the fire."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/articles/designDead.html"&gt;Is Design Dead?&lt;/a&gt;" by M.Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "&lt;strong&gt;Именно это является одной из предпосылок ХР&lt;/strong&gt;.
+&lt;strong&gt;Это техническая предпосылка ХР.&lt;/strong&gt;
+[в оригинальном переводе: &lt;em&gt;Именно это является одним из основных предположений ХР. Это техническое предположение ХР.&lt;/em&gt;]
+Если стоимость внесения в систему изменений со временем растет достаточно медленно, стратегия разработки программы должна быть совершенно другой, отличной от той, которая используется в случае, если стоимость внесения в систему изменений со временем растет экспоненциально.
+В подобной ситуации вы можете откладывать решение важных задач на более поздние сроки.
+Вы получаете возможность принимать важные решения настолько поздно, насколько это возможно.
+Это делается для того, чтобы осуществлять связанные с этим затраты как можно позже.
+Кроме того, если вы откладываете решение важных вопросов на более поздний срок, тем самым вы повышаете вероятность того, что выбранное вами решение окажется правильным.
+Другими словами, сегодня вы должны реализовать только то, без чего сегодня не обойтись, при этом вы можете рассчитывать на то, что проблемы, решение которых вы отложили до завтра, развеются сами собой, то есть перестанут быть актуальными.
+Вы можете добавлять в дизайн новые элементы только в случае, если эти новые элементы упрощают код или делают написание следующего фрагмента кода более простым.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Если пологая кривая роста затрат делает ХР возможным, то экспоненциальная кривая роста затрат делает ХР невозможным.&lt;/strong&gt;
+Если изменение обойдется вам в кругленькую сумму, вы сойдете с ума, пытаясь предугадать, каким образом это изменение повлияет на работу системы.
+Если же изменение обходится вам дешево, вы всегда можете рискнуть и проверить, что будет, если вы тем или иным образом измените код, — позже вы всегда можете изменить систему так, как это будет лучше.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This is one of the premises of XP. It is the technical premise of XP.&lt;/strong&gt;
+If the cost of change rose slowly over time, you would act completely differently from how you do under the assumption that costs rise exponentially.
+You would make big decisions as late in the process as possible, to defer the cost of making the decisions and to have the greatest possible chance that they would be right.
+You would only implement what you had to, in hopes that the needs you anticipate for tomorrow wouldn't come true.
+You would introduce elements to the design only as they simplified existing code or made writing the next bit of code simpler.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If a flattened change cost curve makes XP possible, a steep change cost curve makes XP impossible.&lt;/strong&gt;
+If change is ruinously expensive, you would be crazy to charge ahead without careful forethought.
+But if change stays cheap, the additional value and reduced risk of early concrete feedback outweighs the additional cost of early change."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 5. Cost of Change", перевод ООО Издательство "Питер"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Поскольку это было произнесено еще до встречи 2001 года и принятия Agile Manifesto, то под XP следует понимать Agile (или даже любую итератиную модель разработки) в принципе, поскольку XP - это частный случай Agile.&lt;/p&gt;
+&lt;p&gt;Иными словами, внутреннее качество программы является первичным условием в Agile, как и в любой другой итеративной разработке.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Engineers who don't understand exponential growth and the cost curve as economies of scale kick in come to wildly incorrect conclusions."&lt;/p&gt;
+&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://twitter.com/KentBeck/status/1402276528910704655?s=19"&gt;Kent Beck&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Continuous attention to technical excellence and good design enhances agility."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="http://agilemanifesto.org/principles.html"&gt;Principles behind the Agile Manifesto&lt;/a&gt;"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "The incremental and iterative nature of Agile development can facilitate &lt;strong&gt;efficient technical and management processes and practices to reduce the cost associated with change&lt;/strong&gt;.
+In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;При соблюдении этого условия, использование &lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Adaptation&lt;/span&gt;&lt;/a&gt; обретает экономическую целесообразность:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Responding to change over following a plan"&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="http://agilemanifesto.org/"&gt;Manifesto for Agile Software Development&lt;/a&gt;"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="http://agilemanifesto.org/principles.html"&gt;Principles behind the Agile Manifesto&lt;/a&gt;"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;О том, почему я обратился к высказываю Kent Beck в этом вопросе, неплохо поясняет Martin Fowler:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Extreme Programming (XP) is a software development methodology developed primarily by Kent Beck.
+XP was one of the first agile methods, indeed XP was the dominant agile method in the late 90s and early 00s before Scrum became dominant as the noughties passed.
+Many people (including myself) consider XP to be the primary catalyst that got attention to agile methods, and superior to Scrum as a base for starting out in agile development."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/bliki/ExtremeProgramming.html"&gt;Extreme Programming&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="emacsway-agile-development-difficulties"&gt;
+&lt;span id="id5"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id12"&gt;О сложностях&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Вернемся еще раз к выражению Kent Beck "&lt;em&gt;сделайте изменение легким, а потом делай легко изменение&lt;/em&gt;".
+Оно состоит из двух частей, причем, первая из них предшествует второй.
+Как раз именно первую часть нередко забывают сделать на современном рынке, а без первой части вторая часть работает не будет, как это нетрудно догадаться.
+Так недалеко и до полного Уроборос.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Scrum is ok if you do it right."&lt;/p&gt;
+&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://youtu.be/0oGpWmS0aYQ?t=921"&gt;OOP 2015 Keynote - Robert C. Martin ("Uncle Bob"): Agility and Architecture at 15:21&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "One pattern I see time and time again on software teams is that they adopt Scrum, pay little attention to technical practices, and they're able to consistently increase their velocity for the first few years.
+But after about three or four years the technical debt they've accumulated in their code is so great that their velocity starts to grind to a halt and they find it difficult to even get simple features implemented.
+This is a place you do not want to get to, though I see it far too often in the software community—teams stuck there without a clue how to get out."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://www.agilealliance.org/how-to-increase-velocity/"&gt;How to Increase Velocity&lt;/a&gt;" by David Bernstein&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Происходит это во многом потому, что:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Я узнал от Jeff Sutherland, что первый Scrum на самом деле использовал все XP практики.
+Но Ken Schwaber убедил его оставить инженерные практики за рамками Scrum, чтобы упростить модель и позволить командам брать на себя ответственность за выбор тех или иных практик.
+Возможно, это ускорило распространение Scrum, но с другой стороны многие команды страдают из-за отсутствия технических практик, позволяющих поддерживать постоянный темп гибкой разработки.&lt;/p&gt;
+&lt;p&gt;I learned from Jeff Sutherland that the first Scrum actually did all the XP practices.
+But Ken Schwaber convinced him to leave the engineering practices out of Scrum, to keep the model simple and let the teams take responsibility for the tech practices themselves.
+Perhaps this helped spread Scrum faster, but the downside is that a lot of teams suffer because they lack the technical practices that enable sustainable agile development."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Scrum and XP from the Trenches: How We Do Scrum" 2nd edition by Henrik Kniberg, перевод под редакцией Алексея Кривицкого&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Последнее предложение приведенной выше цитаты выражает то же самое, но другими словами.
+А ведь еще в 2004 г., в книге "Agile Project Management with Scrum" by Ken Schwaber, Scrum назывался методологий.&lt;/p&gt;
+&lt;p&gt;Позвольте еще раз повторить слова Kent Beck:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "If a flattened change cost curve makes XP possible, a steep change cost curve makes XP impossible."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Extreme Programming Explained" 1st edition by Kent Beck&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Impossible. Точка.&lt;/p&gt;
+&lt;p&gt;Если говорить более развернуто, то, конечно же, это не совсем "Impossible", просто это становится экономически нецелесообразным, поскольку при быстрорастущем графике изменения кода возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "To make agile work, you need solid technical practices.
+A lot of agile education under-emphasizes these, but if you skimp on this you won't gain the productivity and responsiveness benefits that agile development can give you (stranding you at level 1 of the agile fluency model.)
+This is one of the reasons that I still think that Extreme Programming is the most valuable of the named agile methods as a core and starting point."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/agile.html"&gt;Agile Software Development&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "We need to stress that you shouldn't worry too much about the issue of reworking.
+&lt;strong&gt;XP's practices are all about reducing the cost of reworking to manageable levels.&lt;/strong&gt;
+If you find yourself in a situation &lt;strong&gt;where the cost of reworking is prohibitive, then you should either not use XP or you should use an environment that makes rework easier&lt;/strong&gt;."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Planning Extreme Programming" by Kent Beck, Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Этому вопросу посвящена статья "&lt;a class="reference external" href="https://martinfowler.com/articles/designDead.html"&gt;Is Design Dead?&lt;/a&gt;" by Martin Fowler.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "In its common usage, evolutionary design is a disaster.
+The design ends up being the aggregation of a bunch of ad-hoc tactical decisions, each of which makes the code harder to alter.
+In many ways you might argue this is no design, certainly it usually leads to a poor design.
+As Kent puts it, &lt;strong&gt;design is there to enable you to keep changing the software easily in the long term.&lt;/strong&gt;
+&lt;strong&gt;As design deteriorates, so does your ability to make changes effectively.&lt;/strong&gt;
+You have the state of software entropy, over time the design gets worse and worse.
+Not only does this make the software harder to change, it also makes bugs both easier to breed and harder to find and safely kill.
+This is the "code and fix" nightmare, where the bugs become exponentially more expensive to fix as the project goes on."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/articles/designDead.html"&gt;Is Design Dead?&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "If you're a manager or customer how can you tell if the software is well designed?
+It matters to you because poorly designed software will be more expensive to modify in the future."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/articles/designDead.html"&gt;Is Design Dead?&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;И очень удачно по этому вопросу высказался Grady Booch:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Grady Booch has also provided a set of guidelines for an agile architecture (which in turn imply some duties for the agile architect).
+Booch claims that all good software-intensive architectures are agile.
+What does he mean by this? He means that a successful architecture is resilient and loosely coupled.
+It is composed of a core set of well-reasoned design decisions but still contains some "wiggle room" that allows modifications to be made and refactorings to be done, without ruining the original structure.&lt;/p&gt;
+&lt;p&gt;Booch also notes that an effective agile process will allow the architecture to grow incrementally as the system is developed and matures.
+The key to success is to have decomposability, separation of concerns, and near-independence of the parts.
+(Sound familiar? These are all modifiability tactics.)&lt;/p&gt;
+&lt;p&gt;Finally, Booch notes that to be agile, the architecture should be visible and self-evident in the code; this means making the design patterns, cross-cutting concerns, and other important decisions obvious, well communicated, and defended.
+This may, in turn, require documentation.
+But whatever architectural decisions are made, the architect must make an effort to "socialize" the architecture."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "After all software is supposed to be soft."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://www.martinfowler.com/articles/newMethodology.html"&gt;The New Methodology&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;div class="admonition seealso"&gt;
+&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Что такое Adaptation&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../uncertainty-management/prediction/prediction.html#emacsway-prediction"&gt;&lt;span class="std std-ref"&gt;Что такое Prediction&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../uncertainty-management/balancing-prediction-adaptation.html#emacsway-balancing-prediction-adaptation"&gt;&lt;span class="std std-ref"&gt;Balancing Prediction/Adaptation&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="analysis/concerns/balancing-business-technical-concerns.html#emacsway-agile-business-concerns-predominance"&gt;&lt;span class="std std-ref"&gt;Преобладание бизнес-интересов&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../uncertainty-management/adaptation/software-design/software-design.html"&gt;&lt;span class="doc"&gt;Role of Software Design in Agile&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../uncertainty-management/adaptation/crash-course-in-software-development-economics.html"&gt;&lt;span class="doc"&gt;Краткий курс по экономике разработки программного обеспечения&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description><pubDate>Sun, 10 Apr 2022 00:00:00 </pubDate></item><item><title>Balancing Prediction/Adaptation</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/balancing-prediction-adaptation.html</link><description>
+&lt;span id="emacsway-balancing-prediction-adaptation"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#balancing-prediction-adaptation" id="id3"&gt;Balancing Prediction/Adaptation&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#open-agile-architecture-standard-by-the-open-group" id="id4"&gt;Open Agile Architecture™ Standard by The Open Group&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#prediction-adaptation" id="id5"&gt;Эволюционный маятник баланса Prediction/Adaptation&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#prediction-adaptation-adaptation" id="id6"&gt;Занос маятника Prediction/Adaptation в сторону Adaptation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#prediction-adaptation-prediction" id="id7"&gt;Отскок маятника Prediction/Adaptation назад к Prediction&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#alberto-brandolini-about-prediction-adaptation" id="id8"&gt;Alberto Brandolini about Prediction/Adaptation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Scrum projects do not have an up-front analysis or design phase; all work occurs within the repeated cycle of sprints.
+This does not mean, however, that design on a Scrum project is not intentional.
+An intentional design process is one in which the design is guided through deliberate, conscious decision making.
+The difference on a Scrum project is not that intentional design is thrown out, but that it is done (like everything else on a Scrum project) incrementally.
+Scrum teams acknowledge that as nice as it might be to make all design decisions up front, doing so is impossible.
+This means that on a Scrum project, design is both intentional and emergent.&lt;/p&gt;
+&lt;p&gt;A big part of an organization's becoming agile is finding the appropriate balance between anticipation and adaptation (Highsmith 2002).
+Figure 9.2 shows this balance along with activities and artifacts that influence the balance.
+When doing up-front analysis or design, we are attempting to anticipate users' needs.
+Because we cannot perfectly anticipate these, we will make some mistakes; some work will need to be redone.
+When we forgo analysis and design and jump immediately into coding and testing with no forethought at all, we are trying to adapt to users' needs.
+All projects of interest will be positioned somewhere between anticipation and adaptation based on their own unique characteristics; no application will be all the way to either extreme.
+A life-critical, medical safety application may be far to the anticipation side.
+A three-person startup company building a website of information on kayak racing may be far toward the side of adaptation.&lt;/p&gt;
+&lt;p&gt;Foretelling the agile preference for simplicity, in 1990, was speaker and author Do-While Jones.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;I'm not against planning for the future.
+Some thought should be given to future expansion of capability.
+But when the entire design process gets bogged down in an attempt to satisfy future requirements that may never materialize, then it is time to stop and see if there isn't a simpler way to solve the immediate problem.&lt;/p&gt;
+&lt;p class="attribution"&gt;—Jones' 1990 article, "The Breakfast Food Cooker," remains a classic parable of what can go wrong when software developers over-design a solution. I highly recommended reading it at &lt;a class="reference external" href="http://www.ridgecrest.ca.us/~do_while/toaster.htm"&gt;http://www.ridgecrest.ca.us/~do_while/toaster.htm&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Scrum teams avoid this "bogging down" by realizing that not all future needs are worth worrying about today. Many future needs may be best handled by planning to adapt as they arise."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Succeeding with Agile: Software Development Using Scrum" by Mike Cohn&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;div class="figure align-left" id="id2"&gt;
+&lt;a class="reference internal image-reference" href="../../../../_images/fig-9.2-balancing-anticipation-adaptation.png"&gt;&lt;img alt="FIGURE 9.2 Achieving a balance between anticipation and adaptation involves balancing the inﬂuence of the activities and artifacts on each side. The image source is &amp;quot;Succeeding with Agile: Software Development Using Scrum&amp;quot; by Mike Cohn" src="../../../../_images/fig-9.2-balancing-anticipation-adaptation.png" style="width: 90%;"/&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;FIGURE 9.2 Achieving a balance between anticipation and adaptation involves balancing the inﬂuence of the activities and artifacts on each side. The image source is "Succeeding with Agile: Software Development Using Scrum" by Mike Cohn&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 McConnell writes, "In ten years the pendulum has swung from 'design everything' to 'design nothing.'
+But the alternative to BDUF [Big Design Up Front] isn't no design up front, it's a Little Design Up Front (LDUF) or Enough Design Up Front (ENUF)."
+This is a strawman argument.
+The alternative to designing before implementing is designing after implementing.
+Some design up-front is necessary, but just enough to get the initial implementation.
+Further design takes place once the implementation is in place and the real constraints on the design are obvious.
+Far from "design nothing," the XP strategy is "design always."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Extreme Programming Explained" 2nd edition by Kent Beck&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "From the very earliest days of agile methods, people have asked what role there is for architectural or design thinking.
+A common misconception is that since agile methods drop the notion of a detailed up-front design artifact, that there is no room for architecture in an agile project.
+In my keynote at the first-ever agile conference, I pointed out that design was every bit as important for agile projects, but it manifests itself differently, becoming an evolutionary approach."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/agile.html"&gt;Agile Software Development&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "The incremental and iterative nature of Agile development can facilitate efficient technical and management processes and practices to reduce the cost associated with change.
+In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Agile" methods actually can be applied within a variety of models.
+While Agile methods are common in executing an evolutionary lifecycle model, they can be used in other lifecycle models at various stages.
+What the methods have in common is an emphasis on continuous inspection and collaboration in the rapid production of working software in an environment where changes, including changes to requirements, are expected.&lt;/p&gt;
+&lt;p class="attribution"&gt;—"ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;div class="section" id="open-agile-architecture-standard-by-the-open-group"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;Open Agile Architecture™ Standard by The Open Group&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Глава "&lt;a class="reference external" href="https://pubs.opengroup.org/architecture/o-aa-standard/architecture-development.html#_architecture_development_styles"&gt;4.5. Architecture Development Styles&lt;/a&gt;" стандарта посвящена поиску баланса между "&lt;a class="reference external" href="https://pubs.opengroup.org/architecture/o-aa-standard/architecture-development.html#_intentional_architecture_2"&gt;4.5.2. Intentional Architecture&lt;/a&gt;" и "&lt;a class="reference external" href="https://pubs.opengroup.org/architecture/o-aa-standard/architecture-development.html#emergence"&gt;4.5.1. Emergence Architecture&lt;/a&gt;".&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="prediction-adaptation"&gt;
+&lt;span id="emacsway-balancing-prediction-adaptation-pendulum-swinging"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id5"&gt;Эволюционный маятник баланса Prediction/Adaptation&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;В 2021 году большую популярность обрела статья, освещавшая назревшие в индустрии вопросы относительно поиска баланса Prediction/Adaptation:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://threedots.tech/post/software-dark-ages/"&gt;Software Dark Ages&lt;/a&gt;" by Robert Laszczak&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://habr.com/ru/company/cian/blog/569940/"&gt;Темные века разработки программного обеспечения&lt;/a&gt;" by Robert Laszczak, перевод Евгения Пешкова&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Simon Brown тоже обратил внимание на тот факт, что на современном рынке маятник Prediction/Adaptation качнулся в сторону Prediction (анализ и проектирование) от Adaptation (преобладающий принцип Single-Team Agile):&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Even just a few years ago, "software architecture" was not a topic that people were interested in ... "because agile". Times are changing?"&lt;/p&gt;
+&lt;p class="attribution"&gt;—2021-12-23, &lt;a class="reference external" href="https://t.co/ipu5HpS1C4"&gt;https://t.co/ipu5HpS1C4&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;В 2000-м Tom DeMarco и Camden, Maine писали:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "In On War, Carl von Clausewitz tells us that military history is a pendulum swinging back and forth between the relative advantages of armor and of mobility.
+The knights in shining armor were able to dominate any knight without, but they were no match for the quick, nearly naked pony warriors that swept across the plains with Genghis Kahn and his Mongols.
+Light cavalry itself was doomed as soon as there were tanks, and tanks were no match for fleet-footed Palestinian teenagers with Sagger missiles.
+With the Maginot Line, the French were gambling that the pendulum had swung again toward armor, but it hadn't, and the Germans simply went around it.&lt;/p&gt;
+&lt;p&gt;In the field of IT, we are just emerging from a time in which armor (process) has been king.
+And now we are moving into a time when only mobility matters.
+Building a product the right way still sounds like a laudable goal, but—let's face it—what really matters today is building it fast.
+Because we are process-obsessed in our field, we have tended to react to this new imperative as we reacted to the imperatives thrust upon us in the 1980s and 1990s.
+We have asked, "What shall we add to our process to deal with this new situation?"&lt;/p&gt;
+&lt;p class="attribution"&gt;—Foreword of "Planning Extreme Programming" by Kent Beck, Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;div class="section" id="prediction-adaptation-adaptation"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id6"&gt;Занос маятника Prediction/Adaptation в сторону Adaptation&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Можно заметить, что на рубеже 2000 года, &lt;a class="reference internal" href="../models/agile/agile.html#emacsway-agile-development"&gt;&lt;span class="std std-ref"&gt;маятник Prediction/Adaptation максимально отклонился в сторону Adaptation&lt;/span&gt;&lt;/a&gt;, зачастую минимизируя долю Prediction до минималистичного набора практик - PBR, Spike, Planning.
+Этому способствовало радикальное снижение стоимости Adaptation в те годы, благодаря росту популярности OOP, &lt;a class="reference internal" href="adaptation/software-design/patterns.html#emacsway-agile-patterns"&gt;&lt;span class="std std-ref"&gt;шаблонов&lt;/span&gt;&lt;/a&gt; проектирования и принципов проектирования, методик управления сложностью (ROM, POSA, GOF, OOAD, &lt;a class="reference internal" href="adaptation/software-design/solid.html#emacsway-agile-solid"&gt;&lt;span class="std std-ref"&gt;SOLID&lt;/span&gt;&lt;/a&gt;, Use Case Driven Approach, Object-Oriented Software Construction etc.), &lt;a class="reference internal" href="../../tdd/tdd.html#emacsway-tdd"&gt;&lt;span class="std std-ref"&gt;TDD&lt;/span&gt;&lt;/a&gt;, Refactoring и т.д.&lt;/p&gt;
+&lt;p&gt;В конце 90-х — в начале 2000-х, когда ведущим умам архитектуры своего времени удалось достигнуть &lt;a class="reference internal" href="../models/agile/agile.html#emacsway-agile-development"&gt;&lt;span class="std std-ref"&gt;пологого графика роста стоимости изменения (адаптации) кода, максимально приближенного к горизонтальной асимтоте&lt;/span&gt;&lt;/a&gt;, что открыло широкие возможности по удешевлению разработки путем &lt;a class="reference internal" href="adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;эмпирического (т.е. опытным путем) разрешения неопределенности&lt;/span&gt;&lt;/a&gt; (т.е. итеративно).
+Это означало, что стоимость реализации решения больше не зависело от момента его принятия, что позволило отказаться от заблаговременного проектирования и откладывать принятие решения до момента наибольшей полноты информированности, даже после частичной реализации продукта.&lt;/p&gt;
+&lt;p&gt;Основной фокус архитектуры сместился с&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Architecture is the decisions that you wish you could get right early in a project, but that you are not necessarily more likely to get them right than any other." — Ralph Johnson&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;на&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "A good architect pretends that the decision has not been made, and shapes the system such that those decisions can still be deferred or changed for as long as possible.&lt;/p&gt;
+&lt;p&gt;A good architect maximizes the number of decisions not made."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Маятник отклонился от Prediction к Adaptation с большим заносом.
+Хотя в то время уже были модели разработки того, что мы сегодня называем моделями масштабируемого Agile (RUP, MSF, RAD, FDD, Crystal Clear etc.), но они не занимали значительной части рынка.&lt;/p&gt;
+&lt;p&gt;Так же, как во времена роста популярности OOP, "Switch-Case Statement" считался Code Smell, дабы стимулировать продвижение OOP в массы (об этом признается M.Fowler во втором издании книги Refactoring), в начале 2000-х значение заблаговременного анализа и проектирования (Prediction) нередко принебрегалось, дабы подчеркнуть превосходство эмпирического способа разрешения неопределенности (Adaptation) и стимулировать продвижение этой идеи в массы.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="prediction-adaptation-prediction"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id7"&gt;Отскок маятника Prediction/Adaptation назад к Prediction&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Однако, в статье мы наблюдаем, что маятник пошел в обратном направлении:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "пять дней кодинга может сэкономить день планирования&lt;/p&gt;
+&lt;p&gt;With 5 days of coding, you can save 1 day of planning"&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://threedots.tech/post/software-dark-ages/"&gt;Software Dark Ages&lt;/a&gt;" by Robert Laszczak, перевод Евгения Пешкова&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;При этом, в статье очень вяло и вскользь говорится о снижении стоимости Adaptation:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Если вам нужно реализовать что-то "на будущее", потому что позже будет сложнее добавить это, – это очень плохой знак.
+Вам следует подумать о том, как упростить позднее добавление.&lt;/p&gt;
+&lt;p&gt;If you need to implement something "for the future" because it will be harder to add it later – that's a very bad sign.
+You should think about how to make it easy to add it later."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://threedots.tech/post/software-dark-ages/"&gt;Software Dark Ages&lt;/a&gt;" by Robert Laszczak, перевод Евгения Пешкова&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Что это? Бунт против Agile? Против заветов Eric Evans?&lt;/p&gt;
+&lt;p&gt;Причин здесь две.&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p&gt;Проекты стали сложнее, а команды стали больше, нежели они были 20 лет назад.
+Cредний проект стал слишком большим для Single-Team Agile, а стоимость Adaptation нарастает со значительным опережением роста численности коллектива.&lt;/p&gt;
+&lt;p&gt;Это вынуждает &lt;a class="reference internal" href="../../team-topologies/harlan-mills%27-proposal.html#emacsway-harlan-mills-proposal"&gt;&lt;span class="std std-ref"&gt;сместить баланс Prediction/Adaptation назад, в сторону Prediction&lt;/span&gt;&lt;/a&gt;.
+Интерес к Prediction-методам обработки неопределенности начал возвращаться.
+На первое место вышли вопросы достижения автономности команд и интеграции производимых ими системных инкрементов.
+Архитектура стала обретать социальное значение.&lt;/p&gt;
+&lt;p&gt;И здесь мы наблюдаем воскрешение старых принципов, которые были хорошо известны в RUP, MSF, RAD, FDD, Crystal Clear etc.
+На базе старых моделей масштабируемой итеративной разработки появились новые (SAFe, DAD, LESS etc.).
+Дело в том, что в старые времена Scaled Agile хоть и был не таким частым явлением, как сегодня, да и не назывался вовсе Agile, но он все-таки существовал в немногочисленных крупных корпорациях, т.к. они уже тогда столкнулись с теми проблемами, которые обрели массовость примерно к 2010 году.
+Например, многие идеи популярной книги "Team Topologies", которые сегодня создают "вау-эффект", были описаны, еще в RAD.&lt;/p&gt;
+&lt;p&gt;Обратите внимание на тот факт, что это совпало хронологически со взрывным ростом интереса к микросервисной архитектурой и DDD, поскольку они также отвечали на главный вызов своего времени - стремительной рост размера среднего проекта и среднего коллектива.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Начали появляться новые, более легковесные и экономичные методики анализа и проектирования (Event Storming/Modeling, Domain Storytelling, Impact Mapping, Example Mapping, Design Thinking etc.).
+Prediction стал дешевле, что позволило увеличить его долю, оставаясь в прежних пределах его экономической целесообразности.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Изменился контекст разработки, и сегодня в индустрии принципы Single-Team Agile зачастую стали не ускорять, а замедлять разработку.
+Это качнуло маятник назад, в сторону Prediction.&lt;/p&gt;
+&lt;p&gt;Многие старые идеи Scaled Agile реинкарнировали в современные итеративные модели разработки, такие как DAD и SAFe.&lt;/p&gt;
+&lt;p&gt;Начали появляться способы интеграции &lt;a class="reference internal" href="../../team-topologies/harlan-mills%27-proposal.html#emacsway-program-management"&gt;&lt;span class="std std-ref"&gt;Program Management&lt;/span&gt;&lt;/a&gt; (т.е. организации процессов Prediction) в даже самые легковесные Scaled Agile Frameworks, такие как Nexus by Ken Schwaber.&lt;/p&gt;
+&lt;p&gt;А в основе лежит все та же идея "&lt;a class="reference internal" href="../../team-topologies/harlan-mills%27-proposal.html#emacsway-harlan-mills-proposal"&gt;&lt;span class="std std-ref"&gt;Метода Хирурга&lt;/span&gt;&lt;/a&gt;" Харлана Миллза, который младше Закона Конвея всего на три года.&lt;/p&gt;
+&lt;p&gt;Разные модели предлагают разное соотношение Prediction/Adaptation, например, в SAFe доля Prediction больше, чем в Nexus, а в RUP - еще больше. Важно уметь грамотно выбирать модель под потребности конкретного проекта.
+Grady Booch даже назвал &lt;a class="reference internal" href="../sdlc-reference.html#emacsway-sdlc-literature"&gt;&lt;span class="std std-ref"&gt;качество управления моделью жизненного цикла разработки критическим условием успешности проекта&lt;/span&gt;&lt;/a&gt;.
+А поскольку модель SDLC призвана решать проблему управления неопределенностью требований, то &lt;a class="reference external" href="https://itabok.iasaglobal.org/itabok3_0/architecture-methodologies-and-frameworks/"&gt;выбор модели становится архитектурной задачей&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Здесь Prediction сфокусирован, главным образом, на разрешении неопределенности в problem-space (т.е. требований), что влияет на выбор SDLC-модели.
+За разрешение неопределенности в solution-space на уровне Implementation и Software Design отвечает принцип &lt;a class="reference internal" href="adaptation/software-construction/yagni.html#emacsway-yagni"&gt;&lt;span class="std std-ref"&gt;YAGNI&lt;/span&gt;&lt;/a&gt;, целью которого является само снижение стоимости Adaptation.&lt;/p&gt;
+&lt;p&gt;О том, как интегрировать активности по анализу и проектированию в Agile-модель разработки, см. также в разделе &lt;a class="reference internal" href="../../team-topologies/harlan-mills%27-proposal.html#emacsway-program-management"&gt;&lt;span class="std std-ref"&gt;Program Management&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="alberto-brandolini-about-prediction-adaptation"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id8"&gt;Alberto Brandolini about Prediction/Adaptation&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Автор раздела: Андрей Ганичев&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Андрей Ганичев, contributor of "&lt;a class="reference external" href="https://github.com/kgrzybek/modular-monolith-with-ddd"&gt;Full Modular Monolith application with Domain-Driven Design approach&lt;/a&gt;", на тему поиска баланса Prediction/Adaptation:&lt;/p&gt;
+&lt;p&gt;Когда читал книгу Брандолини про "&lt;a class="reference external" href="https://leanpub.com/introducing_eventstorming"&gt;Introducing EventStorming: An act of Deliberate Collective Learning&lt;/a&gt;" by Alberto Brandolini (та которая недописанная), обратил внимание что и он вскользь проходит по этой теме.&lt;/p&gt;
+&lt;p&gt;Глава Pretending to solve the problem writing software, раздел Embrace Change:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "...iterative development is expensive. It is the best approach for developing software in very complex, and lean-demanding domains. However, the initial starting point matters, a lot. A big refactoring will cost a lot more than iterative fine tuning (think splitting a database, vs renaming a variable). So I'll do everything possible to start iterating from the most reasonable starting point."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://leanpub.com/introducing_eventstorming"&gt;Introducing EventStorming: An act of Deliberate Collective Learning&lt;/a&gt;" by Alberto Brandolini&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "Upfront is a terrible word in the agile jargon. It recalls memories the old times analysis phase in the worst corporate waterfall. Given this infamous legacy, the word has been banned from agile environments like blasphemy. But unfortunately ...there's always something upfront. Even the worst developer thinks before typing the firs line of code."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://leanpub.com/introducing_eventstorming"&gt;Introducing EventStorming: An act of Deliberate Collective Learning&lt;/a&gt;" by Alberto Brandolini&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Cм. также:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;"Essential Scrum: A Practical Guide to the Most Popular Agile Process" by Kenneth Rubin&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;"Chapter 3 Agile Principles :: Prediction and Adaptation"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"Chapter 3 Agile Principles :: Balance Predictive Up-Front Work with Adaptive Just-in-Time Work"&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"Succeeding with Agile: Software Development Using Scrum" by Mike Cohn, "Chapter 9 Technical Practices :: Design: intentional yet Emergent"&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://martinfowler.com/architecture/"&gt;Software Architecture Guide&lt;/a&gt;" by Martin Fowler&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://martinfowler.com/agile.html"&gt;Agile Software Guide&lt;/a&gt;" by Martin Fowler&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.martinfowler.com/articles/newMethodology.html#PredictiveVersusAdaptive"&gt;The New Methodology :: Predictive versus Adaptive&lt;/a&gt;" by Martin Fowler&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description><pubDate>Sun, 10 Apr 2022 00:00:00 </pubDate></item><item><title>Что такое Prediction</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/prediction/prediction.html</link><description>
+&lt;span id="emacsway-prediction"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 A second common style of definition for architecture is that it's "the design decisions that need to be made early in a project", but Ralph complained about this too, saying that it was more like the decisions you wish you could get right early in a project.&lt;/p&gt;
+&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/architecture/"&gt;Software Architecture Guide&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;К Prediction (Прогнозированию) относится ряд активностей на основе правил логического вывода, предшествующих производству Системного Инкремента и направленных на заблаговременное разрешение неопределенности.
+К ним относятся Business/System Requirements Definition and Analysis, Architecture Definition, Design Definition, разработка макетов UX/UI-Design, Estimation и Planning.
+Но главным образом к ним относится разрешение неопределенности в problem-space (т.е. требований), что оказывает существенное влияние на выбор SDLC-модели.&lt;/p&gt;
+&lt;p&gt;В Scrum эти активности традиционно выражаются в событиях, предшествующих Definition Of Ready (DOR):&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;dl class="simple"&gt;
+&lt;dt&gt;Со стороны Product Owner:&lt;/dt&gt;&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Reveal needs of stakeholders&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Creating PBI&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="simple"&gt;
+&lt;dt&gt;Со стороны Team:&lt;/dt&gt;&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;PBR&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Planning&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Spike&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Основная проблема Prediction заключается в том, что характер роста стоимости Прогнозирования, в зависимости от его точности, близок к экспоненциальному.
+В то время как характер роста бизнес-выгод от точности Прогнозирования близок к логарифмическому.
+Пересечение этих графиков образует предел экономической целесообразности разрешения неопределенности путем Прогнозирования.
+Здесь подразумевается, что стоимость самой реализации уже вычтена из бизнес-выгод.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;📝 "There is a fundamental truth to work breakdown structure estimation - the only way to estimate using a work breakdown structure to really accurately to get the number right is to implement the project.
+Then you'll have the estimate.&lt;/p&gt;
+&lt;p&gt;The cost of improving the estimate, the initial work breakdown estimation, the cost of refining that grows exponentially.
+With every next layer you want to take it down.
+And the benefit of doing that does not grow exponentially.
+It grows logarithmically.&lt;/p&gt;
+&lt;p&gt;Managers understand there is an extremely high cost involved with refining the estimate."&lt;/p&gt;
+&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://youtu.be/eisuQefYw_o?t=1995"&gt;"YOW! 2016 Robert C. Martin - Effective Estimation (or: How not to Lie)" at 33:15&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Robert C. Martin упомянул о таком способе обработки неопределенности, как реализовать Проект (или Системный Инкремент).
+Это уже другой, эмпирический (т.е. опытным путем) способ обработки неопределенности, который называется &lt;a class="reference internal" href="../adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Adaptation&lt;/span&gt;&lt;/a&gt; и составляет основу итеративной разработки.
+Чем сложнее предметная область Проекта, тем раньше наступает предел экономической целесообразности Prediction.&lt;/p&gt;
+</description><pubDate>Sat, 09 Apr 2022 00:00:00 </pubDate></item><item><title>Как пользоваться</title><link>https://dckms.github.io/system-architecture/README.html</link><description>
  
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/emacsway/dckms-template"&gt;Distributed Collaborative Knowledge Management System&lt;/a&gt;&lt;/p&gt;
 &lt;div class="contents topic" id="id2"&gt;
@@ -870,7 +1373,7 @@ ones of his generation."&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Tools:&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;См. Context Map средствами Archi на диаграмме "Views : Tactical Architecture : Program Level : Context Map" of &lt;a class="reference external" href="https://community.opengroup.org/archimate-user-community/home/-/issues/8"&gt;Model&lt;/a&gt; used for presentation "Enterprise Architecture Modelling with ArchiMate in an Agile at Scale Programme":&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;См. Context Map средствами Archi на диаграмме "Views : Tactical Architecture : Program Level : Context Map" of &lt;a class="reference external" href="https://community.opengroup.org/archimate-user-community/home/-/issues/8"&gt;Model&lt;/a&gt; used for presentation "Enterprise Architecture Modelling with ArchiMate in an Agile at Scale Programme"&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://github.com/ddd-crew/context-mapping"&gt;Context Mapping&lt;/a&gt;" by Nick Tune and DDD-Crew&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://github.com/ddd-crew/ddd-starter-modelling-process#organise"&gt;Context Map Cheat Sheet&lt;/a&gt;" by Nick Tune and DDD-Crew&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://miro.com/app/board/o9J_kqrI8ck=/"&gt;Context Map Cheat Sheet (Miro template)&lt;/a&gt;" by Nick Tune and DDD-Crew&lt;/p&gt;&lt;/li&gt;
@@ -6861,236 +7364,6 @@ These components are usually composed of smaller components, but the architectur
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</description><pubDate>Wed, 26 Jan 2022 00:00:00 </pubDate></item><item><title>Balancing Prediction/Adaptation</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/balancing-prediction-adaptation.html</link><description>
-&lt;span id="emacsway-balancing-prediction-adaptation"/&gt; 
-&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
-&lt;div class="contents topic" id="id1"&gt;
-&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#balancing-prediction-adaptation" id="id3"&gt;Balancing Prediction/Adaptation&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#open-agile-architecture-standard-by-the-open-group" id="id4"&gt;Open Agile Architecture™ Standard by The Open Group&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#prediction-adaptation" id="id5"&gt;Эволюционный маятник баланса Prediction/Adaptation&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#prediction-adaptation-adaptation" id="id6"&gt;Занос маятника Prediction/Adaptation в сторону Adaptation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#prediction-adaptation-prediction" id="id7"&gt;Отскок маятника Prediction/Adaptation назад к Prediction&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#alberto-brandolini-about-prediction-adaptation" id="id8"&gt;Alberto Brandolini about Prediction/Adaptation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Scrum projects do not have an up-front analysis or design phase; all work occurs within the repeated cycle of sprints.
-This does not mean, however, that design on a Scrum project is not intentional.
-An intentional design process is one in which the design is guided through deliberate, conscious decision making.
-The difference on a Scrum project is not that intentional design is thrown out, but that it is done (like everything else on a Scrum project) incrementally.
-Scrum teams acknowledge that as nice as it might be to make all design decisions up front, doing so is impossible.
-This means that on a Scrum project, design is both intentional and emergent.&lt;/p&gt;
-&lt;p&gt;A big part of an organization's becoming agile is finding the appropriate balance between anticipation and adaptation (Highsmith 2002).
-Figure 9.2 shows this balance along with activities and artifacts that influence the balance.
-When doing up-front analysis or design, we are attempting to anticipate users' needs.
-Because we cannot perfectly anticipate these, we will make some mistakes; some work will need to be redone.
-When we forgo analysis and design and jump immediately into coding and testing with no forethought at all, we are trying to adapt to users' needs.
-All projects of interest will be positioned somewhere between anticipation and adaptation based on their own unique characteristics; no application will be all the way to either extreme.
-A life-critical, medical safety application may be far to the anticipation side.
-A three-person startup company building a website of information on kayak racing may be far toward the side of adaptation.&lt;/p&gt;
-&lt;p&gt;Foretelling the agile preference for simplicity, in 1990, was speaker and author Do-While Jones.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;I'm not against planning for the future.
-Some thought should be given to future expansion of capability.
-But when the entire design process gets bogged down in an attempt to satisfy future requirements that may never materialize, then it is time to stop and see if there isn't a simpler way to solve the immediate problem.&lt;/p&gt;
-&lt;p class="attribution"&gt;—Jones' 1990 article, "The Breakfast Food Cooker," remains a classic parable of what can go wrong when software developers over-design a solution. I highly recommended reading it at &lt;a class="reference external" href="http://www.ridgecrest.ca.us/~do_while/toaster.htm"&gt;http://www.ridgecrest.ca.us/~do_while/toaster.htm&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Scrum teams avoid this "bogging down" by realizing that not all future needs are worth worrying about today. Many future needs may be best handled by planning to adapt as they arise."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Succeeding with Agile: Software Development Using Scrum" by Mike Cohn&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;div class="figure align-left" id="id2"&gt;
-&lt;a class="reference internal image-reference" href="../../../../_images/fig-9.2-balancing-anticipation-adaptation.png"&gt;&lt;img alt="FIGURE 9.2 Achieving a balance between anticipation and adaptation involves balancing the inﬂuence of the activities and artifacts on each side. The image source is &amp;quot;Succeeding with Agile: Software Development Using Scrum&amp;quot; by Mike Cohn" src="../../../../_images/fig-9.2-balancing-anticipation-adaptation.png" style="width: 90%;"/&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;FIGURE 9.2 Achieving a balance between anticipation and adaptation involves balancing the inﬂuence of the activities and artifacts on each side. The image source is "Succeeding with Agile: Software Development Using Scrum" by Mike Cohn&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 McConnell writes, "In ten years the pendulum has swung from 'design everything' to 'design nothing.'
-But the alternative to BDUF [Big Design Up Front] isn't no design up front, it's a Little Design Up Front (LDUF) or Enough Design Up Front (ENUF)."
-This is a strawman argument.
-The alternative to designing before implementing is designing after implementing.
-Some design up-front is necessary, but just enough to get the initial implementation.
-Further design takes place once the implementation is in place and the real constraints on the design are obvious.
-Far from "design nothing," the XP strategy is "design always."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Extreme Programming Explained" 2nd edition by Kent Beck&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "From the very earliest days of agile methods, people have asked what role there is for architectural or design thinking.
-A common misconception is that since agile methods drop the notion of a detailed up-front design artifact, that there is no room for architecture in an agile project.
-In my keynote at the first-ever agile conference, I pointed out that design was every bit as important for agile projects, but it manifests itself differently, becoming an evolutionary approach."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/agile.html"&gt;Agile Software Development&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "The incremental and iterative nature of Agile development can facilitate efficient technical and management processes and practices to reduce the cost associated with change.
-In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Agile" methods actually can be applied within a variety of models.
-While Agile methods are common in executing an evolutionary lifecycle model, they can be used in other lifecycle models at various stages.
-What the methods have in common is an emphasis on continuous inspection and collaboration in the rapid production of working software in an environment where changes, including changes to requirements, are expected.&lt;/p&gt;
-&lt;p class="attribution"&gt;—"ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;div class="section" id="open-agile-architecture-standard-by-the-open-group"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;Open Agile Architecture™ Standard by The Open Group&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Глава "&lt;a class="reference external" href="https://pubs.opengroup.org/architecture/o-aa-standard/architecture-development.html#_architecture_development_styles"&gt;4.5. Architecture Development Styles&lt;/a&gt;" стандарта посвящена поиску баланса между "&lt;a class="reference external" href="https://pubs.opengroup.org/architecture/o-aa-standard/architecture-development.html#_intentional_architecture_2"&gt;4.5.2. Intentional Architecture&lt;/a&gt;" и "&lt;a class="reference external" href="https://pubs.opengroup.org/architecture/o-aa-standard/architecture-development.html#emergence"&gt;4.5.1. Emergence Architecture&lt;/a&gt;".&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="prediction-adaptation"&gt;
-&lt;span id="emacsway-balancing-prediction-adaptation-pendulum-swinging"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id5"&gt;Эволюционный маятник баланса Prediction/Adaptation&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;В 2021 году большую популярность обрела статья, освещавшая назревшие в индустрии вопросы относительно поиска баланса Prediction/Adaptation:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://threedots.tech/post/software-dark-ages/"&gt;Software Dark Ages&lt;/a&gt;" by Robert Laszczak&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://habr.com/ru/company/cian/blog/569940/"&gt;Темные века разработки программного обеспечения&lt;/a&gt;" by Robert Laszczak, перевод Евгения Пешкова&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Simon Brown тоже обратил внимание на тот факт, что на современном рынке маятник Prediction/Adaptation качнулся в сторону Prediction (анализ и проектирование) от Adaptation (преобладающий принцип Single-Team Agile):&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Even just a few years ago, "software architecture" was not a topic that people were interested in ... "because agile". Times are changing?"&lt;/p&gt;
-&lt;p class="attribution"&gt;—2021-12-23, &lt;a class="reference external" href="https://t.co/ipu5HpS1C4"&gt;https://t.co/ipu5HpS1C4&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;В 2000-м Tom DeMarco и Camden, Maine писали:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "In On War, Carl von Clausewitz tells us that military history is a pendulum swinging back and forth between the relative advantages of armor and of mobility.
-The knights in shining armor were able to dominate any knight without, but they were no match for the quick, nearly naked pony warriors that swept across the plains with Genghis Kahn and his Mongols.
-Light cavalry itself was doomed as soon as there were tanks, and tanks were no match for fleet-footed Palestinian teenagers with Sagger missiles.
-With the Maginot Line, the French were gambling that the pendulum had swung again toward armor, but it hadn't, and the Germans simply went around it.&lt;/p&gt;
-&lt;p&gt;In the field of IT, we are just emerging from a time in which armor (process) has been king.
-And now we are moving into a time when only mobility matters.
-Building a product the right way still sounds like a laudable goal, but—let's face it—what really matters today is building it fast.
-Because we are process-obsessed in our field, we have tended to react to this new imperative as we reacted to the imperatives thrust upon us in the 1980s and 1990s.
-We have asked, "What shall we add to our process to deal with this new situation?"&lt;/p&gt;
-&lt;p class="attribution"&gt;—Foreword of "Planning Extreme Programming" by Kent Beck, Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;div class="section" id="prediction-adaptation-adaptation"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id6"&gt;Занос маятника Prediction/Adaptation в сторону Adaptation&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Можно заметить, что на рубеже 2000 года, &lt;a class="reference internal" href="../models/agile/agile.html#emacsway-agile-development"&gt;&lt;span class="std std-ref"&gt;маятник Prediction/Adaptation максимально отклонился в сторону Adaptation&lt;/span&gt;&lt;/a&gt;, зачастую минимизируя долю Prediction до минималистичного набора практик - PBR, Spike, Planning.
-Этому способствовало радикальное снижение стоимости Adaptation в те годы, благодаря росту популярности OOP, &lt;a class="reference internal" href="adaptation/software-design/patterns.html#emacsway-agile-patterns"&gt;&lt;span class="std std-ref"&gt;шаблонов&lt;/span&gt;&lt;/a&gt; проектирования и принципов проектирования, методик управления сложностью (ROM, POSA, GOF, OOAD, &lt;a class="reference internal" href="adaptation/software-design/solid.html#emacsway-agile-solid"&gt;&lt;span class="std std-ref"&gt;SOLID&lt;/span&gt;&lt;/a&gt;, Use Case Driven Approach, Object-Oriented Software Construction etc.), &lt;a class="reference internal" href="../../tdd/tdd.html#emacsway-tdd"&gt;&lt;span class="std std-ref"&gt;TDD&lt;/span&gt;&lt;/a&gt;, Refactoring и т.д.&lt;/p&gt;
-&lt;p&gt;В конце 90-х — в начале 2000-х, когда ведущим умам архитектуры своего времени удалось достигнуть &lt;a class="reference internal" href="../models/agile/agile.html#emacsway-agile-development"&gt;&lt;span class="std std-ref"&gt;пологого графика роста стоимости изменения (адаптации) кода, максимально приближенного к горизонтальной асимтоте&lt;/span&gt;&lt;/a&gt;, что открыло широкие возможности по удешевлению разработки путем &lt;a class="reference internal" href="adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;эмпирического (т.е. опытным путем) разрешения неопределенности&lt;/span&gt;&lt;/a&gt; (т.е. итеративно).
-Это означало, что стоимость реализации решения больше не зависело от момента его принятия, что позволило отказаться от заблаговременного проектирования и откладывать принятие решения до момента наибольшей полноты информированности, даже после частичной реализации продукта.&lt;/p&gt;
-&lt;p&gt;Маятник отклонился от Prediction к Adaptation с большим заносом.
-Хотя в то время уже были модели разработки того, что мы сегодня называем моделями масштабируемого Agile (RUP, MSF, RAD, FDD, Crystal Clear etc.), но они не занимали значительной части рынка.&lt;/p&gt;
-&lt;p&gt;Так же, как во времена роста популярности OOP, "Switch-Case Statement" считался Code Smell, дабы стимулировать продвижение OOP в массы (об этом признается M.Fowler во втором издании книги Refactoring), в начале 2000-х значение заблаговременного анализа и проектирования (Prediction) нередко принебрегалось, дабы подчеркнуть превосходство эмпирического способа разрешения неопределенности (Adaptation) и стимулировать продвижение этой идеи в массы.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="prediction-adaptation-prediction"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#id7"&gt;Отскок маятника Prediction/Adaptation назад к Prediction&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Однако, в статье мы наблюдаем, что маятник пошел в обратном направлении:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "пять дней кодинга может сэкономить день планирования&lt;/p&gt;
-&lt;p&gt;With 5 days of coding, you can save 1 day of planning"&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://threedots.tech/post/software-dark-ages/"&gt;Software Dark Ages&lt;/a&gt;" by Robert Laszczak, перевод Евгения Пешкова&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;При этом, в статье очень вяло и вскользь говорится о снижении стоимости Adaptation:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Если вам нужно реализовать что-то "на будущее", потому что позже будет сложнее добавить это, – это очень плохой знак.
-Вам следует подумать о том, как упростить позднее добавление.&lt;/p&gt;
-&lt;p&gt;If you need to implement something "for the future" because it will be harder to add it later – that's a very bad sign.
-You should think about how to make it easy to add it later."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://threedots.tech/post/software-dark-ages/"&gt;Software Dark Ages&lt;/a&gt;" by Robert Laszczak, перевод Евгения Пешкова&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Что это? Бунт против Agile? Против заветов Eric Evans?&lt;/p&gt;
-&lt;p&gt;Причин здесь две.&lt;/p&gt;
-&lt;ol class="arabic"&gt;
-&lt;li&gt;&lt;p&gt;Проекты стали сложнее, а команды стали больше, нежели они были 20 лет назад.
-Cредний проект стал слишком большим для Single-Team Agile, а стоимость Adaptation нарастает со значительным опережением роста численности коллектива.&lt;/p&gt;
-&lt;p&gt;Это вынуждает &lt;a class="reference internal" href="../../team-topologies/harlan-mills%27-proposal.html#emacsway-harlan-mills-proposal"&gt;&lt;span class="std std-ref"&gt;сместить баланс Prediction/Adaptation назад, в сторону Prediction&lt;/span&gt;&lt;/a&gt;.
-Интерес к Prediction-методам обработки неопределенности начал возвращаться.
-На первое место вышли вопросы достижения автономности команд и интеграции производимых ими системных инкрементов.
-Архитектура стала обретать социальное значение.&lt;/p&gt;
-&lt;p&gt;И здесь мы наблюдаем воскрешение старых принципов, которые были хорошо известны в RUP, MSF, RAD, FDD, Crystal Clear etc.
-На базе старых моделей масштабируемой итеративной разработки появились новые (SAFe, DAD, LESS etc.).
-Дело в том, что в старые времена Scaled Agile хоть и был не таким частым явлением, как сегодня, да и не назывался вовсе Agile, но он все-таки существовал в немногочисленных крупных корпорациях, т.к. они уже тогда столкнулись с теми проблемами, которые обрели массовость примерно к 2010 году.
-Например, многие идеи популярной книги "Team Topologies", которые сегодня создают "вау-эффект", были описаны, еще в RAD.&lt;/p&gt;
-&lt;p&gt;Обратите внимание на тот факт, что это совпало хронологически со взрывным ростом интереса к микросервисной архитектурой и DDD, поскольку они также отвечали на главный вызов своего времени - стремительной рост размера среднего проекта и среднего коллектива.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Начали появляться новые, более легковесные и экономичные методики анализа и проектирования (Event Storming/Modeling, Domain Storytelling, Impact Mapping, Example Mapping, Design Thinking etc.).
-Prediction стал дешевле, что позволило увеличить его долю, оставаясь в прежних пределах его экономической целесообразности.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Изменился контекст разработки, и сегодня в индустрии принципы Single-Team Agile зачастую стали не ускорять, а замедлять разработку.
-Это качнуло маятник назад, в сторону Prediction.&lt;/p&gt;
-&lt;p&gt;Многие старые идеи Scaled Agile реинкарнировали в современные итеративные модели разработки, такие как DAD и SAFe.&lt;/p&gt;
-&lt;p&gt;Начали появляться способы интеграции &lt;a class="reference internal" href="../../team-topologies/harlan-mills%27-proposal.html#emacsway-program-management"&gt;&lt;span class="std std-ref"&gt;Program Management&lt;/span&gt;&lt;/a&gt; (т.е. организации процессов Prediction) в даже самые легковесные Scaled Agile Frameworks, такие как Nexus by Ken Schwaber.&lt;/p&gt;
-&lt;p&gt;А в основе лежит все та же идея "&lt;a class="reference internal" href="../../team-topologies/harlan-mills%27-proposal.html#emacsway-harlan-mills-proposal"&gt;&lt;span class="std std-ref"&gt;Метода Хирурга&lt;/span&gt;&lt;/a&gt;" Харлана Миллза, который младше Закона Конвея всего на три года.&lt;/p&gt;
-&lt;p&gt;Разные модели предлагают разное соотношение Prediction/Adaptation, например, в SAFe доля Prediction больше, чем в Nexus, а в RUP - еще больше. Важно уметь грамотно выбирать модель под потребности конкретного проекта.
-Grady Booch даже назвал &lt;a class="reference internal" href="../sdlc-reference.html#emacsway-sdlc-literature"&gt;&lt;span class="std std-ref"&gt;качество управления моделью жизненного цикла разработки критическим условием успешности проекта&lt;/span&gt;&lt;/a&gt;.
-А поскольку модель SDLC призвана решать проблему управления неопределенностью требований, то &lt;a class="reference external" href="https://itabok.iasaglobal.org/itabok3_0/architecture-methodologies-and-frameworks/"&gt;выбор модели становится архитектурной задачей&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Здесь Prediction сфокусирован, главным образом, на разрешении неопределенности в problem-space (т.е. требований), что влияет на выбор SDLC-модели.
-За разрешение неопределенности в solution-space на уровне Implementation и Software Design отвечает принцип &lt;a class="reference internal" href="adaptation/software-construction/yagni.html#emacsway-yagni"&gt;&lt;span class="std std-ref"&gt;YAGNI&lt;/span&gt;&lt;/a&gt;, целью которого является само снижение стоимости Adaptation.&lt;/p&gt;
-&lt;p&gt;О том, как интегрировать активности по анализу и проектированию в Agile-модель разработки, см. также в разделе &lt;a class="reference internal" href="../../team-topologies/harlan-mills%27-proposal.html#emacsway-program-management"&gt;&lt;span class="std std-ref"&gt;Program Management&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="alberto-brandolini-about-prediction-adaptation"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id8"&gt;Alberto Brandolini about Prediction/Adaptation&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Автор раздела: Андрей Ганичев&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Андрей Ганичев, contributor of "&lt;a class="reference external" href="https://github.com/kgrzybek/modular-monolith-with-ddd"&gt;Full Modular Monolith application with Domain-Driven Design approach&lt;/a&gt;", на тему поиска баланса Prediction/Adaptation:&lt;/p&gt;
-&lt;p&gt;Когда читал книгу Брандолини про "&lt;a class="reference external" href="https://leanpub.com/introducing_eventstorming"&gt;Introducing EventStorming: An act of Deliberate Collective Learning&lt;/a&gt;" by Alberto Brandolini (та которая недописанная), обратил внимание что и он вскользь проходит по этой теме.&lt;/p&gt;
-&lt;p&gt;Глава Pretending to solve the problem writing software, раздел Embrace Change:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "...iterative development is expensive. It is the best approach for developing software in very complex, and lean-demanding domains. However, the initial starting point matters, a lot. A big refactoring will cost a lot more than iterative fine tuning (think splitting a database, vs renaming a variable). So I'll do everything possible to start iterating from the most reasonable starting point."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://leanpub.com/introducing_eventstorming"&gt;Introducing EventStorming: An act of Deliberate Collective Learning&lt;/a&gt;" by Alberto Brandolini&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Upfront is a terrible word in the agile jargon. It recalls memories the old times analysis phase in the worst corporate waterfall. Given this infamous legacy, the word has been banned from agile environments like blasphemy. But unfortunately ...there's always something upfront. Even the worst developer thinks before typing the firs line of code."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://leanpub.com/introducing_eventstorming"&gt;Introducing EventStorming: An act of Deliberate Collective Learning&lt;/a&gt;" by Alberto Brandolini&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Cм. также:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;"Essential Scrum: A Practical Guide to the Most Popular Agile Process" by Kenneth Rubin&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;"Chapter 3 Agile Principles :: Prediction and Adaptation"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"Chapter 3 Agile Principles :: Balance Predictive Up-Front Work with Adaptive Just-in-Time Work"&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"Succeeding with Agile: Software Development Using Scrum" by Mike Cohn, "Chapter 9 Technical Practices :: Design: intentional yet Emergent"&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-</description><pubDate>Wed, 26 Jan 2022 00:00:00 </pubDate></item><item><title>Что такое Prediction</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/uncertainty-management/prediction/prediction.html</link><description>
-&lt;span id="emacsway-prediction"/&gt; 
-&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;К Prediction (Прогнозированию) относится ряд активностей на основе правил логического вывода, предшествующих производству Системного Инкремента и направленных на заблаговременное разрешение неопределенности.
-К ним относятся Business/System Requirements Definition and Analysis, Architecture Definition, Design Definition, разработка макетов UX/UI-Design, Estimation и Planning.
-Но главным образом к ним относится разрешение неопределенности в problem-space (т.е. требований), что оказывает существенное влияние на выбор SDLC-модели.&lt;/p&gt;
-&lt;p&gt;В Scrum эти активности традиционно выражаются в событиях, предшествующих Definition Of Ready (DOR):&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;dl class="simple"&gt;
-&lt;dt&gt;Со стороны Product Owner:&lt;/dt&gt;&lt;dd&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Reveal needs of stakeholders&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Creating PBI&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;dl class="simple"&gt;
-&lt;dt&gt;Со стороны Team:&lt;/dt&gt;&lt;dd&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;PBR&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Planning&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Spike&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Основная проблема Prediction заключается в том, что характер роста стоимости Прогнозирования, в зависимости от его точности, близок к экспоненциальному.
-В то время как характер роста бизнес-выгод от точности Прогнозирования близок к логарифмическому.
-Пересечение этих графиков образует предел экономической целесообразности разрешения неопределенности путем Прогнозирования.
-Здесь подразумевается, что стоимость самой реализации уже вычтена из бизнес-выгод.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "There is a fundamental truth to work breakdown structure estimation - the only way to estimate using a work breakdown structure to really accurately to get the number right is to implement the project.
-Then you'll have the estimate.&lt;/p&gt;
-&lt;p&gt;The cost of improving the estimate, the initial work breakdown estimation, the cost of refining that grows exponentially.
-With every next layer you want to take it down.
-And the benefit of doing that does not grow exponentially.
-It grows logarithmically.&lt;/p&gt;
-&lt;p&gt;Managers understand there is an extremely high cost involved with refining the estimate."&lt;/p&gt;
-&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://youtu.be/eisuQefYw_o?t=1995"&gt;"YOW! 2016 Robert C. Martin - Effective Estimation (or: How not to Lie)" at 33:15&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Robert C. Martin упомянул о таком способе обработки неопределенности, как реализовать Проект (или Системный Инкремент).
-Это уже другой, эмпирический (т.е. опытным путем) способ обработки неопределенности, который называется &lt;a class="reference internal" href="../adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Adaptation&lt;/span&gt;&lt;/a&gt; и составляет основу итеративной разработки.
-Чем сложнее предметная область Проекта, тем раньше наступает предел экономической целесообразности Prediction.&lt;/p&gt;
 </description><pubDate>Wed, 26 Jan 2022 00:00:00 </pubDate></item><item><title>Кристаллизация знаний. Как читать и не превратиться в коллекционера информации.</title><link>https://dckms.github.io/system-architecture/emacsway/soft-skills/learning.html</link><description>&lt;span class="target" id="index-0"/&gt;&lt;div class="section" id="emacsway-learning-in-psychology"&gt;
 &lt;span id="id1"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
@@ -7501,261 +7774,7 @@ We will have that much less customer feedback, mental reflection on the project,
 &lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../crash-course-in-software-development-economics.html#emacsway-software-development-economics-literature"&gt;&lt;span class="std std-ref"&gt;Краткий курс по экономике разработки программного обеспечения&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</description><pubDate>Sat, 22 Jan 2022 00:00:00 </pubDate></item><item><title>Что такое Agile Development</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/agile.html</link><description>
-&lt;span id="emacsway-agile-development"/&gt; 
-&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
-&lt;div class="contents topic" id="id1"&gt;
-&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#agile-development" id="id8"&gt;Что такое Agile Development&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id2" id="id9"&gt;Определение&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id10"&gt;История&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-agile-development-essence" id="id11"&gt;Суть&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-agile-development-difficulties" id="id12"&gt;О сложностях&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id2"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id9"&gt;Определение&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Agile development - software development approach based on &lt;a class="reference internal" href="../iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative&lt;/span&gt;&lt;/a&gt; development, frequent inspection and &lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;adaptation&lt;/span&gt;&lt;/a&gt;, and &lt;a class="reference internal" href="../incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental&lt;/span&gt;&lt;/a&gt; deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Scrum is, as the reader supposedly knows, an agile method.
-The agile family of development methods evolved from the old and well-known &lt;a class="reference internal" href="../iterative.html#emacsway-iterative-development"&gt;&lt;span class="std std-ref"&gt;iterative&lt;/span&gt;&lt;/a&gt; and &lt;a class="reference internal" href="../incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental&lt;/span&gt;&lt;/a&gt; life-cycle approaches.
-They were born out of a belief that an approach more grounded in human reality – and the product development reality of learning, innovation, and change – would yield better results."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Jeff Sutherland's Scrum Handbook" by Jeff Sutherland&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 ""Agile" methods actually can be applied within a variety of models.
-While Agile methods are common in executing an evolutionary lifecycle model, they can be used in other lifecycle models at various stages.
-What the methods have in common is an emphasis on continuous inspection and collaboration in the rapid production of working software in an environment where changes, including changes to requirements, are expected."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "As discussed in 5.4.2, the life cycle models used in agile projects are often highly &lt;a class="reference internal" href="../incremental.html#emacsway-incremental-development"&gt;&lt;span class="std std-ref"&gt;incremental&lt;/span&gt;&lt;/a&gt; and &lt;a class="reference internal" href="../evolutionary.html#emacsway-evolutionary-development"&gt;&lt;span class="std std-ref"&gt;evolutionary&lt;/span&gt;&lt;/a&gt;."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id3"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id10"&gt;История&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Agile является естественным следствием эволюции итеративной разработки, краткий обзор которой можно посмотреть в превосходной статье Craig Larman "&lt;a class="reference external" href="https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf"&gt;Iterative and Incremental Development: A Brief History&lt;/a&gt;".&lt;/p&gt;
-&lt;p&gt;Как уже говорилось ранее, итеративная модель разработки открывает широкие возможности для &lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;удешевления обработки неопределенности&lt;/span&gt;&lt;/a&gt;.
-Однако долгое время эти возможности оставались экономически нецелесообразными по причине быстрорастущего характера роста стоимости &lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Adaptation&lt;/span&gt;&lt;/a&gt;, приближющегося к экспоненциальному.
-При таком характере роста возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования (BDUF).&lt;/p&gt;
-&lt;div class="figure align-left" id="id6"&gt;
-&lt;a class="reference internal image-reference" href="../../../../../_images/exponential-cost-of-change.png"&gt;&lt;img alt="Figure 1. The cost of change rising exponentially over time. The image source is &amp;quot;Extreme Programming Explained&amp;quot; 1st edition by Kent Beck, &amp;quot;Chapter 5. Cost of Change&amp;quot;." src="../../../../../_images/exponential-cost-of-change.png" style="width: 90%;"/&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Figure 1. The cost of change rising exponentially over time. The image source is "Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 5. Cost of Change".&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Однако, в конце 1990-х - начале 2000-х, в архитектурном мире произошли существенные изменения - обрели массовую популярность высокоуровневые объектно-ориентированные языки, появились &lt;a class="reference internal" href="../../uncertainty-management/adaptation/software-design/patterns.html#emacsway-agile-patterns"&gt;&lt;span class="std std-ref"&gt;шаблоны&lt;/span&gt;&lt;/a&gt; и принципы проектирования, методики управления сложностью (ROM, POSA, GOF, OOAD, &lt;a class="reference internal" href="../../uncertainty-management/adaptation/software-design/solid.html#emacsway-agile-solid"&gt;&lt;span class="std std-ref"&gt;SOLID&lt;/span&gt;&lt;/a&gt;, Use Case Driven Approach, Object-Oriented Software Construction etc.), появились &lt;a class="reference internal" href="../../../tdd/tdd.html#emacsway-tdd"&gt;&lt;span class="std std-ref"&gt;TDD&lt;/span&gt;&lt;/a&gt;, Refactoring и т.п.&lt;/p&gt;
-&lt;p&gt;Унификация знаний в области архитектуры, переход ментального оперирования на элементы унифицированных шаблонных конструкций более высокого уровня абстракции, позволили сократить когнитивную и коммуникативную нагрузку на разработчика, уменьшить порог вхождения в новый проект, смягчить негативное воздействие &lt;a class="reference internal" href="../../../team-topologies/harlan-mills%27-proposal.html#emacsway-brooks-s-law"&gt;&lt;span class="std std-ref"&gt;Закона Брукса&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Рост количественных изменений привел к изменениям качественным - ведущим умам архитектуры своего времени удалось снизить характер роста стоимости адаптации вплоть до пологого графика, максимально приближенного к горизонтальной асимптоте.
-Это означало, что стоимость реализации решения больше не зависело от момента его принятия, что позволило отказаться от заблаговременного проектирования и откладывать принятие решения до момента наибольшей полноты информированности, даже после частичной реализации продукта.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "What would we do if all that investment paid off?
-What if all that work on languages and databases and whatnot actually got somewhere?
-What if the cost of change didn't rise exponentially overtime, but rose much more slowly, &lt;strong&gt;eventually reaching an asymptote&lt;/strong&gt;?
-What if tomorrow's software engineering professor draws Figure 3 on the board?"&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 5. Cost of Change"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;div class="figure align-left" id="id7"&gt;
-&lt;a class="reference internal image-reference" href="../../../../../_images/flatten-cost-of-change.png"&gt;&lt;img alt="Figure 3. The cost of change may not rise dramatically over time. The image source is &amp;quot;Extreme Programming Explained&amp;quot; 1st edition by Kent Beck, &amp;quot;Chapter 5. Cost of Change&amp;quot;." src="../../../../../_images/flatten-cost-of-change.png" style="width: 90%;"/&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;&lt;span class="caption-text"&gt;Figure 3. The cost of change may not rise dramatically over time. The image source is "Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 5. Cost of Change".&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Что такое асимтота, можно посмотреть в "§284 Асимтоты" Справочника по высшей математике / М.Я. Выгодский:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Прямая АВ называется асимптотой линии L, если расстояние МК (черт. 297) от точки М линии L до прямой АВ стремится к нулю при удалении точки М в бесконечность."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Справочник по высшей математике" / М.Я. Выгодский&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;В нашем случае, нас интересует Асимптоты, параллельная оси абсцисс (там же):&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Для разыскания горизонтальных асимптот линии y = f(х) ищем пределы f(х) при х -&amp;gt; +∞ и при х -&amp;gt; -∞. Если lim х-&amp;gt;∞ f(x) = b, то прямая у = b - асимптота (при бесконечном удалении вправо; черт. 299)."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Справочник по высшей математике" / М.Я. Выгодский&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="emacsway-agile-development-essence"&gt;
-&lt;span id="id4"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id11"&gt;Суть&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Вся суть Agile (итеративной) модели разработки была лаконично и метко выражена Кент Беком всего одним предложением:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Сделайте изменение легким, а потом делай легко изменение.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Make the change easy then make the easy change.&lt;/strong&gt;"&lt;/p&gt;
-&lt;p class="attribution"&gt;—Kent Beck, "&lt;a class="reference external" href="https://youtu.be/3gib0hKYjB0?t=2662"&gt;Continued Learning: The Beauty of Maintenance - Kent Beck - DDD Europe 2020&lt;/a&gt;"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Невероятный талант Kent Beck объяснять сложные вещи простым языком.
-Именно об этом я говорил в статье "&lt;a class="reference internal" href="../../../../soft-skills/learning.html#emacsway-learning-in-psychology"&gt;&lt;span class="std std-ref"&gt;Кристаллизация знаний. Как читать и не превратиться в коллекционера информации.&lt;/span&gt;&lt;/a&gt;".
-И это при необычайной эрудированности Kent Beck. Cписок использованной литературы в его книгах просто ошеломляет.&lt;/p&gt;
-&lt;p&gt;Thanks to Vladik Khononov for &lt;a class="reference external" href="https://youtu.be/ybYtgII151g?t=9808"&gt;https://youtu.be/ybYtgII151g?t=9808&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Более развернутый вариант его фразы:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "At the core of understanding this argument is the software change curve.
-The change curve says that as the project runs, it becomes exponentially more expensive to make changes.
-The change curve is usually expressed in terms of phases "a change made in analysis for $1 would cost thousands to fix in production".
-This is ironic as most projects still work in an ad-hoc process that doesn't have an analysis phase, but the exponentiation is still there.
-&lt;strong&gt;The exponential change curve means that evolutionary design cannot possibly work.&lt;/strong&gt;
-It also conveys why planned design must be done carefully because any mistakes in planned design face the same exponentiation.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;The fundamental assumption underlying XP is that it is possible to flatten the change curve enough to make evolutionary design work.&lt;/strong&gt;
-This flattening is both enabled by XP and exploited by XP.
-This is part of the coupling of the XP practices: specifically &lt;strong&gt;you can't do those parts of XP that exploit the flattened curve without doing those things that enable the flattening.&lt;/strong&gt;
-This is a common source of the controversy over XP.
-Many people criticize the exploitation without understanding the enabling.
-Often the criticisms stem from critics' own experience where they didn't do the enabling practices that allow the exploiting practices to work.
-As a result they got burned and when they see XP they remember the fire."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/articles/designDead.html"&gt;Is Design Dead?&lt;/a&gt;" by M.Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "&lt;strong&gt;Именно это является одной из предпосылок ХР&lt;/strong&gt;.
-&lt;strong&gt;Это техническая предпосылка ХР.&lt;/strong&gt;
-[в оригинальном переводе: &lt;em&gt;Именно это является одним из основных предположений ХР. Это техническое предположение ХР.&lt;/em&gt;]
-Если стоимость внесения в систему изменений со временем растет достаточно медленно, стратегия разработки программы должна быть совершенно другой, отличной от той, которая используется в случае, если стоимость внесения в систему изменений со временем растет экспоненциально.
-В подобной ситуации вы можете откладывать решение важных задач на более поздние сроки.
-Вы получаете возможность принимать важные решения настолько поздно, насколько это возможно.
-Это делается для того, чтобы осуществлять связанные с этим затраты как можно позже.
-Кроме того, если вы откладываете решение важных вопросов на более поздний срок, тем самым вы повышаете вероятность того, что выбранное вами решение окажется правильным.
-Другими словами, сегодня вы должны реализовать только то, без чего сегодня не обойтись, при этом вы можете рассчитывать на то, что проблемы, решение которых вы отложили до завтра, развеются сами собой, то есть перестанут быть актуальными.
-Вы можете добавлять в дизайн новые элементы только в случае, если эти новые элементы упрощают код или делают написание следующего фрагмента кода более простым.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Если пологая кривая роста затрат делает ХР возможным, то экспоненциальная кривая роста затрат делает ХР невозможным.&lt;/strong&gt;
-Если изменение обойдется вам в кругленькую сумму, вы сойдете с ума, пытаясь предугадать, каким образом это изменение повлияет на работу системы.
-Если же изменение обходится вам дешево, вы всегда можете рискнуть и проверить, что будет, если вы тем или иным образом измените код, — позже вы всегда можете изменить систему так, как это будет лучше.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;This is one of the premises of XP. It is the technical premise of XP.&lt;/strong&gt;
-If the cost of change rose slowly over time, you would act completely differently from how you do under the assumption that costs rise exponentially.
-You would make big decisions as late in the process as possible, to defer the cost of making the decisions and to have the greatest possible chance that they would be right.
-You would only implement what you had to, in hopes that the needs you anticipate for tomorrow wouldn't come true.
-You would introduce elements to the design only as they simplified existing code or made writing the next bit of code simpler.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;If a flattened change cost curve makes XP possible, a steep change cost curve makes XP impossible.&lt;/strong&gt;
-If change is ruinously expensive, you would be crazy to charge ahead without careful forethought.
-But if change stays cheap, the additional value and reduced risk of early concrete feedback outweighs the additional cost of early change."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 5. Cost of Change", перевод ООО Издательство "Питер"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Поскольку это было произнесено еще до встречи 2001 года и принятия Agile Manifesto, то под XP следует понимать Agile (или даже любую итератиную модель разработки) в принципе, поскольку XP - это частный случай Agile.&lt;/p&gt;
-&lt;p&gt;Иными словами, внутреннее качество программы является первичным условием в Agile, как и в любой другой итеративной разработке.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Engineers who don't understand exponential growth and the cost curve as economies of scale kick in come to wildly incorrect conclusions."&lt;/p&gt;
-&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://twitter.com/KentBeck/status/1402276528910704655?s=19"&gt;Kent Beck&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Continuous attention to technical excellence and good design enhances agility."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="http://agilemanifesto.org/principles.html"&gt;Principles behind the Agile Manifesto&lt;/a&gt;"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "The incremental and iterative nature of Agile development can facilitate &lt;strong&gt;efficient technical and management processes and practices to reduce the cost associated with change&lt;/strong&gt;.
-In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;При соблюдении этого условия, использование &lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Adaptation&lt;/span&gt;&lt;/a&gt; обретает экономическую целесообразность:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Responding to change over following a plan"&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="http://agilemanifesto.org/"&gt;Manifesto for Agile Software Development&lt;/a&gt;"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="http://agilemanifesto.org/principles.html"&gt;Principles behind the Agile Manifesto&lt;/a&gt;"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;О том, почему я обратился к высказываю Kent Beck в этом вопросе, неплохо поясняет Martin Fowler:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Extreme Programming (XP) is a software development methodology developed primarily by Kent Beck.
-XP was one of the first agile methods, indeed XP was the dominant agile method in the late 90s and early 00s before Scrum became dominant as the noughties passed.
-Many people (including myself) consider XP to be the primary catalyst that got attention to agile methods, and superior to Scrum as a base for starting out in agile development."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/bliki/ExtremeProgramming.html"&gt;Extreme Programming&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="emacsway-agile-development-difficulties"&gt;
-&lt;span id="id5"/&gt;&lt;h2&gt;&lt;a class="toc-backref" href="#id12"&gt;О сложностях&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Вернемся еще раз к выражению Kent Beck "&lt;em&gt;сделайте изменение легким, а потом делай легко изменение&lt;/em&gt;".
-Оно состоит из двух частей, причем, первая из них предшествует второй.
-Как раз именно первую часть нередко забывают сделать на современном рынке, а без первой части вторая часть работает не будет, как это нетрудно догадаться.
-Так недалеко и до полного Уроборос.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Scrum is ok if you do it right."&lt;/p&gt;
-&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://youtu.be/0oGpWmS0aYQ?t=921"&gt;OOP 2015 Keynote - Robert C. Martin ("Uncle Bob"): Agility and Architecture at 15:21&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "One pattern I see time and time again on software teams is that they adopt Scrum, pay little attention to technical practices, and they're able to consistently increase their velocity for the first few years.
-But after about three or four years the technical debt they've accumulated in their code is so great that their velocity starts to grind to a halt and they find it difficult to even get simple features implemented.
-This is a place you do not want to get to, though I see it far too often in the software community—teams stuck there without a clue how to get out."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://www.agilealliance.org/how-to-increase-velocity/"&gt;How to Increase Velocity&lt;/a&gt;" by David Bernstein&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Происходит это во многом потому, что:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Я узнал от Jeff Sutherland, что первый Scrum на самом деле использовал все XP практики.
-Но Ken Schwaber убедил его оставить инженерные практики за рамками Scrum, чтобы упростить модель и позволить командам брать на себя ответственность за выбор тех или иных практик.
-Возможно, это ускорило распространение Scrum, но с другой стороны многие команды страдают из-за отсутствия технических практик, позволяющих поддерживать постоянный темп гибкой разработки.&lt;/p&gt;
-&lt;p&gt;I learned from Jeff Sutherland that the first Scrum actually did all the XP practices.
-But Ken Schwaber convinced him to leave the engineering practices out of Scrum, to keep the model simple and let the teams take responsibility for the tech practices themselves.
-Perhaps this helped spread Scrum faster, but the downside is that a lot of teams suffer because they lack the technical practices that enable sustainable agile development."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Scrum and XP from the Trenches: How We Do Scrum" 2nd edition by Henrik Kniberg, перевод под редакцией Алексея Кривицкого&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Последнее предложение приведенной выше цитаты выражает то же самое, но другими словами.
-А ведь еще в 2004 г., в книге "Agile Project Management with Scrum" by Ken Schwaber, Scrum назывался методологий.&lt;/p&gt;
-&lt;p&gt;Позвольте еще раз повторить слова Kent Beck:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "If a flattened change cost curve makes XP possible, a steep change cost curve makes XP impossible."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Extreme Programming Explained" 1st edition by Kent Beck&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Impossible. Точка.&lt;/p&gt;
-&lt;p&gt;Если говорить более развернуто, то, конечно же, это не совсем "Impossible", просто это становится экономически нецелесообразным, поскольку при быстрорастущем графике изменения кода возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "To make agile work, you need solid technical practices.
-A lot of agile education under-emphasizes these, but if you skimp on this you won't gain the productivity and responsiveness benefits that agile development can give you (stranding you at level 1 of the agile fluency model.)
-This is one of the reasons that I still think that Extreme Programming is the most valuable of the named agile methods as a core and starting point."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/agile.html"&gt;Agile Software Development&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "We need to stress that you shouldn't worry too much about the issue of reworking.
-&lt;strong&gt;XP's practices are all about reducing the cost of reworking to manageable levels.&lt;/strong&gt;
-If you find yourself in a situation &lt;strong&gt;where the cost of reworking is prohibitive, then you should either not use XP or you should use an environment that makes rework easier&lt;/strong&gt;."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Planning Extreme Programming" by Kent Beck, Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Этому вопросу посвящена статья "&lt;a class="reference external" href="https://martinfowler.com/articles/designDead.html"&gt;Is Design Dead?&lt;/a&gt;" by Martin Fowler.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "In its common usage, evolutionary design is a disaster.
-The design ends up being the aggregation of a bunch of ad-hoc tactical decisions, each of which makes the code harder to alter.
-In many ways you might argue this is no design, certainly it usually leads to a poor design.
-As Kent puts it, &lt;strong&gt;design is there to enable you to keep changing the software easily in the long term.&lt;/strong&gt;
-&lt;strong&gt;As design deteriorates, so does your ability to make changes effectively.&lt;/strong&gt;
-You have the state of software entropy, over time the design gets worse and worse.
-Not only does this make the software harder to change, it also makes bugs both easier to breed and harder to find and safely kill.
-This is the "code and fix" nightmare, where the bugs become exponentially more expensive to fix as the project goes on."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/articles/designDead.html"&gt;Is Design Dead?&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "If you're a manager or customer how can you tell if the software is well designed?
-It matters to you because poorly designed software will be more expensive to modify in the future."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://martinfowler.com/articles/designDead.html"&gt;Is Design Dead?&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;И очень удачно по этому вопросу высказался Grady Booch:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "Grady Booch has also provided a set of guidelines for an agile architecture (which in turn imply some duties for the agile architect).
-Booch claims that all good software-intensive architectures are agile.
-What does he mean by this? He means that a successful architecture is resilient and loosely coupled.
-It is composed of a core set of well-reasoned design decisions but still contains some "wiggle room" that allows modifications to be made and refactorings to be done, without ruining the original structure.&lt;/p&gt;
-&lt;p&gt;Booch also notes that an effective agile process will allow the architecture to grow incrementally as the system is developed and matures.
-The key to success is to have decomposability, separation of concerns, and near-independence of the parts.
-(Sound familiar? These are all modifiability tactics.)&lt;/p&gt;
-&lt;p&gt;Finally, Booch notes that to be agile, the architecture should be visible and self-evident in the code; this means making the design patterns, cross-cutting concerns, and other important decisions obvious, well communicated, and defended.
-This may, in turn, require documentation.
-But whatever architectural decisions are made, the architect must make an effort to "socialize" the architecture."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;📝 "After all software is supposed to be soft."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"&lt;a class="reference external" href="https://www.martinfowler.com/articles/newMethodology.html"&gt;The New Methodology&lt;/a&gt;" by Martin Fowler&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;div class="admonition seealso"&gt;
-&lt;p class="admonition-title"&gt;См.также&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"&gt;&lt;span class="std std-ref"&gt;Что такое Adaptation&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../uncertainty-management/prediction/prediction.html#emacsway-prediction"&gt;&lt;span class="std std-ref"&gt;Что такое Prediction&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../uncertainty-management/balancing-prediction-adaptation.html#emacsway-balancing-prediction-adaptation"&gt;&lt;span class="std std-ref"&gt;Balancing Prediction/Adaptation&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="analysis/concerns/balancing-business-technical-concerns.html#emacsway-agile-business-concerns-predominance"&gt;&lt;span class="std std-ref"&gt;Преобладание бизнес-интересов&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../uncertainty-management/adaptation/software-design/software-design.html"&gt;&lt;span class="doc"&gt;Role of Software Design in Agile&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference internal" href="../../uncertainty-management/adaptation/crash-course-in-software-development-economics.html"&gt;&lt;span class="doc"&gt;Краткий курс по экономике разработки программного обеспечения&lt;/span&gt;&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description><pubDate>Thu, 20 Jan 2022 00:00:00 </pubDate></item><item><title>Мотивация разработчиков</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/concerns/business-concerns/developer-motivation.html</link><description>
+</description><pubDate>Sat, 22 Jan 2022 00:00:00 </pubDate></item><item><title>Мотивация разработчиков</title><link>https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/analysis/concerns/business-concerns/developer-motivation.html</link><description>
 &lt;span id="id1"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;

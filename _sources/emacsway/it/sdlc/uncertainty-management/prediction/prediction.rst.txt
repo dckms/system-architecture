@@ -9,6 +9,12 @@
 
 .. sectionauthor:: Ivan Zakrevsky
 
+..
+
+    📝 A second common style of definition for architecture is that it's "the design decisions that need to be made early in a project", but Ralph complained about this too, saying that it was more like the decisions you wish you could get right early in a project.
+
+    -- "`Software Architecture Guide <https://martinfowler.com/architecture/>`__" by Martin Fowler
+
 К Prediction (Прогнозированию) относится ряд активностей на основе правил логического вывода, предшествующих производству Системного Инкремента и направленных на заблаговременное разрешение неопределенности.
 К ним относятся Business/System Requirements Definition and Analysis, Architecture Definition, Design Definition, разработка макетов UX/UI-Design, Estimation и Planning.
 Но главным образом к ним относится разрешение неопределенности в problem-space (т.е. требований), что оказывает существенное влияние на выбор SDLC-модели.
