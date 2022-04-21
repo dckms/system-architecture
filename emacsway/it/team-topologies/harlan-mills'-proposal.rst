@@ -247,15 +247,38 @@ Program Management
 
 По этой же причине бумажный кораблик хорошо держит форму, но если его пропорционально увеличить в несколько раз, то он рухнет под собственной тяжестью без фермы жесткости.
 
+По этой же причине невозможно фрактально увеличить село до размеров крупного города, не обеспечив в нем транспортные магистрали и узлы связи.
+
+Эту проблему хорошо сформулировал Galileo Galilei в теории theory of Beam Bending:
+
+    .. figure:: _media/harlan-mills'-proposal/galileo-beam-bending.jpg
+       :alt: Discorsi e dimostrazioni matematiche, intorno à due nuoue scienze. Leiden: appresso gli Elsevirii, 1638. The image source is "Galileo's Beam Experiment" https://civil.lindahall.org/strength.shtml
+       :align: left
+       :width: 200
+
+       Discorsi e dimostrazioni matematiche, intorno à due nuoue scienze. Leiden: appresso gli Elsevirii, 1638. The image source is "`Galileo's Beam Experiment <https://civil.lindahall.org/strength.shtml>`__"
+
+..
+
+    📝 "Many mathematicians before Galileo had dealt with the problem of statics – how forces are transmitted by structural members.
+    Galileo proposed a new science, the study of the strength of materials, that considered how the size and shape of structural members affects their ability to carry and transmit loads.
+    He discovered that as the length of a beam increases, its strength decreases, unless you increase the thickness and breadth at an even greater rate.
+    You cannot, therefore, simply double or triple the dimensions of a beam, and expect it to carry double or triple the load.
+    This led Galileo to recognize what we now call **the scaling problem – there are limits to how big nature can make a tree, or an animal, for beyond a certain limit, the branches of the tree or the limbs of the animal, will break under their own weight.**
+
+    The illustration of a cantilever beam demonstrates Galileo’s discovery that the breaking force on a beam increases as the square of its length."
+
+    -- "`Galileo's Beam Experiment <https://civil.lindahall.org/strength.shtml>`__"
+
 Попытка фрактально увеличивать численность Scrum/Nexus-команд равносильна попытке создать беспозвоночное животное с массой динозавра.
 Основная тяжесть, под которой рушится прочность коллектива, формируется коммуникативной нагрузкой (з-н Брукса: n(n-1)/2).
 
 Если предыдущий пример показался вам неубедительным, то давайте попробуем представить себе управление воздушным движением без диспетчеров.
 Ну, такие... самоорганизующиеся экипажи.
 Чтобы пилоты во время полета сами между собой договаривались о том, как они будут расходиться, какие эшелоны они будут занимать, в какой очередности они будут производить посадку и взлет...
-Причем, гипотетически это еще было бы возможно где-то в районе малозагруженных аэропортов.
-Но насколько при этом возрастет когнитивная нагрузка на пилота?
-Ни один из пилотов, в условиях управления воздушным судном, не обладает ресурсами внимания, необходимыми для достижения целостного понимания картины воздушного движения.
+Причем, гипотетически это еще было бы осуществимо где-то в районе малозагруженных аэропортов.
+Но при этом возрастет когнитивная нагрузка на пилота.
+Ни один из пилотов, в условиях управления воздушным судном, не обладает ресурсами внимания достаточными для достижения целостного понимания картины воздушного движения.
 Эту когнитивную нагрузку с него снимает диспетчер управления воздушным движением.
 А теперь попробуйте представьте себе что-то подобное в Шереметьево.
 А если какое-то одно воздушное судно терпит бедствие и нуждается в аварийной посадке?
@@ -530,7 +553,7 @@ Scrum of Scrums
 Другие
 ------
 
-MSF и в FDD Program Management тоже присутствует.
+Program Management также присутствует в MSF и в FDD.
 В RAD тоже аналитика является "upstream development activities".
 RUP реализует :ref:`спиральную <emacsway-spiral-development>` модель.
 
@@ -557,6 +580,58 @@ RUP реализует :ref:`спиральную <emacsway-spiral-development>`
     -- "Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman
 
 Т.е. речь идет опять же, об отдельном Backlog для активностей, предшествующих фазе реализации Системного Инкремента.
+
+
+.. index::
+   single: Fractal Team; in Team Topologies at scale
+   :name: emacsway-fractal-team
+
+
+Фрактальная структура
+=====================
+
+Хотя Program Management и выполняет роль опорного хребта коммуникативной нагрузки коллектива, момент его внедрения в процессы разработки должен быть оправдан.
+Кроме того, концентрация всех архитектурных задач на уровне Program Management может привести к образованию узкого горлышка.
+Одним из способов решения этой задачи является децентрализация архитектурных решений об интеграции ограниченных контекстов.
+Карта ограниченных контекстов (`Context Map <https://pubs.opengroup.org/architecture/o-aa-standard-single/#context-map>`__) позволяет сократить количество возможных коммуникационных путей в коллективе и снизить коммуникативную нагрузку.
+Например, если подмножество какого-то публичного интерфейса Ограниченного Контекста используется как Customer/Supplier только одним другим Ограниченным Контекстом, то команде не нужно общаться с командами остальных Ограниченных Контекстов по поводу изменения этого подмножества.
+Построение топологии команд по Ограниченным Контекстам позволяет сфокусировать полезную коммуникативную нагрузку внутри команды и уменьшить контрпродуктивную коммуникативную нагрузку по интеграции между командами, тем самым повышая уровень автономности команд.
+
+Более лучшего эффекта можно достигнуть используя CDC-Tests:
+
+    📝 "About consumer-driven contract testing, we identified two reasons:
+
+    1. development teams have communication obstacles when several people working on one microservice (e.g., over 8 people, see Figure 6 (Right)) and
+    2. microservices systems extensively use third party resources [118]."
+
+    -- "`Consumer-Driven Contract Tests for Microservices: A Case Study <https://www.researchgate.net/publication/337326691_Consumer-Driven_Contract_Tests_for_Microservices_A_Case_Study>`__" by Jyri Lehvä, Niko Mäkitalo, Tommi Mikkonen
+
+..
+
+    📝 "We use some techniques from DDD, particularly event storming, to understand and model the domains in our business context.
+    At a more technical level, we use Pact for contract testing services and inter-team communication.
+    Pact has really helped us to adopt a clear, defined approach to testing services, setting expectations across all teams about how to test and interact with other teams."
+
+    -- "Team Topologies: Organizing Business and Technology Teams for Fast Flow" by Matthew Skelton, Manuel Pais
+
+..
+
+    📝 "Contract tests are a big win when it comes to enabling teams to work and deploy independently, but they also require some level of coordination.
+    Consumer contract tests are of very little value unless they're verified against the provider, and a provider can't write contract tests for their system without working with the consumer team to get the tests added to the consumer project.
+
+    Contracts are not a replacement for good communication between or within teams.
+    In fact, contracts require collaboration and communication.
+    One could make the argument that this is one of the main reasons to leverage Pact and enforce communication pathways in large internal and external development organizations.
+
+    Contracts are not a magical silver bullet that will allow you to hide in your developer caves and toss built artifacts at each other until everything passes.
+    It is important for all teams to be invested in the process.
+    One of the most common reasons that Pact fails to be successfully adopted in an organisation is a lack of buy in from all parties.
+
+    Collaborate about the problems, collaborate over the design, and keep the communication channels open."
+
+    -- "`CI/CD Setup Guide :: Talk <https://docs.pact.io/pact_nirvana/step_2>`__"
+
+Таким образом, независимо от того, существует ли у команд Program Management, или же команды имеет фрактальную структуру, CDC-Tests позволяют в значительной мере управлять коммуникативной нагрузкой на команды и минизировать Проблему Брукса.
 
 
 Социальная роль архитектуры
