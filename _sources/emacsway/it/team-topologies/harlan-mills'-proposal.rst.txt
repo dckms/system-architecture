@@ -243,7 +243,7 @@ Program Management
 Знаете, почему не бывает больших червяков?
 Любое беспозвоночное животное не может быть бесконечно большим, поскольку на определенном пороге сила его тяжести превысит предел его прочности.
 Рост силы тяжести опережает рост прочности.
-Чтобы увеличение массы организма стало возможным, в нем должен появляется скелет, который выполняет опорную функцию.
+Чтобы увеличение массы организма стало возможным, в нем должен появиться скелет, который выполняет опорную функцию.
 
 По этой же причине бумажный кораблик хорошо держит форму, но если его пропорционально увеличить в несколько раз, то он рухнет под собственной тяжестью без фермы жесткости.
 
@@ -566,9 +566,8 @@ RUP реализует :ref:`спиральную <emacsway-spiral-development>`
 
 Интерес они вызыват прежде всего потому, что:
 
-    📝 "In ADD, architecture design is performed in rounds, each of which may consist of a series of design iterations.
-    A round comprises the **architecture design activities performed within a development cycle**.
-    Through one or more iterations, you produce an architecture that suits the established design purpose for this round."
+    📝 "The drivers become part of an **architectural design backlog** that you should use to perform the different design iterations.
+    When you have made design decisions that account for all of the items in the backlog, you’ve completed this round."
 
     -- "Software Architecture in Practice" 4th edition by Len Bass, Paul Clements, Rick Kazman
 
@@ -578,6 +577,19 @@ RUP реализует :ref:`спиральную <emacsway-spiral-development>`
     **It produces a "workable" architecture early and quickly, one that can be given to other project teams so they can begin their work while the architect or architecture team continues to elaborate and refine.**"
 
     -- "Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman
+
+Humberto Cervantes и Rick Kazman, в книге "Designing Software Architectures: A Practical Approach", которая была посвящена ADD 3.0, предлагают заводить "architectural design backlog" даже в Scrum:
+
+    📝 "For example, when using Scrum, the sprint backlog and the design backlog are not independent:
+    Some features in the sprint backlog may require architecture design to be performed, so they will generate items that go into the architectural design backlog.
+    These two backlogs can be managed separately, however.
+    The design backlog may even be managed internally, as it contains several items that are typically not discussed or prioritized by the customer (or product owner).
+
+    Also, additional architectural concerns may arise as decisions are made.
+    For example, if you choose a reference architecture, you will probably need to add specific architectural concerns, or quality attribute scenarios derived from them, to the architectural design backlog.
+    An example of such a concern is the management of sessions for a web application reference architecture."
+
+    --  "Designing Software Architectures: A Practical Approach" by Humberto Cervantes, Rick Kazman
 
 Т.е. речь идет опять же, об отдельном Backlog для активностей, предшествующих фазе реализации Системного Инкремента.
 
