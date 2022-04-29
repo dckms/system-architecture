@@ -652,6 +652,14 @@ Dean Leffingwell возлагает на Product Owner обязанность п
 
     -- "`Can Software Developers Meet the Need? <https://kenschwaber.wordpress.com/2014/04/09/can-software-developers-meet-the-needs/>`__ by Ken Schwaber
 
+..
+
+    📝 "I also reminded the team members that Scrum requires transparency.
+    When the Team demonstrates functionality to the Product Owner and stakeholders at the Sprint review, those viewing the functionality have a right to presume that the code is complete, meaning not only that the code is written but also that it is written according to standards, easy to read, refactored, unit tested, harness tested, and even functionality tested.
+    If this isn't true, the Team isn't allowed to demonstrate the functionality, because in that case, the viewer's assumption would be incorrect."
+
+    -- "Agile Project Management with Scrum" by Ken Schwaber
+
 Jeff Sutherland возлагает устранение Technical Debt на Definition of Done:
 
     📝 "In the long run, Definition of Done helps to remove technical debt."
