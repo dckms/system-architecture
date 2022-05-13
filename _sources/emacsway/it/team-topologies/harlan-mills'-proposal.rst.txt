@@ -593,6 +593,7 @@ Humberto Cervantes и Rick Kazman, в книге "Designing Software Architectur
 
 Т.е. речь идет опять же, об отдельном Backlog для активностей, предшествующих фазе реализации Системного Инкремента.
 
+- "`4 tools you need to build an agile program management powerhouse <https://www.atlassian.com/blog/jira-align/tools-for-agile-program-management>`__" by Kyle Foreman
 
 .. index::
    single: Fractal Team; in Team Topologies at scale
