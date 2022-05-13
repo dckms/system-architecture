@@ -21,7 +21,7 @@ YAGNI
 
 Непонимание того, как этот ущерб образуется, является основной причиной продолжения этой практики и деградации экономики разработки.
 Хороший архитектор или тимлид имеет ясное представление о причинах и составляющих этого ущерба, и способен пояснить их каждому разработчику, ведь это влияет непосредственно на темпы разработки.
-Образно говоря, вы можете быть насколько угодно великим полководцем, но если ваши солдаты не умеют метко стрелять, то о победах можно забыть.
+Образно говоря, вы можете быть насколько угодно великим полководцем, но грош этому цена, если ваши солдаты не умеют метко стрелять.
 
 Когда я узнал о YAGNI, моя персональная эффективность выросла в разы.
 Этот подход хорошо сочетается с `Emergent (Incremental) Design <https://en.wikipedia.org/wiki/Emergent_Design#Emergent_design_in_agile_software_development>`__.
@@ -208,6 +208,7 @@ Martin Fowler о выборе момента реализации проектн
 ==================
 
 - "`Принцип YAGNI <http://sergeyteplyakov.blogspot.com/2016/08/yagni.html>`__" / Сергей Тепляков
+- "`О повторном использовании кода <http://sergeyteplyakov.blogspot.com/2012/04/blog-post_19.html>`__" / Сергей Тепляков
 - "`Yagni <https://martinfowler.com/bliki/Yagni.html>`__" (хорошо разъясняет виды экономических ущербов: "cost of build", "cost of delay", "cost of carry", "cost of repair", "cost of removing")
 - "`Technical Debt <https://martinfowler.com/bliki/TechnicalDebt.html>`__"
 - "`Technical Debt Quadrant <https://martinfowler.com/bliki/TechnicalDebtQuadrant.html>`__"
