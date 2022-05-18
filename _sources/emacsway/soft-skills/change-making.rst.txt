@@ -175,6 +175,8 @@ Nick Tune поделился `историей конфликта с одним 
 - "Leading Change, With a New Preface by the Author." by Kotter, John P, Harvard Business Review Press, 2012.
 - "Switch: How to Change Things When Change Is Hard." by Heath, Chip, and Dan Heath, The Crown Publishing Group, 2010.
 
+- "A More Beautiful Question: The Power of Inquiry to Spark Breakthrough Ideas" by Warren Berger
+- "Just Listen: Discover the Secret to Getting Through to Absolutely Anyone" by Mark Goulston
 
 - Бражников М.А. Управление изменениями: базовый курс: учеб. пособие / М.А. Бражников, И.В. Хорина. – Самара: Самар. гос. техн. ун-т, 2015. – 238 с.
 - Данилюк. УПРАВЛЕНИЕ ИЗМЕНЕНИЯМИ: учебное пособие. Тюмень: Издательство Тюменского государственного университета, 2014. 288 с.
