@@ -77,6 +77,17 @@
 
     -- "Refactoring: Improving the Design of Existing Code" 2nd edition by Martin Fowler, Kent Beck перевод И.В. Красикова под редакцией С.Н. Тригуб
 
+..
+
+    📝 "It is worth, at this point, returning to Fowler's distinction [Fowler 2019] between code refactoring and architectural restructuring. Fowler would strongly promote the view that code refactoring requires no justification; rather it is part of a developer's "day job". This does not mean that we have to take on a massive code restructuring exercise for a legacy codebase; on the contrary, there may be no reason whatsoever to restructure the code for a stable legacy project. However, that said, developers should refactor their code when the opportunity arises. Such activity constitutes a "Type 2" decision as documented in [Ries 2011].
+
+    Architectural refactoring (restructuring), however, often requires explicit investment because the required effort is significant. In such cases, it is incumbent on development teams and architects to "sell" the refactoring in monetary, time, or customer success terms. For example, "if we perform refactoring A, the build for Product B will be reduced by seven minutes, resulting in us being able to deploy C times more frequently per day"; or, "implementing refactoring D will directly address key Customer E's escalated pain point; their annual subscription and support fee is $12 million per annum". Note, however, that claims that "refactoring F will make us G% more productive" should be avoided as software productivity is notoriously difficult to measure."
+
+    - [Fowler 2019] Refactoring: Improving the Design of Existing Code, by Martin Fowler, January 2019, published by Addison-Wesley
+    - [Ries 2011] The Lean Startup: How Constant Innovation Creates Radically Successful Businesses, by Eric Ries, October 2011, published by Portfolio Penguin
+
+    -- "Open Agile Architecture™" by The Open Group, Chapter "`6.5.1. Justifying Ongoing Investment in Architectural Refactoring <https://pubs.opengroup.org/architecture/o-aa-standard-single/#KLP-CAR-justifying>`__"
+
 
 .. index::
    single: Refactoring; don't tell to manager
