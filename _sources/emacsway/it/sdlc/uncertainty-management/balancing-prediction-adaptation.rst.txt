@@ -72,6 +72,16 @@ Balancing Prediction/Adaptation
 
 ..
 
+    📝 "Though BDUF is an Agile anti-pattern, does it mean architecture should solely be a product from emergence? As James Coplien argues [Coplien 2010], some intentional architecture saves waste and accelerates the decision process.
+
+    Agile Architecture shall seek a balance between intentional and emerging. Intentional architecture provides value if it is done differently. Intentional architecture represents a set of assumptions that must be verified. It should not slow down the integration of new requirements.
+
+    [Coplien 2010] Lean Architecture, by James Coplien and Gertrud Bjørnvig, July 2010, published by Wiley"
+
+    -- "Open Agile Architecture™" by The Open Group, Chapter "`9.14. Axiom 14. Bias for Change <https://pubs.opengroup.org/architecture/o-aa-standard-single/#_axiom_14_bias_for_change>`__"
+
+..
+
     📝 "The incremental and iterative nature of Agile development can facilitate efficient technical and management processes and practices to reduce the cost associated with change.
     In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project."
 
