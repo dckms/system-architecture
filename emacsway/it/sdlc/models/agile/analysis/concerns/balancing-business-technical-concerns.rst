@@ -45,6 +45,16 @@
 
     -- "A Scrum Book: The Spirit of the Game" by Jeff Sutherland, James Coplie, chapter "81 Whack the Mole"
 
+..
+
+    📝 "A frequent frustration amongst software developers is the perception that their management team only values things that can be sold. To management, they believe, architectural refactoring is wasted money, occupying development teams for months at a time without a single additional thing being produced that can be sold. And for that matter, why does it take so long for them to add a feature? (Possible answer: that would be because the architecture has not been refactored in years.)
+
+    Management teams do have a business to run and customers do not typically hand over money for architectural refactorings, no matter how elegant they are; so without shiny new things to sell, there may be no money to continue to employ the development teams who want to do the refactoring.
+
+    As such, this issue has two aspects: firstly, development teams need to learn how to justify such investment; and secondly, such non-functional investment will always have to be balanced with functional requirements."
+
+    -- "Open Agile Architecture™" by The Open Group, Chapter "`6.5.1. Justifying Ongoing Investment in Architectural Refactoring <https://pubs.opengroup.org/architecture/o-aa-standard-single/#KLP-CAR-justifying>`__"
+
 
 Поиск баланса
 =============
@@ -650,7 +660,7 @@ Dean Leffingwell возлагает на Product Owner обязанность п
     It can either be immediately deployed or built upon without regression.
     **It has no technical debt.**"
 
-    -- "`Can Software Developers Meet the Need? <https://kenschwaber.wordpress.com/2014/04/09/can-software-developers-meet-the-needs/>`__ by Ken Schwaber
+    -- "`Can Software Developers Meet the Need? <https://kenschwaber.wordpress.com/2014/04/09/can-software-developers-meet-the-needs/>`__" by Ken Schwaber
 
 ..
 
@@ -863,6 +873,19 @@ ATAM in Agile
     Ask at the retro, "Roughly how much of our sprint capacity did we spend on tech stories, and did that feel about right?"".
 
     -- "Scrum and XP from the Trenches: How We Do Scrum" 2nd edition by Henrik Kniberg, перевод под редакцией Алексея Кривицкого
+
+
+Open Agile Architecture™
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+    📝 "It is worth, at this point, returning to Fowler's distinction [Fowler 2019] between code refactoring and architectural restructuring. Fowler would strongly promote the view that code refactoring requires no justification; rather it is part of a developer's "day job". This does not mean that we have to take on a massive code restructuring exercise for a legacy codebase; on the contrary, there may be no reason whatsoever to restructure the code for a stable legacy project. However, that said, developers should refactor their code when the opportunity arises. Such activity constitutes a "Type 2" decision as documented in [Ries 2011].
+
+    Architectural refactoring (restructuring), however, often requires explicit investment because the required effort is significant. In such cases, it is incumbent on development teams and architects to "sell" the refactoring in monetary, time, or customer success terms. For example, "if we perform refactoring A, the build for Product B will be reduced by seven minutes, resulting in us being able to deploy C times more frequently per day"; or, "implementing refactoring D will directly address key Customer E's escalated pain point; their annual subscription and support fee is $12 million per annum". Note, however, that claims that "refactoring F will make us G% more productive" should be avoided as software productivity is notoriously difficult to measure."
+
+    - [Fowler 2019] Refactoring: Improving the Design of Existing Code, by Martin Fowler, January 2019, published by Addison-Wesley
+    - [Ries 2011] The Lean Startup: How Constant Innovation Creates Radically Successful Businesses, by Eric Ries, October 2011, published by Portfolio Penguin
+
+    -- "Open Agile Architecture™" by The Open Group, Chapter "`6.5.1. Justifying Ongoing Investment in Architectural Refactoring <https://pubs.opengroup.org/architecture/o-aa-standard-single/#KLP-CAR-justifying>`__"
 
 
 Системное мышление
