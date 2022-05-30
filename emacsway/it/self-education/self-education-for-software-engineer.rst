@@ -853,8 +853,17 @@ Donald E. Knuth:
 Изучаем оценивание задач
 ------------------------
 
+- "`Practice Standard for Scheduling <https://www.pmi.org/pmbok-guide-standards/framework/practice-standard-scheduling-3rdedition>`__" 3d edition by Project Management Institute
 - "Software Estimation: Demystifying the Black Art (Developer Best Practices)" by Steve McConnell (я встречал в интернете `краткий конспект <http://igorshevchenko.ru/blog/entries/software-estimation>`__)
 - "Agile Estimating and Planning" by Mike Cohn
+
+Очень кратко (всего 3 страницы) о методике оценивания PERT:
+
+- "The Clean Coder" by Robert C. Martin, "Chapter 10 Estimation :: PERT"
+
+Статья, отвечающая на очень частый вопрос:
+
+- "`How Do Story Points Relate to Hours? <https://www.mountaingoatsoftware.com/blog/how-do-story-points-relate-to-hours>`__" by Mike Cohn
 
 
 Функциональное программирование
