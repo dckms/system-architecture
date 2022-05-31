@@ -456,6 +456,7 @@ Others:
 - "`EventStorming Glossary & Cheat sheet <https://ddd-crew.github.io/eventstorming-glossary-cheat-sheet/>`__" by Nick Tune
 - "Open Agile Architecture", chapter "`19. Event Storming <https://pubs.opengroup.org/architecture/o-aa-standard/>`__"
 - "`Event Storming на практических кейсах <http://agilemindset.ru/event-storming-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85-%D0%BA%D0%B5%D0%B9%D1%81%D0%B0%D1%85/>`__", Сергей Баранов (`видео <https://www.youtube.com/watch?v=kJjuTuviZ-E>`__)
+- "`Event storming. The workshop focuses on domain events that are generated in the context of a business process or a business application.  <https://www.ibm.com/cloud/architecture/architecture/practices/event-storming-methodology-architecture/>`__" by IBM
 - "`Reactive in practice, Unit 1: Event storming the stock trader domain <https://developer.ibm.com/tutorials/reactive-in-practice-1/>`__" by Kevin Webber, Dana Harrington
 - "`Event storming at ibm.com <https://www.ibm.com/cloud/architecture/architecture/practices/event-storming-methodology-architecture/>`__"
 - "`Event storming & domain-driven design: Reactive in practice -- Event storming the stock trader domain -- IBM Developer <https://developer.ibm.com/tutorials/reactive-in-practice-1/>`__" by Kevin Webber, Dana Harrington
