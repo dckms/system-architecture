@@ -990,7 +990,6 @@ Code Smell catalogs
 - `The Architect's Path (Part 1 - Model) <https://architectelevator.com/architecture/architect-path/>`__ by Gregor Hohpe
 - `The Architect's Path (Part 2 - Implementation) <https://architectelevator.com/architecture/architect-bookshelf/>`__ by Gregor Hohpe
 - `Software Architecture Book References <https://www.developertoarchitect.com/books.html>`__ by Mark Richards
-- `Как прокачаться в проектировании программного обеспечения — список книг <https://apolomodov.medium.com/software-design-books-743be52e4c71>`__ by Alexander Polomodov
 - `Искусство спора (обучающие материалы) <https://ruxpert.ru/%D0%98%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE_%D1%81%D0%BF%D0%BE%D1%80%D0%B0_(%D0%BE%D0%B1%D1%83%D1%87%D0%B0%D1%8E%D1%89%D0%B8%D0%B5_%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8B)>`__
 - `Книги по риторике <https://m.vk.com/wall-56611080_127534>`__
 
