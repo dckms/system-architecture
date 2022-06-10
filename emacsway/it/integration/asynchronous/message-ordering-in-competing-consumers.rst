@@ -61,6 +61,8 @@
 - "Building Event-Driven Microservices" by Adam Bellemare, "`Chapter 6. Deterministic Stream Processing <https://www.oreilly.com/library/view/building-event-driven-microservices/9781492057888/ch06.html>`__"
 - "`Distributed systems: for fun and profit <http://book.mixu.net/distsys/>`__" (2013). An introduction to distributed systems. (`source code <https://github.com/mixu/distsysbook>`__)
 - "Database Reliability Engineering. Designing and Operating Resilient Database Systems." by Laine Campbell and Charity Majors
+- "Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing", by Tyler Akidau, Slava Chernyak, and Reuven Lax, "Chapter 2. The What, Where, When, and How of Data Processing", "Chapter 3. Watermarks"
+- "`The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, Unbounded, Out-of-Order Data Processing <https://oreil.ly/WO2OC>`__" by Tyler Akidau, Robert Bradshaw, Craig Chambers, Slava Chernyak, Rafael J. Fernandez-Moctezuma, Reuven Lax, Sam McVeety, Daniel Mills, Frances Perry, Eric Schmidt, Sam Whittle; Google
 - "`Event Sourced Building Blocks for Domain-Driven Design with Python <https://leanpub.com/dddwithpython>`__" by John Bywater
 
 Статьи по теме:
