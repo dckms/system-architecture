@@ -461,7 +461,7 @@ Others:
 - "`Event storming at ibm.com <https://www.ibm.com/cloud/architecture/architecture/practices/event-storming-methodology-architecture/>`__"
 - "`Event storming & domain-driven design: Reactive in practice -- Event storming the stock trader domain -- IBM Developer <https://developer.ibm.com/tutorials/reactive-in-practice-1/>`__" by Kevin Webber, Dana Harrington
 - "`Event driven solution implementation methodology <https://ibm-cloud-architecture.github.io/refarch-eda/methodology/event-storming/>`__"
-- "`Container Shipment Analysis <https://ibm-cloud-architecture.github.io/refarch-kc/implementation/event-storming-analysis/>__" by IBM
+- "`Container Shipment Analysis <https://ibm-cloud-architecture.github.io/refarch-kc/implementation/event-storming-analysis/>`__" by IBM
 - "`refarch-kc - Implementation solution for container shipment using Event-Driven Architecture <https://github.com/ibm-cloud-architecture/refarch-kc>`__" by IBM
 - "`Awesome EventStorming <https://github.com/mariuszgil/awesome-eventstorming>`__"
 
