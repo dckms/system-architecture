@@ -136,6 +136,19 @@ Role of Design Patterns in Agile
 
     -- `Ralph Johnson <https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf>`__
 
+..
+
+    📝 ""Programming would be more effective if programmers spent less time on the mundane, repetitive parts of their job so they had more time to spend doing a good job of solving truly unique problems.
+
+    Most programs follow a small set of laws:
+
+    - Programs are read more often than they are written.
+    - There is no such thing as “done”. Much more investment will be spent modifying programs than developing them initially.
+    - They are structured using a basic set of state and control flow concepts.
+    - Readers need to understand programs in detail and in concept. Sometimes they move from detail to concept, sometimes from concept to detail. Patterns are based on this commonality. For example, every programmer has to decide how to structure iteration. By the time you are thinking about how to write a loop, most of the domain-specific questions have been resolved for the moment and you are left with purely technical issues: the loop should be easy to read, easy to write, easy to verify, easy to modify, and efficient."
+
+    -- "Implementation Patterns" by Kent Beck
+
 
 .. seealso::
 

@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Review &#8212; System Architecture</title>
+    <link rel="stylesheet" href="../../../../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../../../../../" src="../../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../../_static/jquery.js"></script>
+    <script src="../../../../../../../_static/underscore.js"></script>
+    <script src="../../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../../../../../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../../../../../search.html" />
+    <link rel="next" title="Что такое Agile Development" href="../../agile.html" />
+    <link rel="prev" title="Collaborative Development" href="../../../../../../../trunk/it/sdlc/models/agile/practices/collaborative-development/index.html" />
+    
+   
+  <link rel="stylesheet" href="../../../../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+
+
+    
+        
+            <link rel="canonical" href="https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/practices/collaborative-development/code-review.html" />
+        
+    
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+              <div class="related top">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="../../../../../../../trunk/it/sdlc/models/agile/practices/collaborative-development/index.html" title="Previous document">Collaborative Development</a>
+        </li>
+        <li>
+          <a href="../../agile.html" title="Next document">Что такое Agile Development</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+
+          <div class="body" role="main">
+            
+    
+  <div class="section" id="code-review">
+<span id="emacsway-agile-practices-code-review"></span><h1><a class="toc-backref" href="#id3">Code Review</a><a class="headerlink" href="#code-review" title="Ссылка на этот заголовок">¶</a></h1>
+<p><em>Автор раздела: Ivan Zakrevsky</em></p>
+<div class="contents topic" id="id1">
+<p class="topic-title">Содержание</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#code-review" id="id3">Code Review</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id4">Возможные результаты Code Review</a></p></li>
+<li><p><a class="reference internal" href="#apaptation-vs-prediction" id="id5">Apaptation vs Prediction</a></p></li>
+<li><p><a class="reference internal" href="#continuous-review" id="id6">Continuous Review</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Является ли Code Review эффективной практикой?</p>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id4">Возможные результаты Code Review</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Давайте посмотрим, какие исходы обычно возникают в результате Code Review:</p>
+<ol class="arabic simple">
+<li><p>Когда новый инкремент знаний получен, тогда возникает:</p>
+<ol class="arabic simple">
+<li><p>Конесенсус (обоюдное согласие на едином решении), который формируется, как правило, новым инкрементом знаний, полученным в процессе обсуждения Pull Request.</p></li>
+<li><p><a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%89%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC">Психологическая защита</a>. Чувство ущербности на фоне грамотного спикера вынуждает специалиста защищать свою зону комфорта и социальное положение путем агрессивных попыток дискредитации носителя неудобных компетенций. Увы, подобные случаи происходили даже в практике достаточно известных авторов по архитектуре. Иными словами, мало знать, нужно уметь еще донести.</p></li>
+</ol>
+</li>
+<li><p>Недостаток знаний для качественной аргументации. Борьба мнений. Тогда:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%BD%D0%BE%D1%81%D1%82%D1%8C">Внешний конформизм</a>, когда одному из участников Code Review не удалось аргументированно пояснить свою позицию другому, и тот решил прекратить прения, оставшись внутри себя несогласным.</p></li>
+<li><p><a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%98%D1%80%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D1%83%D1%81%D0%B8%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">Эффект иррационального усиления</a> - когда психологически сложно расстаться с проделанным трудом.</p></li>
+</ol>
+</li>
+</ol>
+<p>Во всех перечисленных случаях, кроме первого, это приводит к демотивации и усиливает текучку кадров. Что, в свою очередь вызывает ущерб упущенной выгоды из-за сдвига графика выхода на рынок новых бизнес-фич в результате простаивания вакансий, проблемы Брукса (отвлекания опытных специалистов на обучение новых, низкая эффективность новых специалистов из-за недостатка знаний и трат времени на освоение новых знаний), прямые потери (обучение, поиск соискателей) и т.п.</p>
+<p>Поскольку ключевым условием достижения консенсуса ревьюера и автора Pull Request является новый инкремент знаний, резонно возникает вопрос: а нужно ли получение этого инкремента привязывать во времени к инспекции уже воплощенной реализации?</p>
+</div>
+<div class="section" id="apaptation-vs-prediction">
+<h2><a class="toc-backref" href="#id5">Apaptation vs Prediction</a><a class="headerlink" href="#apaptation-vs-prediction" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Можно еще провести такую аналогию: Code Review - это форма инспекции и адаптации, т.е. эмпирический (опытный) способ обработки неопределенности. Это сродни хождению на ощуп. Куда-то добраться таким образом можно, но происпектировать таким образом можно только то, что можно потрогать, т.е. когда &quot;уже пришли&quot;.</p>
+<p>Процесс можно сделать эффективней, если расширить горизонт &quot;видения&quot;, т.е. внести определенную долю Prediction-активности, и получение основного инкремента знаний перенести с Code Review на Design Review. Тут возникает вопрос о том, как достигнуть Design наименьшими трудозатратами, и именно эту проблему хорошо решает Event Storming, т.к. его можно осуществлять прямо в процессе обсуждения.</p>
+</div>
+<div class="section" id="continuous-review">
+<h2><a class="toc-backref" href="#id6">Continuous Review</a><a class="headerlink" href="#continuous-review" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Можно еще обратиться к народной пословице о том, что лучше один раз увидеть, чем сто раз услышать.
+Т.е. использовать Continuous Review (Pair Programming, Mobbing Programming).</p>
+<p>Вопрос не в том, чтобы исключить Code Review, а в том, чтобы уменьшить его негативные последствия путем добавления других форм передачи инкремента знаний.</p>
+</div>
+</div>
+
+
+
+    
+        
+            <div class="section" style="text-align: right;">
+                <p><a href="https://dckms.github.io/system-architecture/emacsway/it/sdlc/models/agile/practices/collaborative-development/code-review.html">Canonical URL</a></p>
+            </div>
+        
+    
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="../../../../../../../trunk/it/sdlc/models/agile/practices/collaborative-development/index.html" title="Previous document">Collaborative Development</a>
+        </li>
+        <li>
+          <a href="../../agile.html" title="Next document">Что такое Agile Development</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../../../index.html">System Architecture</a></h1>
+
+
+
+<p class="blurb">Distributed Collaborative Knowledge Management System for System Architecture</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dckms&repo=system-architecture&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Общее пространство:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../../../trunk/it/index.html">IT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../../../trunk/index.html">Общее пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Авторские пространства:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../index.html">Пространство Emacsway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Приватное пространствo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../private/index.html">Приватное пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Прочее:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../README.html">Как пользоваться</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://t.me/emacsway_log"><i class="fab fa-telegram" style="color:#54a9eb;"></i> Telegram</a></li>
+    
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../../../../trunk/it/index.html">IT</a></li>
+  <li><a href="../../../../../../../trunk/it/sdlc/index.html">SDLC</a></li>
+  <li><a href="../../../../../../../trunk/it/sdlc/models/index.html">SDLC Models</a></li>
+  <li><a href="../../../../../../../trunk/it/sdlc/models/agile/index.html">Agile</a></li>
+  <li><a href="../../../../../../../trunk/it/sdlc/models/agile/practices/index.html">Agile Practices</a></li>
+  <li><a href="../../../../../../../trunk/it/sdlc/models/agile/practices/collaborative-development/index.html">Collaborative Development</a></li><ul>
+      <li>Previous: <a href="../../../../../../../trunk/it/sdlc/models/agile/practices/collaborative-development/index.html" title="предыдущая глава">Collaborative Development</a></li>
+      <li>Next: <a href="../../agile.html" title="следующая глава">Что такое Agile Development</a></li></ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="footer">
+      &copy;2022, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../../../../_sources/emacsway/it/sdlc/models/agile/practices/collaborative-development/code-review.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/dckms/system-architecture" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+
+    
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+           ym(87033138, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true,
+                trackHash:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/87033138" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    
+
+  </body>
+</html>
