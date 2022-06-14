@@ -58,8 +58,11 @@
 - "Database Internals: A Deep Dive into How Distributed Data Systems Work" by Alex Petrov
 - "Distributed systems: principles and paradigms" 3d edition by Andrew S. Tanenbaum, Maarten Van Steen
 - "`Введение в распределенные вычисления <http://books.ifmo.ru/file/pdf/1551.pdf>`__" / Косяков М. С. — СПб: НИУ ИТМО, 2014. — С. 75-82. — 155 с.
+- "Building Event-Driven Microservices" by Adam Bellemare, "`Chapter 6. Deterministic Stream Processing <https://www.oreilly.com/library/view/building-event-driven-microservices/9781492057888/ch06.html>`__"
 - "`Distributed systems: for fun and profit <http://book.mixu.net/distsys/>`__" (2013). An introduction to distributed systems. (`source code <https://github.com/mixu/distsysbook>`__)
 - "Database Reliability Engineering. Designing and Operating Resilient Database Systems." by Laine Campbell and Charity Majors
+- "Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing", by Tyler Akidau, Slava Chernyak, and Reuven Lax, "Chapter 2. The What, Where, When, and How of Data Processing", "Chapter 3. Watermarks"
+- "`The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, Unbounded, Out-of-Order Data Processing <https://oreil.ly/WO2OC>`__" by Tyler Akidau, Robert Bradshaw, Craig Chambers, Slava Chernyak, Rafael J. Fernandez-Moctezuma, Reuven Lax, Sam McVeety, Daniel Mills, Frances Perry, Eric Schmidt, Sam Whittle; Google
 - "`Event Sourced Building Blocks for Domain-Driven Design with Python <https://leanpub.com/dddwithpython>`__" by John Bywater
 
 Статьи по теме:
@@ -71,6 +74,8 @@
 - "`HighLoad++, Михаил Тюленев (MongoDB): Causal consistency: от теории к практике <https://habr.com/ru/company/ua-hosting/blog/487638/>`__"
 - "`Version Vector <https://martinfowler.com/articles/patterns-of-distributed-systems/version-vector.html>`__" by Unmesh Joshi
 - "`Nobody Needs Reliable Messaging <https://www.infoq.com/articles/no-reliable-messaging/>`__" by Marc de Graauw
+- "`Modeling Uncertainty with Reactive DDD <https://www.infoq.com/articles/modeling-uncertainty-reactive-ddd/>`__" by Vaughn Vernon reviewed by Thomas Betts
+- "`Life Beyond Distributed Transactions <https://queue.acm.org/detail.cfm?id=3025012>`__"
 - "`Error Handling Patterns for Apache Kafka Applications <https://www.confluent.io/blog/error-handling-patterns-in-kafka/>`__" by Gerardo Villeda
 
 Список литературы по интеграционным паттернам:

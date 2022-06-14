@@ -1,5 +1,5 @@
 ===============
-DDD in practice
+Agile Practices
 ===============
 
 .. toctree::

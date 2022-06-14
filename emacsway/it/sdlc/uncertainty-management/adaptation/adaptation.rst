@@ -101,6 +101,10 @@ Prediction при этом не исчезает полностью, а пони
 
 Итеративная разработка востребована, когда невозможно достигнуть полноты (Complete) требований (set of :ref:`requirements <emacsway-agile-requirements>`).
 
+    📝 "Agile methods are most valuable when we're dealing with high levels of uncertainty."
+
+    -- "` Agile and Architecture: Friend, not Foe <https://architectelevator.com/transformation/agile_architecture/>`__" by Gregor Hohpe
+
 ..
     📝 "Complete.
     The set of requirements needs no further amplification because it contains everything pertinent to the definition of the system or system element being specified.

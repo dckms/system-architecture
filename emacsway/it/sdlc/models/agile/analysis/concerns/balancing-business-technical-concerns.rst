@@ -26,6 +26,12 @@
 
     -- "Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 7. Four Values", перевод ООО Издательство "Питер"
 
+Решение этой проблемы было одной из целей создания Agile:
+
+    📝 "During the `Snowbird meeting <https://martinfowler.com/articles/agileStory.html>`__, Kent Beck said that the goal of Agile was to heal the divide between business and development. To that end, the following bill of rights was developed by Kent, Ward Cunningham, and Ron Jeffries, among others."
+
+    -- "Clean Agile: Back to Basics" by Robert C. Martin
+
 ..
 
     📝 "There is **always a tension between advancing product functionality and raising product quality**.

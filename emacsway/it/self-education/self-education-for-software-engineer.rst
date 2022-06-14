@@ -456,10 +456,13 @@ Others:
 - "`EventStorming Glossary & Cheat sheet <https://ddd-crew.github.io/eventstorming-glossary-cheat-sheet/>`__" by Nick Tune
 - "Open Agile Architecture", chapter "`19. Event Storming <https://pubs.opengroup.org/architecture/o-aa-standard/>`__"
 - "`Event Storming на практических кейсах <http://agilemindset.ru/event-storming-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85-%D0%BA%D0%B5%D0%B9%D1%81%D0%B0%D1%85/>`__", Сергей Баранов (`видео <https://www.youtube.com/watch?v=kJjuTuviZ-E>`__)
+- "`Event storming. The workshop focuses on domain events that are generated in the context of a business process or a business application.  <https://www.ibm.com/cloud/architecture/architecture/practices/event-storming-methodology-architecture/>`__" by IBM
 - "`Reactive in practice, Unit 1: Event storming the stock trader domain <https://developer.ibm.com/tutorials/reactive-in-practice-1/>`__" by Kevin Webber, Dana Harrington
 - "`Event storming at ibm.com <https://www.ibm.com/cloud/architecture/architecture/practices/event-storming-methodology-architecture/>`__"
 - "`Event storming & domain-driven design: Reactive in practice -- Event storming the stock trader domain -- IBM Developer <https://developer.ibm.com/tutorials/reactive-in-practice-1/>`__" by Kevin Webber, Dana Harrington
 - "`Event driven solution implementation methodology <https://ibm-cloud-architecture.github.io/refarch-eda/methodology/event-storming/>`__"
+- "`Container Shipment Analysis <https://ibm-cloud-architecture.github.io/refarch-kc/implementation/event-storming-analysis/>`__" by IBM
+- "`refarch-kc - Implementation solution for container shipment using Event-Driven Architecture <https://github.com/ibm-cloud-architecture/refarch-kc>`__" by IBM
 - "`Awesome EventStorming <https://github.com/mariuszgil/awesome-eventstorming>`__"
 
 
@@ -853,8 +856,17 @@ Donald E. Knuth:
 Изучаем оценивание задач
 ------------------------
 
+- "`Practice Standard for Scheduling <https://www.pmi.org/pmbok-guide-standards/framework/practice-standard-scheduling-3rdedition>`__" 3d edition by Project Management Institute
 - "Software Estimation: Demystifying the Black Art (Developer Best Practices)" by Steve McConnell (я встречал в интернете `краткий конспект <http://igorshevchenko.ru/blog/entries/software-estimation>`__)
 - "Agile Estimating and Planning" by Mike Cohn
+
+Очень кратко (всего 3 страницы) о методике оценивания PERT:
+
+- "The Clean Coder" by Robert C. Martin, "Chapter 10 Estimation :: PERT"
+
+Статья, отвечающая на очень частый вопрос:
+
+- "`How Do Story Points Relate to Hours? <https://www.mountaingoatsoftware.com/blog/how-do-story-points-relate-to-hours>`__" by Mike Cohn
 
 
 Функциональное программирование
@@ -978,7 +990,6 @@ Code Smell catalogs
 - `The Architect's Path (Part 1 - Model) <https://architectelevator.com/architecture/architect-path/>`__ by Gregor Hohpe
 - `The Architect's Path (Part 2 - Implementation) <https://architectelevator.com/architecture/architect-bookshelf/>`__ by Gregor Hohpe
 - `Software Architecture Book References <https://www.developertoarchitect.com/books.html>`__ by Mark Richards
-- `Как прокачаться в проектировании программного обеспечения — список книг <https://apolomodov.medium.com/software-design-books-743be52e4c71>`__ by Alexander Polomodov
 - `Искусство спора (обучающие материалы) <https://ruxpert.ru/%D0%98%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE_%D1%81%D0%BF%D0%BE%D1%80%D0%B0_(%D0%BE%D0%B1%D1%83%D1%87%D0%B0%D1%8E%D1%89%D0%B8%D0%B5_%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8B)>`__
 - `Книги по риторике <https://m.vk.com/wall-56611080_127534>`__
 
