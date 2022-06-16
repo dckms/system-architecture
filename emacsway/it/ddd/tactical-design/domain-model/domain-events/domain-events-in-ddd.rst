@@ -1023,7 +1023,7 @@ Kamil Grzybek вводит явное разделение механизма д
 
 ..
 
-    Events are facts happening in the domain. There’s no implicit filter on the source: in fact, they can happen for different reasons:
+    Events are facts happening in the domain. There's no implicit filter on the source: in fact, they can happen for different reasons:
     - they might be the consequence of some User Initiated Action,
     - they might be coming from some external system,
     - they might be the result of time passing,
