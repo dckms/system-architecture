@@ -1021,6 +1021,16 @@ Kamil Grzybek вводит явное разделение механизма д
 
     \-"Implementing Domain-Driven Design" [#fniddd]_ by Vaughn Vernon, Chapter "Chapter 8. Domain Events :: Modeling Events :: With Aggregate Characteristics"
 
+..
+
+    Events are facts happening in the domain. There's no implicit filter on the source: in fact, they can happen for different reasons:
+    - they might be the consequence of some User Initiated Action,
+    - they might be coming from some external system,
+    - they might be the result of time passing,
+    - they might be the direct consequence of some other event.
+
+    -- "Leanpub: Introducing EventStorming" by Alberto Brandolini
+
 
 Может ли Domain Event отменить свою причину?
 ============================================
