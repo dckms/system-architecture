@@ -191,7 +191,7 @@ CQS - это больше о referential transparency для Query
 
 ..
 
-    📝 "The Command-Query Separation principle brings **referential transparency** back."ients."
+    📝 "The Command-Query Separation principle brings **referential transparency** back."
 
     -- "Object-Oriented Software Construction" 2nd edition by Bertrand Meyer, chapter "23.1 SIDE EFFECTS IN FUNCTIONS"
 
@@ -202,7 +202,7 @@ CQS - это больше о referential transparency для Query
 
 ..
 
-    📝 "Definition: referential transparency: An expression e is referentially transparent if it is possible to exchange any subexpression with its value without changing the value of e."ients."
+    📝 "Definition: referential transparency: An expression e is referentially transparent if it is possible to exchange any subexpression with its value without changing the value of e."
 
     -- "Object-Oriented Software Construction" 2nd edition by Bertrand Meyer, chapter "23.1 SIDE EFFECTS IN FUNCTIONS"
 
