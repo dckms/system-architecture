@@ -62,9 +62,9 @@ Archi
    #. Версионирование и ответвления - параллельная разработка различных версий решения.
    #. Коллективная разработка. Доступ к информации задается обычной конфигурацией git-сервера (обычно средствами GitHub и GitLab).
 
-#. Использование `Motivation Elements <https://pubs.opengroup.org/architecture/archimate31-doc/chap06.html#_Toc10045334>`__ (Stakeholder, Driver, Assessment, Goal, Outcome, Principle, Requirement, and Constraint) позволяет осуществлять визуализацию факторов влияния на решение, а также фиксацию трассировки требований. \
-   Возможность воплощения принципов `Twin Peak Model <https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6470589>`__. \
-   В процессе проработки одной из альтернатив, обнаруживаются ее ограничения и новые драйверы, которые влияют на требования. \
+#. Использование `Motivation Elements <https://pubs.opengroup.org/architecture/archimate31-doc/chap06.html#_Toc10045334>`__ (Stakeholder, Driver, Assessment, Goal, Outcome, Principle, Requirement, and Constraint) позволяет осуществлять визуализацию факторов влияния на решение, а также фиксацию трассировки требований.
+   Возможность воплощения принципов `Twin Peak Model <https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6470589>`__.
+   В процессе проработки одной из альтернатив, обнаруживаются ее ограничения и новые драйверы, которые влияют на требования.
    В визуальном виде аналитическая информация воспринимается намного легче, чем обычная свалка требований в PBI.
 #. Богатое интеграционное API позволяет использовать модель для автоматизированной её сверки с реализацией или для генерации кода.
 #. В `Archi можно также делать C4 Model <https://www.archimatetool.com/blog/2020/04/18/c4-model-architecture-viewpoint-and-archi-4-7/>`__, используя единую модель и для C4 Model, и для Event Storming.
