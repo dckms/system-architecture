@@ -475,6 +475,12 @@ Kent Beck
 Robert Martin
 -------------
 
+    💬 "The only way to make the deadline -- the only way to go fast -- is to keep the code as clean as possible at all times."
+
+    -- "Clean Code: A Handbook of Agile Software Craftsmanship" by Robert C. Martin
+
+..
+
     📝 "The way to go fast, and to keep the deadlines at bay, is to stay clean.
     Professionals do not succumb to the temptation to create a mess in order to move quickly.
     Professionals realize that "quick and dirty" is an oxymoron.
