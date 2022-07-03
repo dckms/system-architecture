@@ -432,6 +432,8 @@ API-Design
 - "`REST API Design - Resource Modeling  <https://www.thoughtworks.com/insights/blog/rest-api-design-resource-modeling>`__" by Prakash Subramaniam, WhoughtWorks
 - "`CQRS and REST: the perfect match <https://lostechies.com/jimmybogard/2016/06/01/cqrs-and-rest-the-perfect-match/>`__" by Jimmy Bogard
 - "`Entities aren't resources, resources aren't representations <https://lostechies.com/jimmybogard/2016/05/12/entities-arent-resources-resources-arent-representations/>`__" by Jimmy Bogard
+- "`CRUD, only when you can afford it (Revisited) <https://blogs.msdn.microsoft.com/maarten_mullender/2004/07/23/crud-only-when-you-can-afford-it-revisited/>`__" by Maarten Mullender
+- "`CQRS and DDD patterns are not top-level architectures <https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/eshoponcontainers-cqrs-ddd-microservice#cqrs-and-ddd-patterns-are-not-top-level-architectures>`__"
 
 
 
