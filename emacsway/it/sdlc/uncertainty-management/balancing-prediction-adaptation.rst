@@ -96,6 +96,24 @@ Balancing Prediction/Adaptation
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
 
 
+Стоимость гибкости
+==================
+
+Изменяемость тоже имеет свою стоимость. Нельзя создавать бесконечно гибкое решение. Важен баланс.
+
+    💬 "One trade-off that’s often overlooked is between the number of options you have and the resulting complexity. More options are desirable, but wanting to have all options all the time will result in unnecessary complexity, as is often the case with overly elaborate abstraction layers or massive configuration frameworks. I captured this effect into Gregor’s Law:
+
+        Excessive complexity is nature’s punishment for organizations that are unable to make decisions."
+
+    -- "`Gregor’s Law. Excessive complexity is nature’s punishment for organizations that are unable to make decisions <https://architectelevator.com/gregors-law/>`__" by Gregor Hohpe
+
+..
+
+    💬 "If you pick any one aspect of software then you can make it easy to change, but we don’t know how to make everything easy to change. Making something easy to change makes the overall system a little more complex, and making everything easy to change makes the entire system very complex. Complexity is what makes software hard to change. That, and duplication."
+
+    -- Ralf Johnson at "`Who Needs an Architect? <https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf>`__" by Martin Fowler
+
+
 Open Agile Architecture™ Standard by The Open Group
 ===================================================
 
