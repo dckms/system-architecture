@@ -524,6 +524,8 @@ Scaled Agile
 - "Large-Scale Scrum: More with LeSS" by Craig Larman
 - "`LeSS <https://less.works/less/framework/introduction>`__" (`перевод на Русский <https://less.works/ru/less/framework/introduction>`__)
 - "`Agile Practice Guide <https://www.pmi.org/pmbok-guide-standards/practice-guides/agile>`__" by Project Management Institute
+- "`Disciplined Agile® <https://www.pmi.org/disciplined-agile>`__"
+- "`SAFe - Scaled Agile Framework <https://www.scaledagileframework.com/>`__"
 
 
 Стандарты
@@ -796,7 +798,13 @@ Donald E. Knuth:
 - "Building Evolutionary Architectures: Support Constant Change" 1st Edition by Neal Ford, Rebecca Parsons, Patrick Kua
 - "Agile Software Architecture: Aligning Agile Processes and Software Architectures" by Muhammad Ali Babar, Alan W. Brown, Kai Koskimies, Ivan Mistrík
 - "Continuous Architecture: Sustainable Architecture in an Agile and Cloud-Centric World" by Murat Erder, Pierre Pureur
-
+- "`Balancing Agility and Discipline: A Guide for the Perplexed <https://www.amazon.com/Balancing-Agility-Discipline-Guide-Perplexed/dp/0321186125>`__" by Barry Boehm, Richard Turner
+- "`Architected Agile Solutions for Software-Reliant Systems <https://www.researchgate.net/publication/228701141_Architected_Agile_Solutions_for_Software-Reliant_Systems>`__" by Barry Boehm, Jo Ann Lane, Richard Turner
+- "`The ROI of Systems Engineering: Some Quantitative Results <https://www.researchgate.net/publication/224579114_The_ROI_of_Systems_Engineering_Some_Quantitative_Results>`__" by Barry Boehm, Ricardo Valerdi
+- "Lean Architecture: for Agile Software Development" 1st edition by James O. Coplien, Gertrud Bjørnvig
+- "`Agile Practice Guide <https://www.pmi.org/pmbok-guide-standards/practice-guides/agile>`__" by Project Management Institute (PMI), 2017
+- "`Enterprise Architecture in Disciplined Agile <https://www.pmi.org/disciplined-agile/process/enterprise-architecture>`__"
+- "`Enterprise Architect in SAFe <https://www.scaledagileframework.com/enterprise-architect/>`__"
 
 Стандарты:
 
@@ -840,8 +848,8 @@ Donald E. Knuth:
 
 - "`Agile Extension to the BABOK® Guide <https://www.iiba.org/career-resources/business-analysis-resources/iiba-bookstore/>`__"
 
-- "`Handbook of RE@Agile According to the IREB Standard Education and Training for IREB Certified Professional for Requirements Engineering Advanced Level RE@Agile <https://www.ireb.org/content/downloads/22-cpre-advanced-level-re-agile-handbook/handbook_cpre_al_re%40agile_en_v1.0.2.pdf>`__" Version 1.0.2
-- "`IREB Certified Professional for Requirements Engineering RE@Agile Glossary <https://www.ireb.org/content/downloads/34-re-agile-glossary/ireb_cpre_re%40agile_glossary_v1.0.5.pdf>`__"
+- "`Handbook of RE@Agile According to the IREB Standard Education and Training for IREB Certified Professional for Requirements Engineering Advanced Level RE@Agile <https://www.ireb.org/content/downloads/23-cpre-advanced-level-re-agile-handbook/handbook_cpre_al_re%40agile_en_v2.0.pdf>`__" Version 2.0
+- "`IREB Certified Professional for Requirements Engineering RE@Agile Glossary <https://www.ireb.org/content/downloads/36-re-agile-glossary/ireb_cpre_re%40agile_glossary_v1.0.5.pdf>`__"
 
 
 Другие подборки литературы по аналитике:

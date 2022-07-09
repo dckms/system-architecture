@@ -56,8 +56,7 @@ Grady Booch выделяет два ключевых критерия, кото�
 - "Object-Oriented Analysis and Design with Applications" 3rd edition by Grady Booch, Robert A. Maksimchuk, Michael W. Engle, Bobbi J. Young Ph.D., Jim Conallen, Kelli A. Houston - "Chapter 6. Process"
 - "Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman - "Chapter 15. Architecture in agile projects"
 - "Software Architecture in Practice" 4th edition by Len Bass, Paul Clements, Rick Kazman
-- "`Architected Agile Solutions for Software-Reliant Systems <https://www.researchgate.net/publication/228701141_Architected_Agile_Solutions_for_Software-Reliant_Systems>`__" by Barry Boehm, Jo Ann Lane, Richard Turner
-- "`The ROI of Systems Engineering: Some Quantitative Results <https://www.researchgate.net/publication/224579114_The_ROI_of_Systems_Engineering_Some_Quantitative_Results>`__" by Barry Boehm, Ricardo Valerdi
+- "`Balancing Agility and Discipline: A Guide for the Perplexed <https://www.amazon.com/Balancing-Agility-Discipline-Guide-Perplexed/dp/0321186125>`__" by Barry Boehm, Richard Turner
 - "Extreme Programming Explained" 1st edition by Kent Beck (именно первое издание) - кто этой книги не читал, тот ничего в Agile не понимает.
 
 Три превосходные книги Dean Leffingwell:
