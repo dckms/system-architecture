@@ -60,27 +60,31 @@
             
     
   <div class="section" id="event-storming-with-archi">
-<span id="emacsway-event-storming-archi"></span><h1><a class="toc-backref" href="#id7">Event Storming with Archi</a><a class="headerlink" href="#event-storming-with-archi" title="Ссылка на этот заголовок">¶</a></h1>
+<span id="emacsway-event-storming-archi"></span><h1><a class="toc-backref" href="#id8">Event Storming with Archi</a><a class="headerlink" href="#event-storming-with-archi" title="Ссылка на этот заголовок">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
 <div class="contents topic" id="id1">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#event-storming-with-archi" id="id7">Event Storming with Archi</a></p>
+<li><p><a class="reference internal" href="#event-storming-with-archi" id="id8">Event Storming with Archi</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id2" id="id8">Обзор инструментов</a></p></li>
-<li><p><a class="reference internal" href="#archi" id="id9">Archi</a></p></li>
-<li><p><a class="reference internal" href="#archi-event-storming" id="id10">Достоинства Archi для Event Storming</a></p></li>
-<li><p><a class="reference internal" href="#id3" id="id11">Установка</a></p></li>
-<li><p><a class="reference internal" href="#id4" id="id12">Определение границ микросервисов</a></p></li>
-<li><p><a class="reference internal" href="#id5" id="id13">Интеграция</a></p></li>
-<li><p><a class="reference internal" href="#id6" id="id14">Стикеры</a></p></li>
-<li><p><a class="reference internal" href="#c4-model" id="id15">C4 Model</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id9">Обзор инструментов</a></p></li>
+<li><p><a class="reference internal" href="#archi" id="id10">Archi</a></p></li>
+<li><p><a class="reference internal" href="#archi-event-storming" id="id11">Достоинства Archi для Event Storming</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id12">Установка</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id13">Определение границ микросервисов</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id14">Интеграция</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id6" id="id15">Генерация документации</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id7" id="id16">Стикеры</a></p></li>
+<li><p><a class="reference internal" href="#c4-model" id="id17">C4 Model</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="id2">
-<h2><a class="toc-backref" href="#id8">Обзор инструментов</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">Обзор инструментов</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
 <p><a class="reference external" href="https://github.com/tmorin/plantuml-libs/blob/master/distribution/eventstorming/README.md">PlantUML</a> достаточно быстро исчерпал свои возможности и диаграммы стали нечитаемыми и неуправляемым.
 Попытки выровнять диаграмму штатными средствами оказались безуспешниыми.
 На разных серверах диаграмма отображалась по-разному.</p>
@@ -89,7 +93,7 @@
 <p>Неплохие надежды подает <a class="reference external" href="https://domorobo.to/">domorobo.to</a>, но он пока еще сыроват.</p>
 </div>
 <div class="section" id="archi">
-<h2><a class="toc-backref" href="#id9">Archi</a><a class="headerlink" href="#archi" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">Archi</a><a class="headerlink" href="#archi" title="Ссылка на этот заголовок">¶</a></h2>
 <p>В процессе поиска внимание привлекла внимание диаграмма на &quot;Figure 13: Event Storming Model&quot; of &quot;Agile Architecture Modeling Using the ArchiMate® Language&quot; (см. <a class="reference external" href="https://publications.opengroup.org/g20e">здесь</a>, <a class="reference external" href="https://nicea.nic.in/sites/default/files/Agile_Architecture_Modelling_Using_Archimate.pdf">здесь</a> или <a class="reference external" href="https://nicea.nic.in/download-files.php?nid=247">здесь</a>).</p>
 <p><a class="reference external" href="https://community.opengroup.org/archimate-user-community/home/-/issues/8">Model used by Jean-Baptiste Sarrodie for presentation &quot;Enterprise Architecture Modelling with ArchiMate in an Agile at Scale Programme&quot;</a></p>
 <p>Попробовал сделать Event Storming в Archi, и обнаружил, что он делается с такой же легкостью, как и в Miro.
@@ -98,7 +102,7 @@
 <p>Нотации (т.е. цвета) Event Storming практически идентичны нотациям &quot;<a class="reference external" href="https://pubs.opengroup.org/architecture/archimate31-doc/apdxc.html#_Toc10045506">C.1.10 Business Process Cooperation Viewpoint</a>&quot;.</p>
 </div>
 <div class="section" id="archi-event-storming">
-<h2><a class="toc-backref" href="#id10">Достоинства Archi для Event Storming</a><a class="headerlink" href="#archi-event-storming" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">Достоинства Archi для Event Storming</a><a class="headerlink" href="#archi-event-storming" title="Ссылка на этот заголовок">¶</a></h2>
 <ol class="arabic simple">
 <li><p>On-Premise. Архитектурно-значимая информация не покидает закрытый периметр безопасности.</p></li>
 <li><p>Open Source under MIT License</p></li>
@@ -127,14 +131,14 @@
 </ol>
 </div>
 <div class="section" id="id3">
-<h2><a class="toc-backref" href="#id11">Установка</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Установка</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Дистрибутив: <a class="reference external" href="https://www.archimatetool.com/download/">https://www.archimatetool.com/download/</a></p>
 <p><a class="reference external" href="https://www.archimatetool.com/downloads/Archi%20User%20Guide.pdf">Документация</a> Archi.</p>
 <p>Плагин коллективной разработки <a class="reference external" href="https://www.archimatetool.com/plugins/#coArchi">coArchi</a> (<a class="reference external" href="https://github.com/archimatetool/archi-modelrepository-plugin">Source Code</a>). <a class="reference external" href="https://github.com/archimatetool/archi-modelrepository-plugin/wiki">Документация</a> к плагину.</p>
 <p>Актуальное <a class="reference external" href="https://github.com/archimatetool/archi-modelrepository-plugin/wiki/SSH-Authentication">руководство по генерации RSA-ключей</a>.</p>
 </div>
 <div class="section" id="id4">
-<h2><a class="toc-backref" href="#id12">Определение границ микросервисов</a><a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id13">Определение границ микросервисов</a><a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Изначально мы допускаем, что один микросервис == один агрегат.
 Находим &quot;болтливые&quot; микросервисы.
 Пробуем объединить болтливые микросервисы в общий микросервис и сравниваем, как изменились совокупный Coupling (внешние связи микросервиса(ов)) &amp; Cohesion (к-т реиспользования агрегатов внутри одного микросервиса).
@@ -152,7 +156,7 @@
 </ul>
 </div>
 <div class="section" id="id5">
-<h2><a class="toc-backref" href="#id13">Интеграция</a><a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id14">Интеграция</a><a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Из коробки Archi уже поддерживает экспорт модели в *.CSV файл.</p>
 <p>Существует ряд плагинов, которые облегчают интеграцию:</p>
 <ul class="simple">
@@ -167,15 +171,22 @@
 <div><p>📝 &quot;GRAFICO stands for &quot;Git Friendly Archi File Collection&quot; and is a way to persist an ArchiMate model in a bunch of XML files (one file per ArchiMate element or view).&quot;</p>
 <p class="attribution">—<a class="reference external" href="https://github.com/archi-contribs/archi-grafico-plugin/wiki/GRAFICO-explained">https://github.com/archi-contribs/archi-grafico-plugin/wiki/GRAFICO-explained</a></p>
 </div></blockquote>
-</div>
 <div class="section" id="id6">
-<h2><a class="toc-backref" href="#id14">Стикеры</a><a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
+<h3><a class="toc-backref" href="#id15">Генерация документации</a><a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h3>
+<ul class="simple">
+<li><p>&quot;<a class="reference external" href="https://habr.com/ru/post/583314/">Автоматизируем работу с ArchiMate в CI пайплайнах</a>&quot; / Maxim Levchenko</p></li>
+<li><p><a class="reference external" href="https://hub.docker.com/r/woozymasta/archimate-ci-image">Docker container</a> и <a class="reference external" href="https://github.com/marketplace/actions/deploy-archi-report">GH Action</a> для публикации Archimate модели на <a class="reference external" href="https://woozymasta.github.io/archimate-ci-image-example/?view=6875">GitHub</a>/<a class="reference external" href="https://woozymasta.gitlab.io/archimate-ci-image-example/?view=6213">GitLab</a> Pages. <a class="reference external" href="https://github.com/WoozyMasta/archimate-ci-image">Source Code</a>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id16">Стикеры</a><a class="headerlink" href="#id7" title="Ссылка на этот заголовок">¶</a></h2>
 <p>В Archi есть <a class="reference external" href="https://devlog.archimatetool.com/2010/11/04/sketch/">доска со стикерами</a> (см. New Sketch View на <a class="reference external" href="https://www.archimatetool.com/downloads/Archi%20User%20Guide.pdf">стр. 110 документации</a>).</p>
 <p>Можно делать Event Storming обычными стикерами, а не только используя &quot;<a class="reference external" href="https://t.me/emacsway_log/253">C.1.10 Business Process Cooperation Viewpoint</a>&quot;.</p>
 <p>Можно проводить сеанс Example Mapping и автоматизировать генерацию BDD-specification или тестовых кейсов.</p>
 </div>
 <div class="section" id="c4-model">
-<h2><a class="toc-backref" href="#id15">C4 Model</a><a class="headerlink" href="#c4-model" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id17">C4 Model</a><a class="headerlink" href="#c4-model" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Event Storming гармонично сочетается с C4 Model, о чем говорил Сергей Баранов в своем <a class="reference external" href="https://habr.com/ru/company/oleg-bunin/blog/537862/">докладе</a>.
 И вот тут еще одно интересное открытие - Simon Brown собственноручно <a class="reference external" href="https://c4model.com/">ссылается</a> на статью Jean-Baptiste Sarrodie о том, <a class="reference external" href="https://www.archimatetool.com/blog/2020/04/18/c4-model-architecture-viewpoint-and-archi-4-7/">как делать C4 Model в Archi</a>.</p>
 <p>Там же Simon Brown ссылается на Guide <a class="reference external" href="https://publications.opengroup.org/g20e">Agile Architecture Modeling Using the ArchiMate® Language</a> на сайте OMG о том, как использовать C4 Model и Event Storming в Open Agile Architecture, используя Archi.

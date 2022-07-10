@@ -60,21 +60,22 @@
             
     
   <div class="section" id="balancing-prediction-adaptation">
-<span id="emacsway-balancing-prediction-adaptation"></span><h1><a class="toc-backref" href="#id3">Balancing Prediction/Adaptation</a><a class="headerlink" href="#balancing-prediction-adaptation" title="Ссылка на этот заголовок">¶</a></h1>
+<span id="emacsway-balancing-prediction-adaptation"></span><h1><a class="toc-backref" href="#id4">Balancing Prediction/Adaptation</a><a class="headerlink" href="#balancing-prediction-adaptation" title="Ссылка на этот заголовок">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
 <div class="contents topic" id="id1">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#balancing-prediction-adaptation" id="id3">Balancing Prediction/Adaptation</a></p>
+<li><p><a class="reference internal" href="#balancing-prediction-adaptation" id="id4">Balancing Prediction/Adaptation</a></p>
 <ul>
-<li><p><a class="reference internal" href="#open-agile-architecture-standard-by-the-open-group" id="id4">Open Agile Architecture™ Standard by The Open Group</a></p></li>
-<li><p><a class="reference internal" href="#prediction-adaptation" id="id5">Эволюционный маятник баланса Prediction/Adaptation</a></p>
+<li><p><a class="reference internal" href="#id2" id="id5">Стоимость гибкости</a></p></li>
+<li><p><a class="reference internal" href="#open-agile-architecture-standard-by-the-open-group" id="id6">Open Agile Architecture™ Standard by The Open Group</a></p></li>
+<li><p><a class="reference internal" href="#prediction-adaptation" id="id7">Эволюционный маятник баланса Prediction/Adaptation</a></p>
 <ul>
-<li><p><a class="reference internal" href="#prediction-adaptation-adaptation" id="id6">Занос маятника Prediction/Adaptation в сторону Adaptation</a></p></li>
-<li><p><a class="reference internal" href="#prediction-adaptation-prediction" id="id7">Отскок маятника Prediction/Adaptation назад к Prediction</a></p></li>
+<li><p><a class="reference internal" href="#prediction-adaptation-adaptation" id="id8">Занос маятника Prediction/Adaptation в сторону Adaptation</a></p></li>
+<li><p><a class="reference internal" href="#prediction-adaptation-prediction" id="id9">Отскок маятника Prediction/Adaptation назад к Prediction</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#alberto-brandolini-about-prediction-adaptation" id="id8">Alberto Brandolini about Prediction/Adaptation</a></p></li>
+<li><p><a class="reference internal" href="#alberto-brandolini-about-prediction-adaptation" id="id10">Alberto Brandolini about Prediction/Adaptation</a></p></li>
 </ul>
 </li>
 </ul>
@@ -104,9 +105,9 @@ But when the entire design process gets bogged down in an attempt to satisfy fut
 <p>Scrum teams avoid this &quot;bogging down&quot; by realizing that not all future needs are worth worrying about today. Many future needs may be best handled by planning to adapt as they arise.&quot;</p>
 <p class="attribution">—&quot;Succeeding with Agile: Software Development Using Scrum&quot; by Mike Cohn</p>
 </div></blockquote>
-<div class="figure align-left" id="id2">
+<div class="figure align-left" id="id3">
 <a class="reference internal image-reference" href="../../../../_images/fig-9.2-balancing-anticipation-adaptation.png"><img alt="FIGURE 9.2 Achieving a balance between anticipation and adaptation involves balancing the inﬂuence of the activities and artifacts on each side. The image source is &quot;Succeeding with Agile: Software Development Using Scrum&quot; by Mike Cohn" src="../../../../_images/fig-9.2-balancing-anticipation-adaptation.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-text">FIGURE 9.2 Achieving a balance between anticipation and adaptation involves balancing the inﬂuence of the activities and artifacts on each side. The image source is &quot;Succeeding with Agile: Software Development Using Scrum&quot; by Mike Cohn</span><a class="headerlink" href="#id2" title="Постоянная ссылка на рисунок">¶</a></p>
+<p class="caption"><span class="caption-text">FIGURE 9.2 Achieving a balance between anticipation and adaptation involves balancing the inﬂuence of the activities and artifacts on each side. The image source is &quot;Succeeding with Agile: Software Development Using Scrum&quot; by Mike Cohn</span><a class="headerlink" href="#id3" title="Постоянная ссылка на рисунок">¶</a></p>
 </div>
 <blockquote>
 <div><p>📝 McConnell writes, &quot;In ten years the pendulum has swung from 'design everything' to 'design nothing.'
@@ -141,12 +142,27 @@ While Agile methods are common in executing an evolutionary lifecycle model, the
 What the methods have in common is an emphasis on continuous inspection and collaboration in the rapid production of working software in an environment where changes, including changes to requirements, are expected.</p>
 <p class="attribution">—&quot;ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes&quot;</p>
 </div></blockquote>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id5">Стоимость гибкости</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Изменяемость тоже имеет свою стоимость. Нельзя создавать бесконечно гибкое решение. Важен баланс.</p>
+<blockquote>
+<div><p>💬 &quot;One trade-off that’s often overlooked is between the number of options you have and the resulting complexity. More options are desirable, but wanting to have all options all the time will result in unnecessary complexity, as is often the case with overly elaborate abstraction layers or massive configuration frameworks. I captured this effect into Gregor’s Law:</p>
+<blockquote>
+<div><p>Excessive complexity is nature’s punishment for organizations that are unable to make decisions.&quot;</p>
+</div></blockquote>
+<p class="attribution">—&quot;<a class="reference external" href="https://architectelevator.com/gregors-law/">Gregor’s Law. Excessive complexity is nature’s punishment for organizations that are unable to make decisions</a>&quot; by Gregor Hohpe</p>
+</div></blockquote>
+<blockquote>
+<div><p>💬 &quot;If you pick any one aspect of software then you can make it easy to change, but we don’t know how to make everything easy to change. Making something easy to change makes the overall system a little more complex, and making everything easy to change makes the entire system very complex. Complexity is what makes software hard to change. That, and duplication.&quot;</p>
+<p class="attribution">—Ralf Johnson at &quot;<a class="reference external" href="https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf">Who Needs an Architect?</a>&quot; by Martin Fowler</p>
+</div></blockquote>
+</div>
 <div class="section" id="open-agile-architecture-standard-by-the-open-group">
-<h2><a class="toc-backref" href="#id4">Open Agile Architecture™ Standard by The Open Group</a><a class="headerlink" href="#open-agile-architecture-standard-by-the-open-group" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">Open Agile Architecture™ Standard by The Open Group</a><a class="headerlink" href="#open-agile-architecture-standard-by-the-open-group" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Глава &quot;<a class="reference external" href="https://pubs.opengroup.org/architecture/o-aa-standard/architecture-development.html#_architecture_development_styles">4.5. Architecture Development Styles</a>&quot; стандарта посвящена поиску баланса между &quot;<a class="reference external" href="https://pubs.opengroup.org/architecture/o-aa-standard/architecture-development.html#_intentional_architecture_2">4.5.2. Intentional Architecture</a>&quot; и &quot;<a class="reference external" href="https://pubs.opengroup.org/architecture/o-aa-standard/architecture-development.html#emergence">4.5.1. Emergence Architecture</a>&quot;.</p>
 </div>
 <div class="section" id="prediction-adaptation">
-<span id="emacsway-balancing-prediction-adaptation-pendulum-swinging"></span><h2><a class="toc-backref" href="#id5">Эволюционный маятник баланса Prediction/Adaptation</a><a class="headerlink" href="#prediction-adaptation" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="emacsway-balancing-prediction-adaptation-pendulum-swinging"></span><h2><a class="toc-backref" href="#id7">Эволюционный маятник баланса Prediction/Adaptation</a><a class="headerlink" href="#prediction-adaptation" title="Ссылка на этот заголовок">¶</a></h2>
 <p>В 2021 году большую популярность обрела статья, освещавшая назревшие в индустрии вопросы относительно поиска баланса Prediction/Adaptation:</p>
 <ul class="simple">
 <li><p>&quot;<a class="reference external" href="https://threedots.tech/post/software-dark-ages/">Software Dark Ages</a>&quot; by Robert Laszczak</p></li>
@@ -171,7 +187,7 @@ We have asked, &quot;What shall we add to our process to deal with this new situ
 <p class="attribution">—Foreword of &quot;Planning Extreme Programming&quot; by Kent Beck, Martin Fowler</p>
 </div></blockquote>
 <div class="section" id="prediction-adaptation-adaptation">
-<h3><a class="toc-backref" href="#id6">Занос маятника Prediction/Adaptation в сторону Adaptation</a><a class="headerlink" href="#prediction-adaptation-adaptation" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">Занос маятника Prediction/Adaptation в сторону Adaptation</a><a class="headerlink" href="#prediction-adaptation-adaptation" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Можно заметить, что на рубеже 2000 года, <a class="reference internal" href="../models/agile/agile.html#emacsway-agile-development"><span class="std std-ref">маятник Prediction/Adaptation максимально отклонился в сторону Adaptation</span></a>, зачастую минимизируя долю Prediction до минималистичного набора практик - PBR, Spike, Planning.
 Этому способствовало радикальное снижение стоимости Adaptation в те годы, благодаря росту популярности OOP, <a class="reference internal" href="adaptation/software-design/patterns.html#emacsway-agile-patterns"><span class="std std-ref">шаблонов</span></a> проектирования и принципов проектирования, методик управления сложностью (ROM, POSA, GOF, OOAD, <a class="reference internal" href="adaptation/software-design/solid.html#emacsway-agile-solid"><span class="std std-ref">SOLID</span></a>, Use Case Driven Approach, Object-Oriented Software Construction etc.), <a class="reference internal" href="../../tdd/tdd.html#emacsway-tdd"><span class="std std-ref">TDD</span></a>, Refactoring и т.д.</p>
 <p>В конце 90-х — в начале 2000-х, когда ведущим умам архитектуры своего времени удалось достигнуть <a class="reference internal" href="../models/agile/agile.html#emacsway-agile-development"><span class="std std-ref">пологого графика роста стоимости изменения (адаптации) кода, максимально приближенного к горизонтальной асимтоте</span></a>, что открыло широкие возможности по удешевлению разработки путем <a class="reference internal" href="adaptation/adaptation.html#emacsway-adaptation"><span class="std std-ref">эмпирического (т.е. опытным путем) разрешения неопределенности</span></a> (т.е. итеративно).
@@ -191,7 +207,7 @@ We have asked, &quot;What shall we add to our process to deal with this new situ
 <p>Так же, как во времена роста популярности OOP, &quot;Switch-Case Statement&quot; считался Code Smell, дабы стимулировать продвижение OOP в массы (об этом признается M.Fowler во втором издании книги Refactoring), в начале 2000-х значение заблаговременного анализа и проектирования (Prediction) нередко принебрегалось, дабы подчеркнуть превосходство эмпирического способа разрешения неопределенности (Adaptation) и стимулировать продвижение этой идеи в массы.</p>
 </div>
 <div class="section" id="prediction-adaptation-prediction">
-<h3><a class="toc-backref" href="#id7">Отскок маятника Prediction/Adaptation назад к Prediction</a><a class="headerlink" href="#prediction-adaptation-prediction" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id9">Отскок маятника Prediction/Adaptation назад к Prediction</a><a class="headerlink" href="#prediction-adaptation-prediction" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Однако, в статье мы наблюдаем, что маятник пошел в обратном направлении:</p>
 <blockquote>
 <div><p>📝 &quot;пять дней кодинга может сэкономить день планирования</p>
@@ -229,7 +245,7 @@ Prediction стал дешевле, что позволило увеличить
 <p>Многие старые идеи Scaled Agile реинкарнировали в современные итеративные модели разработки, такие как DAD и SAFe.</p>
 <p>Начали появляться способы интеграции <a class="reference internal" href="../../team-topologies/harlan-mills%27-proposal.html#emacsway-program-management"><span class="std std-ref">Program Management</span></a> (т.е. организации процессов Prediction) в даже самые легковесные Scaled Agile Frameworks, такие как Nexus by Ken Schwaber.</p>
 <p>А в основе лежит все та же идея &quot;<a class="reference internal" href="../../team-topologies/harlan-mills%27-proposal.html#emacsway-harlan-mills-proposal"><span class="std std-ref">Метода Хирурга</span></a>&quot; Харлана Миллза, который младше Закона Конвея всего на три года.</p>
-<p>Разные модели предлагают разное соотношение Prediction/Adaptation, например, в SAFe доля Prediction больше, чем в Nexus, а в RUP - еще больше. Важно уметь грамотно выбирать модель под потребности конкретного проекта.
+<p>Разные реализации разных SDLC-моделей отличаются прежде всего различным горизонтом видения Prediction и его долей в балансе Prediction/Adaptation, например, в SAFe доля Prediction больше, чем в Nexus, а в RUP - еще больше. Важно уметь грамотно выбирать модель под потребности конкретного проекта.
 Grady Booch даже назвал <a class="reference internal" href="../sdlc-reference.html#emacsway-sdlc-literature"><span class="std std-ref">качество управления моделью жизненного цикла разработки критическим условием успешности проекта</span></a>.
 А поскольку модель SDLC призвана решать проблему управления неопределенностью требований, то <a class="reference external" href="https://itabok.iasaglobal.org/itabok3_0/architecture-methodologies-and-frameworks/">выбор модели становится архитектурной задачей</a>.</p>
 <p>Здесь Prediction сфокусирован, главным образом, на разрешении неопределенности в problem-space (т.е. требований), что влияет на выбор SDLC-модели.
@@ -238,7 +254,7 @@ Grady Booch даже назвал <a class="reference internal" href="../sdlc-re
 </div>
 </div>
 <div class="section" id="alberto-brandolini-about-prediction-adaptation">
-<h2><a class="toc-backref" href="#id8">Alberto Brandolini about Prediction/Adaptation</a><a class="headerlink" href="#alberto-brandolini-about-prediction-adaptation" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">Alberto Brandolini about Prediction/Adaptation</a><a class="headerlink" href="#alberto-brandolini-about-prediction-adaptation" title="Ссылка на этот заголовок">¶</a></h2>
 <p><em>Автор раздела: Андрей Ганичев</em></p>
 <p>Андрей Ганичев, contributor of &quot;<a class="reference external" href="https://github.com/kgrzybek/modular-monolith-with-ddd">Full Modular Monolith application with Domain-Driven Design approach</a>&quot;, на тему поиска баланса Prediction/Adaptation:</p>
 <p>Когда читал книгу Брандолини про &quot;<a class="reference external" href="https://leanpub.com/introducing_eventstorming">Introducing EventStorming: An act of Deliberate Collective Learning</a>&quot; by Alberto Brandolini (та которая недописанная), обратил внимание что и он вскользь проходит по этой теме.</p>

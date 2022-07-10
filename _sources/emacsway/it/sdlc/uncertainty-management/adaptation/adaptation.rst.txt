@@ -103,7 +103,7 @@ Prediction при этом не исчезает полностью, а пони
 
     📝 "Agile methods are most valuable when we're dealing with high levels of uncertainty."
 
-    -- "` Agile and Architecture: Friend, not Foe <https://architectelevator.com/transformation/agile_architecture/>`__" by Gregor Hohpe
+    -- "`Agile and Architecture: Friend, not Foe <https://architectelevator.com/transformation/agile_architecture/>`__" by Gregor Hohpe
 
 ..
     📝 "Complete.

@@ -138,7 +138,9 @@ Edsger W. Dijkstra
 
 ..
 
-    📝 "The competent programmer is fully aware of the strictly limited size of his own skull;
+    📝 "Хороший специалист всегда осознает строго ограниченные размеры своего черепа, поэтому подходит к задачам с максимальной скромностью.
+
+    The competent programmer is fully aware of the strictly limited size of his own skull;
     therefore, he approaches the programming task in full humility"
 
     -- Edsger W. Dijkstra, 1972
@@ -324,7 +326,11 @@ Bjarne Stroustrup
 
 ..
 
-    📝 "Be Humble, don't think of yourself as a super genius, this is your first mistake.
+    📝 "Будьте скромны, не считайте себя супергением — это ваша первая ошибка.
+    Оставаясь скромным, вы в конечном итоге достигнете уровня супергения, и даже если нет, какая разница.
+    Ваш код должен быть прост настолько, что вам не нужно быть гением, чтобы работать с ним.
+
+    Be Humble, don't think of yourself as a super genius, this is your first mistake.
     By being humble, you will eventually achieve super genius status =), and even if you don't, who cares!
     your code is stupid simple, so you don't have to be a genius to work with it."
 
