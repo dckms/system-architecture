@@ -432,6 +432,8 @@ API-Design
 - "`REST API Design - Resource Modeling  <https://www.thoughtworks.com/insights/blog/rest-api-design-resource-modeling>`__" by Prakash Subramaniam, WhoughtWorks
 - "`CQRS and REST: the perfect match <https://lostechies.com/jimmybogard/2016/06/01/cqrs-and-rest-the-perfect-match/>`__" by Jimmy Bogard
 - "`Entities aren't resources, resources aren't representations <https://lostechies.com/jimmybogard/2016/05/12/entities-arent-resources-resources-arent-representations/>`__" by Jimmy Bogard
+- "`CRUD, only when you can afford it (Revisited) <https://blogs.msdn.microsoft.com/maarten_mullender/2004/07/23/crud-only-when-you-can-afford-it-revisited/>`__" by Maarten Mullender
+- "`CQRS and DDD patterns are not top-level architectures <https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/eshoponcontainers-cqrs-ddd-microservice#cqrs-and-ddd-patterns-are-not-top-level-architectures>`__"
 
 
 
@@ -522,6 +524,8 @@ Scaled Agile
 - "Large-Scale Scrum: More with LeSS" by Craig Larman
 - "`LeSS <https://less.works/less/framework/introduction>`__" (`перевод на Русский <https://less.works/ru/less/framework/introduction>`__)
 - "`Agile Practice Guide <https://www.pmi.org/pmbok-guide-standards/practice-guides/agile>`__" by Project Management Institute
+- "`Disciplined Agile® <https://www.pmi.org/disciplined-agile>`__"
+- "`SAFe - Scaled Agile Framework <https://www.scaledagileframework.com/>`__"
 
 
 Стандарты
@@ -794,7 +798,13 @@ Donald E. Knuth:
 - "Building Evolutionary Architectures: Support Constant Change" 1st Edition by Neal Ford, Rebecca Parsons, Patrick Kua
 - "Agile Software Architecture: Aligning Agile Processes and Software Architectures" by Muhammad Ali Babar, Alan W. Brown, Kai Koskimies, Ivan Mistrík
 - "Continuous Architecture: Sustainable Architecture in an Agile and Cloud-Centric World" by Murat Erder, Pierre Pureur
-
+- "`Balancing Agility and Discipline: A Guide for the Perplexed <https://www.amazon.com/Balancing-Agility-Discipline-Guide-Perplexed/dp/0321186125>`__" by Barry Boehm, Richard Turner
+- "`Architected Agile Solutions for Software-Reliant Systems <https://www.researchgate.net/publication/228701141_Architected_Agile_Solutions_for_Software-Reliant_Systems>`__" by Barry Boehm, Jo Ann Lane, Richard Turner
+- "`The ROI of Systems Engineering: Some Quantitative Results <https://www.researchgate.net/publication/224579114_The_ROI_of_Systems_Engineering_Some_Quantitative_Results>`__" by Barry Boehm, Ricardo Valerdi
+- "Lean Architecture: for Agile Software Development" 1st edition by James O. Coplien, Gertrud Bjørnvig
+- "`Agile Practice Guide <https://www.pmi.org/pmbok-guide-standards/practice-guides/agile>`__" by Project Management Institute (PMI), 2017
+- "`Enterprise Architecture in Disciplined Agile <https://www.pmi.org/disciplined-agile/process/enterprise-architecture>`__"
+- "`Enterprise Architect in SAFe <https://www.scaledagileframework.com/enterprise-architect/>`__"
 
 Стандарты:
 
@@ -838,8 +848,8 @@ Donald E. Knuth:
 
 - "`Agile Extension to the BABOK® Guide <https://www.iiba.org/career-resources/business-analysis-resources/iiba-bookstore/>`__"
 
-- "`Handbook of RE@Agile According to the IREB Standard Education and Training for IREB Certified Professional for Requirements Engineering Advanced Level RE@Agile <https://www.ireb.org/content/downloads/22-cpre-advanced-level-re-agile-handbook/handbook_cpre_al_re%40agile_en_v1.0.2.pdf>`__" Version 1.0.2
-- "`IREB Certified Professional for Requirements Engineering RE@Agile Glossary <https://www.ireb.org/content/downloads/34-re-agile-glossary/ireb_cpre_re%40agile_glossary_v1.0.5.pdf>`__"
+- "`Handbook of RE@Agile According to the IREB Standard Education and Training for IREB Certified Professional for Requirements Engineering Advanced Level RE@Agile <https://www.ireb.org/content/downloads/23-cpre-advanced-level-re-agile-handbook/handbook_cpre_al_re%40agile_en_v2.0.pdf>`__" Version 2.0
+- "`IREB Certified Professional for Requirements Engineering RE@Agile Glossary <https://www.ireb.org/content/downloads/36-re-agile-glossary/ireb_cpre_re%40agile_glossary_v1.0.5.pdf>`__"
 
 
 Другие подборки литературы по аналитике:
@@ -1028,7 +1038,7 @@ Code Smell catalogs
 - `Simple CQRS example <https://github.com/gregoryyoung/m-r>`__ by Greg Young (приложение так же реализует Event Sourcing)
 - `Greg Young's Simple CQRS in F# <https://github.com/thinkbeforecoding/m-r>`__ by Jérémie Chassaing
 - `Complete serverless application to show how to apply DDD, Clean Architecture, and CQRS by practical refactoring of a Go project <https://github.com/ThreeDotsLabs/wild-workouts-go-ddd-example>`__ (`more info <https://threedots.tech/post/serverless-cloud-run-firebase-modern-go-application/>`__) by Robert Laszczak
-- `Clean Monolith Shop <https://github.com/ThreeDotsLabs/monolith-microservice-shop>`__ by Robert Laszczak - Source code for `Why using Microservices or Monolith can be just a detail? <https://threedots.tech/post/microservices-or-monolith-its-detail/>`__ article
+- `Clean Monolith Shop <https://github.com/ThreeDotsLabs/monolith-microservice-shop>`__ by Robert Laszczak - Source code for article "`Why using Microservices or Monolith can be just a detail? <https://threedots.tech/post/microservices-or-monolith-its-detail/>`__"
 - `go-iddd - showcase project for implementing DDD in Go <https://github.com/AntonStoeckl/go-iddd>`__ by Anton Stöckl (see more info `here <https://medium.com/@TonyBologni/implementing-domain-driven-design-and-hexagonal-architecture-with-go-1-292938c0a4d4>`__ and `here <https://medium.com/@TonyBologni/implementing-domain-driven-design-and-hexagonal-architecture-with-go-2-efd432505554>`__).
 - `go-distributed-sys <https://github.com/shijuvar/go-distributed-sys>`__ - Guidance for building distributed systems and Microservices in Go. "`Building Event-Driven Distributed Systems in Go with gRPC, NATS JetStream and CockroachDB <https://shijuvar.medium.com/building-event-driven-distributed-systems-in-go-with-grpc-nats-jetstream-and-cockroachdb-c4b899c8636d>`__" by Shiju Varghese
 - `Real-time Map <https://github.com/asynkron/realtimemap-go>`__ displays real-time positions of public transport vehicles in Helsinki. It's a showcase for `Proto.Actor <https://proto.actor/>`__ - an ultra-fast distributed actors solution for Go, C#, and Java/Kotlin. See also `realtimemap-dotnet <https://github.com/asynkron/realtimemap-dotnet>`__ implementation in .NET.
