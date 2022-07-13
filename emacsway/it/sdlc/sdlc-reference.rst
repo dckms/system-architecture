@@ -75,6 +75,11 @@ Grady Booch выделяет два ключевых критерия, кото�
 - "`Краткая история итеративной разработки <https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf>`__" by Craig Larman
 - "`LeSS by Craig Larman <https://less.works/less/framework/introduction>`__" - куча полезной информации, которую можно использовать автономно. (`на русском <https://less.works/ru/less/framework/introduction>`__)
 
+..
+
+- "`Disciplined Agile® <https://www.pmi.org/disciplined-agile>`__"
+- "`SAFe - Scaled Agile Framework <https://www.scaledagileframework.com/>`__"
+
 Нужно заметить, что Software является подмножеством System.
 Раньше и Software, и System описывались одним стандартом ISO/IEC 12207:2008.
 Потом их разделили на ISO/IEC/IEEE 12207:2017 и ISO/IEC/IEEE 15288:2015.
