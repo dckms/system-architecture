@@ -377,7 +377,7 @@ TDD - основной катализатор Clean Code
 .. index::
    single: Black Box; in TDD
    single: White Box; in TDD
-
+   :name: emacsway-tdd-black-box
 
 Black Box or White Box?
 =======================
