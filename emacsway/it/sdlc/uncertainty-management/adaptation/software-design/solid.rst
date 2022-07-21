@@ -451,7 +451,7 @@ SRP
 
 
 No Silver Bullet
-----------------
+================
 
 Но правда и в том, что `серебряной пули нет <https://en.m.wikipedia.org/wiki/No_Silver_Bullet>`__.
 Нет магических пяти букв, которые волшебным образом сделают код экономически высокоэффективным, особенно, если про них узнали не из первоисточника, а из Википедии.
@@ -492,6 +492,52 @@ No Silver Bullet
 - "`The Single Responsibility Principle <https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html>`__"
 - "`The Open Closed Principle <https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html>`__"
 - "`Solid Relevance <http://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html>`__"
+
+
+Последние определения от 2022-07-06
+===================================
+
+..
+
+    💬 "The Single Responsibility Principle (SRP):
+
+    Gather together those things that change for the same reasons and at the same times. Separate those things that change for different reasons or at different times."
+
+    -- `Источник <https://twitter.com/unclebobmartin/status/1544652844825038850?t=KWWq9TQ9XN3w9VksSRieSA&s=19>`__
+
+..
+
+    💬 "The Open-Closed Principle (OCP):
+
+    Separate modules that frequently change from modules that change less frequently with a layer of abstraction."
+
+    -- `Источник <https://twitter.com/unclebobmartin/status/1544653655047118851?t=r4bY25YMWeHpAtEDtLsVdg&s=19>`__
+
+..
+
+    💬 "The Liskov Substitution Principle (LSP): 
+
+    The implementation of an interface must never violate the contract between that interface and its users."
+
+    -- `Источник <https://twitter.com/unclebobmartin/status/1544654145839316996?t=jsDVCEvXBlwM82JwXugdMw&s=19>`__
+
+..
+
+    💬 "The Interface Segregation Principle (ISP):
+
+    Don't depend on things you don’t need."
+
+    -- `Источник <https://twitter.com/unclebobmartin/status/1544654493677240324?t=uGpjX6exnonCpwh5VO6WXQ&s=19>`__
+
+..
+
+    💬 "The Dependency Inversion Principle (DIP):
+
+    Lower level policies should depend on higher level policies."
+
+    -- `Источник <https://twitter.com/unclebobmartin/status/1544655000525225985?t=gEoCa1rfs4i05snSJDZXqg&s=19>`__
+
+
 
 .. seealso::
 
