@@ -60,29 +60,30 @@
             
     
   <div class="section" id="role-of-software-design-in-agile">
-<span id="emacsway-agile-software-design"></span><h1><a class="toc-backref" href="#id11">Role of Software Design in Agile</a><a class="headerlink" href="#role-of-software-design-in-agile" title="Ссылка на этот заголовок">¶</a></h1>
+<span id="emacsway-agile-software-design"></span><h1><a class="toc-backref" href="#id12">Role of Software Design in Agile</a><a class="headerlink" href="#role-of-software-design-in-agile" title="Ссылка на этот заголовок">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id7">
 <a class="reference internal image-reference" href="../../../../../../_images/ouroboros.jpg"><img alt="Уроборос. Иллюстрация из открытых источников неизвестного автора." src="../../../../../../_images/ouroboros.jpg" style="width: 40%;" /></a>
-<p class="caption"><span class="caption-text">Уроборос. Иллюстрация из открытых источников неизвестного автора.</span><a class="headerlink" href="#id6" title="Постоянная ссылка на рисунок">¶</a></p>
+<p class="caption"><span class="caption-text">Уроборос. Иллюстрация из открытых источников неизвестного автора.</span><a class="headerlink" href="#id7" title="Постоянная ссылка на рисунок">¶</a></p>
 </div>
 <div class="contents topic" id="id1">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#role-of-software-design-in-agile" id="id11">Role of Software Design in Agile</a></p>
+<li><p><a class="reference internal" href="#role-of-software-design-in-agile" id="id12">Role of Software Design in Agile</a></p>
 <ul>
-<li><p><a class="reference internal" href="#emacsway-who-reads-the-code" id="id12">Кто читает код?</a></p></li>
-<li><p><a class="reference internal" href="#primary-technical-imperative" id="id13">Primary Technical Imperative</a></p></li>
-<li><p><a class="reference internal" href="#id3" id="id14">Оправдано ли качество?</a></p>
+<li><p><a class="reference internal" href="#emacsway-who-reads-the-code" id="id13">Кто читает код?</a></p></li>
+<li><p><a class="reference internal" href="#primary-technical-imperative" id="id14">Primary Technical Imperative</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id15">Оправдано ли качество?</a></p>
 <ul>
-<li><p><a class="reference internal" href="#martin-fowler" id="id15">Martin Fowler</a></p></li>
-<li><p><a class="reference internal" href="#kent-beck" id="id16">Kent Beck</a></p></li>
-<li><p><a class="reference internal" href="#robert-martin" id="id17">Robert Martin</a></p></li>
-<li><p><a class="reference internal" href="#agile-manifesto" id="id18">Agile Manifesto</a></p></li>
-<li><p><a class="reference internal" href="#ralph-johnson" id="id19">Ralph Johnson</a></p></li>
-<li><p><a class="reference internal" href="#steve-mcconnell" id="id20">Steve McConnell</a></p></li>
-<li><p><a class="reference internal" href="#id4" id="id21">Сергей Тепляков</a></p></li>
-<li><p><a class="reference internal" href="#randy-shoup" id="id22">Randy Shoup</a></p></li>
+<li><p><a class="reference internal" href="#martin-fowler" id="id16">Martin Fowler</a></p></li>
+<li><p><a class="reference internal" href="#kent-beck" id="id17">Kent Beck</a></p></li>
+<li><p><a class="reference internal" href="#robert-martin" id="id18">Robert Martin</a></p></li>
+<li><p><a class="reference internal" href="#agile-manifesto" id="id19">Agile Manifesto</a></p></li>
+<li><p><a class="reference internal" href="#ralph-johnson" id="id20">Ralph Johnson</a></p></li>
+<li><p><a class="reference internal" href="#steve-mcconnell" id="id21">Steve McConnell</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id22">Сергей Тепляков</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id23">Народное творчество</a></p></li>
+<li><p><a class="reference internal" href="#randy-shoup" id="id24">Randy Shoup</a></p></li>
 </ul>
 </li>
 </ul>
@@ -90,7 +91,7 @@
 </ul>
 </div>
 <div class="section" id="emacsway-who-reads-the-code">
-<span id="id2"></span><h2><a class="toc-backref" href="#id12">Кто читает код?</a><a class="headerlink" href="#emacsway-who-reads-the-code" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="id2"></span><h2><a class="toc-backref" href="#id13">Кто читает код?</a><a class="headerlink" href="#emacsway-who-reads-the-code" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Среди малоопытных разработчиков иногда можно услышать, что им некогда писать качественный код, так как у них мало времени, а этот код все равно читать никто не будет.</p>
 <p>Истина в том, что в процессе конструирования кода, 91% времени занимает именно чтение кода и борьба со сложностью, и только 9% времени (1:10) занимает ввод символов с клавиатуры.
 И это соотношение дано еще для качественного кода.</p>
@@ -129,7 +130,7 @@
 Конечно, написать код, не прочитав его, невозможно, так что упрощение чтения в действительности упрощает и написание кода.
 Уйти от этой логики невозможно.
 Невозможно написать код без предварительного чтения окружающего кода.
-Код, который вы собираетесь написать сегодня, будет легко или тяжело читаться в зависимости от того, насколько легко или тяжело читается окружающий код.
+Код, который вы собираетесь написать сегодня, будет легко или тяжело писаться в зависимости от того, насколько легко или тяжело читается окружающий код.
 Если вы хотите быстро справиться со своей задачей, если вы хотите, чтобы ваш код было легко писать — позаботьтесь о том, чтобы он легко читался.</p>
 <p>You might ask: How much is code really read? Doesn't most of the effort go into writing it?</p>
 <p>Have you ever played back an edit session? In the 80s and 90s we had editors like Emacs that kept track of every keystroke.
@@ -165,7 +166,7 @@ So if you want to go fast, if you want to get done quickly, if you want your cod
 </div></blockquote>
 </div>
 <div class="section" id="primary-technical-imperative">
-<span id="emacsway-primary-technical-imperative"></span><h2><a class="toc-backref" href="#id13">Primary Technical Imperative</a><a class="headerlink" href="#primary-technical-imperative" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="emacsway-primary-technical-imperative"></span><h2><a class="toc-backref" href="#id14">Primary Technical Imperative</a><a class="headerlink" href="#primary-technical-imperative" title="Ссылка на этот заголовок">¶</a></h2>
 <blockquote>
 <div><p>📝 &quot;There are two ways of constructing a software design: one way is to make it so simple that there are obviously no deficiencies, and the other is to make it so complicated that there are no obvious deficiencies.&quot;</p>
 <p class="attribution">—C. A. R. Hoare</p>
@@ -241,12 +242,12 @@ The Psychological Review 63, no. 2 (2): 81–97.</p>
 <p class="attribution">—&quot;Code Complete&quot; 2nd edition by Steve McConnell, перевод: Издательско-торговый дом &quot;Русская Редакция&quot;</p>
 </div></blockquote>
 <p>По поводу последнего изречения - лучше один раз увидеть на примере метафоры в виде картинки со схожим эффектом:</p>
-<div class="figure align-left" id="id7">
+<div class="figure align-left" id="id8">
 <a class="reference internal image-reference" href="../../../../../../_images/12-points.jpg"><img alt="Просто ваши глаза не могут увидеть все 12 точек одновременно. Ninio's extinction illusion. Twelve black dots cannot be seen at once. Ninio, J. and Stevens, K. A. (2000) Variations on the Hermann grid: an extinction illusion. Perception, 29, 1209-1217. The image source is a post by Akiyoshi Kitaoka https://www.facebook.com/akiyoshi.kitaoka/posts/10207806663219295" src="../../../../../../_images/12-points.jpg" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-text">Просто ваши глаза не могут увидеть все 12 точек одновременно.
 Ninio's extinction illusion. Twelve black dots cannot be seen at once.
 Ninio, J. and Stevens, K. A. (2000) Variations on the Hermann grid: an extinction illusion. Perception, 29, 1209-1217.
-The image source is &quot;<a class="reference external" href="https://www.facebook.com/akiyoshi.kitaoka/posts/10207806663219295">a post</a>&quot; by Akiyoshi Kitaoka.</span><a class="headerlink" href="#id7" title="Постоянная ссылка на рисунок">¶</a></p>
+The image source is &quot;<a class="reference external" href="https://www.facebook.com/akiyoshi.kitaoka/posts/10207806663219295">a post</a>&quot; by Akiyoshi Kitaoka.</span><a class="headerlink" href="#id8" title="Постоянная ссылка на рисунок">¶</a></p>
 </div>
 <p>Как и в &quot;Законе Миллера&quot;, суть картинки сводится к тому, что у человека есть предел способности <strong>воспринимать</strong> информацию, и если количество единиц поступающей информации превышает этот предел (не зависимо от его природы, будь то особенность работы рецепторов сетчатки или предел возможностей краткосрочной памяти), то начинается &quot;жонглирование&quot;, т.е. неспособность рассмотреть (в прямом и в переносном смыслах) всю информацию единовременно и изолированно.</p>
 <p>Вероятное объяснение этого явления заключается в том, что:</p>
@@ -275,9 +276,9 @@ Their argument goes like this:</p>
 <p>Note I don't say, &quot;Eliminating coupling.&quot;
 Decoupling comes with its own costs, both the cost of the decoupling itself and the future costs of unanticipated changes.
 The more perfectly a design is adapted to one set of changes, the more likely it is to be blind-sided by novel changes. And so we have the classic tradeoff curve:</p>
-<div class="figure align-left" id="id8">
+<div class="figure align-left" id="id9">
 <a class="reference internal image-reference" href="../../../../../../_images/balancing-coupling-decoupling.jpeg"><img alt="Classic tradeoff curve of balancing cost of Coupling vs. cost of Decoupling. The image source is article &quot;Monolith -&gt; Services: Theory &amp; Practice&quot; by Kent Beck https://medium.com/&#64;kentbeck_7670/monolith-services-theory-practice-617e4546a879" src="../../../../../../_images/balancing-coupling-decoupling.jpeg" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-text">Classic tradeoff curve of balancing cost of Coupling vs. cost of Decoupling. The image source is article &quot;<a class="reference external" href="https://medium.com/&#64;kentbeck_7670/monolith-services-theory-practice-617e4546a879">Monolith -&gt; Services: Theory &amp; Practice</a>&quot; by Kent Beck.</span><a class="headerlink" href="#id8" title="Постоянная ссылка на рисунок">¶</a></p>
+<p class="caption"><span class="caption-text">Classic tradeoff curve of balancing cost of Coupling vs. cost of Decoupling. The image source is article &quot;<a class="reference external" href="https://medium.com/&#64;kentbeck_7670/monolith-services-theory-practice-617e4546a879">Monolith -&gt; Services: Theory &amp; Practice</a>&quot; by Kent Beck.</span><a class="headerlink" href="#id9" title="Постоянная ссылка на рисунок">¶</a></p>
 </div>
 <p>You manage coupling one of two ways:</p>
 <ol class="arabic simple">
@@ -288,16 +289,16 @@ The more perfectly a design is adapted to one set of changes, the more likely it
 </div></blockquote>
 </div>
 <div class="section" id="id3">
-<h2><a class="toc-backref" href="#id14">Оправдано ли качество?</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id15">Оправдано ли качество?</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
 <div class="section" id="martin-fowler">
-<h3><a class="toc-backref" href="#id15">Martin Fowler</a><a class="headerlink" href="#martin-fowler" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id16">Martin Fowler</a><a class="headerlink" href="#martin-fowler" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>📝 &quot;In most contexts higher quality ⇒ expensive. But high internal quality of software allows us to develop features faster and cheaper.&quot;</p>
 <p class="attribution">—&quot;<a class="reference external" href="https://martinfowler.com/bliki/TradableQualityHypothesis.html">Tradable Quality Hypothesis</a>&quot; by Martin Fowler</p>
 </div></blockquote>
-<div class="figure align-left" id="id9">
+<div class="figure align-left" id="id10">
 <span id="emacsway-design-stamina-graph"></span><a class="reference internal image-reference" href="../../../../../../_images/design-stamina-graph.png"><img alt="The pseudo-graph plots delivered functionality (cumulative) versus time for two imaginary stereotypical projects: one with good design and one with no design. The image from &quot;Design Stamina Hypothesis&quot; by Martin Fowler. https://martinfowler.com/bliki/DesignStaminaHypothesis.html" src="../../../../../../_images/design-stamina-graph.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-text">The pseudo-graph plots delivered functionality (cumulative) versus time for two imaginary stereotypical projects: one with good design and one with no design. The image from &quot;<a class="reference external" href="https://martinfowler.com/bliki/DesignStaminaHypothesis.html">Design Stamina Hypothesis</a>&quot; by Martin Fowler.</span><a class="headerlink" href="#id9" title="Постоянная ссылка на рисунок">¶</a></p>
+<p class="caption"><span class="caption-text">The pseudo-graph plots delivered functionality (cumulative) versus time for two imaginary stereotypical projects: one with good design and one with no design. The image from &quot;<a class="reference external" href="https://martinfowler.com/bliki/DesignStaminaHypothesis.html">Design Stamina Hypothesis</a>&quot; by Martin Fowler.</span><a class="headerlink" href="#id10" title="Постоянная ссылка на рисунок">¶</a></p>
 </div>
 <blockquote>
 <div><p>📝 &quot;... the true value of internal quality - that it's the enabler to speed. The purpose of internal quality is to go faster.&quot;</p>
@@ -415,7 +416,7 @@ In my keynote at the first-ever agile conference, I pointed out that design was 
 </div></blockquote>
 </div>
 <div class="section" id="kent-beck">
-<h3><a class="toc-backref" href="#id16">Kent Beck</a><a class="headerlink" href="#kent-beck" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id17">Kent Beck</a><a class="headerlink" href="#kent-beck" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>📝 &quot;Nothing kills speed more effectively than poor internal quality.&quot;</p>
 <p class="attribution">—&quot;Planning Extreme Programming&quot; by Kent Beck, Martin Fowler</p>
@@ -472,7 +473,7 @@ Good design puts the logic near the data it operates allows the extension of the
 </div></blockquote>
 </div>
 <div class="section" id="robert-martin">
-<h3><a class="toc-backref" href="#id17">Robert Martin</a><a class="headerlink" href="#robert-martin" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id18">Robert Martin</a><a class="headerlink" href="#robert-martin" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>💬 &quot;The only way to make the deadline — the only way to go fast — is to keep the code as clean as possible at all times.&quot;</p>
 <p class="attribution">—&quot;Clean Code: A Handbook of Agile Software Craftsmanship&quot; by Robert C. Martin</p>
@@ -506,14 +507,14 @@ Coupling—and especially coupling to premature decisions.&quot;</p>
 </div></blockquote>
 </div>
 <div class="section" id="agile-manifesto">
-<h3><a class="toc-backref" href="#id18">Agile Manifesto</a><a class="headerlink" href="#agile-manifesto" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id19">Agile Manifesto</a><a class="headerlink" href="#agile-manifesto" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>📝 &quot;Continuous attention to technical excellence and good design enhances agility.&quot;</p>
 <p class="attribution">—&quot;<a class="reference external" href="http://agilemanifesto.org/principles.html">Principles behind the Agile Manifesto</a>&quot;</p>
 </div></blockquote>
 </div>
 <div class="section" id="ralph-johnson">
-<h3><a class="toc-backref" href="#id19">Ralph Johnson</a><a class="headerlink" href="#ralph-johnson" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id20">Ralph Johnson</a><a class="headerlink" href="#ralph-johnson" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>📝 &quot;In most successful software projects, the expert developers working on that project have
 a shared understanding of the system design.
@@ -525,7 +526,7 @@ includes the components and interfaces that are understood by all the developers
 </div></blockquote>
 </div>
 <div class="section" id="steve-mcconnell">
-<h3><a class="toc-backref" href="#id20">Steve McConnell</a><a class="headerlink" href="#steve-mcconnell" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id21">Steve McConnell</a><a class="headerlink" href="#steve-mcconnell" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>📝 &quot;The General Principle of Software Quality is that improving quality reduces development costs.</p>
 <p>Understanding this principle depends on understanding a key observation: the best way
@@ -598,14 +599,27 @@ That is truly a worthy goal!&quot;</p>
 </div></blockquote>
 </div>
 <div class="section" id="id4">
-<h3><a class="toc-backref" href="#id21">Сергей Тепляков</a><a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id22">Сергей Тепляков</a><a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><p>📝 &quot;Хороший дизайн заключается в простом решении, когда изменения требований ведут к линейным трудозатратам.&quot;</p>
 <p class="attribution">—&quot;<a class="reference external" href="http://sergeyteplyakov.blogspot.com/2016/08/yagni.html">Принцип YAGNI</a>&quot;, Сергей Тепляков</p>
 </div></blockquote>
 </div>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id23">Народное творчество</a><a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Старый программистский анекдот:</p>
+<blockquote>
+<div><p>💬 Идет мужик по лесу. Смотрит, другой мужик лес рубит.
+| - Привет, что делаешь?
+| - Не видишь? Лес рублю...
+| - Так бензопила же лежит рядом. Возьми её - быстрее будет.
+| - Я не умею.
+| - Так инструкция же рядом лежит. Возьми, прочти...
+| - Мне некогда её читать - мне лес рубить надо.</p>
+</div></blockquote>
+</div>
 <div class="section" id="randy-shoup">
-<h3><a class="toc-backref" href="#id22">Randy Shoup</a><a class="headerlink" href="#randy-shoup" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id24">Randy Shoup</a><a class="headerlink" href="#randy-shoup" title="Ссылка на этот заголовок">¶</a></h3>
 <blockquote>
 <div><div class="line-block">
 <div class="line">- We don't have time to do it right!</div>
@@ -613,9 +627,9 @@ That is truly a worthy goal!&quot;</p>
 </div>
 <p class="attribution">—<a class="reference external" href="https://www.infoq.com/presentations/microservices-data-centric">Randy Shoup</a>, VP Engineering at Stitch Fix in San Francisco</p>
 </div></blockquote>
-<div class="figure align-left" id="id10">
+<div class="figure align-left" id="id11">
 <a class="reference internal image-reference" href="../../../../../../_images/do-it-right.png"><img alt="Do it right! Иллюстрация из открытых источников неизвестного автора." src="../../../../../../_images/do-it-right.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-text">Do it right! Иллюстрация из открытых источников неизвестного автора.</span><a class="headerlink" href="#id10" title="Постоянная ссылка на рисунок">¶</a></p>
+<p class="caption"><span class="caption-text">Do it right! Иллюстрация из открытых источников неизвестного автора.</span><a class="headerlink" href="#id11" title="Постоянная ссылка на рисунок">¶</a></p>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">См.также</p>

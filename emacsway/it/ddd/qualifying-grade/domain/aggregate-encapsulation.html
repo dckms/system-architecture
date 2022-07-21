@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Как сохранить Агрегат в БД не разрушая инкапсуляции? &#8212; System Architecture</title>
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../../../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../../../search.html" />
+    <link rel="next" title="Integration" href="../../../../../trunk/it/integration/index.html" />
+    <link rel="prev" title="Domain Layer" href="index.html" />
+    
+   
+  <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+
+
+    
+        
+            <link rel="canonical" href="https://dckms.github.io/system-architecture/emacsway/it/ddd/qualifying-grade/domain/aggregate-encapsulation.html" />
+        
+    
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+              <div class="related top">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="index.html" title="Previous document">Domain Layer</a>
+        </li>
+        <li>
+          <a href="../../../../../trunk/it/integration/index.html" title="Next document">Integration</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+
+          <div class="body" role="main">
+            
+    
+  <div class="section" id="emacsway-encapsulation-golang">
+<span id="id1"></span><h1><a class="toc-backref" href="#id3">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a><a class="headerlink" href="#emacsway-encapsulation-golang" title="Ссылка на этот заголовок">¶</a></h1>
+<p><em>Автор раздела: Ivan Zakrevsky</em></p>
+<p>Инварианты лишены смысла своего существования в условиях дырявой, как решето, инкапсуляции.
+Вопрос в том, как сохранить инкапсуляцию Агрегатов в Golang, когда нам требуется его внутреннее состояние для формирования SQL-запроса, или, наоборот, требуется установить состояние Агрегата в результате выполнения SQL-запроса.</p>
+<div class="contents topic" id="id2">
+<p class="topic-title">Содержание</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#emacsway-encapsulation-golang" id="id3">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a></p>
+<ul>
+<li><p><a class="reference internal" href="#memento-pattern" id="id4">Memento pattern</a></p></li>
+<li><p><a class="reference internal" href="#walker" id="id5">Walker</a></p></li>
+<li><p><a class="reference internal" href="#valuer-scanner" id="id6">Valuer &amp; Scanner</a></p></li>
+<li><p><a class="reference internal" href="#reflection" id="id7">Reflection</a></p></li>
+<li><p><a class="reference internal" href="#exporter" id="id8">Exporter</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="memento-pattern">
+<h2><a class="toc-backref" href="#id4">Memento pattern</a><a class="headerlink" href="#memento-pattern" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Memento оказался близко, но не по назначению. Суть Memento в том, что он не должен раскрывать свое состояние никому, кроме своего создателя:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Preserving encapsulation boundaries. Memento avoids exposing information that only an originator should manage but that must be stored nevertheless outside the originator.
+The pattern shields other objects from potentially complex Originator internals, thereby preserving encapsulation boundaries.</p></li>
+</ol>
+<p class="attribution">—&quot;Design Patterns: Elements of Reusable Object-Oriented Software&quot; by Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides</p>
+</div></blockquote>
+</div>
+<div class="section" id="walker">
+<h2><a class="toc-backref" href="#id5">Walker</a><a class="headerlink" href="#walker" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Walker представляет собою модификацию паттерна Visitor с целью сохранить инкапсуляцию Агрегатов. К числу недостатков паттерна паттерна Visitor относится:</p>
+<blockquote>
+<div><p>6. Breaking encapsulation. Visitor's approach assumes that the ConcreteElement interface is powerful enough to let visitors do their job.
+As a result, the pattern often forces you to provide public operations that access an element's internal state, which may compromise its encapsulation.</p>
+<p class="attribution">—&quot;Design Patterns: Elements of Reusable Object-Oriented Software&quot; by Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides</p>
+</div></blockquote>
+<p>Что будет создавать Walker в случае обхода иерархической структуры Агрегата с несколькими вложенными Сущностями?
+Вероятно, это будет будет несколько SQL-запросов с параметрами, т.е. некий композитный объект, выраженный некой структурой данных.
+Это лишает смысла использование Visitor, если можно сразу возвратить структуру данных, причем, абстрагированную от SQL.</p>
+<p>Технически, можно сделать так:</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span> <span class="nx">Walkable</span> <span class="kd">interface</span> <span class="p">{</span>
+    <span class="nx">Accept</span><span class="p">(</span><span class="nx">Walker</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">Walker</span> <span class="kd">interface</span> <span class="p">{</span>
+    <span class="nx">SetField</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span>
+    <span class="nx">WalkWalkable</span><span class="p">(</span><span class="nx">Walkable</span><span class="p">)</span>
+    <span class="nx">WalkUint8</span><span class="p">(</span><span class="kt">uint8</span><span class="p">)</span>
+    <span class="nx">WalkUint64</span><span class="p">(</span><span class="kt">uint64</span><span class="p">)</span>
+    <span class="nx">WalkUint</span><span class="p">(</span><span class="kt">uint</span><span class="p">)</span>
+    <span class="nx">WalkTime</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">Endorsement</span><span class="p">)</span> <span class="nx">Accept</span><span class="p">(</span><span class="nx">walker</span> <span class="nx">interfaces</span><span class="p">.</span><span class="nx">Walker</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">walker</span><span class="p">.</span><span class="nx">SetField</span><span class="p">(</span><span class="s">&quot;recognizerId&quot;</span><span class="p">)</span>
+    <span class="nx">walker</span><span class="p">.</span><span class="nx">WalkWalkable</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">recognizerId</span><span class="p">)</span>
+    <span class="nx">walker</span><span class="p">.</span><span class="nx">SetField</span><span class="p">(</span><span class="s">&quot;recognizerGrade&quot;</span><span class="p">)</span>
+    <span class="nx">walker</span><span class="p">.</span><span class="nx">WalkWalkable</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">recognizerGrade</span><span class="p">)</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span> <span class="p">(</span><span class="nx">id</span> <span class="nx">RecognizerId</span><span class="p">)</span> <span class="nx">Accept</span><span class="p">(</span><span class="nx">walker</span> <span class="nx">interfaces</span><span class="p">.</span><span class="nx">Walker</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">walker</span><span class="p">.</span><span class="nx">WalkUint64</span><span class="p">(</span><span class="nx">id</span><span class="p">.</span><span class="nx">Value</span><span class="p">())</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Проблема в том, что на этапе создания SQL-запроса нам пока еще могут быть неизвестны первичные ключи Агрегатов, чтобы их можно было бы проставить в SQL-запросы их Сущностей.</p>
+<p>Кроме того, осведомленность о способах образования SQL-запросов размазывается между Walkers и Repositories, что вызывает &quot;Разлет Дроби&quot; (Code Smell) в случае изменения существующего способа построения SQL (например, в случае изменения диалекта БД или в случае внедрения какого-либо QueryBuilder).
+Walker начинает быть слишком осведомленным о деталях реализации Repository.</p>
+<p>В целях достижения DRY возникает целесообразность возложить на Walker генерирование только части SQL, и освободить его от осведомленности знания таблиц в БД, что будет разрывать обязанность за построение SQL на несколько объектов и подрывать Cohesion.</p>
+</div>
+<div class="section" id="valuer-scanner">
+<h2><a class="toc-backref" href="#id6">Valuer &amp; Scanner</a><a class="headerlink" href="#valuer-scanner" title="Ссылка на этот заголовок">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pkg.go.dev/database/sql/driver#Valuer">Valuer</a></p></li>
+<li><p><a class="reference external" href="https://pkg.go.dev/database/sql#Scanner">Scanner</a></p></li>
+</ul>
+<p>Интерфейс Scanner открывает дверь к изменяемости ValueObject, что противоречит основной его сути.
+А так же открывает брешь в инкапсуляции Агрегата.</p>
+<p>С другой стороны, Valuer может возвращать только примитивные типы, а значит, он не пригоден для экспорта иерархической структуры состояния Агрегата:</p>
+<blockquote>
+<div><p>It is either nil, a type handled by a database driver's NamedValueChecker interface, or an instance of one of these types:</p>
+<ul class="simple">
+<li><p>int64</p></li>
+<li><p>float64</p></li>
+<li><p>bool</p></li>
+<li><p>[]byte</p></li>
+<li><p>string</p></li>
+<li><p>time.Time</p></li>
+</ul>
+<p class="attribution">—<a class="reference external" href="https://pkg.go.dev/database/sql/driver#Value">Источник</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="reflection">
+<h2><a class="toc-backref" href="#id7">Reflection</a><a class="headerlink" href="#reflection" title="Ссылка на этот заголовок">¶</a></h2>
+<p>В документации <a class="reference external" href="https://pkg.go.dev/reflect#Value.FieldByName">отсутствуют</a> какие-либо упоминания об ограничении доступа к защищенным атрибутам структуры данных посредством рефлекции.</p>
+<p>Может быть через рефлексию и заработало бы - я не пробовал.
+Но использовать рефлексию в production для таких целей как-то не сильно хочется, в т.ч. и по соображениям производительности.
+К тому же этот метод является, по сути, еще одним способом пробить брешь в инкапсуляции.</p>
+</div>
+<div class="section" id="exporter">
+<h2><a class="toc-backref" href="#id8">Exporter</a><a class="headerlink" href="#exporter" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Ссылки по теме:</p>
+<ul class="simple">
+<li><p>&quot;<a class="reference external" href="https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html">More on getters and setters</a>&quot; by Allen Holub</p></li>
+<li><p>&quot;<a class="reference external" href="https://stackoverflow.com/questions/24921227/save-and-load-objects-without-breaking-encapsulation">Save and load objects without breaking encapsulation</a>&quot; at Stackoverflow</p></li>
+</ul>
+<p>Идею можно посмотреть на примере:</p>
+<div class="literal-block-wrapper docutils container" id="emacsway-exporter-code-example-1">
+<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html">Example by Allen Holub</a></span><a class="headerlink" href="#emacsway-exporter-code-example-1" title="Постоянная ссылка на код">¶</a></div>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">java.util.Locale</span><span class="p">;</span>
+
+ <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Employee</span>
+ <span class="p">{</span>   <span class="kd">private</span> <span class="n">Name</span>        <span class="n">name</span><span class="p">;</span>
+     <span class="kd">private</span> <span class="n">EmployeeId</span>  <span class="n">id</span><span class="p">;</span>
+     <span class="kd">private</span> <span class="n">Money</span>       <span class="n">salary</span><span class="p">;</span>
+
+     <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Exporter</span>
+     <span class="p">{</span>   <span class="kt">void</span> <span class="nf">addName</span>    <span class="p">(</span> <span class="n">String</span> <span class="n">name</span>   <span class="p">);</span>
+         <span class="kt">void</span> <span class="nf">addID</span>      <span class="p">(</span> <span class="n">String</span> <span class="n">id</span>     <span class="p">);</span>
+         <span class="kt">void</span> <span class="nf">addSalary</span>  <span class="p">(</span> <span class="n">String</span> <span class="n">salary</span> <span class="p">);</span>
+     <span class="p">}</span>
+
+     <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Importer</span>
+     <span class="p">{</span>   <span class="n">String</span> <span class="nf">provideName</span><span class="p">();</span>
+         <span class="n">String</span> <span class="nf">provideID</span><span class="p">();</span>
+         <span class="n">String</span> <span class="nf">provideSalary</span><span class="p">();</span>
+         <span class="kt">void</span>   <span class="nf">open</span><span class="p">();</span>
+          <span class="kt">void</span>   <span class="nf">close</span><span class="p">();</span>
+     <span class="p">}</span>
+
+     <span class="kd">public</span> <span class="nf">Employee</span><span class="p">(</span> <span class="n">Importer</span> <span class="n">builder</span> <span class="p">)</span>
+     <span class="p">{</span>   <span class="n">builder</span><span class="p">.</span><span class="na">open</span><span class="p">();</span>
+         <span class="k">this</span><span class="p">.</span><span class="na">name</span>   <span class="o">=</span> <span class="k">new</span> <span class="n">Name</span>      <span class="p">(</span> <span class="n">builder</span><span class="p">.</span><span class="na">provideName</span><span class="p">()</span>     <span class="p">);</span>
+          <span class="k">this</span><span class="p">.</span><span class="na">id</span>     <span class="o">=</span> <span class="k">new</span> <span class="n">EmployeeId</span><span class="p">(</span> <span class="n">builder</span><span class="p">.</span><span class="na">provideID</span><span class="p">()</span>       <span class="p">);</span>
+          <span class="k">this</span><span class="p">.</span><span class="na">salary</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Money</span>     <span class="p">(</span> <span class="n">builder</span><span class="p">.</span><span class="na">provideSalary</span><span class="p">(),</span>
+                                   <span class="k">new</span> <span class="n">Locale</span><span class="p">(</span><span class="s">&quot;en&quot;</span><span class="p">,</span> <span class="s">&quot;US&quot;</span><span class="p">)</span> <span class="p">);</span>
+         <span class="n">builder</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+     <span class="p">}</span>
+
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">export</span><span class="p">(</span> <span class="n">Exporter</span> <span class="n">builder</span> <span class="p">)</span>
+     <span class="p">{</span>   <span class="n">builder</span><span class="p">.</span><span class="na">addName</span>  <span class="p">(</span> <span class="n">name</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span>   <span class="p">);</span>
+          <span class="n">builder</span><span class="p">.</span><span class="na">addID</span>    <span class="p">(</span> <span class="n">id</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span>     <span class="p">);</span>
+         <span class="n">builder</span><span class="p">.</span><span class="na">addSalary</span><span class="p">(</span> <span class="n">salary</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="p">);</span>
+     <span class="p">}</span>
+
+     <span class="c1">//...</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Или на более лаконичном примере:</p>
+<div class="literal-block-wrapper docutils container" id="emacsway-code-exporter-example-2">
+<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://stackoverflow.com/questions/24921227/save-and-load-objects-without-breaking-encapsulation">Example from Stackoverflow</a></span><a class="headerlink" href="#emacsway-code-exporter-example-2" title="Постоянная ссылка на код">¶</a></div>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kd">interface</span> <span class="nc">PersonImporter</span> <span class="p">{</span>
+
+     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getAge</span><span class="p">();</span>
+
+     <span class="kd">public</span> <span class="n">String</span> <span class="nf">getId</span><span class="p">();</span>
+ <span class="p">}</span>
+
+ <span class="kd">interface</span> <span class="nc">PersonExporter</span> <span class="p">{</span>
+
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setDetails</span><span class="p">(</span><span class="n">String</span> <span class="n">id</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">);</span>
+
+ <span class="p">}</span>
+
+ <span class="kd">class</span> <span class="nc">Person</span> <span class="p">{</span>
+
+     <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+     <span class="kd">private</span> <span class="n">String</span> <span class="n">id</span><span class="p">;</span>
+
+     <span class="kd">public</span> <span class="nf">Person</span><span class="p">(</span><span class="n">PersonImporter</span> <span class="n">importer</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">age</span> <span class="o">=</span> <span class="n">importer</span><span class="p">.</span><span class="na">getAge</span><span class="p">();</span>
+         <span class="n">id</span> <span class="o">=</span> <span class="n">importer</span><span class="p">.</span><span class="na">getId</span><span class="p">();</span>
+     <span class="p">}</span>
+
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">export</span><span class="p">(</span><span class="n">PersonExporter</span> <span class="n">exporter</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">exporter</span><span class="p">.</span><span class="na">setDetails</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+     <span class="p">}</span>
+
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Замечательный вариант, но проблема в том, что он использует интерефейсы, и это получается слишком многословно - требуется декларировать сам тип (структуру), интерфейс, сеттеры.
+Вряд ли кто-то будет этим заниматься, когда можно просто обязать Агрегат вернуть простую структуру.</p>
+<p><a class="reference internal" href="#emacsway-code-exporter-example-2"><span class="std std-ref">Второй</span></a> из приведенных примеров содержит пакетированный сеттер, что делает его несколько менее многословным.
+В проекте он реализован на примере <code class="docutils literal notranslate"><span class="pre">Recognizer.ExportTo(ex</span> <span class="pre">RecognizerExporter)</span></code> и <code class="docutils literal notranslate"><span class="pre">RecognizerFakeFactory.ExportTo(ex</span> <span class="pre">RecognizerExporter)</span></code>.</p>
+<p>Внутренние объекты структуры Exporter должны иметь сеттеры.
+Реализовать эти объекты можно по разному - как структуру или как примитивный тип.
+Но в первом случае у нас даже плоская Сущность будет экспортировать двухуровневую структуру, что вносит неудобство, но при этом структура позволяет использовать параметрический полиморфизм (generics) для повышения ее реиспользования.
+А во втором случае, хотя объект Exporter и будет &quot;наследоваться&quot; от примитивного типа, но будет требовать преобразование типов в определенных случаях, что будет вносить неудобство.
+Второй вариант реализован в проекте на примере типов Uint8Exporter, Uint64Exporter и др.</p>
+<p>Еще смущает смешивание парадигм FP и OOP для ValueObject.
+Хотя ValueObject и остается неизменяемым, но сам факт того, что функционально чистый объект вызывает мутирующие методы другого объекта, вызывает состояние легкого смущения.
+Смешиваются две парадигмы, теряется независимость.
+Возникает вопрос - почему функциоанльно чистый объект не может просто взять и вернуть другой функционально чистый объект?
+Если бы Golang поддерживать Generics для методов, тогда могло бы получиться что-то похожее на <code class="docutils literal notranslate"><span class="pre">Recognizer.Export[T](exporterFactory</span> <span class="pre">function(attr1,</span> <span class="pre">attr2,</span> <span class="pre">attr3)</span> <span class="pre">T)</span> <span class="pre">T</span></code>.</p>
+<p>И достаточно многословным получается использование такого способа экспорта состояния в тестовых кейсах: нужно проинициализировать переменную, заэкспортировать в нее состояние, осуществить это дважы и для ожидаемой переменной и для тестируемой переменной, и лишь потом сравнить.
+На каждый assert по четыре лишние строчки кода (по три, если спакетировать ининциализацию переменных).
+В проекте это хорошо видно на сравнении тестовых кейстов <code class="docutils literal notranslate"><span class="pre">TestRecognizerExport</span></code> и <code class="docutils literal notranslate"><span class="pre">TestRecognizerExportTo</span></code>.</p>
+<p>Можно было бы сказать, что тестировать нужно по принципам <a class="reference internal" href="../../../tdd/tdd.html#emacsway-tdd-black-box"><span class="std std-ref">черного ящика</span></a> - только внешнее поведение.
+Совершенно верно, но только нам требуется не только внешнее поведение, но и достоверность сохранения введенной в конструктор Агрегата информации в БД.</p>
+<p>Возникает целесообразность облегчить метод экспортирования, придав ему сигнатуру <code class="docutils literal notranslate"><span class="pre">Recognizer.Export()</span> <span class="pre">RecognizerState</span></code> вместо <code class="docutils literal notranslate"><span class="pre">Recognizer.ExportTo(ex</span> <span class="pre">RecognizerExporter)</span></code>.
+Получится что-то типа DTO с тем лишь отличием, что он пересекает не сетевые границы, а границы инкапсуляции Агрегата.
+В проекте показаны оба варианта для сравнения.</p>
+<p>Пока что именно этот вариант выглядит самым привлекательным.</p>
+</div>
+</div>
+
+
+
+    
+        
+            <div class="section" style="text-align: right;">
+                <p><a href="https://dckms.github.io/system-architecture/emacsway/it/ddd/qualifying-grade/domain/aggregate-encapsulation.html">Canonical URL</a></p>
+            </div>
+        
+    
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="index.html" title="Previous document">Domain Layer</a>
+        </li>
+        <li>
+          <a href="../../../../../trunk/it/integration/index.html" title="Next document">Integration</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../index.html">System Architecture</a></h1>
+
+
+
+<p class="blurb">Distributed Collaborative Knowledge Management System for System Architecture</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dckms&repo=system-architecture&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Общее пространство:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/it/index.html">IT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/index.html">Общее пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Авторские пространства:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Пространство Emacsway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Приватное пространствo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../private/index.html">Приватное пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Прочее:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../README.html">Как пользоваться</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://t.me/emacsway_log"><i class="fab fa-telegram" style="color:#54a9eb;"></i> Telegram</a></li>
+    
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../../trunk/it/index.html">IT</a></li>
+  <li><a href="../../../../../trunk/it/ddd/index.html">DDD</a></li>
+  <li><a href="../index.html">Reference Application &quot;Qualifying Grade&quot;</a></li>
+  <li><a href="index.html">Domain Layer</a></li><ul>
+      <li>Previous: <a href="index.html" title="предыдущая глава">Domain Layer</a></li>
+      <li>Next: <a href="../../../../../trunk/it/integration/index.html" title="следующая глава">Integration</a></li></ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="footer">
+      &copy;2022, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../../_sources/emacsway/it/ddd/qualifying-grade/domain/aggregate-encapsulation.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/dckms/system-architecture" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+
+    
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+           ym(87033138, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true,
+                trackHash:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/87033138" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    
+
+  </body>
+</html>

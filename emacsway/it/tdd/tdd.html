@@ -193,8 +193,8 @@ For example, every function may be factored into the composition of a surjective
 В результате факторизации во всех случаях получается произведение более простых объектов, чем исходный.</p>
 <p class="attribution">—&quot;<a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F">Факторизация</a>&quot;, Wikipedia</p>
 </div></blockquote>
-<p>Таким образом, рефакторинг - это способ управления сложностью программы, который делает программу более читаемой и понимаемой за счет декомпозиции сложности, что позволяет снизить нагрузку на человеческую память.
-Процесс рефакторинга подобен факторизации математического выражения, в результате которого выводится более простое эквивалентное выражение, т.е. сохраняется функциональная идентичность.
+<p>Таким образом, рефакторинг - это способ управления сложностью, который делает программу более читаемой и понимаемой за счет декомпозиции сложности, что снижает нагрузку на краткосрочную память.
+Процесс рефакторинга подобен факторизации математического выражения, в результате которого выводится более легкое эквивалентное выражение, т.е. сохраняется функциональная идентичность.
 Именно поэтому рефакторинг оставляет неизменным внешнее поведение системы:</p>
 <blockquote>
 <div><p>Рефакторинг представляет собой процесс такого изменения программной системы, при котором не меняется внешнее поведение кода, но улучшается его внутренняя структура.</p>
@@ -365,7 +365,7 @@ I prefer the term continuous design because it emphasizes the core of the proces
 </div></blockquote>
 </div>
 <div class="section" id="black-box-or-white-box">
-<span id="index-1"></span><h2><a class="toc-backref" href="#id39">Black Box or White Box?</a><a class="headerlink" href="#black-box-or-white-box" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="emacsway-tdd-black-box"></span><h2><a class="toc-backref" href="#id39">Black Box or White Box?</a><a class="headerlink" href="#black-box-or-white-box" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Тесты по возможности должны быть черным ящиком, т.е. тестируем поведение, а не реализацию.
 Это позволяет безболезненно подменять реализацию при рефакторинге.
 Опускаться в глубь реализации нужно тогда, когда это требуется для сокращения комбинаций условий тестирования, например, класс использует несколько подключаемых стратегий, и нам проще протестировать стратегии по одной.
@@ -501,7 +501,7 @@ Strong structural coupling prevents - or at least impedes - this necessary evolu
 </div></blockquote>
 </div>
 <div class="section" id="sociable-or-solitary">
-<span id="index-2"></span><h2><a class="toc-backref" href="#id40">Sociable or Solitary?</a><a class="headerlink" href="#sociable-or-solitary" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="index-1"></span><h2><a class="toc-backref" href="#id40">Sociable or Solitary?</a><a class="headerlink" href="#sociable-or-solitary" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Наверное, самое часто заблуждение, которое мне приходилось слышать, это то, тесты должны быть полностью изолированы, и должны взаимодействовать только с <a class="reference external" href="https://martinfowler.com/bliki/TestDouble.html">дублерами</a>.
 Этот вопрос известен как &quot;Solitary or Sociable?&quot;.</p>
 <blockquote>
@@ -526,7 +526,7 @@ Strong structural coupling prevents - or at least impedes - this necessary evolu
 <p>Лично я считаю что нужно ограничивать использование современных средства мокирования, активно эксплуатирующих Monkey Patch,  поскольку они позволяют создавать и тестировать низкокачественный код.</p>
 </div>
 <div class="section" id="tdd-design-patterns">
-<span id="index-3"></span><h2><a class="toc-backref" href="#id41">TDD и Design Patterns</a><a class="headerlink" href="#tdd-design-patterns" title="Ссылка на этот заголовок">¶</a></h2>
+<span id="index-2"></span><h2><a class="toc-backref" href="#id41">TDD и Design Patterns</a><a class="headerlink" href="#tdd-design-patterns" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Почему-то многие начинающие программисты, не знакомые с первоисточниками по TDD, думают, что TDD подразумевает только Evolutionary Design, а Simple Design противопоставляется паттернам программирования.</p>
 <blockquote>
 <div><p>Я обратил внимание на один важный эффект, который, я надеюсь, смогут принять во внимание и другие.
