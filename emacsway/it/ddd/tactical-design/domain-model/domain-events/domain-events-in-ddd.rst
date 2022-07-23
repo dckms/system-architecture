@@ -898,7 +898,7 @@ One-phase vs Two-phase
 
 Ответ на вопрос о разделении доставки Domain Events во многом зависит от того, разделять ли Domain Events на внутренние и внешние?
 
-Хотя у Vaughn Vernon такое разделение не совсем очевидное, он разделяет реализацию доставки  для подписчиков внутри Bounded Context за его пределами.
+Хотя у Vaughn Vernon такое разделение не совсем очевидное, он разделяет реализацию доставки  для подписчиков внутри Bounded Context и за его пределами.
 
 .. figure:: _media/domain-events-in-ddd/iddd-8.1.png
    :alt: Figure 8.1. Aggregates create Events and publish them. Subscribers may store Events and then forward them to remote subscribers, or just forward them without storing. Immediate forwarding requires XA (two-phase commit) unless messaging middleware shares the model's data store. The image source is "Implementing Domain-Driven Design" by Vaughn Vernon
