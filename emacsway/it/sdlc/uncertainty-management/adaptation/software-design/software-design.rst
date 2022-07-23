@@ -288,8 +288,7 @@ Eric Evans дает неплохое определение Constantine's Law н
 
     <...>
 
-    То, что при делении на модули должна соблюдаться низкая внешняя зависимость 
-(low coupling) при высокой внутренней связности (high cohesion)- это общие слова.
+    То, что при делении на модули должна соблюдаться низкая внешняя зависимость (low coupling) при высокой внутренней связности (high cohesion)- это общие слова.
     Определения зависимости и связности грешат уклоном в чисто технические, количест­венные критерии, по которым их якобы можно измерить, подсчитав количество ассо­циаций и взаимодействий.
     Но это не просто механические характеристики подразде­ления кода на модули, а идейные концепции.
     Человек не может одновременно удер­живать в уме слишком много предметов (отсюда низкая внешняя зависимость).
@@ -300,8 +299,7 @@ Eric Evans дает неплохое определение Constantine's Law н
 
     <...>
 
-    It is a truism that there should be low coupling between MODULES and high cohesion 
-within them.
+    It is a truism that there should be low coupling between MODULES and high cohesion within them.
     Explanations of coupling and cohesion tend to make them sound like technical metrics, to be judged mechanically based on the distributions of associations and interactions. Yet it isn't just code being divided into MODULES, but concepts.
     There is a limit to how many things a person can think about at once (hence low coupling).
     Incoherent fragments of ideas are as hard to understand as an undifferentiated soup of ideas (hence high cohesion)."

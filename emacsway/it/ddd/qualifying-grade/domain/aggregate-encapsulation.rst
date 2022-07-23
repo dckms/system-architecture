@@ -93,6 +93,8 @@ Valuer & Scanner
 Интерфейс Scanner открывает дверь к изменяемости ValueObject, что противоречит основной его сути.
 А так же открывает брешь в инкапсуляции Агрегата.
 
+Но есть еще один момент - метод ``Scan(src any) error`` вызывается у конкретного типа, что препятствует использованию паттерна, известного как `Special Case <https://martinfowler.com/eaaCatalog/specialCase.html>`__ или `Null Object <https://refactoring.com/catalog/introduceSpecialCase.html>`__.
+
 С другой стороны, Valuer может возвращать только примитивные типы, а значит, он не пригоден для экспорта иерархической структуры состояния Агрегата:
 
 
