@@ -6,7 +6,7 @@ import (
 )
 
 type EndorsedId uint64
-type UserId uint64
+type MemberId uint64
 type Grade uint
 type AvailableEndorsementCount uint
 type RecognizerId uint64
@@ -37,7 +37,7 @@ const (
 
 type Endorsed struct {
 	id                       EndorsedId
-	userId                   UserId
+	memberId                 MemberId
 	grade                    Grade
 	receivedEndorsements     []Endorsement
 	gradeLogEntries          []GradeLogEntry
@@ -135,7 +135,7 @@ type GradeLogEntry struct {
 
 type Recognizer struct {
 	id                        RecognizerId
-	userId                    UserId
+	memberId                  MemberId
 	grade                     Grade
 	availableEndorsementCount AvailableEndorsementCount
 	version                   int
