@@ -130,7 +130,7 @@ Exporter
 
 .. code-block:: java
    :caption: `Example by Allen Holub <https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html>`__
-   :name: emacsway-exporter-code-example-1
+   :name: emacsway-code-exporter-example-1
    :linenos:
 
     import java.util.Locale;
