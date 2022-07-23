@@ -111,7 +111,7 @@ func (r Recognizer) Endorse(e Endorsed, desc ArtifactDescription, t time.Time) (
 		)
 	}
 	return Endorsement{
-		r.id, r.grade, r.version,
+		0, r.id, r.grade, r.version,
 		e.id, e.grade, e.GetVersion(),
 		desc, t,
 	}, nil

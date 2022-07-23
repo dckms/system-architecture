@@ -45,22 +45,23 @@ type Endorsed struct {
 	createdAt                time.Time
 }
 
-func (e Endorsed) ReceiveEndorsement(r Recognizer, a ArtifactId, t time.Time) (Endorsement, error) {
+func (e *Endorsed) ReceiveEndorsement(r Recognizer, a ArtifactId, t time.Time) error {
 	if r.GetGrade() < e.grade {
-		return Endorsement{}, errors.New(
+		return errors.New(
 			"it is allowed to receive endorsements only from members with equal or higher grade",
 		)
 	}
 	if !r.CanEndorse() {
-		return Endorsement{}, errors.New(
+		return errors.New(
 			"recognizer is not able to endorse",
 		)
 	}
-	return Endorsement{
+	e.receivedEndorsements = append(e.receivedEndorsements, Endorsement{
 		r.GetId(), r.GetGrade(), r.GetVersion(),
 		e.id, e.grade, e.version,
 		a, t,
-	}, nil
+	})
+	return nil
 }
 
 func (e *Endorsed) IncreaseReceivedEndorsementCount(dt time.Time) {
