@@ -280,6 +280,29 @@ Primary Technical Imperative
 
     -- "`Monolith -> Services: Theory & Practice <https://medium.com/@kentbeck_7670/monolith-services-theory-practice-617e4546a879>`__" by Kent Beck
 
+Eric Evans дает хорошее определение Constantine's Law нетехническим языком:
+
+    💬 "МОДУЛИ дают возможность посмотреть на модель с разных сторон: во-первых, можно изучить подроб­ ности устройства модуля, не вникая в сложное целое; во-вторых, удобно рассматривать взаимоотношения между модулями, не вдава я сь в детали их внутреннего устройства.
+
+    <...>
+
+    То, что при делении на модули должна соблюдаться низкая внешняя зависимость 
+(low coupling) при высокой внутренней связности (high cohesion)- это общие слова. 
+    Определения зависимости и связности rрешат уклоном в чисто технические, количест­венные критерии, по которым их якобы можно измерить, подсчитав количество ассо­циаций и взаимодействий. Но это не просто механические характеристики подразде­ления кода на модули, а идейные концепции. Человек не может одновременно удер­живать в уме слишком много предметов (отсюда низкая внешняя зависимость). 
+    А плохо связанные между собой фраrменты информации так же трудно понять, как неструктурированную "кашу" из идей (отсюда высокая внутренняя связность).
+
+    MODULES give people two views of the model: They can look at detail within a MODULE without being overwhelmed by the whole, or they can look at relationships between MODULES in views that exclude interior detail.
+
+    <...>
+
+    It is a truism that there should be low coupling between MODULES and high cohesion 
+within them.
+    Explanations of coupling and cohesion tend to make them sound like technical metrics, to be judged mechanically based on the distributions of associations and interactions. Yet it isn't just code being divided into MODULES, but concepts.
+    There is a limit to how many things a person can think about at once (hence low coupling). 
+Incoherent fragments of ideas are as hard to understand as an undifferentiated soup of ideas (hence high cohesion)."
+
+    -- "Domain-Driven Design: Tackling Complexity in the Heart of Software" by Eric Evans
+
 
 Оправдано ли качество?
 ======================
