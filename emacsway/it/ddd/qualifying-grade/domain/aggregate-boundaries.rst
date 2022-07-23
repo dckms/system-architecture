@@ -196,6 +196,12 @@ Eventual Consistency
 
 Иными словами, существует незначительная вероятность того, что ``Recognizer`` успеет раздать рекомендаций больше, чем ему доступно.
 
+Существует несколько способов решить эту проблему.
+
+Первый из них - это "`Data, context, and interaction (DCI) <https://en.m.wikipedia.org/wiki/Data,_context_and_interaction>`__".
+Подробно он описан в главе "Chapter 9. Coding it Up: The DCI Architecture" книги "Lean Architecture: for Agile Software Development" 1st edition by James O. Coplien, Gertrud Bjørnvig.
+Можно посмотреть на `примере <https://github.com/agiledragon/transfer-money-go>`__ реализации перевода денежных средств с одного счета на другой счет (который, в определенной мере, похож на перенос рекомендации от одного члена Организации к другому члену Организации).
+
 
 Упрощенная реализация итоговой модели
 -------------------------------------
