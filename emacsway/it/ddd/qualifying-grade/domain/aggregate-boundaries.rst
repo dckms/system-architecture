@@ -206,3 +206,10 @@ Eventual Consistency
 Ссылка на полную модель:
 
 - https://github.com/emacsway/qualifying-grade/tree/main/grade/internal/domain
+
+
+TODO:
+
+- ProcessManager
+- PendingEnmersementCount
+- CausalConsistency
