@@ -30,9 +30,8 @@ const (
 	Candidate    = Grade(4)
 	Expert       = Grade(5)
 
-	Pending      = ArtifactStatus(0)
-	Approved     = ArtifactStatus(1)
-
+	Proposed     = ArtifactStatus(0)
+	Accepted     = ArtifactStatus(1)
 )
 
 type Endorsed struct {
