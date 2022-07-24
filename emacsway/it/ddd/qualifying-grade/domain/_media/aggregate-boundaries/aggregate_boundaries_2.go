@@ -23,12 +23,12 @@ const (
     PeerWeight   = 1
     HigherWeight = 2
 
-    WithoutGrade = Grade(0)
-    Grade3       = Grade(1)
-    Grade2       = Grade(2)
-    Grade1       = Grade(3)
-    Candidate    = Grade(4)
     Expert       = Grade(5)
+    Candidate    = Grade(4)
+    Grade1       = Grade(3)
+    Grade2       = Grade(2)
+    Grade3       = Grade(1)
+    WithoutGrade = Grade(0)
 
     Proposed     = ArtifactStatus(0)
     Accepted     = ArtifactStatus(1)
