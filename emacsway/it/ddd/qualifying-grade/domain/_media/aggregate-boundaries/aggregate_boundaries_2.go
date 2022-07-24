@@ -170,7 +170,7 @@ func (r Recognizer) canEndorse() bool {
 }
 
 func (r Recognizer) CanCompleteEndorsement() bool {
-    return r.pendingEndorsementCount > 0 && (r.availableEndorsementCount - r.pendingEndorsementCount) >= 0
+    return r.pendingEndorsementCount > 0 && r.availableEndorsementCount - r.pendingEndorsementCount >= 0
 }
 
 func (r *Recognizer) ReserveEndorsement() error {
