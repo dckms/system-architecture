@@ -93,6 +93,10 @@ Valuer & Scanner
 Интерфейс Scanner открывает дверь к изменяемости ValueObject, что противоречит основной его сути.
 А так же открывает брешь в инкапсуляции Агрегата.
 
+Но есть еще один момент - метод ``Scan(src any) error`` вызывается у конкретного типа, что препятствует использованию паттерна, известного как `Special Case <https://martinfowler.com/eaaCatalog/specialCase.html>`__ или `Null Object <https://refactoring.com/catalog/introduceSpecialCase.html>`__.
+Кроме того, в некоторых случаях может потребоваться преобразовать неизменяемые исторические данные для новой версии модели.
+Вопрос затрагивался в разделе "4. Validating historical data" статьи "`Always-Valid Domain Model <https://enterprisecraftsmanship.com/posts/always-valid-domain-model/>`__" by Vladimir Khorikov и в разделе "6. The use of ORMs within and outside of the always-valid boundary" статьи "`Database and Always-Valid Domain Model <https://enterprisecraftsmanship.com/posts/database-always-valid-domain-model/>`__" by Vladimir Khorikov.
+
 С другой стороны, Valuer может возвращать только примитивные типы, а значит, он не пригоден для экспорта иерархической структуры состояния Агрегата:
 
 
@@ -130,7 +134,7 @@ Exporter
 
 .. code-block:: java
    :caption: `Example by Allen Holub <https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html>`__
-   :name: emacsway-exporter-code-example-1
+   :name: emacsway-code-exporter-example-1
    :linenos:
 
     import java.util.Locale;

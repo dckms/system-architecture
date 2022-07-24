@@ -225,7 +225,7 @@ CQS - это больше о referential transparency для Query
 
     target.some_operation(...)
 
-    how_did_it_go := targetGstatus
+    how_did_it_go := target.status
 
     Note that the technique of returning a status as function result is lame anyway. It transforms a procedure into a function by adding the status as a result; **but it does not work if the routine was already a function, which already has a result of its own**. It is also problematic if you need more than one status indicator. In such cases the C approach is either to return a "structure" (the equivalent of an object) with several components, which is getting close to the above scheme, or to use global variables — which raises a whole set of new problems, especially in a large system where many modules can trigger errors."
 
