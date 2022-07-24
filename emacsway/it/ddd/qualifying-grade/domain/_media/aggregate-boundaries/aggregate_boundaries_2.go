@@ -44,7 +44,7 @@ type Endorsed struct {
     createdAt                time.Time
 }
 
-func (e *Endorsed) ReceiveEndorsement(r Recognizer, a ArtifactId, t time.Time) error {
+func (e *Endorsed) ReceiveEndorsement(r Recognizer, aId ArtifactId, t time.Time) error {
     if r.GetGrade() < e.grade {
         return errors.New(
             "it is allowed to receive endorsements only from members with equal or higher grade",
@@ -55,10 +55,15 @@ func (e *Endorsed) ReceiveEndorsement(r Recognizer, a ArtifactId, t time.Time) e
             "recognizer is not able to complete endorsement",
         )
     }
+    for _, v := range e.receivedEndorsements {
+        if v.IsEndorsedBy(r.GetId(), aId) {
+            return errors.New("this artifact has already been endorsed by the recogniser")
+        }
+    }
     e.receivedEndorsements = append(e.receivedEndorsements, Endorsement{
         r.GetId(), r.GetGrade(), r.GetVersion(),
         e.id, e.grade, e.version,
-        a, t,
+        aId, t,
     })
     e.actualizeGrade(t)
     return nil
@@ -109,8 +114,8 @@ type Endorsement struct {
     createdAt           time.Time
 }
 
-func (e Endorsement) GetEndorsedId() EndorsedId {
-    return e.endorsedId
+func (e Endorsement) IsEndorsedBy(rId RecognizerId, aId ArtifactId) bool {
+    return e.recognizerId == rId && e.artifactId == aId
 }
 
 func (e Endorsement) GetEndorsedGrade() Grade {
