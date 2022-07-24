@@ -165,7 +165,7 @@ func (r Recognizer) GetVersion() uint {
     return r.version
 }
 
-func (r Recognizer) canEndorse() bool {
+func (r Recognizer) canReserveEndorsement() bool {
     return r.availableEndorsementCount > r.pendingEndorsementCount
 }
 
@@ -174,8 +174,8 @@ func (r Recognizer) CanCompleteEndorsement() bool {
 }
 
 func (r *Recognizer) ReserveEndorsement() error {
-    if !r.canEndorse() {
-        return errors.New("can't reserve an endorsement")
+    if !r.canReserveEndorsement() {
+        return errors.New("no endorsement can be reserved")
     }
     r.pendingEndorsementCount += 1
     return nil
