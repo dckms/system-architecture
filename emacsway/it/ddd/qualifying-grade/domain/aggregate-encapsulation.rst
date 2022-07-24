@@ -2,7 +2,7 @@
 
 .. index::
    single: Encapsulation; in Golang
-   :name: emacsway-encapsulation-golang
+   :name: emacsway-golang-encapsulation
 
 ====================================================
 Как сохранить Агрегат в БД не разрушая инкапсуляции?

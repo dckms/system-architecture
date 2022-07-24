@@ -2,7 +2,7 @@
 
 .. index::
    single: Aggregate; in Golang
-   :name: emacsway-aggregate-golang
+   :name: emacsway-golang-aggregate
 
 ======================
 Поиск границ Агрегатов
