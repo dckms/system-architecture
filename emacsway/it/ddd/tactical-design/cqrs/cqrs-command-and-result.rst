@@ -221,7 +221,7 @@ CQS - это больше о referential transparency для Query
 
     📝 "It is important here two deal with two common objections to the side-effect-free style.
 
-    The first has to do with error handling. Sometimes a function with side effects is really a procedure, which in addition to doing its job returns a status code indicating how things went. But there are better ways to do this; roughly speaking, the proper O-O technique is to enable the client, after an operation on an object, to perform a query on the status, represented for example by an attribute of the object, as in
+    The first has to do with error handling. Sometimes a function with side effects is really a procedure, which in addition to doing its job returns a status code indicating how things went. But there are better ways to do this; roughly speaking, the proper O-O technique is to **enable the client, after an operation on an object, to perform a query on the status, represented for example by an attribute of the object**, as in
 
     target.some_operation(...)
 

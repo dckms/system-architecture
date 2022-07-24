@@ -2,7 +2,7 @@
 
 .. index::
    single: Aggregate; in Golang
-   :name: emacsway-aggregate-golang
+   :name: emacsway-golang-aggregate
 
 ======================
 Поиск границ Агрегатов
@@ -262,7 +262,7 @@ Pessimistic Offline Lock
 
       - в случае успеха порождается Доменное Событие об успехе;
 
-        - обработчик Доменного События осуществит декрементирование счетчика доступных рекомендаций рекомендующего методом ``Recognizer.DecreaseAvailableEndorsementCount()`` и отпустит резервирование декрементированием счетчика ``Recognizer.pendingEndorsementCount``;
+        - обработчик Доменного События осуществит декрементирование счетчика доступных рекомендаций рекомендующего ``Recognizer.availableEndorsementCount`` и отпустит резервирование декрементированием счетчика ``Recognizer.pendingEndorsementCount``;
 
       - в случае неудачи порождается Доменное Событие о неудаче;
 
