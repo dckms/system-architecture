@@ -281,3 +281,9 @@ Pessimistic Offline Lock
 
 - https://github.com/emacsway/qualifying-grade/tree/main/grade/internal/domain
 
+.. todo:
+
+   IncreaseReceivedEndorsementCount - rename
+   IncreasePendingEndorsementCount - ReserveEndorsement, ReleaseEndorsement, CompleteEndorsement
+   
+   
