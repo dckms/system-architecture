@@ -55,6 +55,11 @@ func (e *Endorsed) ReceiveEndorsement(r Recognizer, aId ArtifactId, t time.Time)
             "recognizer is not able to complete endorsement",
         )
     }
+    if uint64(r.GetId()) == uint64(e.id) {
+        return errors.New(
+            "recognizer can't endorse himself",
+        )
+    }
     for _, v := range e.receivedEndorsements {
         if v.IsEndorsedBy(r.GetId(), aId) {
             return errors.New("this artifact has already been endorsed by the recogniser")
@@ -92,9 +97,9 @@ func (e Endorsed) getReceivedEndorsementCount() uint {
     return counter
 }
 
-func (e *Endorsed) setGrade(g Grade, dt time.Time) {
+func (e *Endorsed) setGrade(g Grade, t time.Time) {
     e.gradeLogEntries = append(e.gradeLogEntries, GradeLogEntry{
-        e.id, e.version, g, dt,
+        e.id, e.version, g, t,
     })
     e.grade = g
 }
