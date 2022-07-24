@@ -50,9 +50,9 @@ func (e *Endorsed) ReceiveEndorsement(r Recognizer, a ArtifactId, t time.Time) e
 			"it is allowed to receive endorsements only from members with equal or higher grade",
 		)
 	}
-	if !r.CanEndorse() {
+	if !r.CanCompleteEndorsement() {
 		return errors.New(
-			"recognizer is not able to endorse",
+			"recognizer is not able to complete endorsement",
 		)
 	}
 	e.receivedEndorsements = append(e.receivedEndorsements, Endorsement{
@@ -60,20 +60,21 @@ func (e *Endorsed) ReceiveEndorsement(r Recognizer, a ArtifactId, t time.Time) e
 		e.id, e.grade, e.version,
 		a, t,
 	})
+	e.actualizeGrade(t)
 	return nil
 }
 
-func (e *Endorsed) IncreaseReceivedEndorsementCount(dt time.Time) {
+func (e *Endorsed) actualizeGrade(t time.Time) {
 	if e.grade == WithoutGrade && e.getReceivedEndorsementCount() >= 6 {
-		e.setGrade(Grade3, dt)
+		e.setGrade(Grade3, t)
 	} else if e.grade == Grade3 && e.getReceivedEndorsementCount() >= 10 {
-		e.setGrade(Grade2, dt)
+		e.setGrade(Grade2, t)
 	} else if e.grade == Grade2 && e.getReceivedEndorsementCount() >= 14 {
-		e.setGrade(Grade1, dt)
+		e.setGrade(Grade1, t)
 	} else if e.grade == Grade1 && e.getReceivedEndorsementCount() >= 20 {
-		e.setGrade(Candidate, dt)
+		e.setGrade(Candidate, t)
 	} else if e.grade == Candidate && e.getReceivedEndorsementCount() >= 10 {
-		e.setGrade(Expert, dt)
+		e.setGrade(Expert, t)
 	}
 }
 func (e Endorsed) getReceivedEndorsementCount() uint {
@@ -154,26 +155,34 @@ func (r Recognizer) GetVersion() uint {
 	return r.version
 }
 
-func (r Recognizer) CanEndorse() bool {
-	return r.availableEndorsementCount - r.pendingEndorsementCount >= 0
+func (r Recognizer) canEndorse() bool {
+	return r.availableEndorsementCount - r.pendingEndorsementCount > 0
 }
 
-func (r *Recognizer) DecreaseAvailableEndorsementCount() error {
-	if r.availableEndorsementCount == 0 {
-		return errors.New("no endorsement is available")
+func (r Recognizer) CanCompleteEndorsement() bool {
+	return r.pendingEndorsementCount > 0 && (r.availableEndorsementCount - r.pendingEndorsementCount) >= 0
+}
+
+func (r *Recognizer) ReserveEndorsement() error {
+	if !r.canEndorse() {
+		return errors.New("can't reserve an endorsement")
 	}
-	r.availableEndorsementCount -= 1
+	r.pendingEndorsementCount += 1
 	return nil
 }
 
-func (r *Recognizer) IncreasePendingEndorsementCount() {
-	r.pendingEndorsementCount += 1
+func (r *Recognizer) ReleaseEndorsementReservation() {
+	r.pendingEndorsementCount -= 1
 }
 
-func (r *Recognizer) DecreasePendingEndorsementCount() error {
-	if r.pendingEndorsementCount >= r.availableEndorsementCount {
-		return errors.New("can't reserve an endorsement")
+func (r *Recognizer) CompleteEndorsement() error {
+	if r.availableEndorsementCount == 0 {
+		return errors.New("no endorsement is available")
 	}
+	if r.pendingEndorsementCount == 0 {
+		return errors.New("there is no endorsement reservation")
+	}
+	r.availableEndorsementCount -= 1
 	r.pendingEndorsementCount -= 1
 	return nil
 }
