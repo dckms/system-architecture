@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Использовать ли в проекте CanExecute pattern? &#8212; System Architecture</title>
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../../../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../../../search.html" />
+    <link rel="next" title="Integration" href="../../../../../trunk/it/integration/index.html" />
+    <link rel="prev" title="Как сохранить Агрегат в БД не разрушая инкапсуляции?" href="aggregate-encapsulation.html" />
+    
+   
+  <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+
+
+    
+        
+            <link rel="canonical" href="https://dckms.github.io/system-architecture/emacsway/it/ddd/qualifying-grade/domain/why-no-can-execute.html" />
+        
+    
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+              <div class="related top">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="aggregate-encapsulation.html" title="Previous document">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a>
+        </li>
+        <li>
+          <a href="../../../../../trunk/it/integration/index.html" title="Next document">Integration</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+
+          <div class="body" role="main">
+            
+    
+  <div class="section" id="canexecute-pattern">
+<span id="emacsway-golang-can-execute"></span><h1>Использовать ли в проекте CanExecute pattern?<a class="headerlink" href="#canexecute-pattern" title="Ссылка на этот заголовок">¶</a></h1>
+<p><em>Автор раздела: Ivan Zakrevsky</em></p>
+<p>Использовать ли в этом проекте CanExecute pattern, описанный в статье <a class="reference external" href="https://enterprisecraftsmanship.com/posts/validation-and-ddd/">Validation and DDD</a> by Vladimir Khorikov?</p>
+<p>Ключевой аргумент статьи сводится к CQS principle.
+Vladimir Khorikov - авторитетный специалист, смело принимающий на себя все риски первопроходца, который существенным образом повлиял на развитие индустрии, а также на мое становление как специалиста, за что я ему очень признателен.
+Я с ним обсудил этот вопрос, и он согласился, что этот вопрос не совсем однозначный.</p>
+<p>В этом подходе меня смущает тот факт, что образуется логическая зависимость - клиент класса действует исходя из предположения о том, что оба метода используют один и тот же инвариант.</p>
+<p>В заметке &quot;<a class="reference internal" href="../../tactical-design/cqrs/cqrs-command-and-result.html#emacsway-cqs-command-status-code"><span class="std std-ref">Может ли Command возвращать служебную информацию (код ошибки или успешность выполнения)?</span></a>&quot; этот вопрос уже затрагивался, поэтому, повторюсь:</p>
+<blockquote>
+<div><p>💬️ &quot;It is important here two deal with two common objections to the side-effect-free style.</p>
+<p>The first has to do with error handling.
+Sometimes a function with side effects is really a procedure, which in addition to doing its job returns a status code indicating how things went.
+But there are better ways to do this; roughly speaking, the proper O-O technique is to <strong>enable the client, after an operation on an object, to perform a query on the status, represented for example by an attribute of the object</strong>, as in</p>
+<p>target.some_operation(...)</p>
+<p>how_did_it_go := target.status</p>
+<p>Note that the technique of returning a status as function result is lame anyway.
+It transforms a procedure into a function by adding the status as a result;
+<strong>but it does not work if the routine was already a function, which already has a result of its own</strong>.
+It is also problematic if you need more than one status indicator.
+In such cases the C approach is either to return a &quot;structure&quot; (the equivalent of an object) with several components, which is getting close to the above scheme, or to use global variables — which raises a whole set of new problems, especially in a large system where many modules can trigger errors.&quot;</p>
+<p class="attribution">—&quot;Object-Oriented Software Construction&quot; 2nd edition by Bertrand Meyer, chapter &quot;23.1 SIDE EFFECTS IN FUNCTIONS&quot;</p>
+</div></blockquote>
+<p>Единственная причина, по которой Bertrand Meyer избегал возврат ошибок в то время, заключается в том, что тогда было невозможно возвратить одновременно и результат, и ошибку.
+Сегодня таких проблем нет.
+В Golang это поддерживается на уровне синтаксиса языка, а в других языках поддерживается объект Result.</p>
+<p>Но даже если и разделять, то Bertrand Meyer рекомендует проверять ошибки после попытки, а не перед попыткой.</p>
+<p>CanExecute pattern будет использоваться в проекте в распределенных операциях, где это вызвано объективной необходимостью.
+В других случаях его использование не предполагается.</p>
+</div>
+
+
+
+    
+        
+            <div class="section" style="text-align: right;">
+                <p><a href="https://dckms.github.io/system-architecture/emacsway/it/ddd/qualifying-grade/domain/why-no-can-execute.html">Canonical URL</a></p>
+            </div>
+        
+    
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="aggregate-encapsulation.html" title="Previous document">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a>
+        </li>
+        <li>
+          <a href="../../../../../trunk/it/integration/index.html" title="Next document">Integration</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../index.html">System Architecture</a></h1>
+
+
+
+<p class="blurb">Distributed Collaborative Knowledge Management System for System Architecture</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dckms&repo=system-architecture&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Общее пространство:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/it/index.html">IT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/index.html">Общее пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Авторские пространства:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Пространство Emacsway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Приватное пространствo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../private/index.html">Приватное пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Прочее:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../README.html">Как пользоваться</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://t.me/emacsway_log"><i class="fab fa-telegram" style="color:#54a9eb;"></i> Telegram</a></li>
+    
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../../trunk/it/index.html">IT</a></li>
+  <li><a href="../../../../../trunk/it/ddd/index.html">DDD</a></li>
+  <li><a href="../index.html">Reference Application &quot;Qualifying Grade&quot;</a></li>
+  <li><a href="index.html">Domain Layer</a></li><ul>
+      <li>Previous: <a href="aggregate-encapsulation.html" title="предыдущая глава">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a></li>
+      <li>Next: <a href="../../../../../trunk/it/integration/index.html" title="следующая глава">Integration</a></li></ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="footer">
+      &copy;2022, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../../_sources/emacsway/it/ddd/qualifying-grade/domain/why-no-can-execute.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/dckms/system-architecture" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+
+    
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+           ym(87033138, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true,
+                trackHash:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/87033138" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    
+
+  </body>
+</html>

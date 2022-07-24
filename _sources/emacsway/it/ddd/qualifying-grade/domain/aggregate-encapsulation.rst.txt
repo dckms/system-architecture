@@ -2,7 +2,7 @@
 
 .. index::
    single: Encapsulation; in Golang
-   :name: emacsway-encapsulation-golang
+   :name: emacsway-golang-encapsulation
 
 ====================================================
 Как сохранить Агрегат в БД не разрушая инкапсуляции?
@@ -154,21 +154,21 @@ Exporter
             String provideID();
             String provideSalary();
             void   open();
-             void   close();
+            void   close();
         }
 
         public Employee( Importer builder )
         {   builder.open();
             this.name   = new Name      ( builder.provideName()     );
-             this.id     = new EmployeeId( builder.provideID()       );
-             this.salary = new Money     ( builder.provideSalary(),
+            this.id     = new EmployeeId( builder.provideID()       );
+            this.salary = new Money     ( builder.provideSalary(),
                                       new Locale("en", "US") );
             builder.close();
         }
 
         public void export( Exporter builder )
         {   builder.addName  ( name.toString()   );
-             builder.addID    ( id.toString()     );
+            builder.addID    ( id.toString()     );
             builder.addSalary( salary.toString() );
         }
 

@@ -59,13 +59,13 @@
           <div class="body" role="main">
             
     
-  <div class="section" id="emacsway-aggregate-golang">
-<span id="id1"></span><h1><a class="toc-backref" href="#id14">Поиск границ Агрегатов</a><a class="headerlink" href="#emacsway-aggregate-golang" title="Ссылка на этот заголовок">¶</a></h1>
+  <div class="section" id="emacsway-golang-aggregate">
+<span id="id1"></span><h1><a class="toc-backref" href="#id14">Поиск границ Агрегатов</a><a class="headerlink" href="#emacsway-golang-aggregate" title="Ссылка на этот заголовок">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
 <div class="contents topic" id="id2">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#emacsway-aggregate-golang" id="id14">Поиск границ Агрегатов</a></p>
+<li><p><a class="reference internal" href="#emacsway-golang-aggregate" id="id14">Поиск границ Агрегатов</a></p>
 <ul>
 <li><p><a class="reference internal" href="#id3" id="id15">Бизнес-требования</a></p></li>
 <li><p><a class="reference internal" href="#strong-consistency-rdbms" id="id16">Strong Consistency (RDBMS)</a></p></li>
@@ -191,8 +191,8 @@
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">qualifying_grade_1</span>
 
 <span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&quot;errors&quot;</span>
-	<span class="s">&quot;time&quot;</span>
+    <span class="s">&quot;errors&quot;</span>
+    <span class="s">&quot;time&quot;</span>
 <span class="p">)</span>
 
 <span class="kd">type</span> <span class="nx">EndorsedId</span> <span class="kt">uint64</span>
@@ -207,128 +207,128 @@
 <span class="kd">type</span> <span class="nx">Weight</span> <span class="kt">uint8</span>
 
 <span class="kd">const</span> <span class="p">(</span>
-	<span class="nx">PeerWeight</span>   <span class="p">=</span> <span class="mi">1</span>
-	<span class="nx">HigherWeight</span> <span class="p">=</span> <span class="mi">2</span>
+    <span class="nx">PeerWeight</span>   <span class="p">=</span> <span class="mi">1</span>
+    <span class="nx">HigherWeight</span> <span class="p">=</span> <span class="mi">2</span>
 <span class="p">)</span>
 
 <span class="kd">const</span> <span class="p">(</span>
-	<span class="nx">WithoutGrade</span> <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-	<span class="nx">Grade3</span>       <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-	<span class="nx">Grade2</span>       <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-	<span class="nx">Grade1</span>       <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-	<span class="nx">Candidate</span>    <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-	<span class="nx">Expert</span>       <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="nx">WithoutGrade</span> <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nx">Grade3</span>       <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nx">Grade2</span>       <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nx">Grade1</span>       <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="nx">Candidate</span>    <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="nx">Expert</span>       <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="p">)</span>
 
 <span class="kd">type</span> <span class="nx">Endorsed</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">id</span>                       <span class="nx">EndorsedId</span>
-	<span class="nx">memberId</span>                 <span class="nx">MemberId</span>
-	<span class="nx">grade</span>                    <span class="nx">Grade</span>
-	<span class="nx">receivedEndorsementCount</span> <span class="nx">ReceivedEndorsementCount</span>
-	<span class="nx">gradeLogEntries</span>          <span class="p">[]</span><span class="nx">GradeLogEntry</span>
-	<span class="nx">version</span>                  <span class="kt">uint</span>
-	<span class="nx">createdAt</span>                <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
+    <span class="nx">id</span>                       <span class="nx">EndorsedId</span>
+    <span class="nx">memberId</span>                 <span class="nx">MemberId</span>
+    <span class="nx">grade</span>                    <span class="nx">Grade</span>
+    <span class="nx">receivedEndorsementCount</span> <span class="nx">ReceivedEndorsementCount</span>
+    <span class="nx">gradeLogEntries</span>          <span class="p">[]</span><span class="nx">GradeLogEntry</span>
+    <span class="nx">version</span>                  <span class="kt">uint</span>
+    <span class="nx">createdAt</span>                <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">GetId</span><span class="p">()</span> <span class="nx">EndorsedId</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">id</span>
+    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">id</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">GetGrade</span><span class="p">()</span> <span class="nx">Grade</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span>
+    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">GetVersion</span><span class="p">()</span> <span class="kt">uint</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">version</span>
+    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">version</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="o">*</span><span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">IncreaseReceivedEndorsementCount</span><span class="p">(</span><span class="nx">w</span> <span class="nx">Weight</span><span class="p">,</span> <span class="nx">dt</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="o">+=</span> <span class="nx">ReceivedEndorsementCount</span><span class="p">(</span><span class="nx">w</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">WithoutGrade</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="o">&gt;=</span> <span class="mi">6</span> <span class="p">{</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Grade3</span><span class="p">,</span> <span class="nx">dt</span><span class="p">)</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="p">=</span> <span class="mi">0</span>
-	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">Grade3</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="p">{</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Grade2</span><span class="p">,</span> <span class="nx">dt</span><span class="p">)</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="p">=</span> <span class="mi">0</span>
-	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">Grade2</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="o">&gt;=</span> <span class="mi">14</span> <span class="p">{</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Grade1</span><span class="p">,</span> <span class="nx">dt</span><span class="p">)</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="p">=</span> <span class="mi">0</span>
-	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">Grade1</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="o">&gt;=</span> <span class="mi">20</span> <span class="p">{</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Candidate</span><span class="p">,</span> <span class="nx">dt</span><span class="p">)</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="p">=</span> <span class="mi">0</span>
-	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">Candidate</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="p">{</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Expert</span><span class="p">,</span> <span class="nx">dt</span><span class="p">)</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="p">=</span> <span class="mi">0</span>
-	<span class="p">}</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="o">+=</span> <span class="nx">ReceivedEndorsementCount</span><span class="p">(</span><span class="nx">w</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">WithoutGrade</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="o">&gt;=</span> <span class="mi">6</span> <span class="p">{</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Grade3</span><span class="p">,</span> <span class="nx">dt</span><span class="p">)</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="p">=</span> <span class="mi">0</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">Grade3</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="p">{</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Grade2</span><span class="p">,</span> <span class="nx">dt</span><span class="p">)</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="p">=</span> <span class="mi">0</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">Grade2</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="o">&gt;=</span> <span class="mi">14</span> <span class="p">{</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Grade1</span><span class="p">,</span> <span class="nx">dt</span><span class="p">)</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="p">=</span> <span class="mi">0</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">Grade1</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="o">&gt;=</span> <span class="mi">20</span> <span class="p">{</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Candidate</span><span class="p">,</span> <span class="nx">dt</span><span class="p">)</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="p">=</span> <span class="mi">0</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">Candidate</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="p">{</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Expert</span><span class="p">,</span> <span class="nx">dt</span><span class="p">)</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsementCount</span> <span class="p">=</span> <span class="mi">0</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="o">*</span><span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">setGrade</span><span class="p">(</span><span class="nx">g</span> <span class="nx">Grade</span><span class="p">,</span> <span class="nx">dt</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">e</span><span class="p">.</span><span class="nx">gradeLogEntries</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">gradeLogEntries</span><span class="p">,</span> <span class="nx">GradeLogEntry</span><span class="p">{</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">dt</span><span class="p">,</span>
-	<span class="p">})</span>
-	<span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="p">=</span> <span class="nx">g</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">gradeLogEntries</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">gradeLogEntries</span><span class="p">,</span> <span class="nx">GradeLogEntry</span><span class="p">{</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">dt</span><span class="p">,</span>
+    <span class="p">})</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="p">=</span> <span class="nx">g</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="o">*</span><span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">IncreaseVersion</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">e</span><span class="p">.</span><span class="nx">version</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">version</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="p">}</span>
 
 <span class="kd">type</span> <span class="nx">GradeLogEntry</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">endorsedId</span>          <span class="nx">EndorsedId</span>
-	<span class="nx">endorsedVersion</span>     <span class="kt">uint</span>
-	<span class="nx">assignedGrade</span>       <span class="nx">Grade</span>
-	<span class="nx">createdAt</span>           <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
+    <span class="nx">endorsedId</span>          <span class="nx">EndorsedId</span>
+    <span class="nx">endorsedVersion</span>     <span class="kt">uint</span>
+    <span class="nx">assignedGrade</span>       <span class="nx">Grade</span>
+    <span class="nx">createdAt</span>           <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
 
 <span class="kd">type</span> <span class="nx">Recognizer</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">id</span>                        <span class="nx">RecognizerId</span>
-	<span class="nx">memberId</span>                  <span class="nx">MemberId</span>
-	<span class="nx">grade</span>                     <span class="nx">Grade</span>
-	<span class="nx">availableEndorsementCount</span> <span class="nx">AvailableEndorsementCount</span>
-	<span class="nx">version</span>                   <span class="kt">uint</span>
-	<span class="nx">createdAt</span>                 <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
+    <span class="nx">id</span>                        <span class="nx">RecognizerId</span>
+    <span class="nx">memberId</span>                  <span class="nx">MemberId</span>
+    <span class="nx">grade</span>                     <span class="nx">Grade</span>
+    <span class="nx">availableEndorsementCount</span> <span class="nx">AvailableEndorsementCount</span>
+    <span class="nx">version</span>                   <span class="kt">uint</span>
+    <span class="nx">createdAt</span>                 <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">Endorse</span><span class="p">(</span><span class="nx">e</span> <span class="nx">Endorsed</span><span class="p">,</span> <span class="nx">desc</span> <span class="nx">ArtifactDescription</span><span class="p">,</span> <span class="nx">t</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span> <span class="p">(</span><span class="nx">Endorsement</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">if</span> <span class="nx">r</span><span class="p">.</span><span class="nx">grade</span> <span class="p">&lt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">Endorsement</span><span class="p">{},</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span>
-			<span class="s">&quot;it is allowed to endorse only members with equal or lower grade&quot;</span><span class="p">,</span>
-		<span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">if</span> <span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">Endorsement</span><span class="p">{},</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span>
-			<span class="s">&quot;you have reached the limit of available recommendations this year&quot;</span><span class="p">,</span>
-		<span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="nx">Endorsement</span><span class="p">{</span>
-		<span class="mi">0</span><span class="p">,</span> <span class="nx">r</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">r</span><span class="p">.</span><span class="nx">grade</span><span class="p">,</span> <span class="nx">r</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">GetVersion</span><span class="p">(),</span>
-		<span class="nx">desc</span><span class="p">,</span> <span class="nx">t</span><span class="p">,</span>
-	<span class="p">},</span> <span class="kc">nil</span>
+    <span class="k">if</span> <span class="nx">r</span><span class="p">.</span><span class="nx">grade</span> <span class="p">&lt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">Endorsement</span><span class="p">{},</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span>
+            <span class="s">&quot;it is allowed to endorse only members with equal or lower grade&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">Endorsement</span><span class="p">{},</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span>
+            <span class="s">&quot;you have reached the limit of available recommendations this year&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">Endorsement</span><span class="p">{</span>
+        <span class="mi">0</span><span class="p">,</span> <span class="nx">r</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">r</span><span class="p">.</span><span class="nx">grade</span><span class="p">,</span> <span class="nx">r</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">GetVersion</span><span class="p">(),</span>
+        <span class="nx">desc</span><span class="p">,</span> <span class="nx">t</span><span class="p">,</span>
+    <span class="p">},</span> <span class="kc">nil</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="o">*</span><span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">DecreaseAvailableEndorsementCount</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
-	<span class="k">if</span> <span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;no endorsement is available&quot;</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span> <span class="o">-=</span> <span class="mi">1</span>
-	<span class="k">return</span> <span class="kc">nil</span>
+    <span class="k">if</span> <span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;no endorsement is available&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="kc">nil</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="o">*</span><span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">IncreaseVersion</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">r</span><span class="p">.</span><span class="nx">version</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nx">r</span><span class="p">.</span><span class="nx">version</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="p">}</span>
 
 <span class="kd">type</span> <span class="nx">Endorsement</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">id</span>                  <span class="nx">EndorsementId</span>
-	<span class="nx">recognizerId</span>        <span class="nx">RecognizerId</span>
-	<span class="nx">recognizerGrade</span>     <span class="nx">Grade</span>
-	<span class="nx">recognizerVersion</span>   <span class="kt">uint</span>
-	<span class="nx">endorsedId</span>          <span class="nx">EndorsedId</span>
-	<span class="nx">endorsedGrade</span>       <span class="nx">Grade</span>
-	<span class="nx">endorsedVersion</span>     <span class="kt">uint</span>
-	<span class="nx">artifactDescription</span> <span class="nx">ArtifactDescription</span>
-	<span class="nx">createdAt</span>           <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
+    <span class="nx">id</span>                  <span class="nx">EndorsementId</span>
+    <span class="nx">recognizerId</span>        <span class="nx">RecognizerId</span>
+    <span class="nx">recognizerGrade</span>     <span class="nx">Grade</span>
+    <span class="nx">recognizerVersion</span>   <span class="kt">uint</span>
+    <span class="nx">endorsedId</span>          <span class="nx">EndorsedId</span>
+    <span class="nx">endorsedGrade</span>       <span class="nx">Grade</span>
+    <span class="nx">endorsedVersion</span>     <span class="kt">uint</span>
+    <span class="nx">artifactDescription</span> <span class="nx">ArtifactDescription</span>
+    <span class="nx">createdAt</span>           <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -496,7 +496,7 @@
 <ul>
 <li><p>в случае успеха порождается Доменное Событие об успехе;</p>
 <ul>
-<li><p>обработчик Доменного События осуществит декрементирование счетчика доступных рекомендаций рекомендующего методом <code class="docutils literal notranslate"><span class="pre">Recognizer.DecreaseAvailableEndorsementCount()</span></code> и отпустит резервирование декрементированием счетчика <code class="docutils literal notranslate"><span class="pre">Recognizer.pendingEndorsementCount</span></code>;</p></li>
+<li><p>обработчик Доменного События осуществит декрементирование счетчика доступных рекомендаций рекомендующего <code class="docutils literal notranslate"><span class="pre">Recognizer.availableEndorsementCount</span></code> и отпустит резервирование декрементированием счетчика <code class="docutils literal notranslate"><span class="pre">Recognizer.pendingEndorsementCount</span></code>;</p></li>
 </ul>
 </li>
 <li><p>в случае неудачи порождается Доменное Событие о неудаче;</p>
@@ -521,8 +521,8 @@
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">qualifying_grade_2</span>
 
 <span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&quot;errors&quot;</span>
-	<span class="s">&quot;time&quot;</span>
+    <span class="s">&quot;errors&quot;</span>
+    <span class="s">&quot;time&quot;</span>
 <span class="p">)</span>
 
 <span class="kd">type</span> <span class="nx">EndorsedId</span> <span class="kt">uint64</span>
@@ -539,180 +539,189 @@
 <span class="kd">type</span> <span class="nx">Weight</span> <span class="kt">uint8</span>
 
 <span class="kd">const</span> <span class="p">(</span>
-	<span class="nx">LowerWeight</span>  <span class="p">=</span> <span class="mi">0</span>
-	<span class="nx">PeerWeight</span>   <span class="p">=</span> <span class="mi">1</span>
-	<span class="nx">HigherWeight</span> <span class="p">=</span> <span class="mi">2</span>
+    <span class="nx">LowerWeight</span>  <span class="p">=</span> <span class="mi">0</span>
+    <span class="nx">PeerWeight</span>   <span class="p">=</span> <span class="mi">1</span>
+    <span class="nx">HigherWeight</span> <span class="p">=</span> <span class="mi">2</span>
 
-	<span class="nx">WithoutGrade</span> <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-	<span class="nx">Grade3</span>       <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-	<span class="nx">Grade2</span>       <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-	<span class="nx">Grade1</span>       <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-	<span class="nx">Candidate</span>    <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-	<span class="nx">Expert</span>       <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="nx">WithoutGrade</span> <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nx">Grade3</span>       <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nx">Grade2</span>       <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nx">Grade1</span>       <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="nx">Candidate</span>    <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="nx">Expert</span>       <span class="p">=</span> <span class="nx">Grade</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
-	<span class="nx">Proposed</span>     <span class="p">=</span> <span class="nx">ArtifactStatus</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-	<span class="nx">Accepted</span>     <span class="p">=</span> <span class="nx">ArtifactStatus</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nx">Proposed</span>     <span class="p">=</span> <span class="nx">ArtifactStatus</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nx">Accepted</span>     <span class="p">=</span> <span class="nx">ArtifactStatus</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="p">)</span>
 
 <span class="kd">type</span> <span class="nx">Endorsed</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">id</span>                       <span class="nx">EndorsedId</span>
-	<span class="nx">memberId</span>                 <span class="nx">MemberId</span>
-	<span class="nx">grade</span>                    <span class="nx">Grade</span>
-	<span class="nx">receivedEndorsements</span>     <span class="p">[]</span><span class="nx">Endorsement</span>
-	<span class="nx">gradeLogEntries</span>          <span class="p">[]</span><span class="nx">GradeLogEntry</span>
-	<span class="nx">version</span>                  <span class="kt">uint</span>
-	<span class="nx">createdAt</span>                <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
+    <span class="nx">id</span>                       <span class="nx">EndorsedId</span>
+    <span class="nx">memberId</span>                 <span class="nx">MemberId</span>
+    <span class="nx">grade</span>                    <span class="nx">Grade</span>
+    <span class="nx">receivedEndorsements</span>     <span class="p">[]</span><span class="nx">Endorsement</span>
+    <span class="nx">gradeLogEntries</span>          <span class="p">[]</span><span class="nx">GradeLogEntry</span>
+    <span class="nx">version</span>                  <span class="kt">uint</span>
+    <span class="nx">createdAt</span>                <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="o">*</span><span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">ReceiveEndorsement</span><span class="p">(</span><span class="nx">r</span> <span class="nx">Recognizer</span><span class="p">,</span> <span class="nx">a</span> <span class="nx">ArtifactId</span><span class="p">,</span> <span class="nx">t</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
-	<span class="k">if</span> <span class="nx">r</span><span class="p">.</span><span class="nx">GetGrade</span><span class="p">()</span> <span class="p">&lt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span>
-			<span class="s">&quot;it is allowed to receive endorsements only from members with equal or higher grade&quot;</span><span class="p">,</span>
-		<span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">if</span> <span class="p">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">CanEndorse</span><span class="p">()</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span>
-			<span class="s">&quot;recognizer is not able to endorse&quot;</span><span class="p">,</span>
-		<span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsements</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsements</span><span class="p">,</span> <span class="nx">Endorsement</span><span class="p">{</span>
-		<span class="nx">r</span><span class="p">.</span><span class="nx">GetId</span><span class="p">(),</span> <span class="nx">r</span><span class="p">.</span><span class="nx">GetGrade</span><span class="p">(),</span> <span class="nx">r</span><span class="p">.</span><span class="nx">GetVersion</span><span class="p">(),</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span>
-		<span class="nx">a</span><span class="p">,</span> <span class="nx">t</span><span class="p">,</span>
-	<span class="p">})</span>
-	<span class="k">return</span> <span class="kc">nil</span>
+    <span class="k">if</span> <span class="nx">r</span><span class="p">.</span><span class="nx">GetGrade</span><span class="p">()</span> <span class="p">&lt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span>
+            <span class="s">&quot;it is allowed to receive endorsements only from members with equal or higher grade&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">CanCompleteEndorsement</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span>
+            <span class="s">&quot;recognizer is not able to complete endorsement&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsements</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsements</span><span class="p">,</span> <span class="nx">Endorsement</span><span class="p">{</span>
+        <span class="nx">r</span><span class="p">.</span><span class="nx">GetId</span><span class="p">(),</span> <span class="nx">r</span><span class="p">.</span><span class="nx">GetGrade</span><span class="p">(),</span> <span class="nx">r</span><span class="p">.</span><span class="nx">GetVersion</span><span class="p">(),</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span>
+        <span class="nx">a</span><span class="p">,</span> <span class="nx">t</span><span class="p">,</span>
+    <span class="p">})</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">actualizeGrade</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">nil</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="o">*</span><span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">IncreaseReceivedEndorsementCount</span><span class="p">(</span><span class="nx">dt</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">WithoutGrade</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getReceivedEndorsementCount</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">6</span> <span class="p">{</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Grade3</span><span class="p">,</span> <span class="nx">dt</span><span class="p">)</span>
-	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">Grade3</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getReceivedEndorsementCount</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="p">{</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Grade2</span><span class="p">,</span> <span class="nx">dt</span><span class="p">)</span>
-	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">Grade2</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getReceivedEndorsementCount</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">14</span> <span class="p">{</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Grade1</span><span class="p">,</span> <span class="nx">dt</span><span class="p">)</span>
-	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">Grade1</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getReceivedEndorsementCount</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">20</span> <span class="p">{</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Candidate</span><span class="p">,</span> <span class="nx">dt</span><span class="p">)</span>
-	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">Candidate</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getReceivedEndorsementCount</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="p">{</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Expert</span><span class="p">,</span> <span class="nx">dt</span><span class="p">)</span>
-	<span class="p">}</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="o">*</span><span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">actualizeGrade</span><span class="p">(</span><span class="nx">t</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">WithoutGrade</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getReceivedEndorsementCount</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">6</span> <span class="p">{</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Grade3</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">Grade3</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getReceivedEndorsementCount</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="p">{</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Grade2</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">Grade2</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getReceivedEndorsementCount</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">14</span> <span class="p">{</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Grade1</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">Grade1</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getReceivedEndorsementCount</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">20</span> <span class="p">{</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Candidate</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="o">==</span> <span class="nx">Candidate</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getReceivedEndorsementCount</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="p">{</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">setGrade</span><span class="p">(</span><span class="nx">Expert</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 <span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">getReceivedEndorsementCount</span><span class="p">()</span> <span class="kt">uint</span> <span class="p">{</span>
-	<span class="kd">var</span> <span class="nx">counter</span> <span class="kt">uint</span>
-	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsements</span> <span class="p">{</span>
-		<span class="k">if</span> <span class="nx">v</span><span class="p">.</span><span class="nx">GetEndorsedGrade</span><span class="p">()</span> <span class="o">==</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="p">{</span>
-			<span class="nx">counter</span> <span class="o">+=</span> <span class="nb">uint</span><span class="p">(</span><span class="nx">v</span><span class="p">.</span><span class="nx">GetWeight</span><span class="p">())</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="nx">counter</span>
+    <span class="kd">var</span> <span class="nx">counter</span> <span class="kt">uint</span>
+    <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsements</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="nx">v</span><span class="p">.</span><span class="nx">GetEndorsedGrade</span><span class="p">()</span> <span class="o">==</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="p">{</span>
+            <span class="nx">counter</span> <span class="o">+=</span> <span class="nb">uint</span><span class="p">(</span><span class="nx">v</span><span class="p">.</span><span class="nx">GetWeight</span><span class="p">())</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">counter</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="o">*</span><span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">setGrade</span><span class="p">(</span><span class="nx">g</span> <span class="nx">Grade</span><span class="p">,</span> <span class="nx">dt</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">e</span><span class="p">.</span><span class="nx">gradeLogEntries</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">gradeLogEntries</span><span class="p">,</span> <span class="nx">GradeLogEntry</span><span class="p">{</span>
-		<span class="nx">e</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">dt</span><span class="p">,</span>
-	<span class="p">})</span>
-	<span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="p">=</span> <span class="nx">g</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">gradeLogEntries</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">gradeLogEntries</span><span class="p">,</span> <span class="nx">GradeLogEntry</span><span class="p">{</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">dt</span><span class="p">,</span>
+    <span class="p">})</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="p">=</span> <span class="nx">g</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="o">*</span><span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">IncreaseVersion</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">e</span><span class="p">.</span><span class="nx">version</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">version</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="p">}</span>
 
 <span class="kd">type</span> <span class="nx">Endorsement</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">recognizerId</span>        <span class="nx">RecognizerId</span>
-	<span class="nx">recognizerGrade</span>     <span class="nx">Grade</span>
-	<span class="nx">recognizerVersion</span>   <span class="kt">uint</span>
-	<span class="nx">endorsedId</span>          <span class="nx">EndorsedId</span>
-	<span class="nx">endorsedGrade</span>       <span class="nx">Grade</span>
-	<span class="nx">endorsedVersion</span>     <span class="kt">uint</span>
-	<span class="nx">artifactId</span>          <span class="nx">ArtifactId</span>
-	<span class="nx">createdAt</span>           <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
+    <span class="nx">recognizerId</span>        <span class="nx">RecognizerId</span>
+    <span class="nx">recognizerGrade</span>     <span class="nx">Grade</span>
+    <span class="nx">recognizerVersion</span>   <span class="kt">uint</span>
+    <span class="nx">endorsedId</span>          <span class="nx">EndorsedId</span>
+    <span class="nx">endorsedGrade</span>       <span class="nx">Grade</span>
+    <span class="nx">endorsedVersion</span>     <span class="kt">uint</span>
+    <span class="nx">artifactId</span>          <span class="nx">ArtifactId</span>
+    <span class="nx">createdAt</span>           <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">Endorsement</span><span class="p">)</span> <span class="nx">GetEndorsedId</span><span class="p">()</span> <span class="nx">EndorsedId</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">endorsedId</span>
+    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">endorsedId</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">Endorsement</span><span class="p">)</span> <span class="nx">GetEndorsedGrade</span><span class="p">()</span> <span class="nx">Grade</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">endorsedGrade</span>
+    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">endorsedGrade</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">Endorsement</span><span class="p">)</span> <span class="nx">GetWeight</span><span class="p">()</span> <span class="nx">Weight</span> <span class="p">{</span>
-	<span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">recognizerGrade</span> <span class="o">==</span> <span class="nx">e</span><span class="p">.</span><span class="nx">endorsedGrade</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">PeerWeight</span>
-	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">recognizerGrade</span> <span class="p">&gt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">endorsedGrade</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">HigherWeight</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="nx">LowerWeight</span>
+    <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">recognizerGrade</span> <span class="o">==</span> <span class="nx">e</span><span class="p">.</span><span class="nx">endorsedGrade</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">PeerWeight</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">e</span><span class="p">.</span><span class="nx">recognizerGrade</span> <span class="p">&gt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">endorsedGrade</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">HigherWeight</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">LowerWeight</span>
 <span class="p">}</span>
 
 <span class="kd">type</span> <span class="nx">GradeLogEntry</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">endorsedId</span>          <span class="nx">EndorsedId</span>
-	<span class="nx">endorsedVersion</span>     <span class="kt">uint</span>
-	<span class="nx">assignedGrade</span>       <span class="nx">Grade</span>
-	<span class="nx">createdAt</span>           <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
+    <span class="nx">endorsedId</span>          <span class="nx">EndorsedId</span>
+    <span class="nx">endorsedVersion</span>     <span class="kt">uint</span>
+    <span class="nx">assignedGrade</span>       <span class="nx">Grade</span>
+    <span class="nx">createdAt</span>           <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
 
 <span class="kd">type</span> <span class="nx">Recognizer</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">id</span>                        <span class="nx">RecognizerId</span>
-	<span class="nx">memberId</span>                  <span class="nx">MemberId</span>
-	<span class="nx">grade</span>                     <span class="nx">Grade</span>
-	<span class="nx">availableEndorsementCount</span> <span class="nx">EndorsementCount</span>
-	<span class="nx">pendingEndorsementCount</span>   <span class="nx">EndorsementCount</span>
-	<span class="nx">version</span>                   <span class="kt">uint</span>
-	<span class="nx">createdAt</span>                 <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
+    <span class="nx">id</span>                        <span class="nx">RecognizerId</span>
+    <span class="nx">memberId</span>                  <span class="nx">MemberId</span>
+    <span class="nx">grade</span>                     <span class="nx">Grade</span>
+    <span class="nx">availableEndorsementCount</span> <span class="nx">EndorsementCount</span>
+    <span class="nx">pendingEndorsementCount</span>   <span class="nx">EndorsementCount</span>
+    <span class="nx">version</span>                   <span class="kt">uint</span>
+    <span class="nx">createdAt</span>                 <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">GetId</span><span class="p">()</span> <span class="nx">RecognizerId</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="nx">r</span><span class="p">.</span><span class="nx">id</span>
+    <span class="k">return</span> <span class="nx">r</span><span class="p">.</span><span class="nx">id</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">GetGrade</span><span class="p">()</span> <span class="nx">Grade</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="nx">r</span><span class="p">.</span><span class="nx">grade</span>
+    <span class="k">return</span> <span class="nx">r</span><span class="p">.</span><span class="nx">grade</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">GetVersion</span><span class="p">()</span> <span class="kt">uint</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="nx">r</span><span class="p">.</span><span class="nx">version</span>
+    <span class="k">return</span> <span class="nx">r</span><span class="p">.</span><span class="nx">version</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">CanEndorse</span><span class="p">()</span> <span class="kt">bool</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span> <span class="o">-</span> <span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">canEndorse</span><span class="p">()</span> <span class="kt">bool</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span> <span class="o">-</span> <span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span> <span class="p">&gt;</span> <span class="mi">0</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="o">*</span><span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">DecreaseAvailableEndorsementCount</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
-	<span class="k">if</span> <span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;no endorsement is available&quot;</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span> <span class="o">-=</span> <span class="mi">1</span>
-	<span class="k">return</span> <span class="kc">nil</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">CanCompleteEndorsement</span><span class="p">()</span> <span class="kt">bool</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span> <span class="o">-</span> <span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="o">*</span><span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">IncreasePendingEndorsementCount</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="o">*</span><span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">ReserveEndorsement</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">canEndorse</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;can&#39;t reserve an endorsement&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="kc">nil</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="o">*</span><span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">DecreasePendingEndorsementCount</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
-	<span class="k">if</span> <span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span> <span class="o">&gt;=</span> <span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;can&#39;t reserve an endorsement&quot;</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span> <span class="o">-=</span> <span class="mi">1</span>
-	<span class="k">return</span> <span class="kc">nil</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="o">*</span><span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">ReleaseEndorsementReservation</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="o">*</span><span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">CompleteEndorsement</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;no endorsement is available&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;there is no endorsement reservation&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="kc">nil</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="o">*</span><span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">IncreaseVersion</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">r</span><span class="p">.</span><span class="nx">version</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nx">r</span><span class="p">.</span><span class="nx">version</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="p">}</span>
 
 <span class="kd">type</span> <span class="nx">Artifact</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">id</span>                  <span class="nx">ArtifactId</span>
-	<span class="nx">artifactDescription</span> <span class="nx">ArtifactDescription</span>
-	<span class="nx">status</span>              <span class="nx">ArtifactStatus</span>
-	<span class="nx">createdAt</span>           <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
+    <span class="nx">id</span>                  <span class="nx">ArtifactId</span>
+    <span class="nx">artifactDescription</span> <span class="nx">ArtifactDescription</span>
+    <span class="nx">status</span>              <span class="nx">ArtifactStatus</span>
+    <span class="nx">createdAt</span>           <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
 
 <span class="kd">type</span> <span class="nx">ExpertiseArea</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">id</span>        <span class="nx">ExpertiseAreaId</span>
-	<span class="nx">name</span>      <span class="nx">ExpertiseAreaName</span>
-	<span class="nx">createdAt</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
+    <span class="nx">id</span>        <span class="nx">ExpertiseAreaId</span>
+    <span class="nx">name</span>      <span class="nx">ExpertiseAreaName</span>
+    <span class="nx">createdAt</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
 </pre></div>
 </div>
