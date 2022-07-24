@@ -166,7 +166,7 @@
 	&lt;span class="nx"&gt;grade&lt;/span&gt;                    &lt;span class="nx"&gt;Grade&lt;/span&gt;
 	&lt;span class="nx"&gt;receivedEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;ReceivedEndorsementCount&lt;/span&gt;
 	&lt;span class="nx"&gt;gradeLogEntries&lt;/span&gt;          &lt;span class="p"&gt;[]&lt;/span&gt;&lt;span class="nx"&gt;GradeLogEntry&lt;/span&gt;
-	&lt;span class="nx"&gt;version&lt;/span&gt;                  &lt;span class="kt"&gt;int&lt;/span&gt;
+	&lt;span class="nx"&gt;version&lt;/span&gt;                  &lt;span class="kt"&gt;uint&lt;/span&gt;
 	&lt;span class="nx"&gt;createdAt&lt;/span&gt;                &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
@@ -178,7 +178,7 @@
 	&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt; &lt;span class="nx"&gt;Endorsed&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;GetVersion&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt; &lt;span class="nx"&gt;Endorsed&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;GetVersion&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 	&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;version&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
@@ -215,7 +215,7 @@
 
 &lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;GradeLogEntry&lt;/span&gt; &lt;span class="kd"&gt;struct&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 	&lt;span class="nx"&gt;endorsedId&lt;/span&gt;          &lt;span class="nx"&gt;EndorsedId&lt;/span&gt;
-	&lt;span class="nx"&gt;endorsedVersion&lt;/span&gt;     &lt;span class="kt"&gt;int&lt;/span&gt;
+	&lt;span class="nx"&gt;endorsedVersion&lt;/span&gt;     &lt;span class="kt"&gt;uint&lt;/span&gt;
 	&lt;span class="nx"&gt;assignedGrade&lt;/span&gt;       &lt;span class="nx"&gt;Grade&lt;/span&gt;
 	&lt;span class="nx"&gt;createdAt&lt;/span&gt;           &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
@@ -225,7 +225,7 @@
 	&lt;span class="nx"&gt;memberId&lt;/span&gt;                  &lt;span class="nx"&gt;MemberId&lt;/span&gt;
 	&lt;span class="nx"&gt;grade&lt;/span&gt;                     &lt;span class="nx"&gt;Grade&lt;/span&gt;
 	&lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;AvailableEndorsementCount&lt;/span&gt;
-	&lt;span class="nx"&gt;version&lt;/span&gt;                   &lt;span class="kt"&gt;int&lt;/span&gt;
+	&lt;span class="nx"&gt;version&lt;/span&gt;                   &lt;span class="kt"&gt;uint&lt;/span&gt;
 	&lt;span class="nx"&gt;createdAt&lt;/span&gt;                 &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
@@ -263,10 +263,10 @@
 	&lt;span class="nx"&gt;id&lt;/span&gt;                  &lt;span class="nx"&gt;EndorsementId&lt;/span&gt;
 	&lt;span class="nx"&gt;recognizerId&lt;/span&gt;        &lt;span class="nx"&gt;RecognizerId&lt;/span&gt;
 	&lt;span class="nx"&gt;recognizerGrade&lt;/span&gt;     &lt;span class="nx"&gt;Grade&lt;/span&gt;
-	&lt;span class="nx"&gt;recognizerVersion&lt;/span&gt;   &lt;span class="kt"&gt;int&lt;/span&gt;
+	&lt;span class="nx"&gt;recognizerVersion&lt;/span&gt;   &lt;span class="kt"&gt;uint&lt;/span&gt;
 	&lt;span class="nx"&gt;endorsedId&lt;/span&gt;          &lt;span class="nx"&gt;EndorsedId&lt;/span&gt;
 	&lt;span class="nx"&gt;endorsedGrade&lt;/span&gt;       &lt;span class="nx"&gt;Grade&lt;/span&gt;
-	&lt;span class="nx"&gt;endorsedVersion&lt;/span&gt;     &lt;span class="kt"&gt;int&lt;/span&gt;
+	&lt;span class="nx"&gt;endorsedVersion&lt;/span&gt;     &lt;span class="kt"&gt;uint&lt;/span&gt;
 	&lt;span class="nx"&gt;artifactDescription&lt;/span&gt; &lt;span class="nx"&gt;ArtifactDescription&lt;/span&gt;
 	&lt;span class="nx"&gt;createdAt&lt;/span&gt;           &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
@@ -500,7 +500,7 @@
 	&lt;span class="nx"&gt;grade&lt;/span&gt;                    &lt;span class="nx"&gt;Grade&lt;/span&gt;
 	&lt;span class="nx"&gt;receivedEndorsements&lt;/span&gt;     &lt;span class="p"&gt;[]&lt;/span&gt;&lt;span class="nx"&gt;Endorsement&lt;/span&gt;
 	&lt;span class="nx"&gt;gradeLogEntries&lt;/span&gt;          &lt;span class="p"&gt;[]&lt;/span&gt;&lt;span class="nx"&gt;GradeLogEntry&lt;/span&gt;
-	&lt;span class="nx"&gt;version&lt;/span&gt;                  &lt;span class="kt"&gt;int&lt;/span&gt;
+	&lt;span class="nx"&gt;version&lt;/span&gt;                  &lt;span class="kt"&gt;uint&lt;/span&gt;
 	&lt;span class="nx"&gt;createdAt&lt;/span&gt;                &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
@@ -560,10 +560,10 @@
 &lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Endorsement&lt;/span&gt; &lt;span class="kd"&gt;struct&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 	&lt;span class="nx"&gt;recognizerId&lt;/span&gt;        &lt;span class="nx"&gt;RecognizerId&lt;/span&gt;
 	&lt;span class="nx"&gt;recognizerGrade&lt;/span&gt;     &lt;span class="nx"&gt;Grade&lt;/span&gt;
-	&lt;span class="nx"&gt;recognizerVersion&lt;/span&gt;   &lt;span class="kt"&gt;int&lt;/span&gt;
+	&lt;span class="nx"&gt;recognizerVersion&lt;/span&gt;   &lt;span class="kt"&gt;uint&lt;/span&gt;
 	&lt;span class="nx"&gt;endorsedId&lt;/span&gt;          &lt;span class="nx"&gt;EndorsedId&lt;/span&gt;
 	&lt;span class="nx"&gt;endorsedGrade&lt;/span&gt;       &lt;span class="nx"&gt;Grade&lt;/span&gt;
-	&lt;span class="nx"&gt;endorsedVersion&lt;/span&gt;     &lt;span class="kt"&gt;int&lt;/span&gt;
+	&lt;span class="nx"&gt;endorsedVersion&lt;/span&gt;     &lt;span class="kt"&gt;uint&lt;/span&gt;
 	&lt;span class="nx"&gt;artifactId&lt;/span&gt;          &lt;span class="nx"&gt;ArtifactId&lt;/span&gt;
 	&lt;span class="nx"&gt;createdAt&lt;/span&gt;           &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
@@ -587,7 +587,7 @@
 
 &lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;GradeLogEntry&lt;/span&gt; &lt;span class="kd"&gt;struct&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 	&lt;span class="nx"&gt;endorsedId&lt;/span&gt;          &lt;span class="nx"&gt;EndorsedId&lt;/span&gt;
-	&lt;span class="nx"&gt;endorsedVersion&lt;/span&gt;     &lt;span class="kt"&gt;int&lt;/span&gt;
+	&lt;span class="nx"&gt;endorsedVersion&lt;/span&gt;     &lt;span class="kt"&gt;uint&lt;/span&gt;
 	&lt;span class="nx"&gt;assignedGrade&lt;/span&gt;       &lt;span class="nx"&gt;Grade&lt;/span&gt;
 	&lt;span class="nx"&gt;createdAt&lt;/span&gt;           &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
@@ -598,7 +598,7 @@
 	&lt;span class="nx"&gt;grade&lt;/span&gt;                     &lt;span class="nx"&gt;Grade&lt;/span&gt;
 	&lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt;
 	&lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;   &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt;
-	&lt;span class="nx"&gt;version&lt;/span&gt;                   &lt;span class="kt"&gt;int&lt;/span&gt;
+	&lt;span class="nx"&gt;version&lt;/span&gt;                   &lt;span class="kt"&gt;uint&lt;/span&gt;
 	&lt;span class="nx"&gt;createdAt&lt;/span&gt;                 &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
@@ -610,7 +610,7 @@
 	&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
-&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt; &lt;span class="nx"&gt;Recognizer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;GetVersion&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt; &lt;span class="nx"&gt;Recognizer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;GetVersion&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 	&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;version&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
@@ -779,44 +779,7 @@ Walker начинает быть слишком осведомленным о д
 &lt;p&gt;Идею можно посмотреть на примере:&lt;/p&gt;
 &lt;div class="literal-block-wrapper docutils container" id="emacsway-code-exporter-example-1"&gt;
 &lt;div class="code-block-caption"&gt;&lt;span class="caption-text"&gt;&lt;a class="reference external" href="https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html"&gt;Example by Allen Holub&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;
-&lt;div class="highlight-java notranslate"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt; 1&lt;/span&gt;
-&lt;span class="normal"&gt; 2&lt;/span&gt;
-&lt;span class="normal"&gt; 3&lt;/span&gt;
-&lt;span class="normal"&gt; 4&lt;/span&gt;
-&lt;span class="normal"&gt; 5&lt;/span&gt;
-&lt;span class="normal"&gt; 6&lt;/span&gt;
-&lt;span class="normal"&gt; 7&lt;/span&gt;
-&lt;span class="normal"&gt; 8&lt;/span&gt;
-&lt;span class="normal"&gt; 9&lt;/span&gt;
-&lt;span class="normal"&gt;10&lt;/span&gt;
-&lt;span class="normal"&gt;11&lt;/span&gt;
-&lt;span class="normal"&gt;12&lt;/span&gt;
-&lt;span class="normal"&gt;13&lt;/span&gt;
-&lt;span class="normal"&gt;14&lt;/span&gt;
-&lt;span class="normal"&gt;15&lt;/span&gt;
-&lt;span class="normal"&gt;16&lt;/span&gt;
-&lt;span class="normal"&gt;17&lt;/span&gt;
-&lt;span class="normal"&gt;18&lt;/span&gt;
-&lt;span class="normal"&gt;19&lt;/span&gt;
-&lt;span class="normal"&gt;20&lt;/span&gt;
-&lt;span class="normal"&gt;21&lt;/span&gt;
-&lt;span class="normal"&gt;22&lt;/span&gt;
-&lt;span class="normal"&gt;23&lt;/span&gt;
-&lt;span class="normal"&gt;24&lt;/span&gt;
-&lt;span class="normal"&gt;25&lt;/span&gt;
-&lt;span class="normal"&gt;26&lt;/span&gt;
-&lt;span class="normal"&gt;27&lt;/span&gt;
-&lt;span class="normal"&gt;28&lt;/span&gt;
-&lt;span class="normal"&gt;29&lt;/span&gt;
-&lt;span class="normal"&gt;30&lt;/span&gt;
-&lt;span class="normal"&gt;31&lt;/span&gt;
-&lt;span class="normal"&gt;32&lt;/span&gt;
-&lt;span class="normal"&gt;33&lt;/span&gt;
-&lt;span class="normal"&gt;34&lt;/span&gt;
-&lt;span class="normal"&gt;35&lt;/span&gt;
-&lt;span class="normal"&gt;36&lt;/span&gt;
-&lt;span class="normal"&gt;37&lt;/span&gt;
-&lt;span class="normal"&gt;38&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.util.Locale&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="highlight-java notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.util.Locale&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
  &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Employee&lt;/span&gt;
  &lt;span class="p"&gt;{&lt;/span&gt;   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;Name&lt;/span&gt;        &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -855,39 +818,12 @@ Walker начинает быть слишком осведомленным о д
      &lt;span class="c1"&gt;//...&lt;/span&gt;
  &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Или на более лаконичном примере:&lt;/p&gt;
 &lt;div class="literal-block-wrapper docutils container" id="emacsway-code-exporter-example-2"&gt;
 &lt;div class="code-block-caption"&gt;&lt;span class="caption-text"&gt;&lt;a class="reference external" href="https://stackoverflow.com/questions/24921227/save-and-load-objects-without-breaking-encapsulation"&gt;Example from Stackoverflow&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;
-&lt;div class="highlight-java notranslate"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt; 1&lt;/span&gt;
-&lt;span class="normal"&gt; 2&lt;/span&gt;
-&lt;span class="normal"&gt; 3&lt;/span&gt;
-&lt;span class="normal"&gt; 4&lt;/span&gt;
-&lt;span class="normal"&gt; 5&lt;/span&gt;
-&lt;span class="normal"&gt; 6&lt;/span&gt;
-&lt;span class="normal"&gt; 7&lt;/span&gt;
-&lt;span class="normal"&gt; 8&lt;/span&gt;
-&lt;span class="normal"&gt; 9&lt;/span&gt;
-&lt;span class="normal"&gt;10&lt;/span&gt;
-&lt;span class="normal"&gt;11&lt;/span&gt;
-&lt;span class="normal"&gt;12&lt;/span&gt;
-&lt;span class="normal"&gt;13&lt;/span&gt;
-&lt;span class="normal"&gt;14&lt;/span&gt;
-&lt;span class="normal"&gt;15&lt;/span&gt;
-&lt;span class="normal"&gt;16&lt;/span&gt;
-&lt;span class="normal"&gt;17&lt;/span&gt;
-&lt;span class="normal"&gt;18&lt;/span&gt;
-&lt;span class="normal"&gt;19&lt;/span&gt;
-&lt;span class="normal"&gt;20&lt;/span&gt;
-&lt;span class="normal"&gt;21&lt;/span&gt;
-&lt;span class="normal"&gt;22&lt;/span&gt;
-&lt;span class="normal"&gt;23&lt;/span&gt;
-&lt;span class="normal"&gt;24&lt;/span&gt;
-&lt;span class="normal"&gt;25&lt;/span&gt;
-&lt;span class="normal"&gt;26&lt;/span&gt;
-&lt;span class="normal"&gt;27&lt;/span&gt;
-&lt;span class="normal"&gt;28&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="nc"&gt;PersonImporter&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;div class="highlight-java notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="nc"&gt;PersonImporter&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
 
      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;getAge&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
 
@@ -916,12 +852,81 @@ Walker начинает быть слишком осведомленным о д
 
  &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Замечательный вариант, но проблема в том, что он использует интерефейсы, и это получается слишком многословно - требуется декларировать сам тип (структуру), интерфейс, сеттеры.
 Вряд ли кто-то будет этим заниматься, когда можно просто обязать Агрегат вернуть простую структуру.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference internal" href="#emacsway-code-exporter-example-2"&gt;&lt;span class="std std-ref"&gt;Второй&lt;/span&gt;&lt;/a&gt; из приведенных примеров содержит пакетированный сеттер, что делает его несколько менее многословным.
 В проекте он реализован на примере Агрегатов &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;Recognizer.ExportTo(ex&lt;/span&gt; &lt;span class="pre"&gt;RecognizerExporter)&lt;/span&gt;&lt;/code&gt; и &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;Endorsed.ExportTo(ex&lt;/span&gt; &lt;span class="pre"&gt;EndorsedExporter)&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight-go notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt;&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nx"&gt;qualifying_grade_1&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+	&lt;span class="s"&gt;"time"&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;T&lt;/span&gt; &lt;span class="nx"&gt;any&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+	&lt;span class="nx"&gt;SetState&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;T&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Exportable&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;T&lt;/span&gt; &lt;span class="nx"&gt;any&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+	&lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;T&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;
+
+&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;ex&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+	&lt;span class="nx"&gt;ex&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;SetState&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;RecognizerId&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;MemberId&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Grade&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;RecognizerExporter&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+	&lt;span class="nx"&gt;SetState&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+		&lt;span class="nx"&gt;id&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+		&lt;span class="nx"&gt;memberId&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+		&lt;span class="nx"&gt;grade&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+		&lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+		&lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+		&lt;span class="nx"&gt;version&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+		&lt;span class="nx"&gt;createdAt&lt;/span&gt; &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+	&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;UintExporter&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;
+
+&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nx"&gt;UintExporter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;SetState&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;value&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+	&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;UintExporter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;value&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Recognizer&lt;/span&gt; &lt;span class="kd"&gt;struct&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+	&lt;span class="nx"&gt;id&lt;/span&gt;                        &lt;span class="nx"&gt;RecognizerId&lt;/span&gt;
+	&lt;span class="nx"&gt;memberId&lt;/span&gt;                  &lt;span class="nx"&gt;MemberId&lt;/span&gt;
+	&lt;span class="nx"&gt;grade&lt;/span&gt;                     &lt;span class="nx"&gt;Grade&lt;/span&gt;
+	&lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt;
+	&lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;   &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt;
+	&lt;span class="nx"&gt;version&lt;/span&gt;                   &lt;span class="kt"&gt;uint&lt;/span&gt;
+	&lt;span class="nx"&gt;createdAt&lt;/span&gt;                 &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt; &lt;span class="nx"&gt;Recognizer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;ex&lt;/span&gt; &lt;span class="nx"&gt;RecognizerExporter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+	&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;memberId&lt;/span&gt; &lt;span class="nx"&gt;UintExporter&lt;/span&gt;
+	&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;grade&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;UintExporter&lt;/span&gt;
+
+	&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;memberId&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;memberId&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	&lt;span class="nx"&gt;ex&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;SetState&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+		&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;memberId&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+		&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;version&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createdAt&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+	&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;Внутренние объекты структуры Exporter должны иметь сеттеры.
 Реализовать эти объекты можно по разному - как структуру или как примитивный тип.
 Но в первом случае у нас даже плоская Сущность будет экспортировать двухуровневую структуру, что вносит неудобство, но при этом структура позволяет использовать параметрический полиморфизм (generics) для повышения ее реиспользования.
@@ -939,9 +944,60 @@ Walker начинает быть слишком осведомленным о д
 &lt;p&gt;Возникает целесообразность облегчить метод экспортирования, придав ему сигнатуру &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;Recognizer.Export()&lt;/span&gt; &lt;span class="pre"&gt;RecognizerState&lt;/span&gt;&lt;/code&gt; вместо &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;Recognizer.ExportTo(ex&lt;/span&gt; &lt;span class="pre"&gt;RecognizerExporter)&lt;/span&gt;&lt;/code&gt;.
 Получится что-то типа DTO с тем лишь отличием, что он пересекает не сетевые границы, а границы инкапсуляции Агрегата.
 Пока что этот вариант выглядит чуть более привлекательным.&lt;/p&gt;
+&lt;div class="highlight-go notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt;&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nx"&gt;qualifying_grade_2&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+	&lt;span class="s"&gt;"time"&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Exportable&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;T&lt;/span&gt; &lt;span class="nx"&gt;any&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+	&lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="nx"&gt;T&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;
+
+&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+	&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;RecognizerId&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;MemberId&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Grade&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;RecognizerState&lt;/span&gt; &lt;span class="kd"&gt;struct&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+	&lt;span class="nx"&gt;Id&lt;/span&gt;                        &lt;span class="kt"&gt;uint&lt;/span&gt;
+	&lt;span class="nx"&gt;MemberId&lt;/span&gt;                  &lt;span class="kt"&gt;uint&lt;/span&gt;
+	&lt;span class="nx"&gt;Grade&lt;/span&gt;                     &lt;span class="kt"&gt;uint&lt;/span&gt;
+	&lt;span class="nx"&gt;AvailableEndorsementCount&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;
+	&lt;span class="nx"&gt;PendingEndorsementCount&lt;/span&gt;   &lt;span class="kt"&gt;uint&lt;/span&gt;
+	&lt;span class="nx"&gt;Version&lt;/span&gt;                   &lt;span class="kt"&gt;uint&lt;/span&gt;
+	&lt;span class="nx"&gt;CreatedAt&lt;/span&gt;                 &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Recognizer&lt;/span&gt; &lt;span class="kd"&gt;struct&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+	&lt;span class="nx"&gt;id&lt;/span&gt;                        &lt;span class="nx"&gt;RecognizerId&lt;/span&gt;
+	&lt;span class="nx"&gt;memberId&lt;/span&gt;                  &lt;span class="nx"&gt;MemberId&lt;/span&gt;
+	&lt;span class="nx"&gt;grade&lt;/span&gt;                     &lt;span class="nx"&gt;Grade&lt;/span&gt;
+	&lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt;
+	&lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;   &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt;
+	&lt;span class="nx"&gt;version&lt;/span&gt;                   &lt;span class="kt"&gt;uint&lt;/span&gt;
+	&lt;span class="nx"&gt;createdAt&lt;/span&gt;                 &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt; &lt;span class="nx"&gt;Recognizer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="nx"&gt;RecognizerState&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+	&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;RecognizerState&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+		&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;memberId&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
+		&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
+		&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
+		&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;version&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createdAt&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+	&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;В проекте реализованы оба варианта для наглядности, на примере Агрегатов Recognizer и Endorsed, а также Cущности Endorsement.&lt;/p&gt;
 &lt;/div&gt;
-</description><pubDate>Sat, 23 Jul 2022 00:00:00 </pubDate></item><item><title>Может ли CQRS-команда возвращать результат?</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/tactical-design/cqrs/cqrs-command-and-result.html</link><description>
+</description><pubDate>Sun, 24 Jul 2022 00:00:00 </pubDate></item><item><title>Может ли CQRS-команда возвращать результат?</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/tactical-design/cqrs/cqrs-command-and-result.html</link><description>
 &lt;span id="emacsway-cqrs-command-result"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Статья посвящена довольно дискуссионному вопросу о том, может ли CQRS-команда возвращать результат.&lt;/p&gt;

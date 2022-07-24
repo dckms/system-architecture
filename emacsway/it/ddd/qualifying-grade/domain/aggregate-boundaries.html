@@ -226,7 +226,7 @@
 	<span class="nx">grade</span>                    <span class="nx">Grade</span>
 	<span class="nx">receivedEndorsementCount</span> <span class="nx">ReceivedEndorsementCount</span>
 	<span class="nx">gradeLogEntries</span>          <span class="p">[]</span><span class="nx">GradeLogEntry</span>
-	<span class="nx">version</span>                  <span class="kt">int</span>
+	<span class="nx">version</span>                  <span class="kt">uint</span>
 	<span class="nx">createdAt</span>                <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
 
@@ -238,7 +238,7 @@
 	<span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">GetVersion</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">GetVersion</span><span class="p">()</span> <span class="kt">uint</span> <span class="p">{</span>
 	<span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">version</span>
 <span class="p">}</span>
 
@@ -275,7 +275,7 @@
 
 <span class="kd">type</span> <span class="nx">GradeLogEntry</span> <span class="kd">struct</span> <span class="p">{</span>
 	<span class="nx">endorsedId</span>          <span class="nx">EndorsedId</span>
-	<span class="nx">endorsedVersion</span>     <span class="kt">int</span>
+	<span class="nx">endorsedVersion</span>     <span class="kt">uint</span>
 	<span class="nx">assignedGrade</span>       <span class="nx">Grade</span>
 	<span class="nx">createdAt</span>           <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
@@ -285,7 +285,7 @@
 	<span class="nx">memberId</span>                  <span class="nx">MemberId</span>
 	<span class="nx">grade</span>                     <span class="nx">Grade</span>
 	<span class="nx">availableEndorsementCount</span> <span class="nx">AvailableEndorsementCount</span>
-	<span class="nx">version</span>                   <span class="kt">int</span>
+	<span class="nx">version</span>                   <span class="kt">uint</span>
 	<span class="nx">createdAt</span>                 <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
 
@@ -323,10 +323,10 @@
 	<span class="nx">id</span>                  <span class="nx">EndorsementId</span>
 	<span class="nx">recognizerId</span>        <span class="nx">RecognizerId</span>
 	<span class="nx">recognizerGrade</span>     <span class="nx">Grade</span>
-	<span class="nx">recognizerVersion</span>   <span class="kt">int</span>
+	<span class="nx">recognizerVersion</span>   <span class="kt">uint</span>
 	<span class="nx">endorsedId</span>          <span class="nx">EndorsedId</span>
 	<span class="nx">endorsedGrade</span>       <span class="nx">Grade</span>
-	<span class="nx">endorsedVersion</span>     <span class="kt">int</span>
+	<span class="nx">endorsedVersion</span>     <span class="kt">uint</span>
 	<span class="nx">artifactDescription</span> <span class="nx">ArtifactDescription</span>
 	<span class="nx">createdAt</span>           <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
@@ -560,7 +560,7 @@
 	<span class="nx">grade</span>                    <span class="nx">Grade</span>
 	<span class="nx">receivedEndorsements</span>     <span class="p">[]</span><span class="nx">Endorsement</span>
 	<span class="nx">gradeLogEntries</span>          <span class="p">[]</span><span class="nx">GradeLogEntry</span>
-	<span class="nx">version</span>                  <span class="kt">int</span>
+	<span class="nx">version</span>                  <span class="kt">uint</span>
 	<span class="nx">createdAt</span>                <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
 
@@ -620,10 +620,10 @@
 <span class="kd">type</span> <span class="nx">Endorsement</span> <span class="kd">struct</span> <span class="p">{</span>
 	<span class="nx">recognizerId</span>        <span class="nx">RecognizerId</span>
 	<span class="nx">recognizerGrade</span>     <span class="nx">Grade</span>
-	<span class="nx">recognizerVersion</span>   <span class="kt">int</span>
+	<span class="nx">recognizerVersion</span>   <span class="kt">uint</span>
 	<span class="nx">endorsedId</span>          <span class="nx">EndorsedId</span>
 	<span class="nx">endorsedGrade</span>       <span class="nx">Grade</span>
-	<span class="nx">endorsedVersion</span>     <span class="kt">int</span>
+	<span class="nx">endorsedVersion</span>     <span class="kt">uint</span>
 	<span class="nx">artifactId</span>          <span class="nx">ArtifactId</span>
 	<span class="nx">createdAt</span>           <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
@@ -647,7 +647,7 @@
 
 <span class="kd">type</span> <span class="nx">GradeLogEntry</span> <span class="kd">struct</span> <span class="p">{</span>
 	<span class="nx">endorsedId</span>          <span class="nx">EndorsedId</span>
-	<span class="nx">endorsedVersion</span>     <span class="kt">int</span>
+	<span class="nx">endorsedVersion</span>     <span class="kt">uint</span>
 	<span class="nx">assignedGrade</span>       <span class="nx">Grade</span>
 	<span class="nx">createdAt</span>           <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
@@ -658,7 +658,7 @@
 	<span class="nx">grade</span>                     <span class="nx">Grade</span>
 	<span class="nx">availableEndorsementCount</span> <span class="nx">EndorsementCount</span>
 	<span class="nx">pendingEndorsementCount</span>   <span class="nx">EndorsementCount</span>
-	<span class="nx">version</span>                   <span class="kt">int</span>
+	<span class="nx">version</span>                   <span class="kt">uint</span>
 	<span class="nx">createdAt</span>                 <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
 
@@ -670,7 +670,7 @@
 	<span class="k">return</span> <span class="nx">r</span><span class="p">.</span><span class="nx">grade</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">GetVersion</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">GetVersion</span><span class="p">()</span> <span class="kt">uint</span> <span class="p">{</span>
 	<span class="k">return</span> <span class="nx">r</span><span class="p">.</span><span class="nx">version</span>
 <span class="p">}</span>
 

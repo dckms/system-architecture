@@ -176,44 +176,7 @@ Walker начинает быть слишком осведомленным о д
 <p>Идею можно посмотреть на примере:</p>
 <div class="literal-block-wrapper docutils container" id="emacsway-code-exporter-example-1">
 <div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html">Example by Allen Holub</a></span><a class="headerlink" href="#emacsway-code-exporter-example-1" title="Постоянная ссылка на код">¶</a></div>
-<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">java.util.Locale</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">java.util.Locale</span><span class="p">;</span>
 
  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Employee</span>
  <span class="p">{</span>   <span class="kd">private</span> <span class="n">Name</span>        <span class="n">name</span><span class="p">;</span>
@@ -252,39 +215,12 @@ Walker начинает быть слишком осведомленным о д
      <span class="c1">//...</span>
  <span class="p">}</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <p>Или на более лаконичном примере:</p>
 <div class="literal-block-wrapper docutils container" id="emacsway-code-exporter-example-2">
 <div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://stackoverflow.com/questions/24921227/save-and-load-objects-without-breaking-encapsulation">Example from Stackoverflow</a></span><a class="headerlink" href="#emacsway-code-exporter-example-2" title="Постоянная ссылка на код">¶</a></div>
-<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kd">interface</span> <span class="nc">PersonImporter</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span> <span class="kd">interface</span> <span class="nc">PersonImporter</span> <span class="p">{</span>
 
      <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getAge</span><span class="p">();</span>
 
@@ -313,12 +249,81 @@ Walker начинает быть слишком осведомленным о д
 
  <span class="p">}</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <p>Замечательный вариант, но проблема в том, что он использует интерефейсы, и это получается слишком многословно - требуется декларировать сам тип (структуру), интерфейс, сеттеры.
 Вряд ли кто-то будет этим заниматься, когда можно просто обязать Агрегат вернуть простую структуру.</p>
 <p><a class="reference internal" href="#emacsway-code-exporter-example-2"><span class="std std-ref">Второй</span></a> из приведенных примеров содержит пакетированный сеттер, что делает его несколько менее многословным.
 В проекте он реализован на примере Агрегатов <code class="docutils literal notranslate"><span class="pre">Recognizer.ExportTo(ex</span> <span class="pre">RecognizerExporter)</span></code> и <code class="docutils literal notranslate"><span class="pre">Endorsed.ExportTo(ex</span> <span class="pre">EndorsedExporter)</span></code>.</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">qualifying_grade_1</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&quot;time&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">type</span> <span class="nx">Exporter</span><span class="p">[</span><span class="nx">T</span> <span class="nx">any</span><span class="p">]</span> <span class="kd">interface</span> <span class="p">{</span>
+	<span class="nx">SetState</span><span class="p">(</span><span class="nx">T</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">Exportable</span><span class="p">[</span><span class="nx">T</span> <span class="nx">any</span><span class="p">]</span> <span class="kd">interface</span> <span class="p">{</span>
+	<span class="nx">ExportTo</span><span class="p">(</span><span class="nx">Exporter</span><span class="p">[</span><span class="nx">T</span><span class="p">])</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">ExportableUint</span> <span class="kt">uint</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">ExportableUint</span><span class="p">)</span> <span class="nx">ExportTo</span><span class="p">(</span><span class="nx">ex</span> <span class="nx">Exporter</span><span class="p">[</span><span class="kt">uint</span><span class="p">])</span> <span class="p">{</span>
+	<span class="nx">ex</span><span class="p">.</span><span class="nx">SetState</span><span class="p">(</span><span class="nb">uint</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">RecognizerId</span> <span class="nx">ExportableUint</span>
+<span class="kd">type</span> <span class="nx">MemberId</span> <span class="nx">ExportableUint</span>
+<span class="kd">type</span> <span class="nx">Grade</span> <span class="nx">ExportableUint</span>
+<span class="kd">type</span> <span class="nx">EndorsementCount</span> <span class="nx">ExportableUint</span>
+
+<span class="kd">type</span> <span class="nx">RecognizerExporter</span> <span class="kd">interface</span> <span class="p">{</span>
+	<span class="nx">SetState</span><span class="p">(</span>
+		<span class="nx">id</span> <span class="nx">Exporter</span><span class="p">[</span><span class="kt">uint</span><span class="p">],</span>
+		<span class="nx">memberId</span> <span class="nx">Exporter</span><span class="p">[</span><span class="kt">uint</span><span class="p">],</span>
+		<span class="nx">grade</span> <span class="nx">Exporter</span><span class="p">[</span><span class="kt">uint</span><span class="p">],</span>
+		<span class="nx">availableEndorsementCount</span> <span class="nx">Exporter</span><span class="p">[</span><span class="kt">uint</span><span class="p">],</span>
+		<span class="nx">pendingEndorsementCount</span> <span class="nx">Exporter</span><span class="p">[</span><span class="kt">uint</span><span class="p">],</span>
+		<span class="nx">version</span> <span class="kt">uint</span><span class="p">,</span>
+		<span class="nx">createdAt</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">,</span>
+	<span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">UintExporter</span> <span class="kt">uint</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="o">*</span><span class="nx">UintExporter</span><span class="p">)</span> <span class="nx">SetState</span><span class="p">(</span><span class="nx">value</span> <span class="kt">uint</span><span class="p">)</span> <span class="p">{</span>
+	<span class="o">*</span><span class="nx">e</span> <span class="p">=</span> <span class="nx">UintExporter</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">Recognizer</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">id</span>                        <span class="nx">RecognizerId</span>
+	<span class="nx">memberId</span>                  <span class="nx">MemberId</span>
+	<span class="nx">grade</span>                     <span class="nx">Grade</span>
+	<span class="nx">availableEndorsementCount</span> <span class="nx">EndorsementCount</span>
+	<span class="nx">pendingEndorsementCount</span>   <span class="nx">EndorsementCount</span>
+	<span class="nx">version</span>                   <span class="kt">uint</span>
+	<span class="nx">createdAt</span>                 <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">ExportTo</span><span class="p">(</span><span class="nx">ex</span> <span class="nx">RecognizerExporter</span><span class="p">)</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">memberId</span> <span class="nx">UintExporter</span>
+	<span class="kd">var</span> <span class="nx">grade</span><span class="p">,</span> <span class="nx">availableEndorsementCount</span><span class="p">,</span> <span class="nx">pendingEndorsementCount</span> <span class="nx">UintExporter</span>
+
+	<span class="nx">r</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">ExportTo</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">id</span><span class="p">)</span>
+	<span class="nx">r</span><span class="p">.</span><span class="nx">memberId</span><span class="p">.</span><span class="nx">ExportTo</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">memberId</span><span class="p">)</span>
+	<span class="nx">r</span><span class="p">.</span><span class="nx">grade</span><span class="p">.</span><span class="nx">ExportTo</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">grade</span><span class="p">)</span>
+	<span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span><span class="p">.</span><span class="nx">ExportTo</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">availableEndorsementCount</span><span class="p">)</span>
+	<span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span><span class="p">.</span><span class="nx">ExportTo</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">pendingEndorsementCount</span><span class="p">)</span>
+	<span class="nx">ex</span><span class="p">.</span><span class="nx">SetState</span><span class="p">(</span>
+		<span class="o">&amp;</span><span class="nx">id</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">memberId</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">grade</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">availableEndorsementCount</span><span class="p">,</span>
+		<span class="o">&amp;</span><span class="nx">pendingEndorsementCount</span><span class="p">,</span> <span class="nx">r</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span> <span class="nx">r</span><span class="p">.</span><span class="nx">createdAt</span><span class="p">,</span>
+	<span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>Внутренние объекты структуры Exporter должны иметь сеттеры.
 Реализовать эти объекты можно по разному - как структуру или как примитивный тип.
 Но в первом случае у нас даже плоская Сущность будет экспортировать двухуровневую структуру, что вносит неудобство, но при этом структура позволяет использовать параметрический полиморфизм (generics) для повышения ее реиспользования.
@@ -336,6 +341,57 @@ Walker начинает быть слишком осведомленным о д
 <p>Возникает целесообразность облегчить метод экспортирования, придав ему сигнатуру <code class="docutils literal notranslate"><span class="pre">Recognizer.Export()</span> <span class="pre">RecognizerState</span></code> вместо <code class="docutils literal notranslate"><span class="pre">Recognizer.ExportTo(ex</span> <span class="pre">RecognizerExporter)</span></code>.
 Получится что-то типа DTO с тем лишь отличием, что он пересекает не сетевые границы, а границы инкапсуляции Агрегата.
 Пока что этот вариант выглядит чуть более привлекательным.</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">qualifying_grade_2</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&quot;time&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">type</span> <span class="nx">Exportable</span><span class="p">[</span><span class="nx">T</span> <span class="nx">any</span><span class="p">]</span> <span class="kd">interface</span> <span class="p">{</span>
+	<span class="nx">Export</span><span class="p">()</span> <span class="nx">T</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">ExportableUint</span> <span class="kt">uint</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">ExportableUint</span><span class="p">)</span> <span class="nx">Export</span><span class="p">()</span> <span class="kt">uint</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nb">uint</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">RecognizerId</span> <span class="nx">ExportableUint</span>
+<span class="kd">type</span> <span class="nx">MemberId</span> <span class="nx">ExportableUint</span>
+<span class="kd">type</span> <span class="nx">Grade</span> <span class="nx">ExportableUint</span>
+<span class="kd">type</span> <span class="nx">EndorsementCount</span> <span class="nx">ExportableUint</span>
+
+<span class="kd">type</span> <span class="nx">RecognizerState</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">Id</span>                        <span class="kt">uint</span>
+	<span class="nx">MemberId</span>                  <span class="kt">uint</span>
+	<span class="nx">Grade</span>                     <span class="kt">uint</span>
+	<span class="nx">AvailableEndorsementCount</span> <span class="kt">uint</span>
+	<span class="nx">PendingEndorsementCount</span>   <span class="kt">uint</span>
+	<span class="nx">Version</span>                   <span class="kt">uint</span>
+	<span class="nx">CreatedAt</span>                 <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">Recognizer</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">id</span>                        <span class="nx">RecognizerId</span>
+	<span class="nx">memberId</span>                  <span class="nx">MemberId</span>
+	<span class="nx">grade</span>                     <span class="nx">Grade</span>
+	<span class="nx">availableEndorsementCount</span> <span class="nx">EndorsementCount</span>
+	<span class="nx">pendingEndorsementCount</span>   <span class="nx">EndorsementCount</span>
+	<span class="nx">version</span>                   <span class="kt">uint</span>
+	<span class="nx">createdAt</span>                 <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">Export</span><span class="p">()</span> <span class="nx">RecognizerState</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">RecognizerState</span><span class="p">{</span>
+		<span class="nx">r</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span> <span class="nx">r</span><span class="p">.</span><span class="nx">memberId</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span> <span class="nx">r</span><span class="p">.</span><span class="nx">grade</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span>
+		<span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span>
+		<span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span>
+		<span class="nx">r</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span> <span class="nx">r</span><span class="p">.</span><span class="nx">createdAt</span><span class="p">,</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>В проекте реализованы оба варианта для наглядности, на примере Агрегатов Recognizer и Endorsed, а также Cущности Endorsement.</p>
 </div>
 </div>
