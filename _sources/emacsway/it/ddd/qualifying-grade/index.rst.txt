@@ -10,7 +10,7 @@ Reference Application "Qualifying Grade"
    */index
 
 
-Это не совсем Reference Application, так как он предназначен для реальной эксплуатации, но выполненяется он в виде Reference Application.
+Это не совсем Reference Application, так как он предназначен для реальной эксплуатации, но выполняется он в виде Reference Application.
 
 Исходный код Reference Application доступен по ссылке:
 

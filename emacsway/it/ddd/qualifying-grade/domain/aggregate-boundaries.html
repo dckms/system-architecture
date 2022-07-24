@@ -564,7 +564,7 @@
     <span class="nx">createdAt</span>                <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="o">*</span><span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">ReceiveEndorsement</span><span class="p">(</span><span class="nx">r</span> <span class="nx">Recognizer</span><span class="p">,</span> <span class="nx">a</span> <span class="nx">ArtifactId</span><span class="p">,</span> <span class="nx">t</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="o">*</span><span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">ReceiveEndorsement</span><span class="p">(</span><span class="nx">r</span> <span class="nx">Recognizer</span><span class="p">,</span> <span class="nx">aId</span> <span class="nx">ArtifactId</span><span class="p">,</span> <span class="nx">t</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
     <span class="k">if</span> <span class="nx">r</span><span class="p">.</span><span class="nx">GetGrade</span><span class="p">()</span> <span class="p">&lt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="p">{</span>
         <span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span>
             <span class="s">&quot;it is allowed to receive endorsements only from members with equal or higher grade&quot;</span><span class="p">,</span>
@@ -575,10 +575,15 @@
             <span class="s">&quot;recognizer is not able to complete endorsement&quot;</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="p">}</span>
+    <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsements</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="nx">v</span><span class="p">.</span><span class="nx">IsEndorsedBy</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">GetId</span><span class="p">(),</span> <span class="nx">aId</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;this artifact has already been endorsed by the recogniser&quot;</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     <span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsements</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">receivedEndorsements</span><span class="p">,</span> <span class="nx">Endorsement</span><span class="p">{</span>
         <span class="nx">r</span><span class="p">.</span><span class="nx">GetId</span><span class="p">(),</span> <span class="nx">r</span><span class="p">.</span><span class="nx">GetGrade</span><span class="p">(),</span> <span class="nx">r</span><span class="p">.</span><span class="nx">GetVersion</span><span class="p">(),</span>
         <span class="nx">e</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span>
-        <span class="nx">a</span><span class="p">,</span> <span class="nx">t</span><span class="p">,</span>
+        <span class="nx">aId</span><span class="p">,</span> <span class="nx">t</span><span class="p">,</span>
     <span class="p">})</span>
     <span class="nx">e</span><span class="p">.</span><span class="nx">actualizeGrade</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">nil</span>
@@ -629,8 +634,8 @@
     <span class="nx">createdAt</span>           <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">Endorsement</span><span class="p">)</span> <span class="nx">GetEndorsedId</span><span class="p">()</span> <span class="nx">EndorsedId</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">endorsedId</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">Endorsement</span><span class="p">)</span> <span class="nx">IsEndorsedBy</span><span class="p">(</span><span class="nx">rId</span> <span class="nx">RecognizerId</span><span class="p">,</span> <span class="nx">aId</span> <span class="nx">ArtifactId</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">recognizerId</span> <span class="o">==</span> <span class="nx">rId</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">artifactId</span> <span class="o">==</span> <span class="nx">aId</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">Endorsement</span><span class="p">)</span> <span class="nx">GetEndorsedGrade</span><span class="p">()</span> <span class="nx">Grade</span> <span class="p">{</span>
