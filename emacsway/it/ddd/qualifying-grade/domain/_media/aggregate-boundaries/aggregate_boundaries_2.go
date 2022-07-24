@@ -40,7 +40,7 @@ type Endorsed struct {
 	grade                    Grade
 	receivedEndorsements     []Endorsement
 	gradeLogEntries          []GradeLogEntry
-	version                  int
+	version                  uint
 	createdAt                time.Time
 }
 
@@ -100,10 +100,10 @@ func (e *Endorsed) IncreaseVersion() {
 type Endorsement struct {
 	recognizerId        RecognizerId
 	recognizerGrade     Grade
-	recognizerVersion   int
+	recognizerVersion   uint
 	endorsedId          EndorsedId
 	endorsedGrade       Grade
-	endorsedVersion     int
+	endorsedVersion     uint
 	artifactId          ArtifactId
 	createdAt           time.Time
 }
@@ -127,7 +127,7 @@ func (e Endorsement) GetWeight() Weight {
 
 type GradeLogEntry struct {
 	endorsedId          EndorsedId
-	endorsedVersion     int
+	endorsedVersion     uint
 	assignedGrade       Grade
 	createdAt           time.Time
 }
@@ -138,7 +138,7 @@ type Recognizer struct {
 	grade                     Grade
 	availableEndorsementCount EndorsementCount
 	pendingEndorsementCount   EndorsementCount
-	version                   int
+	version                   uint
 	createdAt                 time.Time
 }
 
@@ -150,7 +150,7 @@ func (r Recognizer) GetGrade() Grade {
 	return r.grade
 }
 
-func (r Recognizer) GetVersion() int {
+func (r Recognizer) GetVersion() uint {
 	return r.version
 }
 
