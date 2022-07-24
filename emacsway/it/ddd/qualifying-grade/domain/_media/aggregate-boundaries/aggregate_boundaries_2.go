@@ -166,11 +166,11 @@ func (r Recognizer) GetVersion() uint {
 }
 
 func (r Recognizer) canEndorse() bool {
-    return r.availableEndorsementCount - r.pendingEndorsementCount > 0
+    return r.availableEndorsementCount > r.pendingEndorsementCount
 }
 
 func (r Recognizer) CanCompleteEndorsement() bool {
-    return r.pendingEndorsementCount > 0 && r.availableEndorsementCount - r.pendingEndorsementCount >= 0
+    return r.pendingEndorsementCount > 0 && r.availableEndorsementCount >= r.pendingEndorsementCount
 }
 
 func (r *Recognizer) ReserveEndorsement() error {
