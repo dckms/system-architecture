@@ -135,7 +135,6 @@ Exporter
 .. code-block:: java
    :caption: `Example by Allen Holub <https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html>`__
    :name: emacsway-code-exporter-example-1
-   :linenos:
 
     import java.util.Locale;
 
@@ -181,7 +180,6 @@ Exporter
 .. code-block:: java
    :caption: `Example from Stackoverflow <https://stackoverflow.com/questions/24921227/save-and-load-objects-without-breaking-encapsulation>`__
    :name: emacsway-code-exporter-example-2
-   :linenos:
 
     interface PersonImporter {
 
@@ -218,6 +216,9 @@ Exporter
 :ref:`Второй <emacsway-code-exporter-example-2>` из приведенных примеров содержит пакетированный сеттер, что делает его несколько менее многословным.
 В проекте он реализован на примере Агрегатов ``Recognizer.ExportTo(ex RecognizerExporter)`` и ``Endorsed.ExportTo(ex EndorsedExporter)``.
 
+.. literalinclude:: _media/aggregate-encapsulation/exporter_1.go
+   :language: go
+
 Внутренние объекты структуры Exporter должны иметь сеттеры.
 Реализовать эти объекты можно по разному - как структуру или как примитивный тип.
 Но в первом случае у нас даже плоская Сущность будет экспортировать двухуровневую структуру, что вносит неудобство, но при этом структура позволяет использовать параметрический полиморфизм (generics) для повышения ее реиспользования.
@@ -239,6 +240,9 @@ Exporter
 Возникает целесообразность облегчить метод экспортирования, придав ему сигнатуру ``Recognizer.Export() RecognizerState`` вместо ``Recognizer.ExportTo(ex RecognizerExporter)``.
 Получится что-то типа DTO с тем лишь отличием, что он пересекает не сетевые границы, а границы инкапсуляции Агрегата.
 Пока что этот вариант выглядит чуть более привлекательным.
+
+.. literalinclude:: _media/aggregate-encapsulation/exporter_2.go
+   :language: go
 
 В проекте реализованы оба варианта для наглядности, на примере Агрегатов Recognizer и Endorsed, а также Cущности Endorsement.
 
