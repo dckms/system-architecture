@@ -799,7 +799,7 @@ When there are significant changes in the domain, the events may need to change,
 <div class="section" id="one-phase-vs-two-phase">
 <h2><a class="toc-backref" href="#id134">One-phase vs Two-phase</a><a class="headerlink" href="#one-phase-vs-two-phase" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Ответ на вопрос о разделении доставки Domain Events во многом зависит от того, разделять ли Domain Events на внутренние и внешние?</p>
-<p>Хотя у Vaughn Vernon такое разделение не совсем очевидное, он разделяет реализацию доставки  для подписчиков внутри Bounded Context за его пределами.</p>
+<p>Хотя у Vaughn Vernon такое разделение не совсем очевидное, он разделяет реализацию доставки  для подписчиков внутри Bounded Context и за его пределами.</p>
 <div class="figure align-center" id="id115">
 <a class="reference internal image-reference" href="../../../../../../_images/iddd-8.1.png"><img alt="Figure 8.1. Aggregates create Events and publish them. Subscribers may store Events and then forward them to remote subscribers, or just forward them without storing. Immediate forwarding requires XA (two-phase commit) unless messaging middleware shares the model's data store. The image source is &quot;Implementing Domain-Driven Design&quot; by Vaughn Vernon" src="../../../../../../_images/iddd-8.1.png" style="width: 70%;" /></a>
 <p class="caption"><span class="caption-text">Figure 8.1. Aggregates create Events and publish them.

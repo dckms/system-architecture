@@ -303,7 +303,7 @@
 
 Затем приступить к классике:
 
-- "Domain-Driven Design" by Eric Evans
+- "Domain-Driven Design: Tackling Complexity in the Heart of Software" by Eric Evans
 - "`Implementing Domain-Driven Design <https://kalele.io/books/>`__" by Vaughn Vernon
 
 Существуют краткие изложения этих двух книг по DDD.

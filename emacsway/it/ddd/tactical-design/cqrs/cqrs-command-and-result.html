@@ -216,7 +216,7 @@
 <div><p>📝 &quot;It is important here two deal with two common objections to the side-effect-free style.</p>
 <p>The first has to do with error handling. Sometimes a function with side effects is really a procedure, which in addition to doing its job returns a status code indicating how things went. But there are better ways to do this; roughly speaking, the proper O-O technique is to enable the client, after an operation on an object, to perform a query on the status, represented for example by an attribute of the object, as in</p>
 <p>target.some_operation(...)</p>
-<p>how_did_it_go := targetGstatus</p>
+<p>how_did_it_go := target.status</p>
 <p>Note that the technique of returning a status as function result is lame anyway. It transforms a procedure into a function by adding the status as a result; <strong>but it does not work if the routine was already a function, which already has a result of its own</strong>. It is also problematic if you need more than one status indicator. In such cases the C approach is either to return a &quot;structure&quot; (the equivalent of an object) with several components, which is getting close to the above scheme, or to use global variables — which raises a whole set of new problems, especially in a large system where many modules can trigger errors.&quot;</p>
 <p class="attribution">—&quot;Object-Oriented Software Construction&quot; 2nd edition by Bertrand Meyer, chapter &quot;23.1 SIDE EFFECTS IN FUNCTIONS&quot;</p>
 </div></blockquote>

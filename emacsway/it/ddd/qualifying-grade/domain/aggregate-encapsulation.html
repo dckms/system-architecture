@@ -17,7 +17,7 @@
     <link rel="index" title="Алфавитный указатель" href="../../../../../genindex.html" />
     <link rel="search" title="Поиск" href="../../../../../search.html" />
     <link rel="next" title="Integration" href="../../../../../trunk/it/integration/index.html" />
-    <link rel="prev" title="Domain Layer" href="index.html" />
+    <link rel="prev" title="Поиск границ Агрегатов" href="aggregate-boundaries.html" />
     
    
   <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
@@ -45,7 +45,7 @@
     <ul>
         <li>
           &larr;
-          <a href="index.html" title="Previous document">Domain Layer</a>
+          <a href="aggregate-boundaries.html" title="Previous document">Поиск границ Агрегатов</a>
         </li>
         <li>
           <a href="../../../../../trunk/it/integration/index.html" title="Next document">Integration</a>
@@ -142,6 +142,9 @@ Walker начинает быть слишком осведомленным о д
 </ul>
 <p>Интерфейс Scanner открывает дверь к изменяемости ValueObject, что противоречит основной его сути.
 А так же открывает брешь в инкапсуляции Агрегата.</p>
+<p>Но есть еще один момент - метод <code class="docutils literal notranslate"><span class="pre">Scan(src</span> <span class="pre">any)</span> <span class="pre">error</span></code> вызывается у конкретного типа, что препятствует использованию паттерна, известного как <a class="reference external" href="https://martinfowler.com/eaaCatalog/specialCase.html">Special Case</a> или <a class="reference external" href="https://refactoring.com/catalog/introduceSpecialCase.html">Null Object</a>.
+Кроме того, в некоторых случаях может потребоваться преобразовать неизменяемые исторические данные для новой версии модели.
+Вопрос затрагивался в разделе &quot;4. Validating historical data&quot; статьи &quot;<a class="reference external" href="https://enterprisecraftsmanship.com/posts/always-valid-domain-model/">Always-Valid Domain Model</a>&quot; by Vladimir Khorikov и в разделе &quot;6. The use of ORMs within and outside of the always-valid boundary&quot; статьи &quot;<a class="reference external" href="https://enterprisecraftsmanship.com/posts/database-always-valid-domain-model/">Database and Always-Valid Domain Model</a>&quot; by Vladimir Khorikov.</p>
 <p>С другой стороны, Valuer может возвращать только примитивные типы, а значит, он не пригоден для экспорта иерархической структуры состояния Агрегата:</p>
 <blockquote>
 <div><p>It is either nil, a type handled by a database driver's NamedValueChecker interface, or an instance of one of these types:</p>
@@ -171,8 +174,8 @@ Walker начинает быть слишком осведомленным о д
 <li><p>&quot;<a class="reference external" href="https://stackoverflow.com/questions/24921227/save-and-load-objects-without-breaking-encapsulation">Save and load objects without breaking encapsulation</a>&quot; at Stackoverflow</p></li>
 </ul>
 <p>Идею можно посмотреть на примере:</p>
-<div class="literal-block-wrapper docutils container" id="emacsway-exporter-code-example-1">
-<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html">Example by Allen Holub</a></span><a class="headerlink" href="#emacsway-exporter-code-example-1" title="Постоянная ссылка на код">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="emacsway-code-exporter-example-1">
+<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html">Example by Allen Holub</a></span><a class="headerlink" href="#emacsway-code-exporter-example-1" title="Постоянная ссылка на код">¶</a></div>
 <div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -354,7 +357,7 @@ Walker начинает быть слишком осведомленным о д
     <ul>
         <li>
           &larr;
-          <a href="index.html" title="Previous document">Domain Layer</a>
+          <a href="aggregate-boundaries.html" title="Previous document">Поиск границ Агрегатов</a>
         </li>
         <li>
           <a href="../../../../../trunk/it/integration/index.html" title="Next document">Integration</a>
@@ -422,7 +425,7 @@ Walker начинает быть слишком осведомленным о д
   <li><a href="../../../../../trunk/it/ddd/index.html">DDD</a></li>
   <li><a href="../index.html">Reference Application &quot;Qualifying Grade&quot;</a></li>
   <li><a href="index.html">Domain Layer</a></li><ul>
-      <li>Previous: <a href="index.html" title="предыдущая глава">Domain Layer</a></li>
+      <li>Previous: <a href="aggregate-boundaries.html" title="предыдущая глава">Поиск границ Агрегатов</a></li>
       <li>Next: <a href="../../../../../trunk/it/integration/index.html" title="следующая глава">Integration</a></li></ul>
   </ul></li>
 </ul>
