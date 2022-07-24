@@ -117,8 +117,12 @@ func (r Recognizer) Endorse(e Endorsed, desc ArtifactDescription, t time.Time) (
 	}, nil
 }
 
-func (r *Recognizer) DecreaseAvailableEndorsementCount() {
+func (r *Recognizer) DecreaseAvailableEndorsementCount() error {
+	if r.availableEndorsementCount == 0 {
+		return errors.New("no endorsement is available")
+	}
 	r.availableEndorsementCount -= 1
+	return nil
 }
 
 func (r *Recognizer) IncreaseVersion() {

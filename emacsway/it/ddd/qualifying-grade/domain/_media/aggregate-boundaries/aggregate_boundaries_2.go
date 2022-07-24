@@ -8,7 +8,7 @@ import (
 type EndorsedId uint64
 type MemberId uint64
 type Grade uint
-type AvailableEndorsementCount uint
+type EndorsementCount uint
 type RecognizerId uint64
 type ArtifactId uint64
 type ArtifactDescription string
@@ -137,7 +137,8 @@ type Recognizer struct {
 	id                        RecognizerId
 	memberId                  MemberId
 	grade                     Grade
-	availableEndorsementCount AvailableEndorsementCount
+	availableEndorsementCount EndorsementCount
+	pendingEndorsementCount   EndorsementCount
 	version                   int
 	createdAt                 time.Time
 }
@@ -155,11 +156,27 @@ func (r Recognizer) GetVersion() int {
 }
 
 func (r Recognizer) CanEndorse() bool {
-	return r.availableEndorsementCount > 0
+	return r.availableEndorsementCount - r.pendingEndorsementCount >= 0
 }
 
-func (r *Recognizer) DecreaseAvailableEndorsementCount() {
+func (r *Recognizer) DecreaseAvailableEndorsementCount() error {
+	if r.availableEndorsementCount == 0 {
+		return errors.New("no endorsement is available")
+	}
 	r.availableEndorsementCount -= 1
+	return nil
+}
+
+func (r *Recognizer) IncreasePendingEndorsementCount() {
+	r.pendingEndorsementCount += 1
+}
+
+func (r *Recognizer) DecreasePendingEndorsementCount() error {
+	if r.pendingEndorsementCount >= r.availableEndorsementCount {
+		return errors.New("can't reserve an endorsement")
+	}
+	r.pendingEndorsementCount -= 1
+	return nil
 }
 
 func (r *Recognizer) IncreaseVersion() {
