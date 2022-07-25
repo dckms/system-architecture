@@ -23,12 +23,12 @@ const (
     PeerWeight   = 1
     HigherWeight = 2
 
-    WithoutGrade = Grade(0)
-    Grade3       = Grade(1)
-    Grade2       = Grade(2)
-    Grade1       = Grade(3)
-    Candidate    = Grade(4)
     Expert       = Grade(5)
+    Candidate    = Grade(4)
+    Grade1       = Grade(3)
+    Grade2       = Grade(2)
+    Grade3       = Grade(1)
+    WithoutGrade = Grade(0)
 
     Proposed     = ArtifactStatus(0)
     Accepted     = ArtifactStatus(1)
@@ -53,6 +53,11 @@ func (e *Endorsed) ReceiveEndorsement(r Recognizer, aId ArtifactId, t time.Time)
     if !r.CanCompleteEndorsement() {
         return errors.New(
             "recognizer is not able to complete endorsement",
+        )
+    }
+    if uint64(r.GetId()) == uint64(e.id) {
+        return errors.New(
+            "recognizer can't endorse himself",
         )
     }
     for _, v := range e.receivedEndorsements {
@@ -92,9 +97,9 @@ func (e Endorsed) getReceivedEndorsementCount() uint {
     return counter
 }
 
-func (e *Endorsed) setGrade(g Grade, dt time.Time) {
+func (e *Endorsed) setGrade(g Grade, t time.Time) {
     e.gradeLogEntries = append(e.gradeLogEntries, GradeLogEntry{
-        e.id, e.version, g, dt,
+        e.id, e.version, g, t,
     })
     e.grade = g
 }
@@ -160,17 +165,17 @@ func (r Recognizer) GetVersion() uint {
     return r.version
 }
 
-func (r Recognizer) canEndorse() bool {
-    return r.availableEndorsementCount - r.pendingEndorsementCount > 0
+func (r Recognizer) canReserveEndorsement() bool {
+    return r.availableEndorsementCount > r.pendingEndorsementCount
 }
 
 func (r Recognizer) CanCompleteEndorsement() bool {
-    return r.pendingEndorsementCount > 0 && (r.availableEndorsementCount - r.pendingEndorsementCount) >= 0
+    return r.pendingEndorsementCount > 0 && r.availableEndorsementCount >= r.pendingEndorsementCount
 }
 
 func (r *Recognizer) ReserveEndorsement() error {
-    if !r.canEndorse() {
-        return errors.New("can't reserve an endorsement")
+    if !r.canReserveEndorsement() {
+        return errors.New("no endorsement can be reserved")
     }
     r.pendingEndorsementCount += 1
     return nil

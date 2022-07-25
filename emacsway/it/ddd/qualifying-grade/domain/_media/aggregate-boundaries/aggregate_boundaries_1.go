@@ -22,12 +22,12 @@ const (
 )
 
 const (
-    WithoutGrade = Grade(0)
-    Grade3       = Grade(1)
-    Grade2       = Grade(2)
-    Grade1       = Grade(3)
-    Candidate    = Grade(4)
     Expert       = Grade(5)
+    Candidate    = Grade(4)
+    Grade1       = Grade(3)
+    Grade2       = Grade(2)
+    Grade3       = Grade(1)
+    WithoutGrade = Grade(0)
 )
 
 type Endorsed struct {
@@ -52,29 +52,29 @@ func (e Endorsed) GetVersion() uint {
     return e.version
 }
 
-func (e *Endorsed) IncreaseReceivedEndorsementCount(w Weight, dt time.Time) {
+func (e *Endorsed) IncreaseReceivedEndorsementCount(w Weight, t time.Time) {
     e.receivedEndorsementCount += ReceivedEndorsementCount(w)
     if e.grade == WithoutGrade && e.receivedEndorsementCount >= 6 {
-        e.setGrade(Grade3, dt)
+        e.setGrade(Grade3, t)
         e.receivedEndorsementCount = 0
     } else if e.grade == Grade3 && e.receivedEndorsementCount >= 10 {
-        e.setGrade(Grade2, dt)
+        e.setGrade(Grade2, t)
         e.receivedEndorsementCount = 0
     } else if e.grade == Grade2 && e.receivedEndorsementCount >= 14 {
-        e.setGrade(Grade1, dt)
+        e.setGrade(Grade1, t)
         e.receivedEndorsementCount = 0
     } else if e.grade == Grade1 && e.receivedEndorsementCount >= 20 {
-        e.setGrade(Candidate, dt)
+        e.setGrade(Candidate, t)
         e.receivedEndorsementCount = 0
     } else if e.grade == Candidate && e.receivedEndorsementCount >= 10 {
-        e.setGrade(Expert, dt)
+        e.setGrade(Expert, t)
         e.receivedEndorsementCount = 0
     }
 }
 
-func (e *Endorsed) setGrade(g Grade, dt time.Time) {
+func (e *Endorsed) setGrade(g Grade, t time.Time) {
     e.gradeLogEntries = append(e.gradeLogEntries, GradeLogEntry{
-        e.id, e.version, g, dt,
+        e.id, e.version, g, t,
     })
     e.grade = g
 }
@@ -99,7 +99,7 @@ type Recognizer struct {
     createdAt                 time.Time
 }
 
-func (r Recognizer) Endorse(e Endorsed, desc ArtifactDescription, t time.Time) (Endorsement, error) {
+func (r Recognizer) Endorse(e Endorsed, aDesc ArtifactDescription, t time.Time) (Endorsement, error) {
     if r.grade < e.grade {
         return Endorsement{}, errors.New(
             "it is allowed to endorse only members with equal or lower grade",
@@ -110,10 +110,15 @@ func (r Recognizer) Endorse(e Endorsed, desc ArtifactDescription, t time.Time) (
             "you have reached the limit of available recommendations this year",
         )
     }
+    if uint64(r.id) == uint64(e.GetId()) {
+        return Endorsement{}, errors.New(
+            "recognizer can't endorse himself",
+        )
+    }
     return Endorsement{
         0, r.id, r.grade, r.version,
         e.id, e.grade, e.GetVersion(),
-        desc, t,
+        aDesc, t,
     }, nil
 }
 
