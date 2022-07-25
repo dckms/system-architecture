@@ -62,15 +62,16 @@
   <div class="section" id="canexecute-pattern">
 <span id="emacsway-golang-can-execute"></span><h1>Использовать ли в проекте CanExecute pattern?<a class="headerlink" href="#canexecute-pattern" title="Ссылка на этот заголовок">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
-<p>Использовать ли в этом проекте CanExecute pattern, описанный в статье <a class="reference external" href="https://enterprisecraftsmanship.com/posts/validation-and-ddd/">Validation and DDD</a> by Vladimir Khorikov?</p>
-<p>Vladimir продемонстрировал, действительно, очень удобный подход, без которого очень сложно обойтись там, где это вызвано объективной необходимостью:</p>
+<p>CanExecute pattern был описан в статье <a class="reference external" href="https://enterprisecraftsmanship.com/posts/validation-and-ddd/">Validation and DDD</a> by Vladimir Khorikov.</p>
+<p>Vladimir Khorikov - авторитетный специалист, смело принимающий на себя все риски первопроходца, который существенным образом повлиял на развитие индустрии, а также на мое становление как специалиста, за что я ему очень признателен.</p>
+<p>CanExecute pattern, продемонстрированный Владимиром, является, действительно, очень удобным подходом, без которого очень сложно обойтись там, где это вызвано объективной необходимостью:</p>
 <ol class="arabic simple">
 <li><p>в распределенных процедурах (процессах);</p></li>
 <li><p>там, где существует вероятность установления частично-валидного состояния композитного объекта, т.е. для обеспечения атомарности валидации с целью осуществимости атомарности изменения состояния.</p></li>
 </ol>
-<p>В других случаях, ключевой аргумент использования CanExecute pattern, приводимый в статье, сводится к CQS principle.
-Vladimir Khorikov - авторитетный специалист, смело принимающий на себя все риски первопроходца, который существенным образом повлиял на развитие индустрии, а также на мое становление как специалиста, за что я ему очень признателен.
-Я обсудил с ним этот вопрос, и он согласился с тем, что этот вопрос не совсем однозначный.</p>
+<p>В этом я убедился на собственной практике.</p>
+<p>В других случаях, ключевой аргумент использования CanExecute pattern, приводимый в статье, сводится к CQS principle.</p>
+<p>Я обсудил с ним этот вопрос, и он согласился с тем, что этот вопрос не совсем однозначный.</p>
 <p>В этом подходе меня смущает тот факт, что образуется логическая зависимость - клиент класса действует исходя из предположения о том, что оба метода используют один и тот же инвариант.</p>
 <p>В заметке &quot;<a class="reference internal" href="../../tactical-design/cqrs/cqrs-command-and-result.html#emacsway-cqs-command-status-code"><span class="std std-ref">Может ли Command возвращать служебную информацию (код ошибки или успешность выполнения)?</span></a>&quot; этот вопрос уже затрагивался, поэтому, повторюсь:</p>
 <blockquote>
@@ -87,7 +88,7 @@ It is also problematic if you need more than one status indicator.
 In such cases the C approach is either to return a &quot;structure&quot; (the equivalent of an object) with several components, which is getting close to the above scheme, or to use global variables — which raises a whole set of new problems, especially in a large system where many modules can trigger errors.&quot;</p>
 <p class="attribution">—&quot;Object-Oriented Software Construction&quot; 2nd edition by Bertrand Meyer, chapter &quot;23.1 SIDE EFFECTS IN FUNCTIONS&quot;</p>
 </div></blockquote>
-<p>Единственная причина, по которой Bertrand Meyer избегал возврат ошибок в то время, заключается в том, что тогда было невозможно возвратить одновременно и результат, и ошибку.
+<p>Единственная причина, по которой Bertrand Meyer избегал возврата ошибок в то время, заключается в том, что тогда было невозможно возвратить одновременно и результат, и ошибку.
 Сегодня таких проблем нет.
 В Golang это поддерживается на уровне синтаксиса языка, а в других языках поддерживается объект Result.</p>
 <p>Но даже если и разделять, то Bertrand Meyer рекомендует проверять ошибки после попытки, а не перед попыткой.</p>

@@ -2,15 +2,16 @@
 <rss version="2.0"><channel><title>System Architecture</title><link>https://dckms.github.io/system-architecture</link><description /><language>ru</language><copyright>2022, @dckms (&lt;a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow"&gt;License&lt;/a&gt;)</copyright><item><title>Использовать ли в проекте CanExecute pattern?</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/qualifying-grade/domain/why-no-can-execute.html</link><description>
 &lt;span id="emacsway-golang-can-execute"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Использовать ли в этом проекте CanExecute pattern, описанный в статье &lt;a class="reference external" href="https://enterprisecraftsmanship.com/posts/validation-and-ddd/"&gt;Validation and DDD&lt;/a&gt; by Vladimir Khorikov?&lt;/p&gt;
-&lt;p&gt;Vladimir продемонстрировал, действительно, очень удобный подход, без которого очень сложно обойтись там, где это вызвано объективной необходимостью:&lt;/p&gt;
+&lt;p&gt;CanExecute pattern был описан в статье &lt;a class="reference external" href="https://enterprisecraftsmanship.com/posts/validation-and-ddd/"&gt;Validation and DDD&lt;/a&gt; by Vladimir Khorikov.&lt;/p&gt;
+&lt;p&gt;Vladimir Khorikov - авторитетный специалист, смело принимающий на себя все риски первопроходца, который существенным образом повлиял на развитие индустрии, а также на мое становление как специалиста, за что я ему очень признателен.&lt;/p&gt;
+&lt;p&gt;CanExecute pattern, продемонстрированный Владимиром, является, действительно, очень удобным подходом, без которого очень сложно обойтись там, где это вызвано объективной необходимостью:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;p&gt;в распределенных процедурах (процессах);&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;там, где существует вероятность установления частично-валидного состояния композитного объекта, т.е. для обеспечения атомарности валидации с целью осуществимости атомарности изменения состояния.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;В других случаях, ключевой аргумент использования CanExecute pattern, приводимый в статье, сводится к CQS principle.
-Vladimir Khorikov - авторитетный специалист, смело принимающий на себя все риски первопроходца, который существенным образом повлиял на развитие индустрии, а также на мое становление как специалиста, за что я ему очень признателен.
-Я обсудил с ним этот вопрос, и он согласился с тем, что этот вопрос не совсем однозначный.&lt;/p&gt;
+&lt;p&gt;В этом я убедился на собственной практике.&lt;/p&gt;
+&lt;p&gt;В других случаях, ключевой аргумент использования CanExecute pattern, приводимый в статье, сводится к CQS principle.&lt;/p&gt;
+&lt;p&gt;Я обсудил с ним этот вопрос, и он согласился с тем, что этот вопрос не совсем однозначный.&lt;/p&gt;
 &lt;p&gt;В этом подходе меня смущает тот факт, что образуется логическая зависимость - клиент класса действует исходя из предположения о том, что оба метода используют один и тот же инвариант.&lt;/p&gt;
 &lt;p&gt;В заметке "&lt;a class="reference internal" href="../../tactical-design/cqrs/cqrs-command-and-result.html#emacsway-cqs-command-status-code"&gt;&lt;span class="std std-ref"&gt;Может ли Command возвращать служебную информацию (код ошибки или успешность выполнения)?&lt;/span&gt;&lt;/a&gt;" этот вопрос уже затрагивался, поэтому, повторюсь:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -27,7 +28,7 @@ It is also problematic if you need more than one status indicator.
 In such cases the C approach is either to return a "structure" (the equivalent of an object) with several components, which is getting close to the above scheme, or to use global variables — which raises a whole set of new problems, especially in a large system where many modules can trigger errors."&lt;/p&gt;
 &lt;p class="attribution"&gt;—"Object-Oriented Software Construction" 2nd edition by Bertrand Meyer, chapter "23.1 SIDE EFFECTS IN FUNCTIONS"&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Единственная причина, по которой Bertrand Meyer избегал возврат ошибок в то время, заключается в том, что тогда было невозможно возвратить одновременно и результат, и ошибку.
+&lt;p&gt;Единственная причина, по которой Bertrand Meyer избегал возврата ошибок в то время, заключается в том, что тогда было невозможно возвратить одновременно и результат, и ошибку.
 Сегодня таких проблем нет.
 В Golang это поддерживается на уровне синтаксиса языка, а в других языках поддерживается объект Result.&lt;/p&gt;
 &lt;p&gt;Но даже если и разделять, то Bertrand Meyer рекомендует проверять ошибки после попытки, а не перед попыткой.&lt;/p&gt;
