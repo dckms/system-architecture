@@ -10,7 +10,7 @@
 
 .. sectionauthor:: Ivan Zakrevsky
 
-CanExecute pattern был описан в статье `Validation and DDD <https://enterprisecraftsmanship.com/posts/validation-and-ddd/>`__ by Vladimir Khorikov.
+CanExecute pattern был описан в статье "`Validation and DDD <https://enterprisecraftsmanship.com/posts/validation-and-ddd/>`__" by Vladimir Khorikov.
 
 Vladimir Khorikov - авторитетный специалист, смело принимающий на себя все риски первопроходца, который существенным образом повлиял на развитие индустрии, а также на мое становление как специалиста, за что я ему очень признателен.
 
