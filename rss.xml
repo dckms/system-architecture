@@ -383,11 +383,48 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
+&lt;p&gt;Недостатком такого решения, который я успел обнаружить, является то, что клиент не имеет возможности определить структуру экспортируемого объекта, в отличии от варианта с интерфейсом.
+Это затрудняет создание обобщенных классов, например, &lt;a class="reference external" href="https://martinfowler.com/eaaCatalog/identityField.html"&gt;обобщенного композитного первичного ключа&lt;/a&gt;.
+В результате плодятся промежуточные структуры, которые затем нужно преобразовывать к нужному виду.&lt;/p&gt;
 &lt;p&gt;В проекте реализованы оба варианта для наглядности, на примере Агрегатов Recognizer и Endorsed.
 Но код первого варианта выглядит несколько устрашающе, и трудоемкость его поддержания неоправданно завышена.
 Поэтому, в других Агрегатах применяется только второй вариант.&lt;/p&gt;
 &lt;/div&gt;
-</description><pubDate>Tue, 26 Jul 2022 00:00:00 </pubDate></item><item><title>Использовать ли в проекте CanExecute pattern?</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/qualifying-grade/domain/why-no-can-execute.html</link><description>
+</description><pubDate>Thu, 28 Jul 2022 00:00:00 </pubDate></item><item><title>Файловая структура Доменной модели</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/qualifying-grade/domain/file-structure.html</link><description>
+&lt;span id="id1"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;О причинах образования такой файловой структуры.&lt;/p&gt;
+&lt;div class="contents topic" id="id2"&gt;
+&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-golang-domain-file-structure" id="id3"&gt;Файловая структура Доменной модели&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;dl class="simple"&gt;
+&lt;dt&gt;Зачем в каждом Bounded Context директория internal?&lt;/dt&gt;&lt;dd&gt;&lt;p&gt;Доменная модель должна быть инкапсулирована.
+Другим Bounded Contexts должны быть доступны только CQRS-Commands и Public Domain Events (Integration Events).&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;Почему агрегаты в разных директориях?&lt;/dt&gt;&lt;dd&gt;&lt;p&gt;Причины две:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;Чтобы подчеркнуть High Cohesion, см. главу "Chapter Five. A Model Expressed in Software :: Modules" книги "Domain-Driven Design: Tackling Complexity in the Heart of Software" by Eric Evans.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;В Golang это необходимо для реализации &lt;a class="reference internal" href="aggregate-encapsulation.html#emacsway-golang-encapsulation"&gt;&lt;span class="std std-ref"&gt;инкапсуляции Агрегата&lt;/span&gt;&lt;/a&gt;, чтобы ограничить доступ к защищенным атрибутам Агрегата извне.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/dd&gt;
+&lt;dt&gt;Почему Сущности Агрегатов выделены в отдельные директорию?&lt;/dt&gt;&lt;dd&gt;&lt;p&gt;Чтобы логически выделить связанные этой Сущностью объекты.
+Не очень удобно смотреть винегрет вложенных объектов различных Сущностей, поскольку они нерелевантны в момент рассмотрения и повышают когнитивную нагрузку.
+Впрочем, это решение является пока что экспериментальным и не окончательным, но оно предопределяет последующие решения.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;Почему в директории Агрегата есть директория с его названием?&lt;/dt&gt;&lt;dd&gt;&lt;p&gt;Для реализации ациклического графа зависимостей и исключения циклических импортов.
+Например, Агрегат может быть осведомлен о своей Сущности, а Сущность может быть осведомлена об Объекте-значении Агрегата.
+По этой причине все Объекты-значения Агрегата выделены в отдельную директорию.
+Иначе пришлось бы абсолютно все Cущности и Объекты-значения Агрегата разметить плоским списком в одной директории.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;Почему отдельная директория для интерфейсов?&lt;/dt&gt;&lt;dd&gt;&lt;p&gt;Интерфейсы используются крайне редко в доменной модели, за исключением, разве что, интерфейсов экспортеров и интерфейсов SeedWork.
+Причина выделения их в отдельную директорию заключается также в реализации ациклического графа зависимостей и исключения циклических импортов, поскольку интерфейсы являются эффективным средством разрешения циклических импортов ввиду того, что они не тащат за собой всю реализацию с ее зависимостями.
+Более того, отдельная директория интерфейсов позволяет быстро их отыскать, исключив из рассмотрения детали реализации, что является важным, поскольку интерфейсы являются ключевым инструментом управления зависимостями.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+</description><pubDate>Thu, 28 Jul 2022 00:00:00 </pubDate></item><item><title>Использовать ли в проекте CanExecute pattern?</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/qualifying-grade/domain/why-no-can-execute.html</link><description>
 &lt;span id="emacsway-golang-can-execute"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;CanExecute pattern был описан в статье "&lt;a class="reference external" href="https://enterprisecraftsmanship.com/posts/validation-and-ddd/"&gt;Validation and DDD&lt;/a&gt;" by Vladimir Khorikov.&lt;/p&gt;
@@ -617,7 +654,7 @@ In such cases the C approach is either to return a "structure" (the equivalent o
     &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nx"&gt;Grade1&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;receivedEndorsementCount&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
         &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setGrade&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;Candidate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;receivedEndorsementCount&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
-    &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nx"&gt;Candidate&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;receivedEndorsementCount&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nx"&gt;Candidate&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;receivedEndorsementCount&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
         &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setGrade&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;Expert&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;receivedEndorsementCount&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
     &lt;span class="p"&gt;}&lt;/span&gt;
@@ -969,7 +1006,7 @@ In such cases the C approach is either to return a "structure" (the equivalent o
         &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setGrade&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;Grade1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nx"&gt;Grade1&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getReceivedEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
         &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setGrade&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;Candidate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nx"&gt;Candidate&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getReceivedEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nx"&gt;Candidate&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getReceivedEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
         &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;setGrade&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;Expert&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;

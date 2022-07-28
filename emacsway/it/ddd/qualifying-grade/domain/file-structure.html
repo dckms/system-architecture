@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Файловая структура Доменной модели &#8212; System Architecture</title>
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../../../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../../../search.html" />
+    <link rel="next" title="Использовать ли в проекте CanExecute pattern?" href="why-no-can-execute.html" />
+    <link rel="prev" title="Как сохранить Агрегат в БД не разрушая инкапсуляции?" href="aggregate-encapsulation.html" />
+    
+   
+  <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+
+
+    
+        
+            <link rel="canonical" href="https://dckms.github.io/system-architecture/emacsway/it/ddd/qualifying-grade/domain/file-structure.html" />
+        
+    
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+              <div class="related top">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="aggregate-encapsulation.html" title="Previous document">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a>
+        </li>
+        <li>
+          <a href="why-no-can-execute.html" title="Next document">Использовать ли в проекте CanExecute pattern?</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+
+          <div class="body" role="main">
+            
+    
+  <div class="section" id="emacsway-golang-domain-file-structure">
+<span id="id1"></span><h1><a class="toc-backref" href="#id3">Файловая структура Доменной модели</a><a class="headerlink" href="#emacsway-golang-domain-file-structure" title="Ссылка на этот заголовок">¶</a></h1>
+<p><em>Автор раздела: Ivan Zakrevsky</em></p>
+<p>О причинах образования такой файловой структуры.</p>
+<div class="contents topic" id="id2">
+<p class="topic-title">Содержание</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#emacsway-golang-domain-file-structure" id="id3">Файловая структура Доменной модели</a></p></li>
+</ul>
+</div>
+<dl class="simple">
+<dt>Зачем в каждом Bounded Context директория internal?</dt><dd><p>Доменная модель должна быть инкапсулирована.
+Другим Bounded Contexts должны быть доступны только CQRS-Commands и Public Domain Events (Integration Events).</p>
+</dd>
+<dt>Почему агрегаты в разных директориях?</dt><dd><p>Причины две:</p>
+<ol class="arabic simple">
+<li><p>Чтобы подчеркнуть High Cohesion, см. главу &quot;Chapter Five. A Model Expressed in Software :: Modules&quot; книги &quot;Domain-Driven Design: Tackling Complexity in the Heart of Software&quot; by Eric Evans.</p></li>
+<li><p>В Golang это необходимо для реализации <a class="reference internal" href="aggregate-encapsulation.html#emacsway-golang-encapsulation"><span class="std std-ref">инкапсуляции Агрегата</span></a>, чтобы ограничить доступ к защищенным атрибутам Агрегата извне.</p></li>
+</ol>
+</dd>
+<dt>Почему Сущности Агрегатов выделены в отдельные директорию?</dt><dd><p>Чтобы логически выделить связанные этой Сущностью объекты.
+Не очень удобно смотреть винегрет вложенных объектов различных Сущностей, поскольку они нерелевантны в момент рассмотрения и повышают когнитивную нагрузку.
+Впрочем, это решение является пока что экспериментальным и не окончательным, но оно предопределяет последующие решения.</p>
+</dd>
+<dt>Почему в директории Агрегата есть директория с его названием?</dt><dd><p>Для реализации ациклического графа зависимостей и исключения циклических импортов.
+Например, Агрегат может быть осведомлен о своей Сущности, а Сущность может быть осведомлена об Объекте-значении Агрегата.
+По этой причине все Объекты-значения Агрегата выделены в отдельную директорию.
+Иначе пришлось бы абсолютно все Cущности и Объекты-значения Агрегата разметить плоским списком в одной директории.</p>
+</dd>
+<dt>Почему отдельная директория для интерфейсов?</dt><dd><p>Интерфейсы используются крайне редко в доменной модели, за исключением, разве что, интерфейсов экспортеров и интерфейсов SeedWork.
+Причина выделения их в отдельную директорию заключается также в реализации ациклического графа зависимостей и исключения циклических импортов, поскольку интерфейсы являются эффективным средством разрешения циклических импортов ввиду того, что они не тащат за собой всю реализацию с ее зависимостями.
+Более того, отдельная директория интерфейсов позволяет быстро их отыскать, исключив из рассмотрения детали реализации, что является важным, поскольку интерфейсы являются ключевым инструментом управления зависимостями.</p>
+</dd>
+</dl>
+</div>
+
+
+
+    
+        
+            <div class="section" style="text-align: right;">
+                <p><a href="https://dckms.github.io/system-architecture/emacsway/it/ddd/qualifying-grade/domain/file-structure.html">Canonical URL</a></p>
+            </div>
+        
+    
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="aggregate-encapsulation.html" title="Previous document">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a>
+        </li>
+        <li>
+          <a href="why-no-can-execute.html" title="Next document">Использовать ли в проекте CanExecute pattern?</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../index.html">System Architecture</a></h1>
+
+
+
+<p class="blurb">Distributed Collaborative Knowledge Management System for System Architecture</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dckms&repo=system-architecture&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Общее пространство:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/it/index.html">IT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/index.html">Общее пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Авторские пространства:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Пространство Emacsway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Приватное пространствo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../private/index.html">Приватное пространство</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Прочее:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../README.html">Как пользоваться</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://t.me/emacsway_log"><i class="fab fa-telegram" style="color:#54a9eb;"></i> Telegram</a></li>
+    
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../../trunk/it/index.html">IT</a></li>
+  <li><a href="../../../../../trunk/it/ddd/index.html">DDD</a></li>
+  <li><a href="../index.html">Reference Application &quot;Qualifying Grade&quot;</a></li>
+  <li><a href="index.html">Domain Layer</a></li><ul>
+      <li>Previous: <a href="aggregate-encapsulation.html" title="предыдущая глава">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a></li>
+      <li>Next: <a href="why-no-can-execute.html" title="следующая глава">Использовать ли в проекте CanExecute pattern?</a></li></ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="footer">
+      &copy;2022, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../../_sources/emacsway/it/ddd/qualifying-grade/domain/file-structure.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/dckms/system-architecture" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+
+    
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+           ym(87033138, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true,
+                trackHash:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/87033138" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    
+
+  </body>
+</html>

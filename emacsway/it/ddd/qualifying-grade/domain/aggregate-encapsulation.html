@@ -16,7 +16,7 @@
     <script src="../../../../../_static/translations.js"></script>
     <link rel="index" title="Алфавитный указатель" href="../../../../../genindex.html" />
     <link rel="search" title="Поиск" href="../../../../../search.html" />
-    <link rel="next" title="Использовать ли в проекте CanExecute pattern?" href="why-no-can-execute.html" />
+    <link rel="next" title="Файловая структура Доменной модели" href="file-structure.html" />
     <link rel="prev" title="Поиск границ Агрегатов" href="aggregate-boundaries.html" />
     
    
@@ -48,7 +48,7 @@
           <a href="aggregate-boundaries.html" title="Previous document">Поиск границ Агрегатов</a>
         </li>
         <li>
-          <a href="why-no-can-execute.html" title="Next document">Использовать ли в проекте CanExecute pattern?</a>
+          <a href="file-structure.html" title="Next document">Файловая структура Доменной модели</a>
           &rarr;
         </li>
     </ul>
@@ -443,6 +443,9 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>Недостатком такого решения, который я успел обнаружить, является то, что клиент не имеет возможности определить структуру экспортируемого объекта, в отличии от варианта с интерфейсом.
+Это затрудняет создание обобщенных классов, например, <a class="reference external" href="https://martinfowler.com/eaaCatalog/identityField.html">обобщенного композитного первичного ключа</a>.
+В результате плодятся промежуточные структуры, которые затем нужно преобразовывать к нужному виду.</p>
 <p>В проекте реализованы оба варианта для наглядности, на примере Агрегатов Recognizer и Endorsed.
 Но код первого варианта выглядит несколько устрашающе, и трудоемкость его поддержания неоправданно завышена.
 Поэтому, в других Агрегатах применяется только второй вариант.</p>
@@ -469,7 +472,7 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
           <a href="aggregate-boundaries.html" title="Previous document">Поиск границ Агрегатов</a>
         </li>
         <li>
-          <a href="why-no-can-execute.html" title="Next document">Использовать ли в проекте CanExecute pattern?</a>
+          <a href="file-structure.html" title="Next document">Файловая структура Доменной модели</a>
           &rarr;
         </li>
     </ul>
@@ -535,7 +538,7 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
   <li><a href="../index.html">Reference Application &quot;Qualifying Grade&quot;</a></li>
   <li><a href="index.html">Domain Layer</a></li><ul>
       <li>Previous: <a href="aggregate-boundaries.html" title="предыдущая глава">Поиск границ Агрегатов</a></li>
-      <li>Next: <a href="why-no-can-execute.html" title="следующая глава">Использовать ли в проекте CanExecute pattern?</a></li></ul>
+      <li>Next: <a href="file-structure.html" title="следующая глава">Файловая структура Доменной модели</a></li></ul>
   </ul></li>
 </ul>
 </div>
