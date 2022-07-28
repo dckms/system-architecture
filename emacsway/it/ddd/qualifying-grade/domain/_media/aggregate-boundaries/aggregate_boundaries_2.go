@@ -83,7 +83,7 @@ func (e *Endorsed) actualizeGrade(t time.Time) {
         e.setGrade(Grade1, t)
     } else if e.grade == Grade1 && e.getReceivedEndorsementCount() >= 20 {
         e.setGrade(Candidate, t)
-    } else if e.grade == Candidate && e.getReceivedEndorsementCount() >= 10 {
+    } else if e.grade == Candidate && e.getReceivedEndorsementCount() >= 40 {
         e.setGrade(Expert, t)
     }
 }

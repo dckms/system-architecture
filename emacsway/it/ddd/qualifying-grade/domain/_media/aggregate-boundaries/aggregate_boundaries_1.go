@@ -66,7 +66,7 @@ func (e *Endorsed) IncreaseReceivedEndorsementCount(w Weight, t time.Time) {
     } else if e.grade == Grade1 && e.receivedEndorsementCount >= 20 {
         e.setGrade(Candidate, t)
         e.receivedEndorsementCount = 0
-    } else if e.grade == Candidate && e.receivedEndorsementCount >= 10 {
+    } else if e.grade == Candidate && e.receivedEndorsementCount >= 40 {
         e.setGrade(Expert, t)
         e.receivedEndorsementCount = 0
     }
