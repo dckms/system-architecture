@@ -678,7 +678,7 @@ Streaming Processing
 
 - "Streaming Data: Understanding the real-time pipeline" 1st edition by Andrew Psaltis
 - "Big Data: Principles and best practices of scalable realtime data systems" 1st edition by Nathan Marz, James Warren
-- "Kafka Streams in Action: Real-time apps and microservices with the Kafka Streams API" 1st edition by Bill Bejeck 
+- "Kafka Streams in Action: Real-time apps and microservices with the Kafka Streams API" 1st edition by Bill Bejeck
 - "The Enterprise Big Data Lake: Delivering the Promise of Big Data and Data Science" 1st edition by Alex Gorelik
 
 
@@ -767,6 +767,7 @@ Donald E. Knuth:
 Компиляторы
 -----------
 
+- "`Crafting Interpreters <https://craftinginterpreters.com/>`" by Robert Nystrom
 - "Compiler Construction" by N.Wirth
 - "Compilers: Principles, Techniques, and Tools" 2nd edition by Alfred V. Aho, Monica S. Lam, Ravi Sethi, Jeffrey D. Ullman
 
