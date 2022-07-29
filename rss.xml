@@ -10,7 +10,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#bounded-context-internal" id="id8"&gt;Зачем в каждом Bounded Context директория internal?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id9"&gt;Почему агрегаты в разных директориях?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id4" id="id10"&gt;Почему Сущности Агрегатов выделены в отдельные директорию?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id4" id="id10"&gt;Почему Сущности Агрегатов выделены в отдельные директории?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id5" id="id11"&gt;Почему в директории Агрегата есть директория с его названием?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id6" id="id12"&gt;Почему отдельная директория для интерфейсов?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -31,7 +31,7 @@
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id4"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id10"&gt;Почему Сущности Агрегатов выделены в отдельные директорию?&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id10"&gt;Почему Сущности Агрегатов выделены в отдельные директории?&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Чтобы логически выделить связанные этой Сущностью объекты.
 Не очень удобно смотреть винегрет вложенных объектов различных Сущностей, поскольку они нерелевантны в момент рассмотрения и повышают когнитивную нагрузку.&lt;/p&gt;
 &lt;p&gt;Впрочем, это решение является пока что экспериментальным и не окончательным, но оно предопределяет последующие решения.&lt;/p&gt;
@@ -41,14 +41,14 @@
 Выберите о дин объект-СУЩНОСТЬ и сделайте его корневым.
 Осуществляйте все обращения к объектам в границах АГРЕГАТА только через его корневой объект.
 Разрешайте внешним объектам хранить ссылки только на корневой объект.
-Ссылки на внутренние объекты АГРЕГАТА следует передавать только во временное пользование , на время одной операции.
-Поскольку доступ к объектам АГРЕГАТА кон­тролируется через корневой объект, неожиданные изменения внутренних объектов невозможны.
+&lt;strong&gt;Ссылки на внутренние объекты АГРЕГАТА следует передавать только во временное пользование, на время одной операции.&lt;/strong&gt;
+&lt;strong&gt;Поскольку доступ к объектам АГРЕГАТА кон­тролируется через корневой объект, неожиданные изменения внутренних объектов невозможны.&lt;/strong&gt;
 В такой схеме разумно требовать удовлетворения всех инвариантов для объектов в АГРЕГАТЕ и для всего АГРЕГАТА в целом при любом изменении состояния.&lt;/p&gt;
 &lt;p&gt;Cluster the ENTITIES and VALUE OBJECTS into AGGREGATES and define boundaries around each.
-Choose one ENTITY to be the root of each AGGREGATE , and control all access to the objects inside the boundary through the root.
+Choose one ENTITY to be the root of each AGGREGATE, and control all access to the objects inside the boundary through the root.
 Allow external objects to hold references to the root only.
-Transient references to internal members can be passed out for use within a single operation only.
-Because the root controls access, it cannot be blindsided by changes to the internals.
+&lt;strong&gt;Transient references to internal members can be passed out for use within a single operation only.&lt;/strong&gt;
+&lt;strong&gt;Because the root controls access, it cannot be blindsided by changes to the internals.&lt;/strong&gt;
 This arrangement makes it practical to enforce all invariants for objects in the AGGREGATE and for the AGGREGATE as a whole in any state change."&lt;/p&gt;
 &lt;p class="attribution"&gt;—"Domain-Driven Design: Tackling Complexity in the Heart of Software" by Eric Evans, перевод В.Л. Бродового&lt;/p&gt;
 &lt;/div&gt;&lt;/blockquote&gt;

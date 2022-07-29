@@ -31,7 +31,7 @@
 2. В Golang это необходимо для реализации :ref:`инкапсуляции Агрегата <emacsway-golang-encapsulation>`, чтобы ограничить доступ к защищенным атрибутам Агрегата извне.
 
 
-Почему Сущности Агрегатов выделены в отдельные директорию?
+Почему Сущности Агрегатов выделены в отдельные директории?
 ==========================================================
 
 Чтобы логически выделить связанные этой Сущностью объекты.
@@ -45,15 +45,15 @@
     Выберите о дин объект-СУЩНОСТЬ и сделайте его корневым.
     Осуществляйте все обращения к объектам в границах АГРЕГАТА только через его корневой объект.
     Разрешайте внешним объектам хранить ссылки только на корневой объект.
-    Ссылки на внутренние объекты АГРЕГАТА следует передавать только во временное пользование , на время одной операции.
-    Поскольку доступ к объектам АГРЕГАТА кон­тролируется через корневой объект, неожиданные изменения внутренних объектов невозможны.
+    **Ссылки на внутренние объекты АГРЕГАТА следует передавать только во временное пользование, на время одной операции.**
+    **Поскольку доступ к объектам АГРЕГАТА кон­тролируется через корневой объект, неожиданные изменения внутренних объектов невозможны.**
     В такой схеме разумно требовать удовлетворения всех инвариантов для объектов в АГРЕГАТЕ и для всего АГРЕГАТА в целом при любом изменении состояния.
 
     Cluster the ENTITIES and VALUE OBJECTS into AGGREGATES and define boundaries around each.
-    Choose one ENTITY to be the root of each AGGREGATE , and control all access to the objects inside the boundary through the root.
+    Choose one ENTITY to be the root of each AGGREGATE, and control all access to the objects inside the boundary through the root.
     Allow external objects to hold references to the root only.
-    Transient references to internal members can be passed out for use within a single operation only.
-    Because the root controls access, it cannot be blindsided by changes to the internals.
+    **Transient references to internal members can be passed out for use within a single operation only.**
+    **Because the root controls access, it cannot be blindsided by changes to the internals.**
     This arrangement makes it practical to enforce all invariants for objects in the AGGREGATE and for the AGGREGATE as a whole in any state change."
 
     -- "Domain-Driven Design: Tackling Complexity in the Heart of Software" by Eric Evans, перевод В.Л. Бродового
