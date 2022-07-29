@@ -6,30 +6,33 @@
 &lt;div class="contents topic" id="id2"&gt;
 &lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-golang-domain-file-structure" id="id6"&gt;Файловая структура Доменной модели&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-golang-domain-file-structure" id="id7"&gt;Файловая структура Доменной модели&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#bounded-context-internal" id="id7"&gt;Зачем в каждом Bounded Context директория internal?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id8"&gt;Почему агрегаты в разных директориях?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id4" id="id9"&gt;Почему в директории Агрегата есть директория с его названием?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id5" id="id10"&gt;Почему отдельная директория для интерфейсов?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#bounded-context-internal" id="id8"&gt;Зачем в каждом Bounded Context директория internal?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id3" id="id9"&gt;Почему агрегаты в разных директориях?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id4" id="id10"&gt;Почему Сущности Агрегатов выделены в отдельные директорию?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id5" id="id11"&gt;Почему в директории Агрегата есть директория с его названием?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#id6" id="id12"&gt;Почему отдельная директория для интерфейсов?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="bounded-context-internal"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id7"&gt;Зачем в каждом Bounded Context директория internal?&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id8"&gt;Зачем в каждом Bounded Context директория internal?&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Доменная модель должна быть инкапсулирована.
 Другим Bounded Contexts должны быть доступны только CQRS-Commands и Public Domain Events (Integration Events).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id3"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id8"&gt;Почему агрегаты в разных директориях?&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id9"&gt;Почему агрегаты в разных директориях?&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Причины две:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;&lt;p&gt;Чтобы подчеркнуть High Cohesion, см. главу "Chapter Five. A Model Expressed in Software :: Modules" книги "Domain-Driven Design: Tackling Complexity in the Heart of Software" by Eric Evans.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;В Golang это необходимо для реализации &lt;a class="reference internal" href="aggregate-encapsulation.html#emacsway-golang-encapsulation"&gt;&lt;span class="std std-ref"&gt;инкапсуляции Агрегата&lt;/span&gt;&lt;/a&gt;, чтобы ограничить доступ к защищенным атрибутам Агрегата извне.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Почему Сущности Агрегатов выделены в отдельные директорию?
-Чтобы логически выделить связанные этой Сущностью объекты.
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id10"&gt;Почему Сущности Агрегатов выделены в отдельные директорию?&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Чтобы логически выделить связанные этой Сущностью объекты.
 Не очень удобно смотреть винегрет вложенных объектов различных Сущностей, поскольку они нерелевантны в момент рассмотрения и повышают когнитивную нагрузку.&lt;/p&gt;
 &lt;p&gt;Впрочем, это решение является пока что экспериментальным и не окончательным, но оно предопределяет последующие решения.&lt;/p&gt;
 &lt;p&gt;Есть у этого решения контраргумент, который заключается в том, что Сущность, хотя и кратковременно, но может отдаваться наружу Агрегата, если при этом она остается неизменяемой.&lt;/p&gt;
@@ -55,15 +58,15 @@ This arrangement makes it practical to enforce all invariants for objects in the
 Это значит, что посторонние клиенты не получат доступа к мутирующим методам Сущности только потому, что они нужны Агрегату.&lt;/p&gt;
 &lt;p&gt;Так же стоит отметить, что большое количество файлов и директорий создают впечатление устрашающей монструозности, что производит, скорее, отталкивающий эффект, нежели привлекательный.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id4"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id9"&gt;Почему в директории Агрегата есть директория с его названием?&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id11"&gt;Почему в директории Агрегата есть директория с его названием?&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Для реализации ациклического графа зависимостей и исключения циклических импортов.
 Например, Агрегат может быть осведомлен о своей Сущности, а Сущность может быть осведомлена об Объекте-значении Агрегата.
 По этой причине все Объекты-значения Агрегата выделены в отдельную директорию.
 Иначе пришлось бы абсолютно все Cущности и Объекты-значения Агрегата разметить плоским списком в одной директории.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id5"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id10"&gt;Почему отдельная директория для интерфейсов?&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id12"&gt;Почему отдельная директория для интерфейсов?&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Интерфейсы используются крайне редко в доменной модели, за исключением, разве что, интерфейсов экспортеров и интерфейсов SeedWork.
 Причина выделения их в отдельную директорию заключается также в реализации ациклического графа зависимостей и исключения циклических импортов, поскольку интерфейсы являются эффективным средством разрешения циклических импортов ввиду того, что они не тащат за собой всю реализацию с ее зависимостями.
 Более того, отдельная директория интерфейсов позволяет быстро их отыскать, исключив из рассмотрения детали реализации, что является важным, поскольку интерфейсы являются ключевым инструментом управления зависимостями.&lt;/p&gt;

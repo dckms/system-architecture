@@ -60,36 +60,39 @@
             
     
   <div class="section" id="emacsway-golang-domain-file-structure">
-<span id="id1"></span><h1><a class="toc-backref" href="#id6">Файловая структура Доменной модели</a><a class="headerlink" href="#emacsway-golang-domain-file-structure" title="Ссылка на этот заголовок">¶</a></h1>
+<span id="id1"></span><h1><a class="toc-backref" href="#id7">Файловая структура Доменной модели</a><a class="headerlink" href="#emacsway-golang-domain-file-structure" title="Ссылка на этот заголовок">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
 <p>О причинах образования такой файловой структуры.</p>
 <div class="contents topic" id="id2">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#emacsway-golang-domain-file-structure" id="id6">Файловая структура Доменной модели</a></p>
+<li><p><a class="reference internal" href="#emacsway-golang-domain-file-structure" id="id7">Файловая структура Доменной модели</a></p>
 <ul>
-<li><p><a class="reference internal" href="#bounded-context-internal" id="id7">Зачем в каждом Bounded Context директория internal?</a></p></li>
-<li><p><a class="reference internal" href="#id3" id="id8">Почему агрегаты в разных директориях?</a></p></li>
-<li><p><a class="reference internal" href="#id4" id="id9">Почему в директории Агрегата есть директория с его названием?</a></p></li>
-<li><p><a class="reference internal" href="#id5" id="id10">Почему отдельная директория для интерфейсов?</a></p></li>
+<li><p><a class="reference internal" href="#bounded-context-internal" id="id8">Зачем в каждом Bounded Context директория internal?</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id9">Почему агрегаты в разных директориях?</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id10">Почему Сущности Агрегатов выделены в отдельные директорию?</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id11">Почему в директории Агрегата есть директория с его названием?</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id12">Почему отдельная директория для интерфейсов?</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="bounded-context-internal">
-<h2><a class="toc-backref" href="#id7">Зачем в каждом Bounded Context директория internal?</a><a class="headerlink" href="#bounded-context-internal" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">Зачем в каждом Bounded Context директория internal?</a><a class="headerlink" href="#bounded-context-internal" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Доменная модель должна быть инкапсулирована.
 Другим Bounded Contexts должны быть доступны только CQRS-Commands и Public Domain Events (Integration Events).</p>
 </div>
 <div class="section" id="id3">
-<h2><a class="toc-backref" href="#id8">Почему агрегаты в разных директориях?</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">Почему агрегаты в разных директориях?</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Причины две:</p>
 <ol class="arabic simple">
 <li><p>Чтобы подчеркнуть High Cohesion, см. главу &quot;Chapter Five. A Model Expressed in Software :: Modules&quot; книги &quot;Domain-Driven Design: Tackling Complexity in the Heart of Software&quot; by Eric Evans.</p></li>
 <li><p>В Golang это необходимо для реализации <a class="reference internal" href="aggregate-encapsulation.html#emacsway-golang-encapsulation"><span class="std std-ref">инкапсуляции Агрегата</span></a>, чтобы ограничить доступ к защищенным атрибутам Агрегата извне.</p></li>
 </ol>
-<p>Почему Сущности Агрегатов выделены в отдельные директорию?
-Чтобы логически выделить связанные этой Сущностью объекты.
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id10">Почему Сущности Агрегатов выделены в отдельные директорию?</a><a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Чтобы логически выделить связанные этой Сущностью объекты.
 Не очень удобно смотреть винегрет вложенных объектов различных Сущностей, поскольку они нерелевантны в момент рассмотрения и повышают когнитивную нагрузку.</p>
 <p>Впрочем, это решение является пока что экспериментальным и не окончательным, но оно предопределяет последующие решения.</p>
 <p>Есть у этого решения контраргумент, который заключается в том, что Сущность, хотя и кратковременно, но может отдаваться наружу Агрегата, если при этом она остается неизменяемой.</p>
@@ -115,15 +118,15 @@ This arrangement makes it practical to enforce all invariants for objects in the
 Это значит, что посторонние клиенты не получат доступа к мутирующим методам Сущности только потому, что они нужны Агрегату.</p>
 <p>Так же стоит отметить, что большое количество файлов и директорий создают впечатление устрашающей монструозности, что производит, скорее, отталкивающий эффект, нежели привлекательный.</p>
 </div>
-<div class="section" id="id4">
-<h2><a class="toc-backref" href="#id9">Почему в директории Агрегата есть директория с его названием?</a><a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id11">Почему в директории Агрегата есть директория с его названием?</a><a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Для реализации ациклического графа зависимостей и исключения циклических импортов.
 Например, Агрегат может быть осведомлен о своей Сущности, а Сущность может быть осведомлена об Объекте-значении Агрегата.
 По этой причине все Объекты-значения Агрегата выделены в отдельную директорию.
 Иначе пришлось бы абсолютно все Cущности и Объекты-значения Агрегата разметить плоским списком в одной директории.</p>
 </div>
-<div class="section" id="id5">
-<h2><a class="toc-backref" href="#id10">Почему отдельная директория для интерфейсов?</a><a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id12">Почему отдельная директория для интерфейсов?</a><a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Интерфейсы используются крайне редко в доменной модели, за исключением, разве что, интерфейсов экспортеров и интерфейсов SeedWork.
 Причина выделения их в отдельную директорию заключается также в реализации ациклического графа зависимостей и исключения циклических импортов, поскольку интерфейсы являются эффективным средством разрешения циклических импортов ввиду того, что они не тащат за собой всю реализацию с ее зависимостями.
 Более того, отдельная директория интерфейсов позволяет быстро их отыскать, исключив из рассмотрения детали реализации, что является важным, поскольку интерфейсы являются ключевым инструментом управления зависимостями.</p>
