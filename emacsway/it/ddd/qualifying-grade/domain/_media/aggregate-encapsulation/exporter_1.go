@@ -14,25 +14,21 @@ type Exportable[T any] interface {
 
 type ExportableUint uint
 
-func (e ExportableUint) ExportTo(ex Exporter[uint]) {
+func (e ExportableUint) Export(ex Exporter[uint]) {
     ex.SetState(uint(e))
 }
 
-type RecognizerId ExportableUint
 type MemberId ExportableUint
 type Grade ExportableUint
 type EndorsementCount ExportableUint
 
-type RecognizerExporter interface {
-    SetState(
-        id Exporter[uint],
-        memberId Exporter[uint],
-        grade Exporter[uint],
-        availableEndorsementCount Exporter[uint],
-        pendingEndorsementCount Exporter[uint],
-        version uint,
-        createdAt time.Time,
-    )
+type RecognizerExporterSetter interface {
+    SetId(MemberId)
+    SetGrade(Grade)
+    SetAvailableEndorsementCount(EndorsementCount)
+    SetPendingEndorsementCount(EndorsementCount)
+    SetVersion(uint)
+    SetCreatedAt(time.Time)
 }
 
 type UintExporter uint
@@ -42,8 +38,7 @@ func (e *UintExporter) SetState(value uint) {
 }
 
 type Recognizer struct {
-    id                        RecognizerId
-    memberId                  MemberId
+    id                        MemberId
     grade                     Grade
     availableEndorsementCount EndorsementCount
     pendingEndorsementCount   EndorsementCount
@@ -51,17 +46,44 @@ type Recognizer struct {
     createdAt                 time.Time
 }
 
-func (r Recognizer) ExportTo(ex RecognizerExporter) {
-    var id, memberId UintExporter
-    var grade, availableEndorsementCount, pendingEndorsementCount UintExporter
+func (r Recognizer) Export(ex RecognizerExporterSetter) {
+    ex.SetId(r.id)
+    ex.SetGrade(r.grade)
+    ex.SetAvailableEndorsementCount(r.availableEndorsementCount)
+    ex.SetPendingEndorsementCount(r.pendingEndorsementCount)
+    ex.SetVersion(r.version)
+    ex.SetCreatedAt(r.createdAt)
+}
 
-    r.id.ExportTo(&id)
-    r.memberId.ExportTo(&memberId)
-    r.grade.ExportTo(&grade)
-    r.availableEndorsementCount.ExportTo(&availableEndorsementCount)
-    r.pendingEndorsementCount.ExportTo(&pendingEndorsementCount)
-    ex.SetState(
-        &id, &memberId, &grade, &availableEndorsementCount,
-        &pendingEndorsementCount, r.version, r.createdAt,
-    )
+type RecognizerExporter struct {
+    Id                        UintExporter
+    Grade                     UintExporter
+    AvailableEndorsementCount UintExporter
+    PendingEndorsementCount   UintExporter
+    Version                   uint
+    CreatedAt                 time.Time
+}
+
+func (ex *RecognizerExporter) SetId(val MemberId) {
+    val.Export(&ex.Id)
+}
+
+func (ex *RecognizerExporter) SetGrade(val Grade) {
+    val.Export(&ex.Grade)
+}
+
+func (ex *RecognizerExporter) SetAvailableEndorsementCount(val EndorsementCount) {
+    val.Export(&ex.AvailableEndorsementCount)
+}
+
+func (ex *RecognizerExporter) SetPendingEndorsementCount(val EndorsementCount) {
+    val.Export(&ex.PendingEndorsementCount)
+}
+
+func (ex *RecognizerExporter) SetVersion(val uint) {
+    ex.Version = val
+}
+
+func (ex *RecognizerExporter) SetCreatedAt(val time.Time) {
+    ex.CreatedAt = val
 }
