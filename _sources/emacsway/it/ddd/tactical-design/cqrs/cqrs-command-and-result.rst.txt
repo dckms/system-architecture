@@ -405,7 +405,7 @@ B.Meyer решает эту проблему с помощью концепци�
 
     -- "Clarified CQRS" `comment 68 <http://udidahan.com/2009/12/09/clarified-cqrs/#comment-5118>`__ of Udi Dahan
 
-Идентификатор может быть сгенерирован на стороне клиентского приложения, используя `UUID <https://en.wikipedia.org/wiki/Universally_unique_identifier>`__, `Hi/Lo algorithm <https://en.wikipedia.org/wiki/Hi/Lo_algorithm>`__ и т.п.
+Идентификатор может быть сгенерирован на стороне клиентского приложения, используя `UUID <https://en.wikipedia.org/wiki/Universally_unique_identifier>`__, `ULID <https://github.com/ulid/spec>`__, `Hi/Lo algorithm <https://en.wikipedia.org/wiki/Hi/Lo_algorithm>`__ и т.п.
 После этого, ресурс может быть создан посредством PUT Request Method:
 
     📝 "The PUT method requests that the state of the target resource be created or replaced with the state defined by the representation enclosed in the request message payload. <...> If the target resource does not have a current representation and the PUT successfully creates one, then the origin server MUST inform the user agent by sending a 201 (Created) response."
