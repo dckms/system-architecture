@@ -1,5 +1,405 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0"><channel><title>System Architecture</title><link>https://dckms.github.io/system-architecture</link><description /><language>ru</language><copyright>2022, @dckms (&lt;a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow"&gt;License&lt;/a&gt;)</copyright><item><title>Файловая структура Доменной модели</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/qualifying-grade/domain/file-structure.html</link><description>
+<rss version="2.0"><channel><title>System Architecture</title><link>https://dckms.github.io/system-architecture</link><description /><language>ru</language><copyright>2022, @dckms (&lt;a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow"&gt;License&lt;/a&gt;)</copyright><item><title>Как сохранить Агрегат в БД не разрушая инкапсуляции?</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/qualifying-grade/domain/aggregate-encapsulation.html</link><description>
+&lt;span id="id1"/&gt; 
+&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Инварианты лишены смысла своего существования в условиях дырявой, как решето, инкапсуляции.
+Вопрос в том, как сохранить инкапсуляцию Агрегатов в Golang, когда нам требуется его внутреннее состояние для формирования SQL-запроса, или, наоборот, требуется установить состояние Агрегата в результате выполнения SQL-запроса.&lt;/p&gt;
+&lt;div class="contents topic" id="id2"&gt;
+&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-golang-encapsulation" id="id3"&gt;Как сохранить Агрегат в БД не разрушая инкапсуляции?&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#memento-pattern" id="id4"&gt;Memento pattern&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#walker" id="id5"&gt;Walker&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#valuer-scanner" id="id6"&gt;Valuer &amp;amp; Scanner&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#reflection" id="id7"&gt;Reflection&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#exporter" id="id8"&gt;Exporter&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="memento-pattern"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;Memento pattern&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Memento оказался близко, но не по назначению. Суть Memento в том, что он не должен раскрывать свое состояние никому, кроме своего создателя:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;Preserving encapsulation boundaries. Memento avoids exposing information that only an originator should manage but that must be stored nevertheless outside the originator.
+The pattern shields other objects from potentially complex Originator internals, thereby preserving encapsulation boundaries.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p class="attribution"&gt;—"Design Patterns: Elements of Reusable Object-Oriented Software" by Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="walker"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id5"&gt;Walker&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Walker представляет собою модификацию паттерна Visitor с целью сохранить инкапсуляцию Агрегатов. К числу недостатков паттерна паттерна Visitor относится:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;6. Breaking encapsulation. Visitor's approach assumes that the ConcreteElement interface is powerful enough to let visitors do their job.
+As a result, the pattern often forces you to provide public operations that access an element's internal state, which may compromise its encapsulation.&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Design Patterns: Elements of Reusable Object-Oriented Software" by Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Что будет создавать Walker в случае обхода иерархической структуры Агрегата с несколькими вложенными Сущностями?
+Вероятно, это будет будет несколько SQL-запросов с параметрами, т.е. некий композитный объект, выраженный некой структурой данных.
+Это лишает смысла использование Visitor, если можно сразу возвратить структуру данных, причем, абстрагированную от SQL.&lt;/p&gt;
+&lt;p&gt;Технически, можно сделать так:&lt;/p&gt;
+&lt;div class="highlight-go notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt;&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Walkable&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;Accept&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;Walker&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Walker&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;SetField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;WalkWalkable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;Walkable&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;WalkUint8&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;uint8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;WalkUint64&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;uint64&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;WalkUint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;WalkTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight-go notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt;&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt; &lt;span class="nx"&gt;Endorsement&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;Accept&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;walker&lt;/span&gt; &lt;span class="nx"&gt;interfaces&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Walker&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;walker&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;SetField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"recognizerId"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;walker&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;WalkWalkable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;recognizerId&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;walker&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;SetField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"recognizerGrade"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;walker&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;WalkWalkable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;recognizerGrade&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="c1"&gt;// ...&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="highlight-go notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt;&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt; &lt;span class="nx"&gt;RecognizerId&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;Accept&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;walker&lt;/span&gt; &lt;span class="nx"&gt;interfaces&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Walker&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;walker&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;WalkUint64&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Value&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Проблема в том, что на этапе создания SQL-запроса нам пока еще могут быть неизвестны первичные ключи Агрегатов, чтобы их можно было бы проставить в SQL-запросы их Сущностей.&lt;/p&gt;
+&lt;p&gt;Кроме того, осведомленность о способах образования SQL-запросов размазывается между Walkers и Repositories, что вызывает "Разлет Дроби" (Code Smell) в случае изменения существующего способа построения SQL (например, в случае изменения диалекта БД или в случае внедрения какого-либо QueryBuilder).
+Walker начинает быть слишком осведомленным о деталях реализации Repository.&lt;/p&gt;
+&lt;p&gt;В целях достижения DRY возникает целесообразность возложить на Walker генерирование только части SQL, и освободить его от осведомленности знания таблиц в БД, что будет разрывать обязанность за построение SQL на несколько объектов и подрывать Cohesion.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="valuer-scanner"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id6"&gt;Valuer &amp;amp; Scanner&lt;/a&gt;&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://pkg.go.dev/database/sql/driver#Valuer"&gt;Valuer&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://pkg.go.dev/database/sql#Scanner"&gt;Scanner&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Интерфейс Scanner открывает дверь к изменяемости ValueObject, что противоречит основной его сути.
+А так же открывает брешь в инкапсуляции Агрегата.&lt;/p&gt;
+&lt;p&gt;Но есть еще один момент - метод &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;Scan(src&lt;/span&gt; &lt;span class="pre"&gt;any)&lt;/span&gt; &lt;span class="pre"&gt;error&lt;/span&gt;&lt;/code&gt; вызывается у конкретного типа, что препятствует использованию паттерна, известного как &lt;a class="reference external" href="https://martinfowler.com/eaaCatalog/specialCase.html"&gt;Special Case&lt;/a&gt; или &lt;a class="reference external" href="https://refactoring.com/catalog/introduceSpecialCase.html"&gt;Null Object&lt;/a&gt;.
+Кроме того, в некоторых случаях может потребоваться преобразовать неизменяемые исторические данные для новой версии модели.
+Вопрос затрагивался в разделе "4. Validating historical data" статьи "&lt;a class="reference external" href="https://enterprisecraftsmanship.com/posts/always-valid-domain-model/"&gt;Always-Valid Domain Model&lt;/a&gt;" by Vladimir Khorikov и в разделе "6. The use of ORMs within and outside of the always-valid boundary" статьи "&lt;a class="reference external" href="https://enterprisecraftsmanship.com/posts/database-always-valid-domain-model/"&gt;Database and Always-Valid Domain Model&lt;/a&gt;" by Vladimir Khorikov.&lt;/p&gt;
+&lt;p&gt;С другой стороны, Valuer может возвращать только примитивные типы, а значит, он не пригоден для экспорта иерархической структуры состояния Агрегата:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;It is either nil, a type handled by a database driver's NamedValueChecker interface, or an instance of one of these types:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;int64&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;float64&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;bool&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;[]byte&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;string&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;time.Time&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://pkg.go.dev/database/sql/driver#Value"&gt;Источник&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="reflection"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id7"&gt;Reflection&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;В документации &lt;a class="reference external" href="https://pkg.go.dev/reflect#Value.FieldByName"&gt;отсутствуют&lt;/a&gt; какие-либо упоминания об ограничении доступа к защищенным атрибутам структуры данных посредством рефлекции.&lt;/p&gt;
+&lt;p&gt;Может быть через рефлексию и заработало бы - я не пробовал.
+Но использовать рефлексию в production для таких целей как-то не сильно хочется, в т.ч. и по соображениям производительности.
+К тому же этот метод является, по сути, еще одним способом пробить брешь в инкапсуляции.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="exporter"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id8"&gt;Exporter&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ссылки по теме:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html"&gt;More on getters and setters&lt;/a&gt;" by Allen Holub&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://stackoverflow.com/questions/24921227/save-and-load-objects-without-breaking-encapsulation"&gt;Save and load objects without breaking encapsulation&lt;/a&gt;" at Stackoverflow&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Идею можно посмотреть на примере:&lt;/p&gt;
+&lt;div class="literal-block-wrapper docutils container" id="emacsway-code-exporter-example-1"&gt;
+&lt;div class="code-block-caption"&gt;&lt;span class="caption-text"&gt;&lt;a class="reference external" href="https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html"&gt;Example by Allen Holub&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class="highlight-java notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.util.Locale&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+ &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Employee&lt;/span&gt;
+ &lt;span class="p"&gt;{&lt;/span&gt;   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;Name&lt;/span&gt;        &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+     &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;EmployeeId&lt;/span&gt;  &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+     &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;Money&lt;/span&gt;       &lt;span class="n"&gt;salary&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="nc"&gt;Exporter&lt;/span&gt;
+     &lt;span class="p"&gt;{&lt;/span&gt;   &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;addName&lt;/span&gt;    &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;   &lt;span class="p"&gt;);&lt;/span&gt;
+         &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;addID&lt;/span&gt;      &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;     &lt;span class="p"&gt;);&lt;/span&gt;
+         &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;addSalary&lt;/span&gt;  &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;salary&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+     &lt;span class="p"&gt;}&lt;/span&gt;
+
+     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="nc"&gt;Importer&lt;/span&gt;
+     &lt;span class="p"&gt;{&lt;/span&gt;   &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;provideName&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;provideID&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;provideSalary&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+         &lt;span class="kt"&gt;void&lt;/span&gt;   &lt;span class="nf"&gt;open&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+         &lt;span class="kt"&gt;void&lt;/span&gt;   &lt;span class="nf"&gt;close&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+     &lt;span class="p"&gt;}&lt;/span&gt;
+
+     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="nf"&gt;Employee&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;Importer&lt;/span&gt; &lt;span class="n"&gt;builder&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="p"&gt;{&lt;/span&gt;   &lt;span class="n"&gt;builder&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;open&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+         &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;name&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Name&lt;/span&gt;      &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;builder&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;provideName&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;     &lt;span class="p"&gt;);&lt;/span&gt;
+         &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;id&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;EmployeeId&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;builder&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;provideID&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;       &lt;span class="p"&gt;);&lt;/span&gt;
+         &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;salary&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Money&lt;/span&gt;     &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;builder&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;provideSalary&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
+                                       &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Locale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"en"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"US"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;    &lt;span class="p"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;builder&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;close&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+     &lt;span class="p"&gt;}&lt;/span&gt;
+
+     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;export&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;Exporter&lt;/span&gt; &lt;span class="n"&gt;builder&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="p"&gt;{&lt;/span&gt;   &lt;span class="n"&gt;builder&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addName&lt;/span&gt;  &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;toString&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;   &lt;span class="p"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;builder&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addID&lt;/span&gt;    &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;toString&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;     &lt;span class="p"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;builder&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addSalary&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;salary&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;toString&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+     &lt;span class="p"&gt;}&lt;/span&gt;
+
+     &lt;span class="c1"&gt;//...&lt;/span&gt;
+ &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Или на более лаконичном примере:&lt;/p&gt;
+&lt;div class="literal-block-wrapper docutils container" id="emacsway-code-exporter-example-2"&gt;
+&lt;div class="code-block-caption"&gt;&lt;span class="caption-text"&gt;&lt;a class="reference external" href="https://stackoverflow.com/questions/24921227/save-and-load-objects-without-breaking-encapsulation"&gt;Example from Stackoverflow&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class="highlight-java notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="nc"&gt;PersonImporter&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+
+     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;getAge&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;getId&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+ &lt;span class="p"&gt;}&lt;/span&gt;
+
+ &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="nc"&gt;PersonExporter&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+
+     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;setDetails&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;age&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+ &lt;span class="p"&gt;}&lt;/span&gt;
+
+ &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Person&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+
+     &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;age&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+     &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="nf"&gt;Person&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PersonImporter&lt;/span&gt; &lt;span class="n"&gt;importer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;age&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;importer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getAge&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;importer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getId&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+     &lt;span class="p"&gt;}&lt;/span&gt;
+
+     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;export&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PersonExporter&lt;/span&gt; &lt;span class="n"&gt;exporter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;exporter&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;setDetails&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;age&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+     &lt;span class="p"&gt;}&lt;/span&gt;
+
+ &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Замечательный вариант, но проблема в том, что он использует интерефейсы, и это получается слишком многословно - требуется декларировать сам тип (структуру), интерфейс, сеттеры.
+Вряд ли кто-то будет этим заниматься, когда можно просто обязать Агрегат вернуть простую структуру.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference internal" href="#emacsway-code-exporter-example-2"&gt;&lt;span class="std std-ref"&gt;Второй&lt;/span&gt;&lt;/a&gt; из приведенных примеров содержит пакетированный сеттер, что делает его несколько менее многословным.
+Пример реализации:&lt;/p&gt;
+&lt;div class="highlight-go notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt;&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nx"&gt;qualifying_grade_1&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="s"&gt;"time"&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;T&lt;/span&gt; &lt;span class="nx"&gt;any&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;SetState&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;T&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Exportable&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;T&lt;/span&gt; &lt;span class="nx"&gt;any&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;T&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;
+
+&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;ex&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;ex&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;SetState&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;RecognizerId&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;MemberId&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Grade&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;RecognizerExporter&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;SetState&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="nx"&gt;id&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="nx"&gt;memberId&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="nx"&gt;grade&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="nx"&gt;version&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="nx"&gt;createdAt&lt;/span&gt; &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;UintExporter&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;
+
+&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nx"&gt;UintExporter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;SetState&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;value&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;UintExporter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;value&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Recognizer&lt;/span&gt; &lt;span class="kd"&gt;struct&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;id&lt;/span&gt;                        &lt;span class="nx"&gt;RecognizerId&lt;/span&gt;
+    &lt;span class="nx"&gt;memberId&lt;/span&gt;                  &lt;span class="nx"&gt;MemberId&lt;/span&gt;
+    &lt;span class="nx"&gt;grade&lt;/span&gt;                     &lt;span class="nx"&gt;Grade&lt;/span&gt;
+    &lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt;
+    &lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;   &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt;
+    &lt;span class="nx"&gt;version&lt;/span&gt;                   &lt;span class="kt"&gt;uint&lt;/span&gt;
+    &lt;span class="nx"&gt;createdAt&lt;/span&gt;                 &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt; &lt;span class="nx"&gt;Recognizer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;ex&lt;/span&gt; &lt;span class="nx"&gt;RecognizerExporter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;memberId&lt;/span&gt; &lt;span class="nx"&gt;UintExporter&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;grade&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;UintExporter&lt;/span&gt;
+
+    &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;memberId&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;memberId&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;ex&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;SetState&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;memberId&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;version&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createdAt&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Второй вариант с пакетированным сеттером уступает первому варианту с отдельными сеттерами для каждого атрибута тем, что в случае одноименного метода &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;setDetails&lt;/span&gt;&lt;/code&gt; нельзя обойти одним экспортером сразу несколько вложенных объектов, например, агрегат и его композитный первичный ключ, что может быть удобным для составления списка параметров SQL-запроса.
+В таком случае придется жертвовать консистентностью именования, что лишает второй вариант превосходств перед первым вариантом.&lt;/p&gt;
+&lt;p&gt;Внутренние объекты структуры  должны иметь сеттеры.
+Реализовать эти объекты можно по разному - как структуру или как примитивный тип.
+Но в первом случае у нас даже плоская Сущность будет экспортировать двухуровневую структуру, что вносит неудобство, но при этом структура позволяет использовать параметрический полиморфизм (generics) для повышения ее реиспользования.
+А во втором случае, хотя объект Exporter и будет "наследоваться" от примитивного типа, но будет требовать явного преобразование типов в определенных случаях, что также вносит определенное неудобство.&lt;/p&gt;
+&lt;p&gt;Немного смущает смешивание парадигм FP и OOP для ValueObject.
+Хотя ValueObject и остается неизменяемым, но сам факт того, что функционально чистый объект вызывает мутирующие методы другого объекта, вызывает небольшое смущение.
+Возникает вопрос - почему функционально чистый объект не может просто взять и вернуть другой функционально чистый объект?
+Если бы Golang поддерживать Generics для методов, тогда могло бы получиться что-то похожее на &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;Recognizer.Export[T](exporterFactory&lt;/span&gt; &lt;span class="pre"&gt;function(attr1,&lt;/span&gt; &lt;span class="pre"&gt;attr2,&lt;/span&gt; &lt;span class="pre"&gt;attr3)&lt;/span&gt; &lt;span class="pre"&gt;T)&lt;/span&gt; &lt;span class="pre"&gt;T&lt;/span&gt;&lt;/code&gt;.
+Однако, если продолжить развивать эту мысль, то мы обнаружим, что таким образом пытаемся решить проблему обхода инкапсуляции, которая вызвана именно применением OOP.&lt;/p&gt;
+&lt;p&gt;Как говорил Michael Feathers:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;💬️ "OO makes code understandable by encapsulating moving parts.
+FP makes code understandable by minimizing moving parts."
+— &lt;a class="reference external" href="https://twitter.com/mfeathers/status/29581296216"&gt;Michael Feathers&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Наличие сеттеров в интерфейсе Exporter означает наличие мутирующего метода, который должен принимать экземпляр своего типа по указателю.
+Это значит, что и сам экземпляр должен передаваться по указателю, иначе появится ошибка "Type does not implement interface (SetState method has pointer receiver)", см. статью "&lt;a class="reference external" href="https://sentry.io/answers/interface-pointer-receiver/"&gt;Method Pointer Receivers in Interfaces&lt;/a&gt;" by Evan Hicks.
+В Golang это значит, что &lt;a class="reference external" href="https://stackoverflow.com/questions/50830676/set-an-int-pointer-to-an-int-value-in-go"&gt;в некоторых случаях&lt;/a&gt; потребуется сперва проинициализировать переменную, и только потом создать указатель на ее адрес.
+В качестве меры спасения можно использовать функции-конструкоры, возвращающие указатель, иначе формирование в подобном стиле иерархической структуры с вложенными коллекциями структур превращается в довольно ресурсосжигающую задачу.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;💬️ "Цель архитектуры программного обеспечения — уменьшить человеческие трудозатраты на создание и сопровождение системы.&lt;/p&gt;
+&lt;p&gt;The goal of software architecture is to minimize the human resources required to build and maintain the required system."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin, перевод ООО Издательство "Питер"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Использование такого подхода в тестовых кейсах делает их несколько более многословными.&lt;/p&gt;
+&lt;p&gt;Можно было бы сказать, что тестировать нужно по принципам &lt;a class="reference internal" href="../../../tdd/tdd.html#emacsway-tdd-black-box"&gt;&lt;span class="std std-ref"&gt;черного ящика&lt;/span&gt;&lt;/a&gt;, т.е. только внешнее поведение.
+Совершенно верно, но только нам требуется не только внешнее поведение, но и достоверность сохранения введенной в конструктор Агрегата информации в БД.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;💬️ "Давно известно, что простота тестирования является характерным признаком хорошей архитектуры.
+Шаблон «Скромный объект» — хороший пример, потому что раздел между легко и тяжело тестируемыми частями часто совпадает с архитектурными границами.
+Раздел между Презентаторами и Представлениями — одна из таких границ, но существует много других.&lt;/p&gt;
+&lt;p&gt;It has long been known that testability is an attribute of good architectures.
+The Humble Object pattern is a good example, because the separation of the behaviors into testable and non-testable parts often defines an architectural boundary.
+The Presenter/View boundary is one of these boundaries, but there are many others."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin, перевод ООО Издательство "Питер"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;Возникает целесообразность облегчить метод экспортирования, придав ему сигнатуру &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;Recognizer.Export()&lt;/span&gt; &lt;span class="pre"&gt;RecognizerState&lt;/span&gt;&lt;/code&gt; вместо &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;Recognizer.ExportTo(ex&lt;/span&gt; &lt;span class="pre"&gt;RecognizerExporter)&lt;/span&gt;&lt;/code&gt;.
+Получится что-то типа DTO с тем лишь отличием, что он пересекает не сетевые границы, а границы инкапсуляции Агрегата.
+В Golang этот вариант выглядит чуть более привлекательным, хотя и менее OOP, но зато не контрастирует с FP принципами Value Object.&lt;/p&gt;
+&lt;p&gt;О таком же принципе этом писал Robert C. Martin:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div&gt;&lt;p&gt;💬️ "Презентаторы являются разновидностью шаблона проектирования «Скромный объект» (Humble Object), помогающего выявлять и защищать архитектурные границы.&lt;/p&gt;
+&lt;p&gt;Presenters are a form of the Humble Object pattern, which helps us identify and protect architectural boundaries."&lt;/p&gt;
+&lt;p&gt;💬️ "Обычно через границы данные передаются в виде простых структур.
+При желании можно использовать простейшие структуры или объекты передачи данных (Data Transfer Objects; DTO).
+Данные можно также передавать в вызовы функций через аргументы.
+Или упаковывать их в ассоциативные массивы или объекты.
+Важно, чтобы через границы передавались простые, изолированные структуры данных.
+Не нужно хитрить и передавать объекты сущностей или записи из базы данных.
+Структуры данных не должны нарушать правило зависимостей.&lt;/p&gt;
+&lt;p&gt;Например, многие фреймворки для работы с базами данных возвращают ответы на запросы в удобном формате.
+Их можно назвать «представлением записей».
+Такие представления записей не должны передаваться через границы внутрь.
+Это нарушает правило зависимостей, потому что заставляет внутренний круг знать что-то о внешнем круге.
+Итак, при передаче через границу данные всегда должны принимать форму, наиболее удобную для внутреннего круга.&lt;/p&gt;
+&lt;p&gt;Typically the data that crosses the boundaries consists of &lt;strong&gt;simple data structures&lt;/strong&gt;.
+You can use &lt;strong&gt;basic structs or simple data transfer objects&lt;/strong&gt; if you like.
+Or the data can simply be arguments in function calls.
+Or you can pack it into a hashmap, or construct it into an object.
+The important thing is that isolated, &lt;strong&gt;simple data structures&lt;/strong&gt; are passed across the boundaries.
+We don't want to cheat and pass Entity objects or database rows.
+We don't want the data structures to have any kind of dependency that violates the Dependency Rule.&lt;/p&gt;
+&lt;p&gt;For example, many database frameworks return a convenient data format in response to a query.
+We might call this a "row structure."
+We don't want to pass that row structure inward across a boundary.
+Doing so would violate the Dependency Rule because it would force an inner circle to know something about an outer circle.&lt;/p&gt;
+&lt;p&gt;Thus, when we pass data across a boundary, it is always in the form that is most convenient for the inner circle."&lt;/p&gt;
+&lt;p&gt;💬️ "Он также переносит данные из базы данных Database в память сущностей Entities через интерфейс DataAccessInterface.
+По завершении UseCaseInteractor забирает данные из сущностей Entities и конструирует из них другой простой Java-объект OutputData.
+Затем объект OutputData передается через интерфейс OutputBoundary презентатору Presenter.&lt;/p&gt;
+&lt;p&gt;It also uses the DataAccessInterface to bring the data used by those Entities into memory from the Database.
+Upon completion, the UseCaseInteractor gathers data from the Entities and constructs the OutputData as another &lt;strong&gt;plain old Java object&lt;/strong&gt;.
+The OutputData is then passed through the OutputBoundary interface to the Presenter."&lt;/p&gt;
+&lt;p class="attribution"&gt;—"Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin, перевод ООО Издательство "Питер"&lt;/p&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;div class="highlight-go notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt;&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nx"&gt;qualifying_grade_2&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="s"&gt;"time"&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Exportable&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;T&lt;/span&gt; &lt;span class="nx"&gt;any&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="nx"&gt;T&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;
+
+&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;RecognizerId&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;MemberId&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Grade&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;RecognizerState&lt;/span&gt; &lt;span class="kd"&gt;struct&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;Id&lt;/span&gt;                        &lt;span class="kt"&gt;uint&lt;/span&gt;
+    &lt;span class="nx"&gt;MemberId&lt;/span&gt;                  &lt;span class="kt"&gt;uint&lt;/span&gt;
+    &lt;span class="nx"&gt;Grade&lt;/span&gt;                     &lt;span class="kt"&gt;uint&lt;/span&gt;
+    &lt;span class="nx"&gt;AvailableEndorsementCount&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;
+    &lt;span class="nx"&gt;PendingEndorsementCount&lt;/span&gt;   &lt;span class="kt"&gt;uint&lt;/span&gt;
+    &lt;span class="nx"&gt;Version&lt;/span&gt;                   &lt;span class="kt"&gt;uint&lt;/span&gt;
+    &lt;span class="nx"&gt;CreatedAt&lt;/span&gt;                 &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Recognizer&lt;/span&gt; &lt;span class="kd"&gt;struct&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;id&lt;/span&gt;                        &lt;span class="nx"&gt;RecognizerId&lt;/span&gt;
+    &lt;span class="nx"&gt;memberId&lt;/span&gt;                  &lt;span class="nx"&gt;MemberId&lt;/span&gt;
+    &lt;span class="nx"&gt;grade&lt;/span&gt;                     &lt;span class="nx"&gt;Grade&lt;/span&gt;
+    &lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt;
+    &lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;   &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt;
+    &lt;span class="nx"&gt;version&lt;/span&gt;                   &lt;span class="kt"&gt;uint&lt;/span&gt;
+    &lt;span class="nx"&gt;createdAt&lt;/span&gt;                 &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt; &lt;span class="nx"&gt;Recognizer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="nx"&gt;RecognizerState&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;RecognizerState&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;memberId&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
+        &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
+        &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
+        &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;version&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createdAt&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Недостатком такого решения, который я успел обнаружить, является то, что клиент не имеет возможности определить структуру экспортируемого объекта, в отличии от варианта с интерфейсом.
+Это затрудняет создание обобщенных классов, например, &lt;a class="reference external" href="https://martinfowler.com/eaaCatalog/identityField.html"&gt;обобщенного композитного первичного ключа&lt;/a&gt;.
+В результате плодятся промежуточные структуры, которые затем нужно преобразовывать к нужному виду.&lt;/p&gt;
+&lt;p&gt;Возвращаемая структура и ее типизация является избыточным знанием, которое может препятствовать обобщению клиента этого метода, например, препятствовать выделению абстрактного класса паттерна Repository.
+Гораздо удобней в таком случае был бы массив/срез объектов с типом &lt;a class="reference external" href="https://pkg.go.dev/database/sql/driver#Value"&gt;driver.Value&lt;/a&gt;.
+Это еще один аргумент в пользу первого варианта с отдельными сеттерами для каждого атрибута Агрегата.&lt;/p&gt;
+&lt;/div&gt;
+</description><pubDate>Sun, 31 Jul 2022 00:00:00 </pubDate></item><item><title>Файловая структура Доменной модели</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/qualifying-grade/domain/file-structure.html</link><description>
 &lt;span id="id1"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;О причинах образования такой файловой структуры.&lt;/p&gt;
@@ -1184,398 +1584,7 @@ ones of his generation."&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</description><pubDate>Fri, 29 Jul 2022 00:00:00 </pubDate></item><item><title>Как сохранить Агрегат в БД не разрушая инкапсуляции?</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/qualifying-grade/domain/aggregate-encapsulation.html</link><description>
-&lt;span id="id1"/&gt; 
-&lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Инварианты лишены смысла своего существования в условиях дырявой, как решето, инкапсуляции.
-Вопрос в том, как сохранить инкапсуляцию Агрегатов в Golang, когда нам требуется его внутреннее состояние для формирования SQL-запроса, или, наоборот, требуется установить состояние Агрегата в результате выполнения SQL-запроса.&lt;/p&gt;
-&lt;div class="contents topic" id="id2"&gt;
-&lt;p class="topic-title"&gt;Содержание&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#emacsway-golang-encapsulation" id="id3"&gt;Как сохранить Агрегат в БД не разрушая инкапсуляции?&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#memento-pattern" id="id4"&gt;Memento pattern&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#walker" id="id5"&gt;Walker&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#valuer-scanner" id="id6"&gt;Valuer &amp;amp; Scanner&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#reflection" id="id7"&gt;Reflection&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="#exporter" id="id8"&gt;Exporter&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="memento-pattern"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id4"&gt;Memento pattern&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Memento оказался близко, но не по назначению. Суть Memento в том, что он не должен раскрывать свое состояние никому, кроме своего создателя:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;ol class="arabic simple"&gt;
-&lt;li&gt;&lt;p&gt;Preserving encapsulation boundaries. Memento avoids exposing information that only an originator should manage but that must be stored nevertheless outside the originator.
-The pattern shields other objects from potentially complex Originator internals, thereby preserving encapsulation boundaries.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p class="attribution"&gt;—"Design Patterns: Elements of Reusable Object-Oriented Software" by Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="walker"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id5"&gt;Walker&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Walker представляет собою модификацию паттерна Visitor с целью сохранить инкапсуляцию Агрегатов. К числу недостатков паттерна паттерна Visitor относится:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;6. Breaking encapsulation. Visitor's approach assumes that the ConcreteElement interface is powerful enough to let visitors do their job.
-As a result, the pattern often forces you to provide public operations that access an element's internal state, which may compromise its encapsulation.&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Design Patterns: Elements of Reusable Object-Oriented Software" by Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Что будет создавать Walker в случае обхода иерархической структуры Агрегата с несколькими вложенными Сущностями?
-Вероятно, это будет будет несколько SQL-запросов с параметрами, т.е. некий композитный объект, выраженный некой структурой данных.
-Это лишает смысла использование Visitor, если можно сразу возвратить структуру данных, причем, абстрагированную от SQL.&lt;/p&gt;
-&lt;p&gt;Технически, можно сделать так:&lt;/p&gt;
-&lt;div class="highlight-go notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt;&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Walkable&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="nx"&gt;Accept&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;Walker&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Walker&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="nx"&gt;SetField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="nx"&gt;WalkWalkable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;Walkable&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="nx"&gt;WalkUint8&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;uint8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="nx"&gt;WalkUint64&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;uint64&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="nx"&gt;WalkUint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="nx"&gt;WalkTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="highlight-go notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt;&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt; &lt;span class="nx"&gt;Endorsement&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;Accept&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;walker&lt;/span&gt; &lt;span class="nx"&gt;interfaces&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Walker&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="nx"&gt;walker&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;SetField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"recognizerId"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="nx"&gt;walker&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;WalkWalkable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;recognizerId&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="nx"&gt;walker&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;SetField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"recognizerGrade"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="nx"&gt;walker&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;WalkWalkable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;recognizerGrade&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="c1"&gt;// ...&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="highlight-go notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt;&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt; &lt;span class="nx"&gt;RecognizerId&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;Accept&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;walker&lt;/span&gt; &lt;span class="nx"&gt;interfaces&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Walker&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="nx"&gt;walker&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;WalkUint64&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Value&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Проблема в том, что на этапе создания SQL-запроса нам пока еще могут быть неизвестны первичные ключи Агрегатов, чтобы их можно было бы проставить в SQL-запросы их Сущностей.&lt;/p&gt;
-&lt;p&gt;Кроме того, осведомленность о способах образования SQL-запросов размазывается между Walkers и Repositories, что вызывает "Разлет Дроби" (Code Smell) в случае изменения существующего способа построения SQL (например, в случае изменения диалекта БД или в случае внедрения какого-либо QueryBuilder).
-Walker начинает быть слишком осведомленным о деталях реализации Repository.&lt;/p&gt;
-&lt;p&gt;В целях достижения DRY возникает целесообразность возложить на Walker генерирование только части SQL, и освободить его от осведомленности знания таблиц в БД, что будет разрывать обязанность за построение SQL на несколько объектов и подрывать Cohesion.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="valuer-scanner"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id6"&gt;Valuer &amp;amp; Scanner&lt;/a&gt;&lt;/h2&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://pkg.go.dev/database/sql/driver#Valuer"&gt;Valuer&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://pkg.go.dev/database/sql#Scanner"&gt;Scanner&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Интерфейс Scanner открывает дверь к изменяемости ValueObject, что противоречит основной его сути.
-А так же открывает брешь в инкапсуляции Агрегата.&lt;/p&gt;
-&lt;p&gt;Но есть еще один момент - метод &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;Scan(src&lt;/span&gt; &lt;span class="pre"&gt;any)&lt;/span&gt; &lt;span class="pre"&gt;error&lt;/span&gt;&lt;/code&gt; вызывается у конкретного типа, что препятствует использованию паттерна, известного как &lt;a class="reference external" href="https://martinfowler.com/eaaCatalog/specialCase.html"&gt;Special Case&lt;/a&gt; или &lt;a class="reference external" href="https://refactoring.com/catalog/introduceSpecialCase.html"&gt;Null Object&lt;/a&gt;.
-Кроме того, в некоторых случаях может потребоваться преобразовать неизменяемые исторические данные для новой версии модели.
-Вопрос затрагивался в разделе "4. Validating historical data" статьи "&lt;a class="reference external" href="https://enterprisecraftsmanship.com/posts/always-valid-domain-model/"&gt;Always-Valid Domain Model&lt;/a&gt;" by Vladimir Khorikov и в разделе "6. The use of ORMs within and outside of the always-valid boundary" статьи "&lt;a class="reference external" href="https://enterprisecraftsmanship.com/posts/database-always-valid-domain-model/"&gt;Database and Always-Valid Domain Model&lt;/a&gt;" by Vladimir Khorikov.&lt;/p&gt;
-&lt;p&gt;С другой стороны, Valuer может возвращать только примитивные типы, а значит, он не пригоден для экспорта иерархической структуры состояния Агрегата:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;It is either nil, a type handled by a database driver's NamedValueChecker interface, or an instance of one of these types:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;int64&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;float64&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;bool&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;[]byte&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;string&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;time.Time&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p class="attribution"&gt;—&lt;a class="reference external" href="https://pkg.go.dev/database/sql/driver#Value"&gt;Источник&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="reflection"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id7"&gt;Reflection&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;В документации &lt;a class="reference external" href="https://pkg.go.dev/reflect#Value.FieldByName"&gt;отсутствуют&lt;/a&gt; какие-либо упоминания об ограничении доступа к защищенным атрибутам структуры данных посредством рефлекции.&lt;/p&gt;
-&lt;p&gt;Может быть через рефлексию и заработало бы - я не пробовал.
-Но использовать рефлексию в production для таких целей как-то не сильно хочется, в т.ч. и по соображениям производительности.
-К тому же этот метод является, по сути, еще одним способом пробить брешь в инкапсуляции.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="exporter"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id8"&gt;Exporter&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Ссылки по теме:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html"&gt;More on getters and setters&lt;/a&gt;" by Allen Holub&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;"&lt;a class="reference external" href="https://stackoverflow.com/questions/24921227/save-and-load-objects-without-breaking-encapsulation"&gt;Save and load objects without breaking encapsulation&lt;/a&gt;" at Stackoverflow&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Идею можно посмотреть на примере:&lt;/p&gt;
-&lt;div class="literal-block-wrapper docutils container" id="emacsway-code-exporter-example-1"&gt;
-&lt;div class="code-block-caption"&gt;&lt;span class="caption-text"&gt;&lt;a class="reference external" href="https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html"&gt;Example by Allen Holub&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;
-&lt;div class="highlight-java notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.util.Locale&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
- &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Employee&lt;/span&gt;
- &lt;span class="p"&gt;{&lt;/span&gt;   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;Name&lt;/span&gt;        &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-     &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;EmployeeId&lt;/span&gt;  &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-     &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;Money&lt;/span&gt;       &lt;span class="n"&gt;salary&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="nc"&gt;Exporter&lt;/span&gt;
-     &lt;span class="p"&gt;{&lt;/span&gt;   &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;addName&lt;/span&gt;    &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;   &lt;span class="p"&gt;);&lt;/span&gt;
-         &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;addID&lt;/span&gt;      &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;     &lt;span class="p"&gt;);&lt;/span&gt;
-         &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;addSalary&lt;/span&gt;  &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;salary&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
-     &lt;span class="p"&gt;}&lt;/span&gt;
-
-     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="nc"&gt;Importer&lt;/span&gt;
-     &lt;span class="p"&gt;{&lt;/span&gt;   &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;provideName&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-         &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;provideID&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-         &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;provideSalary&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-         &lt;span class="kt"&gt;void&lt;/span&gt;   &lt;span class="nf"&gt;open&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-         &lt;span class="kt"&gt;void&lt;/span&gt;   &lt;span class="nf"&gt;close&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-     &lt;span class="p"&gt;}&lt;/span&gt;
-
-     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="nf"&gt;Employee&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;Importer&lt;/span&gt; &lt;span class="n"&gt;builder&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
-     &lt;span class="p"&gt;{&lt;/span&gt;   &lt;span class="n"&gt;builder&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;open&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-         &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;name&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Name&lt;/span&gt;      &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;builder&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;provideName&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;     &lt;span class="p"&gt;);&lt;/span&gt;
-         &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;id&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;EmployeeId&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;builder&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;provideID&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;       &lt;span class="p"&gt;);&lt;/span&gt;
-         &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;salary&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Money&lt;/span&gt;     &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;builder&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;provideSalary&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
-                                       &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Locale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"en"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"US"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;    &lt;span class="p"&gt;);&lt;/span&gt;
-         &lt;span class="n"&gt;builder&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;close&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-     &lt;span class="p"&gt;}&lt;/span&gt;
-
-     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;export&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;Exporter&lt;/span&gt; &lt;span class="n"&gt;builder&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
-     &lt;span class="p"&gt;{&lt;/span&gt;   &lt;span class="n"&gt;builder&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addName&lt;/span&gt;  &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;toString&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;   &lt;span class="p"&gt;);&lt;/span&gt;
-         &lt;span class="n"&gt;builder&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addID&lt;/span&gt;    &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;toString&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;     &lt;span class="p"&gt;);&lt;/span&gt;
-         &lt;span class="n"&gt;builder&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addSalary&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;salary&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;toString&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
-     &lt;span class="p"&gt;}&lt;/span&gt;
-
-     &lt;span class="c1"&gt;//...&lt;/span&gt;
- &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Или на более лаконичном примере:&lt;/p&gt;
-&lt;div class="literal-block-wrapper docutils container" id="emacsway-code-exporter-example-2"&gt;
-&lt;div class="code-block-caption"&gt;&lt;span class="caption-text"&gt;&lt;a class="reference external" href="https://stackoverflow.com/questions/24921227/save-and-load-objects-without-breaking-encapsulation"&gt;Example from Stackoverflow&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;
-&lt;div class="highlight-java notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="nc"&gt;PersonImporter&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-
-     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;getAge&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-
-     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;getId&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
- &lt;span class="p"&gt;}&lt;/span&gt;
-
- &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="nc"&gt;PersonExporter&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-
-     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;setDetails&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;age&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-
- &lt;span class="p"&gt;}&lt;/span&gt;
-
- &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Person&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-
-     &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;age&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-     &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="nf"&gt;Person&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PersonImporter&lt;/span&gt; &lt;span class="n"&gt;importer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-         &lt;span class="n"&gt;age&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;importer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getAge&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-         &lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;importer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getId&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-     &lt;span class="p"&gt;}&lt;/span&gt;
-
-     &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;export&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PersonExporter&lt;/span&gt; &lt;span class="n"&gt;exporter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-         &lt;span class="n"&gt;exporter&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;setDetails&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;age&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-     &lt;span class="p"&gt;}&lt;/span&gt;
-
- &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Замечательный вариант, но проблема в том, что он использует интерефейсы, и это получается слишком многословно - требуется декларировать сам тип (структуру), интерфейс, сеттеры.
-Вряд ли кто-то будет этим заниматься, когда можно просто обязать Агрегат вернуть простую структуру.&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference internal" href="#emacsway-code-exporter-example-2"&gt;&lt;span class="std std-ref"&gt;Второй&lt;/span&gt;&lt;/a&gt; из приведенных примеров содержит пакетированный сеттер, что делает его несколько менее многословным.
-Пример реализации:&lt;/p&gt;
-&lt;div class="highlight-go notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt;&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nx"&gt;qualifying_grade_1&lt;/span&gt;
-
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="s"&gt;"time"&lt;/span&gt;
-&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;T&lt;/span&gt; &lt;span class="nx"&gt;any&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="nx"&gt;SetState&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;T&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Exportable&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;T&lt;/span&gt; &lt;span class="nx"&gt;any&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;T&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;
-
-&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;ex&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="nx"&gt;ex&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;SetState&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;RecognizerId&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;MemberId&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Grade&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
-
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;RecognizerExporter&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="nx"&gt;SetState&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="nx"&gt;id&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-        &lt;span class="nx"&gt;memberId&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-        &lt;span class="nx"&gt;grade&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-        &lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-        &lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;Exporter&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-        &lt;span class="nx"&gt;version&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="nx"&gt;createdAt&lt;/span&gt; &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;UintExporter&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;
-
-&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nx"&gt;UintExporter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;SetState&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;value&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;UintExporter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;value&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Recognizer&lt;/span&gt; &lt;span class="kd"&gt;struct&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="nx"&gt;id&lt;/span&gt;                        &lt;span class="nx"&gt;RecognizerId&lt;/span&gt;
-    &lt;span class="nx"&gt;memberId&lt;/span&gt;                  &lt;span class="nx"&gt;MemberId&lt;/span&gt;
-    &lt;span class="nx"&gt;grade&lt;/span&gt;                     &lt;span class="nx"&gt;Grade&lt;/span&gt;
-    &lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt;
-    &lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;   &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt;
-    &lt;span class="nx"&gt;version&lt;/span&gt;                   &lt;span class="kt"&gt;uint&lt;/span&gt;
-    &lt;span class="nx"&gt;createdAt&lt;/span&gt;                 &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt; &lt;span class="nx"&gt;Recognizer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;ex&lt;/span&gt; &lt;span class="nx"&gt;RecognizerExporter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;memberId&lt;/span&gt; &lt;span class="nx"&gt;UintExporter&lt;/span&gt;
-    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;grade&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;UintExporter&lt;/span&gt;
-
-    &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;memberId&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;memberId&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ExportTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="nx"&gt;ex&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;SetState&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;memberId&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;version&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createdAt&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Внутренние объекты структуры  должны иметь сеттеры.
-Реализовать эти объекты можно по разному - как структуру или как примитивный тип.
-Но в первом случае у нас даже плоская Сущность будет экспортировать двухуровневую структуру, что вносит неудобство, но при этом структура позволяет использовать параметрический полиморфизм (generics) для повышения ее реиспользования.
-А во втором случае, хотя объект Exporter и будет "наследоваться" от примитивного типа, но будет требовать преобразование типов в определенных случаях, что также вносит определенное неудобство.&lt;/p&gt;
-&lt;p&gt;Немного смущает смешивание парадигм FP и OOP для ValueObject.
-Хотя ValueObject и остается неизменяемым, но сам факт того, что функционально чистый объект вызывает мутирующие методы другого объекта, вызывает состояние легкого смущения.
-Возникает вопрос - почему функционально чистый объект не может просто взять и вернуть другой функционально чистый объект?
-Если бы Golang поддерживать Generics для методов, тогда могло бы получиться что-то похожее на &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;Recognizer.Export[T](exporterFactory&lt;/span&gt; &lt;span class="pre"&gt;function(attr1,&lt;/span&gt; &lt;span class="pre"&gt;attr2,&lt;/span&gt; &lt;span class="pre"&gt;attr3)&lt;/span&gt; &lt;span class="pre"&gt;T)&lt;/span&gt; &lt;span class="pre"&gt;T&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Наличие сеттеров в интерфейсе Exporter означает наличие мутирующего метода, который должен принимать экземпляр своего типа по указателю.
-Это значит, что и сам экземпляр должен передаваться по указателю, иначе появится ошибка "Type does not implement interface (SetState method has pointer receiver)", см. статью "&lt;a class="reference external" href="https://sentry.io/answers/interface-pointer-receiver/"&gt;Method Pointer Receivers in Interfaces&lt;/a&gt;" by Evan Hicks.
-В Golang это значит, что &lt;a class="reference external" href="https://stackoverflow.com/questions/50830676/set-an-int-pointer-to-an-int-value-in-go"&gt;в некоторых случаях&lt;/a&gt; потребуется сперва проинициализировать переменную, и только потом создать указатель на ее адрес.
-В качестве меры спасения можно использовать функции-конструкоры, возвращающие указатель, иначе формирование в подобном стиле иерархической структуры с вложенными коллекциями структур превращается в довольно ресурсосжигающую задачу.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;💬️ "Цель архитектуры программного обеспечения — уменьшить человеческие трудозатраты на создание и сопровождение системы.&lt;/p&gt;
-&lt;p&gt;The goal of software architecture is to minimize the human resources required to build and maintain the required system."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin, перевод ООО Издательство "Питер"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Использование такого подхода в тестовых кейсах делает их несколько более многословными.&lt;/p&gt;
-&lt;p&gt;Можно было бы сказать, что тестировать нужно по принципам &lt;a class="reference internal" href="../../../tdd/tdd.html#emacsway-tdd-black-box"&gt;&lt;span class="std std-ref"&gt;черного ящика&lt;/span&gt;&lt;/a&gt;, т.е. только внешнее поведение.
-Совершенно верно, но только нам требуется не только внешнее поведение, но и достоверность сохранения введенной в конструктор Агрегата информации в БД.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;💬️ "Давно известно, что простота тестирования является характерным признаком хорошей архитектуры.
-Шаблон «Скромный объект» — хороший пример, потому что раздел между легко и тяжело тестируемыми частями часто совпадает с архитектурными границами.
-Раздел между Презентаторами и Представлениями — одна из таких границ, но существует много других.&lt;/p&gt;
-&lt;p&gt;It has long been known that testability is an attribute of good architectures.
-The Humble Object pattern is a good example, because the separation of the behaviors into testable and non-testable parts often defines an architectural boundary.
-The Presenter/View boundary is one of these boundaries, but there are many others."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin, перевод ООО Издательство "Питер"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;Возникает целесообразность облегчить метод экспортирования, придав ему сигнатуру &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;Recognizer.Export()&lt;/span&gt; &lt;span class="pre"&gt;RecognizerState&lt;/span&gt;&lt;/code&gt; вместо &lt;code class="docutils literal notranslate"&gt;&lt;span class="pre"&gt;Recognizer.ExportTo(ex&lt;/span&gt; &lt;span class="pre"&gt;RecognizerExporter)&lt;/span&gt;&lt;/code&gt;.
-Получится что-то типа DTO с тем лишь отличием, что он пересекает не сетевые границы, а границы инкапсуляции Агрегата.
-В Golang этот вариант выглядит чуть более привлекательным, хотя и менее OOP, но зато не контрастирует с FP принципами Value Object.&lt;/p&gt;
-&lt;p&gt;О таком же принципе этом писал Robert C. Martin:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div&gt;&lt;p&gt;💬️ "Презентаторы являются разновидностью шаблона проектирования «Скромный объект» (Humble Object), помогающего выявлять и защищать архитектурные границы.&lt;/p&gt;
-&lt;p&gt;Presenters are a form of the Humble Object pattern, which helps us identify and protect architectural boundaries."&lt;/p&gt;
-&lt;p&gt;💬️ "Обычно через границы данные передаются в виде простых структур.
-При желании можно использовать простейшие структуры или объекты передачи данных (Data Transfer Objects; DTO).
-Данные можно также передавать в вызовы функций через аргументы.
-Или упаковывать их в ассоциативные массивы или объекты.
-Важно, чтобы через границы передавались простые, изолированные структуры данных.
-Не нужно хитрить и передавать объекты сущностей или записи из базы данных.
-Структуры данных не должны нарушать правило зависимостей.&lt;/p&gt;
-&lt;p&gt;Например, многие фреймворки для работы с базами данных возвращают ответы на запросы в удобном формате.
-Их можно назвать «представлением записей».
-Такие представления записей не должны передаваться через границы внутрь.
-Это нарушает правило зависимостей, потому что заставляет внутренний круг знать что-то о внешнем круге.
-Итак, при передаче через границу данные всегда должны принимать форму, наиболее удобную для внутреннего круга.&lt;/p&gt;
-&lt;p&gt;Typically the data that crosses the boundaries consists of &lt;strong&gt;simple data structures&lt;/strong&gt;.
-You can use &lt;strong&gt;basic structs or simple data transfer objects&lt;/strong&gt; if you like.
-Or the data can simply be arguments in function calls.
-Or you can pack it into a hashmap, or construct it into an object.
-The important thing is that isolated, &lt;strong&gt;simple data structures&lt;/strong&gt; are passed across the boundaries.
-We don't want to cheat and pass Entity objects or database rows.
-We don't want the data structures to have any kind of dependency that violates the Dependency Rule.&lt;/p&gt;
-&lt;p&gt;For example, many database frameworks return a convenient data format in response to a query.
-We might call this a "row structure."
-We don't want to pass that row structure inward across a boundary.
-Doing so would violate the Dependency Rule because it would force an inner circle to know something about an outer circle.&lt;/p&gt;
-&lt;p&gt;Thus, when we pass data across a boundary, it is always in the form that is most convenient for the inner circle."&lt;/p&gt;
-&lt;p&gt;💬️ "Он также переносит данные из базы данных Database в память сущностей Entities через интерфейс DataAccessInterface.
-По завершении UseCaseInteractor забирает данные из сущностей Entities и конструирует из них другой простой Java-объект OutputData.
-Затем объект OutputData передается через интерфейс OutputBoundary презентатору Presenter.&lt;/p&gt;
-&lt;p&gt;It also uses the DataAccessInterface to bring the data used by those Entities into memory from the Database.
-Upon completion, the UseCaseInteractor gathers data from the Entities and constructs the OutputData as another &lt;strong&gt;plain old Java object&lt;/strong&gt;.
-The OutputData is then passed through the OutputBoundary interface to the Presenter."&lt;/p&gt;
-&lt;p class="attribution"&gt;—"Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin, перевод ООО Издательство "Питер"&lt;/p&gt;
-&lt;/div&gt;&lt;/blockquote&gt;
-&lt;div class="highlight-go notranslate"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span/&gt;&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nx"&gt;qualifying_grade_2&lt;/span&gt;
-
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="s"&gt;"time"&lt;/span&gt;
-&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Exportable&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;T&lt;/span&gt; &lt;span class="nx"&gt;any&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="kd"&gt;interface&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="nx"&gt;T&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;
-
-&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;uint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;RecognizerId&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;MemberId&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Grade&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;ExportableUint&lt;/span&gt;
-
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;RecognizerState&lt;/span&gt; &lt;span class="kd"&gt;struct&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="nx"&gt;Id&lt;/span&gt;                        &lt;span class="kt"&gt;uint&lt;/span&gt;
-    &lt;span class="nx"&gt;MemberId&lt;/span&gt;                  &lt;span class="kt"&gt;uint&lt;/span&gt;
-    &lt;span class="nx"&gt;Grade&lt;/span&gt;                     &lt;span class="kt"&gt;uint&lt;/span&gt;
-    &lt;span class="nx"&gt;AvailableEndorsementCount&lt;/span&gt; &lt;span class="kt"&gt;uint&lt;/span&gt;
-    &lt;span class="nx"&gt;PendingEndorsementCount&lt;/span&gt;   &lt;span class="kt"&gt;uint&lt;/span&gt;
-    &lt;span class="nx"&gt;Version&lt;/span&gt;                   &lt;span class="kt"&gt;uint&lt;/span&gt;
-    &lt;span class="nx"&gt;CreatedAt&lt;/span&gt;                 &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;type&lt;/span&gt; &lt;span class="nx"&gt;Recognizer&lt;/span&gt; &lt;span class="kd"&gt;struct&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="nx"&gt;id&lt;/span&gt;                        &lt;span class="nx"&gt;RecognizerId&lt;/span&gt;
-    &lt;span class="nx"&gt;memberId&lt;/span&gt;                  &lt;span class="nx"&gt;MemberId&lt;/span&gt;
-    &lt;span class="nx"&gt;grade&lt;/span&gt;                     &lt;span class="nx"&gt;Grade&lt;/span&gt;
-    &lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt; &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt;
-    &lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;   &lt;span class="nx"&gt;EndorsementCount&lt;/span&gt;
-    &lt;span class="nx"&gt;version&lt;/span&gt;                   &lt;span class="kt"&gt;uint&lt;/span&gt;
-    &lt;span class="nx"&gt;createdAt&lt;/span&gt;                 &lt;span class="nx"&gt;time&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Time&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt; &lt;span class="nx"&gt;Recognizer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="nx"&gt;RecognizerState&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;RecognizerState&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;memberId&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;grade&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
-        &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;availableEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
-        &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;pendingEndorsementCount&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Export&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
-        &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;version&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createdAt&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Недостатком такого решения, который я успел обнаружить, является то, что клиент не имеет возможности определить структуру экспортируемого объекта, в отличии от варианта с интерфейсом.
-Это затрудняет создание обобщенных классов, например, &lt;a class="reference external" href="https://martinfowler.com/eaaCatalog/identityField.html"&gt;обобщенного композитного первичного ключа&lt;/a&gt;.
-В результате плодятся промежуточные структуры, которые затем нужно преобразовывать к нужному виду.&lt;/p&gt;
-&lt;p&gt;В проекте реализованы оба варианта для наглядности, на примере Агрегатов Recognizer и Endorsed.
-Но код первого варианта выглядит несколько устрашающе, и трудоемкость его поддержания неоправданно завышена.
-Поэтому, в других Агрегатах применяется только второй вариант.&lt;/p&gt;
-&lt;/div&gt;
-</description><pubDate>Thu, 28 Jul 2022 00:00:00 </pubDate></item><item><title>Использовать ли в проекте CanExecute pattern?</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/qualifying-grade/domain/why-no-can-execute.html</link><description>
+</description><pubDate>Fri, 29 Jul 2022 00:00:00 </pubDate></item><item><title>Использовать ли в проекте CanExecute pattern?</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/qualifying-grade/domain/why-no-can-execute.html</link><description>
 &lt;span id="emacsway-golang-can-execute"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;CanExecute pattern был описан в статье "&lt;a class="reference external" href="https://enterprisecraftsmanship.com/posts/validation-and-ddd/"&gt;Validation and DDD&lt;/a&gt;" by Vladimir Khorikov.&lt;/p&gt;
