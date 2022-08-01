@@ -224,6 +224,8 @@ Process Manager Pattern
 
 Второй способ описывает Vaughn Vernon в интервью "`Modeling Uncertainty with Reactive DDD <https://www.infoq.com/articles/modeling-uncertainty-reactive-ddd/>`__" by Vaughn Vernon reviewed by Thomas Betts - путем применения `Process Manager Pattern <https://www.enterpriseintegrationpatterns.com/patterns/messaging/ProcessManager.html>`__.
 
+Сюда же можно отнести `SAGA pattern <https://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf>`__ и `workflow engines <https://github.com/meirwah/awesome-workflow-engines>`__.
+
 
 Pessimistic Offline Lock
 ************************
@@ -273,6 +275,7 @@ Pessimistic Offline Lock
         - обработчик Доменного События отпустит резервирование декрементированием счетчика ``Recognizer.pendingEndorsementCount``.
 
 Этот вариант выглядит наиболее простым, поэтому, на нем и остановимся.
+Не исключено, что в будущем появятся альтернативные реализации с использованием описанных подходов.
 
 
 Упрощенная реализация итоговой модели
@@ -284,4 +287,15 @@ Pessimistic Offline Lock
 Ссылка на полную модель:
 
 - https://github.com/emacsway/qualifying-grade/tree/main/grade/internal/domain
+
+
+Missing chapter
+===============
+
+Проектом предусматривается поддержка `Multitenancy <https://docs.microsoft.com/en-us/azure/architecture/guide/multitenant/overview>`__.
+В свете этого, возникает потребность в гибком конфигурировании количества уровней классности для каждого ``Tenant``, а также количества требуемых рекомендаций для достижения каждого уровня.
+По этой причине, конструктор экземпляра Объекта-значения ``Grade`` должен создаваться Агрегатом ``Tenant``.
+Соответственно, фабричные методы Агрегатов ``Recognizer`` и ``Endorsement`` должны переехать в Агрегат ``Tenant``, чтобы иметь возможность принимать сконфигурированный экземпляр Объекта-значения ``Grade``.
+
+По мере роста гибкости бизнес-правил можно рассмотреть вариант применения "`Rules Engine <https://martinfowler.com/bliki/RulesEngine.html>`__" (aka "`Production Rule System <https://martinfowler.com/dslCatalog/productionRule.html>`__"), например, в виде "`Grule-Rule-Engine <https://github.com/hyperjumptech/grule-rule-engine>`__" - Rule engine implementation in Golang.
 
