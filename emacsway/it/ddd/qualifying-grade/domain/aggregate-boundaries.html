@@ -225,7 +225,7 @@
     <span class="nx">memberId</span>                 <span class="nx">MemberId</span>
     <span class="nx">grade</span>                    <span class="nx">Grade</span>
     <span class="nx">receivedEndorsementCount</span> <span class="nx">ReceivedEndorsementCount</span>
-    <span class="nx">gradeLogEntries</span>          <span class="p">[]</span><span class="nx">GradeLogEntry</span>
+    <span class="nx">assignments</span>              <span class="p">[]</span><span class="nx">Assignment</span>
     <span class="nx">version</span>                  <span class="kt">uint</span>
     <span class="nx">createdAt</span>                <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
@@ -263,7 +263,7 @@
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="o">*</span><span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">setGrade</span><span class="p">(</span><span class="nx">g</span> <span class="nx">Grade</span><span class="p">,</span> <span class="nx">t</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">e</span><span class="p">.</span><span class="nx">gradeLogEntries</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">gradeLogEntries</span><span class="p">,</span> <span class="nx">GradeLogEntry</span><span class="p">{</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">assignments</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">assignments</span><span class="p">,</span> <span class="nx">Assignment</span><span class="p">{</span>
         <span class="nx">e</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">t</span><span class="p">,</span>
     <span class="p">})</span>
     <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="p">=</span> <span class="nx">g</span>
@@ -273,7 +273,7 @@
     <span class="nx">e</span><span class="p">.</span><span class="nx">version</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="p">}</span>
 
-<span class="kd">type</span> <span class="nx">GradeLogEntry</span> <span class="kd">struct</span> <span class="p">{</span>
+<span class="kd">type</span> <span class="nx">Assignment</span> <span class="kd">struct</span> <span class="p">{</span>
     <span class="nx">endorsedId</span>          <span class="nx">EndorsedId</span>
     <span class="nx">endorsedVersion</span>     <span class="kt">uint</span>
     <span class="nx">assignedGrade</span>       <span class="nx">Grade</span>
@@ -345,9 +345,12 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">Recognizer</span></code>, у которого вызывается метод <code class="docutils literal notranslate"><span class="pre">Recognizer.DecreaseAvailableEndorsementCount()</span></code> для вычитания использованной рекомендации из счетчика доступных в этом году рекомендаций;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Endorse</span></code>, у которого вызывается метод <code class="docutils literal notranslate"><span class="pre">Endorsed.IncreaseReceivedEndorsementCount(Weight)</span></code> с указанием веса рекомендации, зависящего от отношения квалификационного класса рекомендующего к квалификационному классу рекомендуемого.</p></li>
 </ol>
-<p>Обратите внимание, <code class="docutils literal notranslate"><span class="pre">GradeLogEntry</span></code> имеет значение для бизнес-требований, и он не может быть усечен снэпшотом event sourced log.
+<p>Обратите внимание, <code class="docutils literal notranslate"><span class="pre">Assignment</span></code>, как и <code class="docutils literal notranslate"><span class="pre">Endorsement</span></code>, имеет значение для бизнес-правил, и он не может быть усечен снэпшотом event sourced log.
+Например, он может устанавливать правила минимального, либо максимального периода времени между присваиваниями классности, например, не чаще одного раза в полгода.
+Или, например, требовать подтверждения текущей классности в случае отсутствия присваиваний в течении года.
 Поэтому, он выполнен в виде самостоятельного Объекта-Значения.
-Хотя... он не играет никакой роли в инвариантах ни одного Агрегата, и может быть перемещен в ReadModel.</p>
+В ином случае он мог бы быть перемещен в ReadModel.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Endorsement</span></code>, в свою очередь, отвечает за то, чтобы <code class="docutils literal notranslate"><span class="pre">Recognizer</span></code> не смог порекомендовать один и тот же <code class="docutils literal notranslate"><span class="pre">Artifact</span></code> одного и того же <code class="docutils literal notranslate"><span class="pre">Endorsed</span></code> дважды.</p>
 </div>
 <div class="section" id="id6">
 <h4><a class="toc-backref" href="#id20">Реализация требований</a><a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h4>
@@ -564,7 +567,7 @@
     <span class="nx">memberId</span>                 <span class="nx">MemberId</span>
     <span class="nx">grade</span>                    <span class="nx">Grade</span>
     <span class="nx">receivedEndorsements</span>     <span class="p">[]</span><span class="nx">Endorsement</span>
-    <span class="nx">gradeLogEntries</span>          <span class="p">[]</span><span class="nx">GradeLogEntry</span>
+    <span class="nx">assignments</span>              <span class="p">[]</span><span class="nx">Assignment</span>
     <span class="nx">version</span>                  <span class="kt">uint</span>
     <span class="nx">createdAt</span>                <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
 <span class="p">}</span>
@@ -623,7 +626,7 @@
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="o">*</span><span class="nx">Endorsed</span><span class="p">)</span> <span class="nx">setGrade</span><span class="p">(</span><span class="nx">g</span> <span class="nx">Grade</span><span class="p">,</span> <span class="nx">t</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">e</span><span class="p">.</span><span class="nx">gradeLogEntries</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">gradeLogEntries</span><span class="p">,</span> <span class="nx">GradeLogEntry</span><span class="p">{</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">assignments</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">assignments</span><span class="p">,</span> <span class="nx">Assignment</span><span class="p">{</span>
         <span class="nx">e</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">t</span><span class="p">,</span>
     <span class="p">})</span>
     <span class="nx">e</span><span class="p">.</span><span class="nx">grade</span> <span class="p">=</span> <span class="nx">g</span>
@@ -661,7 +664,7 @@
     <span class="k">return</span> <span class="nx">LowerWeight</span>
 <span class="p">}</span>
 
-<span class="kd">type</span> <span class="nx">GradeLogEntry</span> <span class="kd">struct</span> <span class="p">{</span>
+<span class="kd">type</span> <span class="nx">Assignment</span> <span class="kd">struct</span> <span class="p">{</span>
     <span class="nx">endorsedId</span>          <span class="nx">EndorsedId</span>
     <span class="nx">endorsedVersion</span>     <span class="kt">uint</span>
     <span class="nx">assignedGrade</span>       <span class="nx">Grade</span>
