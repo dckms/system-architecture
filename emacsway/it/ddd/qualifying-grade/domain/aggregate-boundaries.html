@@ -95,6 +95,7 @@
 <li><p><a class="reference internal" href="#id12" id="id30">Упрощенная реализация итоговой модели</a></p></li>
 </ul>
 </li>
+<li><p><a class="reference internal" href="#missing-chapter" id="id31">Missing chapter</a></p></li>
 </ul>
 </li>
 </ul>
@@ -456,6 +457,7 @@
 <div class="section" id="process-manager-pattern">
 <h6><a class="toc-backref" href="#id27">Process Manager Pattern</a><a class="headerlink" href="#process-manager-pattern" title="Ссылка на этот заголовок">¶</a></h6>
 <p>Второй способ описывает Vaughn Vernon в интервью &quot;<a class="reference external" href="https://www.infoq.com/articles/modeling-uncertainty-reactive-ddd/">Modeling Uncertainty with Reactive DDD</a>&quot; by Vaughn Vernon reviewed by Thomas Betts - путем применения <a class="reference external" href="https://www.enterpriseintegrationpatterns.com/patterns/messaging/ProcessManager.html">Process Manager Pattern</a>.</p>
+<p>Сюда же можно отнести <a class="reference external" href="https://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf">SAGA pattern</a> и <a class="reference external" href="https://github.com/meirwah/awesome-workflow-engines">workflow engines</a>.</p>
 </div>
 <div class="section" id="pessimistic-offline-lock">
 <h6><a class="toc-backref" href="#id28">Pessimistic Offline Lock</a><a class="headerlink" href="#pessimistic-offline-lock" title="Ссылка на этот заголовок">¶</a></h6>
@@ -519,7 +521,8 @@
 </ul>
 </li>
 </ul>
-<p>Этот вариант выглядит наиболее простым, поэтому, на нем и остановимся.</p>
+<p>Этот вариант выглядит наиболее простым, поэтому, на нем и остановимся.
+Не исключено, что в будущем появятся альтернативные реализации с использованием описанных подходов.</p>
 </div>
 </div>
 </div>
@@ -748,6 +751,14 @@
 <li><p><a class="reference external" href="https://github.com/emacsway/qualifying-grade/tree/main/grade/internal/domain">https://github.com/emacsway/qualifying-grade/tree/main/grade/internal/domain</a></p></li>
 </ul>
 </div>
+</div>
+<div class="section" id="missing-chapter">
+<h2><a class="toc-backref" href="#id31">Missing chapter</a><a class="headerlink" href="#missing-chapter" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Проектом предусматривается поддержка <a class="reference external" href="https://docs.microsoft.com/en-us/azure/architecture/guide/multitenant/overview">Multitenancy</a>.
+В свете этого, возникает потребность в гибком конфигурировании количества уровней классности для каждого <code class="docutils literal notranslate"><span class="pre">Tenant</span></code>, а также количества требуемых рекомендаций для достижения каждого уровня.
+По этой причине, конструктор экземпляра Объекта-значения <code class="docutils literal notranslate"><span class="pre">Grade</span></code> должен создаваться Агрегатом <code class="docutils literal notranslate"><span class="pre">Tenant</span></code>.
+Соответственно, фабричные методы Агрегатов <code class="docutils literal notranslate"><span class="pre">Recognizer</span></code> и <code class="docutils literal notranslate"><span class="pre">Endorsement</span></code> должны переехать в Агрегат <code class="docutils literal notranslate"><span class="pre">Tenant</span></code>, чтобы иметь возможность принимать сконфигурированный экземпляр Объекта-значения <code class="docutils literal notranslate"><span class="pre">Grade</span></code>.</p>
+<p>По мере роста гибкости бизнес-правил можно рассмотреть вариант применения &quot;<a class="reference external" href="https://martinfowler.com/bliki/RulesEngine.html">Rules Engine</a>&quot; (aka &quot;<a class="reference external" href="https://martinfowler.com/dslCatalog/productionRule.html">Production Rule System</a>&quot;), например, в виде &quot;<a class="reference external" href="https://github.com/hyperjumptech/grule-rule-engine">Grule-Rule-Engine</a>&quot; - Rule engine implementation in Golang.</p>
 </div>
 </div>
 
