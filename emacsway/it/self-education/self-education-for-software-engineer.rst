@@ -289,6 +289,8 @@
 
 - https://github.com/microsoftarchive/cqrs-journey (Event Sourcing, SAGA transactions)
 
+Оригинальная статья "`SAGAS <https://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf>`__" by Garcia-Molina, Kenneth Salem (`копия <https://dl.acm.org/doi/10.1145/38713.38742>`__).
+
 
 Изучаем DDD
 -----------
