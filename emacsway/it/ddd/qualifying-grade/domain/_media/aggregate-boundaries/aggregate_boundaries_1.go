@@ -35,7 +35,7 @@ type Endorsed struct {
     memberId                 MemberId
     grade                    Grade
     receivedEndorsementCount ReceivedEndorsementCount
-    gradeLogEntries          []GradeLogEntry
+    assignments              []Assignment
     version                  uint
     createdAt                time.Time
 }
@@ -73,7 +73,7 @@ func (e *Endorsed) IncreaseReceivedEndorsementCount(w Weight, t time.Time) {
 }
 
 func (e *Endorsed) setGrade(g Grade, t time.Time) {
-    e.gradeLogEntries = append(e.gradeLogEntries, GradeLogEntry{
+    e.assignments = append(e.assignments, Assignment{
         e.id, e.version, g, t,
     })
     e.grade = g
@@ -83,7 +83,7 @@ func (e *Endorsed) IncreaseVersion() {
     e.version += 1
 }
 
-type GradeLogEntry struct {
+type Assignment struct {
     endorsedId          EndorsedId
     endorsedVersion     uint
     assignedGrade       Grade
