@@ -67,14 +67,14 @@ Eventual Consistency
 .. literalinclude:: _media/aggregate-boundaries/aggregate_boundaries_1.go
    :language: go
 
-Метод ``Recognizer.Endorse(Endorsed, ArtifactDescription, time.Time)`` является фабричным методом Агрегата ``Endorsement``.
+Метод ``Recognizer.Endorse(Specialist, ArtifactDescription, time.Time)`` является фабричным методом Агрегата ``Endorsement``.
 При сохранении Агрегата ``Endorsement`` в Хранилище, из него извлекаются Доменные События, и отправляются подписчикам через некий механизм доставки.
 Мы предполагаем, что они могут быть обработаны как синхронно в той же транзакции (Mediator/Observer Design Pattern), так и асинхронно в другой транзакции (`Message Broker <https://www.enterpriseintegrationpatterns.com/MessageBroker.html>`__).
 
 На Доменное Событие ``EndorsementCreated`` подписаны:
 
 1. ``Recognizer``, у которого вызывается метод ``Recognizer.DecreaseAvailableEndorsementCount()`` для вычитания использованной рекомендации из счетчика доступных в этом году рекомендаций;
-2. ``Endorse``, у которого вызывается метод ``Endorsed.IncreaseReceivedEndorsementCount(Weight)`` с указанием веса рекомендации, зависящего от отношения квалификационного класса рекомендующего к квалификационному классу рекомендуемого.
+2. ``Endorse``, у которого вызывается метод ``Specialist.IncreaseReceivedEndorsementCount(Weight)`` с указанием веса рекомендации, зависящего от отношения квалификационного класса рекомендующего к квалификационному классу рекомендуемого.
 
 Обратите внимание, ``Assignment``, как и ``Endorsement``, имеет значение для бизнес-правил, и он не может быть усечен снэпшотом event sourced log.
 Например, он может устанавливать правила минимального, либо максимального периода времени между присваиваниями классности, например, не чаще одного раза в полгода.
@@ -82,7 +82,7 @@ Eventual Consistency
 Поэтому, он выполнен в виде самостоятельного Объекта-Значения.
 В ином случае он мог бы быть перемещен в ReadModel.
 
-``Endorsement``, в свою очередь, отвечает за то, чтобы ``Recognizer`` не смог порекомендовать один и тот же ``Artifact`` одного и того же ``Endorsed`` дважды.
+``Endorsement``, в свою очередь, отвечает за то, чтобы ``Recognizer`` не смог порекомендовать один и тот же ``Artifact`` одного и того же ``Specialist`` дважды.
 
 
 Реализация требований
@@ -94,7 +94,7 @@ Eventual Consistency
     Это требование реализуется счетчиком ``Recognizer.availableEndorsementCount`` и инвариантом ``Объекта-Значения AvailableEndorsementCount``, который не может превышать установленное ограничение.
 
 Одна рекомендация от члена Организации претендуемого (или более высокого) квалификационного класса равноценна двум рекомендациям от членов Организации текущего квалификационного класса (излишки не переносятся).
-    Это требование реализуется обработчиком Доменного События ``EndorsementCreated`` перед вызовом метода ``Endorsed.IncreaseReceivedEndorsementCount(Weight)``.
+    Это требование реализуется обработчиком Доменного События ``EndorsementCreated`` перед вызовом метода ``Specialist.IncreaseReceivedEndorsementCount(Weight)``.
 
 Рекомендации от членов Организации более низкого квалификационного класса не допускаются.
     Реализуется фабричным методом ``Recognizer.Endorse(...)``.
@@ -115,15 +115,15 @@ Eventual Consistency
 Вероятность утраты согласованности
 """"""""""""""""""""""""""""""""""
 
-Давайте представим, что ``recognizerA`` 2-го класса дает рекомендацию в пользу ``endorsedA`` 2-го класса, у которого уже существует 13 рекомендаций, т.е. для присвоения нового квалификационного класса не хватает всего одной рекомендации.
-В период времени с момента проверки инварианта методом ``Recognizer.Endorse(...)`` и до декрементирования счетчика доступных рекомендаций рекомендующего методом ``Recognizer.DecreaseAvailableEndorsementCount()``, а также до вызова метода ``Endorsed.IncreaseReceivedEndorsementCount(Weight)``, другой участник ``recognizerB`` 2-го класса может также успеть дать рекомендацию в пользу ``endorsedA``.
+Давайте представим, что ``recognizerA`` 2-го класса дает рекомендацию в пользу ``specialistA`` 2-го класса, у которого уже существует 13 рекомендаций, т.е. для присвоения нового квалификационного класса не хватает всего одной рекомендации.
+В период времени с момента проверки инварианта методом ``Recognizer.Endorse(...)`` и до декрементирования счетчика доступных рекомендаций рекомендующего методом ``Recognizer.DecreaseAvailableEndorsementCount()``, а также до вызова метода ``Specialist.IncreaseReceivedEndorsementCount(Weight)``, другой участник ``recognizerB`` 2-го класса может также успеть дать рекомендацию в пользу ``specialistA``.
 
-В результате рекомендация ``recognizerB`` будет зачтена в пользу ``endorsedA`` уже фактически 1-го класса, что нарушает требование о запрете на рекомендацию участников более высокого квалификационного класса.
+В результате рекомендация ``recognizerB`` будет зачтена в пользу ``specialistA`` уже фактически 1-го класса, что нарушает требование о запрете на рекомендацию участников более высокого квалификационного класса.
 
-Для упреждения такой ситуации достаточно наложить покрывающий (композитный) уникальный индекс на поля ``Endorsement.endorsedId`` и ``Endorsement.endorsedVersion``.
+Для упреждения такой ситуации достаточно наложить покрывающий (композитный) уникальный индекс на поля ``Endorsement.specialistId`` и ``Endorsement.specialistVersion``.
 
 Или рассмотрим другую ситуацию.
-Участник ``recognizerA``, у которого оставалась всего одна доступная рекомендация в текущем году, дает рекомендацию в пользу ``endorsedA``, 
+Участник ``recognizerA``, у которого оставалась всего одна доступная рекомендация в текущем году, дает рекомендацию в пользу ``specialistA``, 
 но произошла техническая задержка доставки сообщения ``EndorsementCreated`` рекомендующему по техническим причинам, например, очередь "встала" (или подписчик затупил, чек-поинт в БД запустился, сеть упала...), и тогда рекомендующий может успеть раздать рекомендаций больше, чем располагает.
 Упреждается такая ситуация таким же образом - покрывающим уникальным индексом на поля ``Endorsement.recognizerId`` и ``Endorsement.recognizerGrade``.
 
@@ -149,27 +149,28 @@ Eventual Consistency
 .. code-block:: go
 
     type Endorsement struct {
-	    recognizerId        RecognizerId
-	    recognizerGrade     Grade
-	    recognizerVersion   int
-	    endorsedId          EndorsedId
-	    endorsedGrade       Grade
-	    endorsedVersion     int
-	    artifactId          ArtifactId
-	    createdAt           time.Time
+        recognizerId        MemberId
+        recognizerGrade     Grade
+        recognizerVersion   uint
+        specialistId        MemberId
+        specialistGrade     Grade
+        specialistVersion   uint
+        artifactId          ArtifactId
+        createdAt           time.Time
     }
 
     type Artifact struct {
-	    id                  ArtifactId
-	    artifactDescription ArtifactDescription
-	    status              ArtifactStatus
-	    createdAt           time.Time
+        id            ArtifactId
+        status        ArtifactStatus
+        description   ArtifactDescription
+        competenceIds []CompetenceId
+        createdAt     time.Time
     }
 
-    type ExpertiseArea struct {
-	    id        ExpertiseAreaId
-	    name      ExpertiseAreaName
-	    createdAt time.Time
+    type Competence struct {
+        id        CompetenceId
+        name      CompetenceName
+        createdAt time.Time
     }
 
 Задача упрощается.
@@ -183,7 +184,7 @@ Eventual Consistency
 Преобразование Endorsement в Сущность
 """""""""""""""""""""""""""""""""""""
 
-С точки зрения `DDD Trilemma <https://enterprisecraftsmanship.com/posts/domain-model-purity-completeness/>`__, учитывая относительно небольшое количество возможных рекомендаций в процессе жизни Агрегата ``Endorsed``, имеет смысл отдать предпочтение в пользу "Domain model purity" и "Domain model completeness".
+С точки зрения `DDD Trilemma <https://enterprisecraftsmanship.com/posts/domain-model-purity-completeness/>`__, учитывая относительно небольшое количество возможных рекомендаций в процессе жизни Агрегата ``Specialist``, имеет смысл отдать предпочтение в пользу "Domain model purity" и "Domain model completeness".
 
 Вопрос в том, в каком именно Агрегате разместить Сущность ``Endorsement``?
 Ответ на этот вопрос подскажет нам, по какому ключу лучше партиционировать таблицу ``Endorsement``.
@@ -192,14 +193,14 @@ Eventual Consistency
 У кого хранится в реальном мире наградной лист, почетная грамота, сертификат и т.д. - у награждаемого или у награждающего?
 Для кого он имеет ценность?
 
-Это наводит на мысль о том, что Сущность ``Endorsement`` должна принадлежать Агрегату ``Endorsed``.
+Это наводит на мысль о том, что Сущность ``Endorsement`` должна принадлежать Агрегату ``Specialist``.
 Что подтвержается также ответом на вопрос о том, должен ли рекомендующий, т.е. Агрегат ``Recognizer``, хранить рекомендации удаленных из системы рекомендуемых?
 Вроде бы рекомендации должны удаляться вместе с рекомендуемым (это отвечает и на вопрос о том, по какому ключу партиционировать таблицу ``Endorsement``).
 А вот если из системы удаляется рекомендующий, то его рекомендации продолжают иметь значение как способ подтверждения достоверности квалификационной классности рекомендуемого.
 Иными словами, квалификационная классность рекомендуемого является `сверткой (left fold) <https://ru.wikipedia.org/wiki/%D0%A1%D0%B2%D1%91%D1%80%D1%82%D0%BA%D0%B0_%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0>`__ этих рекомендаций, по-другому говоря - их проекцией.
 
 Таким образом, между рекомендуемым и рекомендациями образуется строгая согласованность.
-Все, что теперь требуется Агрегату ``Endorsed`` для того, чтобы установить возможность создания рекомендации - это квалификационный класс рекомендующего и достоверность того, что он пока еще не исчерпал доступные ему рекомендации.
+Все, что теперь требуется Агрегату ``Specialist`` для того, чтобы установить возможность создания рекомендации - это квалификационный класс рекомендующего и достоверность того, что он пока еще не исчерпал доступные ему рекомендации.
 
 Но это так же значит, что мы не можем создать покрывающий уникальный индекс на поля ``Endorsement.recognizerId`` и ``Endorsement.recognizerGrade``.
 
@@ -239,7 +240,7 @@ Pessimistic Offline Lock
   - в случае неудачи - блокировка отпускается;
   - в случае успеха - порождается Доменное Событие;
 
-    - обработчик Доменного События вызывает ``Endorsed.ReceiveEndorsement(Recognizer, ArtifactId, time.Time) error``;
+    - обработчик Доменного События вызывает ``Specialist.ReceiveEndorsement(Recognizer, ArtifactId, time.Time) error``;
 
       - в случае успеха порождается Доменное Событие об успехе;
 
@@ -264,7 +265,7 @@ Pessimistic Offline Lock
   - в случае неудачи - декрементирование счетчика ``Recognizer.pendingEndorsementCount``;
   - в случае успеха - порождается Доменное Событие;
 
-    - обработчик Доменного События вызывает ``Endorsed.ReceiveEndorsement(Recognizer, ArtifactId, time.Time) error``;
+    - обработчик Доменного События вызывает ``Specialist.ReceiveEndorsement(Recognizer, ArtifactId, time.Time) error``;
 
       - в случае успеха порождается Доменное Событие об успехе;
 
@@ -286,7 +287,7 @@ Pessimistic Offline Lock
 
 Ссылка на полную модель:
 
-- https://github.com/emacsway/qualifying-grade/tree/main/grade/internal/domain
+- https://github.com/emacsway/grade/tree/main/grade/internal/domain
 
 
 Missing chapter
