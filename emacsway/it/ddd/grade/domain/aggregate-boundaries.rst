@@ -287,7 +287,7 @@ Pessimistic Offline Lock
 
 Ссылка на полную модель:
 
-- https://github.com/emacsway/qualifying-grade/tree/main/grade/internal/domain
+- https://github.com/emacsway/grade/tree/main/grade/internal/domain
 
 
 Missing chapter

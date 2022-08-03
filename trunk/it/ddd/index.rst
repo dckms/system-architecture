@@ -8,4 +8,4 @@ DDD
    :glob:
 
    */index
-   /emacsway/it/ddd/qualifying-grade/index
+   /emacsway/it/ddd/grade/index
