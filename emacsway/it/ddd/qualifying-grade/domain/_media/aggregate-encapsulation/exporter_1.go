@@ -1,4 +1,4 @@
-package qualifying_grade_1
+package grade_1
 
 import (
     "time"

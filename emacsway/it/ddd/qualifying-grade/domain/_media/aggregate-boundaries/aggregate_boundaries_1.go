@@ -1,16 +1,14 @@
-package qualifying_grade_1
+package grade_1
 
 import (
     "errors"
     "time"
 )
 
-type EndorsedId uint64
 type MemberId uint64
 type Grade uint
 type AvailableEndorsementCount uint
 type ReceivedEndorsementCount uint
-type RecognizerId uint64
 type EndorsementId uint64
 type ArtifactDescription string
 
@@ -30,9 +28,8 @@ const (
     WithoutGrade = Grade(0)
 )
 
-type Endorsed struct {
-    id                       EndorsedId
-    memberId                 MemberId
+type Specialist struct {
+    id                       MemberId
     grade                    Grade
     receivedEndorsementCount ReceivedEndorsementCount
     assignments              []Assignment
@@ -40,67 +37,66 @@ type Endorsed struct {
     createdAt                time.Time
 }
 
-func (e Endorsed) GetId() EndorsedId {
-    return e.id
+func (s Specialist) GetId() MemberId {
+    return s.id
 }
 
-func (e Endorsed) GetGrade() Grade {
-    return e.grade
+func (s Specialist) GetGrade() Grade {
+    return s.grade
 }
 
-func (e Endorsed) GetVersion() uint {
-    return e.version
+func (s Specialist) GetVersion() uint {
+    return s.version
 }
 
-func (e *Endorsed) IncreaseReceivedEndorsementCount(w Weight, t time.Time) {
-    e.receivedEndorsementCount += ReceivedEndorsementCount(w)
-    if e.grade == WithoutGrade && e.receivedEndorsementCount >= 6 {
-        e.setGrade(Grade3, t)
-        e.receivedEndorsementCount = 0
-    } else if e.grade == Grade3 && e.receivedEndorsementCount >= 10 {
-        e.setGrade(Grade2, t)
-        e.receivedEndorsementCount = 0
-    } else if e.grade == Grade2 && e.receivedEndorsementCount >= 14 {
-        e.setGrade(Grade1, t)
-        e.receivedEndorsementCount = 0
-    } else if e.grade == Grade1 && e.receivedEndorsementCount >= 20 {
-        e.setGrade(Candidate, t)
-        e.receivedEndorsementCount = 0
-    } else if e.grade == Candidate && e.receivedEndorsementCount >= 40 {
-        e.setGrade(Expert, t)
-        e.receivedEndorsementCount = 0
+func (s *Specialist) IncreaseReceivedEndorsementCount(w Weight, t time.Time) {
+    s.receivedEndorsementCount += ReceivedEndorsementCount(w)
+    if s.grade == WithoutGrade && s.receivedEndorsementCount >= 6 {
+        s.setGrade(Grade3, t)
+        s.receivedEndorsementCount = 0
+    } else if s.grade == Grade3 && s.receivedEndorsementCount >= 10 {
+        s.setGrade(Grade2, t)
+        s.receivedEndorsementCount = 0
+    } else if s.grade == Grade2 && s.receivedEndorsementCount >= 14 {
+        s.setGrade(Grade1, t)
+        s.receivedEndorsementCount = 0
+    } else if s.grade == Grade1 && s.receivedEndorsementCount >= 20 {
+        s.setGrade(Candidate, t)
+        s.receivedEndorsementCount = 0
+    } else if s.grade == Candidate && s.receivedEndorsementCount >= 40 {
+        s.setGrade(Expert, t)
+        s.receivedEndorsementCount = 0
     }
 }
 
-func (e *Endorsed) setGrade(g Grade, t time.Time) {
-    e.assignments = append(e.assignments, Assignment{
-        e.id, e.version, g, t,
+func (s *Specialist) setGrade(g Grade, t time.Time) {
+    s.assignments = append(s.assignments, Assignment{
+        s.id, s.version, g, t,
     })
-    e.grade = g
+    s.grade = g
 }
 
-func (e *Endorsed) IncreaseVersion() {
-    e.version += 1
+func (s *Specialist) IncreaseVersion() {
+    s.version += 1
 }
 
 type Assignment struct {
-    endorsedId          EndorsedId
-    endorsedVersion     uint
+    specialistId        MemberId
+    specialistVersion   uint
     assignedGrade       Grade
     createdAt           time.Time
 }
 
 type Recognizer struct {
-    id                        RecognizerId
-    memberId                  MemberId
+    id                        MemberId
     grade                     Grade
     availableEndorsementCount AvailableEndorsementCount
     version                   uint
     createdAt                 time.Time
 }
 
-func (r Recognizer) Endorse(e Endorsed, aDesc ArtifactDescription, t time.Time) (Endorsement, error) {
-    if r.grade < e.grade {
+func (r Recognizer) Endorse(s Specialist, aDesc ArtifactDescription, t time.Time) (Endorsement, error) {
+    if r.grade < s.grade {
         return Endorsement{}, errors.New(
             "it is allowed to endorse only members with equal or lower grade",
         )
@@ -110,14 +106,14 @@ func (r Recognizer) Endorse(e Endorsed, aDesc ArtifactDescription, t time.Time) 
             "you have reached the limit of available recommendations this year",
         )
     }
-    if uint64(r.id) == uint64(e.GetId()) {
+    if uint64(r.id) == uint64(s.GetId()) {
         return Endorsement{}, errors.New(
             "recognizer can't endorse himself",
         )
     }
     return Endorsement{
-        0, r.id, r.grade, r.version,
-        e.id, e.grade, e.GetVersion(),
+        r.id, r.grade, r.version,
+        s.id, s.grade, s.GetVersion(),
         aDesc, t,
     }, nil
 }
@@ -135,13 +131,12 @@ func (r *Recognizer) IncreaseVersion() {
 }
 
 type Endorsement struct {
-    id                  EndorsementId
-    recognizerId        RecognizerId
+    recognizerId        MemberId
     recognizerGrade     Grade
     recognizerVersion   uint
-    endorsedId          EndorsedId
-    endorsedGrade       Grade
-    endorsedVersion     uint
+    specialistId        MemberId
+    specialistGrade     Grade
+    specialistVersion   uint
     artifactDescription ArtifactDescription
     createdAt           time.Time
 }
