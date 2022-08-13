@@ -110,6 +110,11 @@
 В таком случае, директория для совместно используемых Объектов-значений может иметь название (в дополнение к уже перечисленным) ``exportable``, ``public``.
 Ну а чтобы не появлялись в импортах ``public2``, ``public3``, ``public4``..., можно использовать импорт с точкой в пакет их агрегата, и уже оттуда импортировать в клиентский пакет.
 
+    All Value Objects which are part of a Customer live in another subpackage named value. I have to do this because in Go circular dependencies are not allowed. If I would put the Value Objects into the customer package then Commands and Events in domain would import the Value Objects from customer and functions in customer would import Commands and Events from domain. Having them in a subpackage additionally gives more privacy for the Value Objects. Not even functions of the Customer Aggregate can access private parts or create/modify a value without using the proper methods.
+
+    -- "`Implementing Domain-Driven Design and Hexagonal Architecture with Go (2) <https://medium.com/@TonyBologni/implementing-domain-driven-design-and-hexagonal-architecture-with-go-2-efd432505554>`__" by Anton Stöckl -- Part 2 -- How I implement tactical DDD patterns -- the Domain layer.
+
+
 Еще одним способом предотвращения циклических импортов является использование интерфейсов, размещенных в отдельном пакете либо продублированных у своих клиентов.
 Интерфейс дает то, что требуется сигнатурой методов клиента, не тащит за собой кучу зависимостей, необходимых для реализации, и даже может быть объявлен локально у своего клиента.
 
