@@ -110,7 +110,6 @@
 
 Этот вариант также может оказаться востребованным, если Доменные События расположены в поддиректории, например, ``events``, и используют Объекты-значения Агрегатов.
 В таком случае, директория для совместно используемых Объектов-значений может иметь название (в дополнение к уже перечисленным) ``exportable``, ``public``.
-Ну а чтобы не появлялись в импортах ``public2``, ``public3``, ``public4``..., можно использовать импорт с точкой в пакет их агрегата, и уже оттуда импортировать в клиентский пакет.
 
     All Value Objects which are part of a Customer live in another subpackage named value. I have to do this because in Go circular dependencies are not allowed. If I would put the Value Objects into the customer package then Commands and Events in domain would import the Value Objects from customer and functions in customer would import Commands and Events from domain. Having them in a subpackage additionally gives more privacy for the Value Objects. Not even functions of the Customer Aggregate can access private parts or create/modify a value without using the proper methods.
 
