@@ -601,13 +601,14 @@ Scaled Agile
 - "An Introduction to Database Systems" by C.J. Date
 - "PostgreSQL 10 High Performance" by Ibrar Ahmed, Gregory Smith, Enrico Pirozzi
 
-PostgresPro представил `три книги <https://postgrespro.ru/education/books>`__ для трех разных уровней подготовленности читателей, от совершенно неосведомленного человека до разработчика баз данных.
+PostgresPro представил `четыре книги <https://postgrespro.ru/education/books>`__ для разных уровней подготовленности читателей, от совершенно неосведомленного человека до разработчика баз данных.
 Книги дают комплексные знания в лаконичной форме.
 Все книги доступны для скачивания в свободном доступе:
 
-1. "`Postgres: первое знакомство <https://postgrespro.ru/education/books/introbook>`__" / Л.П. Вениаминович, Р.Е. Валерьевич, Л.И. Викторович
-2. "`PostgreSQL. Основы языка SQL: учеб. пособие <https://postgrespro.ru/education/books/sqlprimer>`__"  / Е.П. Моргунов; под ред. Е.В. Рогова, П.В. Лузанова.
-3. "`Основы технологий баз данных: учеб. пособие <https://postgrespro.ru/education/books/dbtech>`__" / Б. А. Новиков, Е. А. Горшкова, Н. Г. Графеева; под ред. Е. В. Рогова.
+#. "`Postgres: первое знакомство <https://postgrespro.ru/education/books/introbook>`__" / Л.П. Вениаминович, Р.Е. Валерьевич, Л.И. Викторович
+#. "`PostgreSQL изнутри <https://postgrespro.ru/education/books/internals>`__" / Рогов Е. В. — М.: ДМК Пресс, 2022. — 660 с.
+#. "`PostgreSQL. Основы языка SQL: учеб. пособие <https://postgrespro.ru/education/books/sqlprimer>`__"  / Е.П. Моргунов; под ред. Е.В. Рогова, П.В. Лузанова.
+#. "`Основы технологий баз данных: учеб. пособие <https://postgrespro.ru/education/books/dbtech>`__" / Б. А. Новиков, Е. А. Горшкова, Н. Г. Графеева; под ред. Е. В. Рогова.
 
 Так же доступны `учебные материалы курсов <https://postgrespro.ru/education/courses>`__: слайды, видео, руководства. Скачать можно все материалы каждого курса одним архивом.
 
