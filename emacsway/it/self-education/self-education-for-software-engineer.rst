@@ -605,10 +605,10 @@ PostgresPro представил `четыре книги <https://postgrespro.r
 Книги дают комплексные знания в лаконичной форме.
 Все книги доступны для скачивания в свободном доступе:
 
-#. "`Postgres: первое знакомство <https://postgrespro.ru/education/books/introbook>`__" / Л.П. Вениаминович, Р.Е. Валерьевич, Л.И. Викторович
-#. "`PostgreSQL изнутри <https://postgrespro.ru/education/books/internals>`__" / Рогов Е. В. — М.: ДМК Пресс, 2022. — 660 с.
+#. "`Postgres: первое знакомство <https://postgrespro.ru/education/books/introbook>`__" / П.В. Лузанов, Е.В. Рогов, И.В. Лёвшин
+#. "`PostgreSQL изнутри <https://postgrespro.ru/education/books/internals>`__" / Е.В. Рогов — М.: ДМК Пресс, 2022. — 660 с.
 #. "`PostgreSQL. Основы языка SQL: учеб. пособие <https://postgrespro.ru/education/books/sqlprimer>`__"  / Е.П. Моргунов; под ред. Е.В. Рогова, П.В. Лузанова.
-#. "`Основы технологий баз данных: учеб. пособие <https://postgrespro.ru/education/books/dbtech>`__" / Б. А. Новиков, Е. А. Горшкова, Н. Г. Графеева; под ред. Е. В. Рогова.
+#. "`Основы технологий баз данных: учеб. пособие <https://postgrespro.ru/education/books/dbtech>`__" / Б.А. Новиков, Е.А. Горшкова, Н.Г. Графеева; под ред. Е.В. Рогова.
 
 Так же доступны `учебные материалы курсов <https://postgrespro.ru/education/courses>`__: слайды, видео, руководства. Скачать можно все материалы каждого курса одним архивом.
 
