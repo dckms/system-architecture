@@ -358,6 +358,7 @@ CQRS & Event Sourcing
 - "`Event Sourcing basics <https://zimarev.com/blog/event-sourcing/introduction/>`__" by Alexey Zimarev
 - "`What is Event Sourcing? <https://eventstore.com/blog/what-is-event-sourcing/>`__" by Alexey Zimarev
 - "`Event Sourcing and CQRS <https://eventstore.com/blog/event-sourcing-and-cqrs/>`__" by Alexey Zimarev
+- "`Event immutability and dealing with change <https://www.eventstore.com/blog/event-immutability-and-dealing-with-change>`__" by Savvas Kleanthous
 
 - "`CQRS, Task Based UIs, Event Sourcing agh! <http://codebetter.com/gregyoung/2010/02/16/cqrs-task-based-uis-event-sourcing-agh/>`__" by Greg Young
 - "`CQRS Documents <https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf>`__" by Greg Young
