@@ -4,14 +4,16 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Роль архитектуры в масштабировании команд, DDD и микросервисах &#8212; System Architecture</title>
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/translations.js"></script>
     <link rel="index" title="Алфавитный указатель" href="../../../genindex.html" />
@@ -59,10 +61,10 @@
           <div class="body" role="main">
             
     
-  <div class="section" id="ddd">
-<span id="emacsway-team-topologies-at-scale"></span><h1><a class="toc-backref" href="#id16">Роль архитектуры в масштабировании команд, DDD и микросервисах</a><a class="headerlink" href="#ddd" title="Ссылка на этот заголовок">¶</a></h1>
+  <section id="ddd">
+<span id="emacsway-team-topologies-at-scale"></span><h1><a class="toc-backref" href="#id16" role="doc-backlink">Роль архитектуры в масштабировании команд, DDD и микросервисах</a><a class="headerlink" href="#ddd" title="Permalink to this heading">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
-<div class="contents topic" id="id1">
+<nav class="contents" id="id1">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#ddd" id="id16">Роль архитектуры в масштабировании команд, DDD и микросервисах</a></p>
@@ -95,11 +97,11 @@
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id2">
-<h2><a class="toc-backref" href="#id17">Закон Брукса и роль автономности команд</a><a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
-<div class="section" id="emacsway-brooks-s-law">
-<span id="id3"></span><h3><a class="toc-backref" href="#id18">Закон Брукса</a><a class="headerlink" href="#emacsway-brooks-s-law" title="Ссылка на этот заголовок">¶</a></h3>
+</nav>
+<section id="id2">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">Закон Брукса и роль автономности команд</a><a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<section id="emacsway-brooks-s-law">
+<span id="id3"></span><h3><a class="toc-backref" href="#id18" role="doc-backlink">Закон Брукса</a><a class="headerlink" href="#emacsway-brooks-s-law" title="Permalink to this heading">¶</a></h3>
 <p>Сегодня, наверное, каждый знает Закон Брукса:</p>
 <blockquote>
 <div><p>📝 &quot;Если проект не укладывается в сроки, то добавление рабочей силы задержит его ещё больше.</p>
@@ -120,9 +122,9 @@
 <div><p>📝 &quot;Microservices' main benefit, in my view, is enabling parallel development by establishing a hard-to-cross boundary between different parts of your system.&quot;</p>
 <p class="attribution">—&quot;<a class="reference external" href="https://martinfowler.com/articles/dont-start-monolith.html">Don't start with a monolith</a>&quot; by Stefan Tilkov, a co-founder and principal consultant at innoQ</p>
 </div></blockquote>
-</div>
-<div class="section" id="id4">
-<h3><a class="toc-backref" href="#id19">Противоречие между эффективностью и производительностью</a><a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="id4">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">Противоречие между эффективностью и производительностью</a><a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
 <p>Frederick Brooks формулирует противоречие. С одной стороны:</p>
 <blockquote>
 <div><p>📝 &quot;Выше я доказал, что само число разработчиков, действия которых нужно согласовывать, оказывает влияние на стоимость проекта, поскольку значительная часть издержек вызвана необходимостью общения и устранения отрицательных последствий разобщенности (системная отладка). Это также наводит на мысль, что <strong>желательно разрабатывать системы возможно меньшим числом людей</strong>. Действительно, опыт разработки больших программных систем, как правило, показывает, что подход с позиций грубой силы влечет удорожание, замедленность, неэффективность, а создаваемые в результате системы не являются концептуально целостными. Список, иллюстрирующий это, бесконечен: OS/360, Exec 8, Scop 6600, Multics, TSS, SAGE и другие.</p>
@@ -151,26 +153,34 @@
 <blockquote>
 <div><p>📝 &quot;Вторая ошибка рассуждений заключена в самой единице измерения, используемой при оценивании и планировании: человеко-месяц. Стоимость действительно измеряется как произведения числа занятых на количество затраченных месяцев. Но не достигнутый результат. Поэтому использование человеко-месяца как единицы измерения объема работы является опасным заблуждением.</p>
 <p>Число занятых и число месяцев являются взаимозаменяемыми величинами лишь тогда, когда задачу можно распределить среди ряда работников, которые не имеют между собой взаимосвязи (рис. 2.1). Это верно, когда жнут пшеницу или собирают хлопок, но в системном программировании это далеко не так.</p>
-<div class="figure align-left" id="id11">
+<figure class="align-left" id="id11">
 <a class="reference internal image-reference" href="../../../_images/fig-2.1-perfectly-partitionable-task.png"><img alt="Рис. 2.1 Зависимость времени от числа занятых — полностью разделимая задача. Fig. 2.1 Time versus number of workers—perfectly partitionable task. The image source is &quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr., &quot;Chapter 2 The Mythical Man-Month&quot;, перевод ООО Издательство &quot;Питер&quot;." src="../../../_images/fig-2.1-perfectly-partitionable-task.png" style="width: 70%;" /></a>
-<p class="caption"><span class="caption-text">Рис. 2.1 Зависимость времени от числа занятых — полностью разделимая задача. Fig. 2.1 Time versus number of workers—perfectly partitionable task. The image source is &quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr., &quot;Chapter 2 The Mythical Man-Month&quot;, перевод ООО Издательство &quot;Питер&quot;.</span><a class="headerlink" href="#id11" title="Постоянная ссылка на рисунок">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Рис. 2.1 Зависимость времени от числа занятых — полностью разделимая задача. Fig. 2.1 Time versus number of workers—perfectly partitionable task. The image source is &quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr., &quot;Chapter 2 The Mythical Man-Month&quot;, перевод ООО Издательство &quot;Питер&quot;.</span><a class="headerlink" href="#id11" title="Постоянная ссылка на рисунок">¶</a></p>
+</figcaption>
+</figure>
 <p>Если задачу нельзя разбить на части, поскольку существуют ограничения на последовательность выполнения этапов, то увеличение затрат не оказывает влияния на график (рис. 2.2). Чтобы родить ребенка требуется девять месяцев независимо от того, сколько женщин привлечено к решению данной задачи. Многие задачи программирования относятся к этому типу, поскольку отладка по своей сути носит последовательный характер.</p>
-<div class="figure align-left" id="id12">
+<figure class="align-left" id="id12">
 <a class="reference internal image-reference" href="../../../_images/fig-2.2-unpartitionable-task.png"><img alt="Рис. 2.2 Зависимость времени от числа занятых — неразделимая задача. Fig. 2.2 Time versus number of workers—unpartitionable task. The image source is &quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr., &quot;Chapter 2 The Mythical Man-Month&quot;, перевод ООО Издательство &quot;Питер&quot;." src="../../../_images/fig-2.2-unpartitionable-task.png" style="width: 70%;" /></a>
-<p class="caption"><span class="caption-text">Рис. 2.2 Зависимость времени от числа занятых — неразделимая задача. Fig. 2.2 Time versus number of workers—unpartitionable task. The image source is &quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr., &quot;Chapter 2 The Mythical Man-Month&quot;, перевод ООО Издательство &quot;Питер&quot;.</span><a class="headerlink" href="#id12" title="Постоянная ссылка на рисунок">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Рис. 2.2 Зависимость времени от числа занятых — неразделимая задача. Fig. 2.2 Time versus number of workers—unpartitionable task. The image source is &quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr., &quot;Chapter 2 The Mythical Man-Month&quot;, перевод ООО Издательство &quot;Питер&quot;.</span><a class="headerlink" href="#id12" title="Постоянная ссылка на рисунок">¶</a></p>
+</figcaption>
+</figure>
 <p>Для задач, которые могут быть разбиты на части, но требуют обмена данными между подзадачами, затраты на обмен данными должны быть добавлены к общему объему необходимых работ. Поэтому достижимый наилучший результат оказывается несколько хуже, чем простое соответствие числа занятых и количества месяцев (рис. 2.3).</p>
-<div class="figure align-left" id="id13">
+<figure class="align-left" id="id13">
 <a class="reference internal image-reference" href="../../../_images/fig-2.3-partitionable-task-requiring-communication.png"><img alt="Рис. 2.3 Зависимость времени от числа занятых — разделимая задача, требующая обмена данными. Fig. 2.3 Time versus number of workers—partitionable task requiring communication. The image source is &quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr., &quot;Chapter 2 The Mythical Man-Month&quot;, перевод ООО Издательство &quot;Питер&quot;." src="../../../_images/fig-2.3-partitionable-task-requiring-communication.png" style="width: 70%;" /></a>
-<p class="caption"><span class="caption-text">Рис. 2.3 Зависимость времени от числа занятых — разделимая задача, требующая обмена данными. Fig. 2.3 Time versus number of workers—partitionable task requiring communication. The image source is &quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr., &quot;Chapter 2 The Mythical Man-Month&quot;, перевод ООО Издательство &quot;Питер&quot;.</span><a class="headerlink" href="#id13" title="Постоянная ссылка на рисунок">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Рис. 2.3 Зависимость времени от числа занятых — разделимая задача, требующая обмена данными. Fig. 2.3 Time versus number of workers—partitionable task requiring communication. The image source is &quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr., &quot;Chapter 2 The Mythical Man-Month&quot;, перевод ООО Издательство &quot;Питер&quot;.</span><a class="headerlink" href="#id13" title="Постоянная ссылка на рисунок">¶</a></p>
+</figcaption>
+</figure>
 <p>Дополнительная нагрузка состоит из двух частей — обучения и обмена данными. Каждого работника нужно обучить технологии, целям проекта, общей стратегии и плану работы. Это обучение нельзя разбить на части, поэтому данная часть затрат изменяется линейно в зависимости от числа занятых.</p>
 <p><strong>С обменом данными дело обстоит хуже. Если все части задания должны быть отдельно скоординированы между собой, то затраты возрастают как n(n-2)/2. Для трех работников требуется втрое больше попарного общения, чем для двух, для четырех — вшестеро. Если помимо этого возникает необходимость в совещаниях трех, четырех и т.д. работников для совместного решения вопросов, положение становится еще хуже. Дополнительные затраты на обмен данными могут полностью обесценить результат дробления исходной задачи и привести к положению, описываемому рисунком 2.4.</strong></p>
-<div class="figure align-left" id="id14">
+<figure class="align-left" id="id14">
 <a class="reference internal image-reference" href="../../../_images/fig-2.4-task-with-complex-interrelationships.png"><img alt="Рис. 2.4 Зависимость времени от числа занятых — задача со сложными взаимосвязями. Fig. 2.4 Time versus number of workers—task with complex interrelationships. The image source is &quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr., &quot;Chapter 2 The Mythical Man-Month&quot;, перевод ООО Издательство &quot;Питер&quot;." src="../../../_images/fig-2.4-task-with-complex-interrelationships.png" style="width: 70%;" /></a>
-<p class="caption"><span class="caption-text">Рис. 2.4 Зависимость времени от числа занятых — задача со сложными взаимосвязями. Fig. 2.4 Time versus number of workers—task with complex interrelationships. The image source is &quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr., &quot;Chapter 2 The Mythical Man-Month&quot;, перевод ООО Издательство &quot;Питер&quot;.</span><a class="headerlink" href="#id14" title="Постоянная ссылка на рисунок">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Рис. 2.4 Зависимость времени от числа занятых — задача со сложными взаимосвязями. Fig. 2.4 Time versus number of workers—task with complex interrelationships. The image source is &quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr., &quot;Chapter 2 The Mythical Man-Month&quot;, перевод ООО Издательство &quot;Питер&quot;.</span><a class="headerlink" href="#id14" title="Постоянная ссылка на рисунок">¶</a></p>
+</figcaption>
+</figure>
 <p>Поскольку создание программного продукта является по сути системным проектом — практикой сложных взаимосвязей, затраты на обмен данными велики и быстро начинают преобладать над сокращением сроков, достигаемым в результате разбиения задачи на более мелкие подзадачи. В этом случае привлечение дополнительных работников не сокращает, а удлиняет график работ.</p>
 <p>The second fallacious thought mode is expressed in the very unit of effort used in estimating and scheduling: the man-month. Cost does indeed vary as the product of the number of men and the number of months. Progress does not. Hence the man-month as a unit for measuring the size of a job is a dangerous and deceptive myth. It implies that men and months are interchangeable.</p>
 <p>Men and months are interchangeable commodities only when a task can be partitioned among many workers with no communication among them (Fig. 2.1). This is true of reaping wheat or picking cotton; it is not even approximately true of systems programming.</p>
@@ -190,9 +200,9 @@
 <p><strong>Architecture must be carefully distinguished from implementation.</strong> As Blaauw has said, &quot;Where architecture tells what happens, implementation tells how it is made to happen.&quot; He gives as a simple example a clock, whose architecture consists of the face, the hands, and the winding knob. When a child has learned this architecture, he can tell time as easily from a wristwatch as from a church tower. The implementation, however, and its realization, describe what goes on inside the case—powering by any of many mechanisms and accuracy control by any of many.&quot;</p>
 <p class="attribution">—&quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr., перевод ООО Издательство &quot;Питер&quot;</p>
 </div></blockquote>
-</div>
-<div class="section" id="emacsway-harlan-mills-proposal">
-<span id="id5"></span><h3><a class="toc-backref" href="#id20">Предложение Харлана Миллза</a><a class="headerlink" href="#emacsway-harlan-mills-proposal" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="emacsway-harlan-mills-proposal">
+<span id="id5"></span><h3><a class="toc-backref" href="#id20" role="doc-backlink">Предложение Харлана Миллза</a><a class="headerlink" href="#emacsway-harlan-mills-proposal" title="Permalink to this heading">¶</a></h3>
 <p>Harlan Mills' Proposal (Предложение Харлана Миллза) было опубликовано в:</p>
 <ul class="simple">
 <li><p>Mills, H., &quot;Chief programmer teams, principles, and procedures,&quot; IBM Federal Systems Division Report FSC 71-5108, Gaithersburg, Md., 1971.</p></li>
@@ -240,10 +250,10 @@
 <p>All communication between the services themselves are via network calls, <strong>to enforce separation between the services</strong> and avoid the perils of tight coupling.&quot;</p>
 <p class="attribution">—&quot;Building Microservices. Designing Fine-Grained Systems&quot; by Sam Newman, перевод ООО Издательство &quot;Питер&quot;</p>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="program-management">
-<span id="emacsway-program-management"></span><h2><a class="toc-backref" href="#id21">Program Management</a><a class="headerlink" href="#program-management" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+</section>
+<section id="program-management">
+<span id="emacsway-program-management"></span><h2><a class="toc-backref" href="#id21" role="doc-backlink">Program Management</a><a class="headerlink" href="#program-management" title="Permalink to this heading">¶</a></h2>
 <p>Знаете, почему не бывает больших червяков?
 Любое беспозвоночное животное не может быть бесконечно большим, поскольку на определенном пороге сила его тяжести превысит предел его прочности.
 Рост силы тяжести опережает рост прочности.
@@ -252,10 +262,12 @@
 <p>По этой же причине невозможно фрактально увеличить село до размеров крупного города, не обеспечив в нем транспортные магистрали и узлы связи.</p>
 <p>Эту проблему хорошо сформулировал Galileo Galilei в теории theory of Beam Bending:</p>
 <blockquote>
-<div><div class="figure align-left" id="id15">
+<div><figure class="align-left" id="id15">
 <a class="reference internal image-reference" href="../../../_images/galileo-beam-bending.jpg"><img alt="Discorsi e dimostrazioni matematiche, intorno à due nuoue scienze. Leiden: appresso gli Elsevirii, 1638. The image source is &quot;Galileo's Beam Experiment&quot; https://civil.lindahall.org/strength.shtml" src="../../../_images/galileo-beam-bending.jpg" style="width: 200px;" /></a>
-<p class="caption"><span class="caption-text">Discorsi e dimostrazioni matematiche, intorno à due nuoue scienze. Leiden: appresso gli Elsevirii, 1638. The image source is &quot;<a class="reference external" href="https://civil.lindahall.org/strength.shtml">Galileo's Beam Experiment</a>&quot;</span><a class="headerlink" href="#id15" title="Постоянная ссылка на рисунок">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Discorsi e dimostrazioni matematiche, intorno à due nuoue scienze. Leiden: appresso gli Elsevirii, 1638. The image source is &quot;<a class="reference external" href="https://civil.lindahall.org/strength.shtml">Galileo's Beam Experiment</a>&quot;</span><a class="headerlink" href="#id15" title="Постоянная ссылка на рисунок">¶</a></p>
+</figcaption>
+</figure>
 </div></blockquote>
 <blockquote>
 <div><p>📝 &quot;Many mathematicians before Galileo had dealt with the problem of statics – how forces are transmitted by structural members.
@@ -278,8 +290,8 @@ This led Galileo to recognize what we now call <strong>the scaling problem – t
 Эту когнитивную нагрузку с него снимает диспетчер управления воздушным движением.
 А теперь попробуйте представьте себе что-то подобное в Шереметьево.
 А если какое-то одно воздушное судно терпит бедствие и нуждается в аварийной посадке?</p>
-<div class="section" id="spotify">
-<h3><a class="toc-backref" href="#id22">Spotify</a><a class="headerlink" href="#spotify" title="Ссылка на этот заголовок">¶</a></h3>
+<section id="spotify">
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">Spotify</a><a class="headerlink" href="#spotify" title="Permalink to this heading">¶</a></h3>
 <p>Даже в Spotify существует такой &quot;опорный скелет&quot;:</p>
 <blockquote>
 <div><p>📝 &quot;At Spotify there is a separate operations team, but their job is not to make releases for the squads -­ their job is to give the squads the support they need to release code themselves; support in the form of infrastructure, scripts, and routines.
@@ -292,9 +304,9 @@ The feedback is always just suggestions and input -­ the decision for the final
 </div></blockquote>
 <p>Но более отчетливо этот скелет сформирован в виде Program Management в <a class="reference external" href="https://www.scaledagileframework.com/">Scaled Agile Framework (SAFe)</a> и в <a class="reference external" href="https://www.pmi.org/disciplined-agile/process/introduction-to-dad">Disciplined agile delivery (DAD)</a>.</p>
 <p>SAFe создан известным автором по аналитике Dean Leffingwell, и, наверное, поэтому SAFe хорошо регламентирует процессы, предшествующие этапу реализации ПО в условиях масштабируемой Agile-разработки.</p>
-</div>
-<div class="section" id="agile-software-requirements-lean-requirements-practices-for-teams-programs-and-the-enterprise">
-<h3><a class="toc-backref" href="#id23">Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise</a><a class="headerlink" href="#agile-software-requirements-lean-requirements-practices-for-teams-programs-and-the-enterprise" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="agile-software-requirements-lean-requirements-practices-for-teams-programs-and-the-enterprise">
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise</a><a class="headerlink" href="#agile-software-requirements-lean-requirements-practices-for-teams-programs-and-the-enterprise" title="Permalink to this heading">¶</a></h3>
 <p>В книге &quot;Agile Software Requirements: Lean Requirements Practices for Teams, Programs, and the Enterprise&quot; by Dean Leffingwell, которая вышла в печать в том же году, в котором он выпустил первый релиз SAFe, Dean Leffingwell убедительно обосновывает, что аналитики и архитекторы должны быть частью системной команды.</p>
 <blockquote>
 <div><p>📝 &quot;Architects: Many agile teams do not contain people with titles containing the word architect [The best architectures, requirements, and designs emerge from self-organizing teams.], and yet architecture does matter to agile teams.
@@ -337,9 +349,9 @@ Spike нацелен на достижение цели будущих спри�
 <ul class="simple">
 <li><p>&quot;Scaling Software Agility: Best Practices for Large Enterprises&quot; by Dean Leffingwell</p></li>
 </ul>
-</div>
-<div class="section" id="scaled-agile-framework-safe">
-<h3><a class="toc-backref" href="#id24">Scaled Agile Framework (SAFe)</a><a class="headerlink" href="#scaled-agile-framework-safe" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="scaled-agile-framework-safe">
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">Scaled Agile Framework (SAFe)</a><a class="headerlink" href="#scaled-agile-framework-safe" title="Permalink to this heading">¶</a></h3>
 <ul>
 <li><p>&quot;<a class="reference external" href="https://www.amazon.com/dp/B08F5HC37Z">SAFe® 5.0 Distilled: Achieving Business Agility with the Scaled Agile Framework®</a>&quot; by Richard Knaster, Dean Leffingwell</p></li>
 <li><p>&quot;<a class="reference external" href="https://www.scaledagileframework.com/program-and-solution-backlogs/">Program and Solution Backlogs</a>&quot;</p></li>
@@ -366,9 +378,9 @@ Figure 8-8 illustrates an autonomous delivery system that was architected to ena
 </div></blockquote>
 </li>
 </ul>
-</div>
-<div class="section" id="agile-practice-guide-by-pmi">
-<h3><a class="toc-backref" href="#id25">&quot;Agile Practice Guide&quot; by PMI</a><a class="headerlink" href="#agile-practice-guide-by-pmi" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="agile-practice-guide-by-pmi">
+<h3><a class="toc-backref" href="#id25" role="doc-backlink">&quot;Agile Practice Guide&quot; by PMI</a><a class="headerlink" href="#agile-practice-guide-by-pmi" title="Permalink to this heading">¶</a></h3>
 <p>Отдельно стоит выделить книгу &quot;<a class="reference external" href="https://www.pmi.org/pmbok-guide-standards/practice-guides/agile">Agile Practice Guide</a>&quot; by Project Management Institute, 2017, поскольку эта книга является мощным оружием в руках аналитиков и архитекторов в вопросах организации качественных процессов.
 Автором книги является Project Management Institute (PMI), обладающий неоспоримым авторитетом в глазах менеджмента.
 Книга достаточно грамотная, и затрагивает острые вопросы интеграции аналитической и архитектурной активности в Agile-разработку.
@@ -376,9 +388,9 @@ Figure 8-8 illustrates an autonomous delivery system that was architected to ena
 <ul class="simple">
 <li><p>&quot;<a class="reference external" href="https://scalingsoftwareagility.files.wordpress.com/2007/03/a-lean-and-scalable-requirements-information-model-for-agile-enterprises-pdf.pdf">A Lean and Scalable Requirements Information Model for the Agile Enterprise</a>&quot; by Dean Leffingwell with Juha‐Markus Aalto</p></li>
 </ul>
-</div>
-<div class="section" id="disciplined-agile-delivery-dad">
-<h3><a class="toc-backref" href="#id26">Disciplined agile delivery (DAD)</a><a class="headerlink" href="#disciplined-agile-delivery-dad" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="disciplined-agile-delivery-dad">
+<h3><a class="toc-backref" href="#id26" role="doc-backlink">Disciplined agile delivery (DAD)</a><a class="headerlink" href="#disciplined-agile-delivery-dad" title="Permalink to this heading">¶</a></h3>
 <p>И еще один официальный способ о том, как интегрировать работу аналитиков и архитекторов в Scrum:</p>
 <ul class="simple">
 <li><p>&quot;<a class="reference external" href="https://www.pmi.org/disciplined-agile/lifecycle/program">DAD Life Cycle – Program (Team of Teams)</a>&quot;</p></li>
@@ -392,17 +404,17 @@ Figure 8-8 illustrates an autonomous delivery system that was architected to ena
 <ul class="simple">
 <li><p>&quot;<a class="reference external" href="http://agilemodeling.com/essays/agileArchitecture.htm">Agile Architecture: Strategies for Scaling Agile Development</a>&quot;</p></li>
 </ul>
-</div>
-<div class="section" id="iso-iec-ieee-12207-2017">
-<h3><a class="toc-backref" href="#id27">ISO/IEC/IEEE 12207:2017</a><a class="headerlink" href="#iso-iec-ieee-12207-2017" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="iso-iec-ieee-12207-2017">
+<h3><a class="toc-backref" href="#id27" role="doc-backlink">ISO/IEC/IEEE 12207:2017</a><a class="headerlink" href="#iso-iec-ieee-12207-2017" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>📝 &quot;Agile projects for complex systems attempt to manage cost by prioritizing the most important capabilities for early realization.
 If an organization manages the development and maintenance of its entire portfolio of software systems as a single system, managed by spend rate rather than total spending, then the organization can, in principle, manage that portfolio of systems as a continuing agile development, analogous to managing a highly iterative &quot;Kanban&quot; maintenance effort.&quot;</p>
 <p class="attribution">—&quot;ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes&quot;</p>
 </div></blockquote>
-</div>
-<div class="section" id="nexus">
-<h3><a class="toc-backref" href="#id28">Nexus</a><a class="headerlink" href="#nexus" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="nexus">
+<h3><a class="toc-backref" href="#id28" role="doc-backlink">Nexus</a><a class="headerlink" href="#nexus" title="Permalink to this heading">¶</a></h3>
 <p>На scrum.org есть интересная статья, сравнивающая Nexus и SAFe:</p>
 <ul class="simple">
 <li><p>&quot;<a class="reference external" href="https://www.scrum.org/resources/blog/comparing-nexus-and-safe-similarities-differences-potential-synergies">Comparing Nexus and SAFe - Similarities, Differences, potential synergies</a>&quot; by Yuval Yeret</p></li>
@@ -455,9 +467,9 @@ Nexus doesn't include a Nexus-level Kanban board but it's a very nice complement
 <li><p>&quot;<a class="reference external" href="https://www.scaledagileframework.com/guidance-six-safe-practices-for-s-sized-teams/">Six SAFe Practices for S-Sized Teams</a>&quot; by Juha-Markus Aalto, Director Product Development, Qentinel Group</p></li>
 <li><p>&quot;<a class="reference external" href="https://www.scaledagileframework.com/essential-safe/">Essential SAFe</a>&quot;</p></li>
 </ul>
-</div>
-<div class="section" id="extreme-programming">
-<h3><a class="toc-backref" href="#id29">Extreme Programming</a><a class="headerlink" href="#extreme-programming" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="extreme-programming">
+<h3><a class="toc-backref" href="#id29" role="doc-backlink">Extreme Programming</a><a class="headerlink" href="#extreme-programming" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>📝 &quot;With awareness and appropriate adaptations, <strong>XP does scale</strong>.
 Some problems can be simplified to be easily handled by a small XP team.
@@ -487,9 +499,9 @@ The occasional exceptions to this illusion of independence are managed as except
 If that doesn't work, <strong>begin the project with a small team, then split the work among autonomous teams.</strong>&quot;</p>
 <p class="attribution">—&quot;Extreme Programming Explained&quot; 2nd edition by Kent Beck, &quot;Chapter 15. Scaling XP :: Number of People&quot;</p>
 </div></blockquote>
-</div>
-<div class="section" id="scrum-of-scrums">
-<h3><a class="toc-backref" href="#id30">Scrum of Scrums</a><a class="headerlink" href="#scrum-of-scrums" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="scrum-of-scrums">
+<h3><a class="toc-backref" href="#id30" role="doc-backlink">Scrum of Scrums</a><a class="headerlink" href="#scrum-of-scrums" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>Each team had an architecture representative on <strong>a Scrum of Scrum architecture team led by the Business Unit Lead Architect</strong></p></li>
@@ -498,9 +510,9 @@ If that doesn't work, <strong>begin the project with a small team, then split th
 <p class="attribution">—&quot;<a class="reference external" href="https://www.scruminc.com/wp-content/uploads/2014/06/agile-architecture.pdf">Agile Architecture Fast, Cheap, Out of Control</a>&quot; Jeff Sutherland</p>
 </div></blockquote>
 <p>См. также структуру &quot;Scrum of Scrum Team (SoS) a Core Team&quot; на странице 5 &quot;<a class="reference external" href="https://www.scrumatscale.com/wp-content/uploads/2020/09/Scrum_At_Scale_Case_Study_Air_Transport_Amogh.pdf">The Scrum Software Factory</a>&quot; by Amogh Joshi.</p>
-</div>
-<div class="section" id="id6">
-<h3><a class="toc-backref" href="#id31">Другие</a><a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="id6">
+<h3><a class="toc-backref" href="#id31" role="doc-backlink">Другие</a><a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
 <p>Program Management также присутствует в MSF и в FDD.
 В RAD тоже аналитика является &quot;upstream development activities&quot;.
 RUP реализует <a class="reference internal" href="../sdlc/models/spiral.html#emacsway-spiral-development"><span class="std std-ref">спиральную</span></a> модель.</p>
@@ -539,10 +551,10 @@ An example of such a concern is the management of sessions for a web application
 <ul class="simple">
 <li><p>&quot;<a class="reference external" href="https://www.atlassian.com/blog/jira-align/tools-for-agile-program-management">4 tools you need to build an agile program management powerhouse</a>&quot; by Kyle Foreman</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="emacsway-fractal-team">
-<span id="id7"></span><h2><a class="toc-backref" href="#id32">Фрактальная структура</a><a class="headerlink" href="#emacsway-fractal-team" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+</section>
+<section id="emacsway-fractal-team">
+<span id="id7"></span><h2><a class="toc-backref" href="#id32" role="doc-backlink">Фрактальная структура</a><a class="headerlink" href="#emacsway-fractal-team" title="Permalink to this heading">¶</a></h2>
 <p>Хотя Program Management и выполняет роль опорного хребта коммуникативной нагрузки коллектива, момент его внедрения в процессы разработки должен быть своевременным и оправданным, т.е. издержки на его содержание должны покрываться выгодами от его внедрения.
 Кроме того, концентрация всех архитектурных задач на уровне Program Management может привести к образованию узкого горлышка.
 Одним из способов решения этой задачи является децентрализация архитектурных решений об интеграции ограниченных контекстов.
@@ -577,16 +589,16 @@ One of the most common reasons that Pact fails to be successfully adopted in an 
 <p class="attribution">—&quot;<a class="reference external" href="https://docs.pact.io/pact_nirvana/step_2">CI/CD Setup Guide :: Talk</a>&quot;</p>
 </div></blockquote>
 <p>Таким образом, независимо от того, существует ли у команд Program Management, или же команды имеет фрактальную структуру, CDC-Tests позволяют в значительной мере управлять коммуникативной нагрузкой на команды и минизировать Проблему Брукса.</p>
-</div>
-<div class="section" id="id8">
-<h2><a class="toc-backref" href="#id33">Социальная роль архитектуры</a><a class="headerlink" href="#id8" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="id8">
+<h2><a class="toc-backref" href="#id33" role="doc-backlink">Социальная роль архитектуры</a><a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
 <p>📝 &quot;By keeping things team sized, we help to achieve what MacCormack and colleagues call &quot;an '<strong>architecture for participation</strong>' that promotes ease of understanding by limiting module size, and ease of contribution by minimizing the propagation of design changes.&quot;[MacCormack et al., &quot;Exploring the Structure of Complex Software Designs.&quot;] In other words, we need <strong>a team-first software architecture that maximizes people's ability to work with it</strong>.</p>
 <p>&lt;...&gt;</p>
 <p>More than ever I believe that someone who claims to be an <strong>Architect needs both technical and social skills, they need to understand people and work within the social framework</strong>. They also need a remit that is broader than pure technology—they need to have a say in <strong>organizational structures and personnel issues, i.e. they need to be a manager too</strong>.[Kelly, &quot;Return to Conway's Law.&quot;]&quot;</p>
 <p>— &quot;Team Topologies: Organizing Business and Technology Teams for Fast Flow&quot; by Matthew Skelton</p>
-</div>
-<div class="section" id="emacsway-team-topologies-at-scale-literature">
-<span id="id9"></span><h2><a class="toc-backref" href="#id34">Литература</a><a class="headerlink" href="#emacsway-team-topologies-at-scale-literature" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="emacsway-team-topologies-at-scale-literature">
+<span id="id9"></span><h2><a class="toc-backref" href="#id34" role="doc-backlink">Литература</a><a class="headerlink" href="#emacsway-team-topologies-at-scale-literature" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>&quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr.</p></li>
 <li><p>&quot;Team Topologies: Organizing Business and Technology Teams for Fast Flow&quot; by Matthew Skelton</p></li>
@@ -597,9 +609,9 @@ One of the most common reasons that Pact fails to be successfully adopted in an 
 <li><p>&quot;<a class="reference external" href="https://leanpub.com/arch-modernization-ddd">Architecture Modernization with Strategic Domain-Driven Design. A Guide for Technology Leaders.</a>&quot; by Nick Tune</p></li>
 <li><p>&quot;<a class="reference external" href="https://pubs.opengroup.org/architecture/o-aa-standard/">Open Agile Architecture. A Standard of The Open Group</a>&quot;</p></li>
 </ul>
-</div>
-<div class="section" id="id10">
-<h2><a class="toc-backref" href="#id35">Ссылки по теме</a><a class="headerlink" href="#id10" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="id10">
+<h2><a class="toc-backref" href="#id35" role="doc-backlink">Ссылки по теме</a><a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>&quot;<a class="reference external" href="https://medium.com/nick-tune-tech-strategy-blog/team-responsibility-ownership-patterns-part-1-a-business-architecture-model-63597c4e60e1">Architecture Ownership Patterns For Team Topologies. Part 1: A Business Architecture Model</a>&quot; by Nick Tune</p></li>
 <li><p>&quot;<a class="reference external" href="https://medium.com/nick-tune-tech-strategy-blog/architecture-ownership-patterns-for-team-topologies-part-2-single-team-patterns-943d31854285">Architecture Ownership Patterns for Team Topologies. Part 2: Single Team Patterns</a>&quot; by Nick Tune</p></li>
@@ -611,8 +623,8 @@ One of the most common reasons that Pact fails to be successfully adopted in an 
 <li><p>&quot;<a class="reference external" href="https://martinfowler.com/articles/devops-compliance.html">Compliance in a DevOps Culture. Integrating Compliance Controls and Audit into CI/CD Processes</a> by Carl Nygard</p></li>
 <li><p>&quot;<a class="reference external" href="https://event-driven.io/en/how_using_events_help_in_teams_autonomy/">How using events helps in a teams' autonomy</a>&quot; by Oskar Dudycz</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
 
@@ -664,22 +676,22 @@ One of the most common reasons that Pact fails to be successfully adopted in an 
 
 
 <h3>Навигация</h3>
-<p class="caption"><span class="caption-text">Общее пространство:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Общее пространство:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../trunk/it/index.html">IT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../trunk/soft-skills/index.html">Soft Skills</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../trunk/index.html">Общее пространство</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Авторские пространства:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Авторские пространства:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Пространство Emacsway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Приватное пространствo:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Приватное пространствo:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../private/index.html">Приватное пространство</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Прочее:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Прочее:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html">Как пользоваться</a></li>
 </ul>
@@ -706,12 +718,12 @@ One of the most common reasons that Pact fails to be successfully adopted in an 
   <h3 id="searchlabel">Быстрый поиск</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Искать" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -729,7 +741,7 @@ One of the most common reasons that Pact fails to be successfully adopted in an 
       &copy;2022, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

@@ -4,14 +4,16 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Как сохранить Агрегат в БД не разрушая инкапсуляции? &#8212; System Architecture</title>
-    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/alabaster.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
     <script src="../../../../../_static/translations.js"></script>
     <link rel="index" title="Алфавитный указатель" href="../../../../../genindex.html" />
@@ -59,12 +61,12 @@
           <div class="body" role="main">
             
     
-  <div class="section" id="emacsway-golang-encapsulation">
-<span id="id1"></span><h1><a class="toc-backref" href="#id3">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a><a class="headerlink" href="#emacsway-golang-encapsulation" title="Ссылка на этот заголовок">¶</a></h1>
+  <section id="emacsway-golang-encapsulation">
+<span id="id1"></span><h1><a class="toc-backref" href="#id3" role="doc-backlink">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a><a class="headerlink" href="#emacsway-golang-encapsulation" title="Permalink to this heading">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
 <p>Инварианты лишены смысла своего существования в условиях дырявой, как решето, инкапсуляции.
 Вопрос в том, как сохранить инкапсуляцию Агрегатов в Golang, когда нам требуется его внутреннее состояние для формирования SQL-запроса, или, наоборот, требуется установить состояние Агрегата в результате выполнения SQL-запроса.</p>
-<div class="contents topic" id="id2">
+<nav class="contents" id="id2">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#emacsway-golang-encapsulation" id="id3">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a></p>
@@ -82,9 +84,9 @@
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="memento-pattern">
-<h2><a class="toc-backref" href="#id4">Memento pattern</a><a class="headerlink" href="#memento-pattern" title="Ссылка на этот заголовок">¶</a></h2>
+</nav>
+<section id="memento-pattern">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Memento pattern</a><a class="headerlink" href="#memento-pattern" title="Permalink to this heading">¶</a></h2>
 <p>Memento оказался близко, но не по назначению. Суть Memento в том, что он не должен раскрывать свое состояние никому, кроме своего создателя:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -93,9 +95,9 @@ The pattern shields other objects from potentially complex Originator internals,
 </ol>
 <p class="attribution">—&quot;Design Patterns: Elements of Reusable Object-Oriented Software&quot; by Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides</p>
 </div></blockquote>
-</div>
-<div class="section" id="walker">
-<h2><a class="toc-backref" href="#id5">Walker</a><a class="headerlink" href="#walker" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="walker">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Walker</a><a class="headerlink" href="#walker" title="Permalink to this heading">¶</a></h2>
 <p>Walker представляет собою модификацию паттерна Visitor с целью сохранить инкапсуляцию Агрегатов. К числу недостатков паттерна паттерна Visitor относится:</p>
 <blockquote>
 <div><p>6. Breaking encapsulation. Visitor's approach assumes that the ConcreteElement interface is powerful enough to let visitors do their job.
@@ -106,41 +108,41 @@ As a result, the pattern often forces you to provide public operations that acce
 Вероятно, это будет будет несколько SQL-запросов с параметрами, т.е. некий композитный объект, выраженный некой структурой данных.
 Это лишает смысла использование Visitor, если можно сразу возвратить структуру данных, причем, абстрагированную от SQL.</p>
 <p>Технически, можно сделать так:</p>
-<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span> <span class="nx">Walkable</span> <span class="kd">interface</span> <span class="p">{</span>
-    <span class="nx">Accept</span><span class="p">(</span><span class="nx">Walker</span><span class="p">)</span>
-<span class="p">}</span>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">Walkable</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Accept</span><span class="p">(</span><span class="nx">Walker</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">type</span> <span class="nx">Walker</span> <span class="kd">interface</span> <span class="p">{</span>
-    <span class="nx">SetField</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span>
-    <span class="nx">WalkWalkable</span><span class="p">(</span><span class="nx">Walkable</span><span class="p">)</span>
-    <span class="nx">WalkUint8</span><span class="p">(</span><span class="kt">uint8</span><span class="p">)</span>
-    <span class="nx">WalkUint64</span><span class="p">(</span><span class="kt">uint64</span><span class="p">)</span>
-    <span class="nx">WalkUint</span><span class="p">(</span><span class="kt">uint</span><span class="p">)</span>
-    <span class="nx">WalkTime</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">Walker</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">SetField</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">WalkWalkable</span><span class="p">(</span><span class="nx">Walkable</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">WalkUint8</span><span class="p">(</span><span class="kt">uint8</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">WalkUint64</span><span class="p">(</span><span class="kt">uint64</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">WalkUint</span><span class="p">(</span><span class="kt">uint</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">WalkTime</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">Endorsement</span><span class="p">)</span> <span class="nx">Accept</span><span class="p">(</span><span class="nx">walker</span> <span class="nx">interfaces</span><span class="p">.</span><span class="nx">Walker</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">walker</span><span class="p">.</span><span class="nx">SetField</span><span class="p">(</span><span class="s">&quot;recognizerId&quot;</span><span class="p">)</span>
-    <span class="nx">walker</span><span class="p">.</span><span class="nx">WalkWalkable</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">recognizerId</span><span class="p">)</span>
-    <span class="nx">walker</span><span class="p">.</span><span class="nx">SetField</span><span class="p">(</span><span class="s">&quot;recognizerGrade&quot;</span><span class="p">)</span>
-    <span class="nx">walker</span><span class="p">.</span><span class="nx">WalkWalkable</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">recognizerGrade</span><span class="p">)</span>
-    <span class="c1">// ...</span>
-<span class="p">}</span>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="nx">Endorsement</span><span class="p">)</span><span class="w"> </span><span class="nx">Accept</span><span class="p">(</span><span class="nx">walker</span><span class="w"> </span><span class="nx">interfaces</span><span class="p">.</span><span class="nx">Walker</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">walker</span><span class="p">.</span><span class="nx">SetField</span><span class="p">(</span><span class="s">&quot;recognizerId&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">walker</span><span class="p">.</span><span class="nx">WalkWalkable</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">recognizerId</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">walker</span><span class="p">.</span><span class="nx">SetField</span><span class="p">(</span><span class="s">&quot;recognizerGrade&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">walker</span><span class="p">.</span><span class="nx">WalkWalkable</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">recognizerGrade</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span> <span class="p">(</span><span class="nx">id</span> <span class="nx">RecognizerId</span><span class="p">)</span> <span class="nx">Accept</span><span class="p">(</span><span class="nx">walker</span> <span class="nx">interfaces</span><span class="p">.</span><span class="nx">Walker</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">walker</span><span class="p">.</span><span class="nx">WalkUint64</span><span class="p">(</span><span class="nx">id</span><span class="p">.</span><span class="nx">Value</span><span class="p">())</span>
-<span class="p">}</span>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">id</span><span class="w"> </span><span class="nx">RecognizerId</span><span class="p">)</span><span class="w"> </span><span class="nx">Accept</span><span class="p">(</span><span class="nx">walker</span><span class="w"> </span><span class="nx">interfaces</span><span class="p">.</span><span class="nx">Walker</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">walker</span><span class="p">.</span><span class="nx">WalkUint64</span><span class="p">(</span><span class="nx">id</span><span class="p">.</span><span class="nx">Value</span><span class="p">())</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Проблема в том, что на этапе создания SQL-запроса нам пока еще могут быть неизвестны первичные ключи Агрегатов, чтобы их можно было бы проставить в SQL-запросы их Сущностей.</p>
 <p>Кроме того, осведомленность о способах образования SQL-запросов размазывается между Walkers и Repositories, что вызывает &quot;Разлет Дроби&quot; (Code Smell) в случае изменения существующего способа построения SQL (например, в случае изменения диалекта БД или в случае внедрения какого-либо QueryBuilder).
 Walker начинает быть слишком осведомленным о деталях реализации Repository.</p>
 <p>В целях достижения DRY возникает целесообразность возложить на Walker генерирование только части SQL, и освободить его от осведомленности знания таблиц в БД, что будет разрывать обязанность за построение SQL на несколько объектов и подрывать Cohesion.</p>
-</div>
-<div class="section" id="valuer-scanner">
-<h2><a class="toc-backref" href="#id6">Valuer &amp; Scanner</a><a class="headerlink" href="#valuer-scanner" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="valuer-scanner">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Valuer &amp; Scanner</a><a class="headerlink" href="#valuer-scanner" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pkg.go.dev/database/sql/driver#Valuer">Valuer</a></p></li>
 <li><p><a class="reference external" href="https://pkg.go.dev/database/sql#Scanner">Scanner</a></p></li>
@@ -164,18 +166,18 @@ Walker начинает быть слишком осведомленным о д
 </ul>
 <p class="attribution">—<a class="reference external" href="https://pkg.go.dev/database/sql/driver#Value">Источник</a></p>
 </div></blockquote>
-</div>
-<div class="section" id="reflection">
-<h2><a class="toc-backref" href="#id7">Reflection</a><a class="headerlink" href="#reflection" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="reflection">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Reflection</a><a class="headerlink" href="#reflection" title="Permalink to this heading">¶</a></h2>
 <p>В документации <a class="reference external" href="https://pkg.go.dev/reflect#Value.FieldByName">отсутствуют</a> какие-либо упоминания об ограничении доступа к защищенным атрибутам структуры данных посредством рефлекции.</p>
 <p>Может быть через рефлексию и заработало бы - я не пробовал.
 Но использовать рефлексию в production для таких целей как-то не сильно хочется, в т.ч. и по соображениям производительности.
 К тому же этот метод является, по сути, еще одним способом пробить брешь в инкапсуляции.</p>
-</div>
-<div class="section" id="exporter">
-<h2><a class="toc-backref" href="#id8">Exporter</a><a class="headerlink" href="#exporter" title="Ссылка на этот заголовок">¶</a></h2>
-<div class="section" id="accepting-interface">
-<h3><a class="toc-backref" href="#id9">1. Accepting interface</a><a class="headerlink" href="#accepting-interface" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="exporter">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Exporter</a><a class="headerlink" href="#exporter" title="Permalink to this heading">¶</a></h2>
+<section id="accepting-interface">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">1. Accepting interface</a><a class="headerlink" href="#accepting-interface" title="Permalink to this heading">¶</a></h3>
 <p>Ссылки по теме:</p>
 <ul class="simple">
 <li><p>&quot;<a class="reference external" href="https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html">More on getters and setters</a>&quot; by Allen Holub</p></li>
@@ -184,170 +186,170 @@ Walker начинает быть слишком осведомленным о д
 <p>Идею можно посмотреть на примере:</p>
 <div class="literal-block-wrapper docutils container" id="emacsway-code-exporter-example-1">
 <div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html">Example by Allen Holub</a></span><a class="headerlink" href="#emacsway-code-exporter-example-1" title="Постоянная ссылка на код">¶</a></div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">java.util.Locale</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Locale</span><span class="p">;</span><span class="w"></span>
 
- <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Employee</span>
- <span class="p">{</span>   <span class="kd">private</span> <span class="n">Name</span>        <span class="n">name</span><span class="p">;</span>
-     <span class="kd">private</span> <span class="n">EmployeeId</span>  <span class="n">id</span><span class="p">;</span>
-     <span class="kd">private</span> <span class="n">Money</span>       <span class="n">salary</span><span class="p">;</span>
+<span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Employee</span><span class="w"></span>
+<span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="kd">private</span><span class="w"> </span><span class="n">Name</span><span class="w">        </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="kd">private</span><span class="w"> </span><span class="n">EmployeeId</span><span class="w">  </span><span class="n">id</span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="kd">private</span><span class="w"> </span><span class="n">Money</span><span class="w">       </span><span class="n">salary</span><span class="p">;</span><span class="w"></span>
 
-     <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Exporter</span>
-     <span class="p">{</span>   <span class="kt">void</span> <span class="nf">addName</span>    <span class="p">(</span> <span class="n">String</span> <span class="n">name</span>   <span class="p">);</span>
-         <span class="kt">void</span> <span class="nf">addID</span>      <span class="p">(</span> <span class="n">String</span> <span class="n">id</span>     <span class="p">);</span>
-         <span class="kt">void</span> <span class="nf">addSalary</span>  <span class="p">(</span> <span class="n">String</span> <span class="n">salary</span> <span class="p">);</span>
-     <span class="p">}</span>
+<span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Exporter</span><span class="w"></span>
+<span class="w">     </span><span class="p">{</span><span class="w">   </span><span class="kt">void</span><span class="w"> </span><span class="nf">addName</span><span class="w">    </span><span class="p">(</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w">   </span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="kt">void</span><span class="w"> </span><span class="nf">addID</span><span class="w">      </span><span class="p">(</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="w">     </span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="kt">void</span><span class="w"> </span><span class="nf">addSalary</span><span class="w">  </span><span class="p">(</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
 
-     <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Importer</span>
-     <span class="p">{</span>   <span class="n">String</span> <span class="nf">provideName</span><span class="p">();</span>
-         <span class="n">String</span> <span class="nf">provideID</span><span class="p">();</span>
-         <span class="n">String</span> <span class="nf">provideSalary</span><span class="p">();</span>
-         <span class="kt">void</span>   <span class="nf">open</span><span class="p">();</span>
-         <span class="kt">void</span>   <span class="nf">close</span><span class="p">();</span>
-     <span class="p">}</span>
+<span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Importer</span><span class="w"></span>
+<span class="w">     </span><span class="p">{</span><span class="w">   </span><span class="n">String</span><span class="w"> </span><span class="nf">provideName</span><span class="p">();</span><span class="w"></span>
+<span class="w">         </span><span class="n">String</span><span class="w"> </span><span class="nf">provideID</span><span class="p">();</span><span class="w"></span>
+<span class="w">         </span><span class="n">String</span><span class="w"> </span><span class="nf">provideSalary</span><span class="p">();</span><span class="w"></span>
+<span class="w">         </span><span class="kt">void</span><span class="w">   </span><span class="nf">open</span><span class="p">();</span><span class="w"></span>
+<span class="w">         </span><span class="kt">void</span><span class="w">   </span><span class="nf">close</span><span class="p">();</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
 
-     <span class="kd">public</span> <span class="nf">Employee</span><span class="p">(</span> <span class="n">Importer</span> <span class="n">builder</span> <span class="p">)</span>
-     <span class="p">{</span>   <span class="n">builder</span><span class="p">.</span><span class="na">open</span><span class="p">();</span>
-         <span class="k">this</span><span class="p">.</span><span class="na">name</span>   <span class="o">=</span> <span class="k">new</span> <span class="n">Name</span>      <span class="p">(</span> <span class="n">builder</span><span class="p">.</span><span class="na">provideName</span><span class="p">()</span>     <span class="p">);</span>
-         <span class="k">this</span><span class="p">.</span><span class="na">id</span>     <span class="o">=</span> <span class="k">new</span> <span class="n">EmployeeId</span><span class="p">(</span> <span class="n">builder</span><span class="p">.</span><span class="na">provideID</span><span class="p">()</span>       <span class="p">);</span>
-         <span class="k">this</span><span class="p">.</span><span class="na">salary</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Money</span>     <span class="p">(</span> <span class="n">builder</span><span class="p">.</span><span class="na">provideSalary</span><span class="p">(),</span>
-                                       <span class="k">new</span> <span class="n">Locale</span><span class="p">(</span><span class="s">&quot;en&quot;</span><span class="p">,</span> <span class="s">&quot;US&quot;</span><span class="p">)</span>    <span class="p">);</span>
-         <span class="n">builder</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-     <span class="p">}</span>
+<span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="nf">Employee</span><span class="p">(</span><span class="w"> </span><span class="n">Importer</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">     </span><span class="p">{</span><span class="w">   </span><span class="n">builder</span><span class="p">.</span><span class="na">open</span><span class="p">();</span><span class="w"></span>
+<span class="w">         </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Name</span><span class="w">      </span><span class="p">(</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="na">provideName</span><span class="p">()</span><span class="w">     </span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EmployeeId</span><span class="p">(</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="na">provideID</span><span class="p">()</span><span class="w">       </span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="k">this</span><span class="p">.</span><span class="na">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Money</span><span class="w">     </span><span class="p">(</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="na">provideSalary</span><span class="p">(),</span><span class="w"></span>
+<span class="w">                                       </span><span class="k">new</span><span class="w"> </span><span class="n">Locale</span><span class="p">(</span><span class="s">&quot;en&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;US&quot;</span><span class="p">)</span><span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="n">builder</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
 
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">export</span><span class="p">(</span> <span class="n">Exporter</span> <span class="n">builder</span> <span class="p">)</span>
-     <span class="p">{</span>   <span class="n">builder</span><span class="p">.</span><span class="na">addName</span>  <span class="p">(</span> <span class="n">name</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span>   <span class="p">);</span>
-         <span class="n">builder</span><span class="p">.</span><span class="na">addID</span>    <span class="p">(</span> <span class="n">id</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span>     <span class="p">);</span>
-         <span class="n">builder</span><span class="p">.</span><span class="na">addSalary</span><span class="p">(</span> <span class="n">salary</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="p">);</span>
-     <span class="p">}</span>
+<span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">export</span><span class="p">(</span><span class="w"> </span><span class="n">Exporter</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">     </span><span class="p">{</span><span class="w">   </span><span class="n">builder</span><span class="p">.</span><span class="na">addName</span><span class="w">  </span><span class="p">(</span><span class="w"> </span><span class="n">name</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span><span class="w">   </span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="n">builder</span><span class="p">.</span><span class="na">addID</span><span class="w">    </span><span class="p">(</span><span class="w"> </span><span class="n">id</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span><span class="w">     </span><span class="p">);</span><span class="w"></span>
+<span class="w">         </span><span class="n">builder</span><span class="p">.</span><span class="na">addSalary</span><span class="p">(</span><span class="w"> </span><span class="n">salary</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
 
-     <span class="c1">//...</span>
- <span class="p">}</span>
+<span class="w">     </span><span class="c1">//...</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <p>Пример реализации:</p>
-<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">grade_1</span>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nx">grade_1</span><span class="w"></span>
 
-<span class="kn">import</span> <span class="p">(</span>
-    <span class="s">&quot;time&quot;</span>
-<span class="p">)</span>
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;time&quot;</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 
-<span class="kd">type</span> <span class="nx">Exporter</span><span class="p">[</span><span class="nx">T</span> <span class="nx">any</span><span class="p">]</span> <span class="kd">interface</span> <span class="p">{</span>
-    <span class="nx">SetState</span><span class="p">(</span><span class="nx">T</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">Exporter</span><span class="p">[</span><span class="nx">T</span><span class="w"> </span><span class="kt">any</span><span class="p">]</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">SetState</span><span class="p">(</span><span class="nx">T</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">type</span> <span class="nx">Exportable</span><span class="p">[</span><span class="nx">T</span> <span class="nx">any</span><span class="p">]</span> <span class="kd">interface</span> <span class="p">{</span>
-    <span class="nx">ExportTo</span><span class="p">(</span><span class="nx">Exporter</span><span class="p">[</span><span class="nx">T</span><span class="p">])</span>
-<span class="p">}</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">Exportable</span><span class="p">[</span><span class="nx">T</span><span class="w"> </span><span class="kt">any</span><span class="p">]</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ExportTo</span><span class="p">(</span><span class="nx">Exporter</span><span class="p">[</span><span class="nx">T</span><span class="p">])</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">type</span> <span class="nx">ExportableUint</span> <span class="kt">uint</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="w"> </span><span class="kt">uint</span><span class="w"></span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">ExportableUint</span><span class="p">)</span> <span class="nx">Export</span><span class="p">(</span><span class="nx">ex</span> <span class="nx">Exporter</span><span class="p">[</span><span class="kt">uint</span><span class="p">])</span> <span class="p">{</span>
-    <span class="nx">ex</span><span class="p">.</span><span class="nx">SetState</span><span class="p">(</span><span class="nb">uint</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span>
-<span class="p">}</span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="p">)</span><span class="w"> </span><span class="nx">Export</span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="nx">Exporter</span><span class="p">[</span><span class="kt">uint</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetState</span><span class="p">(</span><span class="nb">uint</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">type</span> <span class="nx">MemberId</span> <span class="nx">ExportableUint</span>
-<span class="kd">type</span> <span class="nx">Grade</span> <span class="nx">ExportableUint</span>
-<span class="kd">type</span> <span class="nx">EndorsementCount</span> <span class="nx">ExportableUint</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">MemberId</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="w"></span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">Grade</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="w"></span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">EndorsementCount</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="w"></span>
 
-<span class="kd">type</span> <span class="nx">RecognizerExporterSetter</span> <span class="kd">interface</span> <span class="p">{</span>
-    <span class="nx">SetId</span><span class="p">(</span><span class="nx">MemberId</span><span class="p">)</span>
-    <span class="nx">SetGrade</span><span class="p">(</span><span class="nx">Grade</span><span class="p">)</span>
-    <span class="nx">SetAvailableEndorsementCount</span><span class="p">(</span><span class="nx">EndorsementCount</span><span class="p">)</span>
-    <span class="nx">SetPendingEndorsementCount</span><span class="p">(</span><span class="nx">EndorsementCount</span><span class="p">)</span>
-    <span class="nx">SetVersion</span><span class="p">(</span><span class="kt">uint</span><span class="p">)</span>
-    <span class="nx">SetCreatedAt</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">RecognizerExporterSetter</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">SetId</span><span class="p">(</span><span class="nx">MemberId</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">SetGrade</span><span class="p">(</span><span class="nx">Grade</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">SetAvailableEndorsementCount</span><span class="p">(</span><span class="nx">EndorsementCount</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">SetPendingEndorsementCount</span><span class="p">(</span><span class="nx">EndorsementCount</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">SetVersion</span><span class="p">(</span><span class="kt">uint</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">SetCreatedAt</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">type</span> <span class="nx">UintExporter</span> <span class="kt">uint</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">UintExporter</span><span class="w"> </span><span class="kt">uint</span><span class="w"></span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="o">*</span><span class="nx">UintExporter</span><span class="p">)</span> <span class="nx">SetState</span><span class="p">(</span><span class="nx">value</span> <span class="kt">uint</span><span class="p">)</span> <span class="p">{</span>
-    <span class="o">*</span><span class="nx">e</span> <span class="p">=</span> <span class="nx">UintExporter</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="o">*</span><span class="nx">UintExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetState</span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="kt">uint</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="o">*</span><span class="nx">e</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">UintExporter</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">type</span> <span class="nx">Recognizer</span> <span class="kd">struct</span> <span class="p">{</span>
-    <span class="nx">id</span>                        <span class="nx">MemberId</span>
-    <span class="nx">grade</span>                     <span class="nx">Grade</span>
-    <span class="nx">availableEndorsementCount</span> <span class="nx">EndorsementCount</span>
-    <span class="nx">pendingEndorsementCount</span>   <span class="nx">EndorsementCount</span>
-    <span class="nx">version</span>                   <span class="kt">uint</span>
-    <span class="nx">createdAt</span>                 <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
-<span class="p">}</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">Recognizer</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">id</span><span class="w">                        </span><span class="nx">MemberId</span><span class="w"></span>
+<span class="w">    </span><span class="nx">grade</span><span class="w">                     </span><span class="nx">Grade</span><span class="w"></span>
+<span class="w">    </span><span class="nx">availableEndorsementCount</span><span class="w"> </span><span class="nx">EndorsementCount</span><span class="w"></span>
+<span class="w">    </span><span class="nx">pendingEndorsementCount</span><span class="w">   </span><span class="nx">EndorsementCount</span><span class="w"></span>
+<span class="w">    </span><span class="nx">version</span><span class="w">                   </span><span class="kt">uint</span><span class="w"></span>
+<span class="w">    </span><span class="nx">createdAt</span><span class="w">                 </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">Export</span><span class="p">(</span><span class="nx">ex</span> <span class="nx">RecognizerExporterSetter</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">ex</span><span class="p">.</span><span class="nx">SetId</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
-    <span class="nx">ex</span><span class="p">.</span><span class="nx">SetGrade</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">grade</span><span class="p">)</span>
-    <span class="nx">ex</span><span class="p">.</span><span class="nx">SetAvailableEndorsementCount</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span><span class="p">)</span>
-    <span class="nx">ex</span><span class="p">.</span><span class="nx">SetPendingEndorsementCount</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span><span class="p">)</span>
-    <span class="nx">ex</span><span class="p">.</span><span class="nx">SetVersion</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">version</span><span class="p">)</span>
-    <span class="nx">ex</span><span class="p">.</span><span class="nx">SetCreatedAt</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">createdAt</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="nx">Recognizer</span><span class="p">)</span><span class="w"> </span><span class="nx">Export</span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="nx">RecognizerExporterSetter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetId</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetGrade</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">grade</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetAvailableEndorsementCount</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetPendingEndorsementCount</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetVersion</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">version</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetCreatedAt</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">createdAt</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">type</span> <span class="nx">RecognizerExporter</span> <span class="kd">struct</span> <span class="p">{</span>
-    <span class="nx">Id</span>                        <span class="nx">UintExporter</span>
-    <span class="nx">Grade</span>                     <span class="nx">UintExporter</span>
-    <span class="nx">AvailableEndorsementCount</span> <span class="nx">UintExporter</span>
-    <span class="nx">PendingEndorsementCount</span>   <span class="nx">UintExporter</span>
-    <span class="nx">Version</span>                   <span class="kt">uint</span>
-    <span class="nx">CreatedAt</span>                 <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
-<span class="p">}</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">RecognizerExporter</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Id</span><span class="w">                        </span><span class="nx">UintExporter</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Grade</span><span class="w">                     </span><span class="nx">UintExporter</span><span class="w"></span>
+<span class="w">    </span><span class="nx">AvailableEndorsementCount</span><span class="w"> </span><span class="nx">UintExporter</span><span class="w"></span>
+<span class="w">    </span><span class="nx">PendingEndorsementCount</span><span class="w">   </span><span class="nx">UintExporter</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Version</span><span class="w">                   </span><span class="kt">uint</span><span class="w"></span>
+<span class="w">    </span><span class="nx">CreatedAt</span><span class="w">                 </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">ex</span> <span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span> <span class="nx">SetId</span><span class="p">(</span><span class="nx">val</span> <span class="nx">MemberId</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ex</span><span class="p">.</span><span class="nx">Id</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetId</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">MemberId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ex</span><span class="p">.</span><span class="nx">Id</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">ex</span> <span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span> <span class="nx">SetGrade</span><span class="p">(</span><span class="nx">val</span> <span class="nx">Grade</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ex</span><span class="p">.</span><span class="nx">Grade</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetGrade</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">Grade</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ex</span><span class="p">.</span><span class="nx">Grade</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">ex</span> <span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span> <span class="nx">SetAvailableEndorsementCount</span><span class="p">(</span><span class="nx">val</span> <span class="nx">EndorsementCount</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ex</span><span class="p">.</span><span class="nx">AvailableEndorsementCount</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetAvailableEndorsementCount</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">EndorsementCount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ex</span><span class="p">.</span><span class="nx">AvailableEndorsementCount</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">ex</span> <span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span> <span class="nx">SetPendingEndorsementCount</span><span class="p">(</span><span class="nx">val</span> <span class="nx">EndorsementCount</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ex</span><span class="p">.</span><span class="nx">PendingEndorsementCount</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetPendingEndorsementCount</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">EndorsementCount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ex</span><span class="p">.</span><span class="nx">PendingEndorsementCount</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">ex</span> <span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span> <span class="nx">SetVersion</span><span class="p">(</span><span class="nx">val</span> <span class="kt">uint</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">ex</span><span class="p">.</span><span class="nx">Version</span> <span class="p">=</span> <span class="nx">val</span>
-<span class="p">}</span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetVersion</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="kt">uint</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">Version</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">val</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">ex</span> <span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span> <span class="nx">SetCreatedAt</span><span class="p">(</span><span class="nx">val</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">ex</span><span class="p">.</span><span class="nx">CreatedAt</span> <span class="p">=</span> <span class="nx">val</span>
-<span class="p">}</span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetCreatedAt</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">CreatedAt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">val</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Или на более лаконичном примере:</p>
 <div class="literal-block-wrapper docutils container" id="emacsway-code-exporter-example-2">
 <div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://stackoverflow.com/questions/24921227/save-and-load-objects-without-breaking-encapsulation">Example from Stackoverflow</a></span><a class="headerlink" href="#emacsway-code-exporter-example-2" title="Постоянная ссылка на код">¶</a></div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span> <span class="kd">interface</span> <span class="nc">PersonImporter</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="kd">interface</span> <span class="nc">PersonImporter</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getAge</span><span class="p">();</span>
+<span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getAge</span><span class="p">();</span><span class="w"></span>
 
-     <span class="kd">public</span> <span class="n">String</span> <span class="nf">getId</span><span class="p">();</span>
- <span class="p">}</span>
+<span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getId</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
 
- <span class="kd">interface</span> <span class="nc">PersonExporter</span> <span class="p">{</span>
+<span class="w"> </span><span class="kd">interface</span> <span class="nc">PersonExporter</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setDetails</span><span class="p">(</span><span class="n">String</span> <span class="n">id</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">);</span>
+<span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setDetails</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">);</span><span class="w"></span>
 
- <span class="p">}</span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
 
- <span class="kd">class</span> <span class="nc">Person</span> <span class="p">{</span>
+<span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-     <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
-     <span class="kd">private</span> <span class="n">String</span> <span class="n">id</span><span class="p">;</span>
+<span class="w">     </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w"></span>
 
-     <span class="kd">public</span> <span class="nf">Person</span><span class="p">(</span><span class="n">PersonImporter</span> <span class="n">importer</span><span class="p">)</span> <span class="p">{</span>
-         <span class="n">age</span> <span class="o">=</span> <span class="n">importer</span><span class="p">.</span><span class="na">getAge</span><span class="p">();</span>
-         <span class="n">id</span> <span class="o">=</span> <span class="n">importer</span><span class="p">.</span><span class="na">getId</span><span class="p">();</span>
-     <span class="p">}</span>
+<span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">(</span><span class="n">PersonImporter</span><span class="w"> </span><span class="n">importer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">         </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">importer</span><span class="p">.</span><span class="na">getAge</span><span class="p">();</span><span class="w"></span>
+<span class="w">         </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">importer</span><span class="p">.</span><span class="na">getId</span><span class="p">();</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
 
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">export</span><span class="p">(</span><span class="n">PersonExporter</span> <span class="n">exporter</span><span class="p">)</span> <span class="p">{</span>
-         <span class="n">exporter</span><span class="p">.</span><span class="na">setDetails</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
-     <span class="p">}</span>
+<span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">export</span><span class="p">(</span><span class="n">PersonExporter</span><span class="w"> </span><span class="n">exporter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">         </span><span class="n">exporter</span><span class="p">.</span><span class="na">setDetails</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
 
- <span class="p">}</span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -385,9 +387,9 @@ The Humble Object pattern is a good example, because the separation of the behav
 The Presenter/View boundary is one of these boundaries, but there are many others.&quot;</p>
 <p class="attribution">—&quot;Clean Architecture: A Craftsman's Guide to Software Structure and Design&quot; by Robert C. Martin, перевод ООО Издательство &quot;Питер&quot;</p>
 </div></blockquote>
-</div>
-<div class="section" id="returning-structure">
-<h3><a class="toc-backref" href="#id10">2. Returning structure</a><a class="headerlink" href="#returning-structure" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="returning-structure">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">2. Returning structure</a><a class="headerlink" href="#returning-structure" title="Permalink to this heading">¶</a></h3>
 <p>Возникает целесообразность облегчить метод экспортирования, придав ему сигнатуру <code class="docutils literal notranslate"><span class="pre">Recognizer.Export()</span> <span class="pre">RecognizerState</span></code> вместо <code class="docutils literal notranslate"><span class="pre">Recognizer.ExportTo(ex</span> <span class="pre">RecognizerExporter)</span></code>.
 Получится что-то типа DTO с тем лишь отличием, что он пересекает не сетевые границы, а границы инкапсуляции Агрегата.
 В Golang этот вариант выглядит чуть более привлекательным, хотя и менее OOP, но зато не контрастирует с FP принципами Value Object.</p>
@@ -427,52 +429,52 @@ Upon completion, the UseCaseInteractor gathers data from the Entities and constr
 The OutputData is then passed through the OutputBoundary interface to the Presenter.&quot;</p>
 <p class="attribution">—&quot;Clean Architecture: A Craftsman's Guide to Software Structure and Design&quot; by Robert C. Martin, перевод ООО Издательство &quot;Питер&quot;</p>
 </div></blockquote>
-<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">grade_2</span>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nx">grade_2</span><span class="w"></span>
 
-<span class="kn">import</span> <span class="p">(</span>
-    <span class="s">&quot;time&quot;</span>
-<span class="p">)</span>
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;time&quot;</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 
-<span class="kd">type</span> <span class="nx">Exportable</span><span class="p">[</span><span class="nx">T</span> <span class="nx">any</span><span class="p">]</span> <span class="kd">interface</span> <span class="p">{</span>
-    <span class="nx">Export</span><span class="p">()</span> <span class="nx">T</span>
-<span class="p">}</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">Exportable</span><span class="p">[</span><span class="nx">T</span><span class="w"> </span><span class="kt">any</span><span class="p">]</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Export</span><span class="p">()</span><span class="w"> </span><span class="nx">T</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">type</span> <span class="nx">ExportableUint</span> <span class="kt">uint</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="w"> </span><span class="kt">uint</span><span class="w"></span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="nx">ExportableUint</span><span class="p">)</span> <span class="nx">Export</span><span class="p">()</span> <span class="kt">uint</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nb">uint</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="p">)</span><span class="w"> </span><span class="nx">Export</span><span class="p">()</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">uint</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">type</span> <span class="nx">MemberId</span> <span class="nx">ExportableUint</span>
-<span class="kd">type</span> <span class="nx">Grade</span> <span class="nx">ExportableUint</span>
-<span class="kd">type</span> <span class="nx">EndorsementCount</span> <span class="nx">ExportableUint</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">MemberId</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="w"></span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">Grade</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="w"></span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">EndorsementCount</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="w"></span>
 
-<span class="kd">type</span> <span class="nx">RecognizerState</span> <span class="kd">struct</span> <span class="p">{</span>
-    <span class="nx">Id</span>                        <span class="kt">uint</span>
-    <span class="nx">Grade</span>                     <span class="kt">uint</span>
-    <span class="nx">AvailableEndorsementCount</span> <span class="kt">uint</span>
-    <span class="nx">PendingEndorsementCount</span>   <span class="kt">uint</span>
-    <span class="nx">Version</span>                   <span class="kt">uint</span>
-    <span class="nx">CreatedAt</span>                 <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
-<span class="p">}</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">RecognizerState</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Id</span><span class="w">                        </span><span class="kt">uint</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Grade</span><span class="w">                     </span><span class="kt">uint</span><span class="w"></span>
+<span class="w">    </span><span class="nx">AvailableEndorsementCount</span><span class="w"> </span><span class="kt">uint</span><span class="w"></span>
+<span class="w">    </span><span class="nx">PendingEndorsementCount</span><span class="w">   </span><span class="kt">uint</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Version</span><span class="w">                   </span><span class="kt">uint</span><span class="w"></span>
+<span class="w">    </span><span class="nx">CreatedAt</span><span class="w">                 </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">type</span> <span class="nx">Recognizer</span> <span class="kd">struct</span> <span class="p">{</span>
-    <span class="nx">id</span>                        <span class="nx">MemberId</span>
-    <span class="nx">grade</span>                     <span class="nx">Grade</span>
-    <span class="nx">availableEndorsementCount</span> <span class="nx">EndorsementCount</span>
-    <span class="nx">pendingEndorsementCount</span>   <span class="nx">EndorsementCount</span>
-    <span class="nx">version</span>                   <span class="kt">uint</span>
-    <span class="nx">createdAt</span>                 <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span>
-<span class="p">}</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">Recognizer</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">id</span><span class="w">                        </span><span class="nx">MemberId</span><span class="w"></span>
+<span class="w">    </span><span class="nx">grade</span><span class="w">                     </span><span class="nx">Grade</span><span class="w"></span>
+<span class="w">    </span><span class="nx">availableEndorsementCount</span><span class="w"> </span><span class="nx">EndorsementCount</span><span class="w"></span>
+<span class="w">    </span><span class="nx">pendingEndorsementCount</span><span class="w">   </span><span class="nx">EndorsementCount</span><span class="w"></span>
+<span class="w">    </span><span class="nx">version</span><span class="w">                   </span><span class="kt">uint</span><span class="w"></span>
+<span class="w">    </span><span class="nx">createdAt</span><span class="w">                 </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="nx">Recognizer</span><span class="p">)</span> <span class="nx">Export</span><span class="p">()</span> <span class="nx">RecognizerState</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">RecognizerState</span><span class="p">{</span>
-        <span class="nx">r</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span> <span class="nx">r</span><span class="p">.</span><span class="nx">grade</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span>
-        <span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span>
-        <span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span>
-        <span class="nx">r</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span> <span class="nx">r</span><span class="p">.</span><span class="nx">createdAt</span><span class="p">,</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="nx">Recognizer</span><span class="p">)</span><span class="w"> </span><span class="nx">Export</span><span class="p">()</span><span class="w"> </span><span class="nx">RecognizerState</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">RecognizerState</span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">r</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">grade</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span><span class="w"></span>
+<span class="w">        </span><span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span><span class="w"></span>
+<span class="w">        </span><span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span><span class="w"></span>
+<span class="w">        </span><span class="nx">r</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">createdAt</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Недостатком такого решения, который я успел обнаружить, является то, что клиент не имеет возможности контролировать структуру экспортируемого объекта, в отличии от варианта с интерфейсом.
@@ -482,9 +484,9 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
 Гораздо удобней в таком случае был бы массив/срез объектов с типом <a class="reference external" href="https://pkg.go.dev/database/sql/driver#Value">driver.Value</a>.
 Это еще один аргумент в пользу первого варианта с отдельными сеттерами для каждого атрибута Агрегата.</p>
 <p>Попробовав оба варианта, я остановился, все-таки, на первом, каноническом, даже несмотря на его многословность.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
 
@@ -536,22 +538,22 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
 
 
 <h3>Навигация</h3>
-<p class="caption"><span class="caption-text">Общее пространство:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Общее пространство:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/it/index.html">IT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/index.html">Общее пространство</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Авторские пространства:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Авторские пространства:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Пространство Emacsway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Приватное пространствo:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Приватное пространствo:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../private/index.html">Приватное пространство</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Прочее:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Прочее:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../README.html">Как пользоваться</a></li>
 </ul>
@@ -580,12 +582,12 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
   <h3 id="searchlabel">Быстрый поиск</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Искать" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -603,7 +605,7 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
       &copy;2022, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

@@ -4,14 +4,16 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Балансирование Бизнес/Технических интересов &#8212; System Architecture</title>
-    <link rel="stylesheet" href="../../../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../_static/alabaster.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../../../../../" src="../../../../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../../../../" id="documentation_options" src="../../../../../../../_static/documentation_options.js"></script>
     <script src="../../../../../../../_static/jquery.js"></script>
     <script src="../../../../../../../_static/underscore.js"></script>
+    <script src="../../../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../../../../_static/doctools.js"></script>
     <script src="../../../../../../../_static/translations.js"></script>
     <link rel="index" title="Алфавитный указатель" href="../../../../../../../genindex.html" />
@@ -59,10 +61,10 @@
           <div class="body" role="main">
             
     
-  <div class="section" id="emacsway-agile-balancing-business-technical-concerns">
-<span id="id1"></span><h1><a class="toc-backref" href="#id13">Балансирование Бизнес/Технических интересов</a><a class="headerlink" href="#emacsway-agile-balancing-business-technical-concerns" title="Ссылка на этот заголовок">¶</a></h1>
+  <section id="emacsway-agile-balancing-business-technical-concerns">
+<span id="id1"></span><h1><a class="toc-backref" href="#id13" role="doc-backlink">Балансирование Бизнес/Технических интересов</a><a class="headerlink" href="#emacsway-agile-balancing-business-technical-concerns" title="Permalink to this heading">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
-<div class="contents topic" id="id2">
+<nav class="contents" id="id2">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#emacsway-agile-balancing-business-technical-concerns" id="id13">Балансирование Бизнес/Технических интересов</a></p>
@@ -97,7 +99,7 @@
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <p>Существует довольно распространенная проблема поиска баланса между краткосрочными бизнес-интересами и долгосрочными техническими интересами проекта.</p>
 <blockquote>
 <div><p>📝 &quot;Краткосрочные индивидуальные цели часто конфликтуют с долгосрочными социальными целями.
@@ -134,8 +136,8 @@ These impediments actually <strong>slow down other development that isn't direct
 <p>As such, this issue has two aspects: firstly, development teams need to learn how to justify such investment; and secondly, such non-functional investment will always have to be balanced with functional requirements.&quot;</p>
 <p class="attribution">—&quot;Open Agile Architecture™&quot; by The Open Group, Chapter &quot;<a class="reference external" href="https://pubs.opengroup.org/architecture/o-aa-standard-single/#KLP-CAR-justifying">6.5.1. Justifying Ongoing Investment in Architectural Refactoring</a>&quot;</p>
 </div></blockquote>
-<div class="section" id="id3">
-<h2><a class="toc-backref" href="#id14">Поиск баланса</a><a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<section id="id3">
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Поиск баланса</a><a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <p>В первой версии XP управление разработкой осуществлялось посредством четырех переменных:</p>
 <ul class="simple">
 <li><p>затраты (cost)</p></li>
@@ -156,8 +158,8 @@ The project must be driven by business decisions, but the business decisions mus
 <strong>If either Business or Development gains too much power, the project suffers.</strong>&quot;</p>
 <p class="attribution">—&quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 14. Splitting Business and Technical Responsibility&quot;, перевод ООО Издательство &quot;Питер&quot;</p>
 </div></blockquote>
-<div class="section" id="emacsway-agile-technical-concerns-predominance">
-<span id="id4"></span><h3><a class="toc-backref" href="#id15">Преобладание технических интересов</a><a class="headerlink" href="#emacsway-agile-technical-concerns-predominance" title="Ссылка на этот заголовок">¶</a></h3>
+<section id="emacsway-agile-technical-concerns-predominance">
+<span id="id4"></span><h3><a class="toc-backref" href="#id15" role="doc-backlink">Преобладание технических интересов</a><a class="headerlink" href="#emacsway-agile-technical-concerns-predominance" title="Permalink to this heading">¶</a></h3>
 <p>Начнем с преобладания технических интересов.</p>
 <p id="emacsway-second-system-effect">Frederick Brooks в своем бестселлере &quot;Мифический человеко-месяц&quot; говорит об &quot;<a class="reference external" href="https://ru.m.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D0%B2%D1%82%D0%BE%D1%80%D0%BE%D0%B9_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B">Эффекте второй системы</a>&quot;.
 Я приведу небольшой фрагмент:</p>
@@ -223,9 +225,9 @@ In an unconstrained implementing group, most thought and debate goes into archit
 <p class="attribution">—&quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr., перевод ООО Издательство &quot;Питер&quot;</p>
 </div></blockquote>
 <p>К этой же категории относится и т.н. Resume-Driven Development, когда разработчики безобоснованно переусложняют проект сложными технологиями ради очередной отметки о достижении в резюме.</p>
-</div>
-<div class="section" id="emacsway-agile-business-concerns-predominance">
-<span id="id5"></span><h3><a class="toc-backref" href="#id16">Преобладание бизнес-интересов</a><a class="headerlink" href="#emacsway-agile-business-concerns-predominance" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="emacsway-agile-business-concerns-predominance">
+<span id="id5"></span><h3><a class="toc-backref" href="#id16" role="doc-backlink">Преобладание бизнес-интересов</a><a class="headerlink" href="#emacsway-agile-business-concerns-predominance" title="Permalink to this heading">¶</a></h3>
 <p>Но есть и обратная проблема - когда технические специалисты ущемлены в своих полномочиях в пользу представителей бизнеса, проект неизменно загнивает, а <a class="reference internal" href="../../agile.html#emacsway-agile-development-difficulties"><span class="std std-ref">экономика разработки деградирует с зависимостью, приближенной к экспоненциальной</span></a>.</p>
 <blockquote>
 <div><p>📝 &quot;Когда бизнесмены получают слишком много полномочий, они начинают диктовать разработчикам значения для всех четырех переменных.
@@ -288,9 +290,9 @@ Then you can add your tech candy later, OK?&quot;</p>
 We've concluded that the product owner is not always qualified to be making that tradeoff.&quot;</p>
 <p class="attribution">—&quot;Scrum and XP from the Trenches: How We Do Scrum&quot; 2nd edition by Henrik Kniberg, перевод под редакцией Алексея Кривицкого</p>
 </div></blockquote>
-</div>
-<div class="section" id="emacsway-agile-solution-to-balancing-business-technical-concerns">
-<span id="id6"></span><h3><a class="toc-backref" href="#id17">Решение</a><a class="headerlink" href="#emacsway-agile-solution-to-balancing-business-technical-concerns" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="emacsway-agile-solution-to-balancing-business-technical-concerns">
+<span id="id6"></span><h3><a class="toc-backref" href="#id17" role="doc-backlink">Решение</a><a class="headerlink" href="#emacsway-agile-solution-to-balancing-business-technical-concerns" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>📝 &quot;You notice we have two different criteria set by two different groups of people.
 How do we resolve the two of them?
@@ -341,10 +343,10 @@ The specific process subcategory is not important as long as the conflict resolu
 Это нормально, так как это отражает неизбежный конфликт ресурсов и невозможность одновременного удовлетворения всех требований различных групп стейкхолдеров, которые зачастую обратно коррелируют.
 Нужно не предотвращать этот конфликт, - эта задача есть невозможная, а управлять им путем разрешения противоречий.
 В противном случае, вполне естественный конфликт интересов может перерасти в неестественный конфликт межличностный (в лучшем случае), или даже привести к <a class="reference internal" href="business-concerns/developer-motivation.html#emacsway-developer-motivation"><span class="std std-ref">потере кадров</span></a> (в худшем случае).</p>
-<div class="section" id="extreme-programming">
-<span id="emacsway-xp-balancing-business-technical-concerns"></span><h4><a class="toc-backref" href="#id18">Extreme Programming</a><a class="headerlink" href="#extreme-programming" title="Ссылка на этот заголовок">¶</a></h4>
-<div class="section" id="xp">
-<span id="emacsway-xp1-balancing-business-technical-concerns"></span><h5><a class="toc-backref" href="#id19">Первая версия XP</a><a class="headerlink" href="#xp" title="Ссылка на этот заголовок">¶</a></h5>
+<section id="extreme-programming">
+<span id="emacsway-xp-balancing-business-technical-concerns"></span><h4><a class="toc-backref" href="#id18" role="doc-backlink">Extreme Programming</a><a class="headerlink" href="#extreme-programming" title="Permalink to this heading">¶</a></h4>
+<section id="xp">
+<span id="emacsway-xp1-balancing-business-technical-concerns"></span><h5><a class="toc-backref" href="#id19" role="doc-backlink">Первая версия XP</a><a class="headerlink" href="#xp" title="Permalink to this heading">¶</a></h5>
 <p>Решение этой проблемы хорошо описано в главе &quot;Chapter 14. Splitting Business and Technical Responsibility&quot; книги &quot;Extreme Programming Explained&quot; 1st edition by Kent Beck.
 Решение слишком объемное, чтобы поместить его сюда полностью, поэтому, я приведу только ключевые его моменты.</p>
 <blockquote>
@@ -400,9 +402,9 @@ If everyone—programmers, customers, and managers—can see all four variables,
 If they don't like the result implied for the fourth variable, they can change the inputs, or they can pick a different three variables to control.&quot;</p>
 <p class="attribution">—&quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 4. Four Variables&quot;, перевод ООО Издательство &quot;Питер&quot;</p>
 </div></blockquote>
-</div>
-<div class="section" id="emacsway-xp2-balancing-business-technical-concerns">
-<span id="id7"></span><h5><a class="toc-backref" href="#id20">Вторая версия XP</a><a class="headerlink" href="#emacsway-xp2-balancing-business-technical-concerns" title="Ссылка на этот заголовок">¶</a></h5>
+</section>
+<section id="emacsway-xp2-balancing-business-technical-concerns">
+<span id="id7"></span><h5><a class="toc-backref" href="#id20" role="doc-backlink">Вторая версия XP</a><a class="headerlink" href="#emacsway-xp2-balancing-business-technical-concerns" title="Permalink to this heading">¶</a></h5>
 <p>Сам же Kent Beck и преобразовал позже квадрат (Quality, Cost, Time, Scope) в треугольник (Cost, Time, Scope), путем преобразования качества (Quality) из переменной в константу.</p>
 <p>Если в первой версии XP он боролся за то, чтобы Quality (или хотя бы любую одну из 4-х переменных управления разработкой) контролировали технические специалисты, то во второй версии он и вовсе преобразовал качество в константу.</p>
 <p>Вот что он пишет во втором издании:</p>
@@ -479,12 +481,12 @@ The business has no right to tell developers to cut corners or do low-quality wo
 Or, to say this differently, the business has no right to force developers to ruin their professional reputations or violate their professional ethics.</p>
 <p class="attribution">—&quot;Clean Agile: Back to Basics&quot; by Robert C. Martin</p>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="scrum">
-<span id="emacsway-scrum-balancing-business-technical-concerns"></span><h4><a class="toc-backref" href="#id21">Scrum</a><a class="headerlink" href="#scrum" title="Ссылка на этот заголовок">¶</a></h4>
-<div class="section" id="the-scrum-guide">
-<h5><a class="toc-backref" href="#id22">The Scrum Guide™</a><a class="headerlink" href="#the-scrum-guide" title="Ссылка на этот заголовок">¶</a></h5>
+</section>
+</section>
+<section id="scrum">
+<span id="emacsway-scrum-balancing-business-technical-concerns"></span><h4><a class="toc-backref" href="#id21" role="doc-backlink">Scrum</a><a class="headerlink" href="#scrum" title="Permalink to this heading">¶</a></h4>
+<section id="the-scrum-guide">
+<h5><a class="toc-backref" href="#id22" role="doc-backlink">The Scrum Guide™</a><a class="headerlink" href="#the-scrum-guide" title="Permalink to this heading">¶</a></h5>
 <p>Dean Leffingwell возлагает на Product Owner обязанность по разрешению противоречий требований:</p>
 <blockquote>
 <div><p>📝 &quot;Each project stakeholder will have their own vision, requirements, and priorities. As the primary representative to all those stakeholders, this provides a particular challenge to product owners—because all those requirements must be aligned and expectations must be managed toward a single solution.</p>
@@ -623,9 +625,9 @@ and what has changed in their environment.&quot;</p>
 </div></blockquote>
 <p>Это работает для маленьких команд.
 В больших коллективах лучше работают практики для работы со стейкхолдерами типа QAW, Mini-QAW, etc.</p>
-</div>
-<div class="section" id="id8">
-<h5><a class="toc-backref" href="#id23">К первоисточнику за сутью</a><a class="headerlink" href="#id8" title="Ссылка на этот заголовок">¶</a></h5>
+</section>
+<section id="id8">
+<h5><a class="toc-backref" href="#id23" role="doc-backlink">К первоисточнику за сутью</a><a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h5>
 <p>Bertrand Meyer был прав - лучший способ понять суть вещей - это обратиться к первоисточнику.
 Jeffrey Sutherland о том, как и зачем он ввел роль Product Owner:</p>
 <blockquote>
@@ -698,10 +700,10 @@ The Product Owner is accountable for <strong>translating the team's productivity
 <li><p>YAGNI должен способствовать эволюции программы, а не препятствовать ей.</p></li>
 </ol>
 <p>YAGNI как раз и является тем самым инструментом, который позволяет максимально удовлетворить требования Product Owner, не жертвуя при этом качеством программы.</p>
-</div>
-</div>
-<div class="section" id="atam-in-agile">
-<span id="emacsway-agile-atam"></span><h4><a class="toc-backref" href="#id24">ATAM in Agile</a><a class="headerlink" href="#atam-in-agile" title="Ссылка на этот заголовок">¶</a></h4>
+</section>
+</section>
+<section id="atam-in-agile">
+<span id="emacsway-agile-atam"></span><h4><a class="toc-backref" href="#id24" role="doc-backlink">ATAM in Agile</a><a class="headerlink" href="#atam-in-agile" title="Permalink to this heading">¶</a></h4>
 <p>Использование ATAM в Agile-разработке (скачивание свободное):</p>
 <ul class="simple">
 <li><p>&quot;<a class="reference external" href="https://www.researchgate.net/publication/276317148_Insights_from_15_Years_of_ATAM_Data_Towards_Agile_Architecture">Insights from 15 Years of ATAM Data: Towards Agile Architecture</a>&quot; by Stephany Bellomo, Ian Gorton, and Rick Kazman, IEEE Software, September/October, 2015, 32:5, 38-45</p></li>
@@ -738,9 +740,9 @@ In particular, quality attribute (QA) prioritization can be especially difficult
 <li><p>&quot;<a class="reference external" href="https://resources.sei.cmu.edu/asset_files/Presentation/2014_017_101_89563.pdf">Facilitating the Mini-Quality Attributes Workshop. A Lightweight, Architecture-Focused Method.</a>&quot; by Will Chaparro IBM, Michael Keeling IBM</p></li>
 </ul>
 <p>Смотрите также о &quot;Lightweight Architecture Evaluation (LAE)&quot; в &quot;Software Architecture in Practice&quot; 4th edition by Len Bass, Paul Clements, Rick Kazman.</p>
-</div>
-<div class="section" id="emacsway-agile-balancing-business-technical-concerns-with-fixed-iteration-ratio">
-<span id="id9"></span><h4><a class="toc-backref" href="#id25">Фиксированная часть итерации на технические задачи</a><a class="headerlink" href="#emacsway-agile-balancing-business-technical-concerns-with-fixed-iteration-ratio" title="Ссылка на этот заголовок">¶</a></h4>
+</section>
+<section id="emacsway-agile-balancing-business-technical-concerns-with-fixed-iteration-ratio">
+<span id="id9"></span><h4><a class="toc-backref" href="#id25" role="doc-backlink">Фиксированная часть итерации на технические задачи</a><a class="headerlink" href="#emacsway-agile-balancing-business-technical-concerns-with-fixed-iteration-ratio" title="Permalink to this heading">¶</a></h4>
 <blockquote>
 <div><p>📝 &quot;Business should sequence stories.
 Business people understand uncertainty in estimates.
@@ -764,9 +766,9 @@ No need for elaborate tracking schemes like focus factor or time reports, just u
 Ask at the retro, &quot;Roughly how much of our sprint capacity did we spend on tech stories, and did that feel about right?&quot;&quot;.</p>
 <p class="attribution">—&quot;Scrum and XP from the Trenches: How We Do Scrum&quot; 2nd edition by Henrik Kniberg, перевод под редакцией Алексея Кривицкого</p>
 </div></blockquote>
-</div>
-<div class="section" id="open-agile-architecture">
-<h4><a class="toc-backref" href="#id26">Open Agile Architecture™</a><a class="headerlink" href="#open-agile-architecture" title="Ссылка на этот заголовок">¶</a></h4>
+</section>
+<section id="open-agile-architecture">
+<h4><a class="toc-backref" href="#id26" role="doc-backlink">Open Agile Architecture™</a><a class="headerlink" href="#open-agile-architecture" title="Permalink to this heading">¶</a></h4>
 <blockquote>
 <div><p>📝 &quot;It is worth, at this point, returning to Fowler's distinction [Fowler 2019] between code refactoring and architectural restructuring. Fowler would strongly promote the view that code refactoring requires no justification; rather it is part of a developer's &quot;day job&quot;. This does not mean that we have to take on a massive code restructuring exercise for a legacy codebase; on the contrary, there may be no reason whatsoever to restructure the code for a stable legacy project. However, that said, developers should refactor their code when the opportunity arises. Such activity constitutes a &quot;Type 2&quot; decision as documented in [Ries 2011].</p>
 <p>Architectural refactoring (restructuring), however, often requires explicit investment because the required effort is significant. In such cases, it is incumbent on development teams and architects to &quot;sell&quot; the refactoring in monetary, time, or customer success terms. For example, &quot;if we perform refactoring A, the build for Product B will be reduced by seven minutes, resulting in us being able to deploy C times more frequently per day&quot;; or, &quot;implementing refactoring D will directly address key Customer E's escalated pain point; their annual subscription and support fee is $12 million per annum&quot;. Note, however, that claims that &quot;refactoring F will make us G% more productive&quot; should be avoided as software productivity is notoriously difficult to measure.&quot;</p>
@@ -776,15 +778,15 @@ Ask at the retro, &quot;Roughly how much of our sprint capacity did we spend on 
 </ul>
 <p class="attribution">—&quot;Open Agile Architecture™&quot; by The Open Group, Chapter &quot;<a class="reference external" href="https://pubs.opengroup.org/architecture/o-aa-standard-single/#KLP-CAR-justifying">6.5.1. Justifying Ongoing Investment in Architectural Refactoring</a>&quot;</p>
 </div></blockquote>
-</div>
-<div class="section" id="id10">
-<h4><a class="toc-backref" href="#id27">Системное мышление</a><a class="headerlink" href="#id10" title="Ссылка на этот заголовок">¶</a></h4>
+</section>
+<section id="id10">
+<h4><a class="toc-backref" href="#id27" role="doc-backlink">Системное мышление</a><a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h4>
 <p>См. &quot;<a class="reference external" href="https://less.works/less/principles/systems-thinking.html">Systems Thinking</a>&quot; by Craig Larman (<a class="reference external" href="https://less.works/ru/less/principles/systems-thinking.html">на русском</a>).</p>
-</div>
-</div>
-</div>
-<div class="section" id="id11">
-<h2><a class="toc-backref" href="#id28">Психологическая сторона вопроса</a><a class="headerlink" href="#id11" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="id11">
+<h2><a class="toc-backref" href="#id28" role="doc-backlink">Психологическая сторона вопроса</a><a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h2>
 <p>Проблеме достижения понимания между представителями бизнеса и техническими специалистами посвятили свои статьи даже такие всемирно-известные светила, как Gregor Hohpe, который пытался объяснить бизнесу важность архитектурных решений на примере <a class="reference internal" href="business-concerns/architecture-options.html#emacsway-architecture-options"><span class="std std-ref">фондовых опционов</span></a>.</p>
 <p>А Ward Cunningham предложил использовать метафору <a class="reference internal" href="business-concerns/compound-interest.html#emacsway-compound-interest"><span class="std std-ref">сложного процента (TechnicalDebt)</span></a>, хорошо демонстрирующую экспоненциальную деградацию velocity при дисбалансе решений в пользу краткосрочных бизнес-интересов.</p>
 <p>Даже основатели Agile, такие, как Ron Jeffries, имели сложности в достижении понимания с представителями бизнеса, и термин Story Point возник именно потому, что они <a class="reference external" href="https://twitter.com/RonJeffries/status/1052858860539658240?s=20">не смогли объяснить представителю бизнеса, почему 2 идеальных дня занимали 5 календарных дней</a>:</p>
@@ -852,8 +854,8 @@ We will have the courage to do only what is necessary and no more, to spend our 
 <li><p>&quot;<a class="reference internal" href="technical-concerns/when-to-write-unit-tests.html#emacsway-when-to-write-unit-tests"><span class="std std-ref">Когда писать Unit Tests в legacy</span></a>&quot;</p></li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
 
@@ -905,22 +907,22 @@ We will have the courage to do only what is necessary and no more, to spend our 
 
 
 <h3>Навигация</h3>
-<p class="caption"><span class="caption-text">Общее пространство:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Общее пространство:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../../../../trunk/it/index.html">IT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../../../../trunk/index.html">Общее пространство</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Авторские пространства:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Авторские пространства:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../../index.html">Пространство Emacsway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Приватное пространствo:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Приватное пространствo:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../../../private/index.html">Приватное пространство</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Прочее:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Прочее:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../../../README.html">Как пользоваться</a></li>
 </ul>
@@ -951,12 +953,12 @@ We will have the courage to do only what is necessary and no more, to spend our 
   <h3 id="searchlabel">Быстрый поиск</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Искать" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -974,7 +976,7 @@ We will have the courage to do only what is necessary and no more, to spend our 
       &copy;2022, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

@@ -4,14 +4,16 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Incremental Development &#8212; System Architecture</title>
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/alabaster.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <script src="../../../../_static/translations.js"></script>
     <link rel="index" title="Алфавитный указатель" href="../../../../genindex.html" />
@@ -59,18 +61,20 @@
           <div class="body" role="main">
             
     
-  <div class="section" id="incremental-development">
-<span id="emacsway-incremental-development"></span><h1>Incremental Development<a class="headerlink" href="#incremental-development" title="Ссылка на этот заголовок">¶</a></h1>
+  <section id="incremental-development">
+<span id="emacsway-incremental-development"></span><h1>Incremental Development<a class="headerlink" href="#incremental-development" title="Permalink to this heading">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
 <blockquote>
 <div><p>📝 &quot;The &quot;incremental development&quot; model includes initial planning, initial requirements analysis, initial architectural definition, and initial validation, but allocates design, implementation, verification (and sometimes delivery) activities to a series of stages, each of which provides a portion of the intended functionality.
 The approach provides for some flexibility to respond to inaccurate cost or schedule estimates by moving functionality to later increments.&quot;</p>
 <p class="attribution">—&quot;ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes&quot;</p>
 </div></blockquote>
-<div class="figure align-left" id="id1">
+<figure class="align-left" id="id1">
 <a class="reference internal image-reference" href="../../../../_images/incrementing.jpg"><img alt="Incremental Development. The image source is &quot;Don't Know What I Want, But I Know How to Get It&quot; by Jeff Patton &amp; Associates https://www.jpattonassociates.com/dont_know_what_i_want/" src="../../../../_images/incrementing.jpg" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-text">Incremental Development. The image source is &quot;<a class="reference external" href="https://www.jpattonassociates.com/dont_know_what_i_want/">Don't Know What I Want, But I Know How to Get It</a>&quot; by Jeff Patton &amp; Associates</span><a class="headerlink" href="#id1" title="Постоянная ссылка на рисунок">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Incremental Development. The image source is &quot;<a class="reference external" href="https://www.jpattonassociates.com/dont_know_what_i_want/">Don't Know What I Want, But I Know How to Get It</a>&quot; by Jeff Patton &amp; Associates</span><a class="headerlink" href="#id1" title="Постоянная ссылка на рисунок">¶</a></p>
+</figcaption>
+</figure>
 <blockquote>
 <div><p>📝 &quot;Разделяй и властвуй</p>
 <p>Как указал Эдсгер Дейкстра, никто не обладает умом, способным вместить все детали сложной программы.
@@ -91,7 +95,7 @@ As Polya recommended in mathematical problem solving, understand the problem, de
 </dl>
 <p class="attribution">—&quot;Code Complete&quot; 2nd edition by Steve McConnell, перевод: Издательско-торговый дом &quot;Русская Редакция&quot;</p>
 </div></blockquote>
-</div>
+</section>
 
 
 
@@ -143,22 +147,22 @@ As Polya recommended in mathematical problem solving, understand the problem, de
 
 
 <h3>Навигация</h3>
-<p class="caption"><span class="caption-text">Общее пространство:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Общее пространство:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../trunk/it/index.html">IT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../trunk/index.html">Общее пространство</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Авторские пространства:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Авторские пространства:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../index.html">Пространство Emacsway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Приватное пространствo:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Приватное пространствo:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../private/index.html">Приватное пространство</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Прочее:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Прочее:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../README.html">Как пользоваться</a></li>
 </ul>
@@ -186,12 +190,12 @@ As Polya recommended in mathematical problem solving, understand the problem, de
   <h3 id="searchlabel">Быстрый поиск</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Искать" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -209,7 +213,7 @@ As Polya recommended in mathematical problem solving, understand the problem, de
       &copy;2022, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
