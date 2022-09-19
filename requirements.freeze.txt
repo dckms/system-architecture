@@ -1,5 +1,4 @@
 alabaster==0.7.12
-apturl==0.5.2
 Babel==2.10.3
 bcrypt==3.2.0
 blinker==1.4
