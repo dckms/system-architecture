@@ -264,6 +264,8 @@ Obsidian
 Neuron Zettelkasten
 -------------------
 
+`Zettelkasten <https://github.com/roalyr/zettelkasten>`__ - a template for a Zettelkasten based on markdown files.
+
     Neuron was designed with these criteria in mind:
 
     - Future-proof: store notes locally1 as plain-text (Markdown) files
@@ -272,6 +274,24 @@ Neuron Zettelkasten
     - Remain as simple to use as possible, whilst being feature-rich via Plugins
 
     -- https://neuron.zettel.page/philosophy
+
+
+Neuron Zettelkasten может представлять интерес для тех, кто предпочитает минимизацию внешних зависимостей, минимализм и неограниченность:
+
+- https://neuron.zettel.page/philosophy
+- https://neuron.zettel.page/tutorial
+- https://srid.github.io/neuron-template/README
+- https://github.com/srid/neuron
+- https://github.com/srid/neuron-template
+
+`Сравнение Neuron Zettelkasten и Sphinx-doc <https://lobste.rs/s/kydg6q/neuron_0_4_zettelkasten_note_management#c_me2hhh>`__.
+
+
+Antora
+------
+
+`Antora <https://antora.org/>`__ - the multi-repository documentation site generator for tech writers who writing in `AsciiDoc <https://asciidoc.org/>`__.
+
 
 
 GitJournal
@@ -402,22 +422,6 @@ Markdown - популярный язык разметки.
 - `iTextEditors <https://brettterpstra.com/ios-text-editors/>`__ - the iOS Text Editor roundup.
 
 
-Аналоги
-=======
-
-`Zettelkasten <https://github.com/roalyr/zettelkasten>`__ - a template for a Zettelkasten based on markdown files.
-
-Neuron Zettelkasten может представлять интерес для тех, кто предпочитает минимизацию внешних зависимостей, минимализм и неограниченность:
-
-- https://neuron.zettel.page/philosophy
-- https://neuron.zettel.page/tutorial
-- https://srid.github.io/neuron-template/README
-- https://github.com/srid/neuron
-- https://github.com/srid/neuron-template
-
-Парень дает `сравнение Neuron Zettelkasten и Sphinx-doc <https://lobste.rs/s/kydg6q/neuron_0_4_zettelkasten_note_management#c_me2hhh>`__.
-
-
 Интеграция с другими системами
 ==============================
 
@@ -495,7 +499,7 @@ Sitemap
 
 - `Sphinx-Needs <https://sphinxcontrib-needs.readthedocs.io/en/latest/>`__ (`source code <https://github.com/useblocks/sphinxcontrib-needs>`__) - Sphinx-Needs allows the definition, linking and filtering of need-objects, which are by default: requirements, specifications, implementations, test cases.
 - `Sphinx Traceability plugin <https://0x6d64.github.io/sphinx-traceability-example/>`__ (`source code <https://github.com/melexis/sphinx-traceability-extension>`__) - traceability extension for Sphinx documentation generator. Sphinx plugin that allows defining documentation items and relations between those items. Can be used as a requirements management tool for e.g. ISO26262 projects.
-
+- `sphinxcontrib-kroki <https://github.com/sphinx-contrib/kroki>`__ - Embed PlantUML, DOT, etc. diagrams in your documentation using `Kroki <https://kroki.io/>`__.
 
 Послесловие
 ===========
