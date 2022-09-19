@@ -17,7 +17,7 @@ jobs:
         python-version: 3.10.6
     - name: Install dependencies
       run: |
-          sudo apt-get update -y && sudo apt-get install -y git git-core libxml2-dev libxslt-dev python3.10-dev
+          sudo apt-get update -y && sudo apt-get install -y git git-core libxml2-dev libxslt-dev python3-dev
           sudo python -m pip install --upgrade pip
           sudo pip install -r requirements.freeze.txt
     - name: Make output folder
