@@ -12,7 +12,6 @@ configobj==5.0.6
 cryptography==3.4.8
 cssselect==1.1.0
 dbus-python==1.2.18
-defer==1.0.6
 Deprecated==1.2.13
 distlib==0.3.6
 distro==1.7.0
