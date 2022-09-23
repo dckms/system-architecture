@@ -82,6 +82,7 @@
 
 - "`О медленном программировании <https://habr.com/ru/company/web_payment_ru/blog/246081/>`__"
 
+
 Шпаргалки по теме:
 
 - "`Шпаргалка по когнитивным искажениям в виде мобильного приложения <https://play.google.com/store/apps/details?id=ru.free_coding.biascs>`__"
