@@ -676,6 +676,7 @@ API-Design
 - "Web API Design Crafting Interfaces that Developers Love" by Brian Mulloy
 - "REST API Design Rulebook" by Mark Massé
 - "Principles of Web API Design: Delivering Value with APIs and Microservices" by James Higginbotham
+- "Continuous API Management" 2nd edition by Mehdi Medjaoui, Erik Wilde, Ronnie Mitra, Mike Amundsen
 
 
 Streaming Processing
