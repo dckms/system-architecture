@@ -43,6 +43,14 @@
 
   - "Chapter 1. What Is Design and Architecture?"
 
+- "`Software Engineering Body of Knowledge (SWEBOK) v.3 <https://www.computer.org/education/bodies-of-knowledge/software-engineering>`__" (`на русском <https://github.com/ligurio/swebok-2004-in-russian>`__)
+
+  - "Chapter 12: Software Engineering Economics"
+
+- "`Software Engineering Body of Knowledge (SWEBOK) v.4 (draft) <https://waseda.app.box.com/v/ieee-cs-swebok>`__"
+
+  - "Chapter 15: Software Engineering Economics"
+
 - "Working Effectively with Legacy Code" by Michael C. Feathers
 - "`Yagni <https://martinfowler.com/bliki/Yagni.html>`__" (хорошо разъясняет виды экономических ущербов: "cost of build", "cost of delay", "cost of carry", "cost of repair", "cost of removing")
 - "`Technical Debt <https://martinfowler.com/bliki/TechnicalDebt.html>`__"

@@ -1,6 +1,6 @@
-=============================
-Reference Application "Grade"
-=============================
+========================================
+Golang DDD Reference Application "Grade"
+========================================
 
 .. toctree::
    :maxdepth: 1
