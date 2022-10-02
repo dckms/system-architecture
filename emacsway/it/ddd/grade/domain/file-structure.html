@@ -19,7 +19,7 @@
     <link rel="index" title="Алфавитный указатель" href="../../../../../genindex.html" />
     <link rel="search" title="Поиск" href="../../../../../search.html" />
     <link rel="next" title="Использовать ли в проекте CanExecute pattern?" href="why-no-can-execute.html" />
-    <link rel="prev" title="Как сохранить Агрегат в БД не разрушая инкапсуляции?" href="aggregate-encapsulation.html" />
+    <link rel="prev" title="Event Sourcing" href="event-sourcing.html" />
     
    
   <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
@@ -47,7 +47,7 @@
     <ul>
         <li>
           &larr;
-          <a href="aggregate-encapsulation.html" title="Previous document">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a>
+          <a href="event-sourcing.html" title="Previous document">Event Sourcing</a>
         </li>
         <li>
           <a href="why-no-can-execute.html" title="Next document">Использовать ли в проекте CanExecute pattern?</a>
@@ -148,13 +148,17 @@ This arrangement makes it practical to enforce all invariants for objects in the
 Например, Агрегат может быть осведомлен о своей Сущности, а Сущность может быть осведомлена об Объекте-значении Агрегата.</p>
 <p>По этой причине, все Объекты-значения Агрегата/Сущности были выделены в отдельную директорию внутри директории Агрегата/Сущности.
 Иначе пришлось бы абсолютно все Cущности и Объекты-значения Агрегата разметить плоским списком в одной директории, что затрудняло навигацию по файловой структуре.</p>
-<p>Позже я обнаружил еще один способ решения проблемы циклического импорта - для этого было достаточно, чтобы Агрегат заимствовавал Объект-значение у Сущности, а не наоборот.
-В крайнем случае, внутри директории Агрегата можно делать директорию <code class="docutils literal notranslate"><span class="pre">shared</span></code>, <code class="docutils literal notranslate"><span class="pre">common</span></code>, или <code class="docutils literal notranslate"><span class="pre">aggregate_name</span></code>, для реализации ациклического графа зависимостей.
-Этот вариант также может оказаться востребованным, если Доменные События расположены в поддиректории, например, <code class="docutils literal notranslate"><span class="pre">events</span></code>, и используют Объекты-значения Агрегатов.
-В таком случае, директория для совместно используемых Объектов-значений может иметь название (в дополнение к уже перечисленным) <code class="docutils literal notranslate"><span class="pre">exportable</span></code>, <code class="docutils literal notranslate"><span class="pre">public</span></code>.
-Ну а чтобы не появлялись в импортах <code class="docutils literal notranslate"><span class="pre">public2</span></code>, <code class="docutils literal notranslate"><span class="pre">public3</span></code>, <code class="docutils literal notranslate"><span class="pre">public4</span></code>..., можно использовать импорт с точкой в пакет их агрегата, и уже оттуда импортировать в клиентский пакет.</p>
-<p>Еще одним способом предотвращения циклических импортов является использование интерфейсов, размещенных в отдельном пакете либо продублированных у своих клиентов.
+<p>Позже я обнаружил еще один способ решения проблемы циклического импорта - для этого было достаточно, чтобы Агрегат заимствовавал Объект-значение у Сущности, а не наоборот.</p>
+<p>В крайнем случае, внутри директории Агрегата можно делать директорию <code class="docutils literal notranslate"><span class="pre">shared</span></code>, <code class="docutils literal notranslate"><span class="pre">common</span></code>, или <code class="docutils literal notranslate"><span class="pre">aggregate_name</span></code>, для реализации ациклического графа зависимостей.</p>
+<p>Этот вариант также может оказаться востребованным, если Доменные События расположены в поддиректории, например, <code class="docutils literal notranslate"><span class="pre">events</span></code>, и используют Объекты-значения Агрегатов.
+В таком случае, директория для совместно используемых Объектов-значений может иметь название (в дополнение к уже перечисленным) <code class="docutils literal notranslate"><span class="pre">exportable</span></code>, <code class="docutils literal notranslate"><span class="pre">public</span></code>.</p>
+<blockquote>
+<div><p>All Value Objects which are part of a Customer live in another subpackage named value. I have to do this because in Go circular dependencies are not allowed. If I would put the Value Objects into the customer package then Commands and Events in domain would import the Value Objects from customer and functions in customer would import Commands and Events from domain. Having them in a subpackage additionally gives more privacy for the Value Objects. Not even functions of the Customer Aggregate can access private parts or create/modify a value without using the proper methods.</p>
+<p class="attribution">—&quot;<a class="reference external" href="https://medium.com/&#64;TonyBologni/implementing-domain-driven-design-and-hexagonal-architecture-with-go-2-efd432505554">Implementing Domain-Driven Design and Hexagonal Architecture with Go (2)</a>&quot; by Anton Stöckl — Part 2 — How I implement tactical DDD patterns — the Domain layer.</p>
+</div></blockquote>
+<p>Еще одним способом предотвращения циклических импортов является использование интерфейсов, размещенных в отдельном пакете либо продублированных у своих клиентов (но это привело бы к дублированию интерфейсов-экспортеров).
 Интерфейс дает то, что требуется сигнатурой методов клиента, не тащит за собой кучу зависимостей, необходимых для реализации, и даже может быть объявлен локально у своего клиента.</p>
+<p>Попробовав различные варианты, я решил не выделять доменные события в отдельную директорию, т.к. избыток директорий создает ощущение переусложненности.</p>
 </section>
 <section id="id6">
 <h2><a class="toc-backref" href="#id12" role="doc-backlink">Почему Доменные События размещены в директории Агрегата и его Сущностей?</a><a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
@@ -182,7 +186,7 @@ This arrangement makes it practical to enforce all invariants for objects in the
     <ul>
         <li>
           &larr;
-          <a href="aggregate-encapsulation.html" title="Previous document">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a>
+          <a href="event-sourcing.html" title="Previous document">Event Sourcing</a>
         </li>
         <li>
           <a href="why-no-can-execute.html" title="Next document">Использовать ли в проекте CanExecute pattern?</a>
@@ -248,9 +252,9 @@ This arrangement makes it practical to enforce all invariants for objects in the
   <li><a href="../../../../../index.html">Documentation overview</a><ul>
   <li><a href="../../../../../trunk/it/index.html">IT</a></li>
   <li><a href="../../../../../trunk/it/ddd/index.html">DDD</a></li>
-  <li><a href="../index.html">Reference Application &quot;Grade&quot;</a></li>
+  <li><a href="../index.html">Golang DDD Reference Application &quot;Grade&quot;</a></li>
   <li><a href="index.html">Domain Layer</a></li><ul>
-      <li>Previous: <a href="aggregate-encapsulation.html" title="предыдущая глава">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a></li>
+      <li>Previous: <a href="event-sourcing.html" title="предыдущая глава">Event Sourcing</a></li>
       <li>Next: <a href="why-no-can-execute.html" title="следующая глава">Использовать ли в проекте CanExecute pattern?</a></li></ul>
   </ul></li>
 </ul>

@@ -358,6 +358,8 @@ CQRS & Event Sourcing
 - "`Event Sourcing basics <https://zimarev.com/blog/event-sourcing/introduction/>`__" by Alexey Zimarev
 - "`What is Event Sourcing? <https://eventstore.com/blog/what-is-event-sourcing/>`__" by Alexey Zimarev
 - "`Event Sourcing and CQRS <https://eventstore.com/blog/event-sourcing-and-cqrs/>`__" by Alexey Zimarev
+- "`Event immutability and dealing with change <https://www.eventstore.com/blog/event-immutability-and-dealing-with-change>`__" by Savvas Kleanthous
+- "`10 problems that Event Sourcing can help solve for you <https://www.eventstore.com/blog/10-problems-that-event-sourcing-can-help-solve-for-you>`__" by Dennis Doomen
 
 - "`CQRS, Task Based UIs, Event Sourcing agh! <http://codebetter.com/gregyoung/2010/02/16/cqrs-task-based-uis-event-sourcing-agh/>`__" by Greg Young
 - "`CQRS Documents <https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf>`__" by Greg Young
@@ -601,13 +603,14 @@ Scaled Agile
 - "An Introduction to Database Systems" by C.J. Date
 - "PostgreSQL 10 High Performance" by Ibrar Ahmed, Gregory Smith, Enrico Pirozzi
 
-PostgresPro представил `три книги <https://postgrespro.ru/education/books>`__ для трех разных уровней подготовленности читателей, от совершенно неосведомленного человека до разработчика баз данных.
+PostgresPro представил `четыре книги <https://postgrespro.ru/education/books>`__ для разных уровней подготовленности читателей, от совершенно неосведомленного человека до разработчика баз данных.
 Книги дают комплексные знания в лаконичной форме.
 Все книги доступны для скачивания в свободном доступе:
 
-1. "`Postgres: первое знакомство <https://postgrespro.ru/education/books/introbook>`__" / Л.П. Вениаминович, Р.Е. Валерьевич, Л.И. Викторович
-2. "`PostgreSQL. Основы языка SQL: учеб. пособие <https://postgrespro.ru/education/books/sqlprimer>`__"  / Е.П. Моргунов; под ред. Е.В. Рогова, П.В. Лузанова.
-3. "`Основы технологий баз данных: учеб. пособие <https://postgrespro.ru/education/books/dbtech>`__" / Б. А. Новиков, Е. А. Горшкова, Н. Г. Графеева; под ред. Е. В. Рогова.
+#. "`Postgres: первое знакомство <https://postgrespro.ru/education/books/introbook>`__" / П.В. Лузанов, Е.В. Рогов, И.В. Лёвшин
+#. "`PostgreSQL изнутри <https://postgrespro.ru/education/books/internals>`__" / Е.В. Рогов — М.: ДМК Пресс, 2022. — 660 с.
+#. "`PostgreSQL. Основы языка SQL: учеб. пособие <https://postgrespro.ru/education/books/sqlprimer>`__"  / Е.П. Моргунов; под ред. Е.В. Рогова, П.В. Лузанова.
+#. "`Основы технологий баз данных: учеб. пособие <https://postgrespro.ru/education/books/dbtech>`__" / Б.А. Новиков, Е.А. Горшкова, Н.Г. Графеева; под ред. Е.В. Рогова.
 
 Так же доступны `учебные материалы курсов <https://postgrespro.ru/education/courses>`__: слайды, видео, руководства. Скачать можно все материалы каждого курса одним архивом.
 
@@ -673,6 +676,7 @@ API-Design
 - "Web API Design Crafting Interfaces that Developers Love" by Brian Mulloy
 - "REST API Design Rulebook" by Mark Massé
 - "Principles of Web API Design: Delivering Value with APIs and Microservices" by James Higginbotham
+- "Continuous API Management" 2nd edition by Mehdi Medjaoui, Erik Wilde, Ronnie Mitra, Mike Amundsen
 
 
 Streaming Processing
@@ -914,6 +918,8 @@ Body of Knowledge
 -----------------
 
 - "`Guide to the Systems Engineering Body of Knowledge (SEBoK) <https://www.sebokwiki.org/wiki/Download_SEBoK_PDF>`__"
+- "`Software Engineering Body of Knowledge (SWEBOK) v.3 <https://www.computer.org/education/bodies-of-knowledge/software-engineering>`__" (`на русском <https://github.com/ligurio/swebok-2004-in-russian>`__)
+- "`Software Engineering Body of Knowledge (SWEBOK) v.4 (draft) <https://waseda.app.box.com/v/ieee-cs-swebok>`__"
 - "`The Information Technology Architecture Body of Knowledge (ITABoK) <https://itabok.iasaglobal.org/>`__"
 - "`The Enterprise Architecture Body of Knowledge (EABoK) <https://www.mitre.org/publications/technical-papers/guide-to-the-evolving-enterprise-architecture-body-of-knowledge>`__"
 - "`MITRE Systems Engineering Guide <https://www.mitre.org/publications/technical-papers/the-mitre-systems-engineering-guide>`__
@@ -1043,6 +1049,8 @@ Code Smell catalogs
 - `Complete serverless application to show how to apply DDD, Clean Architecture, and CQRS by practical refactoring of a Go project <https://github.com/ThreeDotsLabs/wild-workouts-go-ddd-example>`__ (`more info <https://threedots.tech/post/serverless-cloud-run-firebase-modern-go-application/>`__) by Robert Laszczak
 - `Clean Monolith Shop <https://github.com/ThreeDotsLabs/monolith-microservice-shop>`__ by Robert Laszczak - Source code for article "`Why using Microservices or Monolith can be just a detail? <https://threedots.tech/post/microservices-or-monolith-its-detail/>`__"
 - `go-iddd - showcase project for implementing DDD in Go <https://github.com/AntonStoeckl/go-iddd>`__ by Anton Stöckl (see more info `here <https://medium.com/@TonyBologni/implementing-domain-driven-design-and-hexagonal-architecture-with-go-1-292938c0a4d4>`__ and `here <https://medium.com/@TonyBologni/implementing-domain-driven-design-and-hexagonal-architecture-with-go-2-efd432505554>`__).
+- `transfer-money-go <https://github.com/agiledragon/transfer-money-go>`__ by Zhang Xiaolong -  A sample of DDD and DCI in Go.
+- `ddd-sample-in-golang <https://github.com/agiledragon/ddd-sample-in-golang>`__ by Zhang Xiaolong.
 - `go-distributed-sys <https://github.com/shijuvar/go-distributed-sys>`__ - Guidance for building distributed systems and Microservices in Go. "`Building Event-Driven Distributed Systems in Go with gRPC, NATS JetStream and CockroachDB <https://shijuvar.medium.com/building-event-driven-distributed-systems-in-go-with-grpc-nats-jetstream-and-cockroachdb-c4b899c8636d>`__" by Shiju Varghese
 - `Real-time Map <https://github.com/asynkron/realtimemap-go>`__ displays real-time positions of public transport vehicles in Helsinki. It's a showcase for `Proto.Actor <https://proto.actor/>`__ - an ultra-fast distributed actors solution for Go, C#, and Java/Kotlin. See also `realtimemap-dotnet <https://github.com/asynkron/realtimemap-dotnet>`__ implementation in .NET.
 - `Demo taxi system, using eventsourcing library <https://github.com/johnbywater/es-example-taxi-demo>`__ by John Bywater

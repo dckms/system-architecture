@@ -26,6 +26,8 @@ Memento оказался близко, но не по назначению. Су
 
     -- "Design Patterns: Elements of Reusable Object-Oriented Software" by Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 
+Тем не менее, этот подход используется некоторыми авторитетными источниками, см. `здесь <https://github.com/microsoftarchive/cqrs-journey/blob/6ffd9a8c8e865a9f8209552c52fa793fbd496d1f/source/Conference/Registration/SeatsAvailability.cs#L237>`__ и `здесь <https://github.com/microsoftarchive/cqrs-journey/blob/6ffd9a8c8e865a9f8209552c52fa793fbd496d1f/source/Infrastructure/Azure/Infrastructure.Azure/EventSourcing/AzureEventSourcedRepository.cs#L31>`__.
+
 
 Walker
 ======
@@ -320,7 +322,9 @@ Exporter
 Это затрудняет создание обобщенных классов, например, `обобщенного композитного первичного ключа <https://martinfowler.com/eaaCatalog/identityField.html>`__.
 В результате плодятся промежуточные структуры, которые затем нужно преобразовывать к нужному виду.
 
-Возвращаемая структура и ее типизация является избыточным знанием, которое может препятствовать обобщению клиента этого метода, например, препятствовать выделению абстрактного класса паттерна Repository.
+Знание о возвращаемом типе подталкивает к применению generics там, где этого несложно избежать.
+
+Возвращаемая структура и ее типизация является избыточным знанием, которое может препятствовать обобщению (абстрагированию) клиента этого метода, например, препятствовать выделению абстрактного класса паттерна Repository.
 Гораздо удобней в таком случае был бы массив/срез объектов с типом `driver.Value <https://pkg.go.dev/database/sql/driver#Value>`__.
 Это еще один аргумент в пользу первого варианта с отдельными сеттерами для каждого атрибута Агрегата.
 

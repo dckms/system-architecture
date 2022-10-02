@@ -1270,6 +1270,8 @@ Vaughn Vernon посвящает этой проблеме главу "8 Domain 
 2. `Transaction log mining <https://www.scoop.it/t/sql-server-transaction-log-mining>`__ (и `еще <https://microservices.io/patterns/data/transaction-log-tailing.html>`__)
 3. `Outbox pattern <https://www.kamilgrzybek.com/design/the-outbox-pattern/>`__
 
+Говорят, что "Transactional Outbox" под названием "Local Messaging" впервые был опубликован в статье "`BASE: An Acid Alternative: In partitioned databases, trading some consistency for availability can lead to dramatic improvements in scalability <https://dl.acm.org/doi/10.1145/1394127.1394128>`__" to ACM by ebay architect Dan Pritchett in 2008.
+
 Ссылки по теме:
 
 - `Event-Driven Data Management for Microservices <https://dzone.com/articles/event-driven-data-management-for-microservices-1>`__

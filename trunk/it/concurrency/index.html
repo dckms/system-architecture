@@ -6,23 +6,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Domain Layer &#8212; System Architecture</title>
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/alabaster.css" />
+    <title>Concurrency &#8212; System Architecture</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" type="text/css" />
-    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
-    <script src="../../../../../_static/jquery.js"></script>
-    <script src="../../../../../_static/underscore.js"></script>
-    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../../../_static/doctools.js"></script>
-    <script src="../../../../../_static/translations.js"></script>
-    <link rel="index" title="Алфавитный указатель" href="../../../../../genindex.html" />
-    <link rel="search" title="Поиск" href="../../../../../search.html" />
-    <link rel="next" title="Поиск границ Агрегатов" href="aggregate-boundaries.html" />
-    <link rel="prev" title="Golang DDD Reference Application &#34;Grade&#34;" href="../index.html" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../search.html" />
+    <link rel="next" title="SAGA" href="../../../emacsway/it/concurrency/saga.html" />
+    <link rel="prev" title="IT" href="../index.html" />
     
    
-  <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -45,10 +45,10 @@
     <ul>
         <li>
           &larr;
-          <a href="../index.html" title="Previous document">Golang DDD Reference Application &quot;Grade&quot;</a>
+          <a href="../index.html" title="Previous document">IT</a>
         </li>
         <li>
-          <a href="aggregate-boundaries.html" title="Next document">Поиск границ Агрегатов</a>
+          <a href="../../../emacsway/it/concurrency/saga.html" title="Next document">SAGA</a>
           &rarr;
         </li>
     </ul>
@@ -59,16 +59,13 @@
           <div class="body" role="main">
             
     
-  <section id="domain-layer">
-<h1>Domain Layer<a class="headerlink" href="#domain-layer" title="Permalink to this heading">¶</a></h1>
+  <section id="concurrency">
+<h1>Concurrency<a class="headerlink" href="#concurrency" title="Permalink to this heading">¶</a></h1>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Оглавление:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aggregate-boundaries.html">Поиск границ Агрегатов</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aggregate-encapsulation.html">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="event-sourcing.html">Event Sourcing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="file-structure.html">Файловая структура Доменной модели</a></li>
-<li class="toctree-l1"><a class="reference internal" href="why-no-can-execute.html">Использовать ли в проекте CanExecute pattern?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../emacsway/it/concurrency/saga.html">SAGA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../emacsway/it/concurrency/transaction.html">Transaction</a></li>
 </ul>
 </div>
 </section>
@@ -86,10 +83,10 @@
     <ul>
         <li>
           &larr;
-          <a href="../index.html" title="Previous document">Golang DDD Reference Application &quot;Grade&quot;</a>
+          <a href="../index.html" title="Previous document">IT</a>
         </li>
         <li>
-          <a href="aggregate-boundaries.html" title="Next document">Поиск границ Агрегатов</a>
+          <a href="../../../emacsway/it/concurrency/saga.html" title="Next document">SAGA</a>
           &rarr;
         </li>
     </ul>
@@ -100,7 +97,7 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../../../../../index.html">System Architecture</a></h1>
+<h1 class="logo"><a href="../../../index.html">System Architecture</a></h1>
 
 
 
@@ -121,22 +118,22 @@
 <h3>Навигация</h3>
 <p class="caption" role="heading"><span class="caption-text">Общее пространство:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/it/index.html">IT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/index.html">Общее пространство</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">IT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../soft-skills/index.html">Soft Skills</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Общее пространство</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Авторские пространства:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Пространство Emacsway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../emacsway/index.html">Пространство Emacsway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Приватное пространствo:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../private/index.html">Приватное пространство</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../private/index.html">Приватное пространство</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Прочее:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../README.html">Как пользоваться</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Как пользоваться</a></li>
 </ul>
 
 
@@ -149,19 +146,17 @@
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="../../../../../index.html">Documentation overview</a><ul>
-  <li><a href="../../../../../trunk/it/index.html">IT</a></li>
-  <li><a href="../../../../../trunk/it/ddd/index.html">DDD</a></li>
-  <li><a href="../index.html">Golang DDD Reference Application &quot;Grade&quot;</a></li><ul>
-      <li>Previous: <a href="../index.html" title="предыдущая глава">Golang DDD Reference Application &quot;Grade&quot;</a></li>
-      <li>Next: <a href="aggregate-boundaries.html" title="следующая глава">Поиск границ Агрегатов</a></li></ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">IT</a></li><ul>
+      <li>Previous: <a href="../index.html" title="предыдущая глава">IT</a></li>
+      <li>Next: <a href="../../../emacsway/it/concurrency/saga.html" title="следующая глава">SAGA</a></li></ul>
   </ul></li>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Быстрый поиск</h3>
     <div class="searchformwrapper">
-    <form class="search" action="../../../../../search.html" method="get">
+    <form class="search" action="../../../search.html" method="get">
       <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Искать" />
     </form>
@@ -189,7 +184,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="../../../../../_sources/emacsway/it/ddd/grade/domain/index.rst.txt"
+      <a href="../../../_sources/trunk/it/concurrency/index.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

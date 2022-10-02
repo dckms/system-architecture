@@ -18,7 +18,7 @@
     <script src="../../../../../_static/translations.js"></script>
     <link rel="index" title="Алфавитный указатель" href="../../../../../genindex.html" />
     <link rel="search" title="Поиск" href="../../../../../search.html" />
-    <link rel="next" title="Файловая структура Доменной модели" href="file-structure.html" />
+    <link rel="next" title="Event Sourcing" href="event-sourcing.html" />
     <link rel="prev" title="Поиск границ Агрегатов" href="aggregate-boundaries.html" />
     
    
@@ -50,7 +50,7 @@
           <a href="aggregate-boundaries.html" title="Previous document">Поиск границ Агрегатов</a>
         </li>
         <li>
-          <a href="file-structure.html" title="Next document">Файловая структура Доменной модели</a>
+          <a href="event-sourcing.html" title="Next document">Event Sourcing</a>
           &rarr;
         </li>
     </ul>
@@ -95,6 +95,7 @@ The pattern shields other objects from potentially complex Originator internals,
 </ol>
 <p class="attribution">—&quot;Design Patterns: Elements of Reusable Object-Oriented Software&quot; by Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides</p>
 </div></blockquote>
+<p>Тем не менее, этот подход используется некоторыми авторитетными источниками, см. <a class="reference external" href="https://github.com/microsoftarchive/cqrs-journey/blob/6ffd9a8c8e865a9f8209552c52fa793fbd496d1f/source/Conference/Registration/SeatsAvailability.cs#L237">здесь</a> и <a class="reference external" href="https://github.com/microsoftarchive/cqrs-journey/blob/6ffd9a8c8e865a9f8209552c52fa793fbd496d1f/source/Infrastructure/Azure/Infrastructure.Azure/EventSourcing/AzureEventSourcedRepository.cs#L31">здесь</a>.</p>
 </section>
 <section id="walker">
 <h2><a class="toc-backref" href="#id5" role="doc-backlink">Walker</a><a class="headerlink" href="#walker" title="Permalink to this heading">¶</a></h2>
@@ -480,7 +481,8 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
 <p>Недостатком такого решения, который я успел обнаружить, является то, что клиент не имеет возможности контролировать структуру экспортируемого объекта, в отличии от варианта с интерфейсом.
 Это затрудняет создание обобщенных классов, например, <a class="reference external" href="https://martinfowler.com/eaaCatalog/identityField.html">обобщенного композитного первичного ключа</a>.
 В результате плодятся промежуточные структуры, которые затем нужно преобразовывать к нужному виду.</p>
-<p>Возвращаемая структура и ее типизация является избыточным знанием, которое может препятствовать обобщению клиента этого метода, например, препятствовать выделению абстрактного класса паттерна Repository.
+<p>Знание о возвращаемом типе подталкивает к применению generics там, где этого несложно избежать.</p>
+<p>Возвращаемая структура и ее типизация является избыточным знанием, которое может препятствовать обобщению (абстрагированию) клиента этого метода, например, препятствовать выделению абстрактного класса паттерна Repository.
 Гораздо удобней в таком случае был бы массив/срез объектов с типом <a class="reference external" href="https://pkg.go.dev/database/sql/driver#Value">driver.Value</a>.
 Это еще один аргумент в пользу первого варианта с отдельными сеттерами для каждого атрибута Агрегата.</p>
 <p>Попробовав оба варианта, я остановился, все-таки, на первом, каноническом, даже несмотря на его многословность.</p>
@@ -508,7 +510,7 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
           <a href="aggregate-boundaries.html" title="Previous document">Поиск границ Агрегатов</a>
         </li>
         <li>
-          <a href="file-structure.html" title="Next document">Файловая структура Доменной модели</a>
+          <a href="event-sourcing.html" title="Next document">Event Sourcing</a>
           &rarr;
         </li>
     </ul>
@@ -571,10 +573,10 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
   <li><a href="../../../../../index.html">Documentation overview</a><ul>
   <li><a href="../../../../../trunk/it/index.html">IT</a></li>
   <li><a href="../../../../../trunk/it/ddd/index.html">DDD</a></li>
-  <li><a href="../index.html">Reference Application &quot;Grade&quot;</a></li>
+  <li><a href="../index.html">Golang DDD Reference Application &quot;Grade&quot;</a></li>
   <li><a href="index.html">Domain Layer</a></li><ul>
       <li>Previous: <a href="aggregate-boundaries.html" title="предыдущая глава">Поиск границ Агрегатов</a></li>
-      <li>Next: <a href="file-structure.html" title="следующая глава">Файловая структура Доменной модели</a></li></ul>
+      <li>Next: <a href="event-sourcing.html" title="следующая глава">Event Sourcing</a></li></ul>
   </ul></li>
 </ul>
 </div>
