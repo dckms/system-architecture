@@ -918,6 +918,8 @@ Body of Knowledge
 -----------------
 
 - "`Guide to the Systems Engineering Body of Knowledge (SEBoK) <https://www.sebokwiki.org/wiki/Download_SEBoK_PDF>`__"
+- "`Software Engineering Body of Knowledge (SWEBOK) v.3 <https://www.computer.org/education/bodies-of-knowledge/software-engineering>`__" (`на русском <https://github.com/ligurio/swebok-2004-in-russian>`__)
+- "`Software Engineering Body of Knowledge (SWEBOK) v.4 (draft) <https://waseda.app.box.com/v/ieee-cs-swebok>`__"
 - "`The Information Technology Architecture Body of Knowledge (ITABoK) <https://itabok.iasaglobal.org/>`__"
 - "`The Enterprise Architecture Body of Knowledge (EABoK) <https://www.mitre.org/publications/technical-papers/guide-to-the-evolving-enterprise-architecture-body-of-knowledge>`__"
 - "`MITRE Systems Engineering Guide <https://www.mitre.org/publications/technical-papers/the-mitre-systems-engineering-guide>`__
