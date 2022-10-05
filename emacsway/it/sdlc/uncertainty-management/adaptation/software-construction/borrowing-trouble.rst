@@ -65,5 +65,6 @@ Borrowing trouble
 
 .. seealso::
 
-   - ":ref:`emacsway-yagni`
+   - ":ref:`emacsway-yagni`"
    - ":ref:`emacsway-software-development-economics-literature`"
+   - ":ref:`emacsway-balancing-prediction-adaptation`"

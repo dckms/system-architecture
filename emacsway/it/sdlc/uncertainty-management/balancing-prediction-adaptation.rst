@@ -278,3 +278,9 @@ Cм. также:
 - "`Agile Software Guide <https://martinfowler.com/agile.html>`__" by Martin Fowler
 - "`The New Methodology :: Predictive versus Adaptive <https://www.martinfowler.com/articles/newMethodology.html#PredictiveVersusAdaptive>`__" by Martin Fowler
 
+
+.. seealso::
+   - ":ref:`emacsway-adaptation`"
+   - ":ref:`emacsway-prediction`"
+   - ":ref:`emacsway-yagni`"
+   - ":ref:`emacsway-borrowing-trouble`"
