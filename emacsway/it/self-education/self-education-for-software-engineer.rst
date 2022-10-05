@@ -364,6 +364,7 @@ CQRS & Event Sourcing
 - "`CQRS, Task Based UIs, Event Sourcing agh! <http://codebetter.com/gregyoung/2010/02/16/cqrs-task-based-uis-event-sourcing-agh/>`__" by Greg Young
 - "`CQRS Documents <https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf>`__" by Greg Young
 - "`Versioning in an Event Sourced System <https://leanpub.com/esversioning>`__" by Greg Young ("`читать online <https://leanpub.com/esversioning/read>`__", "`конспект книги <https://github.com/luque/Notes--Versioning-Event-Sourced-System>`__")
+- "`The Dark Side of Event Sourcing: Managing Data Conversion <https://www.researchgate.net/publication/315637858_The_dark_side_of_event_sourcing_Managing_data_conversion>`__" by Michiel Overeem, Marten Spoor, Slinger Jansen
 - "`Clarified CQRS <http://udidahan.com/2009/12/09/clarified-cqrs/>`__" by Udi Dahan
 - "`Busting some CQRS myths <https://lostechies.com/jimmybogard/2012/08/22/busting-some-cqrs-myths/>`__" by Jimmy Bogard
 
