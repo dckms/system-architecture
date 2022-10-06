@@ -836,6 +836,8 @@ Donald E. Knuth:
 - "Managing Software Requirements (paperback): A Use Case Approach" 2d Edition by Dean Leffingwell, Don Widrig
 - "Requirements Engineering Fundamentals: A Study Guide for the Certified Professional for Requirements Engineering Exam - Foundation Level - IREB compliant" 2nd Edition by Klaus Pohl, Chris Rupp
 
+- "Прикладной системный анализ" / Ф.П. Тарасенко
+
 - "`A Guide to the Business Analysis Body of Knowledge (BABOK®) <https://www.iiba.org/career-resources/a-business-analysis-professionals-foundation-for-success/babok/>`__"
 - "`Guide to the Systems Engineering Body of Knowledge (SEBoK) <https://www.sebokwiki.org/wiki/Download_SEBoK_PDF>`__"
 
