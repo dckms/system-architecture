@@ -43,6 +43,13 @@
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
 
+..
+
+    💬 "Unlike Waterfall, Agile emphasizes iterative development, or building software in pieces.
+    Agile teams typically work in short cycles—which are called \"sprints\" in Scrum, today one of the most widely used forms of Agile—that usually last two weeks each."
+
+    -- "`The Winter Getaway That Turned the Software World Upside Down <https://www.theatlantic.com/technology/archive/2017/12/agile-manifesto-a-history/547715/>`__" by Caroline Mimbs Nyce
+
 
 История
 =======
@@ -64,7 +71,7 @@ Agile является естественным следствием эволю�
 
 Унификация знаний в области архитектуры, переход ментального оперирования на элементы унифицированных шаблонных конструкций более высокого уровня абстракции, позволили сократить когнитивную и коммуникативную нагрузку на разработчика, уменьшить порог вхождения в новый проект, смягчить негативное воздействие :ref:`Закона Брукса <emacsway-brooks's-law>`.
 
-Рост количественных изменений привел к изменениям качественным - ведущим умам архитектуры своего времени удалось снизить характер роста стоимости адаптации вплоть до пологого графика, максимально приближенного к горизонтальной асимптоте.
+Рост количественных изменений привел к изменениям качественным ("Второй закон диалектики") - ведущим умам архитектуры своего времени удалось снизить характер роста стоимости адаптации вплоть до пологого графика, максимально приближенного к горизонтальной асимптоте.
 Это означало, что стоимость реализации решения больше не зависело от момента его принятия, что позволило отказаться от заблаговременного проектирования и откладывать принятие решения до момента наибольшей полноты информированности, даже после частичной реализации продукта.
 
     📝 "What would we do if all that investment paid off?
@@ -100,6 +107,33 @@ Agile является естественным следствием эволю�
 
 Суть
 ====
+
+Коротко говоря, Agile модель является итеративно-инкрементальной моделью разработки, на которую наложен ряд филосовско-психологических принципов с целью снизить напряжение между техническими специалистами и представителями бизнеса.
+
+Основой этой филосовско-психологической прослойки `стал <https://www.informit.com/articles/article.aspx?p=2990402&seqNum=3>`__ документ "`Bill of Rights <http://www.agilenutshell.com/bill_of_rights>`__", который является результатом глубокого аналитического труда Kent Beck в области психологии.
+Дело в том, что Kent Beck имел превосходную эрудированность в области психологии, философии и менеджмента, а морально-психологический климат в ИТ-индустрии того времени был, мягко говоря, напряженным.
+
+Kent Beck выяснил, что напряжение являлось ни чем иным, как упреждающими защитным механизмом, спровоцированным страхами участников процесса разработки.
+
+Идея Bill of Rights возникла на основе идеи Declaration of Independence (`перевод <http://www.hist.msu.ru/ER/Etext/indpndnc.htm>`__):
+
+    💬 "Software development is risky. People involved have many fears of what may go wrong.
+
+    To develop effectively we must acknowledge these fears. Why do we need a software process? For the same reason that we need laws, governments, and taxes: fear.
+
+    The Declaration of Independence says:
+
+        That among these [rights] are life, liberty, and the pursuit of happiness. That to secure these rights, governments are instituted among men, deriving their just powers from the consent of the governed.
+
+    Though the profundity of these words may distract us, consider the word secure. We institute governments because we are afraid of losing our rights. By the same token, we institute software processes because we are afraid."
+
+    -- "Planning Extreme Programming" by Kent Beck, Martin Fowler
+
+..
+
+    "But it was here, nestled in the white-capped mountains at a ski resort, that a group of software rebels gathered in 2001 to frame and sign one of the most important documents in its industry’s history, a sort of Declaration of Independence for the coding set."
+
+    -- "`The Winter Getaway That Turned the Software World Upside Down <https://www.theatlantic.com/technology/archive/2017/12/agile-manifesto-a-history/547715/>`__" by Caroline Mimbs Nyce
 
 Вся суть Agile (итеративной) модели разработки была лаконично и метко выражена Кент Беком всего одним предложением:
 
@@ -200,6 +234,12 @@ Agile является естественным следствием эволю�
     📝 "Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage."
 
     -- "`Principles behind the Agile Manifesto <http://agilemanifesto.org/principles.html>`__"
+
+..
+
+    💬️ "We considered a bunch of names, and agreed eventually on \"agile\" as we felt that captured the adaptiveness and response to change which we felt was so important to our approach."
+
+    -- "`Writing The Agile Manifesto <https://martinfowler.com/articles/agileStory.html>`__" by Martin Fowler
 
 О том, почему я обратился к высказываю Kent Beck в этом вопросе, неплохо поясняет Martin Fowler:
 
@@ -315,6 +355,13 @@ Impossible. Точка.
     📝 "After all software is supposed to be soft."
 
     -- "`The New Methodology <https://www.martinfowler.com/articles/newMethodology.html>`__" by Martin Fowler
+
+
+Cм. также:
+
+    - "`The Reasons for Agile <https://www.informit.com/articles/article.aspx?p=2990402>`__" by Robert C. Martin
+    - "`The Winter Getaway That Turned the Software World Upside Down <https://www.theatlantic.com/technology/archive/2017/12/agile-manifesto-a-history/547715/>`__" by Caroline Mimbs Nyce
+    - "`The New Methodology <https://www.martinfowler.com/articles/newMethodology.html>`__" by Martin Fowler
 
 
 .. seealso::

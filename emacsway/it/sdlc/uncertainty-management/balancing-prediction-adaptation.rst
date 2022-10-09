@@ -181,6 +181,10 @@ Simon Brown тоже обратил внимание на тот факт, чт�
 
 Так же, как во времена роста популярности OOP, "Switch-Case Statement" считался Code Smell, дабы стимулировать продвижение OOP в массы (об этом признается M.Fowler во втором издании книги Refactoring), в начале 2000-х значение заблаговременного анализа и проектирования (Prediction) нередко принебрегалось, дабы подчеркнуть превосходство эмпирического способа разрешения неопределенности (Adaptation) и стимулировать продвижение этой идеи в массы.
 
+    💬️ "We decided to call it a manifesto since it was a call to arms and a statement of our beliefs."
+
+    -- "`Writing The Agile Manifesto <https://martinfowler.com/articles/agileStory.html>`__" by Martin Fowler
+
 
 Отскок маятника Prediction/Adaptation назад к Prediction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -242,6 +246,15 @@ Grady Booch даже назвал :ref:`качество управления м
 За разрешение неопределенности в solution-space на уровне Implementation и Software Design отвечает принцип :ref:`YAGNI <emacsway-yagni>`, целью которого является само снижение стоимости Adaptation.
 
 О том, как интегрировать активности по анализу и проектированию в Agile-модель разработки, см. также в разделе :ref:`emacsway-program-management`.
+
+Новый исторический контекст выдвинул новые проблемы и новые способы их решения.
+Agile модель разработки изменилась.
+
+    💬 "Despite discussions over whether the Manifesto itself should be amended, many of the original signers see the document as a historical—not a living—document.
+    \"It's like a Declaration of Independence in U.S. history,\" says Cockburn.
+    \"You don’t go back and rewrite that.\""
+
+    -- "`The Winter Getaway That Turned the Software World Upside Down <https://www.theatlantic.com/technology/archive/2017/12/agile-manifesto-a-history/547715/>`__" by Caroline Mimbs Nyce
 
 
 Alberto Brandolini about Prediction/Adaptation
