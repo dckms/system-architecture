@@ -134,6 +134,12 @@ Agile является естественным следствием эволю�
 
     -- "`History: The Agile Manifesto <http://agilemanifesto.org/history.html>`__"
 
+..
+
+    💬 "I think the Agile Manifesto has helped teams around the world rethink their priorities, and in the process has helped re-humanize software development."
+
+    -- "`Some Agile History <https://pragdave.me/blog/2007/02/24/some-agile-history.html>`__" by Dave Thomas
+
 Основой этой филосовско-психологической прослойки `стал <https://www.informit.com/articles/article.aspx?p=2990402&seqNum=3>`__ документ "`Bill of Rights <http://www.agilenutshell.com/bill_of_rights>`__", который является результатом глубокого аналитического труда Kent Beck в области психологии.
 Дело в том, что Kent Beck имел превосходную эрудированность в области психологии, философии и менеджмента.
 
@@ -161,12 +167,6 @@ Agile является естественным следствием эволю�
     To that end, the following \"bill of rights\" was developed by Kent, Ward Cunningham, and Ron Jeffries, among others."
 
     -- "Clean Agile: Back to Basics" by Robert C. Martin
-
-..
-
-    💬 "I think the Agile Manifesto has helped teams around the world rethink their priorities, and in the process has helped re-humanize software development."
-
-    -- "`Some Agile History <https://pragdave.me/blog/2007/02/24/some-agile-history.html>`__" by Dave Thomas
 
 Kent Beck выяснил, что напряжение являлось ни чем иным, как упреждающими защитным механизмом, спровоцированным страхами участников процесса разработки.
 
