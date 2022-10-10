@@ -15,7 +15,7 @@ Balancing Prediction/Adaptation
 
 ..
 
-    📝 "Scrum projects do not have an up-front analysis or design phase; all work occurs within the repeated cycle of sprints.
+    💬 "Scrum projects do not have an up-front analysis or design phase; all work occurs within the repeated cycle of sprints.
     This does not mean, however, that design on a Scrum project is not intentional.
     An intentional design process is one in which the design is guided through deliberate, conscious decision making.
     The difference on a Scrum project is not that intentional design is thrown out, but that it is done (like everything else on a Scrum project) incrementally.
@@ -52,7 +52,7 @@ Balancing Prediction/Adaptation
 
 ..
 
-    📝 McConnell writes, "In ten years the pendulum has swung from 'design everything' to 'design nothing.'
+    💬 McConnell writes, "In ten years the pendulum has swung from 'design everything' to 'design nothing.'
     But the alternative to BDUF [Big Design Up Front] isn't no design up front, it's a Little Design Up Front (LDUF) or Enough Design Up Front (ENUF)."
     This is a strawman argument.
     The alternative to designing before implementing is designing after implementing.
@@ -64,7 +64,7 @@ Balancing Prediction/Adaptation
 
 ..
 
-    📝 "From the very earliest days of agile methods, people have asked what role there is for architectural or design thinking.
+    💬 "From the very earliest days of agile methods, people have asked what role there is for architectural or design thinking.
     A common misconception is that since agile methods drop the notion of a detailed up-front design artifact, that there is no room for architecture in an agile project.
     In my keynote at the first-ever agile conference, I pointed out that design was every bit as important for agile projects, but it manifests itself differently, becoming an evolutionary approach."
 
@@ -72,7 +72,7 @@ Balancing Prediction/Adaptation
 
 ..
 
-    📝 "Though BDUF is an Agile anti-pattern, does it mean architecture should solely be a product from emergence? As James Coplien argues [Coplien 2010], some intentional architecture saves waste and accelerates the decision process.
+    💬 "Though BDUF is an Agile anti-pattern, does it mean architecture should solely be a product from emergence? As James Coplien argues [Coplien 2010], some intentional architecture saves waste and accelerates the decision process.
 
     Agile Architecture shall seek a balance between intentional and emerging. Intentional architecture provides value if it is done differently. Intentional architecture represents a set of assumptions that must be verified. It should not slow down the integration of new requirements.
 
@@ -82,14 +82,14 @@ Balancing Prediction/Adaptation
 
 ..
 
-    📝 "The incremental and iterative nature of Agile development can facilitate efficient technical and management processes and practices to reduce the cost associated with change.
+    💬 "The incremental and iterative nature of Agile development can facilitate efficient technical and management processes and practices to reduce the cost associated with change.
     In comparison, projects managed at the waterfall end of the continuum seek to reduce total rework cost by minimizing the number of changes, limiting the number of control points, and baselining detailed specifications which are reviewed and traced throughout the project."
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
 
 ..
 
-    📝 "Agile" methods actually can be applied within a variety of models.
+    💬 "Agile" methods actually can be applied within a variety of models.
     While Agile methods are common in executing an evolutionary lifecycle model, they can be used in other lifecycle models at various stages.
     What the methods have in common is an emphasis on continuous inspection and collaboration in the rapid production of working software in an environment where changes, including changes to requirements, are expected.
 
@@ -101,15 +101,15 @@ Balancing Prediction/Adaptation
 
 Изменяемость тоже имеет свою стоимость. Нельзя создавать бесконечно гибкое решение. Важен баланс.
 
-    💬 "One trade-off that’s often overlooked is between the number of options you have and the resulting complexity. More options are desirable, but wanting to have all options all the time will result in unnecessary complexity, as is often the case with overly elaborate abstraction layers or massive configuration frameworks. I captured this effect into Gregor’s Law:
+    💬 "One trade-off that's often overlooked is between the number of options you have and the resulting complexity. More options are desirable, but wanting to have all options all the time will result in unnecessary complexity, as is often the case with overly elaborate abstraction layers or massive configuration frameworks. I captured this effect into Gregor's Law:
 
-        Excessive complexity is nature’s punishment for organizations that are unable to make decisions."
+        Excessive complexity is nature's punishment for organizations that are unable to make decisions."
 
-    -- "`Gregor’s Law. Excessive complexity is nature’s punishment for organizations that are unable to make decisions <https://architectelevator.com/gregors-law/>`__" by Gregor Hohpe
+    -- "`Gregor's Law. Excessive complexity is nature's punishment for organizations that are unable to make decisions <https://architectelevator.com/gregors-law/>`__" by Gregor Hohpe
 
 ..
 
-    💬 "If you pick any one aspect of software then you can make it easy to change, but we don’t know how to make everything easy to change. Making something easy to change makes the overall system a little more complex, and making everything easy to change makes the entire system very complex. Complexity is what makes software hard to change. That, and duplication."
+    💬 "If you pick any one aspect of software then you can make it easy to change, but we don't know how to make everything easy to change. Making something easy to change makes the overall system a little more complex, and making everything easy to change makes the entire system very complex. Complexity is what makes software hard to change. That, and duplication."
 
     -- Ralf Johnson at "`Who Needs an Architect? <https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf>`__" by Martin Fowler
 
@@ -135,13 +135,13 @@ Open Agile Architecture™ Standard by The Open Group
 
 Simon Brown тоже обратил внимание на тот факт, что на современном рынке маятник Prediction/Adaptation качнулся в сторону Prediction (анализ и проектирование) от Adaptation (преобладающий принцип Single-Team Agile):
 
-    📝 "Even just a few years ago, "software architecture" was not a topic that people were interested in ... "because agile". Times are changing?"
+    💬 "Even just a few years ago, "software architecture" was not a topic that people were interested in ... "because agile". Times are changing?"
 
     -- 2021-12-23, https://t.co/ipu5HpS1C4
 
 В 2000-м Tom DeMarco и Camden, Maine писали:
 
-    📝 "In On War, Carl von Clausewitz tells us that military history is a pendulum swinging back and forth between the relative advantages of armor and of mobility.
+    💬 "In On War, Carl von Clausewitz tells us that military history is a pendulum swinging back and forth between the relative advantages of armor and of mobility.
     The knights in shining armor were able to dominate any knight without, but they were no match for the quick, nearly naked pony warriors that swept across the plains with Genghis Kahn and his Mongols.
     Light cavalry itself was doomed as soon as there were tanks, and tanks were no match for fleet-footed Palestinian teenagers with Sagger missiles.
     With the Maginot Line, the French were gambling that the pendulum had swung again toward armor, but it hadn't, and the Germans simply went around it.
@@ -166,15 +166,42 @@ Simon Brown тоже обратил внимание на тот факт, чт�
 
 Основной фокус архитектуры сместился с
 
-    📝 "Architecture is the decisions that you wish you could get right early in a project, but that you are not necessarily more likely to get them right than any other." -- Ralph Johnson
+    💬 "Architecture is the decisions that you wish you could get right early in a project, but that you are not necessarily more likely to get them right than any other." -- Ralph Johnson
 
 на
 
-    📝 "A good architect pretends that the decision has not been made, and shapes the system such that those decisions can still be deferred or changed for as long as possible. 
+    💬 "A good architect pretends that the decision has not been made, and shapes the system such that those decisions can still be deferred or changed for as long as possible. 
 
     A good architect maximizes the number of decisions not made."
 
     -- "Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin
+
+..
+
+    💬️ "Ah, interesting!
+    Both architecture and agile methods thrive under high levels of uncertainty!
+    And isn't that exactly the environment we mostly face today with rapid changes in technology and short-lived business models?
+    So, agile and architecture are addressing the same problem from different angles: **architecture gives you the options to sustain velocity when the unexpected happens**.
+    And agile gives you the attitude to always be learning and to quickly adapt to changing circumstances."
+
+    -- "`Agile and Architecture: Friend, not Foe <https://architectelevator.com/transformation/agile_architecture/>`__" by Gregor Hohpe
+
+..
+
+    💬️ "Grady Booch has also provided a set of guidelines for an agile architecture (which in turn imply some duties for the agile architect).
+    Booch claims that all good software-intensive architectures are agile.
+    What does he mean by this? He means that a successful architecture is resilient and loosely coupled.
+    It is composed of a core set of well-reasoned design decisions but still contains some \"wiggle room\" that allows modifications to be made and refactorings to be done, without ruining the original structure.
+
+    Booch also notes that an effective agile process will allow the architecture to grow incrementally as the system is developed and matures.
+    The key to success is to have decomposability, separation of concerns, and near-independence of the parts.
+    (Sound familiar? These are all modifiability tactics.)
+
+    Finally, Booch notes that to be agile, the architecture should be visible and self-evident in the code; this means making the design patterns, cross-cutting concerns, and other important decisions obvious, well communicated, and defended.
+    This may, in turn, require documentation.
+    But whatever architectural decisions are made, the architect must make an effort to \"socialize\" the architecture."
+
+    -- "Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman
 
 Маятник отклонился от Prediction к Adaptation с большим заносом.
 Хотя в то время уже были модели разработки того, что мы сегодня называем моделями масштабируемого Agile (RUP, MSF, RAD, FDD, Crystal Clear etc.), но они не занимали значительной части рынка.
@@ -185,13 +212,23 @@ Simon Brown тоже обратил внимание на тот факт, чт�
 
     -- "`Writing The Agile Manifesto <https://martinfowler.com/articles/agileStory.html>`__" by Martin Fowler
 
+..
+
+    💬️ "The Agile movement is not anti-methodology, in fact, many of us want to restore credibility to the word methodology.
+    We want to restore a balance. We embrace modeling, but not in order to file some diagram in a dusty corporate repository.
+    We embrace documentation, but not hundreds of pages of never-maintained and rarely-used tomes.
+    We plan, but recognize the limits of planning in a turbulent environment.
+    Those who would brand proponents of XP or SCRUM or any of the other Agile Methodologies as \"hackers\" are ignorant of both the methodologies and the original definition of the term hacker."
+
+    -- "`History: The Agile Manifesto <http://agilemanifesto.org/history.html>`__"
+
 
 Отскок маятника Prediction/Adaptation назад к Prediction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Однако, в статье мы наблюдаем, что маятник пошел в обратном направлении:
 
-    📝 "пять дней кодинга может сэкономить день планирования
+    💬 "пять дней кодинга может сэкономить день планирования
 
     With 5 days of coding, you can save 1 day of planning"
 
@@ -199,7 +236,7 @@ Simon Brown тоже обратил внимание на тот факт, чт�
 
 При этом, в статье очень вяло и вскользь говорится о снижении стоимости Adaptation:
 
-    📝 "Если вам нужно реализовать что-то "на будущее", потому что позже будет сложнее добавить это, – это очень плохой знак.
+    💬 "Если вам нужно реализовать что-то "на будущее", потому что позже будет сложнее добавить это, – это очень плохой знак.
     Вам следует подумать о том, как упростить позднее добавление.
 
     If you need to implement something "for the future" because it will be harder to add it later – that's a very bad sign.
@@ -252,9 +289,11 @@ Agile модель разработки изменилась.
 
     💬 "Despite discussions over whether the Manifesto itself should be amended, many of the original signers see the document as a historical—not a living—document.
     \"It's like a Declaration of Independence in U.S. history,\" says Cockburn.
-    \"You don’t go back and rewrite that.\""
+    \"You don't go back and rewrite that.\""
 
     -- "`The Winter Getaway That Turned the Software World Upside Down <https://www.theatlantic.com/technology/archive/2017/12/agile-manifesto-a-history/547715/>`__" by Caroline Mimbs Nyce
+
+В своем докладе "`Kent Beck talks beyond Agile Programming @ Startup Lessons Learned Conference 2010 <https://youtu.be/d4qldY0g_dI?t=16m57s>`__" Kent Beck говорит, что по прошествии 10 лет принципа  "Individuals and interactions over processes and tools" of "Agile Manifesto" уже недостаточно, и он добавил бы к нему еще и "Team vision and discipline".
 
 
 Alberto Brandolini about Prediction/Adaptation
@@ -268,13 +307,13 @@ Alberto Brandolini about Prediction/Adaptation
 
 Глава Pretending to solve the problem writing software, раздел Embrace Change:
 
-    📝 "...iterative development is expensive. It is the best approach for developing software in very complex, and lean-demanding domains. However, the initial starting point matters, a lot. A big refactoring will cost a lot more than iterative fine tuning (think splitting a database, vs renaming a variable). So I'll do everything possible to start iterating from the most reasonable starting point."
+    💬 "...iterative development is expensive. It is the best approach for developing software in very complex, and lean-demanding domains. However, the initial starting point matters, a lot. A big refactoring will cost a lot more than iterative fine tuning (think splitting a database, vs renaming a variable). So I'll do everything possible to start iterating from the most reasonable starting point."
 
     -- "`Introducing EventStorming: An act of Deliberate Collective Learning <https://leanpub.com/introducing_eventstorming>`__" by Alberto Brandolini
 
 ..
 
-    📝 "Upfront is a terrible word in the agile jargon. It recalls memories the old times analysis phase in the worst corporate waterfall. Given this infamous legacy, the word has been banned from agile environments like blasphemy. But unfortunately ...there's always something upfront. Even the worst developer thinks before typing the firs line of code."
+    💬 "Upfront is a terrible word in the agile jargon. It recalls memories the old times analysis phase in the worst corporate waterfall. Given this infamous legacy, the word has been banned from agile environments like blasphemy. But unfortunately ...there's always something upfront. Even the worst developer thinks before typing the firs line of code."
 
     -- "`Introducing EventStorming: An act of Deliberate Collective Learning <https://leanpub.com/introducing_eventstorming>`__" by Alberto Brandolini
 
