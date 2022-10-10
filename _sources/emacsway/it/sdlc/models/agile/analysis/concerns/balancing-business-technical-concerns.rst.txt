@@ -26,6 +26,21 @@
 
     -- "Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 7. Four Values", перевод ООО Издательство "Питер"
 
+Спустя 23 года Kent Beck продолжает говорить об актуальности проблемы, упоминув среди ее причин когнитивные искажения:
+
+    💬 "I've always been puzzled why the balance between structure & behavior investment seems so hard to maintain.
+    I'm also puzzled why the balance we see in the wild is so heavily tilted towards behavior changes when as I geek I think it should be more balanced.
+
+    If "behavior change = revenue" & "structure change = option", then the struggle for balance makes more sense.
+    It's not about the personalities of Product versus Engineering.
+    It's not about short-sighted versus visionary thinking.
+    The struggle is economic — **do we make some money now or more money later**?
+    The answer is always "both". We have to make some money now to survive.
+    We want to make more money later.
+    **Fear versus greed. No wonder it's so hard to get time to refactor.**"
+
+    — "`Behavior Change = Revenue Versus Structure Change = Option <https://tidyfirst.substack.com/p/behavior-change-revenue-versus-structure>`__" by Kent Beck
+
 Решение этой проблемы было одной из целей создания Agile:
 
     📝 "During the `Snowbird meeting <https://martinfowler.com/articles/agileStory.html>`__, Kent Beck said that the goal of Agile was to heal the divide between business and development. To that end, the following bill of rights was developed by Kent, Ward Cunningham, and Ron Jeffries, among others."

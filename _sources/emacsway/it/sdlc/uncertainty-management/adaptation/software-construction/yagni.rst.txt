@@ -232,3 +232,4 @@ Martin Fowler о выборе момента реализации проектн
    - ":ref:`emacsway-agile-software-design`"
    - ":ref:`emacsway-agile-balancing-business-technical-concerns`"
    - ":ref:`emacsway-software-development-economics-literature`"
+   - ":ref:`emacsway-balancing-prediction-adaptation`"
