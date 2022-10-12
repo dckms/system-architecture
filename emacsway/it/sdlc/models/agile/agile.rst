@@ -134,8 +134,13 @@ Agile является естественным следствием эволю�
     This isn't merely a software development problem, it runs throughout Dilbertesque organizations.
 
     In order to succeed in the new economy, to move aggressively into the era of e-business, e-commerce, and the web, companies have to rid themselves of their Dilbert manifestations of make-work and arcane policies.
-    This freedom from the inanities of corporate life attracts proponents of Agile Methodologies, and scares the begeebers (you can't use the word ‘shit' in a professional paper) out of traditionalists.
-    Quite frankly, the Agile approaches scare corporate bureaucrats — at least those that are happy pushing process for process' sake versus trying to do the best for the \"customer\" and deliver something timely and tangible and \"as promised\" — because they run out of places to hide."
+    This freedom from the inanities of corporate life attracts proponents of Agile Methodologies, and scares the begeebers (you can't use the word 'shit' in a professional paper) out of traditionalists.
+    Quite frankly, the Agile approaches scare corporate bureaucrats — at least those that are happy pushing process for process' sake versus trying to do the best for the \"customer\" and deliver something timely and tangible and \"as promised\" — because they run out of places to hide.
+
+    The Agile movement is not anti-methodology, in fact, many of us want to restore credibility to the word methodology.
+    We want to restore a balance. We embrace modeling, but not in order to file some diagram in a dusty corporate repository.
+    We embrace documentation, but not hundreds of pages of never-maintained and rarely-used tomes. We plan, but recognize the limits of planning in a turbulent environment.
+    Those who would brand proponents of XP or SCRUM or any of the other Agile Methodologies as \"hackers\" are ignorant of both the methodologies and the original definition of the term hacker."
 
     -- "`History: The Agile Manifesto <http://agilemanifesto.org/history.html>`__"
 
