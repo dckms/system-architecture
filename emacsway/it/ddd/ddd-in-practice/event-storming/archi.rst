@@ -131,7 +131,7 @@ Archimatetool использует Grafico format файлов:
 
 - "`Автоматизируем работу с ArchiMate в CI пайплайнах <https://habr.com/ru/post/583314/>`__" / Maxim Levchenko
 - `Docker container <https://hub.docker.com/r/woozymasta/archimate-ci-image>`__ и `GH Action <https://github.com/marketplace/actions/deploy-archi-report>`__ для публикации Archimate модели на `GitHub <https://woozymasta.github.io/archimate-ci-image-example/?view=6875>`__/`GitLab <https://woozymasta.gitlab.io/archimate-ci-image-example/?view=6213>`__ Pages. `Source Code <https://github.com/WoozyMasta/archimate-ci-image>`__.
-- `archi-htmlreport-docker <https://github.com/abes-esr/archi-htmlreport-docker>`__
+- `archi-htmlreport-docker <https://github.com/abes-esr/archi-htmlreport-docker>`__ (`example <https://github.com/abes-esr/archi-model-example>`__)
 - `Others... <https://hub.docker.com/search?q=ArchiMate>`__
 
 
