@@ -34,7 +34,13 @@
 Пересечение этих графиков образует предел экономической целесообразности разрешения неопределенности путем Прогнозирования.
 Здесь подразумевается, что стоимость самой реализации уже вычтена из бизнес-выгод.
 
-    📝 "There is a fundamental truth to work breakdown structure estimation - the only way to estimate using a work breakdown structure to really accurately to get the number right is to implement the project.
+    💬 "WaterFall is based on the empirical observation of 30 years ago (ref: BarryBoehm, Software Engineering Economics, Prentice Hall, 1981.) that the cost of change rises exponentially (base 10) by phases. The conclusion is that you should make the big decisions up front, because changing them is so expensive."
+
+    -- "`Water Fall <https://wiki.c2.com/?WaterFall>`__" at c2.com
+
+..
+
+    💬 "There is a fundamental truth to work breakdown structure estimation - the only way to estimate using a work breakdown structure to really accurately to get the number right is to implement the project.
     Then you'll have the estimate.
 
     The cost of improving the estimate, the initial work breakdown estimation, the cost of refining that grows exponentially.

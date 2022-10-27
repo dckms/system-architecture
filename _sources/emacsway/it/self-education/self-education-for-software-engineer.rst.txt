@@ -877,6 +877,7 @@ Donald E. Knuth:
 ------------------------
 
 - "`Practice Standard for Scheduling <https://www.pmi.org/pmbok-guide-standards/framework/practice-standard-scheduling-3rdedition>`__" 3d edition by Project Management Institute
+- "`Practice Standard for Project Estimating <https://www.pmi.org/pmbok-guide-standards/framework/practice-standard-for-estimating>`__" 2d edition Project Management Institute
 - "Software Estimation: Demystifying the Black Art (Developer Best Practices)" by Steve McConnell (я встречал в интернете `краткий конспект <http://igorshevchenko.ru/blog/entries/software-estimation>`__)
 - "Agile Estimating and Planning" by Mike Cohn
 

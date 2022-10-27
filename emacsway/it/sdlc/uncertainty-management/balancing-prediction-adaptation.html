@@ -146,6 +146,15 @@ While Agile methods are common in executing an evolutionary lifecycle model, the
 What the methods have in common is an emphasis on continuous inspection and collaboration in the rapid production of working software in an environment where changes, including changes to requirements, are expected.</p>
 <p class="attribution">—&quot;ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes&quot;</p>
 </div></blockquote>
+<blockquote>
+<div><p>💬 Waterfalls and iterations may nest inside each other.
+A six year project might consist of two 3 year projects, where each of the two projects are structured in a waterfall style, but the second project adds additional features.
+You can think of this as a two-iteration project at the top level with each iteration as a waterfall. Due to the large size and small number of iterations, I'd regard that as primarily a waterfall projecta
+In contrast you might see a project with 16 iterations of one month each, where each iteration is planned in a waterfall style.
+That I'd see as primarily iterative.
+While in theory there's potential for a middle ground projects that are hard to classify, in practice it's usually easy to tell that one style predominates.</p>
+<p class="attribution">—&quot;<cite>Waterfall Process &lt;https://martinfowler.com/bliki/WaterfallProcess.html&gt;</cite>&quot; by Martin Fowler</p>
+</div></blockquote>
 <section id="id2">
 <h2><a class="toc-backref" href="#id5" role="doc-backlink">Стоимость гибкости</a><a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p>Изменяемость тоже имеет свою стоимость. Нельзя создавать бесконечно гибкое решение. Важен баланс.</p>
@@ -297,6 +306,46 @@ Agile модель разработки изменилась.</p>
 <p class="attribution">—&quot;<a class="reference external" href="https://www.theatlantic.com/technology/archive/2017/12/agile-manifesto-a-history/547715/">The Winter Getaway That Turned the Software World Upside Down</a>&quot; by Caroline Mimbs Nyce</p>
 </div></blockquote>
 <p>В своем докладе &quot;<a class="reference external" href="https://youtu.be/d4qldY0g_dI?t=16m57s">Kent Beck talks beyond Agile Programming &#64; Startup Lessons Learned Conference 2010</a>&quot; Kent Beck говорит, что по прошествии 10 лет принципа  &quot;Individuals and interactions over processes and tools&quot; of &quot;Agile Manifesto&quot; уже недостаточно, и он добавил бы к нему еще и &quot;Team vision and discipline&quot;.</p>
+<p>Ценность &quot;Individuals and interactions over processes and tools&quot; of &quot;Agile Manifesto&quot; нередко воспринимается в отрасли как противопоставление проектным практикам и всей Prediction-активности.</p>
+<blockquote>
+<div><p>💬 &quot;I see some teams that use the word &quot;agile&quot; when they really mean &quot;chaotic&quot;&quot;</p>
+<p class="attribution">—&quot;<a class="reference external" href="https://pragdave.me/blog/2007/02/24/some-agile-history.html">Some Agile History</a>&quot; by Dave Thomas</p>
+</div></blockquote>
+<p>На самом деле, у этого пункта были конкретные причины, и они не ставили цели &quot;исключить&quot; Prediction-активности из процессов разработки.</p>
+<blockquote>
+<div><p>💬 &quot;For example, I think that ultimately, Extreme Programming has mushroomed in use and interest, not because of pair-programming or refactoring, but because, taken as a whole, the practices define a developer community freed from the baggage of Dilbertesque corporations.
+Kent Beck tells the story of an early job in which he estimated a programming effort of six weeks for two people.
+After his manager reassigned the other programmer at the beginning of the project, he completed the project in twelve weeks—and felt terrible about himself!
+The boss—of course—harangued Kent about how slow he was throughout the second six weeks.
+<strong>Kent, somewhat despondent because he was such a &quot;failure&quot; as a programmer, finally realized that his original estimate of 6 weeks was extremely accurate—for 2 people—and that his &quot;failure&quot; was really the manager's failure, indeed, the failure of the standard &quot;fixed&quot; process mindset that so frequently plagues our industry.</strong></p>
+<p><strong>This type of situation goes on every day—marketing, or management, or external customers, internal customers, and, yes, even developers — don't want to make hard trade-off decisions, so they impose irrational demands through the imposition of corporate power structures.</strong>
+This isn't merely a software development problem, it runs throughout Dilbertesque organizations.</p>
+<p><strong>In order to succeed in the new economy, to move aggressively into the era of e-business, e-commerce, and the web, companies have to rid themselves of their Dilbert manifestations of make-work and arcane policies.</strong>
+This freedom from the inanities of corporate life attracts proponents of Agile Methodologies, and scares the begeebers (you can't use the word 'shit' in a professional paper) out of traditionalists.
+Quite frankly, the Agile approaches scare corporate bureaucrats — at least those that are happy pushing process for process' sake versus trying to do the best for the &quot;customer&quot; and deliver something timely and tangible and &quot;as promised&quot; — because they run out of places to hide.</p>
+<p><strong>The Agile movement is not anti-methodology, in fact, many of us want to restore credibility to the word methodology.</strong>
+<strong>We want to restore a balance.</strong>
+<strong>We embrace modeling, but not in order to file some diagram in a dusty corporate repository.</strong>
+<strong>We embrace documentation, but not hundreds of pages of never-maintained and rarely-used tomes.</strong>
+<strong>We plan, but recognize the limits of planning in a turbulent environment.</strong>
+Those who would brand proponents of XP or SCRUM or any of the other Agile Methodologies as &quot;hackers&quot; are ignorant of both the methodologies and the original definition of the term hacker.&quot;</p>
+<p class="attribution">—&quot;<a class="reference external" href="http://agilemanifesto.org/history.html">History: The Agile Manifesto</a>&quot;</p>
+</div></blockquote>
+<blockquote>
+<div><p>💬 ...people and how they work together is the primary factor in software development, and that processes are a secondary factor.
+This is reflected in the first value of the agile manifesto &quot;Individuals and interactions over processes and tools&quot;...</p>
+<p>&lt;...&gt;</p>
+<p>An important consequence of these values and principles is that a team should choose its own process - one that suits the people and context in which they work.
+<strong>Imposing an agile process from the outside strips the team of the self-determination which is at the heart of agile thinking.</strong></p>
+<p>&lt;...&gt;</p>
+<p>This notion of a process made to fit the team (and not the other way around) is a necessary condition for agile methods, but clearly isn't sufficient.
+A team may choose a totally waterfall, un-agile process.
+In that case, clearly the process is no more agile than apples taste of strawberries.
+But <strong>agile methods aren't the best for all situations</strong>, and personally I'd rather have a team work in a non-agile manner they chose themselves than have my favorite agile practices imposed upon them.</p>
+<p>&lt;...&gt;</p>
+<p>imposition isn't as clear cut as it can sound, but the fundamental point remains - <strong>imposing agile methods introduces a conflict with the values and principles that underlie agile methods</strong>.</p>
+<p class="attribution">—&quot;<a class="reference external" href="https://martinfowler.com/bliki/AgileImposition.html">Agile Imposition</a>&quot; by Martin Fowler</p>
+</div></blockquote>
 </section>
 </section>
 <section id="alberto-brandolini-about-prediction-adaptation">
@@ -325,6 +374,7 @@ Agile модель разработки изменилась.</p>
 <li><p>&quot;<a class="reference external" href="https://martinfowler.com/architecture/">Software Architecture Guide</a>&quot; by Martin Fowler</p></li>
 <li><p>&quot;<a class="reference external" href="https://martinfowler.com/agile.html">Agile Software Guide</a>&quot; by Martin Fowler</p></li>
 <li><p>&quot;<a class="reference external" href="https://www.martinfowler.com/articles/newMethodology.html#PredictiveVersusAdaptive">The New Methodology :: Predictive versus Adaptive</a>&quot; by Martin Fowler</p></li>
+<li><p>&quot;<cite>Waterfall Process &lt;https://martinfowler.com/bliki/WaterfallProcess.html&gt;</cite>&quot; by Martin Fowler</p></li>
 </ul>
 <div class="admonition seealso">
 <p class="admonition-title">См.также</p>
