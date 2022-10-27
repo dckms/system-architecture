@@ -334,6 +334,29 @@ Agile модель разработки изменилась.
 
     -- "`History: The Agile Manifesto <http://agilemanifesto.org/history.html>`__"
 
+..
+
+    💬 ...people and how they work together is the primary factor in software development, and that processes are a secondary factor.
+    This is reflected in the first value of the agile manifesto "Individuals and interactions over processes and tools"...
+
+    <...>
+
+    An important consequence of these values and principles is that a team should choose its own process - one that suits the people and context in which they work.
+    **Imposing an agile process from the outside strips the team of the self-determination which is at the heart of agile thinking.**
+
+    <...>
+
+    This notion of a process made to fit the team (and not the other way around) is a necessary condition for agile methods, but clearly isn't sufficient.
+    A team may choose a totally waterfall, un-agile process.
+    In that case, clearly the process is no more agile than apples taste of strawberries.
+    But **agile methods aren't the best for all situations**, and personally I'd rather have a team work in a non-agile manner they chose themselves than have my favorite agile practices imposed upon them.
+
+    <...>
+
+    imposition isn't as clear cut as it can sound, but the fundamental point remains - **imposing agile methods introduces a conflict with the values and principles that underlie agile methods**.
+
+    -- "`Agile Imposition <https://martinfowler.com/bliki/AgileImposition.html>`__" by Martin Fowler
+
 
 Alberto Brandolini about Prediction/Adaptation
 ==============================================
