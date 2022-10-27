@@ -88,6 +88,16 @@ Prediction при этом не исчезает полностью, а пони
 
     -- "The Mythical Man-Month Essays on Software Engineering Anniversary Edition" by Frederick P. Brooks, Jr.
 
+..
+
+    💬 Furthermore, a waterfall approach forces us into a predictive style of planning, it assumes that once you are done with a phase, such as requirements analysis, the resulting deliverable is a stable platform for later phases to base their work on.
+    In practice the vast majority of software projects find they need to change their requirements significantly within a few months, due to everyone learning more about the domain, the characteristics of the software environment, and changes in the business environment.
+    Indeed we've found that delivering a subset of features does more than anything to help clarify what needs to be done next, so an iterative approach allows us to shift to an adaptive planning approach where we update our plans as we learn what the real software needs are.
+
+    These are the major reasons why I've `glibly said that <https://martinfowler.com/books/uml.html>`__ "you should use iterative development only in projects that you want to succeed".
+
+    -- "`Waterfall Process <https://martinfowler.com/bliki/WaterfallProcess.html>`__" by Martin Fowler
+
 Конечно, сугубо семантически, термин ":ref:`requirements <emacsway-agile-requirements>`" немного вводит в заблуждение в Agile, ведь заранее требования к продукту неизвестны полностью, и они изменяются по мере реализации продукта.
 А в таком случае, как они могут что-то требовать?
 Вы, наверное, встречали картинку с треугольником "`Iron Triangle <https://www.atlassian.com/agile/agile-at-scale/agile-iron-triangle>`__" (Requirements/Scope, Cost, Time), где в waterfall он обращен вершиной Requirements вниз (константная область), а в Agile - вверх (переменная область). The iron triangle of planning:
