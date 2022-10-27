@@ -38,7 +38,8 @@ Archi
 `Model used by Jean-Baptiste Sarrodie for presentation "Enterprise Architecture Modelling with ArchiMate in an Agile at Scale Programme" <https://community.opengroup.org/archimate-user-community/home/-/issues/8>`__
 
 Попробовал сделать Event Storming в Archi, и обнаружил, что он делается с такой же легкостью, как и в Miro.
-Разве что для публикации своих изменений другим участникам нужно сделать 5 кликов мышкой. Технически, это можно автоматизировать по регулярному расписанию, используя `jArchi <https://www.archimatetool.com/plugins/>`__.
+Разве что для публикации своих изменений другим участникам нужно сделать 5 кликов мышкой.
+Технически, это можно автоматизировать по регулярному расписанию, используя `jArchi <https://www.archimatetool.com/plugins/>`__.
 А вот изменения других участников уже и так подтягиваются по настраиваемому регулярному расписанию фоновым процессом.
 
 Нотации (т.е. цвета) Event Storming практически идентичны нотациям "`C.1.10 Business Process Cooperation Viewpoint <https://pubs.opengroup.org/architecture/archimate31-doc/apdxc.html#_Toc10045506>`__".
@@ -69,6 +70,49 @@ Archi
 #. Богатое интеграционное API позволяет использовать модель для автоматизированной её сверки с реализацией или для генерации кода.
 #. В `Archi можно также делать C4 Model <https://www.archimatetool.com/blog/2020/04/18/c4-model-architecture-viewpoint-and-archi-4-7/>`__, используя единую модель и для C4 Model, и для Event Storming.
 #. `В Archi можно сделать Context Map <https://community.opengroup.org/archimate-user-community/home/-/issues/8>`__, используя единую модель с Event Storming.
+
+
+Недостатки
+==========
+
+Резольв конфликта слияния через GUI для каждой отдельной диаграммы возможен только путем выбора одной из двух версии целиком - либо своей, либо сливаемой.
+При просмотре версий диаграммы их различия никак визуально не выделяются и не подсвечиваются.
+
+Сама модель сохраняется в файл ``.git/temp.archimate``.
+Преобразуется она в файлы Git репозитория только в момент коммита.
+Этот момент нужно учитывать, т.к. изменения модели в Archi не отражаются мгновенно в файлах Git репозитория и, наоборот, изменения в файлах Git репозитория не отражаются мгновенно в модели Archi.
+
+Мне известны два способа слить диаграммы в случае конфликта без утраты изменений обоих её версий.
+
+
+Средствами Git
+--------------
+
+Резольва конфликта слияния средствами Git `на уровне текстовых файлов <https://github.com/archi-contribs/archi-grafico-plugin/wiki/Merge-two-(or-more)-models>`__" (см. описание `GRAFICO format <https://github.com/archi-contribs/archi-grafico-plugin/wiki/GRAFICO-explained>`__).
+Не самый простой, но самый действенный вариант.
+Впрочем, к нему быстро привыкаешь.
+
+Чаще всего конфликты возникают в файлах диаграмм (Views), и их резольв усложняется тем, что в них присутствуют только идентификаторы конфликтующих элементоа.
+И эти идентификаторы не сообщают никакой информации о своих элементах.
+Чтобы определить смысл элемента по его идентификатору, можно предварительно (т.к. в процессе слияния элемент может быть уже удален из модели) заэкспортировать модель в \*.CSV файлы.
+Как вариант, можно также сохранить модель в \*.archimate файл, если модель относительно небольшая, и затем использовать поиск по файлу.
+Можно создать копию файловой структуры Git репозитория перед слиянием и грепать по её файлам.
+
+
+Штатный механизм слияния модели
+-------------------------------
+
+Сохраняем модель одного бранча в \*.archimate файл, а затем импортируем её в выбранную модель другого бранча.
+Этот вариант дает меньше контроля над процессом слияния, но и уменьшает вероятность допущения ошибки.
+
+
+Избегание конфликтов
+--------------------
+
+Резольв конфликта в Archi нетривиальный, и лучше его избегать.
+На практике обычно кто-то один управляет доской в один момент времени, и, в случае необходимости, передает управление другому участнику.
+
+Частые интеграции и блокировки организационными мерами позволяют снизить вероятность возникновения конфликта.
 
 
 Установка
@@ -131,6 +175,8 @@ Archimatetool использует Grafico format файлов:
 
 - "`Автоматизируем работу с ArchiMate в CI пайплайнах <https://habr.com/ru/post/583314/>`__" / Maxim Levchenko
 - `Docker container <https://hub.docker.com/r/woozymasta/archimate-ci-image>`__ и `GH Action <https://github.com/marketplace/actions/deploy-archi-report>`__ для публикации Archimate модели на `GitHub <https://woozymasta.github.io/archimate-ci-image-example/?view=6875>`__/`GitLab <https://woozymasta.gitlab.io/archimate-ci-image-example/?view=6213>`__ Pages. `Source Code <https://github.com/WoozyMasta/archimate-ci-image>`__.
+- `archi-htmlreport-docker <https://github.com/abes-esr/archi-htmlreport-docker>`__ (`example <https://github.com/abes-esr/archi-model-example>`__)
+- `Others... <https://hub.docker.com/search?q=ArchiMate>`__
 
 
 Стикеры
@@ -153,6 +199,12 @@ Event Storming гармонично сочетается с C4 Model, о чем 
 Jean-Baptiste Sarrodie собственноручно выложил `демонстрационную модель C4 Model и Event Storming в Archi <https://community.opengroup.org/archimate-user-community/home/-/issues/8>`__.
 
 
+Archimatetool troubleshooting
+=============================
+
+- "`Список ошибок <https://github.com/archimatetool/archi/blob/master/com.archimatetool.editor/src/com/archimatetool/editor/model/messages.properties>`__"
+- Расположение незакоммиченной, но сохраненной модели: ``.git/temp.archimate``.
+- "`Archi 4.7 (or superior) can't save a model or (if using coArchi) can't import, refresh or publish a model but instead gives "Error in model" <https://github.com/archimatetool/archi/wiki/Archi-4.7-%28or-superior%29-can%27t-save-a-model-or-%28if-using-coArchi%29-can%27t-import%2C-refresh-or-publish-a-model-but-instead-gives-%22Error-in-model%22>`__"
 
 ..
     ArchiMate, трассировка требований и Agile.

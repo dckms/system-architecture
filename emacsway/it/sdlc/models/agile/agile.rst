@@ -50,21 +50,29 @@
 
     -- "`The Winter Getaway That Turned the Software World Upside Down <https://www.theatlantic.com/technology/archive/2017/12/agile-manifesto-a-history/547715/>`__" by Caroline Mimbs Nyce
 
+..
+
+    💬 "Certainly agile processes require an iterative approach and cannot work in a waterfall style."
+
+    -- "`Waterfall Process <https://martinfowler.com/bliki/WaterfallProcess.html>`__" by Martin Fowler
+
 
 История
 =======
 
 В заметке ":ref:`emacsway-prediction`" было сформировано противоречие, которое заключается в том, что для того, чтобы снизить стоимость разработки, нам необходимо повысить точность прогнозирования (повысить полноту требований), но повышение точности прогнозирования, в свою очередь, повышает стоимость разработки (возникает отрицательная обратная связь).
-Причем, повышает его экспоненциально, в то время как бизнес-выгоды от этой точности возрастают логарифмически.
-Иными словами, точность прогнозирования всегда имеет предел экономической целесообразности, который определяется пересечением этих двух графиках (за вычетом стоимости реализации, разумеется).
+Причем, повышает её экспоненциально, в то время как бизнес-выгоды от этой точности возрастают логарифмически.
+Иными словами, точность прогнозирования всегда имеет предел экономической целесообразности, который определяется пересечением этих двух графиков (за вычетом стоимости реализации, разумеется).
+
+Мы не можем повышать точность прогнозирования, т.к. она превысит предел экономической целесообразности, но мы вынуждены её повысить для того, чтобы принимать решения в момент наименьшей стоимости их реализации.
 
 Как можно разрешить этот "`Catch-22 <https://ru.wikipedia.org/wiki/%D0%A3%D0%BB%D0%BE%D0%B2%D0%BA%D0%B0-22>`__"?
 Согласно "Первому закону диалектики", противоречие должно привести к синтезу, т.е. к качественному изменению.
 
-И решение это схоже с решением противоречия ":ref:`Закона Брукса <emacsway-brooks's-law>`", в виде автономных команд.
-Или же с решением Bounded Context, который решает противоречие: при стремлении выровнять язык по всей модели, он стремится к противоречивости (и неоднозначности).
+И решение этого противоречия схоже с решением противоречия ":ref:`Закона Брукса <emacsway-brooks's-law>`", в виде автономных команд.
+Или же с решением в виде Bounded Context, которое разрешает противоречие, заключающееся в том, что при стремлении выровнять язык по всей модели, он стремится к противоречивости (и неоднозначности).
 Т.е. стремление следовать предметной области вынуждает отступать от неё.
-В данной ситуации решение так же заключается в разбиении целого (процесса разработки) на части (итерации), только вместо согласованности единого языка здесь критерием выступает достаточность полноты требований.
+В нашем случае решение так же заключается в разбиении целого (процесса разработки) на части (итерации), только вместо согласованности единого языка здесь критерием разделения выступает достаточность полноты требований.
 
 Agile является естественным следствием эволюции итеративной разработки, краткий обзор которой можно посмотреть в превосходной статье Craig Larman "`Iterative and Incremental Development: A Brief History <https://www.craiglarman.com/wiki/downloads/misc/history-of-iterative-larman-and-basili-ieee-computer.pdf>`__".
 В ней говорится о том, что цикл PDSA известен еще с 1930 года, в 1957 году впервые была применена :ref:`инкрементальная <emacsway-incremental-development>` модель разработки, а в 1968  году - :ref:`итеративная <emacsway-iterative-development>`.
@@ -72,6 +80,10 @@ Agile является естественным следствием эволю�
 Как уже говорилось ранее, итеративная модель разработки открывает широкие возможности для :ref:`удешевления обработки неопределенности <emacsway-adaptation>`.
 Однако долгое время эти возможности оставались экономически нецелесообразными по причине быстрорастущего характера роста стоимости :ref:`Adaptation <emacsway-adaptation>`, приближющегося к экспоненциальному.
 При таком характере роста возникает экономическая целесообразность принимать решения в момент наименьшей стоимости их реализации, вплоть до заблаговременного проектирования (BDUF).
+
+    💬 "WaterFall is based on the empirical observation of 30 years ago (ref: BarryBoehm, Software Engineering Economics, Prentice Hall, 1981.) that the cost of change rises exponentially (base 10) by phases. The conclusion is that you should make the big decisions up front, because changing them is so expensive."
+
+    -- "`Water Fall <https://wiki.c2.com/?WaterFall>`__" at c2.com
 
 .. figure:: _media/agile/exponential-cost-of-change.png
    :alt: Figure 1. The cost of change rising exponentially over time. The image source is "Extreme Programming Explained" 1st edition by Kent Beck, "Chapter 5. Cost of Change".
@@ -83,6 +95,13 @@ Agile является естественным следствием эволю�
 Однако, в конце 1990-х - начале 2000-х, в архитектурном мире произошли существенные изменения - обрели массовую популярность высокоуровневые объектно-ориентированные языки, появились :ref:`шаблоны <emacsway-agile-patterns>` и принципы проектирования, методики управления сложностью (ROM, POSA, GOF, OOAD, :ref:`SOLID <emacsway-agile-solid>`, Use Case Driven Approach, Object-Oriented Software Construction etc.), появились :ref:`TDD <emacsway-tdd>`, Refactoring и т.п.
 
 Унификация знаний в области архитектуры, переход ментального оперирования на элементы унифицированных шаблонных конструкций более высокого уровня абстракции, позволили сократить когнитивную и коммуникативную нагрузку на разработчика, уменьшить порог вхождения в новый проект, смягчить негативное воздействие :ref:`Закона Брукса <emacsway-brooks's-law>`.
+
+.. figure:: _media/agile/historical-cost-of-exploration.png
+   :alt: FIGURE 3.8 Historical cost of exploration. The image source is "Essential Scrum: A Practical Guide to the Most Popular Agile Process" by Kenneth Rubin, "Chapter 3 Agile Principles :: Prediction and Adaptation".
+   :align: left
+   :width: 70%
+
+   FIGURE 3.8 Historical cost of exploration. The image source is "Essential Scrum: A Practical Guide to the Most Popular Agile Process" by Kenneth Rubin, "Chapter 3 Agile Principles :: Prediction and Adaptation".
 
 Рост количественных изменений привел к изменениям качественным ("Второй закон диалектики") - ведущим умам архитектуры своего времени удалось снизить характер роста стоимости адаптации вплоть до пологого графика, максимально приближенного к горизонтальной асимптоте.
 Это означало, что стоимость реализации решения больше не зависело от момента его принятия, что позволило отказаться от заблаговременного проектирования и откладывать принятие решения до момента наибольшей полноты информированности, даже после частичной реализации продукта.
@@ -134,8 +153,13 @@ Agile является естественным следствием эволю�
     This isn't merely a software development problem, it runs throughout Dilbertesque organizations.
 
     In order to succeed in the new economy, to move aggressively into the era of e-business, e-commerce, and the web, companies have to rid themselves of their Dilbert manifestations of make-work and arcane policies.
-    This freedom from the inanities of corporate life attracts proponents of Agile Methodologies, and scares the begeebers (you can't use the word ‘shit' in a professional paper) out of traditionalists.
-    Quite frankly, the Agile approaches scare corporate bureaucrats — at least those that are happy pushing process for process' sake versus trying to do the best for the \"customer\" and deliver something timely and tangible and \"as promised\" — because they run out of places to hide."
+    This freedom from the inanities of corporate life attracts proponents of Agile Methodologies, and scares the begeebers (you can't use the word 'shit' in a professional paper) out of traditionalists.
+    Quite frankly, the Agile approaches scare corporate bureaucrats — at least those that are happy pushing process for process' sake versus trying to do the best for the \"customer\" and deliver something timely and tangible and \"as promised\" — because they run out of places to hide.
+
+    The Agile movement is not anti-methodology, in fact, many of us want to restore credibility to the word methodology.
+    We want to restore a balance. We embrace modeling, but not in order to file some diagram in a dusty corporate repository.
+    We embrace documentation, but not hundreds of pages of never-maintained and rarely-used tomes. We plan, but recognize the limits of planning in a turbulent environment.
+    Those who would brand proponents of XP or SCRUM or any of the other Agile Methodologies as \"hackers\" are ignorant of both the methodologies and the original definition of the term hacker."
 
     -- "`History: The Agile Manifesto <http://agilemanifesto.org/history.html>`__"
 
@@ -443,6 +467,7 @@ Impossible. Точка.
 
 Cм. также:
 
+    - "`Writing The Agile Manifesto <https://martinfowler.com/articles/agileStory.html>`__" by Martin Fowler
     - "`The Reasons for Agile <https://www.informit.com/articles/article.aspx?p=2990402>`__" by Robert C. Martin
     - "`The Winter Getaway That Turned the Software World Upside Down <https://www.theatlantic.com/technology/archive/2017/12/agile-manifesto-a-history/547715/>`__" by Caroline Mimbs Nyce
     - "`Some Agile History <https://pragdave.me/blog/2007/02/24/some-agile-history.html>`__" by Dave Thomas
