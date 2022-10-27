@@ -50,6 +50,12 @@
 
     -- "`The Winter Getaway That Turned the Software World Upside Down <https://www.theatlantic.com/technology/archive/2017/12/agile-manifesto-a-history/547715/>`__" by Caroline Mimbs Nyce
 
+..
+
+    💬 "Certainly agile processes require an iterative approach and cannot work in a waterfall style."
+
+    -- "`Waterfall Process <https://martinfowler.com/bliki/WaterfallProcess.html>`__" by Martin Fowler
+
 
 История
 =======
