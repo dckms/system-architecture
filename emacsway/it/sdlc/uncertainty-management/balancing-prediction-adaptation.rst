@@ -95,6 +95,15 @@ Balancing Prediction/Adaptation
 
     -- "ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes"
 
+    💬 Waterfalls and iterations may nest inside each other.
+    A six year project might consist of two 3 year projects, where each of the two projects are structured in a waterfall style, but the second project adds additional features.
+    You can think of this as a two-iteration project at the top level with each iteration as a waterfall. Due to the large size and small number of iterations, I'd regard that as primarily a waterfall projecta
+    In contrast you might see a project with 16 iterations of one month each, where each iteration is planned in a waterfall style.
+    That I'd see as primarily iterative.
+    While in theory there's potential for a middle ground projects that are hard to classify, in practice it's usually easy to tell that one style predominates.
+
+    -- "`Waterfall Process <https://martinfowler.com/bliki/WaterfallProcess.html>`" by Martin Fowler
+
 
 Стоимость гибкости
 ==================
@@ -359,6 +368,7 @@ Cм. также:
 - "`Software Architecture Guide <https://martinfowler.com/architecture/>`__" by Martin Fowler
 - "`Agile Software Guide <https://martinfowler.com/agile.html>`__" by Martin Fowler
 - "`The New Methodology :: Predictive versus Adaptive <https://www.martinfowler.com/articles/newMethodology.html#PredictiveVersusAdaptive>`__" by Martin Fowler
+- "`Waterfall Process <https://martinfowler.com/bliki/WaterfallProcess.html>`" by Martin Fowler
 
 
 .. seealso::
