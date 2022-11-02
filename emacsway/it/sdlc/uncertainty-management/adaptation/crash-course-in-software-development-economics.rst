@@ -64,7 +64,8 @@
 - "`О повторном использовании кода <http://sergeyteplyakov.blogspot.com/2012/04/blog-post_19.html>`__" / Сергей Тепляков
 - "`Systems thinking <https://less.works/less/principles/systems-thinking.html>`__" (`на русском <https://less.works/ru/less/principles/systems-thinking.html>`__)
 - "`Modifiability <https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8299>`__"
-- "`Making Architecture Matter - Martin Fowler Keynote <https://youtu.be/DngAZyWMGR0>`_" - превосходное 14-ти минутное видео.
+- "`Making Architecture Matter - Martin Fowler Keynote <https://youtu.be/DngAZyWMGR0>`__" - превосходное 14-ти минутное видео.
+- "`Comparing Maintainability Index, SIG Method, and SQALE for Technical Debt Identification <https://doi.org/10.1155/2020/2976564>`__" by Peter Strecansky, Stanislav Chren, and Bruno Rossi
 
 
 .. seealso::
