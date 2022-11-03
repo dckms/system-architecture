@@ -830,6 +830,7 @@ Donald E. Knuth:
 ---------
 
 - "Software Requirements (Developer Best Practices)" 3rd Edition by Karl Wiegers
+- "`Handbook of Requirements and Business Analysis <https://bertrandmeyer.com/2022/10/28/new-book-requirements-handbook/>`__" by Bertrand Meyer
 - "INCOSE Guide for Writing Requirements" by INCOSE
 - "`Systems engineering handbook. A guide for System Life Cycle Processes and activities. <https://www.incose.org/products-and-publications/se-handbook>`__" by INCOSE
 - "Managing Software Requirements: A Unified Approach" 1st edition by Dean Leffingwell, Don Widrig
