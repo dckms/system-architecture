@@ -391,7 +391,7 @@ Cм. также:
 - "`Software Architecture Guide <https://martinfowler.com/architecture/>`__" by Martin Fowler
 - "`Agile Software Guide <https://martinfowler.com/agile.html>`__" by Martin Fowler
 - "`The New Methodology :: Predictive versus Adaptive <https://www.martinfowler.com/articles/newMethodology.html#PredictiveVersusAdaptive>`__" by Martin Fowler
-- "`Waterfall Process <https://martinfowler.com/bliki/WaterfallProcess.html>`" by Martin Fowler
+- "`Waterfall Process <https://martinfowler.com/bliki/WaterfallProcess.html>`__" by Martin Fowler
 
 
 .. seealso::
