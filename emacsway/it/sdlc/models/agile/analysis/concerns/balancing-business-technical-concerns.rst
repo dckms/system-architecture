@@ -331,6 +331,13 @@ Frederick Brooks в своем бестселлере "Мифический че
 
 Разрешение противоречий требований различных групп стейкхолдеров хорошо изучены анализом и архитектурой.
 
+    📝 "Stakeholder Priority. The **priority of each requirement** should be identified.
+    This may be established through a consensus process among potential stakeholders.
+    As appropriate, a scale such as 1-5 or a simple scheme such as High, Medium or Low, could be used for identifying the priority of each requirement.
+    The priority is not intended to imply that some requirements are not necessary, but it may indicate what **requirements are candidates for the trade space when decisions regarding alternatives are necessary**.
+    Prioritization needs to consider the stakeholders who need the requirements.
+    This **facilitates trading off requirements** and balancing the impact of changes among stakeholders."
+
     📝 "trade-off - decision-making actions that select from various requirements (3.1.19) and alternative solutions on the basis of net benefit to the stakeholders (3.1.28)"
 
     📝 "It is important to continue to perform requirements negotiation during the analysis and allocation of requirements, **because conflicts will occur**.
