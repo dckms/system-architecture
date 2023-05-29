@@ -160,6 +160,7 @@ Nick Tune поделился `историей конфликта с одним 
 Литература по теме осуществления изменений
 ==========================================
 
+- "`Reversing the disablement cycle: Everyone does the right thing, yet nothing much gets done. How to break self-reinforcing bad habits. <https://architectelevator.com/transformation/reversing-disablement-cycle/>`__" by Gregor Hohpe
 - "Social psychology" 13th edition by David G. Myers. Перевод: "Социальная психология" / Майерс Д. Пер. с англ. З. Замчук; Зав. ред. кол. Л. Винокуров. — 7-е изд. — СПб.: Питер, 2006.
 - "Leading Change, With a New Preface by the Author" by John P. Kotter, November 6, 2012
 - "The Dance of Change: The challenges to sustaining momentum in a learning organization" by Peter M. Senge, George Roth, March 16, 1999
