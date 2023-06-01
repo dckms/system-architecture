@@ -29,6 +29,12 @@
 
     -- "`Большая политехническая энциклопедия. <https://polytechnic_dictionary.academic.ru/2647/%D0%A2%D0%95%D0%9E%D0%A0%D0%98%D0%AF>`__" - М.: Мир и образование. Рязанцев В. Д.. 2011.
 
+..
+
+    💬 "Their ideas are not "just theory". It's years of accumulated practice and insights. They work — often in many different contexts. We're lucky: we can build on top of their ideas."
+
+    -- "`Software design is just theory <https://verraes.net/2014/10/software-design-is-just-theory/>`__" by Mathias Verraes.
+
 
 .. index::
    single: Opinion; in psychology
