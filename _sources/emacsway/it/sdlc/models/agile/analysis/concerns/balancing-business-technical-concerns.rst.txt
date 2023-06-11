@@ -87,7 +87,26 @@
 - качество (quality)
 - объем работ (scope)
 
-Iron Triangle изначально был квадратом, и только во второй версии XP он превратился в треугольник.
+Иногда эти четыре переменные можно встретить в виде Iron Triangle, где `Quality ограничено тремя переменными <https://en.m.wikipedia.org/wiki/Project_management_triangle>`__:
+
+- затраты (cost)
+- время (time)
+- объем работ (scope)
+
+Хотя сам Martin Barnes, PhD говорил, что:
+
+    💬 I sketched a diagram to make the point – a triangle with time, cost and quality at the corners.
+
+    -- "`HOW IT ALL BEGAN <https://pmworldlibrary.net/wp-content/uploads/2018/11/pmwl-barnes-how-it-all-began-pmwt-july-2006.pdf>`__" by Martin Barnes, PhD
+
+Иными словами, Quality было тождественно (или рассматривалось как составная часть) Scope.
+
+Так или иначе, но на заре Agile качество имело такое существенное и нелинейное влияние на разработку, что Iron Triangle стал квадратом, известным также как The "Project Diamond" model, см.:
+
+- "`It used to be the Iron Triangle <http://www.betterprojects.net/2009/03/it-used-to-be-iron-triangle.html>`__". Better Project. by Brown, Craig
+- "`Introduction to Project Management <https://www.projectsmart.co.uk/lifecycle-and-methodology/introduction-to-project-management.php>`__" by Duncan Haughey
+
+И только во второй версии XP он превратился в треугольник, но уже без Quality.
 Но обо всем по порядку.
 
     📝 "Одним из основополагающих правил нашей стратегии является то, что технари концентрируются на решении технических проблем, а бизнесмены — на решении бизнес-проблем.
@@ -330,6 +349,13 @@ Frederick Brooks в своем бестселлере "Мифический че
 Под техническими интересами в данном случае понимаются, в первую очередь, такие Quality Attributes, как `Modifiability <https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8299>`__, Evolvability, Flexibility, Modularity, Testabilty, Deployability etc.
 
 Разрешение противоречий требований различных групп стейкхолдеров хорошо изучены анализом и архитектурой.
+
+    📝 "Stakeholder Priority. The **priority of each requirement** should be identified.
+    This may be established through a consensus process among potential stakeholders.
+    As appropriate, a scale such as 1-5 or a simple scheme such as High, Medium or Low, could be used for identifying the priority of each requirement.
+    The priority is not intended to imply that some requirements are not necessary, but it may indicate what **requirements are candidates for the trade space when decisions regarding alternatives are necessary**.
+    Prioritization needs to consider the stakeholders who need the requirements.
+    This **facilitates trading off requirements** and balancing the impact of changes among stakeholders."
 
     📝 "trade-off - decision-making actions that select from various requirements (3.1.19) and alternative solutions on the basis of net benefit to the stakeholders (3.1.28)"
 

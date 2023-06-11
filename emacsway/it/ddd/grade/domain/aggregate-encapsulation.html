@@ -124,15 +124,15 @@ As a result, the pattern often forces you to provide public operations that acce
 </pre></div>
 </div>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="nx">Endorsement</span><span class="p">)</span><span class="w"> </span><span class="nx">Accept</span><span class="p">(</span><span class="nx">walker</span><span class="w"> </span><span class="nx">interfaces</span><span class="p">.</span><span class="nx">Walker</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">walker</span><span class="p">.</span><span class="nx">SetField</span><span class="p">(</span><span class="s">&quot;recognizerId&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nx">walker</span><span class="p">.</span><span class="nx">WalkWalkable</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">recognizerId</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nx">walker</span><span class="p">.</span><span class="nx">SetField</span><span class="p">(</span><span class="s">&quot;recognizerGrade&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nx">walker</span><span class="p">.</span><span class="nx">WalkWalkable</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">recognizerGrade</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">walker</span><span class="p">.</span><span class="nx">SetField</span><span class="p">(</span><span class="s">&quot;endorserId&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">walker</span><span class="p">.</span><span class="nx">WalkWalkable</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">endorserId</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">walker</span><span class="p">.</span><span class="nx">SetField</span><span class="p">(</span><span class="s">&quot;endorserGrade&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">walker</span><span class="p">.</span><span class="nx">WalkWalkable</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">endorserGrade</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// ...</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">id</span><span class="w"> </span><span class="nx">RecognizerId</span><span class="p">)</span><span class="w"> </span><span class="nx">Accept</span><span class="p">(</span><span class="nx">walker</span><span class="w"> </span><span class="nx">interfaces</span><span class="p">.</span><span class="nx">Walker</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">id</span><span class="w"> </span><span class="nx">EndorserId</span><span class="p">)</span><span class="w"> </span><span class="nx">Accept</span><span class="p">(</span><span class="nx">walker</span><span class="w"> </span><span class="nx">interfaces</span><span class="p">.</span><span class="nx">Walker</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">walker</span><span class="p">.</span><span class="nx">WalkUint64</span><span class="p">(</span><span class="nx">id</span><span class="p">.</span><span class="nx">Value</span><span class="p">())</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
@@ -253,7 +253,7 @@ Walker начинает быть слишком осведомленным о д
 <span class="kd">type</span><span class="w"> </span><span class="nx">Grade</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="w"></span>
 <span class="kd">type</span><span class="w"> </span><span class="nx">EndorsementCount</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="w"></span>
 
-<span class="kd">type</span><span class="w"> </span><span class="nx">RecognizerExporterSetter</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">EndorserExporterSetter</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">SetId</span><span class="p">(</span><span class="nx">MemberId</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="nx">SetGrade</span><span class="p">(</span><span class="nx">Grade</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="nx">SetAvailableEndorsementCount</span><span class="p">(</span><span class="nx">EndorsementCount</span><span class="p">)</span><span class="w"></span>
@@ -268,7 +268,7 @@ Walker начинает быть слишком осведомленным о д
 <span class="w">    </span><span class="o">*</span><span class="nx">e</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">UintExporter</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kd">type</span><span class="w"> </span><span class="nx">Recognizer</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">Endorser</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">id</span><span class="w">                        </span><span class="nx">MemberId</span><span class="w"></span>
 <span class="w">    </span><span class="nx">grade</span><span class="w">                     </span><span class="nx">Grade</span><span class="w"></span>
 <span class="w">    </span><span class="nx">availableEndorsementCount</span><span class="w"> </span><span class="nx">EndorsementCount</span><span class="w"></span>
@@ -277,16 +277,16 @@ Walker начинает быть слишком осведомленным о д
 <span class="w">    </span><span class="nx">createdAt</span><span class="w">                 </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="nx">Recognizer</span><span class="p">)</span><span class="w"> </span><span class="nx">Export</span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="nx">RecognizerExporterSetter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetId</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetGrade</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">grade</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetAvailableEndorsementCount</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetPendingEndorsementCount</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetVersion</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">version</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetCreatedAt</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">createdAt</span><span class="p">)</span><span class="w"></span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="nx">Endorser</span><span class="p">)</span><span class="w"> </span><span class="nx">Export</span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="nx">EndorserExporterSetter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetId</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetGrade</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">grade</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetAvailableEndorsementCount</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">availableEndorsementCount</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetPendingEndorsementCount</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetVersion</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">version</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetCreatedAt</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">createdAt</span><span class="p">)</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kd">type</span><span class="w"> </span><span class="nx">RecognizerExporter</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">EndorserExporter</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">Id</span><span class="w">                        </span><span class="nx">UintExporter</span><span class="w"></span>
 <span class="w">    </span><span class="nx">Grade</span><span class="w">                     </span><span class="nx">UintExporter</span><span class="w"></span>
 <span class="w">    </span><span class="nx">AvailableEndorsementCount</span><span class="w"> </span><span class="nx">UintExporter</span><span class="w"></span>
@@ -295,27 +295,27 @@ Walker начинает быть слишком осведомленным о д
 <span class="w">    </span><span class="nx">CreatedAt</span><span class="w">                 </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetId</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">MemberId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">EndorserExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetId</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">MemberId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ex</span><span class="p">.</span><span class="nx">Id</span><span class="p">)</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetGrade</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">Grade</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">EndorserExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetGrade</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">Grade</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ex</span><span class="p">.</span><span class="nx">Grade</span><span class="p">)</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetAvailableEndorsementCount</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">EndorsementCount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">EndorserExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetAvailableEndorsementCount</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">EndorsementCount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ex</span><span class="p">.</span><span class="nx">AvailableEndorsementCount</span><span class="p">)</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetPendingEndorsementCount</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">EndorsementCount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">EndorserExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetPendingEndorsementCount</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">EndorsementCount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ex</span><span class="p">.</span><span class="nx">PendingEndorsementCount</span><span class="p">)</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetVersion</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="kt">uint</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">EndorserExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetVersion</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="kt">uint</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">Version</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">val</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">RecognizerExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetCreatedAt</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">EndorserExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetCreatedAt</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">CreatedAt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">val</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
@@ -368,7 +368,7 @@ Walker начинает быть слишком осведомленным о д
 <p>Немного смущает смешивание парадигм FP и OOP для ValueObject.
 Хотя ValueObject и остается неизменяемым, но сам факт того, что функционально чистый объект вызывает мутирующие методы другого объекта, вызывает небольшое смущение.
 Возникает вопрос - почему функционально чистый объект не может просто взять и вернуть другой функционально чистый объект?
-Если бы Golang поддерживать Generics для методов, тогда могло бы получиться что-то похожее на <code class="docutils literal notranslate"><span class="pre">Recognizer.Export[T](exporterFactory</span> <span class="pre">function(attr1,</span> <span class="pre">attr2,</span> <span class="pre">attr3)</span> <span class="pre">T)</span> <span class="pre">T</span></code>.
+Если бы Golang поддерживать Generics для методов, тогда могло бы получиться что-то похожее на <code class="docutils literal notranslate"><span class="pre">Endorser.Export[T](exporterFactory</span> <span class="pre">function(attr1,</span> <span class="pre">attr2,</span> <span class="pre">attr3)</span> <span class="pre">T)</span> <span class="pre">T</span></code>.
 Однако, если продолжить развивать эту мысль, то мы обнаружим, что таким образом пытаемся решить проблему обхода инкапсуляции, которая вызвана именно применением OOP.</p>
 <p>Как говорил Michael Feathers:</p>
 <blockquote>
@@ -391,7 +391,7 @@ The Presenter/View boundary is one of these boundaries, but there are many other
 </section>
 <section id="returning-structure">
 <h3><a class="toc-backref" href="#id10" role="doc-backlink">2. Returning structure</a><a class="headerlink" href="#returning-structure" title="Permalink to this heading">¶</a></h3>
-<p>Возникает целесообразность облегчить метод экспортирования, придав ему сигнатуру <code class="docutils literal notranslate"><span class="pre">Recognizer.Export()</span> <span class="pre">RecognizerState</span></code> вместо <code class="docutils literal notranslate"><span class="pre">Recognizer.ExportTo(ex</span> <span class="pre">RecognizerExporter)</span></code>.
+<p>Возникает целесообразность облегчить метод экспортирования, придав ему сигнатуру <code class="docutils literal notranslate"><span class="pre">Endorser.Export()</span> <span class="pre">EndorserState</span></code> вместо <code class="docutils literal notranslate"><span class="pre">Endorser.ExportTo(ex</span> <span class="pre">EndorserExporter)</span></code>.
 Получится что-то типа DTO с тем лишь отличием, что он пересекает не сетевые границы, а границы инкапсуляции Агрегата.
 В Golang этот вариант выглядит чуть более привлекательным, хотя и менее OOP, но зато не контрастирует с FP принципами Value Object.</p>
 <p>О таком же принципе этом писал Robert C. Martin:</p>
@@ -450,7 +450,7 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
 <span class="kd">type</span><span class="w"> </span><span class="nx">Grade</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="w"></span>
 <span class="kd">type</span><span class="w"> </span><span class="nx">EndorsementCount</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="w"></span>
 
-<span class="kd">type</span><span class="w"> </span><span class="nx">RecognizerState</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">EndorserState</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">Id</span><span class="w">                        </span><span class="kt">uint</span><span class="w"></span>
 <span class="w">    </span><span class="nx">Grade</span><span class="w">                     </span><span class="kt">uint</span><span class="w"></span>
 <span class="w">    </span><span class="nx">AvailableEndorsementCount</span><span class="w"> </span><span class="kt">uint</span><span class="w"></span>
@@ -459,7 +459,7 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
 <span class="w">    </span><span class="nx">CreatedAt</span><span class="w">                 </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kd">type</span><span class="w"> </span><span class="nx">Recognizer</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">Endorser</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">id</span><span class="w">                        </span><span class="nx">MemberId</span><span class="w"></span>
 <span class="w">    </span><span class="nx">grade</span><span class="w">                     </span><span class="nx">Grade</span><span class="w"></span>
 <span class="w">    </span><span class="nx">availableEndorsementCount</span><span class="w"> </span><span class="nx">EndorsementCount</span><span class="w"></span>
@@ -468,12 +468,12 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
 <span class="w">    </span><span class="nx">createdAt</span><span class="w">                 </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="nx">Recognizer</span><span class="p">)</span><span class="w"> </span><span class="nx">Export</span><span class="p">()</span><span class="w"> </span><span class="nx">RecognizerState</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">RecognizerState</span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">r</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">grade</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span><span class="w"></span>
-<span class="w">        </span><span class="nx">r</span><span class="p">.</span><span class="nx">availableEndorsementCount</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span><span class="w"></span>
-<span class="w">        </span><span class="nx">r</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span><span class="w"></span>
-<span class="w">        </span><span class="nx">r</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">createdAt</span><span class="p">,</span><span class="w"></span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="nx">Endorser</span><span class="p">)</span><span class="w"> </span><span class="nx">Export</span><span class="p">()</span><span class="w"> </span><span class="nx">EndorserState</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">EndorserState</span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">e</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">grade</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span><span class="w"></span>
+<span class="w">        </span><span class="nx">e</span><span class="p">.</span><span class="nx">availableEndorsementCount</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span><span class="w"></span>
+<span class="w">        </span><span class="nx">e</span><span class="p">.</span><span class="nx">pendingEndorsementCount</span><span class="p">.</span><span class="nx">Export</span><span class="p">(),</span><span class="w"></span>
+<span class="w">        </span><span class="nx">e</span><span class="p">.</span><span class="nx">version</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">createdAt</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
