@@ -422,6 +422,7 @@ API-Design
 - "`Microsoft Graph API <https://docs.microsoft.com/en-us/graph/query-parameters#filter-parameter>`__"
 - "`OData protocol <https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part2-url-conventions/odata-v4.0-errata03-os-part2-url-conventions-complete.html#_Toc453752358>`__"
 - "`Google REST API Guidelines <https://google.aip.dev/general>`__"
+- "`Apigee. Web API Design: The Missing Link. Best Practices for Crafting Interfaces that Developers Love. <https://cloud.google.com/files/apigee/apigee-web-api-design-the-missing-link-ebook.pdf>`__" by Google Cloud
 - "`Microservice API Patterns <https://microservice-api-patterns.org/>`__"
 - "`Good Practices for Capability URLs <https://w3ctag.github.io/capability-urls/>`__", W3C Draft
 - "`Web API Design - Crafting Interfaces that Developers Love <https://pages.apigee.com/rs/apigee/images/api-design-ebook-2012-03.pdf>`__"
@@ -439,7 +440,7 @@ API-Design
 - "`Entities aren't resources, resources aren't representations <https://lostechies.com/jimmybogard/2016/05/12/entities-arent-resources-resources-arent-representations/>`__" by Jimmy Bogard
 - "`CRUD, only when you can afford it (Revisited) <https://blogs.msdn.microsoft.com/maarten_mullender/2004/07/23/crud-only-when-you-can-afford-it-revisited/>`__" by Maarten Mullender
 - "`CQRS and DDD patterns are not top-level architectures <https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/eshoponcontainers-cqrs-ddd-microservice#cqrs-and-ddd-patterns-are-not-top-level-architectures>`__"
-
+- "`The API <https://twirl.github.io/The-API-Book/index.ru.html>`__" by Sergey Konstantinov (`Source Code <https://github.com/twirl/The-API-Book>`__, `English <https://twirl.github.io/The-API-Book/index.html>`__)
 
 
 Event Storming
@@ -830,6 +831,7 @@ Donald E. Knuth:
 ---------
 
 - "Software Requirements (Developer Best Practices)" 3rd Edition by Karl Wiegers
+- "`Handbook of Requirements and Business Analysis <https://bertrandmeyer.com/2022/10/28/new-book-requirements-handbook/>`__" by Bertrand Meyer
 - "INCOSE Guide for Writing Requirements" by INCOSE
 - "`Systems engineering handbook. A guide for System Life Cycle Processes and activities. <https://www.incose.org/products-and-publications/se-handbook>`__" by INCOSE
 - "Managing Software Requirements: A Unified Approach" 1st edition by Dean Leffingwell, Don Widrig

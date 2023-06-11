@@ -18,7 +18,7 @@ type MemberId ExportableUint
 type Grade ExportableUint
 type EndorsementCount ExportableUint
 
-type RecognizerState struct {
+type EndorserState struct {
     Id                        uint
     Grade                     uint
     AvailableEndorsementCount uint
@@ -27,7 +27,7 @@ type RecognizerState struct {
     CreatedAt                 time.Time
 }
 
-type Recognizer struct {
+type Endorser struct {
     id                        MemberId
     grade                     Grade
     availableEndorsementCount EndorsementCount
@@ -36,11 +36,11 @@ type Recognizer struct {
     createdAt                 time.Time
 }
 
-func (r Recognizer) Export() RecognizerState {
-    return RecognizerState{
-        r.id.Export(), r.grade.Export(),
-        r.availableEndorsementCount.Export(),
-        r.pendingEndorsementCount.Export(),
-        r.version, r.createdAt,
+func (e Endorser) Export() EndorserState {
+    return EndorserState{
+        e.id.Export(), e.grade.Export(),
+        e.availableEndorsementCount.Export(),
+        e.pendingEndorsementCount.Export(),
+        e.version, e.createdAt,
     }
 }
