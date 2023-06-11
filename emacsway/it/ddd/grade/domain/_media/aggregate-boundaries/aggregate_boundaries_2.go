@@ -41,29 +41,29 @@ type Specialist struct {
     createdAt                time.Time
 }
 
-func (s *Specialist) ReceiveEndorsement(r Recognizer, aId ArtifactId, t time.Time) error {
-    if r.GetGrade() < s.grade {
+func (s *Specialist) ReceiveEndorsement(e Endorser, aId ArtifactId, t time.Time) error {
+    if e.GetGrade() < s.grade {
         return errors.New(
             "it is allowed to receive endorsements only from members with equal or higher grade",
         )
     }
-    if !r.CanCompleteEndorsement() {
+    if !e.CanCompleteEndorsement() {
         return errors.New(
-            "recognizer is not able to complete endorsement",
+            "endorser is not able to complete endorsement",
         )
     }
-    if uint64(r.GetId()) == uint64(s.id) {
+    if uint64(e.GetId()) == uint64(s.id) {
         return errors.New(
-            "recognizer can't endorse himself",
+            "endorser can't endorse himself",
         )
     }
     for _, v := range s.receivedEndorsements {
-        if v.IsEndorsedBy(r.GetId(), aId) {
+        if v.IsEndorsedBy(e.GetId(), aId) {
             return errors.New("this artifact has already been endorsed by the recogniser")
         }
     }
     s.receivedEndorsements = append(s.receivedEndorsements, Endorsement{
-        r.GetId(), r.GetGrade(), r.GetVersion(),
+        e.GetId(), e.GetGrade(), e.GetVersion(),
         s.id, s.grade, s.version,
         aId, t,
     })
@@ -106,9 +106,9 @@ func (s *Specialist) IncreaseVersion() {
 }
 
 type Endorsement struct {
-    recognizerId        MemberId
-    recognizerGrade     Grade
-    recognizerVersion   uint
+    endorserId        MemberId
+    endorserGrade     Grade
+    endorserVersion   uint
     specialistId        MemberId
     specialistGrade     Grade
     specialistVersion   uint
@@ -117,7 +117,7 @@ type Endorsement struct {
 }
 
 func (e Endorsement) IsEndorsedBy(rId MemberId, aId ArtifactId) bool {
-    return e.recognizerId == rId && e.artifactId == aId
+    return e.endorserId == rId && e.artifactId == aId
 }
 
 func (e Endorsement) GetSpecialistGrade() Grade {
@@ -125,9 +125,9 @@ func (e Endorsement) GetSpecialistGrade() Grade {
 }
 
 func (e Endorsement) GetWeight() Weight {
-    if e.recognizerGrade == e.specialistGrade {
+    if e.endorserGrade == e.specialistGrade {
         return PeerWeight
-    } else if e.recognizerGrade > e.specialistGrade {
+    } else if e.endorserGrade > e.specialistGrade {
         return HigherWeight
     }
     return LowerWeight
@@ -140,7 +140,7 @@ type Assignment struct {
     createdAt          time.Time
 }
 
-type Recognizer struct {
+type Endorser struct {
     id                        MemberId
     grade                     Grade
     availableEndorsementCount EndorsementCount
@@ -149,52 +149,52 @@ type Recognizer struct {
     createdAt                 time.Time
 }
 
-func (r Recognizer) GetId() MemberId {
-    return r.id
+func (e Endorser) GetId() MemberId {
+    return e.id
 }
 
-func (r Recognizer) GetGrade() Grade {
-    return r.grade
+func (e Endorser) GetGrade() Grade {
+    return e.grade
 }
 
-func (r Recognizer) GetVersion() uint {
-    return r.version
+func (e Endorser) GetVersion() uint {
+    return e.version
 }
 
-func (r Recognizer) canReserveEndorsement() bool {
-    return r.availableEndorsementCount > r.pendingEndorsementCount
+func (e Endorser) canReserveEndorsement() bool {
+    return e.availableEndorsementCount > e.pendingEndorsementCount
 }
 
-func (r Recognizer) CanCompleteEndorsement() bool {
-    return r.pendingEndorsementCount > 0 && r.availableEndorsementCount >= r.pendingEndorsementCount
+func (e Endorser) CanCompleteEndorsement() bool {
+    return e.pendingEndorsementCount > 0 && e.availableEndorsementCount >= e.pendingEndorsementCount
 }
 
-func (r *Recognizer) ReserveEndorsement() error {
-    if !r.canReserveEndorsement() {
+func (e *Endorser) ReserveEndorsement() error {
+    if !e.canReserveEndorsement() {
         return errors.New("no endorsement can be reserved")
     }
-    r.pendingEndorsementCount += 1
+    e.pendingEndorsementCount += 1
     return nil
 }
 
-func (r *Recognizer) ReleaseEndorsementReservation() {
-    r.pendingEndorsementCount -= 1
+func (e *Endorser) ReleaseEndorsementReservation() {
+    e.pendingEndorsementCount -= 1
 }
 
-func (r *Recognizer) CompleteEndorsement() error {
-    if r.availableEndorsementCount == 0 {
+func (e *Endorser) CompleteEndorsement() error {
+    if e.availableEndorsementCount == 0 {
         return errors.New("no endorsement is available")
     }
-    if r.pendingEndorsementCount == 0 {
+    if e.pendingEndorsementCount == 0 {
         return errors.New("there is no endorsement reservation")
     }
-    r.availableEndorsementCount -= 1
-    r.pendingEndorsementCount -= 1
+    e.availableEndorsementCount -= 1
+    e.pendingEndorsementCount -= 1
     return nil
 }
 
-func (r *Recognizer) IncreaseVersion() {
-    r.version += 1
+func (e *Endorser) IncreaseVersion() {
+    e.version += 1
 }
 
 type Artifact struct {

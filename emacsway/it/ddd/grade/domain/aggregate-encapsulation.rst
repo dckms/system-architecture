@@ -64,16 +64,16 @@ Walker представляет собою модификацию паттерн
 .. code-block:: go
 
     func (e Endorsement) Accept(walker interfaces.Walker) {
-        walker.SetField("recognizerId")
-        walker.WalkWalkable(e.recognizerId)
-        walker.SetField("recognizerGrade")
-        walker.WalkWalkable(e.recognizerGrade)
+        walker.SetField("endorserId")
+        walker.WalkWalkable(e.endorserId)
+        walker.SetField("endorserGrade")
+        walker.WalkWalkable(e.endorserGrade)
         // ...
     }
 
 .. code-block:: go
 
-    func (id RecognizerId) Accept(walker interfaces.Walker) {
+    func (id EndorserId) Accept(walker interfaces.Walker) {
         walker.WalkUint64(id.Value())
     }
 
@@ -238,7 +238,7 @@ Exporter
 Немного смущает смешивание парадигм FP и OOP для ValueObject.
 Хотя ValueObject и остается неизменяемым, но сам факт того, что функционально чистый объект вызывает мутирующие методы другого объекта, вызывает небольшое смущение.
 Возникает вопрос - почему функционально чистый объект не может просто взять и вернуть другой функционально чистый объект?
-Если бы Golang поддерживать Generics для методов, тогда могло бы получиться что-то похожее на ``Recognizer.Export[T](exporterFactory function(attr1, attr2, attr3) T) T``.
+Если бы Golang поддерживать Generics для методов, тогда могло бы получиться что-то похожее на ``Endorser.Export[T](exporterFactory function(attr1, attr2, attr3) T) T``.
 Однако, если продолжить развивать эту мысль, то мы обнаружим, что таким образом пытаемся решить проблему обхода инкапсуляции, которая вызвана именно применением OOP.
 
 Как говорил Michael Feathers:
@@ -266,7 +266,7 @@ Exporter
 2. Returning structure
 ----------------------
 
-Возникает целесообразность облегчить метод экспортирования, придав ему сигнатуру ``Recognizer.Export() RecognizerState`` вместо ``Recognizer.ExportTo(ex RecognizerExporter)``.
+Возникает целесообразность облегчить метод экспортирования, придав ему сигнатуру ``Endorser.Export() EndorserState`` вместо ``Endorser.ExportTo(ex EndorserExporter)``.
 Получится что-то типа DTO с тем лишь отличием, что он пересекает не сетевые границы, а границы инкапсуляции Агрегата.
 В Golang этот вариант выглядит чуть более привлекательным, хотя и менее OOP, но зато не контрастирует с FP принципами Value Object.
 
