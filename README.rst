@@ -374,6 +374,16 @@ markdown файлов на Github Pаges обрабатываются Jekyll.
 - "`coddx-alpha <https://github.com/coddx-hq/coddx-alpha>`__" - Todo Kanban Board manages tasks and save them as TODO.md - a simple plain text file.
 - "`Orgzly <http://www.orgzly.com/>`__" - Outliner for notes and tasks. Notebooks in plain text (`Source Code <https://github.com/orgzly>`__).
 - "`Joplin <https://joplinapp.org/>`__" - an open source note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS (`Source Code <https://github.com/laurent22/joplin/>`__).
+- "`TaskJuggler <https://taskjuggler.org/>`__" is a modern and powerful, Free and Open Source Software project management tool. Its new approach to project planning and tracking is more flexible and superior to the commonly used Gantt chart editing tools.
+
+   - `source code <https://github.com/taskjuggler/TaskJuggler>`__
+   - `импортер из Jira <https://github.com/melexis/jira-juggler>`__
+   - документация:
+
+      - https://taskjuggler.org/download/TaskJuggler-Workshop.pdf
+      - https://taskjuggler.org/tj3/manual/index.html
+
+   - `примеры <https://github.com/taskjuggler/TaskJuggler/tree/master/examples>`__
 
 
 Markdown
