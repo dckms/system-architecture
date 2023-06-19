@@ -22,7 +22,7 @@ type MemberId ExportableUint
 type Grade ExportableUint
 type EndorsementCount ExportableUint
 
-type RecognizerExporterSetter interface {
+type EndorserExporterSetter interface {
     SetId(MemberId)
     SetGrade(Grade)
     SetAvailableEndorsementCount(EndorsementCount)
@@ -37,7 +37,7 @@ func (e *UintExporter) SetState(value uint) {
     *e = UintExporter(value)
 }
 
-type Recognizer struct {
+type Endorser struct {
     id                        MemberId
     grade                     Grade
     availableEndorsementCount EndorsementCount
@@ -46,16 +46,16 @@ type Recognizer struct {
     createdAt                 time.Time
 }
 
-func (r Recognizer) Export(ex RecognizerExporterSetter) {
-    ex.SetId(r.id)
-    ex.SetGrade(r.grade)
-    ex.SetAvailableEndorsementCount(r.availableEndorsementCount)
-    ex.SetPendingEndorsementCount(r.pendingEndorsementCount)
-    ex.SetVersion(r.version)
-    ex.SetCreatedAt(r.createdAt)
+func (e Endorser) Export(ex EndorserExporterSetter) {
+    ex.SetId(e.id)
+    ex.SetGrade(e.grade)
+    ex.SetAvailableEndorsementCount(e.availableEndorsementCount)
+    ex.SetPendingEndorsementCount(e.pendingEndorsementCount)
+    ex.SetVersion(e.version)
+    ex.SetCreatedAt(e.createdAt)
 }
 
-type RecognizerExporter struct {
+type EndorserExporter struct {
     Id                        UintExporter
     Grade                     UintExporter
     AvailableEndorsementCount UintExporter
@@ -64,26 +64,26 @@ type RecognizerExporter struct {
     CreatedAt                 time.Time
 }
 
-func (ex *RecognizerExporter) SetId(val MemberId) {
+func (ex *EndorserExporter) SetId(val MemberId) {
     val.Export(&ex.Id)
 }
 
-func (ex *RecognizerExporter) SetGrade(val Grade) {
+func (ex *EndorserExporter) SetGrade(val Grade) {
     val.Export(&ex.Grade)
 }
 
-func (ex *RecognizerExporter) SetAvailableEndorsementCount(val EndorsementCount) {
+func (ex *EndorserExporter) SetAvailableEndorsementCount(val EndorsementCount) {
     val.Export(&ex.AvailableEndorsementCount)
 }
 
-func (ex *RecognizerExporter) SetPendingEndorsementCount(val EndorsementCount) {
+func (ex *EndorserExporter) SetPendingEndorsementCount(val EndorsementCount) {
     val.Export(&ex.PendingEndorsementCount)
 }
 
-func (ex *RecognizerExporter) SetVersion(val uint) {
+func (ex *EndorserExporter) SetVersion(val uint) {
     ex.Version = val
 }
 
-func (ex *RecognizerExporter) SetCreatedAt(val time.Time) {
+func (ex *EndorserExporter) SetCreatedAt(val time.Time) {
     ex.CreatedAt = val
 }

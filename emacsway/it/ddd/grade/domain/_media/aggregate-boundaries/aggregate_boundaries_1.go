@@ -87,7 +87,7 @@ type Assignment struct {
     createdAt           time.Time
 }
 
-type Recognizer struct {
+type Endorser struct {
     id                        MemberId
     grade                     Grade
     availableEndorsementCount AvailableEndorsementCount
@@ -95,45 +95,45 @@ type Recognizer struct {
     createdAt                 time.Time
 }
 
-func (r Recognizer) Endorse(s Specialist, aDesc ArtifactDescription, t time.Time) (Endorsement, error) {
-    if r.grade < s.grade {
+func (e Endorser) Endorse(s Specialist, aDesc ArtifactDescription, t time.Time) (Endorsement, error) {
+    if e.grade < s.grade {
         return Endorsement{}, errors.New(
             "it is allowed to endorse only members with equal or lower grade",
         )
     }
-    if r.availableEndorsementCount == 0 {
+    if e.availableEndorsementCount == 0 {
         return Endorsement{}, errors.New(
             "you have reached the limit of available recommendations this year",
         )
     }
-    if uint64(r.id) == uint64(s.GetId()) {
+    if uint64(e.id) == uint64(s.GetId()) {
         return Endorsement{}, errors.New(
-            "recognizer can't endorse himself",
+            "endorser can't endorse himself",
         )
     }
     return Endorsement{
-        r.id, r.grade, r.version,
+        e.id, e.grade, e.version,
         s.id, s.grade, s.GetVersion(),
         aDesc, t,
     }, nil
 }
 
-func (r *Recognizer) DecreaseAvailableEndorsementCount() error {
-    if r.availableEndorsementCount == 0 {
+func (e *Endorser) DecreaseAvailableEndorsementCount() error {
+    if e.availableEndorsementCount == 0 {
         return errors.New("no endorsement is available")
     }
-    r.availableEndorsementCount -= 1
+    e.availableEndorsementCount -= 1
     return nil
 }
 
-func (r *Recognizer) IncreaseVersion() {
-    r.version += 1
+func (e *Endorser) IncreaseVersion() {
+    e.version += 1
 }
 
 type Endorsement struct {
-    recognizerId        MemberId
-    recognizerGrade     Grade
-    recognizerVersion   uint
+    endorserId        MemberId
+    endorserGrade     Grade
+    endorserVersion   uint
     specialistId        MemberId
     specialistGrade     Grade
     specialistVersion   uint
