@@ -131,6 +131,8 @@ Exporter
 1. Accepting interface
 ----------------------
 
+Этот подход демонстрируется в `Golang DDD ES/CQRS Reference Application <https://github.com/EventStore/training-advanced-go/blob/9cc2b5a4f3484dc643757c88480c4b6e371149fd/domain/doctorday/day.go#L225>`__ от контрибьюторов EventStore.
+
 Ссылки по теме:
 
 - "`More on getters and setters <https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html>`__" by Allen Holub
