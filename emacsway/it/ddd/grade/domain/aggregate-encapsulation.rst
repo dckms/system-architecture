@@ -317,6 +317,8 @@ Exporter
 
     -- "Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin, перевод ООО Издательство "Питер"
 
+И такой вариант демонстрирует Nick Tune `здесь <https://github.com/elbandit/PPPDDD/blob/4d9d864fa6d9dfc0bad323ae21e949be1808b460/21%20-%20Repositories/DDDPPP.Chap21.EFExample/DDDPPP.Chap21.EFExample.Application/Model/Auction/Auction.cs#L48>`__.
+
 .. literalinclude:: _media/aggregate-encapsulation/exporter_2.go
    :language: go
 
