@@ -1000,6 +1000,12 @@ Code Smell catalogs
 
 - `Awesome lists <https://github.com/sindresorhus/awesome>`__
 - `Awesome Domain-Driven Design <https://github.com/heynickc/awesome-ddd>`__
+
+- `Awesome Go Education: DDD <https://mehdihadeli.github.io/awesome-go-education/ddd/>`__
+- `Awesome Go Education: CQRS <https://mehdihadeli.github.io/awesome-go-education/cqrs/>`__
+- `Awesome Go Education: Event Sourcing <https://mehdihadeli.github.io/awesome-go-education/event-sourcing/>`__
+- `Awesome Go Education: Clean Architecture <https://mehdihadeli.github.io/awesome-go-education/clean-architecture/>`__
+
 - `Domain Driven Design in Python, Ruby and other dynamic languages resources <https://github.com/valignatev/ddd-dynamic>`__
 - `Awesome Microservices <https://github.com/mfornos/awesome-microservices>`__
 - `Solution Architecture links, articles, books, video lessons, etc. <https://github.com/unlight/solution-architecture>`__
@@ -1052,6 +1058,8 @@ Code Smell catalogs
 - `Goa <https://goa.design/>`__ provides a holistic approach for developing remote APIs and microservices in Go.
 - `Simple CQRS example <https://github.com/gregoryyoung/m-r>`__ by Greg Young (приложение так же реализует Event Sourcing)
 - `Greg Young's Simple CQRS in F# <https://github.com/thinkbeforecoding/m-r>`__ by Jérémie Chassaing
+
+- `Golang DDD ES/CQRS Reference Application <https://github.com/EventStore/training-advanced-go>`__ by EventStore contributors
 - `Complete serverless application to show how to apply DDD, Clean Architecture, and CQRS by practical refactoring of a Go project <https://github.com/ThreeDotsLabs/wild-workouts-go-ddd-example>`__ (`more info <https://threedots.tech/post/serverless-cloud-run-firebase-modern-go-application/>`__) by Robert Laszczak
 - `Clean Monolith Shop <https://github.com/ThreeDotsLabs/monolith-microservice-shop>`__ by Robert Laszczak - Source code for article "`Why using Microservices or Monolith can be just a detail? <https://threedots.tech/post/microservices-or-monolith-its-detail/>`__"
 - `go-iddd - showcase project for implementing DDD in Go <https://github.com/AntonStoeckl/go-iddd>`__ by Anton Stöckl (see more info `here <https://medium.com/@TonyBologni/implementing-domain-driven-design-and-hexagonal-architecture-with-go-1-292938c0a4d4>`__ and `here <https://medium.com/@TonyBologni/implementing-domain-driven-design-and-hexagonal-architecture-with-go-2-efd432505554>`__).
@@ -1059,6 +1067,7 @@ Code Smell catalogs
 - `ddd-sample-in-golang <https://github.com/agiledragon/ddd-sample-in-golang>`__ by Zhang Xiaolong.
 - `go-distributed-sys <https://github.com/shijuvar/go-distributed-sys>`__ - Guidance for building distributed systems and Microservices in Go. "`Building Event-Driven Distributed Systems in Go with gRPC, NATS JetStream and CockroachDB <https://shijuvar.medium.com/building-event-driven-distributed-systems-in-go-with-grpc-nats-jetstream-and-cockroachdb-c4b899c8636d>`__" by Shiju Varghese
 - `Real-time Map <https://github.com/asynkron/realtimemap-go>`__ displays real-time positions of public transport vehicles in Helsinki. It's a showcase for `Proto.Actor <https://proto.actor/>`__ - an ultra-fast distributed actors solution for Go, C#, and Java/Kotlin. See also `realtimemap-dotnet <https://github.com/asynkron/realtimemap-dotnet>`__ implementation in .NET.
+
 - `Demo taxi system, using eventsourcing library <https://github.com/johnbywater/es-example-taxi-demo>`__ by John Bywater
 - `Example "bank accounts" application using the Python eventsourcing library <https://github.com/johnbywater/es-example-bank-accounts>`__ by John Bywater
 - `Example "cargo shipping" application using the Python eventsourcing library <https://github.com/johnbywater/es-example-cargo-shipping>`__ by John Bywater

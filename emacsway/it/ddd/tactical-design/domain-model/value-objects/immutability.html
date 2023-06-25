@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Domain Events &#8212; System Architecture</title>
+    <title>Immutability &#8212; System Architecture</title>
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/alabaster.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" type="text/css" />
@@ -18,8 +18,8 @@
     <script src="../../../../../../_static/translations.js"></script>
     <link rel="index" title="Алфавитный указатель" href="../../../../../../genindex.html" />
     <link rel="search" title="Поиск" href="../../../../../../search.html" />
-    <link rel="next" title="Value Objects" href="../value-objects/index.html" />
-    <link rel="prev" title="Domain Model" href="../index.html" />
+    <link rel="next" title="Golang DDD Reference Application &#34;Grade&#34;" href="../../../grade/index.html" />
+    <link rel="prev" title="Value Objects" href="../../../../../../trunk/it/ddd/tactical-design/domain-model/value-objects/index.html" />
     
    
   <link rel="stylesheet" href="../../../../../../_static/custom.css" type="text/css" />
@@ -45,10 +45,10 @@
     <ul>
         <li>
           &larr;
-          <a href="../index.html" title="Previous document">Domain Model</a>
+          <a href="../../../../../../trunk/it/ddd/tactical-design/domain-model/value-objects/index.html" title="Previous document">Value Objects</a>
         </li>
         <li>
-          <a href="../value-objects/index.html" title="Next document">Value Objects</a>
+          <a href="../../../grade/index.html" title="Next document">Golang DDD Reference Application &quot;Grade&quot;</a>
           &rarr;
         </li>
     </ul>
@@ -59,14 +59,32 @@
           <div class="body" role="main">
             
     
-  <section id="domain-events">
-<h1>Domain Events<a class="headerlink" href="#domain-events" title="Permalink to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Оглавление:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="domain-events-in-ddd.html">Domain Events in DDD</a></li>
-</ul>
-</div>
+  <section id="immutability">
+<h1>Immutability<a class="headerlink" href="#immutability" title="Permalink to this heading">¶</a></h1>
+<section id="id1">
+<h2>Что делать, если ЯП не поддерживает неизменяемость?<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<p>Когда язык программирования не поддерживает неизменяемость, то странствующий Value Object копируется:</p>
+<blockquote>
+<div><p>💬 В принципе два объекта Человек могут и не нуждаться в собственных экземплярах объекта-имени.
+Один и тот же объект Имя может совместно использоваться двумя объектами Человек (в каждом будет содержаться указатель на один и тот же экземпляр Имени ), и при этом никаких изменений в их поведении или способе идентификации не потребуется.
+То есть, они будут работать правильно, пока у одного человека не изменится имя.
+Тогда так же изменится имя и другого человека!
+Чтобы этого избежать и сделать совместное использование объекта безопасным, его нужно сделать неизменяемым запрещенным для любых изменений иначе как путем полной замены.</p>
+<p>Та же проблема возникает, когда объект передает один из своих атрибутов другому объекту в качестве аргумента или возвращаемого значения.
+Со странствующим объектом может случиться все, что угодно, за то время, пока он не находится под контролем владельца.
+3НАЧЕНИЕ (VALUE) может измениться таким образом, что будет поврежден и объект-владелец путем искажения его инвариантов.
+Чтобы избежать этого, передаваемый объект делают неизменяемым или же передают его КОПИЮ.</p>
+<p>In fact, the two Person objects might not need their own name instances.
+The same Name object could be shared between the two Person objects (each with a pointer to the same name instance) with no change in their behavior or identity.
+That is, their behavior will be correct until some change is made to the name of one person. Then the other person's name would change also!
+To protect against this, in order for an object to be shared safely, it must be immutable: it cannot be changed except by full replacement.</p>
+<p>The same issues arise when an object passes one of its attributes to another object as an argument or return value.
+Anything could happen to the wandering object while it is out of control of its owner.
+The VALUE could be changed in a way that corrupts the owner, by violating the owner's invariants.
+This problem is avoided either by making the passed object immutable, or by passing a copy.</p>
+<p class="attribution">—&quot;Domain-Driven Design: Tackling Complexity in the Heart of Software&quot; by Eric Evans, перевод В.Л. Бродового</p>
+</div></blockquote>
+</section>
 </section>
 
 
@@ -82,10 +100,10 @@
     <ul>
         <li>
           &larr;
-          <a href="../index.html" title="Previous document">Domain Model</a>
+          <a href="../../../../../../trunk/it/ddd/tactical-design/domain-model/value-objects/index.html" title="Previous document">Value Objects</a>
         </li>
         <li>
-          <a href="../value-objects/index.html" title="Next document">Value Objects</a>
+          <a href="../../../grade/index.html" title="Next document">Golang DDD Reference Application &quot;Grade&quot;</a>
           &rarr;
         </li>
     </ul>
@@ -116,14 +134,14 @@
 
 <h3>Навигация</h3>
 <p class="caption" role="heading"><span class="caption-text">Общее пространство:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../trunk/it/index.html">IT</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../../trunk/it/index.html">IT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../trunk/index.html">Общее пространство</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../../trunk/index.html">Общее пространство</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Авторские пространства:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../../../../index.html">Пространство Emacsway</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Пространство Emacsway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Приватное пространствo:</span></p>
@@ -146,13 +164,13 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../../../../../index.html">Documentation overview</a><ul>
-  <li><a href="../../../../../index.html">Пространство Emacsway</a></li>
-  <li><a href="../../../../index.html">IT</a></li>
-  <li><a href="../../../index.html">DDD</a></li>
-  <li><a href="../../index.html">Tactical design</a></li>
-  <li><a href="../index.html">Domain Model</a></li><ul>
-      <li>Previous: <a href="../index.html" title="предыдущая глава">Domain Model</a></li>
-      <li>Next: <a href="../value-objects/index.html" title="следующая глава">Value Objects</a></li></ul>
+  <li><a href="../../../../../../trunk/it/index.html">IT</a></li>
+  <li><a href="../../../../../../trunk/it/ddd/index.html">DDD</a></li>
+  <li><a href="../../../../../../trunk/it/ddd/tactical-design/index.html">Tactical design</a></li>
+  <li><a href="../../../../../../trunk/it/ddd/tactical-design/domain-model/index.html">Domain Model</a></li>
+  <li><a href="../../../../../../trunk/it/ddd/tactical-design/domain-model/value-objects/index.html">Value Objects</a></li><ul>
+      <li>Previous: <a href="../../../../../../trunk/it/ddd/tactical-design/domain-model/value-objects/index.html" title="предыдущая глава">Value Objects</a></li>
+      <li>Next: <a href="../../../grade/index.html" title="следующая глава">Golang DDD Reference Application &quot;Grade&quot;</a></li></ul>
   </ul></li>
 </ul>
 </div>
@@ -187,7 +205,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="../../../../../../_sources/emacsway/it/ddd/tactical-design/domain-model/domain-events/index.rst.txt"
+      <a href="../../../../../../_sources/emacsway/it/ddd/tactical-design/domain-model/value-objects/immutability.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

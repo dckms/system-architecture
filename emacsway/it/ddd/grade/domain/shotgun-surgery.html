@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Domain Model &#8212; System Architecture</title>
+    <title>Shotgun Surgery &#8212; System Architecture</title>
     <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/alabaster.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" type="text/css" />
@@ -18,8 +18,8 @@
     <script src="../../../../../_static/translations.js"></script>
     <link rel="index" title="Алфавитный указатель" href="../../../../../genindex.html" />
     <link rel="search" title="Поиск" href="../../../../../search.html" />
-    <link rel="next" title="Domain Events" href="domain-events/index.html" />
-    <link rel="prev" title="CQRS" href="../cqrs/index.html" />
+    <link rel="next" title="Использовать ли в проекте CanExecute pattern?" href="why-no-can-execute.html" />
+    <link rel="prev" title="Файловая структура Доменной модели" href="file-structure.html" />
     
    
   <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
@@ -45,10 +45,10 @@
     <ul>
         <li>
           &larr;
-          <a href="../cqrs/index.html" title="Previous document">CQRS</a>
+          <a href="file-structure.html" title="Previous document">Файловая структура Доменной модели</a>
         </li>
         <li>
-          <a href="domain-events/index.html" title="Next document">Domain Events</a>
+          <a href="why-no-can-execute.html" title="Next document">Использовать ли в проекте CanExecute pattern?</a>
           &rarr;
         </li>
     </ul>
@@ -59,15 +59,19 @@
           <div class="body" role="main">
             
     
-  <section id="domain-model">
-<h1>Domain Model<a class="headerlink" href="#domain-model" title="Permalink to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Оглавление:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="domain-events/index.html">Domain Events</a></li>
-<li class="toctree-l1"><a class="reference internal" href="value-objects/index.html">Value Objects</a></li>
-</ul>
-</div>
+  <section id="shotgun-surgery">
+<h1>Shotgun Surgery<a class="headerlink" href="#shotgun-surgery" title="Permalink to this heading">¶</a></h1>
+<p>Может показаться, что используя Raw-SQL мы обретаем классифицированный Code Smell, известный как Shotgun Surgery (Разлет Дроби), ибо добавление одного поля в Сущность требует правки многих файлов.
+Есть два способа решить эту проблему (и снизить Coupling), о которых писал Martin Fowler в главе &quot;Metadata Mapping&quot; книги &quot;Patterns of Enterprise Application Architecture&quot;: &quot;reflective program&quot; и &quot;code generation&quot;, причем, сам он лично предпочитает второй вариант:</p>
+<blockquote>
+<div><p>Generated code is more explicit so you can see what's going on in the debugger;
+as a result I usually prefer generation to reflection,
+and I think it's usually easier for less sophisticated developers
+(which I guess makes me unsophisticated).</p>
+<p class="attribution">—&quot;Patterns of Enterprise Application Architecture&quot; by Martin Fowler, David Rice, Matthew Foemmel, Edward Hieatt, Robert Mee, Randy Stafford</p>
+</div></blockquote>
+<p>Подавляющее большинство ORM использует &quot;reflective program&quot;, в то время, как в Golang-сообществе традиционно широко применяется в практике &quot;code generation&quot;.</p>
+<p>В данном проекте, на определенном этапе развития, появится инструмент кодогенерации по образу <a class="reference external" href="https://github.com/kyleconroy/sqlc">sqlc</a>.</p>
 </section>
 
 
@@ -83,10 +87,10 @@
     <ul>
         <li>
           &larr;
-          <a href="../cqrs/index.html" title="Previous document">CQRS</a>
+          <a href="file-structure.html" title="Previous document">Файловая структура Доменной модели</a>
         </li>
         <li>
-          <a href="domain-events/index.html" title="Next document">Domain Events</a>
+          <a href="why-no-can-execute.html" title="Next document">Использовать ли в проекте CanExecute pattern?</a>
           &rarr;
         </li>
     </ul>
@@ -117,14 +121,14 @@
 
 <h3>Навигация</h3>
 <p class="caption" role="heading"><span class="caption-text">Общее пространство:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../trunk/it/index.html">IT</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/it/index.html">IT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../trunk/index.html">Общее пространство</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/index.html">Общее пространство</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Авторские пространства:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Пространство Emacsway</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Пространство Emacsway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Приватное пространствo:</span></p>
@@ -147,12 +151,12 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../../../../index.html">Documentation overview</a><ul>
-  <li><a href="../../../../index.html">Пространство Emacsway</a></li>
-  <li><a href="../../../index.html">IT</a></li>
-  <li><a href="../../index.html">DDD</a></li>
-  <li><a href="../index.html">Tactical design</a></li><ul>
-      <li>Previous: <a href="../cqrs/index.html" title="предыдущая глава">CQRS</a></li>
-      <li>Next: <a href="domain-events/index.html" title="следующая глава">Domain Events</a></li></ul>
+  <li><a href="../../../../../trunk/it/index.html">IT</a></li>
+  <li><a href="../../../../../trunk/it/ddd/index.html">DDD</a></li>
+  <li><a href="../index.html">Golang DDD Reference Application &quot;Grade&quot;</a></li>
+  <li><a href="index.html">Domain Layer</a></li><ul>
+      <li>Previous: <a href="file-structure.html" title="предыдущая глава">Файловая структура Доменной модели</a></li>
+      <li>Next: <a href="why-no-can-execute.html" title="следующая глава">Использовать ли в проекте CanExecute pattern?</a></li></ul>
   </ul></li>
 </ul>
 </div>
@@ -187,7 +191,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="../../../../../_sources/emacsway/it/ddd/tactical-design/domain-model/index.rst.txt"
+      <a href="../../../../../_sources/emacsway/it/ddd/grade/domain/shotgun-surgery.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

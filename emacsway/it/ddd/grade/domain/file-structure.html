@@ -18,7 +18,7 @@
     <script src="../../../../../_static/translations.js"></script>
     <link rel="index" title="Алфавитный указатель" href="../../../../../genindex.html" />
     <link rel="search" title="Поиск" href="../../../../../search.html" />
-    <link rel="next" title="Использовать ли в проекте CanExecute pattern?" href="why-no-can-execute.html" />
+    <link rel="next" title="Shotgun Surgery" href="shotgun-surgery.html" />
     <link rel="prev" title="Event Sourcing" href="event-sourcing.html" />
     
    
@@ -50,7 +50,7 @@
           <a href="event-sourcing.html" title="Previous document">Event Sourcing</a>
         </li>
         <li>
-          <a href="why-no-can-execute.html" title="Next document">Использовать ли в проекте CanExecute pattern?</a>
+          <a href="shotgun-surgery.html" title="Next document">Shotgun Surgery</a>
           &rarr;
         </li>
     </ul>
@@ -165,7 +165,16 @@ This arrangement makes it practical to enforce all invariants for objects in the
 <p>Альтернативным вариантом является размещение Доменных Событий <a class="reference external" href="https://github.com/dotnet-architecture/eShopOnContainers/tree/ce50bb8a2f1fa30e419d9a6863d19eb9999e9ef8/src/Services/Ordering/Ordering.Domain/Events">отдельно от Агрегатов</a>.</p>
 <p>Но удобней информация воспринимается тогда, когда следствие расположено ближе к своей причине.</p>
 <p>При этом, поскольку Доменные События выражают взаимоотношения между Агрегатами, удобно иметь возможность рассматривать их <a class="reference external" href="https://github.com/VaughnVernon/IDDD_Samples_NET/blob/master/iddd_agilepm/Domain.Model/Products/ProductDiscussionInitiated.cs">не вдаваясь</a> в детали внутреннего устройства Агрегатов.</p>
-<p>Точно так же Интеграционные (Публичные Доменные) События, выражающие взаимоотношения между Ограниченными Контекстами, расположены в единой директории порождающего их Ограниченного Контекста.</p>
+<p>Точно так же, как Интеграционные (Публичные Доменные) События, выражающие взаимоотношения между Ограниченными Контекстами, расположены в единой директории порождающего их Ограниченного Контекста.</p>
+<p>Однако, если Доменные События вынести в отдельную поддиректорию внутри директории Агрегата, то возникает циклический импорт, ведь Доменные События могут содержать Объекты-Значения, объявленные в том же самом пакете, где они инстанционируются.
+Чтобы предотвратить циклический импорт, Объекты-Значения так же нужно вынести поддиректорию.
+Это было бы логично еще и потому, что Сущности/Агрегаты, Объекты-Значения и Доменные События служат разным целям:</p>
+<ol class="arabic simple">
+<li><p>Сущности/Агрегаты - моделируют предметную область.</p></li>
+<li><p>Объекты-Значения - описывают характеристики предметов (элементов предметной области), например, возраст - это не предмет.</p></li>
+<li><p>Доменные События - фиксируют факт изменения состояния предметов.</p></li>
+</ol>
+<p>Поддиректории <code class="docutils literal notranslate"><span class="pre">events``и</span> <span class="pre">``values</span></code> имеют множественное число, что позволяет предотвратить коллизии с названиями директорий Сущностей Агрегата, которые именуются в единственном числе.</p>
 </section>
 </section>
 
@@ -189,7 +198,7 @@ This arrangement makes it practical to enforce all invariants for objects in the
           <a href="event-sourcing.html" title="Previous document">Event Sourcing</a>
         </li>
         <li>
-          <a href="why-no-can-execute.html" title="Next document">Использовать ли в проекте CanExecute pattern?</a>
+          <a href="shotgun-surgery.html" title="Next document">Shotgun Surgery</a>
           &rarr;
         </li>
     </ul>
@@ -255,7 +264,7 @@ This arrangement makes it practical to enforce all invariants for objects in the
   <li><a href="../index.html">Golang DDD Reference Application &quot;Grade&quot;</a></li>
   <li><a href="index.html">Domain Layer</a></li><ul>
       <li>Previous: <a href="event-sourcing.html" title="предыдущая глава">Event Sourcing</a></li>
-      <li>Next: <a href="why-no-can-execute.html" title="следующая глава">Использовать ли в проекте CanExecute pattern?</a></li></ul>
+      <li>Next: <a href="shotgun-surgery.html" title="следующая глава">Shotgun Surgery</a></li></ul>
   </ul></li>
 </ul>
 </div>

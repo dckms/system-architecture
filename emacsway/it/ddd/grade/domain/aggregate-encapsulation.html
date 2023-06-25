@@ -430,6 +430,9 @@ Upon completion, the UseCaseInteractor gathers data from the Entities and constr
 The OutputData is then passed through the OutputBoundary interface to the Presenter.&quot;</p>
 <p class="attribution">—&quot;Clean Architecture: A Craftsman's Guide to Software Structure and Design&quot; by Robert C. Martin, перевод ООО Издательство &quot;Питер&quot;</p>
 </div></blockquote>
+<p>Этот подход демонстрируется в <a class="reference external" href="https://github.com/EventStore/training-advanced-go/blob/9cc2b5a4f3484dc643757c88480c4b6e371149fd/domain/doctorday/day.go#L225">Golang DDD ES/CQRS Reference Application</a> от контрибьюторов EventStore.</p>
+<p>И такой же подход демонстрирует Nick Tune в <a class="reference external" href="https://github.com/elbandit/PPPDDD/blob/4d9d864fa6d9dfc0bad323ae21e949be1808b460/21%20-%20Repositories/DDDPPP.Chap21.EFExample/DDDPPP.Chap21.EFExample.Application/Model/Auction/Auction.cs#L48">демонстрационном коде</a> к своей книге.
+Причем, применяет он его даже <a class="reference external" href="https://github.com/elbandit/PPPDDD/blob/4d9d864fa6d9dfc0bad323ae21e949be1808b460/21%20-%20Repositories/DDDPPP.Chap21.EFExample/DDDPPP.Chap21.EFExample.Application/Model/Auction/Money.cs#L58">для Value Object</a>.</p>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nx">grade_2</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
