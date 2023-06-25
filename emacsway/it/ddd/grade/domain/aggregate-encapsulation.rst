@@ -131,8 +131,6 @@ Exporter
 1. Accepting interface
 ----------------------
 
-Этот подход демонстрируется в `Golang DDD ES/CQRS Reference Application <https://github.com/EventStore/training-advanced-go/blob/9cc2b5a4f3484dc643757c88480c4b6e371149fd/domain/doctorday/day.go#L225>`__ от контрибьюторов EventStore.
-
 Ссылки по теме:
 
 - "`More on getters and setters <https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html>`__" by Allen Holub
@@ -317,7 +315,9 @@ Exporter
 
     -- "Clean Architecture: A Craftsman's Guide to Software Structure and Design" by Robert C. Martin, перевод ООО Издательство "Питер"
 
-И такой вариант демонстрирует Nick Tune `здесь <https://github.com/elbandit/PPPDDD/blob/4d9d864fa6d9dfc0bad323ae21e949be1808b460/21%20-%20Repositories/DDDPPP.Chap21.EFExample/DDDPPP.Chap21.EFExample.Application/Model/Auction/Auction.cs#L48>`__.
+Этот подход демонстрируется в `Golang DDD ES/CQRS Reference Application <https://github.com/EventStore/training-advanced-go/blob/9cc2b5a4f3484dc643757c88480c4b6e371149fd/domain/doctorday/day.go#L225>`__ от контрибьюторов EventStore.
+
+И такой же подход демонстрирует Nick Tune в `демонстрационном коде <https://github.com/elbandit/PPPDDD/blob/4d9d864fa6d9dfc0bad323ae21e949be1808b460/21%20-%20Repositories/DDDPPP.Chap21.EFExample/DDDPPP.Chap21.EFExample.Application/Model/Auction/Auction.cs#L48>`__ к своей книге.
 
 .. literalinclude:: _media/aggregate-encapsulation/exporter_2.go
    :language: go
