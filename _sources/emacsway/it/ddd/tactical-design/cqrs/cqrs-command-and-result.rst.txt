@@ -453,7 +453,7 @@ Referential Transparency означает, что вызов функции мо
 
     ORMs are complex because they have to handle a bi-directional mapping. A uni-directional problem is much easier to work with, particularly if your needs aren't too complex and you are comfortable with SQL. This is one of the arguments for CQRS.
 
-    -- "`Orm Hate <https://martinfowler.com/bliki/OrmHate.html>` by Martin Fowler
+    -- "`Orm Hate <https://martinfowler.com/bliki/OrmHate.html>`__" by Martin Fowler
 
 Это существенно облегчает создание сложных приложений, используя Task Based UI, позволяет легко организовать репликацию и кэширование, устранить задержки.
 Подробнее эти вопросы хорошо раскрывает Udi Dahan в монументальной статье "`Clarified CQRS <http://udidahan.com/2009/12/09/clarified-cqrs/>`__".
