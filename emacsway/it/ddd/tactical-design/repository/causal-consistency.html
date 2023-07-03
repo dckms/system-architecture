@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Repository and Causal Consistency &#8212; System Architecture</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/alabaster.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" type="text/css" />
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../../../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../../../search.html" />
+    <link rel="next" title="Golang DDD (CQRS / Event Sourcing) Reference Application &#34;Grade&#34;" href="../../grade/index.html" />
+    <link rel="prev" title="Repository and Anticorruption Layer" href="anticorruption-layer.html" />
+    
+   
+  <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+
+
+    
+        
+            <link rel="canonical" href="https://dckms.github.io/system-architecture/emacsway/it/ddd/tactical-design/repository/causal-consistency.html" />
+        
+    
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+              <div class="related top">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="anticorruption-layer.html" title="Previous document">Repository and Anticorruption Layer</a>
+        </li>
+        <li>
+          <a href="../../grade/index.html" title="Next document">Golang DDD (CQRS / Event Sourcing) Reference Application &quot;Grade&quot;</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+
+          <div class="body" role="main">
+            
+    
+  <section id="repository-and-causal-consistency">
+<span id="emacsway-repository-in-causal-consistency"></span><h1>Repository and Causal Consistency<a class="headerlink" href="#repository-and-causal-consistency" title="Permalink to this heading">¶</a></h1>
+<p><em>Автор раздела: Ivan Zakrevsky</em></p>
+<section id="id1">
+<h2>Контекст<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<p>Версия агрегата часто используется для организации &quot;<a class="reference external" href="https://martinfowler.com/eaaCatalog/optimisticOfflineLock.html">Optimistic Offline Lock</a>&quot;.
+С этой целью она обычно инкрементируется однократно на одну транзакцию, даже если при этом было создано несколько Domain Events при их in-process обработке.</p>
+<p>Иначе дело обстоит в Event Sourced Aggregate, где версия инкрементируется на каждое Доменное Событие, поскольку она определяет положение этого События в потоке/журнале Событий.
+Взаимосвязанные События для обеспечения атомарности в таком случае помечаются идентификатором запроса в виде CorrelationId.</p>
+<p>Проблема заключается в том, что если мы хотим сделать Domain Events публичными и отправить их в шину, либо сформировать на их основе Integration Events, то существует риск нарушения очередности их доставки.</p>
+<p>Более подробно эта тема раскрываетсяref&quot;<a class="reference internal" href="../../../integration/asynchronous/message-ordering-in-competing-consumers.html#emacsway-message-ordering"><span class="std std-ref">О гонке сообщений в условиях конкурирующих подписчиков</span></a>&quot;.</p>
+<p>Причин нарушения очередности доставки может быть несколько.
+Например, <a class="reference external" href="https://learn.microsoft.com/en-us/azure/architecture/patterns/competing-consumers">Конкурирующие Подписчики</a>.
+В таком случае проблема решается обычно партиционированием каналов шины, используя идентификатор агрегата для вычисления партиции, таким образом направляя все сообщения одного агрегата к единственному обработчику, устраняя петлю в топологии маршрута сообщений, а значит, устраняя условия для возникновения гонки сообщений.</p>
+<p>Однако, не все шины поддерживают партиционирование каналов либо эта поддержка оставляет желать лучшего.
+Кроме того, в интервью &quot;<a class="reference external" href="https://www.infoq.com/articles/modeling-uncertainty-reactive-ddd/">Modeling Uncertainty with Reactive DDD</a>&quot; by Vaughn Vernon reviewed by Thomas Betts, Vaughn Vernon утверждает, что это не спасает.</p>
+<p>В книге &quot;Reactive Messaging Patterns with the Actor Model: Applications and Integration in Scala and Akka&quot; Vaughn Vernon объясняет почему: петля может быть образована не только конкурирующими подписчиками, но и самой топологией маршрутов сообщений.
+Грубо говоря, если для одного сообщения у нас маршрут A-&gt;C а для другого A-B-&gt;C, то гонка уже не исключена.</p>
+<p>В этой же книге Vaughn Vernon отсылает за решением к статьям:</p>
+<ul class="simple">
+<li><p>&quot;<a class="reference external" href="https://queue.acm.org/detail.cfm?id=2610533">Don't Settle for Eventual Consistency. Stronger properties for low-latency geo-replicated storage.</a>&quot; (<a class="reference external" href="https://dl.acm.org/ft_gateway.cfm?id=2610533&amp;ftid=1449165&amp;dwn=1">pdf</a>) by Wyatt Lloyd, Facebook; Michael J. Freedman, Princeton University; Michael Kaminsky, Intel Labs; David G. Andersen, Carnegie Mellon University</p></li>
+<li><p>&quot;<a class="reference external" href="http://www.bailis.org/papers/bolton-sigmod2013.pdf">Bolt-on Causal Consistency</a>&quot; by Peter Bailis, Ali Ghodsi, Joseph M. Hellerstein†, Ion Stoica, UC Berkeley KTH/Royal Institute of Technology</p></li>
+</ul>
+<p>Решение сводится к организации <a class="reference external" href="https://jepsen.io/consistency/models/causal">Causal Consistency</a> посредством векторных часов, используя версию агрегата в качестве их значения.
+Каждое сообщение снабжается списком своих Causal Dependencies.</p>
+<p>И здесь обнажается проблема, т.к. при инкрементировании версии агрегата единожды на транзакцию возникает риск образования более одного публичного Доменного События с одной и той же версией Агрегата.
+А это означает, что версию Агрегата не получится использовать для восстановления очередности Событий.</p>
+</section>
+<section id="id2">
+<h2>Варианты решений<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="bounded-context">
+<h2>Версионирование состояния Bounded Context<a class="headerlink" href="#bounded-context" title="Permalink to this heading">¶</a></h2>
+<p>Для указания последовательности События можно использовать порядковый номер механизма доставки, например, автоинкрементальный первичный ключ таблицы Outbox внутри Bounded Context.</p>
+<p>Недостатком такого решения является существенное понижение уровня параллелизма вплоть до Sequential Consistency.</p>
+</section>
+<section id="id3">
+<h2>Отдельная версия на Событие<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>Поскольку Доменное Событие является фактом изменения состояния Агрегата, логично предположить, что образование каждого нового События должно инкрементировать версию Агрегата, как это общепринято в Event Sourced Agregate.</p>
+<p>Несущественным недостатком такого подхода является усложнение реализации оптимистической блокировки, поскольку инкрементация теперь происходит вне SQL-запроса.
+Критерий выборки обновляемой строки теперь будет вычисляться как математическая разница версии Агрегата и количества Доменных Событий в нем.</p>
+<p>Несколько сложнее дело обстоит с объединением (пакетированием) SQL-запросов, сформированных не из состояния агрегата, а из доменных событий.
+Но это тоже вопрос несущественный, и легко решается вынесением оптимистической блокировки в отдельный (либо в объединенный, при отсутствии изменения вложенных сущностей) SQL-запрос.</p>
+</section>
+<section id="id4">
+<h2>Вывод<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>Вариант с инкрементацией версии Агрегата на каждое Доменное Событие выглядит более приемлемым решением.</p>
+</section>
+</section>
+
+
+
+    
+        
+            <div class="section" style="text-align: right;">
+                <p><a href="https://dckms.github.io/system-architecture/emacsway/it/ddd/tactical-design/repository/causal-consistency.html">Canonical URL</a></p>
+            </div>
+        
+    
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="anticorruption-layer.html" title="Previous document">Repository and Anticorruption Layer</a>
+        </li>
+        <li>
+          <a href="../../grade/index.html" title="Next document">Golang DDD (CQRS / Event Sourcing) Reference Application &quot;Grade&quot;</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../index.html">System Architecture</a></h1>
+
+
+
+<p class="blurb">Distributed Collaborative Knowledge Management System for System Architecture</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dckms&repo=system-architecture&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption" role="heading"><span class="caption-text">Общее пространство:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/it/index.html">IT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../trunk/index.html">Общее пространство</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Авторские пространства:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Пространство Emacsway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Приватное пространствo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../private/index.html">Приватное пространство</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Прочее:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../README.html">Как пользоваться</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://t.me/emacsway_log"><i class="fab fa-telegram" style="color:#54a9eb;"></i> Telegram</a></li>
+    
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../../trunk/it/index.html">IT</a></li>
+  <li><a href="../../../../../trunk/it/ddd/index.html">DDD</a></li>
+  <li><a href="../../../../../trunk/it/ddd/tactical-design/index.html">Tactical design</a></li>
+  <li><a href="../../../../../trunk/it/ddd/tactical-design/repository/index.html">Repository</a></li><ul>
+      <li>Previous: <a href="anticorruption-layer.html" title="предыдущая глава">Repository and Anticorruption Layer</a></li>
+      <li>Next: <a href="../../grade/index.html" title="следующая глава">Golang DDD (CQRS / Event Sourcing) Reference Application &quot;Grade&quot;</a></li></ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="footer">
+      &copy;2023, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../../_sources/emacsway/it/ddd/tactical-design/repository/causal-consistency.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/dckms/system-architecture" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+
+    
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+           ym(87033138, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true,
+                trackHash:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/87033138" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    
+
+  </body>
+</html>

@@ -1,3 +1,9 @@
+:canonical-base-url: https://dckms.github.io/system-architecture
+
+.. index::
+   single: Immutability; in Value Object
+   :name: emacsway-immutability-in-value-object
+
 ============
 Immutability
 ============

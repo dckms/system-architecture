@@ -1,3 +1,9 @@
+:canonical-base-url: https://dckms.github.io/system-architecture
+
+.. index::
+   Shotgun Surgery
+
+
 ===============
 Shotgun Surgery
 ===============
