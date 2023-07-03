@@ -67,15 +67,15 @@
 <section id="id1">
 <h2>Контекст<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p>Версия агрегата часто используется для организации &quot;<a class="reference external" href="https://martinfowler.com/eaaCatalog/optimisticOfflineLock.html">Optimistic Offline Lock</a>&quot;.
-С этой целью она обычно инкрементируется однократно на одну транзакцию, даже если при этом было создано несколько Domain Events при их in-process обработке.</p>
+С этой целью она обычно инкрементируется однократно на одну транзакцию, даже если при этом было создано несколько Domain Events (при их <strong>in-process обработке</strong>).</p>
 <p>Иначе дело обстоит в Event Sourced Aggregate, где версия инкрементируется на каждое Доменное Событие, поскольку она определяет положение этого События в потоке/журнале Событий.
 Взаимосвязанные События для обеспечения атомарности в таком случае помечаются идентификатором запроса в виде CorrelationId.</p>
 <p>Проблема заключается в том, что если мы хотим сделать Domain Events публичными и отправить их в шину, либо сформировать на их основе Integration Events, то существует риск нарушения очередности их доставки.</p>
-<p>Более подробно эта тема раскрываетсяref&quot;<a class="reference internal" href="../../../integration/asynchronous/message-ordering-in-competing-consumers.html#emacsway-message-ordering"><span class="std std-ref">О гонке сообщений в условиях конкурирующих подписчиков</span></a>&quot;.</p>
+<p>Более подробно эта тема раскрывается в заметке &quot;<a class="reference internal" href="../../../integration/asynchronous/message-ordering-in-competing-consumers.html#emacsway-message-ordering"><span class="std std-ref">О гонке сообщений в условиях конкурирующих подписчиков</span></a>&quot;.</p>
 <p>Причин нарушения очередности доставки может быть несколько.
 Например, <a class="reference external" href="https://learn.microsoft.com/en-us/azure/architecture/patterns/competing-consumers">Конкурирующие Подписчики</a>.
 В таком случае проблема решается обычно партиционированием каналов шины, используя идентификатор агрегата для вычисления партиции, таким образом направляя все сообщения одного агрегата к единственному обработчику, устраняя петлю в топологии маршрута сообщений, а значит, устраняя условия для возникновения гонки сообщений.</p>
-<p>Однако, не все шины поддерживают партиционирование каналов либо эта поддержка оставляет желать лучшего.
+<p>Однако, не все шины поддерживают партиционирование каналов, либо эта поддержка оставляет желать лучшего.
 Кроме того, в интервью &quot;<a class="reference external" href="https://www.infoq.com/articles/modeling-uncertainty-reactive-ddd/">Modeling Uncertainty with Reactive DDD</a>&quot; by Vaughn Vernon reviewed by Thomas Betts, Vaughn Vernon утверждает, что это не спасает.</p>
 <p>В книге &quot;Reactive Messaging Patterns with the Actor Model: Applications and Integration in Scala and Akka&quot; Vaughn Vernon объясняет почему: петля может быть образована не только конкурирующими подписчиками, но и самой топологией маршрутов сообщений.
 Грубо говоря, если для одного сообщения у нас маршрут A-&gt;C а для другого A-B-&gt;C, то гонка уже не исключена.</p>
@@ -86,7 +86,7 @@
 </ul>
 <p>Решение сводится к организации <a class="reference external" href="https://jepsen.io/consistency/models/causal">Causal Consistency</a> посредством векторных часов, используя версию агрегата в качестве их значения.
 Каждое сообщение снабжается списком своих Causal Dependencies.</p>
-<p>И здесь обнажается проблема, т.к. при инкрементировании версии агрегата единожды на транзакцию возникает риск образования более одного публичного Доменного События с одной и той же версией Агрегата.
+<p>И здесь обнажается проблема, т.к. при инкрементировании версии агрегата единожды на транзакцию, возникает риск образования более одного публичного Доменного События с одной и той же версией Агрегата.
 А это означает, что версию Агрегата не получится использовать для восстановления очередности Событий.</p>
 </section>
 <section id="id2">
