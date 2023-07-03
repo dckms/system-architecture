@@ -112,7 +112,7 @@
 <h3><a class="toc-backref" href="#id9" role="doc-backlink">Версионирование состояния Bounded Context</a><a class="headerlink" href="#bounded-context" title="Permalink to this heading">¶</a></h3>
 <p>Для указания последовательности События можно использовать порядковый номер механизма доставки, например, автоинкрементальный первичный ключ таблицы Outbox внутри Bounded Context.</p>
 <p>Недостатком такого решения является существенное понижение уровня параллелизма вплоть до Sequential Consistency.</p>
-<p>Другим недостатком такого решения является трудоемкость миграции <a class="reference internal" href="../domain-model/domain-events/domain-events-in-ddd.html#emacsway-domain-event"><span class="std std-ref">с in-process обработки доменных событий на out-of-process</span></a>.</p>
+<p>Другим недостатком такого решения является трудоемкость миграции <a class="reference internal" href="../domain-model/domain-events/domain-events-in-ddd.html#emacsway-domain-event"><span class="std std-ref">с in-process обработки Доменных Событий на out-of-process</span></a>.</p>
 </section>
 <section id="id4">
 <h3><a class="toc-backref" href="#id10" role="doc-backlink">Отдельная версия на Событие</a><a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
@@ -120,8 +120,8 @@
 <p>Несущественным недостатком такого решения является усложнение реализации оптимистической блокировки, поскольку инкрементация теперь происходит вне SQL-запроса.
 Критерий выборки обновляемой строки теперь будет вычисляться как математическая разница версии Агрегата и количества Доменных Событий в нем.</p>
 <p>Несколько сложнее дело обстоит с объединением (пакетированием) SQL-запросов, сформированных не из состояния агрегата, а из доменных событий.
-Но это тоже вопрос несущественный, и легко решается вынесением оптимистической блокировки в отдельный (либо в объединенный, при отсутствии изменения вложенных сущностей) SQL-запрос.</p>
-<p>К достоинствам такого решения можно отнести простоту миграции <a class="reference internal" href="../domain-model/domain-events/domain-events-in-ddd.html#emacsway-domain-event"><span class="std std-ref">с in-process обработки доменных событий на out-of-process</span></a>, поскольку интерфейс событий остается неизменным.</p>
+Но этот вопрос тоже несущественный, и легко решается вынесением оптимистической блокировки в отдельный (либо в объединенный, при отсутствии изменения вложенных сущностей) SQL-запрос.</p>
+<p>К достоинствам такого решения можно отнести простоту миграции <a class="reference internal" href="../domain-model/domain-events/domain-events-in-ddd.html#emacsway-domain-event"><span class="std std-ref">с in-process обработки Доменных Событий на out-of-process</span></a>, поскольку интерфейс событий остается неизменным.</p>
 </section>
 </section>
 <section id="id5">

@@ -1451,7 +1451,7 @@ Client objects construct query specifications declaratively and submit them to R
 &lt;h3&gt;&lt;a class="toc-backref" href="#id9" role="doc-backlink"&gt;Версионирование состояния Bounded Context&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Для указания последовательности События можно использовать порядковый номер механизма доставки, например, автоинкрементальный первичный ключ таблицы Outbox внутри Bounded Context.&lt;/p&gt;
 &lt;p&gt;Недостатком такого решения является существенное понижение уровня параллелизма вплоть до Sequential Consistency.&lt;/p&gt;
-&lt;p&gt;Другим недостатком такого решения является трудоемкость миграции &lt;a class="reference internal" href="../domain-model/domain-events/domain-events-in-ddd.html#emacsway-domain-event"&gt;&lt;span class="std std-ref"&gt;с in-process обработки доменных событий на out-of-process&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Другим недостатком такого решения является трудоемкость миграции &lt;a class="reference internal" href="../domain-model/domain-events/domain-events-in-ddd.html#emacsway-domain-event"&gt;&lt;span class="std std-ref"&gt;с in-process обработки Доменных Событий на out-of-process&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section id="id4"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="#id10" role="doc-backlink"&gt;Отдельная версия на Событие&lt;/a&gt;&lt;/h3&gt;
@@ -1459,8 +1459,8 @@ Client objects construct query specifications declaratively and submit them to R
 &lt;p&gt;Несущественным недостатком такого решения является усложнение реализации оптимистической блокировки, поскольку инкрементация теперь происходит вне SQL-запроса.
 Критерий выборки обновляемой строки теперь будет вычисляться как математическая разница версии Агрегата и количества Доменных Событий в нем.&lt;/p&gt;
 &lt;p&gt;Несколько сложнее дело обстоит с объединением (пакетированием) SQL-запросов, сформированных не из состояния агрегата, а из доменных событий.
-Но это тоже вопрос несущественный, и легко решается вынесением оптимистической блокировки в отдельный (либо в объединенный, при отсутствии изменения вложенных сущностей) SQL-запрос.&lt;/p&gt;
-&lt;p&gt;К достоинствам такого решения можно отнести простоту миграции &lt;a class="reference internal" href="../domain-model/domain-events/domain-events-in-ddd.html#emacsway-domain-event"&gt;&lt;span class="std std-ref"&gt;с in-process обработки доменных событий на out-of-process&lt;/span&gt;&lt;/a&gt;, поскольку интерфейс событий остается неизменным.&lt;/p&gt;
+Но этот вопрос тоже несущественный, и легко решается вынесением оптимистической блокировки в отдельный (либо в объединенный, при отсутствии изменения вложенных сущностей) SQL-запрос.&lt;/p&gt;
+&lt;p&gt;К достоинствам такого решения можно отнести простоту миграции &lt;a class="reference internal" href="../domain-model/domain-events/domain-events-in-ddd.html#emacsway-domain-event"&gt;&lt;span class="std std-ref"&gt;с in-process обработки Доменных Событий на out-of-process&lt;/span&gt;&lt;/a&gt;, поскольку интерфейс событий остается неизменным.&lt;/p&gt;
 &lt;/section&gt;
 &lt;/section&gt;
 &lt;section id="id5"&gt;
