@@ -1,6 +1,11 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
-.. index:: Messaging, Message Broker, Causal Consistency, Eventual Consistency, Integration Patterns, NATS Streaming Server, Actor Model, Asynchronous Communication
+.. index:: Messaging, Message Ordering; Competing Consumers; Message Broker, Causal Consistency, Eventual Consistency, Integration Patterns, NATS Streaming Server, Actor Model, Asynchronous Communication
+
+.. index::
+   single: Causal Consistency; in message ordering
+   :name: emacsway-message-ordering
+
 
 ======================================================
 О гонке сообщений в условиях конкурирующих подписчиков
@@ -77,6 +82,7 @@
 - "`Modeling Uncertainty with Reactive DDD <https://www.infoq.com/articles/modeling-uncertainty-reactive-ddd/>`__" by Vaughn Vernon reviewed by Thomas Betts
 - "`Life Beyond Distributed Transactions <https://queue.acm.org/detail.cfm?id=3025012>`__"
 - "`Error Handling Patterns for Apache Kafka Applications <https://www.confluent.io/blog/error-handling-patterns-in-kafka/>`__" by Gerardo Villeda
+- "`Competing Consumers pattern <https://learn.microsoft.com/en-us/azure/architecture/patterns/competing-consumers>`__"
 
 Список литературы по интеграционным паттернам:
 
