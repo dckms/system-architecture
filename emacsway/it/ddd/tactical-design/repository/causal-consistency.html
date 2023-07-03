@@ -101,6 +101,8 @@
 <li><p>&quot;<a class="reference external" href="https://queue.acm.org/detail.cfm?id=2610533">Don't Settle for Eventual Consistency. Stronger properties for low-latency geo-replicated storage.</a>&quot; (<a class="reference external" href="https://dl.acm.org/ft_gateway.cfm?id=2610533&amp;ftid=1449165&amp;dwn=1">pdf</a>) by Wyatt Lloyd, Facebook; Michael J. Freedman, Princeton University; Michael Kaminsky, Intel Labs; David G. Andersen, Carnegie Mellon University</p></li>
 <li><p>&quot;<a class="reference external" href="http://www.bailis.org/papers/bolton-sigmod2013.pdf">Bolt-on Causal Consistency</a>&quot; by Peter Bailis, Ali Ghodsi, Joseph M. Hellerstein†, Ion Stoica, UC Berkeley KTH/Royal Institute of Technology</p></li>
 </ul>
+<p>Рассмотрим классический пример. Глава родительского комитета школьного класса удалил классного руководителя из группы рассылки (E1), разослал всем оставшимся сообщение о сборе денег на подарок классному руководителю (E2), и вернул классного руководителя назад (E3).</p>
+<p>Вот теперь давайте представим, что произойдет, если событие E1 где-то задержалось в шине, и было обработано после E2.</p>
 <p>Решение сводится к организации <a class="reference external" href="https://jepsen.io/consistency/models/causal">Causal Consistency</a> посредством векторных часов, используя версию агрегата в качестве их значения.
 Каждое сообщение снабжается списком своих Causal Dependencies.</p>
 <p>И здесь обнажается проблема, т.к. при инкрементировании версии агрегата единожды на транзакцию, возникает риск образования более одного публичного Доменного События с одной и той же версией Агрегата.
