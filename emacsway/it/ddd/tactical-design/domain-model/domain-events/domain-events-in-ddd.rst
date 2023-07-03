@@ -1348,7 +1348,7 @@ Pattern `Resequencer <https://www.enterpriseintegrationpatterns.com/patterns/mes
 - Хороший лаконичный обзорный блог-пост по возможностям NATS Streaming Server "`Guest Post: Use cases for persistent logs with NATS Streaming <https://nats.io/blog/use-cases-for-persistent-logs-with-nats-streaming/>`__" by Byron Ruth
 - Лучше один раз увидеть. `Живые примеры по работе с NATS Streaming Server <https://github.com/bruth/code-examples/tree/master/patterns-nats-streaming>`__.
 
-Более подробно тема раскрывается в ":ref:`emacsway-message-ordering`".
+Более подробно тема раскрывается в заметке ":ref:`emacsway-message-ordering`".
 
 
 Где создавать Domain Event об удалении объекта?
