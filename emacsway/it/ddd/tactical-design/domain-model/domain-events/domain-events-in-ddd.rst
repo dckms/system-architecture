@@ -1,6 +1,7 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
 .. index:: Domain Event
+   :name: emacsway-domain-event
 
 ====================
 Domain Events in DDD
