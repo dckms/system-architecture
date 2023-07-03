@@ -42,7 +42,7 @@ Repository and Causal Consistency
 - "`Don't Settle for Eventual Consistency. Stronger properties for low-latency geo-replicated storage. <https://queue.acm.org/detail.cfm?id=2610533>`__" (`pdf <https://dl.acm.org/ft_gateway.cfm?id=2610533&ftid=1449165&dwn=1>`__) by Wyatt Lloyd, Facebook; Michael J. Freedman, Princeton University; Michael Kaminsky, Intel Labs; David G. Andersen, Carnegie Mellon University
 - "`Bolt-on Causal Consistency <http://www.bailis.org/papers/bolton-sigmod2013.pdf>`__" by Peter Bailis, Ali Ghodsi, Joseph M. Hellerstein†, Ion Stoica, UC Berkeley KTH/Royal Institute of Technology
 
-Рассмотрим классический пример. Глава родительского комитета школьного класса удалил классного руководителя из группы рассылки (E1), разослал всем оставшимся сообщение о сборе денег для подарка классному руководителю (E2), и вернул классного руководителя назад (E3).
+Рассмотрим классический пример. Глава родительского комитета школьного класса удалил классного руководителя из группы рассылки (E1), разослал всем оставшимся сообщение о сборе денег на подарок классному руководителю (E2), и вернул классного руководителя назад (E3).
 
 Вот теперь давайте представим, что произойдет, если событие E1 где-то задержалось в шине, и было обработано после E2.
 
