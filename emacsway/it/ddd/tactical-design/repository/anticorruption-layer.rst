@@ -1,6 +1,16 @@
+:canonical-base-url: https://dckms.github.io/system-architecture
+
+.. index::
+   single: Repository; in Anticorruption Layer
+   single: Repository; in Ports and Adapters
+   :name: emacsway-repository-in-anticorruption-layer
+
+
 ===================================
 Repository and Anticorruption Layer
 ===================================
+
+.. sectionauthor:: Ivan Zakrevsky
 
 ..
 
