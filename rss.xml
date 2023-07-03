@@ -13,7 +13,7 @@ and I think it's usually easier for less sophisticated developers
 &lt;p&gt;Подавляющее большинство ORM использует "reflective program", в то время, как в Golang-сообществе традиционно широко применяется в практике "code generation".&lt;/p&gt;
 &lt;p&gt;В данном проекте, на определенном этапе развития, появится инструмент кодогенерации по образу &lt;a class="reference external" href="https://github.com/kyleconroy/sqlc"&gt;sqlc&lt;/a&gt;.&lt;/p&gt;
 </description><pubDate>Mon, 03 Jul 2023 00:00:00 </pubDate></item><item><title>Domain Events in DDD</title><link>https://dckms.github.io/system-architecture/emacsway/it/ddd/tactical-design/domain-model/domain-events/domain-events-in-ddd.html</link><description>
-&lt;span id="index-0"/&gt; 
+&lt;span id="emacsway-domain-event"/&gt; 
 &lt;p&gt;&lt;em&gt;Автор раздела: Ivan Zakrevsky&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Существует множество спорных точек зрения среди практиков DDD по поводу реализации Domain Events.
 Лучший способ понять суть вещей - это обратиться к первоисточнику, чтобы понять его мотивы и те проблемы, решение которым он стремился найти.&lt;/p&gt;
@@ -1435,14 +1435,16 @@ Client objects construct query specifications declaratively and submit them to R
 &lt;h2&gt;Версионирование состояния Bounded Context&lt;/h2&gt;
 &lt;p&gt;Для указания последовательности События можно использовать порядковый номер механизма доставки, например, автоинкрементальный первичный ключ таблицы Outbox внутри Bounded Context.&lt;/p&gt;
 &lt;p&gt;Недостатком такого решения является существенное понижение уровня параллелизма вплоть до Sequential Consistency.&lt;/p&gt;
+&lt;p&gt;Другим недостатком такого решения является трудоемкость миграции &lt;a class="reference internal" href="../domain-model/domain-events/domain-events-in-ddd.html#emacsway-domain-event"&gt;&lt;span class="std std-ref"&gt;с in-process обработки доменных событий на out-of-process&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section id="id3"&gt;
 &lt;h2&gt;Отдельная версия на Событие&lt;/h2&gt;
 &lt;p&gt;Поскольку Доменное Событие является фактом изменения состояния Агрегата, логично предположить, что образование каждого нового События должно инкрементировать версию Агрегата, как это общепринято в Event Sourced Agregate.&lt;/p&gt;
-&lt;p&gt;Несущественным недостатком такого подхода является усложнение реализации оптимистической блокировки, поскольку инкрементация теперь происходит вне SQL-запроса.
+&lt;p&gt;Несущественным недостатком такого решения является усложнение реализации оптимистической блокировки, поскольку инкрементация теперь происходит вне SQL-запроса.
 Критерий выборки обновляемой строки теперь будет вычисляться как математическая разница версии Агрегата и количества Доменных Событий в нем.&lt;/p&gt;
 &lt;p&gt;Несколько сложнее дело обстоит с объединением (пакетированием) SQL-запросов, сформированных не из состояния агрегата, а из доменных событий.
 Но это тоже вопрос несущественный, и легко решается вынесением оптимистической блокировки в отдельный (либо в объединенный, при отсутствии изменения вложенных сущностей) SQL-запрос.&lt;/p&gt;
+&lt;p&gt;К достоинствам такого решения можно отнести простоту миграции &lt;a class="reference internal" href="../domain-model/domain-events/domain-events-in-ddd.html#emacsway-domain-event"&gt;&lt;span class="std std-ref"&gt;с in-process обработки доменных событий на out-of-process&lt;/span&gt;&lt;/a&gt;, поскольку интерфейс событий остается неизменным.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section id="id4"&gt;
 &lt;h2&gt;Вывод&lt;/h2&gt;
