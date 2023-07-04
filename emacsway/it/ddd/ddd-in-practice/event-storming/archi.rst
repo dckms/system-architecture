@@ -140,6 +140,7 @@ Archi
 
 Дополнительная информация:
 
+- "`Measuring Coupling and Cohesion: An Information Theory Approach <http://www.sdml.cs.kent.edu/library/Allen99.pdf>`__" by Edward B. Allen, Taghi M. Khoshgoftaar, Florida, Atlantic University Boca Raton, Florida USA
 - "`Using domain analysis to model microservices <https://docs.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis>`__"
 - "`Identifying microservice boundaries <https://docs.microsoft.com/en-us/azure/architecture/microservices/model/microservice-boundaries>`__"
 - "`Bounded Contexts are NOT Microservices <https://vladikk.com/2018/01/21/bounded-contexts-vs-microservices/>`__" by Vladik Khononov
