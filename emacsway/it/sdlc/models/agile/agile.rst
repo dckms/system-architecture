@@ -353,6 +353,10 @@ Kent Beck выяснил, что напряжение являлось ни че
 
     -- "`The Winter Getaway That Turned the Software World Upside Down <https://www.theatlantic.com/technology/archive/2017/12/agile-manifesto-a-history/547715/>`__" by Caroline Mimbs Nyce
 
+    💬 "**Agile** methods are **adaptive** rather than predictive."
+
+    -- "`The New Methodology <https://www.martinfowler.com/articles/newMethodology.html>`__" by Martin Fowler
+
 О том, почему я обратился к высказываю Kent Beck в этом вопросе, неплохо поясняет Martin Fowler:
 
     💬 "Extreme Programming (XP) is a software development methodology developed primarily by Kent Beck.
