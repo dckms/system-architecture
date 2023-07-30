@@ -62,23 +62,23 @@
             
     
   <section id="emacsway-golang-encapsulation">
-<span id="id1"></span><h1><a class="toc-backref" href="#id3" role="doc-backlink">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a><a class="headerlink" href="#emacsway-golang-encapsulation" title="Permalink to this heading">¶</a></h1>
+<span id="id1"></span><h1><a class="toc-backref" href="#id4" role="doc-backlink">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a><a class="headerlink" href="#emacsway-golang-encapsulation" title="Permalink to this heading">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
 <p>Инварианты лишены смысла своего существования в условиях дырявой, как решето, инкапсуляции.
 Вопрос в том, как сохранить инкапсуляцию Агрегатов в Golang, когда нам требуется его внутреннее состояние для формирования SQL-запроса, или, наоборот, требуется установить состояние Агрегата в результате выполнения SQL-запроса.</p>
 <nav class="contents" id="id2">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#emacsway-golang-encapsulation" id="id3">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a></p>
+<li><p><a class="reference internal" href="#emacsway-golang-encapsulation" id="id4">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a></p>
 <ul>
-<li><p><a class="reference internal" href="#memento-pattern" id="id4">Memento pattern</a></p></li>
-<li><p><a class="reference internal" href="#walker" id="id5">Walker</a></p></li>
-<li><p><a class="reference internal" href="#valuer-scanner" id="id6">Valuer &amp; Scanner</a></p></li>
-<li><p><a class="reference internal" href="#reflection" id="id7">Reflection</a></p></li>
-<li><p><a class="reference internal" href="#exporter" id="id8">Exporter</a></p>
+<li><p><a class="reference internal" href="#memento-pattern" id="id5">Memento pattern</a></p></li>
+<li><p><a class="reference internal" href="#walker" id="id6">Walker</a></p></li>
+<li><p><a class="reference internal" href="#valuer-scanner" id="id7">Valuer &amp; Scanner</a></p></li>
+<li><p><a class="reference internal" href="#reflection" id="id8">Reflection</a></p></li>
+<li><p><a class="reference internal" href="#exporter" id="id9">Exporter</a></p>
 <ul>
-<li><p><a class="reference internal" href="#accepting-interface" id="id9">1. Accepting interface</a></p></li>
-<li><p><a class="reference internal" href="#returning-structure" id="id10">2. Returning structure</a></p></li>
+<li><p><a class="reference internal" href="#accepting-interface-mediator" id="id10">1. Accepting interface (Mediator)</a></p></li>
+<li><p><a class="reference internal" href="#returning-structure" id="id11">2. Returning structure</a></p></li>
 </ul>
 </li>
 </ul>
@@ -86,7 +86,7 @@
 </ul>
 </nav>
 <section id="memento-pattern">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Memento pattern</a><a class="headerlink" href="#memento-pattern" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Memento pattern</a><a class="headerlink" href="#memento-pattern" title="Permalink to this heading">¶</a></h2>
 <p>Memento оказался близко, но не по назначению. Суть Memento в том, что он не должен раскрывать свое состояние никому, кроме своего создателя:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -96,9 +96,15 @@ The pattern shields other objects from potentially complex Originator internals,
 <p class="attribution">—&quot;Design Patterns: Elements of Reusable Object-Oriented Software&quot; by Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides</p>
 </div></blockquote>
 <p>Тем не менее, этот подход используется некоторыми авторитетными источниками, см. <a class="reference external" href="https://github.com/microsoftarchive/cqrs-journey/blob/6ffd9a8c8e865a9f8209552c52fa793fbd496d1f/source/Conference/Registration/SeatsAvailability.cs#L237">здесь</a> и <a class="reference external" href="https://github.com/microsoftarchive/cqrs-journey/blob/6ffd9a8c8e865a9f8209552c52fa793fbd496d1f/source/Infrastructure/Azure/Infrastructure.Azure/EventSourcing/AzureEventSourcedRepository.cs#L31">здесь</a>.</p>
+<blockquote>
+<div><p>💬 The event is stored using some form of serialization, for the rest of this discussion the mechanism will assumed to be built in serialization although the use of the memento pattern can be highly advantageous.</p>
+<p>&lt;...&gt;</p>
+<p>Many use the default serialization package available with their platform with good results though the Memento pattern is quite useful when dealing with snapshots. The Memento pattern (or custom serialization) better insulates the domain over time as the structure of the domain objects change. The default serializer has versioning problems when the new structure is released (the existing snapshots must either deleted and recreated or updated to match the new schema). The use of the Memento pattern allows the separated versioning of the snapshot schema from the domain object itself.</p>
+<p class="attribution">—&quot;<a class="reference external" href="https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf">CQRS Documents by Greg Young</a>&quot;</p>
+</div></blockquote>
 </section>
 <section id="walker">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Walker</a><a class="headerlink" href="#walker" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Walker</a><a class="headerlink" href="#walker" title="Permalink to this heading">¶</a></h2>
 <p>Walker представляет собою модификацию паттерна Visitor с целью сохранить инкапсуляцию Агрегатов. К числу недостатков паттерна паттерна Visitor относится:</p>
 <blockquote>
 <div><p>6. Breaking encapsulation. Visitor's approach assumes that the ConcreteElement interface is powerful enough to let visitors do their job.
@@ -143,7 +149,7 @@ Walker начинает быть слишком осведомленным о д
 <p>В целях достижения DRY возникает целесообразность возложить на Walker генерирование только части SQL, и освободить его от осведомленности знания таблиц в БД, что будет разрывать обязанность за построение SQL на несколько объектов и подрывать Cohesion.</p>
 </section>
 <section id="valuer-scanner">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Valuer &amp; Scanner</a><a class="headerlink" href="#valuer-scanner" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Valuer &amp; Scanner</a><a class="headerlink" href="#valuer-scanner" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pkg.go.dev/database/sql/driver#Valuer">Valuer</a></p></li>
 <li><p><a class="reference external" href="https://pkg.go.dev/database/sql#Scanner">Scanner</a></p></li>
@@ -169,22 +175,95 @@ Walker начинает быть слишком осведомленным о д
 </div></blockquote>
 </section>
 <section id="reflection">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Reflection</a><a class="headerlink" href="#reflection" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Reflection</a><a class="headerlink" href="#reflection" title="Permalink to this heading">¶</a></h2>
 <p>В документации <a class="reference external" href="https://pkg.go.dev/reflect#Value.FieldByName">отсутствуют</a> какие-либо упоминания об ограничении доступа к защищенным атрибутам структуры данных посредством рефлекции.</p>
 <p>Может быть через рефлексию и заработало бы - я не пробовал.
 Но использовать рефлексию в production для таких целей как-то не сильно хочется, в т.ч. и по соображениям производительности.
 К тому же этот метод является, по сути, еще одним способом пробить брешь в инкапсуляции.</p>
+<p>Похожий трюк используется <a class="reference external" href="https://stackoverflow.com/a/25405485">здесь</a>:</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://stackoverflow.com/a/25405485">How to marshal struct when some members are protected/inner/hidden</a></span><a class="headerlink" href="#id3" title="Постоянная ссылка на код">¶</a></div>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nx">main</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;fmt&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;reflect&quot;</span><span class="w"></span>
+
+<span class="w">    </span><span class="s">&quot;github.com/bitly/go-simplejson&quot;</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">A</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;name&quot;`</span><span class="w"></span>
+<span class="w">    </span><span class="nx">code</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;code&quot;`</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">marshal</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="nx">A</span><span class="p">)</span><span class="w"> </span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">j</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">simplejson</span><span class="p">.</span><span class="nx">New</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="nx">va</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">reflect</span><span class="p">.</span><span class="nx">ValueOf</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">a</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">vt</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">va</span><span class="p">.</span><span class="nx">Elem</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="nx">types</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">reflect</span><span class="p">.</span><span class="nx">TypeOf</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="nx">vt</span><span class="p">.</span><span class="nx">NumField</span><span class="p">();</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">j</span><span class="p">.</span><span class="nx">Set</span><span class="p">(</span><span class="nx">types</span><span class="p">.</span><span class="nx">Field</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">Tag</span><span class="p">.</span><span class="nx">Get</span><span class="p">(</span><span class="s">&quot;json&quot;</span><span class="p">),</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Sprintf</span><span class="p">(</span><span class="s">&quot;%v&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">reflect</span><span class="p">.</span><span class="nx">Indirect</span><span class="p">(</span><span class="nx">va</span><span class="p">).</span><span class="nx">Field</span><span class="p">(</span><span class="nx">i</span><span class="p">)))</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">j</span><span class="p">.</span><span class="nx">MarshalJSON</span><span class="p">()</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">a</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">A</span><span class="p">{</span><span class="nx">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;jessonchan&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">code</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">marshal</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">b</span><span class="p">))</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="exporter">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">Exporter</a><a class="headerlink" href="#exporter" title="Permalink to this heading">¶</a></h2>
-<section id="accepting-interface">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">1. Accepting interface</a><a class="headerlink" href="#accepting-interface" title="Permalink to this heading">¶</a></h3>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Exporter</a><a class="headerlink" href="#exporter" title="Permalink to this heading">¶</a></h2>
+<section id="accepting-interface-mediator">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">1. Accepting interface (Mediator)</a><a class="headerlink" href="#accepting-interface-mediator" title="Permalink to this heading">¶</a></h3>
+<p>Такой вариант рассматривается в книге &quot;<a class="reference external" href="https://kalele.io/books/">Implementing Domain-Driven Design</a>&quot; by Vaughn Vernon:</p>
+<blockquote>
+<div><p>Use a Mediator to Publish Aggregate Internal State</p>
+<p>To work around the problem of tight coupling between the model and its clients, you may choose to design Mediator
+[Gamma et al.] (aka Double-Dispatch and Callback) interfaces to which the Aggregate publishes its internal state.
+Clients would implement the Mediator interface, passing the implementer’s object reference to the Aggregate as a method argument.
+The Aggregate would then double-dispatch to that Mediator to publish the requested state, all without revealing its shape or structure.
+The trick is to not wed the Mediator’s interface to any sort of view specification, but to keep it focused on rendering
+Aggregate states of interest:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BacklogItem</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">provideBacklogItemInterest</span><span class="p">(</span><span class="n">BacklogItemInterest</span><span class="w"> </span><span class="n">anInterest</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">anInterest</span><span class="p">.</span><span class="na">informTenantId</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">tenantId</span><span class="p">().</span><span class="na">id</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">anInterest</span><span class="p">.</span><span class="na">informProductId</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">productId</span><span class="p">().</span><span class="na">id</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">anInterest</span><span class="p">.</span><span class="na">informBacklogItemId</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">backlogItemId</span><span class="p">().</span><span class="na">id</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">anInterest</span><span class="p">.</span><span class="na">informStory</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">story</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">anInterest</span><span class="p">.</span><span class="na">informSummary</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">summary</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">anInterest</span><span class="p">.</span><span class="na">informType</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">type</span><span class="p">().</span><span class="na">toString</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">provideTasksInterest</span><span class="p">(</span><span class="n">TasksInterest</span><span class="w"> </span><span class="n">anInterest</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tasks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">allTasks</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">anInterest</span><span class="p">.</span><span class="na">informTaskCount</span><span class="p">(</span><span class="n">tasks</span><span class="p">.</span><span class="na">size</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Task</span><span class="w"> </span><span class="n">task</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">tasks</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The various interest providers may be implemented by other classes, much the same way that Entities (5) describe the way
+validation is delegated to separate validator classes.</p>
+<p>Be aware that some will consider this approach completely outside the responsibility of an Aggregate. Others will consider
+it a completely natural extension of a well-designed domain model.
+As always, such trade-offs must be discussed by your technical team members.</p>
+</div></blockquote>
 <p>Ссылки по теме:</p>
 <ul class="simple">
 <li><p>&quot;<a class="reference external" href="https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html">More on getters and setters</a>&quot; by Allen Holub</p></li>
 <li><p>&quot;<a class="reference external" href="https://stackoverflow.com/questions/24921227/save-and-load-objects-without-breaking-encapsulation">Save and load objects without breaking encapsulation</a>&quot; at Stackoverflow</p></li>
 </ul>
-<p>Идею можно посмотреть на примере:</p>
+<p>Идею также можно посмотреть на примере:</p>
 <div class="literal-block-wrapper docutils container" id="emacsway-code-exporter-example-1">
 <div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html">Example by Allen Holub</a></span><a class="headerlink" href="#emacsway-code-exporter-example-1" title="Постоянная ссылка на код">¶</a></div>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Locale</span><span class="p">;</span><span class="w"></span>
@@ -390,7 +469,7 @@ The Presenter/View boundary is one of these boundaries, but there are many other
 </div></blockquote>
 </section>
 <section id="returning-structure">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink">2. Returning structure</a><a class="headerlink" href="#returning-structure" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">2. Returning structure</a><a class="headerlink" href="#returning-structure" title="Permalink to this heading">¶</a></h3>
 <p>Возникает целесообразность облегчить метод экспортирования, придав ему сигнатуру <code class="docutils literal notranslate"><span class="pre">Endorser.Export()</span> <span class="pre">EndorserState</span></code> вместо <code class="docutils literal notranslate"><span class="pre">Endorser.ExportTo(ex</span> <span class="pre">EndorserExporter)</span></code>.
 Получится что-то типа DTO с тем лишь отличием, что он пересекает не сетевые границы, а границы инкапсуляции Агрегата.
 В Golang этот вариант выглядит чуть более привлекательным, хотя и менее OOP, но зато не контрастирует с FP принципами Value Object.</p>

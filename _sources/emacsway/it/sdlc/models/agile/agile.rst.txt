@@ -45,7 +45,7 @@
 
 ..
 
-    💬 "Unlike Waterfall, Agile emphasizes iterative development, or building software in pieces.
+    💬 "Unlike Waterfall, Agile emphasizes **iterative** development, or building software **in pieces** *[i.e. incremental]*.
     Agile teams typically work in short cycles—which are called \"sprints\" in Scrum, today one of the most widely used forms of Agile—that usually last two weeks each."
 
     -- "`The Winter Getaway That Turned the Software World Upside Down <https://www.theatlantic.com/technology/archive/2017/12/agile-manifesto-a-history/547715/>`__" by Caroline Mimbs Nyce
@@ -345,9 +345,17 @@ Kent Beck выяснил, что напряжение являлось ни че
 
 ..
 
-    💬️ "We considered a bunch of names, and agreed eventually on \"agile\" as we felt that captured the adaptiveness and response to change which we felt was so important to our approach."
+    💬️ "We considered a bunch of names, and agreed eventually on **\"agile\"** as we felt that captured the **adaptiveness** and **response to change** which we felt was so important to our approach."
 
     -- "`Writing The Agile Manifesto <https://martinfowler.com/articles/agileStory.html>`__" by Martin Fowler
+
+    💬 "‘**Agile!** Oh great, let’s go,’” Cockburn tells me. “It was really a lot of work.” The other finalist, he says, was **“Adaptive.”**"
+
+    -- "`The Winter Getaway That Turned the Software World Upside Down <https://www.theatlantic.com/technology/archive/2017/12/agile-manifesto-a-history/547715/>`__" by Caroline Mimbs Nyce
+
+    💬 "**Agile** methods are **adaptive** rather than predictive."
+
+    -- "`The New Methodology <https://www.martinfowler.com/articles/newMethodology.html>`__" by Martin Fowler
 
 О том, почему я обратился к высказываю Kent Beck в этом вопросе, неплохо поясняет Martin Fowler:
 
