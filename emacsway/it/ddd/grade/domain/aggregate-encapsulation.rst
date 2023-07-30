@@ -28,6 +28,14 @@ Memento оказался близко, но не по назначению. Су
 
 Тем не менее, этот подход используется некоторыми авторитетными источниками, см. `здесь <https://github.com/microsoftarchive/cqrs-journey/blob/6ffd9a8c8e865a9f8209552c52fa793fbd496d1f/source/Conference/Registration/SeatsAvailability.cs#L237>`__ и `здесь <https://github.com/microsoftarchive/cqrs-journey/blob/6ffd9a8c8e865a9f8209552c52fa793fbd496d1f/source/Infrastructure/Azure/Infrastructure.Azure/EventSourcing/AzureEventSourcedRepository.cs#L31>`__.
 
+    💬 The event is stored using some form of serialization, for the rest of this discussion the mechanism will assumed to be built in serialization although the use of the memento pattern can be highly advantageous.
+
+    <...>
+
+    Many use the default serialization package available with their platform with good results though the Memento pattern is quite useful when dealing with snapshots. The Memento pattern (or custom serialization) better insulates the domain over time as the structure of the domain objects change. The default serializer has versioning problems when the new structure is released (the existing snapshots must either deleted and recreated or updated to match the new schema). The use of the Memento pattern allows the separated versioning of the snapshot schema from the domain object itself.
+
+    -- "`CQRS Documents by Greg Young <https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf>`__"
+
 
 Walker
 ======
@@ -124,19 +132,96 @@ Reflection
 Но использовать рефлексию в production для таких целей как-то не сильно хочется, в т.ч. и по соображениям производительности.
 К тому же этот метод является, по сути, еще одним способом пробить брешь в инкапсуляции.
 
+Похожий трюк используется `здесь <https://stackoverflow.com/a/25405485>`__:
+
+.. code-block:: go
+   :caption: `How to marshal struct when some members are protected/inner/hidden <https://stackoverflow.com/a/25405485>`__
+
+   package main
+
+   import (
+       "fmt"
+       "reflect"
+
+       "github.com/bitly/go-simplejson"
+   )
+
+   type A struct {
+       name string `json:"name"`
+       code string `json:"code"`
+   }
+
+   func marshal(a A) ([]byte, error) {
+       j := simplejson.New()
+       va := reflect.ValueOf(&a)
+       vt := va.Elem()
+       types := reflect.TypeOf(a)
+       for i := 0; i < vt.NumField(); i++ {
+           j.Set(types.Field(i).Tag.Get("json"), fmt.Sprintf("%v", reflect.Indirect(va).Field(i)))
+       }
+       return j.MarshalJSON()
+   }
+
+   func main() {
+       a := A{name: "jessonchan", code: "abc"}
+       b, _ := marshal(a)
+       fmt.Println(string(b))
+   }
+
 
 Exporter
 ========
 
-1. Accepting interface
-----------------------
+1. Accepting interface (Mediator)
+---------------------------------
+
+Такой вариант рассматривается в книге "`Implementing Domain-Driven Design <https://kalele.io/books/>`__" by Vaughn Vernon:
+
+    Use a Mediator to Publish Aggregate Internal State
+
+    To work around the problem of tight coupling between the model and its clients, you may choose to design Mediator
+    [Gamma et al.] (aka Double-Dispatch and Callback) interfaces to which the Aggregate publishes its internal state.
+    Clients would implement the Mediator interface, passing the implementer’s object reference to the Aggregate as a method argument.
+    The Aggregate would then double-dispatch to that Mediator to publish the requested state, all without revealing its shape or structure.
+    The trick is to not wed the Mediator’s interface to any sort of view specification, but to keep it focused on rendering
+    Aggregate states of interest:
+
+    .. code-block:: java
+
+       public class BacklogItem ... {
+           ...
+           public void provideBacklogItemInterest(BacklogItemInterest anInterest) {
+               anInterest.informTenantId(this.tenantId().id());
+               anInterest.informProductId(this.productId().id());
+               anInterest.informBacklogItemId(this.backlogItemId().id());
+               anInterest.informStory(this.story());
+               anInterest.informSummary(this.summary());
+               anInterest.informType(this.type().toString());
+           ...
+           }
+           public void provideTasksInterest(TasksInterest anInterest) {
+               Set<Task> tasks = this.allTasks();
+               anInterest.informTaskCount(tasks.size());
+               for (Task task : tasks) {
+               ...
+               }
+           }
+           ...
+       }
+
+    The various interest providers may be implemented by other classes, much the same way that Entities (5) describe the way
+    validation is delegated to separate validator classes.
+
+    Be aware that some will consider this approach completely outside the responsibility of an Aggregate. Others will consider
+    it a completely natural extension of a well-designed domain model.
+    As always, such trade-offs must be discussed by your technical team members.
 
 Ссылки по теме:
 
 - "`More on getters and setters <https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html>`__" by Allen Holub
 - "`Save and load objects without breaking encapsulation <https://stackoverflow.com/questions/24921227/save-and-load-objects-without-breaking-encapsulation>`__" at Stackoverflow
 
-Идею можно посмотреть на примере:
+Идею также можно посмотреть на примере:
 
 .. code-block:: java
    :caption: `Example by Allen Holub <https://www.infoworld.com/article/2072302/more-on-getters-and-setters.html>`__
