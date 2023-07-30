@@ -132,6 +132,42 @@ Reflection
 Но использовать рефлексию в production для таких целей как-то не сильно хочется, в т.ч. и по соображениям производительности.
 К тому же этот метод является, по сути, еще одним способом пробить брешь в инкапсуляции.
 
+Похожий трюк используется `здесь <https://stackoverflow.com/a/25405485>`__:
+
+.. code-block:: go
+   :caption: `How to marshal struct when some members are protected/inner/hidden <https://stackoverflow.com/a/25405485>`__
+
+   package main
+
+   import (
+       "fmt"
+       "reflect"
+
+       "github.com/bitly/go-simplejson"
+   )
+
+   type A struct {
+       name string `json:"name"`
+       code string `json:"code"`
+   }
+
+   func marshal(a A) ([]byte, error) {
+       j := simplejson.New()
+       va := reflect.ValueOf(&a)
+       vt := va.Elem()
+       types := reflect.TypeOf(a)
+       for i := 0; i < vt.NumField(); i++ {
+           j.Set(types.Field(i).Tag.Get("json"), fmt.Sprintf("%v", reflect.Indirect(va).Field(i)))
+       }
+       return j.MarshalJSON()
+   }
+
+   func main() {
+       a := A{name: "jessonchan", code: "abc"}
+       b, _ := marshal(a)
+       fmt.Println(string(b))
+   }
+
 
 Exporter
 ========
