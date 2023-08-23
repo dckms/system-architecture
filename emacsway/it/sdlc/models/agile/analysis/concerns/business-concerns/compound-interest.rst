@@ -38,6 +38,28 @@ Technical Debt и сложный процент
 
     -- "`Debt Metaphor <https://youtu.be/pqeJFYwnkjE?t=90>`__" by Ward Cunningham
 
+..
+
+    💬 Burden
+
+    I think that there were plenty of cases where people would rush software out the door and learn things but never put that learning back into the program, and that by analogy was borrowing money thinking that you never had to pay it back.
+
+    Of course, if you do that, you know, say with your credit card, **eventually all your income goes to interest and your purchasing power goes to zero**.
+
+    By the same token, if you develop a program for a long period of time by only adding features and never reorganizing it to reflect your understanding of those features, then eventually that program simply does not contain any understanding and all efforts to work on it take longer and longer. In other words, the interest is total -- you'll make zero progress.
+
+    -- "`Ward Explains Debt Metaphor <http://wiki.c2.com/?WardExplainsDebtMetaphor>`__" by Ward Cunningham
+
+..
+
+    💬 Debt
+
+    I coined the debt metaphor to explain the refactoring that we were doing on the WyCash product. This was an early product done in Digitalk Smalltalk, and it was important to me that we accumulate the learnings we did about the application over time by modifying the program to look as if we had known what we were doing all along and to look as if it had been easy to do in Smalltalk.
+
+    The explanation I gave to my boss, and this was financial software, was a financial analogy I called "the debt metaphor". And that said that if we failed to make our program align with what we then understood to be the proper way to think about our financial objects, then we were gonna continually stumble over that disagreement and that would slow us down which was like paying interest on a loan. 
+
+    -- "`Ward Explains Debt Metaphor <http://wiki.c2.com/?WardExplainsDebtMetaphor>`__" by Ward Cunningham
+
 А он рассчитывается по правилу "сложного процента".
 Вся суть в том, чтобы перенести внимание бизнеса с тела долга на геометрическую прогрессию роста его процента:
 
