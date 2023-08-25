@@ -23,6 +23,7 @@ System Architecture
 
    /emacsway/index
    /ivan.ivanov/index
+   /stanislav.bolsun/index
 
 
 .. toctree::
