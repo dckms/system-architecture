@@ -4,5 +4,3 @@ __pycache__
 .env
 *.pyc
 *~
-/Pipfile
-/Pipfile.lock
