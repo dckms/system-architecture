@@ -1,7 +1,7 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
 .. index:: Domain Model
-   :name: domain-model-definition
+   :name: stanislav3316-domain-model-definition
 
 
 =======================
@@ -218,7 +218,7 @@ Domain Model Definition
 
     -- - "Applied systemic analysis" by Felix Tarasenko
 
-[Дополнительно] понятие языкового контекста :ref:`на отдельной странице <language-context>`.
+[Дополнительно] понятие языкового контекста :ref:`на отдельной странице <stanislav3316-language-context>`.
 
 
 

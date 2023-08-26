@@ -1,7 +1,7 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
 .. index:: Domain Model
-   :name: language-context
+   :name: stanislav3316-language-context
 
 
 ===========================
