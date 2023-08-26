@@ -218,6 +218,8 @@ Domain Model Definition
 
     -- - "Applied systemic analysis" by Felix Tarasenko
 
+[Дополнительно] понятие языкового контекста :ref:`на отдельной странице <language-context>`.
+
 
 
 Ограниченный контекст и команды разработки
