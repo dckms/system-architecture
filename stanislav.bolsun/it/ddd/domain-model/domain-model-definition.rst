@@ -1,13 +1,12 @@
 :canonical-base-url: https://dckms.github.io/system-architecture
 
-.. index::
-   single: Domain Model
+.. index:: Domain Model
    :name: domain-model-definition
 
 
-===========================================
-Domain Model
-===========================================
+=======================
+Domain Model Definition
+=======================
 
 .. sectionauthor:: Stanislav Bolsun
 
