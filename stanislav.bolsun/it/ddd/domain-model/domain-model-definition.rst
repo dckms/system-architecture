@@ -9,7 +9,3 @@ Domain Model Definition
 =======================
 
 .. sectionauthor:: Stanislav Bolsun
-
-..
-
-    💬 Domain Model
