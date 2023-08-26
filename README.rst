@@ -213,6 +213,7 @@ Sphinx-doc предоставляет и тегирование/индексир
 #. Установите зависимости. Для этого, из корневой директории проекта выполните команду: ``pip install -r requirements.freeze.txt``
 #. Отредактируйте файл conf.py, подробности смотрите в `документации <https://www.sphinx-doc.org/en/master/usage/configuration.html>`__.
 #. Произведите сборку: ``make html`` или ``sphinx-build -D language=ru -b html . _build``
+#. Локальный запуск: ``python -m http.server``
 #. Подробнее `здесь <https://www.sphinx-doc.org/en/master/usage/quickstart.html>`__.
 
 Так же существует возможность собрать PDF-файл или электронную книгу EPUB.
