@@ -267,3 +267,48 @@ Domain Model Definition
 Возможная неточность термина "ограниченный контекст" в переводе с Bounded Context
 ---------------------------------------------------------------------------------
 
+Возвращаясь к определению Bounded Context от Alberto Brandolini:
+
+    📝 "A Bounded Context is not a purely logical (language consistency, unity of purpose) or physical (code separation, deployment unit) concept.
+    It's an obligation to maintain integrity between those views."
+
+    -- Alberto Brandolini https://twitter.com/ziobrando/status/1476471050565259267?t=Otw4mDHJXA5zcX2623AFNw&s=19
+
+
+Возникает мысль, что перевод "Ограниченный" полисемантического слова "Bounded", возможно, был выбран не совсем удачно. Есть предположение, что термин "Связанный" контекст лучше передает смысл.
+И подкрепить эту мысль можно исходя их следующих фраз:
+
+    📝 "Bounded context means different models of the same thing (e.g., books, customers, etc.) and is represented by models and software that implement those models."
+
+Иными словами, Bounded Context образует связанность между программируемой моделью и её сущностью реального мира.
+Следующие две фразы трактуют термин "bounded" именно как "связанный":
+
+    📝 "How to minimize inter-bounded context dependencies?"
+и
+    📝 "The components of complex systems are bounded sub-systems or agents that adapt or learn when they interact."
+
+
+А следующая фраза говорит о том, чем именно "связаны" (т. е. скованы) команды. Кстати, слово "скованный" - один из вариантов перевода термина "bounded":
+
+    📝 "The scope of each team was bounded by their business line and their products."
+
+Следующие две фразы говорят о том, каким именно образом происходит "сковывание":
+
+    📝 "Bounded contexts aligned with data source domains, such as fixed-income trading or consumer lending"
+и
+    📝 "Bounded contexts aligned with consumption domains, such as accounting or liquidity"
+
+
+Хотя эта идея немного рушится фразой:
+
+    📝 "A bounded context is the boundary for the meaning of a model."
+
+Но тут можно вспомнить, что термин "boundary" полисемантический, и означает также "межу" или "грань". Обратите внимание на фразу "boundary for the meaning". Не "boundary of subsystem",
+а "boundary for the meaning", что привязывает реализацию (solution space) к  её "предметному смыслу" (meaning of a model). То есть главное не ограничить абы как подсистему, а привязать её к доменному толкованию.
+Именно это Alberto Brandolini и назвал "obligation to maintain integrity".
+
+
+
+Распараллеливание задач между различными ограниченными контекстами
+------------------------------------------------------------------
+
