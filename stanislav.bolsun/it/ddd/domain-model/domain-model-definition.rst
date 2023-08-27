@@ -39,7 +39,7 @@ Domain Model Definition
 
     -- "Domain-Driven Design: Tackling Complexity in the Heart of Software" by Eric Evans
 
-
+..
 
     📝 "So, models represent some artifact of the real world, but with a narrow purpose.
     How much space the building will occupy and how high the whole complex will be, for example,
@@ -53,7 +53,7 @@ Domain Model Definition
 
     -- "Hands-On Domain-Driven Design with .NET Core: Tackling complexity in the heart of software by putting DDD principles into practice" by Alexey Zimarev
 
-
+..
 
     📝 "What’s a Domain Model?
     It’s a software model of the very specific business domain you are working in. Often it’s implemented as an object model,
