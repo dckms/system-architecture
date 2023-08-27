@@ -28,8 +28,7 @@ Domain Model Definition
    :alt: Model of Earth processes
    :align: center
    :width: 100%
-На изображении выше, мы видим очень упрощенную модель процессов Земли, эта модель служит одной цели и моделирует объект не полностью,
-а только в необходимом минимуме для решения поставленной задачи.
+На изображении выше, мы видим реализацию упрощенной модели процессов Земли для решения конкретных задач.
 
 На это и делают акцент Эванс, Вернон и Зимарев в определениях модели:
 
@@ -47,7 +46,7 @@ Domain Model Definition
     Models do not intend to replicate real life. Instead, they represent some particular aspects of real life at a certain level of detail,
     depending on the purpose of the model...
 
-    Going back to Chapter 1,  Why Domain-Driven Design?, if the business domain and the particular problems we have to
+    Going back to Chapter 1, Why Domain-Driven Design?, if the business domain and the particular problems we have to
     solve are in our problem space, the domain model is purely in our solution space.
     We will be modeling our solution, and those models will be our domain models."
 
@@ -73,8 +72,10 @@ Domain Model Definition
     it is a rigorously organized and selective abstraction of that knowledge.
     A diagram can represent and communicate a model, as can carefully written code, as can an English sentence...
 
-    The model and the heart of the design shape each other. It is the intimate link between the model and the implementation that makes the model relevant and ensures that the analysis that went into it applies to the final product, a running program.
-    This binding of model and implementation also helps during maintenance and continuing development, because the code can be interpreted based on understanding the model. (See Chapter 3.)"
+    The model and the heart of the design shape each other. It is the intimate link between the model and the implementation that
+    makes the model relevant and ensures that the analysis that went into it applies to the final product, a running program.
+    This binding of model and implementation also helps during maintenance and continuing development, because the code can be interpreted
+    based on understanding the model. (See Chapter 3.)"
 
     -- "Domain-Driven Design: Tackling Complexity in the Heart of Software" by Eric Evans
 
