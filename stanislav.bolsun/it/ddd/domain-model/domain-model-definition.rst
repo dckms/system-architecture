@@ -66,6 +66,11 @@ Domain Model Definition
 Важное уточнение: Модель - это абстракция, которая формирует реализацию, но не является реализацией,
 хотя реализация и может осуществлять (реализовать) эту модель. Модель это часть solution space.
 
+.. figure:: _media/real-model-impl.jpg
+   :alt: Real object, model and implementation
+   :align: center
+   :width: 100%
+
     📝 "A domain model is not a particular diagram; it is the idea that the diagram is intended to convey.
     It is not just the knowledge in a domain expert's head;
     it is a rigorously organized and selective abstraction of that knowledge.
