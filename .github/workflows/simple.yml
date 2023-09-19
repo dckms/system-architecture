@@ -5,6 +5,8 @@ on:
     branches:    
       - system-architecture
 
+permissions: read-all|write-all
+
 jobs:
   build:
     runs-on: ubuntu-22.04
