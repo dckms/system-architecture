@@ -23,6 +23,6 @@ jobs:
     - name: Make output folder
       run: mkdir _build
     - name: Clone master branch
-      run: git clone "https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" --no-checkout --branch gh-pages --single-branch ./_build # git clone "https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git" --branch master --single-branch ./_build
+      run: git clone "https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" --no-checkout --branch gh-pages --single-branch ./_build # git clone "https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git" --branch master --single-branch ./_build
     - name: Generate static pages
       run: BASE_URL="https://"${GITHUB_REPOSITORY/\//.github.io\/} YANDEX_METRIKA_ID="${{ secrets.YANDEX_METRIKA_ID }}" sphinx-build -W -D language=ru -b html . _build
