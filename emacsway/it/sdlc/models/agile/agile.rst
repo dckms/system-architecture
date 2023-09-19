@@ -52,6 +52,8 @@
 
 ..
 
+    💬 In the software world, “waterfall” is commonly used to describe a style of software process, one that contrasts with the ideas of iterative, or agile styles.
+
     💬 "Certainly agile processes require an iterative approach and cannot work in a waterfall style."
 
     -- "`Waterfall Process <https://martinfowler.com/bliki/WaterfallProcess.html>`__" by Martin Fowler
