@@ -212,6 +212,19 @@ Simon Brown тоже обратил внимание на тот факт, чт�
 
     -- "Software Architecture in Practice" 3d edition by Len Bass, Paul Clements, Rick Kazman
 
+..
+
+    💬 Agile methodologies are based on the notion of embracing change over following detailed plans; to quote the Agile Manifesto: working software over comprehensive documentation.
+    The future is uncertain.
+    Customer needs change and so do external conditions;
+    any plans you draw up will need to be **altered** anyway.
+    This means that the **role of architecture in an Agile context is different from the “waterfall” approach**, where you first draw up plans and then execute them.
+    In an Agile context the plans themselves, and hence **the architecture, are constantly being adapted** to match changing circumstances and requirements.
+    This does not mean that architecture is no longer relevant in Agile.
+    On the contrary, architecture captures the shared vision needed by Agile teams.
+
+    -- "`The Open Group Guide: Agile Architecture Modeling Using the ArchiMate® Language :: Chapter 2.1 Agile and Architecture in General <https://pubs.opengroup.org/architecture/guides/agile-modeling/>`__"
+
 Маятник отклонился от Prediction к Adaptation с большим заносом.
 Хотя в то время уже были модели разработки того, что мы сегодня называем моделями масштабируемого Agile (RUP, MSF, RAD, FDD, Crystal Clear etc.), но они не занимали значительной части рынка.
 
