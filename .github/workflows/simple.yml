@@ -5,7 +5,7 @@ on:
     branches:    
       - system-architecture
 
-permissions: read-all|write-all
+permissions: write-all
 
 jobs:
   build:
