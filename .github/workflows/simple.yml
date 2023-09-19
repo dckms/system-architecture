@@ -5,8 +5,6 @@ on:
     branches:    
       - system-architecture
 
-permissions: write-all
-
 jobs:
   build:
     runs-on: ubuntu-22.04
@@ -27,7 +25,7 @@ jobs:
     - name: Make output folder
       run: mkdir _build
     - name: Clone master branch
-      run: git clone "https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" --no-checkout --branch gh-pages --single-branch ./_build # git clone "https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git" --branch master --single-branch ./_build
+      run: git clone "https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" --no-checkout --branch gh-pages --single-branch ./_build # git clone "https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git" --branch master --single-branch ./_build
     - name: Generate static pages
       run: BASE_URL="https://"${GITHUB_REPOSITORY/\//.github.io\/} YANDEX_METRIKA_ID="${{ secrets.YANDEX_METRIKA_ID }}" sphinx-build -W -D language=ru -b html . _build
     - name: Set git config and add changes
@@ -42,7 +40,7 @@ jobs:
           COMMIT_MESSAGE="Update pages on $(date +'%Y-%m-%d %H:%M:%S')"
           git diff-index --quiet --cached HEAD -- && echo "No changes!" && exit 0 || echo $COMMIT_MESSAGE
           git commit -m "${COMMIT_MESSAGE}"
-          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git gh-pages
-          # git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git master
+          git push https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git gh-pages
+          # git push https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git master
           # curl "https://api.telegram.org/bot${{ secrets.BOT_TOKEN }}/sendMessage?text=$COMMIT_MESSAGE %0ALook at ${GITHUB_ACTOR}.github.io %0ARepository%3A github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io&chat_id=${{ secrets.ADMIN_ID }}"
       working-directory: ./_build
