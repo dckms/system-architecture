@@ -203,7 +203,7 @@ Domain-Driven Design Europe 2016 - Brussels, January 26-29, 2016).
 
 В качестве примера можно привести модель обыкновенного огурца, где термин "огурец" в каждом ограниченном контексте имеет строгое и однозначное толкование: плод, ингредиент, груз ...
 
-.. figure:: _media/cucumber_BC.png
+.. figure:: _media/cucumber_BC.jpg
    :alt: cucumber in diffent Bounded Contexts
    :align: center
    :width: 100%
