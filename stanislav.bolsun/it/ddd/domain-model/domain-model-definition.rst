@@ -20,7 +20,7 @@ Domain Model Definition
 
 Начнем с канонического определения модели по Эвансу:
 
-    📝 "every model represents some aspect of reality or an idea that is of interest.
+    💬 "every model represents some aspect of reality or an idea that is of interest.
     A model is a simplification. It is an interpretation of reality that abstracts the aspects relevant to solving
     the problem at hand and ignores extraneous detail..."
 
@@ -28,7 +28,7 @@ Domain Model Definition
 
 ..
 
-    📝 "Модель - это упрощение; это такая интерпретация реальности, при которой из явления извлекаются существенные для решения задачи аспекты, а лишние детали игнорируются."
+    💬 "Модель - это упрощение; это такая интерпретация реальности, при которой из явления извлекаются существенные для решения задачи аспекты, а лишние детали игнорируются."
 
     -- "Domain-Driven Design: Tackling Complexity in the Heart of Software" by Eric Evans, перевод В.Л. Бродового
 
@@ -45,7 +45,7 @@ Domain Model Definition
 Ограниченный контекст, являясь границей модели, определяет контекст применимости этой модели.
 На это и делают акцент Эванс (см. выше), Вернон и Зимарев в определениях модели:
 
-    📝 "So, models represent some artifact of the real world, but with a narrow purpose.
+    💬 "So, models represent some artifact of the real world, but with a narrow purpose.
     How much space the building will occupy and how high the whole complex will be, for example,
     are often just enough for a rough model, during the first review stage of the building project.
     Models do not intend to replicate real life. Instead, they represent some particular aspects of real life at a certain level of detail,
@@ -59,7 +59,7 @@ Domain Model Definition
 
 ..
 
-    📝 "What’s a Domain Model?
+    💬 "What’s a Domain Model?
     It’s a software model of the very specific business domain you are working in. Often it’s implemented as an object model,
     where those objects have both data and behavior with literal and accurate business meaning.
     Creating a unique, carefully crafted domain model at the heart of a core, strategic application or subsystem is essential to
@@ -77,7 +77,7 @@ Domain Model Definition
 Важное уточнение: Модель - это абстракция, которая формирует реализацию, но не является реализацией,
 хотя реализация и может осуществлять (реализовать) эту модель. Модель это часть solution space.
 
-    📝 "A domain model is not a particular diagram; it is the idea that the diagram is intended to convey.
+    💬 "A domain model is not a particular diagram; it is the idea that the diagram is intended to convey.
     It is not just the knowledge in a domain expert's head;
     it is a rigorously organized and selective abstraction of that knowledge.
     A diagram can represent and communicate a model, as can carefully written code, as can an English sentence...
@@ -102,7 +102,7 @@ Domain Model Definition
    что не позволит эффективно решать задачи (например, осуществление навигации судна по точной копии Земли).
 
 
-    📝 "Because the term domain model includes the word domain, we might get the idea that we should create a single,
+    💬 "Because the term domain model includes the word domain, we might get the idea that we should create a single,
     cohesive, all-inclusive model of an organization’s entire business domain—you know, like an enterprise model. However,
     when using DDD, that is not our goal. DDD places emphasis on just the opposite. The whole Domain of the organization is composed of Subdomains.
     Using DDD, models are developed in Bounded Contexts. In fact, developing a Domain Model is actually one way that we focus on only one specific area of the whole business domain.
@@ -117,7 +117,7 @@ Domain Model Definition
     -- "Implementing Domain-Driven Design" by Vaughn Vernon
 
 
-В качестве иллюстрации того, что модель создается для решения конкретных задач (работает в строго определенном контексте) с помощью упрощения объектов реально мира,
+В качестве иллюстрации того, что модель создается для решения конкретных задач (работает в строго определенном контексте) с помощью упрощения интерпретации объектов реального мира,
 рассмотрим примеры из доклада Эрика Эванса (Eric Evans — Tackling Complexity in the Heart of Software,
 Domain-Driven Design Europe 2016 - Brussels, January 26-29, 2016).
 
@@ -149,7 +149,7 @@ Domain-Driven Design Europe 2016 - Brussels, January 26-29, 2016).
 Важное дополнение: модель по Тарасенко
 --------------------------------------
 
-    📝 "Мы уже сформулировали два определения модели. Первое: модель есть средство осуществления любой деятельности субъекта. Второе: модель есть форма существования знаний.
+    💬 "Мы уже сформулировали два определения модели. Первое: модель есть средство осуществления любой деятельности субъекта. Второе: модель есть форма существования знаний.
     Можно несколько дополнить каждое из этих определений указанием на то, что модель — тоже система, со всеми описанными в главе 2 общесистемными свойствами.
     Отличительная особенность моделей от других систем состоит (в дополнение к тому, что говорят два определения) в их предназначенности отображать моделируемый оригинал, заменять его в определенном отношении,
     т.е. содержать и представлять информацию об оригинале. Выразим эту мысль в виде еще одного общего определения: модель есть системное отображение оригинала.
@@ -164,7 +164,7 @@ Domain-Driven Design Europe 2016 - Brussels, January 26-29, 2016).
    :width: 100%
 
 и следует за этим:
-    📝 "Продолжая рассмотрение отношений между моделью и оригиналом, остановимся на содержании информации в модели. Оригинал и модель — разные вещи.
+    💬 "Продолжая рассмотрение отношений между моделью и оригиналом, остановимся на содержании информации в модели. Оригинал и модель — разные вещи.
     В оригинале есть много такого, чего нет в модели, по двум причинам: во-первых, не все из того, что известно об оригинале, понадобится включить в модель, предназначенную для достижения конкретной цели (зона А на рис. 3.13 изображает известное, но ненужное, в том числе ошибочно сочтенное ненужным и невключенное в модель);
     во-вторых, в оригинале есть всегда нечто непознанное, поэтому не могущее быть включенным в модель (зона В на рис. 3.13).
 
@@ -187,7 +187,7 @@ Domain-Driven Design Europe 2016 - Brussels, January 26-29, 2016).
 И при поиске ограниченных контекстов мы можем ориентироваться на эти лингвистические конфликты в процессе коммуникации (эти конфликты
 и является основными маркерами контекстов).
 
-    📝 "The Language of a team in an explicit Bounded Context expressed as a domain model adds true business value
+    💬 "The Language of a team in an explicit Bounded Context expressed as a domain model adds true business value
     and gives us certainty that we are implementing the correct software."
 
     -- "Implementing Domain-Driven Design" by Vaughn Vernon
@@ -201,7 +201,7 @@ Domain-Driven Design Europe 2016 - Brussels, January 26-29, 2016).
 это подразумевает, в первую очередь, согласованный язык внутри границ применимости модели. Мы в рамках модели ограничены ограниченным контекстом,
 где каждый термин обозначает строго одно явление.
 
-    📝 "The model is a set of concepts built up in the heads of people on the project, with terms and relationships that reflect domain insight.
+    💬 "The model is a set of concepts built up in the heads of people on the project, with terms and relationships that reflect domain insight.
     These terms and interrelationships provide the semantics of a language that is tailored to the domain while being precise enough for technical development.
     This is a crucial cord that weaves the model into development activity and binds it with the code."
 
@@ -215,7 +215,7 @@ Domain-Driven Design Europe 2016 - Brussels, January 26-29, 2016).
    :width: 100%
 
 Про профессиональные языки от Тарасенко:
-    📝 "Главная для нас особенность — то, что язык является универсальным средством моделирования: говорить можно о чем угодно. Из многих свойств языка, обеспечивающих ему это свойство, обратим
+    💬 "Главная для нас особенность — то, что язык является универсальным средством моделирования: говорить можно о чем угодно. Из многих свойств языка, обеспечивающих ему это свойство, обратим
     внимание на расплывчатость смысла слов.
 
     Приведем пример словесной модели некоторой ситуации. «В комнату вошел высокий красивый молодой человек, неся тяжелый сверток». Так и видится реальная картина. Но «высокий» — какого именно роста? «Молодой» — а сколько ему лет?
@@ -288,7 +288,7 @@ Domain-Driven Design Europe 2016 - Brussels, January 26-29, 2016).
 
 Владик отлично выводит противоречие, как опытный диалектик:
 
-    📝 "However, it is more difficult to represent such a divergent model of the business domain in software. Source code doesn’t cope well with ambiguity. If we were to bring the sales department’s complicated model into marketing,
+    💬 "However, it is more difficult to represent such a divergent model of the business domain in software. Source code doesn’t cope well with ambiguity. If we were to bring the sales department’s complicated model into marketing,
     it would introduce complexity where it’s not needed— far more detail and behavior than marketing people need for optimizing advertising campaigns. But if we were to try to simplify the sales model according to the marketing world view,
     it wouldn’t fit the sales subdomain’s needs, because it’s too simplistic for managing and optimizing the sales process.
     We’d have an overengineered solution in the first case and an under-engineered one in the second."
