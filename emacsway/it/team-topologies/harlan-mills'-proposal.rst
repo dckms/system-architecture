@@ -553,6 +553,18 @@ Scrum of Scrums
 См. также структуру "Scrum of Scrum Team (SoS) a Core Team" на странице 5 "`The Scrum Software Factory <https://www.scrumatscale.com/wp-content/uploads/2020/09/Scrum_At_Scale_Case_Study_Air_Transport_Amogh.pdf>`__" by Amogh Joshi.
 
 
+Early Scrum
+-----------
+
+    The first keynote speaker was Ken Schwaber. Ken and Jeff Sutherland are the authors and founders of the Scrum agile methodology. Ken started by describing his experiences working with Scrum on large projects and several techniques he had successfully used in the early stages of the project life cycle.
+
+    Ken explained on one project how the team was very concerned with getting the overall architecture of the system proven in the early stages of development. Early project iterations (sprints in Scrum terminology) contained stories focused on proving the system architecture peppered with several real business cases. After several iterations, during which the architecture was continuously refined and tested, the team had a good sense of whether the architecture was sufficient for the demands of the business.
+
+    Scaling was then achieved by starting new teams with the founders of the original architecture team. With most of the architectural issues addressed, the new teams could focus on implementing business logic on top of the then stable architecture.
+
+    -- "`Canadian Workshop on Scaling XP/Agile Methods <https://martinfowler.com/articles/canScaling.html>`__" by Jonathan Rasmusson, Jim McDonald
+
+
 Другие
 ------
 
