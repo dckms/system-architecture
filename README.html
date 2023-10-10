@@ -278,7 +278,8 @@ Sphinx-doc предоставляет и тегирование/индексир
 <li><p>Если не установлен Python, то <a class="reference external" href="https://docs.python.org/3/installing/index.html">установите его</a>.</p></li>
 <li><p>Установите зависимости. Для этого, из корневой директории проекта выполните команду: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.freeze.txt</span></code></p></li>
 <li><p>Отредактируйте файл conf.py, подробности смотрите в <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">документации</a>.</p></li>
-<li><p>Произведите сборку: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> или <code class="docutils literal notranslate"><span class="pre">sphinx-build</span> <span class="pre">-D</span> <span class="pre">language=ru</span> <span class="pre">-b</span> <span class="pre">html</span> <span class="pre">.</span> <span class="pre">_build</span></code></p></li>
+<li><p>Произведите сборку: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> или <code class="docutils literal notranslate"><span class="pre">sphinx-build</span> <span class="pre">-D</span> <span class="pre">language=ru</span> <span class="pre">-b</span> <span class="pre">html</span> <span class="pre">.</span> <span class="pre">_build</span></code> или <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">sphinx_image</span> <span class="pre">.</span> <span class="pre">&amp;&amp;</span> <span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-v</span> <span class="pre">$(pwd):/sphinxtechnicalwriting</span> <span class="pre">sphinx_image</span> <span class="pre">make</span> <span class="pre">html</span></code></p></li>
+<li><p>Локальный запуск: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">http.server</span></code></p></li>
 <li><p>Подробнее <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/quickstart.html">здесь</a>.</p></li>
 </ol>
 <p>Так же существует возможность собрать PDF-файл или электронную книгу EPUB.</p>
@@ -592,6 +593,7 @@ markdown файлов на Github Pаges обрабатываются Jekyll.</p
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="emacsway/index.html">Пространство Emacsway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stanislav.bolsun/index.html">Пространство Станислава Болсуна</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Приватное пространствo:</span></p>
 <ul>
