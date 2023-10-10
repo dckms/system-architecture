@@ -132,7 +132,13 @@ Domain Model Definition
 
 Данная проекция имеет меньшие искажения относительных размеров объектов, особенно в сравнении с проекцией Меркатора, то есть, она может служить более точным инструментом определения относительных размеров объектов земли.
 
-.. seealso:: `Vaughn Vernon объясняет, почему построение канонической всеобъемлющей модели предприятия и единой предметной области на основе единой модели деятельности - миф <https://www.infoq.com/articles/modeling-uncertainty-reactive-ddd/>`_
+.. seealso::
+
+    💬 "We're making an effort with DDD to recognize that there is no practical way to have a canonical, enterprise data model where every single element in the model is representative of how every team in the enterprise would want to use it.
+    It just doesn't happen. There's always some difference, and many times there are many differences that make it very painful for one team to try to use the model that another team has created.
+    That's why we're focused on the bounded context with a ubiquitous language."
+
+   `Vaughn Vernon объясняет, почему построение канонической всеобъемлющей модели предприятия и единой предметной области на основе единой модели деятельности - миф <https://www.infoq.com/articles/modeling-uncertainty-reactive-ddd/>`_
 
 
 Важное дополнение: модель по Тарасенко
