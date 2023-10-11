@@ -136,7 +136,7 @@ Domain Model Definition
 2. Картографическая проекция земного шара на поверхность многогранника (проекция Димаксион (Фуллера))
 
 .. figure:: _media/fuller_projection.png
-   :alt: Fuller projection. The image source is https://ru.m.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:Fuller_projection_rotated.svg
+   :alt: Fuller projection
    :align: center
    :width: 100%
 
@@ -297,7 +297,7 @@ Domain Model Definition
 Посетитель, пользователь, клиент, покупатель, плательщик, получатель, адресат - это все тоже модели одного и того же объекта моделирования.
 
 .. figure:: _media/bc_perspective.png
-   :alt: Different pespectives are matter. The image source is https://mnogogranniki.ru/dodekaedr.html
+   :alt: Different pespectives are matter
    :align: center
    :width: 60%
 
