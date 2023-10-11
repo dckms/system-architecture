@@ -33,9 +33,11 @@ Domain Model Definition
 Каждая модель имеет свой контекст применимости, без контекста применимости мы не сможем создать модель, так как не знаем какую проблему решаем (то есть какие свойства и поведение нужны для решения конкретной проблемы).
 
 .. figure:: _media/model_of_earth_processes.png
-   :alt: Model of Earth processes. The image source is "https://www.britannica.com/science/axiomatic-method"
+   :alt: Model of Earth processes. The image source is https://www.britannica.com/science/axiomatic-method
    :align: center
    :width: 100%
+
+   Model of Earth processes. The image source is https://www.britannica.com/science/axiomatic-method
 
 На изображении выше, мы видим модель процессов Земли, служащую для решения определенных задач.
 
@@ -70,6 +72,8 @@ Domain Model Definition
    :alt: Real object, model and implementation
    :align: center
    :width: 100%
+
+   Real object, model and implementation
 
 Важное уточнение: Модель - это абстракция, которая формирует реализацию, но не является реализацией, хотя реализация и может осуществлять (реализовывать) эту модель.
 Модель это часть solution space.
@@ -116,9 +120,11 @@ Domain Model Definition
 1. Карта морского ориентирования (цилиндрическая проекция Меркатора)
 
 .. figure:: _media/mercator_projection.png
-   :alt: Mercator projection. The image source is presentation "https://www.youtube.com/watch?v=dnUFEg68ESM&ab_channel=Domain-DrivenDesignEurope"
+   :alt: Mercator projection. The image source is presentation https://www.youtube.com/watch?v=dnUFEg68ESM&ab_channel=Domain-DrivenDesignEurope
    :align: center
    :width: 100%
+
+   Mercator projection. The image source is presentation https://www.youtube.com/watch?v=dnUFEg68ESM&ab_channel=Domain-DrivenDesignEurope
 
 Такие карты используют относительное искажение размеров объектов относительно друг друга, но помогают направлять компас в сторону нужной конечной точки (направление на карте полностью совпадет со стрелкой компаса).
 На этой карте Африка и Гренландия выглядят равными по площади, но в действительности, Африка в 14 раз больше Гренландии, то есть у карты есть четкое предназначение, задача для которой она нужна, и только для нее - навигация судов.
@@ -126,9 +132,11 @@ Domain Model Definition
 2. Картографическая проекция земного шара на поверхность многогранника (проекция Димаксион (Фуллера))
 
 .. figure:: _media/fuller_projection.png
-   :alt: Fuller projection. The image source is "https://ru.m.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:Fuller_projection_rotated.svg"
+   :alt: Fuller projection. The image source is https://ru.m.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:Fuller_projection_rotated.svg
    :align: center
    :width: 100%
+
+   Fuller projection. The image source is https://ru.m.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:Fuller_projection_rotated.svg
 
 Данная проекция имеет меньшие искажения относительных размеров объектов, особенно в сравнении с проекцией Меркатора, то есть, она может служить более точным инструментом определения относительных размеров объектов земли.
 
@@ -154,9 +162,11 @@ Domain Model Definition
     -- "Прикладной системный анализ" Ф.П. Тарасенко
 
 .. figure:: _media/tarasenko_model.png
-   :alt: Tarasenko model. The image source is "'Прикладной системный анализ' Ф.П. Тарасенко, глава '3.8. Синтетический подход к понятию модели'"
+   :alt: Tarasenko model. The image source is 'Прикладной системный анализ' Ф.П. Тарасенко, глава '3.8. Синтетический подход к понятию модели'
    :align: center
    :width: 100%
+
+   Tarasenko model. The image source is 'Прикладной системный анализ' Ф.П. Тарасенко, глава '3.8. Синтетический подход к понятию модели'
 
 и следует за этим:
 
@@ -205,9 +215,11 @@ Domain Model Definition
 В качестве примера можно привести модель обыкновенного огурца, где термин "огурец" в каждом ограниченном контексте имеет строгое и однозначное толкование (но разное): плод, ингредиент, груз ...
 
 .. figure:: _media/cucumber_BC.jpg
-   :alt: cucumber in diffent Bounded Contexts
+   :alt: Сucumber in diffent Bounded Contexts
    :align: center
    :width: 100%
+
+   Сucumber in diffent Bounded Contexts
 
 [Дополнение] Про профессиональные языки от Тарасенко:
 
@@ -279,9 +291,11 @@ Domain Model Definition
 Посетитель, пользователь, клиент, покупатель, плательщик, получатель, адресат - это все тоже модели одного и того же объекта моделирования.
 
 .. figure:: _media/bc_perspective.png
-   :alt: Different pespectives are matter. The image source is "https://mnogogranniki.ru/dodekaedr.html"
+   :alt: Different pespectives are matter. The image source is https://mnogogranniki.ru/dodekaedr.html
    :align: center
    :width: 60%
+
+   Different pespectives are matter. The image source is https://mnogogranniki.ru/dodekaedr.html
 
 Владик отлично выводит противоречие, как опытный диалектик:
 
