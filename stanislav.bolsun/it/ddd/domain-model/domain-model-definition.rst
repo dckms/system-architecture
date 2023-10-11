@@ -33,11 +33,13 @@ Domain Model Definition
 Каждая модель имеет свой контекст применимости, без контекста применимости мы не сможем создать модель, так как не знаем какую проблему решаем (то есть какие свойства и поведение нужны для решения конкретной проблемы).
 
 .. figure:: _media/model_of_earth_processes.png
-   :alt: Model of Earth processes. The image source is https://www.britannica.com/science/axiomatic-method
+   :alt: Model of Earth processes
    :align: center
    :width: 100%
 
-   Model of Earth processes. The image source is https://www.britannica.com/science/axiomatic-method
+   Model of Earth processes
+
+   -- `Источник <https://www.britannica.com/science/axiomatic-method>`__
 
 На изображении выше, мы видим модель процессов Земли, служащую для решения определенных задач.
 
@@ -120,11 +122,13 @@ Domain Model Definition
 1. Карта морского ориентирования (цилиндрическая проекция Меркатора)
 
 .. figure:: _media/mercator_projection.png
-   :alt: Mercator projection. The image source is presentation https://www.youtube.com/watch?v=dnUFEg68ESM&ab_channel=Domain-DrivenDesignEurope
+   :alt: Mercator projection
    :align: center
    :width: 100%
 
-   Mercator projection. The image source is presentation https://www.youtube.com/watch?v=dnUFEg68ESM&ab_channel=Domain-DrivenDesignEurope
+   Mercator projection
+
+   -- `Источник <https://www.youtube.com/watch?v=dnUFEg68ESM&ab_channel=Domain-DrivenDesignEurope>`__
 
 Такие карты используют относительное искажение размеров объектов относительно друг друга, но помогают направлять компас в сторону нужной конечной точки (направление на карте полностью совпадет со стрелкой компаса).
 На этой карте Африка и Гренландия выглядят равными по площади, но в действительности, Африка в 14 раз больше Гренландии, то есть у карты есть четкое предназначение, задача для которой она нужна, и только для нее - навигация судов.
@@ -136,7 +140,9 @@ Domain Model Definition
    :align: center
    :width: 100%
 
-   Fuller projection. The image source is https://ru.m.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:Fuller_projection_rotated.svg
+   Fuller projection
+
+   -- `Источник <https://ru.m.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:Fuller_projection_rotated.svg>`__
 
 Данная проекция имеет меньшие искажения относительных размеров объектов, особенно в сравнении с проекцией Меркатора, то есть, она может служить более точным инструментом определения относительных размеров объектов земли.
 
@@ -162,11 +168,11 @@ Domain Model Definition
     -- "Прикладной системный анализ" Ф.П. Тарасенко
 
 .. figure:: _media/tarasenko_model.png
-   :alt: Tarasenko model. The image source is 'Прикладной системный анализ' Ф.П. Тарасенко, глава '3.8. Синтетический подход к понятию модели'
+   :alt: 'Прикладной системный анализ' Ф.П. Тарасенко, глава '3.8. Синтетический подход к понятию модели'
    :align: center
    :width: 100%
 
-   Tarasenko model. The image source is 'Прикладной системный анализ' Ф.П. Тарасенко, глава '3.8. Синтетический подход к понятию модели'
+   'Прикладной системный анализ' Ф.П. Тарасенко, глава '3.8. Синтетический подход к понятию модели'
 
 и следует за этим:
 
@@ -295,7 +301,9 @@ Domain Model Definition
    :align: center
    :width: 60%
 
-   Different pespectives are matter. The image source is https://mnogogranniki.ru/dodekaedr.html
+   Different pespectives are matter
+
+   -- `Источник <https://mnogogranniki.ru/dodekaedr.html>`__
 
 Владик отлично выводит противоречие, как опытный диалектик:
 
