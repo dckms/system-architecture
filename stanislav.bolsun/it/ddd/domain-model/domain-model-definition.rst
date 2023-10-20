@@ -17,7 +17,12 @@ Domain Model Definition
 Доменная модель
 ===============
 
-Начнем с канонического определения модели по Эвансу:
+
+
+Что такое модель (понятие)
+--------------------------
+
+Начнем с определения модели по Эвансу:
 
     💬 "every model represents some aspect of reality or an idea that is of interest.
     A model is a simplification. It is an interpretation of reality that abstracts the aspects relevant to solving the problem at hand and ignores extraneous detail..."
@@ -30,29 +35,93 @@ Domain Model Definition
 
     -- "Domain-Driven Design: Tackling Complexity in the Heart of Software" by Eric Evans, перевод В.Л. Бродового
 
-Каждая модель имеет свой контекст применимости, без контекста применимости мы не сможем создать модель, так как не знаем какую проблему решаем (то есть какие свойства и поведение нужны для решения конкретной проблемы).
-
-.. figure:: _media/model_of_earth_processes.png
-   :alt: Model of Earth processes
-   :align: center
-   :width: 100%
-
-   Model of Earth processes
-
-   -- `Источник <https://www.britannica.com/science/axiomatic-method>`__
-
-На изображении выше, мы видим модель процессов Земли, служащую для решения определенных задач.
-
-Ограниченный контекст, являясь границей модели, определяет контекст применимости этой модели.
-На это и делают акцент Эванс (см. выше), Вернон и Зимарев в определениях модели:
+..
 
     💬 "So, models represent some artifact of the real world, but with a narrow purpose.
     How much space the building will occupy and how high the whole complex will be, for example,
     are often just enough for a rough model, during the first review stage of the building project.
     Models do not intend to replicate real life. Instead, they represent some particular aspects of real life at a certain level of detail,
-    depending on the purpose of the model...
+    depending on the purpose of the model..."
 
-    Going back to Chapter 1, Why Domain-Driven Design?, if the business domain and the particular problems we have to
+    -- "Hands-On Domain-Driven Design with .NET Core: Tackling complexity in the heart of software by putting DDD principles into practice" by Alexey Zimarev
+
+..
+
+    💬 Model (glossary)
+    (1) A physical, mathematical, or otherwise logical representation of a system, entity, phenomenon, or process. (DoD 1998)
+
+    (2) A representation of one or more concepts that may be realized in the physical world. (Friedenthal, Moore, Steiner 2009)
+
+    (3) A simplified representation of a system at some particular point in time or space intended to promote understanding of the real system. (Bellinger 2004)
+
+    (4) An abstraction of a system, aimed at understanding, communicating, explaining, or designing aspects of interest of that system (Dori 2002)
+
+    (5) A selective representation of some system whose form and content are chosen based on a specific set of concerns. The model is related to the system by an explicit or implicit mapping. (Object Management Group 2010)
+
+    -- "SEBoK Model (glossary)" https://sebokwiki.org/wiki/Model_(glossary)
+
+Соответственно, каждая модель имеет свой контекст применимости, без контекста применимости мы не cможем создать модель, так как не знаем какую проблему решаем (то есть какие свойства и поведение нужно выразить в модели).
+Этот контекст применимости модели выражается ограниченным контектом (термин из DDD), который также является и границей нашей модели.
+
+.. figure:: _media/model_perspectives.jpeg
+   :alt: The model's perspective matters
+   :align: center
+   :width: 100%
+
+   The model's perspective matters
+
+   -- `Источник <https://ru.pinterest.com/pin/298222806578985943/>`__
+
+
+Концепнуальная (ментальная) модель предметной области
+-----------------------------------------------------
+
+Так как в каждый конкретный момент времени человек смотрит на мир через призму определенной системы понятий, то прежде чем мы сможем сформулировать какую-либо проблему, нам придется принять какую-то модель.
+Для этого нам нужно прийти к единому набору понятий (в зависимости от разных точек зрения (viewpoint) реальность может описываться разными системами понятий), терминов для моделирования.
+
+Для выражения этой мысли приведу пример из чата по дискуссии о текущей статье, где Михаила Андронов четко описал этот момент:
+
+    💬 "Пока ты призму не принял, у тебя терминов нет, чтобы проблему выразить.
+    Другое дело, что люди в большинстве своём не осознают что всегда через призму какой-то модели смотрят на мир.
+    Считают, что то, что видят - это и есть реальность.
+    Например, чтобы сказать, что в комнате грязно (такая у нас проблема), у тебя должны быть понятия "комната" и "мусор".
+    То есть ты уже смотришь на комнату как помещение с полезными и бесполезными предметами (такая модель).
+    А представь, что ты при этом разговариваешь с кем-то, для кого эта комната - это место, где он был молод, счастлив и где его дети выросли.
+    Он на неё смотрит как на копилку счастливых воспоминаний.
+    В его модели невозможно выразить проблему "в комнате грязно".
+    И так будет до тех пор, пока он свою модель не сменит на твою."
+
+    -- "Domain Model tg group (обсуждение статьи, https://t.me/emacsway_log/1194)" - Михаил Андронов
+
+Чтобы задать систему понятий и терминов, можно использовать разные подходы, такие как задание определенного viewpoint через актора (бухгалтер, повар, аналитик, ...), либо же применение Big Picture моделерования из Event Storming для построения общей ментальной модели (через выравнивание доменных знаний участников).
+
+    💬 "Big Picture workshop tried hard not to focus but to embrace the whole complexity and maximize learning.
+    Now the starting point is different: * we can assume we have a shared better understanding of the underlying domain here the focus is on implementing software features that are solving a specific problem.
+
+..
+
+    the big picture was a model of our current level of understanding, by digging deeper into key interaction we are already making it obsolete."
+
+    -- " Introducing EventStorming" by Alberto Brandolini
+
+Свидетельство этого также можно обнаружить, например, в спецификации ArchiMate: "Layers – the three levels at which an enterprise can be modeled in ArchiMate – Business, Application, and Technology".
+
+.. seealso::
+
+    - `Types of Models <https://sebokwiki.org/wiki/Types_of_Models/>`_
+
+    - `Concept (glossary) <https://sebokwiki.org/wiki/Concept_(glossary)/>`_
+
+    - `Conceptual_Model <https://sebokwiki.org/wiki/System_Modeling_Concepts#Conceptual_Model/>`_
+
+
+
+Доменная модель
+---------------
+
+Далее, когда у нас появилась концептуальная (ментальная) модель, мы можем присутпать к поиску решений доменных проблем и анализу будущего решения, с текущем состоянием системы (интеграция).
+
+    💬 "Going back to Chapter 1, Why Domain-Driven Design?, if the business domain and the particular problems we have to
     solve are in our problem space, the domain model is purely in our solution space.
     We will be modeling our solution, and those models will be our domain models."
 
@@ -69,6 +138,7 @@ Domain Model Definition
 
     -- "Implementing Domain-Driven Design" by Vaughn Vernon
 
+Важное уточнение, модель - это абстракция, которая формирует реализацию, но не является реализацией, хотя реализация и может осуществлять (реализовывать) эту модель (модель это часть solution space).
 
 .. figure:: _media/real-model-impl.jpg
    :alt: Real object, model and implementation
@@ -76,9 +146,6 @@ Domain Model Definition
    :width: 100%
 
    Real object, model and implementation
-
-Важное уточнение: Модель - это абстракция, которая формирует реализацию, но не является реализацией, хотя реализация и может осуществлять (реализовывать) эту модель.
-Модель это часть solution space.
 
     💬 "A domain model is not a particular diagram; it is the idea that the diagram is intended to convey.
     It is not just the knowledge in a domain expert's head;
@@ -318,7 +385,8 @@ Domain Model Definition
 --------------------
 
 1. Ivan Zakrevskii
-2. Группа тг-канала объединения ИТ-архитекторов (@ru_arc)
-3. DDDevotion chat (tg https://t.me/iDDDqd)
-4. Группа тг-канала (@emacsway_log) о Software Design/Architecture, DDD, Microservice Architecture, Distributed Systems, SDLC, Agile, Team Topology etc.
-5. рефлексия собственного опыта
+2. Mikhail Andronov
+3. Группа тг-канала объединения ИТ-архитекторов (@ru_arc)
+4. DDDevotion chat (tg https://t.me/iDDDqd)
+5. Группа тг-канала (@emacsway_log) о Software Design/Architecture, DDD, Microservice Architecture, Distributed Systems, SDLC, Agile, Team Topology etc.
+6. рефлексия собственного опыта
