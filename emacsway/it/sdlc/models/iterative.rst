@@ -26,7 +26,15 @@ Iterative Development
 
 ..
 
-    📝 ""Iteration" here means applying a function to itself."
+    💬 If you run into a dead end in one of the areas, **iterate**!
+    Incremental refinement is a powerful tool for managing complexity.
+    As Polya recommended in mathematical problem solving, understand the problem, devise a plan, carry out the plan, and then look back to see how you did [Polya 1957].
+
+     -- "Code Complete" 2nd edition by Steve McConnell
+
+..
+
+    💬 ""Iteration" here means applying a function to itself."
 
     -- "Concrete Mathematics: A Foundation for Computer Science" 2nd edition by Ronald L. Graham, Donald E. Knuth, Oren Patashnik
 
