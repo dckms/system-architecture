@@ -14,6 +14,8 @@ Domain Model Definition
 
 .. contents:: Содержание
 
+
+
 Доменная модель
 ===============
 
@@ -22,7 +24,7 @@ Domain Model Definition
 Что такое модель
 ----------------
 
-Начнем с определения модели по Эвансу:
+Рассмотрим понятие модели из различных источников, начиная с модели по Эвансу:
 
     💬 "every model represents some aspect of reality or an idea that is of interest.
     A model is a simplification.
@@ -50,19 +52,15 @@ Domain Model Definition
 
     💬 Model (glossary)
     (1) A physical, mathematical, or otherwise logical representation of a system, entity, phenomenon, or process. (DoD 1998)
-
     (2) A representation of one or more concepts that may be realized in the physical world. (Friedenthal, Moore, Steiner 2009)
-
     (3) A simplified representation of a system at some particular point in time or space intended to promote understanding of the real system. (Bellinger 2004)
-
     (4) An abstraction of a system, aimed at understanding, communicating, explaining, or designing aspects of interest of that system (Dori 2002)
-
     (5) A selective representation of some system whose form and content are chosen based on a specific set of concerns. The model is related to the system by an explicit or implicit mapping. (Object Management Group 2010)
 
     -- "SEBoK Model (glossary)" https://sebokwiki.org/wiki/Model_(glossary)
 
-Соответственно, каждая модель имеет свой контекст применимости, без контекста применимости мы не cможем создать модель, так как не знаем какую проблему решаем (то есть какие свойства и поведение нужно выразить в модели).
-Этот контекст применимости модели выражается ограниченным контектом (термин из DDD), который также является и границей нашей модели.
+Из определений следует, что каждая модель имеет свой контекст применимости, без контекста применимости мы не можем создать модель, так как не знаем какую проблему необходимо решить (то есть какие свойства и поведение нужно выразить в модели).
+Контекст применимости модели выражается ограниченным контектом (DDD), который также является и границей модели.
 
 .. figure:: _media/model_perspectives.jpeg
    :alt: The model's perspective matters
