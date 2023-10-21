@@ -114,7 +114,7 @@ Domain Model Definition
 
     - `Conceptual_Model <https://sebokwiki.org/wiki/System_Modeling_Concepts#Conceptual_Model/>`_
 
-
+Дополнение: Концептуальная (ментальная) модель является часть Solution Space.
 
 Доменная модель
 ---------------
