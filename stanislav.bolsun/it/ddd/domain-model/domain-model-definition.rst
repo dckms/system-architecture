@@ -25,7 +25,8 @@ Domain Model Definition
 Начнем с определения модели по Эвансу:
 
     💬 "every model represents some aspect of reality or an idea that is of interest.
-    A model is a simplification. It is an interpretation of reality that abstracts the aspects relevant to solving the problem at hand and ignores extraneous detail..."
+    A model is a simplification.
+    It is an interpretation of reality that abstracts the aspects relevant to solving the problem at hand and ignores extraneous detail..."
 
     -- "Domain-Driven Design: Tackling Complexity in the Heart of Software" by Eric Evans
 
@@ -73,6 +74,7 @@ Domain Model Definition
    -- `Источник <https://ru.pinterest.com/pin/298222806578985943/>`__
 
 
+
 Концепнуальная (ментальная) модель предметной области
 -----------------------------------------------------
 
@@ -96,15 +98,18 @@ Domain Model Definition
 Чтобы задать систему понятий и терминов, можно использовать разные подходы, такие как задание определенного viewpoint через актора (бухгалтер, повар, аналитик, ...), либо же применение Big Picture моделерования из Event Storming для построения общей ментальной модели (через выравнивание доменных знаний участников).
 
     💬 "Big Picture workshop tried hard not to focus but to embrace the whole complexity and maximize learning.
-    Now the starting point is different: * we can assume we have a shared better understanding of the underlying domain here the focus is on implementing software features that are solving a specific problem.
+    Now the starting point is different: we can assume we have a shared better understanding of the underlying domain here the focus is on implementing software features that are solving a specific problem.
+    .. the big picture was a model of our current level of understanding, by digging deeper into key interaction we are already making it obsolete."
+
+    -- "Introducing EventStorming" by Alberto Brandolini
 
 ..
 
-    the big picture was a model of our current level of understanding, by digging deeper into key interaction we are already making it obsolete."
+    💬 "Conceptual Model - A conceptual model is a representation of a system, made of the composition of concepts that are used to help people know, understand, or simulate a subject the model represents."
 
-    -- " Introducing EventStorming" by Alberto Brandolini
+    -- "Modular Monolith with DDD, Chapter 2.2 Conceptual Model" by Kamil Grzybek
 
-Свидетельство этого также можно обнаружить, например, в спецификации ArchiMate: "Layers – the three levels at which an enterprise can be modeled in ArchiMate – Business, Application, and Technology".
+Отражение концептуальной (ментальной) модели также можно обнаружить, например, в спецификации ArchiMate: "Layers – the three levels at which an enterprise can be modeled in ArchiMate – Business, Application, and Technology".
 
 .. seealso::
 
@@ -115,6 +120,8 @@ Domain Model Definition
     - `Conceptual_Model <https://sebokwiki.org/wiki/System_Modeling_Concepts#Conceptual_Model/>`_
 
 Дополнение: Концептуальная (ментальная) модель является часть Solution Space.
+
+
 
 Доменная модель
 ---------------
