@@ -73,6 +73,12 @@ Role of Simplicity in Agile
 
     -- И.Е. Репин
 
+..
+
+    💬 Simplicity is the ultimate sophistication.
+
+    -- Leonardo da Vinci
+
 
 Единица измерения
 =================

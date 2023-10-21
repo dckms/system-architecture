@@ -60,6 +60,12 @@ Product Backlog Item и Requirements
 
 Актуальная версия Agile-расширения BABoK (на момент написания статьи) - вторая, хотя актуальная версия самого BABoK - третья.
 
+    💬 "The unit of requirements gathering is the "user story," user-visible functionality that can be developed within one iteration."
+
+    -- "Agile Software Development" by Alistair Cockburn
+
+..
+
     📝 "The **Product Backlog** is a list of **functional and nonfunctional requirements** that, when turned into functionality, will deliver this vision."
 
     -- "Agile Project Management with Scrum" by Ken Schwaber

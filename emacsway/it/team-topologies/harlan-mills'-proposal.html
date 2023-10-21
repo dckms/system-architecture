@@ -87,13 +87,14 @@
 <li><p><a class="reference internal" href="#nexus" id="id28">Nexus</a></p></li>
 <li><p><a class="reference internal" href="#extreme-programming" id="id29">Extreme Programming</a></p></li>
 <li><p><a class="reference internal" href="#scrum-of-scrums" id="id30">Scrum of Scrums</a></p></li>
-<li><p><a class="reference internal" href="#id6" id="id31">Другие</a></p></li>
+<li><p><a class="reference internal" href="#early-scrum" id="id31">Early Scrum</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id32">Другие</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#emacsway-fractal-team" id="id32">Фрактальная структура</a></p></li>
-<li><p><a class="reference internal" href="#id8" id="id33">Социальная роль архитектуры</a></p></li>
-<li><p><a class="reference internal" href="#emacsway-team-topologies-at-scale-literature" id="id34">Литература</a></p></li>
-<li><p><a class="reference internal" href="#id10" id="id35">Ссылки по теме</a></p></li>
+<li><p><a class="reference internal" href="#emacsway-fractal-team" id="id33">Фрактальная структура</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id34">Социальная роль архитектуры</a></p></li>
+<li><p><a class="reference internal" href="#emacsway-team-topologies-at-scale-literature" id="id35">Литература</a></p></li>
+<li><p><a class="reference internal" href="#id10" id="id36">Ссылки по теме</a></p></li>
 </ul>
 </li>
 </ul>
@@ -174,7 +175,7 @@
 </figcaption>
 </figure>
 <p>Дополнительная нагрузка состоит из двух частей — обучения и обмена данными. Каждого работника нужно обучить технологии, целям проекта, общей стратегии и плану работы. Это обучение нельзя разбить на части, поэтому данная часть затрат изменяется линейно в зависимости от числа занятых.</p>
-<p><strong>С обменом данными дело обстоит хуже. Если все части задания должны быть отдельно скоординированы между собой, то затраты возрастают как n(n-2)/2. Для трех работников требуется втрое больше попарного общения, чем для двух, для четырех — вшестеро. Если помимо этого возникает необходимость в совещаниях трех, четырех и т.д. работников для совместного решения вопросов, положение становится еще хуже. Дополнительные затраты на обмен данными могут полностью обесценить результат дробления исходной задачи и привести к положению, описываемому рисунком 2.4.</strong></p>
+<p><strong>С обменом данными дело обстоит хуже. Если все части задания должны быть отдельно скоординированы между собой, то затраты возрастают как n(n-1)/2. Для трех работников требуется втрое больше попарного общения, чем для двух, для четырех — вшестеро. Если помимо этого возникает необходимость в совещаниях трех, четырех и т.д. работников для совместного решения вопросов, положение становится еще хуже. Дополнительные затраты на обмен данными могут полностью обесценить результат дробления исходной задачи и привести к положению, описываемому рисунком 2.4.</strong></p>
 <figure class="align-left" id="id14">
 <a class="reference internal image-reference" href="../../../_images/fig-2.4-task-with-complex-interrelationships.png"><img alt="Рис. 2.4 Зависимость времени от числа занятых — задача со сложными взаимосвязями. Fig. 2.4 Time versus number of workers—task with complex interrelationships. The image source is &quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr., &quot;Chapter 2 The Mythical Man-Month&quot;, перевод ООО Издательство &quot;Питер&quot;." src="../../../_images/fig-2.4-task-with-complex-interrelationships.png" style="width: 70%;" /></a>
 <figcaption>
@@ -187,7 +188,7 @@
 <p>When a task cannot be partitioned because of sequential constraints, the application of more effort has no effect on the schedule (Fig. 2.2). The bearing of a child takes nine months, no matter how many women are assigned. Many software tasks have this characteristic because of the sequential nature of debugging.</p>
 <p>In tasks that can be partitioned but which require communication among the subtasks, the effort of communication must be added to the amount of work to be done. Therefore the best that can be done is somewhat poorer than an even trade of men for months (Fig. 2.3).</p>
 <p>The added burden of communication is made up of two parts, training and intercommunication. Each worker must be trained in the technology, the goals of the effort, the overall strategy, and the plan of work. This training cannot be partitioned, so this part of the added effort varies linearly with the number of workers.</p>
-<p><strong>Intercommunication is worse. If each part of the task must be separately coordinated with each other part/ the effort increases as n(n-I)/2. Three workers require three times as much pairwise intercommunication as two; four require six times as much as two. If, moreover, there need to be conferences among three, four, etc., workers to resolve things jointly, matters get worse yet. The added effort of communicating may fully counteract the division of the original task and bring us to the situation of Fig. 2.4.</strong></p>
+<p><strong>Intercommunication is worse. If each part of the task must be separately coordinated with each other part/ the effort increases as n(n-1)/2. Three workers require three times as much pairwise intercommunication as two; four require six times as much as two. If, moreover, there need to be conferences among three, four, etc., workers to resolve things jointly, matters get worse yet. The added effort of communicating may fully counteract the division of the original task and bring us to the situation of Fig. 2.4.</strong></p>
 <p>Since software construction is inherently a systems effort—an exercise in complex interrelationships—communication effort is great, and it quickly dominates the decrease in individual task time brought about by partitioning. Adding more men then lengthens, not shortens, the schedule.&quot;</p>
 <p class="attribution">—&quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr., перевод ООО Издательство &quot;Питер&quot;</p>
 </div></blockquote>
@@ -512,8 +513,17 @@ If that doesn't work, <strong>begin the project with a small team, then split th
 </div></blockquote>
 <p>См. также структуру &quot;Scrum of Scrum Team (SoS) a Core Team&quot; на странице 5 &quot;<a class="reference external" href="https://www.scrumatscale.com/wp-content/uploads/2020/09/Scrum_At_Scale_Case_Study_Air_Transport_Amogh.pdf">The Scrum Software Factory</a>&quot; by Amogh Joshi.</p>
 </section>
+<section id="early-scrum">
+<h3><a class="toc-backref" href="#id31" role="doc-backlink">Early Scrum</a><a class="headerlink" href="#early-scrum" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p>The first keynote speaker was Ken Schwaber. Ken and Jeff Sutherland are the authors and founders of the Scrum agile methodology. Ken started by describing his experiences working with Scrum on large projects and several techniques he had successfully used in the early stages of the project life cycle.</p>
+<p>Ken explained on one project how the team was very concerned with getting the overall architecture of the system proven in the early stages of development. Early project iterations (sprints in Scrum terminology) contained stories focused on proving the system architecture peppered with several real business cases. After several iterations, during which the architecture was continuously refined and tested, the team had a good sense of whether the architecture was sufficient for the demands of the business.</p>
+<p>Scaling was then achieved by starting new teams with the founders of the original architecture team. With most of the architectural issues addressed, the new teams could focus on implementing business logic on top of the then stable architecture.</p>
+<p class="attribution">—&quot;<a class="reference external" href="https://martinfowler.com/articles/canScaling.html">Canadian Workshop on Scaling XP/Agile Methods</a>&quot; by Jonathan Rasmusson, Jim McDonald</p>
+</div></blockquote>
+</section>
 <section id="id6">
-<h3><a class="toc-backref" href="#id31" role="doc-backlink">Другие</a><a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id32" role="doc-backlink">Другие</a><a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
 <p>Program Management также присутствует в MSF и в FDD.
 В RAD тоже аналитика является &quot;upstream development activities&quot;.
 RUP реализует <a class="reference internal" href="../sdlc/models/spiral.html#emacsway-spiral-development"><span class="std std-ref">спиральную</span></a> модель.</p>
@@ -555,7 +565,7 @@ An example of such a concern is the management of sessions for a web application
 </section>
 </section>
 <section id="emacsway-fractal-team">
-<span id="id7"></span><h2><a class="toc-backref" href="#id32" role="doc-backlink">Фрактальная структура</a><a class="headerlink" href="#emacsway-fractal-team" title="Permalink to this heading">¶</a></h2>
+<span id="id7"></span><h2><a class="toc-backref" href="#id33" role="doc-backlink">Фрактальная структура</a><a class="headerlink" href="#emacsway-fractal-team" title="Permalink to this heading">¶</a></h2>
 <p>Хотя Program Management и выполняет роль опорного хребта коммуникативной нагрузки коллектива, момент его внедрения в процессы разработки должен быть своевременным и оправданным, т.е. издержки на его содержание должны покрываться выгодами от его внедрения.
 Кроме того, концентрация всех архитектурных задач на уровне Program Management может привести к образованию узкого горлышка.
 Одним из способов решения этой задачи является децентрализация архитектурных решений об интеграции ограниченных контекстов.
@@ -592,14 +602,14 @@ One of the most common reasons that Pact fails to be successfully adopted in an 
 <p>Таким образом, независимо от того, существует ли у команд Program Management, или же команды имеет фрактальную структуру, CDC-Tests позволяют в значительной мере управлять коммуникативной нагрузкой на команды и минизировать Проблему Брукса.</p>
 </section>
 <section id="id8">
-<h2><a class="toc-backref" href="#id33" role="doc-backlink">Социальная роль архитектуры</a><a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id34" role="doc-backlink">Социальная роль архитектуры</a><a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
 <p>📝 &quot;By keeping things team sized, we help to achieve what MacCormack and colleagues call &quot;an '<strong>architecture for participation</strong>' that promotes ease of understanding by limiting module size, and ease of contribution by minimizing the propagation of design changes.&quot;[MacCormack et al., &quot;Exploring the Structure of Complex Software Designs.&quot;] In other words, we need <strong>a team-first software architecture that maximizes people's ability to work with it</strong>.</p>
 <p>&lt;...&gt;</p>
 <p>More than ever I believe that someone who claims to be an <strong>Architect needs both technical and social skills, they need to understand people and work within the social framework</strong>. They also need a remit that is broader than pure technology—they need to have a say in <strong>organizational structures and personnel issues, i.e. they need to be a manager too</strong>.[Kelly, &quot;Return to Conway's Law.&quot;]&quot;</p>
 <p>— &quot;Team Topologies: Organizing Business and Technology Teams for Fast Flow&quot; by Matthew Skelton</p>
 </section>
 <section id="emacsway-team-topologies-at-scale-literature">
-<span id="id9"></span><h2><a class="toc-backref" href="#id34" role="doc-backlink">Литература</a><a class="headerlink" href="#emacsway-team-topologies-at-scale-literature" title="Permalink to this heading">¶</a></h2>
+<span id="id9"></span><h2><a class="toc-backref" href="#id35" role="doc-backlink">Литература</a><a class="headerlink" href="#emacsway-team-topologies-at-scale-literature" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>&quot;The Mythical Man-Month Essays on Software Engineering Anniversary Edition&quot; by Frederick P. Brooks, Jr.</p></li>
 <li><p>&quot;Team Topologies: Organizing Business and Technology Teams for Fast Flow&quot; by Matthew Skelton</p></li>
@@ -612,7 +622,7 @@ One of the most common reasons that Pact fails to be successfully adopted in an 
 </ul>
 </section>
 <section id="id10">
-<h2><a class="toc-backref" href="#id35" role="doc-backlink">Ссылки по теме</a><a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id36" role="doc-backlink">Ссылки по теме</a><a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>&quot;<a class="reference external" href="https://medium.com/nick-tune-tech-strategy-blog/team-responsibility-ownership-patterns-part-1-a-business-architecture-model-63597c4e60e1">Architecture Ownership Patterns For Team Topologies. Part 1: A Business Architecture Model</a>&quot; by Nick Tune</p></li>
 <li><p>&quot;<a class="reference external" href="https://medium.com/nick-tune-tech-strategy-blog/architecture-ownership-patterns-for-team-topologies-part-2-single-team-patterns-943d31854285">Architecture Ownership Patterns for Team Topologies. Part 2: Single Team Patterns</a>&quot; by Nick Tune</p></li>

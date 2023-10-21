@@ -62,23 +62,27 @@
             
     
   <section id="agile-development">
-<span id="emacsway-agile-development"></span><h1><a class="toc-backref" href="#id9" role="doc-backlink">Что такое Agile Development</a><a class="headerlink" href="#agile-development" title="Permalink to this heading">¶</a></h1>
+<span id="emacsway-agile-development"></span><h1><a class="toc-backref" href="#id10" role="doc-backlink">Что такое Agile Development</a><a class="headerlink" href="#agile-development" title="Permalink to this heading">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
 <nav class="contents" id="id1">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#agile-development" id="id9">Что такое Agile Development</a></p>
+<li><p><a class="reference internal" href="#agile-development" id="id10">Что такое Agile Development</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id2" id="id10">Определение</a></p></li>
-<li><p><a class="reference internal" href="#id3" id="id11">История</a></p></li>
-<li><p><a class="reference internal" href="#emacsway-agile-development-essence" id="id12">Суть</a></p></li>
-<li><p><a class="reference internal" href="#emacsway-agile-development-difficulties" id="id13">О сложностях</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id11">Определение</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id12">История</a></p></li>
+<li><p><a class="reference internal" href="#emacsway-agile-development-essence" id="id13">Суть</a></p></li>
+<li><p><a class="reference internal" href="#emacsway-agile-development-difficulties" id="id14">О сложностях</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id6" id="id15">Пример</a></p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </nav>
 <section id="id2">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Определение</a><a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Определение</a><a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><p>💬 &quot;Agile development - software development approach based on <a class="reference internal" href="../iterative.html#emacsway-iterative-development"><span class="std std-ref">iterative</span></a> development, frequent inspection and <a class="reference internal" href="../../uncertainty-management/adaptation/adaptation.html#emacsway-adaptation"><span class="std std-ref">adaptation</span></a>, and <a class="reference internal" href="../incremental.html#emacsway-incremental-development"><span class="std std-ref">incremental</span></a> deliveries, in which requirements and solutions evolve through collaboration in cross‐functional teams and through continual stakeholder feedback.&quot;</p>
 <p class="attribution">—&quot;ISO/IEC/IEEE 12207:2017 Systems and software engineering - Software life cycle processes&quot;</p>
@@ -111,7 +115,7 @@ Agile teams typically work in short cycles—which are called &quot;sprints&quot
 </div></blockquote>
 </section>
 <section id="id3">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">История</a><a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">История</a><a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <p>В заметке &quot;<a class="reference internal" href="../../uncertainty-management/prediction/prediction.html#emacsway-prediction"><span class="std std-ref">Что такое Prediction</span></a>&quot; было сформировано противоречие, которое заключается в том, что для того, чтобы снизить стоимость разработки, нам необходимо повысить точность прогнозирования (повысить полноту требований), но повышение точности прогнозирования, в свою очередь, повышает стоимость разработки (возникает отрицательная обратная связь).
 Причем, повышает её экспоненциально, в то время как бизнес-выгоды от этой точности возрастают логарифмически.
 Иными словами, точность прогнозирования всегда имеет предел экономической целесообразности, который определяется пересечением этих двух графиков (за вычетом стоимости реализации, разумеется).</p>
@@ -131,18 +135,18 @@ Agile teams typically work in short cycles—which are called &quot;sprints&quot
 <div><p>💬 &quot;WaterFall is based on the empirical observation of 30 years ago (ref: BarryBoehm, Software Engineering Economics, Prentice Hall, 1981.) that the cost of change rises exponentially (base 10) by phases. The conclusion is that you should make the big decisions up front, because changing them is so expensive.&quot;</p>
 <p class="attribution">—&quot;<a class="reference external" href="https://wiki.c2.com/?WaterFall">Water Fall</a>&quot; at c2.com</p>
 </div></blockquote>
-<figure class="align-left" id="id6">
+<figure class="align-left" id="id7">
 <a class="reference internal image-reference" href="../../../../../_images/exponential-cost-of-change.png"><img alt="Figure 1. The cost of change rising exponentially over time. The image source is &quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 5. Cost of Change&quot;." src="../../../../../_images/exponential-cost-of-change.png" style="width: 90%;" /></a>
 <figcaption>
-<p><span class="caption-text">Figure 1. The cost of change rising exponentially over time. The image source is &quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 5. Cost of Change&quot;.</span><a class="headerlink" href="#id6" title="Постоянная ссылка на рисунок">¶</a></p>
+<p><span class="caption-text">Figure 1. The cost of change rising exponentially over time. The image source is &quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 5. Cost of Change&quot;.</span><a class="headerlink" href="#id7" title="Постоянная ссылка на рисунок">¶</a></p>
 </figcaption>
 </figure>
 <p>Однако, в конце 1990-х - начале 2000-х, в архитектурном мире произошли существенные изменения - обрели массовую популярность высокоуровневые объектно-ориентированные языки, появились <a class="reference internal" href="../../uncertainty-management/adaptation/software-design/patterns.html#emacsway-agile-patterns"><span class="std std-ref">шаблоны</span></a> и принципы проектирования, методики управления сложностью (ROM, POSA, GOF, OOAD, <a class="reference internal" href="../../uncertainty-management/adaptation/software-design/solid.html#emacsway-agile-solid"><span class="std std-ref">SOLID</span></a>, Use Case Driven Approach, Object-Oriented Software Construction etc.), появились <a class="reference internal" href="../../../tdd/tdd.html#emacsway-tdd"><span class="std std-ref">TDD</span></a>, Refactoring и т.п.</p>
 <p>Унификация знаний в области архитектуры, переход ментального оперирования на элементы унифицированных шаблонных конструкций более высокого уровня абстракции, позволили сократить когнитивную и коммуникативную нагрузку на разработчика, уменьшить порог вхождения в новый проект, смягчить негативное воздействие <a class="reference internal" href="../../../team-topologies/harlan-mills%27-proposal.html#emacsway-brooks-s-law"><span class="std std-ref">Закона Брукса</span></a>.</p>
-<figure class="align-left" id="id7">
+<figure class="align-left" id="id8">
 <a class="reference internal image-reference" href="../../../../../_images/historical-cost-of-exploration.png"><img alt="FIGURE 3.8 Historical cost of exploration. The image source is &quot;Essential Scrum: A Practical Guide to the Most Popular Agile Process&quot; by Kenneth Rubin, &quot;Chapter 3 Agile Principles :: Prediction and Adaptation&quot;." src="../../../../../_images/historical-cost-of-exploration.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-text">FIGURE 3.8 Historical cost of exploration. The image source is &quot;Essential Scrum: A Practical Guide to the Most Popular Agile Process&quot; by Kenneth Rubin, &quot;Chapter 3 Agile Principles :: Prediction and Adaptation&quot;.</span><a class="headerlink" href="#id7" title="Постоянная ссылка на рисунок">¶</a></p>
+<p><span class="caption-text">FIGURE 3.8 Historical cost of exploration. The image source is &quot;Essential Scrum: A Practical Guide to the Most Popular Agile Process&quot; by Kenneth Rubin, &quot;Chapter 3 Agile Principles :: Prediction and Adaptation&quot;.</span><a class="headerlink" href="#id8" title="Постоянная ссылка на рисунок">¶</a></p>
 </figcaption>
 </figure>
 <p>Рост количественных изменений привел к изменениям качественным (&quot;Второй закон диалектики&quot;) - ведущим умам архитектуры своего времени удалось снизить характер роста стоимости адаптации вплоть до пологого графика, максимально приближенного к горизонтальной асимптоте.
@@ -154,10 +158,10 @@ What if the cost of change didn't rise exponentially overtime, but rose much mor
 What if tomorrow's software engineering professor draws Figure 3 on the board?&quot;</p>
 <p class="attribution">—&quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 5. Cost of Change&quot;</p>
 </div></blockquote>
-<figure class="align-left" id="id8">
+<figure class="align-left" id="id9">
 <a class="reference internal image-reference" href="../../../../../_images/flatten-cost-of-change.png"><img alt="Figure 3. The cost of change may not rise dramatically over time. The image source is &quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 5. Cost of Change&quot;." src="../../../../../_images/flatten-cost-of-change.png" style="width: 90%;" /></a>
 <figcaption>
-<p><span class="caption-text">Figure 3. The cost of change may not rise dramatically over time. The image source is &quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 5. Cost of Change&quot;.</span><a class="headerlink" href="#id8" title="Постоянная ссылка на рисунок">¶</a></p>
+<p><span class="caption-text">Figure 3. The cost of change may not rise dramatically over time. The image source is &quot;Extreme Programming Explained&quot; 1st edition by Kent Beck, &quot;Chapter 5. Cost of Change&quot;.</span><a class="headerlink" href="#id9" title="Постоянная ссылка на рисунок">¶</a></p>
 </figcaption>
 </figure>
 <p>Что такое асимтота, можно посмотреть в &quot;§284 Асимтоты&quot; Справочника по высшей математике / М.Я. Выгодский:</p>
@@ -172,7 +176,7 @@ What if tomorrow's software engineering professor draws Figure 3 on the board?&q
 </div></blockquote>
 </section>
 <section id="emacsway-agile-development-essence">
-<span id="id4"></span><h2><a class="toc-backref" href="#id12" role="doc-backlink">Суть</a><a class="headerlink" href="#emacsway-agile-development-essence" title="Permalink to this heading">¶</a></h2>
+<span id="id4"></span><h2><a class="toc-backref" href="#id13" role="doc-backlink">Суть</a><a class="headerlink" href="#emacsway-agile-development-essence" title="Permalink to this heading">¶</a></h2>
 <p>Коротко говоря, Agile модель является итеративно-инкрементальной моделью разработки, на которую наложен ряд филосовско-психологических принципов с целью снизить напряжение между техническими специалистами и представителями бизнеса.
 Морально-психологический климат в ИТ-индустрии того времени был, мягко говоря, напряженным:</p>
 <blockquote>
@@ -222,7 +226,7 @@ Those who would brand proponents of XP or SCRUM or any of the other Agile Method
 To that end, the following &quot;bill of rights&quot; was developed by Kent, Ward Cunningham, and Ron Jeffries, among others.&quot;</p>
 <p class="attribution">—&quot;Clean Agile: Back to Basics&quot; by Robert C. Martin</p>
 </div></blockquote>
-<p>Kent Beck выяснил, что напряжение являлось ни чем иным, как упреждающими защитным механизмом, спровоцированным страхами участников процесса разработки.</p>
+<p>Kent Beck выяснил, что напряжение являлось ни чем иным, как упреждающими защитным механизмом, спровоцированным страхами обоих сторон процесса разработки.</p>
 <p>Идея Bill of Rights возникла на основе идеи Declaration of Independence (<a class="reference external" href="http://www.hist.msu.ru/ER/Etext/indpndnc.htm">перевод</a>):</p>
 <blockquote>
 <div><p>💬 &quot;Software development is risky. People involved have many fears of what may go wrong.</p>
@@ -360,7 +364,7 @@ Many people (including myself) consider XP to be the primary catalyst that got a
 </div></blockquote>
 </section>
 <section id="emacsway-agile-development-difficulties">
-<span id="id5"></span><h2><a class="toc-backref" href="#id13" role="doc-backlink">О сложностях</a><a class="headerlink" href="#emacsway-agile-development-difficulties" title="Permalink to this heading">¶</a></h2>
+<span id="id5"></span><h2><a class="toc-backref" href="#id14" role="doc-backlink">О сложностях</a><a class="headerlink" href="#emacsway-agile-development-difficulties" title="Permalink to this heading">¶</a></h2>
 <p>Вернемся еще раз к выражению Kent Beck &quot;<em>сделайте изменение легким, а потом делай легко изменение</em>&quot;.
 Оно состоит из двух частей, причем, первая из них предшествует второй.
 Как раз именно первую часть нередко забывают сделать на современном рынке, а без первой части вторая часть работает не будет, как это нетрудно догадаться.
@@ -441,6 +445,23 @@ But whatever architectural decisions are made, the architect must make an effort
 <div><p>💬 &quot;After all software is supposed to be soft.&quot;</p>
 <p class="attribution">—&quot;<a class="reference external" href="https://www.martinfowler.com/articles/newMethodology.html">The New Methodology</a>&quot; by Martin Fowler</p>
 </div></blockquote>
+<section id="id6">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Пример</a><a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p>💬 I had a chance to witness the pitfalls of this trap firsthand.
+Working with Nokia, I noticed that management was measuring the success of its digital transformation by how many people were trained on Agile software development methodologies and were onboarded onto Agile tools.
+These activity-based proxy metrics had nothing to do with business outcomes.
+As I will summarize in Part I, Nokia’s transformation efforts failed to address the core platform problems that made it so <strong>difficult for the company to adapt to the changing market</strong>.
+In spite of what appeared to be a well-planned transformation, management was not able to realize this until too late.
+I watched with frustration as Nokia lost the mobile market it had created, in spite of the heroic efforts of my colleagues, who were doing everything they could to save the company.</p>
+<p>...</p>
+<p>Even if the teams had attained a theoretical ideal of agility, would Nokia have been <strong>able to adapt more quickly</strong> without upstream changes to how the business was measuring delivery?
+Or <strong>adapt</strong> downstream changes in how the software was deployed? Or the <strong>architecture changes that were slowing developers down in the first place</strong>?
+In my opinion, that narrow-minded and activity-oriented view of Agile was the root cause of Nokia’s failed digital transformation.
+The failed transformation made fast iteration and learning from the market impossible, as the lead times for delivering new features, such as an app store and an elegant home screen, were far too slow.
+This hindered the business’s ability to learn and adapt, and that inability to adapt was a key factor in Nokia’s downfall.</p>
+<p class="attribution">—&quot;Project to Product: How to Survive and Thrive in the Age of Digital Disruption with the Flow Framework&quot; by Mik Kersten</p>
+</div></blockquote>
 <p>Cм. также:</p>
 <blockquote>
 <div><ul class="simple">
@@ -463,6 +484,7 @@ But whatever architectural decisions are made, the architect must make an effort
 <li><p>&quot;<a class="reference internal" href="../../uncertainty-management/adaptation/crash-course-in-software-development-economics.html"><span class="doc">Краткий курс по экономике разработки программного обеспечения</span></a>&quot;</p></li>
 </ul>
 </div>
+</section>
 </section>
 </section>
 

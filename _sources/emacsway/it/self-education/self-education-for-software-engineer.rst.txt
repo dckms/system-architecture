@@ -891,6 +891,11 @@ Donald E. Knuth:
 
 - "`How Do Story Points Relate to Hours? <https://www.mountaingoatsoftware.com/blog/how-do-story-points-relate-to-hours>`__" by Mike Cohn
 
+Оценка - это не единичное значение, а вероятностная распределённость:
+
+- YOW! 2016 Robert C. Martin - "`Effective Estimation (or: How not to Lie) <https://youtu.be/eisuQefYw_o>`__"
+- "`How to Read Lead Time Distribution <https://www.mauvisoft.com/2020/10/08/how-to-read-lead-time-distribution/>`__" by Mauvisoft Team
+
 
 Функциональное программирование
 -------------------------------

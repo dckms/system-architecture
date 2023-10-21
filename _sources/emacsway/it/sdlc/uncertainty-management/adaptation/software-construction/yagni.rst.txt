@@ -173,6 +173,12 @@ Martin Fowler о выборе момента реализации проектн
 
     -- "`Yagni <https://martinfowler.com/bliki/Yagni.html>`__" by Martin Fowler
 
+.. seealso::
+
+   - "`Определите свои классы обслуживания с помощью Триаж Таблиц <https://kanbanguide.ru/opredelite-svoi-klassy-obsluzhivaniya-s-pomoshhyu-triazh-tablicz-podcast-kanban-talks-epizod-%E2%84%96-7/>`__" Podcast "Kanban talks" Эпизод № 7. Алекс Цыбульник
+   - "`Classes of Service: The Everyday Concept That Can Turbocharge Your Kanban <https://djaa.com/classes-of-service/>`__" by Anna Radzikowska
+   - "Successful Evolutionary Change for Your Technology Business" by David J. Anderson, chapter "Chapter 11: Establishing Service Level Agreements :: Typical Class-of-Service Definitions"
+
 
 В каких случаях момент реализации не стоит откладывать
 ======================================================

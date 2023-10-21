@@ -41,6 +41,8 @@
 
     -- "Concrete Mathematics: A Foundation for Computer Science" 2nd edition by Ronald L. Graham, Donald E. Knuth, Oren Patashnik
 
+Как сказал Томас Эдисон: «Я не терпел поражений. Я просто нашёл 10 000 способов, которые не работают».
+
 
 Назначение Адаптации
 ====================
@@ -156,6 +158,43 @@ Prediction при этом не исчезает полностью, а пони
 
 Таким образом, использование термина :ref:`requirements <emacsway-agile-requirements>`, несмотря на то, что вызывает вопросы относительно семантики, никоим образом не противоречит использованию его в Agile SDLC-моделе, которая, кстати, описана тем же стандартом - ISO/IEC/IEEE 12207:2017, в разделах "5.4.2. Life cycle model for the software system" и "Annex H".
 
+
+Немножко о продуктовом подходе
+==============================
+
+..
+
+    💬 Product-mode: For building, running and **iterating** on the solution or **even pivoting to a different solution** till the underlying problem is **verifiably** solved.
+
+    💬 **To migrate to product-mode, it is best to adopt an iterative** and fail cheap approach. Start with a pilot or two, **learn and adapt**.
+    Although it may feel unsound to those who are used to approving big change programs with detailed roadmaps, it is the essence of a Lean-Agile mindset to **avoid overinvesting before validating actual (not projected) benefits**.
+
+    💬 Product-mode: Product owners prove actual benefits either with data **from A/B testing, analytics, user surveys, etc. or with feedback from business**. This ability is dependent on good engineering **capability to develop and release frequently** in small chunks and good analytics capability to determine delta changes in adoption, conversion etc.
+
+    There is relatively **less emphasis on assessing projected benefits upfront**, especially amongst the best such teams that execute with short cycle times and can therefore try new ideas without incurring a high cost of failure.
+    The product owner is empowered to approve development of roadmap items as they see fit. By developing in small, end-to-end **iterations**, product owners are able to detect early any efforts that miss the mark and thereby fail-fast (fail-cheap).
+
+    -- "`Products Over Projects <https://martinfowler.com/articles/products-over-projects.html>`__" by Sriram Narayan
+
+
+Причем здесь refactoring?
+=========================
+
+..
+
+    💬 I thought borrowing money was a good idea, I thought that rushing software out the door to **get some experience** with it was a good idea, but that of course, you would eventually go back and **as you learned things about that software** you would repay that loan by refactoring the program **to reflect your experience as you acquired it**.
+
+    -- "`Ward Explains Debt Metaphor <http://wiki.c2.com/?WardExplainsDebtMetaphor>`__" by Ward Cunningham
+
+..
+
+    💬 McConnell writes, "In ten years the pendulum has swung from 'design everything' to 'design nothing.' But the alternative to BDUF [Big Design Up Front] isn't no design up front, it's a Little Design Up Front (LDUF) or Enough Design Up Front (ENUF)."
+    This is a strawman argument.
+    **The alternative to designing before implementing is designing after implementing.** Some design up-front is necessary, but just enough to get the initial implementation.
+    Further design takes place once the implementation is in place and the real constraints on the design are obvious.
+    Far from "design nothing," the XP strategy is "design always."
+
+    -- "Extreme Programming Explained" 2nd edition by Kent Beck
 
 См. также:
 
