@@ -470,6 +470,13 @@ Impossible. Точка.
 
 ..
 
+    💬 So, agile and architecture are addressing the same problem from different angles: architecture gives you the options to sustain velocity when the unexpected happens.
+    And agile gives you the attitude to always be learning and to quickly adapt to changing circumstances.
+
+    -- "`Agile and Architecture: Friend, not Foe: Agile methods and architecture both thrive in times of uncertainty. <https://architectelevator.com/transformation/agile_architecture/>`__" by Gregor Hohpe
+
+..
+
     💬 "After all software is supposed to be soft."
 
     -- "`The New Methodology <https://www.martinfowler.com/articles/newMethodology.html>`__" by Martin Fowler
