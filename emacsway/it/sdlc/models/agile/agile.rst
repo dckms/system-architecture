@@ -199,7 +199,7 @@ Agile является естественным следствием эволю�
 
     -- "Clean Agile: Back to Basics" by Robert C. Martin
 
-Kent Beck выяснил, что напряжение являлось ни чем иным, как упреждающими защитным механизмом, спровоцированным страхами участников процесса разработки.
+Kent Beck выяснил, что напряжение являлось ни чем иным, как упреждающими защитным механизмом, спровоцированным страхами обоих сторон процесса разработки.
 
 Идея Bill of Rights возникла на основе идеи Declaration of Independence (`перевод <http://www.hist.msu.ru/ER/Etext/indpndnc.htm>`__):
 
@@ -473,6 +473,29 @@ Impossible. Точка.
     💬 "After all software is supposed to be soft."
 
     -- "`The New Methodology <https://www.martinfowler.com/articles/newMethodology.html>`__" by Martin Fowler
+
+
+Пример
+------
+
+..
+
+    💬 I had a chance to witness the pitfalls of this trap firsthand.
+    Working with Nokia, I noticed that management was measuring the success of its digital transformation by how many people were trained on Agile software development methodologies and were onboarded onto Agile tools.
+    These activity-based proxy metrics had nothing to do with business outcomes.
+    As I will summarize in Part I, Nokia’s transformation efforts failed to address the core platform problems that made it so **difficult for the company to adapt to the changing market**.
+    In spite of what appeared to be a well-planned transformation, management was not able to realize this until too late.
+    I watched with frustration as Nokia lost the mobile market it had created, in spite of the heroic efforts of my colleagues, who were doing everything they could to save the company.
+
+    ...
+
+    Even if the teams had attained a theoretical ideal of agility, would Nokia have been **able to adapt more quickly** without upstream changes to how the business was measuring delivery?
+    Or **adapt** downstream changes in how the software was deployed? Or the **architecture changes that were slowing developers down in the first place**?
+    In my opinion, that narrow-minded and activity-oriented view of Agile was the root cause of Nokia’s failed digital transformation.
+    The failed transformation made fast iteration and learning from the market impossible, as the lead times for delivering new features, such as an app store and an elegant home screen, were far too slow.
+    This hindered the business’s ability to learn and adapt, and that inability to adapt was a key factor in Nokia’s downfall.
+
+    -- "Project to Product: How to Survive and Thrive in the Age of Digital Disruption with the Flow Framework" by Mik Kersten
 
 
 Cм. также:

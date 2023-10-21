@@ -120,7 +120,7 @@ Frederick Brooks формулирует противоречие. С одной 
 
     Дополнительная нагрузка состоит из двух частей — обучения и обмена данными. Каждого работника нужно обучить технологии, целям проекта, общей стратегии и плану работы. Это обучение нельзя разбить на части, поэтому данная часть затрат изменяется линейно в зависимости от числа занятых.
 
-    **С обменом данными дело обстоит хуже. Если все части задания должны быть отдельно скоординированы между собой, то затраты возрастают как n(n-2)/2. Для трех работников требуется втрое больше попарного общения, чем для двух, для четырех — вшестеро. Если помимо этого возникает необходимость в совещаниях трех, четырех и т.д. работников для совместного решения вопросов, положение становится еще хуже. Дополнительные затраты на обмен данными могут полностью обесценить результат дробления исходной задачи и привести к положению, описываемому рисунком 2.4.**
+    **С обменом данными дело обстоит хуже. Если все части задания должны быть отдельно скоординированы между собой, то затраты возрастают как n(n-1)/2. Для трех работников требуется втрое больше попарного общения, чем для двух, для четырех — вшестеро. Если помимо этого возникает необходимость в совещаниях трех, четырех и т.д. работников для совместного решения вопросов, положение становится еще хуже. Дополнительные затраты на обмен данными могут полностью обесценить результат дробления исходной задачи и привести к положению, описываемому рисунком 2.4.**
 
     .. figure:: _media/harlan-mills'-proposal/fig-2.4-task-with-complex-interrelationships.png
        :alt: Рис. 2.4 Зависимость времени от числа занятых — задача со сложными взаимосвязями. Fig. 2.4 Time versus number of workers—task with complex interrelationships. The image source is "The Mythical Man-Month Essays on Software Engineering Anniversary Edition" by Frederick P. Brooks, Jr., "Chapter 2 The Mythical Man-Month", перевод ООО Издательство "Питер".
@@ -141,7 +141,7 @@ Frederick Brooks формулирует противоречие. С одной 
 
     The added burden of communication is made up of two parts, training and intercommunication. Each worker must be trained in the technology, the goals of the effort, the overall strategy, and the plan of work. This training cannot be partitioned, so this part of the added effort varies linearly with the number of workers.
 
-    **Intercommunication is worse. If each part of the task must be separately coordinated with each other part/ the effort increases as n(n-I)/2. Three workers require three times as much pairwise intercommunication as two; four require six times as much as two. If, moreover, there need to be conferences among three, four, etc., workers to resolve things jointly, matters get worse yet. The added effort of communicating may fully counteract the division of the original task and bring us to the situation of Fig. 2.4.**
+    **Intercommunication is worse. If each part of the task must be separately coordinated with each other part/ the effort increases as n(n-1)/2. Three workers require three times as much pairwise intercommunication as two; four require six times as much as two. If, moreover, there need to be conferences among three, four, etc., workers to resolve things jointly, matters get worse yet. The added effort of communicating may fully counteract the division of the original task and bring us to the situation of Fig. 2.4.**
 
     Since software construction is inherently a systems effort—an exercise in complex interrelationships—communication effort is great, and it quickly dominates the decrease in individual task time brought about by partitioning. Adding more men then lengthens, not shortens, the schedule."
 
@@ -551,6 +551,18 @@ Scrum of Scrums
 
 
 См. также структуру "Scrum of Scrum Team (SoS) a Core Team" на странице 5 "`The Scrum Software Factory <https://www.scrumatscale.com/wp-content/uploads/2020/09/Scrum_At_Scale_Case_Study_Air_Transport_Amogh.pdf>`__" by Amogh Joshi.
+
+
+Early Scrum
+-----------
+
+    The first keynote speaker was Ken Schwaber. Ken and Jeff Sutherland are the authors and founders of the Scrum agile methodology. Ken started by describing his experiences working with Scrum on large projects and several techniques he had successfully used in the early stages of the project life cycle.
+
+    Ken explained on one project how the team was very concerned with getting the overall architecture of the system proven in the early stages of development. Early project iterations (sprints in Scrum terminology) contained stories focused on proving the system architecture peppered with several real business cases. After several iterations, during which the architecture was continuously refined and tested, the team had a good sense of whether the architecture was sufficient for the demands of the business.
+
+    Scaling was then achieved by starting new teams with the founders of the original architecture team. With most of the architectural issues addressed, the new teams could focus on implementing business logic on top of the then stable architecture.
+
+    -- "`Canadian Workshop on Scaling XP/Agile Methods <https://martinfowler.com/articles/canScaling.html>`__" by Jonathan Rasmusson, Jim McDonald
 
 
 Другие
