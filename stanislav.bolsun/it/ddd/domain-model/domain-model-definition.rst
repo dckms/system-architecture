@@ -99,7 +99,10 @@ Domain Model Definition
 
     💬 "Big Picture workshop tried hard not to focus but to embrace the whole complexity and maximize learning.
     Now the starting point is different: we can assume we have a shared better understanding of the underlying domain here the focus is on implementing software features that are solving a specific problem.
-    .. the big picture was a model of our current level of understanding, by digging deeper into key interaction we are already making it obsolete."
+
+    .. the big picture was a model of our current level of understanding, by digging deeper into key interaction we are already making it obsolete.
+
+    .. Gather all the key people in the same room and build together a model of the current understanding of the system"
 
     -- "Introducing EventStorming" by Alberto Brandolini
 
