@@ -120,14 +120,28 @@ Domain Model Definition
 
     - `Conceptual_Model <https://sebokwiki.org/wiki/System_Modeling_Concepts#Conceptual_Model/>`_
 
-Дополнение: Концептуальная (ментальная) модель является часть Solution Space.
+Дополнение: Концептуальная (ментальная) модель является часть Problem Space.
 
 Теперь, когда мы поняли проблемную реальность с помощью концептуальной (ментальной) модели, мы можем найти и описать проблему, и начать искать решение, интегрируя его в новую реальность (с обеспечением целостности решения).
+
+
 
 Доменная модель
 ---------------
 
-Далее, когда у нас появилась концептуальная (ментальная) модель, мы можем присутпать к поиску решений доменных проблем и анализу будущего решения, с текущем состоянием системы (интеграция).
+На следующем этапе нам нужно найти решение для описанной / найденной проблемы в Solution Space через доменную модель базируясь на концептуальной (ментальной) модели.
+
+    💬 "When you are just getting started in your software modeling efforts, your Bounded Context is
+    somewhat conceptual. You could think of it as part of your problem space. However, as your model
+    starts to take on deeper meaning and clarity, your Bounded Context will quickly transition to your
+    solution space , with your software model being reflected as project source code. (The problem
+    space and solution space are better explained in the box.) Remember that a Bounded Context is
+    where a model is implemented, and you will have separate software artifacts for each Bounded
+    Context."
+
+    -- "Domain-Driven Design Distilled" by Vaughn Vernon
+
+Приведем определения доменной модели:
 
     💬 "Going back to Chapter 1, Why Domain-Driven Design?, if the business domain and the particular problems we have to
     solve are in our problem space, the domain model is purely in our solution space.
@@ -146,14 +160,7 @@ Domain Model Definition
 
     -- "Implementing Domain-Driven Design" by Vaughn Vernon
 
-Важное уточнение, модель - это абстракция, которая формирует реализацию, но не является реализацией, хотя реализация и может осуществлять (реализовывать) эту модель (модель это часть solution space).
-
-.. figure:: _media/real-model-impl.jpg
-   :alt: Real object, model and implementation
-   :align: center
-   :width: 100%
-
-   Real object, model and implementation
+Доменная модель является абстракцией, которая формирует реализацию, но не является реализацией, хотя реализация и может осуществлять (реализовывать) эту модель (доменная модель находится в Solution Space).
 
     💬 "A domain model is not a particular diagram; it is the idea that the diagram is intended to convey.
     It is not just the knowledge in a domain expert's head;
@@ -165,6 +172,21 @@ Domain Model Definition
     This binding of model and implementation also helps during maintenance and continuing development, because the code can be interpreted based on understanding the model. (See Chapter 3.)"
 
     -- "Domain-Driven Design: Tackling Complexity in the Heart of Software" by Eric Evans
+
+Доменная модель существует в определеном контексте решаемой проблемы, и служит для описания решения и интеграции его с другими частями существующей реальности.
+
+    💬 "A Domain Model in Software Engineering can be thought of as a conceptual model of a system which describes the various entities involved in that system and their relations."
+
+    -- "A Brief Introduction to Domain Modeling" article by Oleg Chursin (https://olegchursin.medium.com/a-brief-introduction-to-domain-modeling-862a30b38353)
+
+.. figure:: _media/domain_model_uml.jpg
+   :alt: Domain model UML example
+   :align: center
+   :width: 100%
+
+   Domain model UML example
+
+   -- `Источник <https://olegchursin.medium.com/a-brief-introduction-to-domain-modeling-862a30b38353>`__
 
 
 
