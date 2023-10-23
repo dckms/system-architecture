@@ -53,10 +53,15 @@ Domain Model Definition
 ..
 
     💬 Model (glossary)
+
     (1) A physical, mathematical, or otherwise logical representation of a system, entity, phenomenon, or process. (DoD 1998)
+
     (2) A representation of one or more concepts that may be realized in the physical world. (Friedenthal, Moore, Steiner 2009)
+
     (3) A simplified representation of a system at some particular point in time or space intended to promote understanding of the real system. (Bellinger 2004)
+
     (4) An abstraction of a system, aimed at understanding, communicating, explaining, or designing aspects of interest of that system (Dori 2002)
+
     (5) A selective representation of some system whose form and content are chosen based on a specific set of concerns. The model is related to the system by an explicit or implicit mapping. (Object Management Group 2010)
 
     -- "SEBoK Model (glossary)" https://sebokwiki.org/wiki/Model_(glossary)
