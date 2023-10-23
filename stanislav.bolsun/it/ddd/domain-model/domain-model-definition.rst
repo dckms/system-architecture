@@ -174,7 +174,7 @@ Domain Model Definition
 Доменная модель
 ---------------
 
-На следующем этапе нам нужно найти решение для найденной и описанной проблемы (Problem Space) в виде доменной модели (Solution Space), базируясь на концептуальной (ментальной) модели.
+На следующем этапе нам нужно найти решение для найденной и описанной проблемы (из Problem Space) в виде доменной модели (в Solution Space), базируясь на концептуальной (ментальной) модели.
 
     💬 "When you are just getting started in your software modeling efforts, your Bounded Context is
     somewhat conceptual. You could think of it as part of your problem space. However, as your model
@@ -229,9 +229,18 @@ Domain Model Definition
    :align: center
    :width: 100%
 
-   Domain model UML example
+   Domain model UML example.
+   Доменная модель выводится из концептуальной модели путем "дорисовывания" деталей и связей, формирующих решение для новой реальности.
 
    -- `Источник <https://olegchursin.medium.com/a-brief-introduction-to-domain-modeling-862a30b38353>`__
+
+
+.. figure:: _media/ddd_model_and_reality.png
+   :alt: Integrating solution into new reality
+   :align: center
+   :width: 100%
+
+   Integrating solution into new reality
 
 
 
