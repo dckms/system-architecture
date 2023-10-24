@@ -470,12 +470,22 @@ Domain Model Definition
 
    -- `Источник <https://mnogogranniki.ru/dodekaedr.html>`__
 
-Владик отлично выводит противоречие, как опытный диалектик:
+Владик отлично подчеркивает это в своем примере:
 
     💬 "However, it is more difficult to represent such a divergent model of the business domain in software. Source code doesn’t cope well with ambiguity. If we were to bring the sales department’s complicated model into marketing,
     it would introduce complexity where it’s not needed— far more detail and behavior than marketing people need for optimizing advertising campaigns. But if we were to try to simplify the sales model according to the marketing world view,
     it wouldn’t fit the sales subdomain’s needs, because it’s too simplistic for managing and optimizing the sales process.
     We’d have an overengineered solution in the first case and an under-engineered one in the second."
+
+
+
+Краткие выводы:
+---------------
+
+1. чтобы описать проблему, нужно сначала принять какую-то модель, систему понятий (концептуальная (ментальная) модель)
+2. далее, мы можем приступать к поиску решения в виде доменой модели и способах интеграции решения в новую реальность
+3. ограниченный контекст модели - это области применения модели в контексте решаемой проблемы ("заказ" для бухгалтера и "заказ" для повара имеют совершенно разные контексты и соотвествтенно это разные модели для разных задач)
+4. в DDD концептуальная (ментальная) и доменная модель - сходятся, и выражаются через единый согласованный язык
 
 
 
