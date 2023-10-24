@@ -358,7 +358,18 @@ Domain Model Definition
    Сucumber in diffent Bounded Contexts
 
 Единый (согласованный) язык охватывает и концептуальную (ментальную) модель, и доменную модель, являясь языком выражения этих моделей.
-Отличительной чертой DDD является то, что в нем концептуальная (ментальная) модель и доменная модель - совпадают и выполняют одну и ту же функцию (именно поэтому всегда говорится явно только о доменной модели).
+Отличительной чертой DDD является то, что в нем концептуальная (ментальная) модель и доменная модель - совпадают и выполняют одну и ту же функцию (именно поэтому всегда в литературе говорится явно только о доменной модели).
+
+.. figure:: _media/shared_mental_model.jpg
+   :alt: What DDD is
+   :align: center
+   :width: 100%
+
+   (What DDD is).
+   What if the domain experts, the development team, other stakeholders, and (most importantly) the source code itself all share the same model?
+   In this case, there is no translation from the domain expert's requirements to the code.
+   Rather, the code is designed to reflect the shared mental model directly. And that is the goal of domain-driven design.
+
 
 .. seealso::
 
