@@ -220,7 +220,7 @@ Domain Model Definition
 
     -- "Implementing Domain-Driven Design" by Vaughn Vernon
 
-Модель является абстракцией, которая формирует реализацию, но не является реализацией, хотя реализация и может осуществлять (реализовывать) эту модель.
+Модель является абстракцией, воплощаемой решением (реализацией).
 
     💬 "A domain model is not a particular diagram; it is the idea that the diagram is intended to convey.
     It is not just the knowledge in a domain expert's head;
