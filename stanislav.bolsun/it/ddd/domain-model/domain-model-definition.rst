@@ -240,10 +240,6 @@ Domain Model Definition
 
 [Дополнение]: Доменная и концептуальная модели являются обобщением двух моделей из двух пространств (Problem и Soliution spaces), выраженными использованием вездесущего языка, используемого как для описания модели решения, так и для описания модели проблемы.
 
-    💬 "A Domain Model in Software Engineering can be thought of as a conceptual model of a system which describes the various entities involved in that system and their relations."
-
-    -- "A Brief Introduction to Domain Modeling" article by Oleg Chursin (https://olegchursin.medium.com/a-brief-introduction-to-domain-modeling-862a30b38353)
-
 .. figure:: _media/domain_model_uml.jpg
    :alt: Domain model UML example
    :align: center
