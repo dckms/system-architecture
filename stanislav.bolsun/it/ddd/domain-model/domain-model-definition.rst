@@ -246,7 +246,6 @@ Domain Model Definition
    :width: 100%
 
    Domain model UML example.
-   Доменная модель выводится из концептуальной модели путем "дорисовывания" деталей и связей, формирующих решение для новой реальности.
 
    -- `Источник <https://olegchursin.medium.com/a-brief-introduction-to-domain-modeling-862a30b38353>`__
 
