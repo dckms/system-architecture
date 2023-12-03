@@ -67,14 +67,14 @@ Domain Model Definition
     -- "SEBoK Model (glossary)" https://sebokwiki.org/wiki/Model_(glossary)
 
 Из определений следует, что каждая модель имеет свой контекст применимости, без контекста применимости мы не можем создать модель, так как не знаем какую проблему необходимо решить (то есть какие свойства и поведение нужно отразить в модели).
-Контекст применимости модели выражается ограниченным контектом (DDD), который и является границей модели.
+Контекст применимости модели выражается ограниченным контектом (DDD), который является границей модели.
 
 .. figure:: _media/model_perspectives.jpeg
    :alt: The model's perspective matters
    :align: center
    :width: 85%
 
-   The model's perspective matters
+   Perspective matters
 
    -- `Источник <https://ru.pinterest.com/pin/298222806578985943/>`__
 
