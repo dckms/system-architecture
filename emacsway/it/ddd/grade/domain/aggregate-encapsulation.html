@@ -62,31 +62,32 @@
             
     
   <section id="emacsway-golang-encapsulation">
-<span id="id1"></span><h1><a class="toc-backref" href="#id4" role="doc-backlink">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a><a class="headerlink" href="#emacsway-golang-encapsulation" title="Permalink to this heading">¶</a></h1>
+<span id="id1"></span><h1><a class="toc-backref" href="#id5" role="doc-backlink">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a><a class="headerlink" href="#emacsway-golang-encapsulation" title="Permalink to this heading">¶</a></h1>
 <p><em>Автор раздела: Ivan Zakrevsky</em></p>
 <p>Инварианты лишены смысла своего существования в условиях дырявой, как решето, инкапсуляции.
 Вопрос в том, как сохранить инкапсуляцию Агрегатов в Golang, когда нам требуется его внутреннее состояние для формирования SQL-запроса, или, наоборот, требуется установить состояние Агрегата в результате выполнения SQL-запроса.</p>
 <nav class="contents" id="id2">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#emacsway-golang-encapsulation" id="id4">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a></p>
+<li><p><a class="reference internal" href="#emacsway-golang-encapsulation" id="id5">Как сохранить Агрегат в БД не разрушая инкапсуляции?</a></p>
 <ul>
-<li><p><a class="reference internal" href="#memento-pattern" id="id5">Memento pattern</a></p></li>
-<li><p><a class="reference internal" href="#walker" id="id6">Walker</a></p></li>
-<li><p><a class="reference internal" href="#valuer-scanner" id="id7">Valuer &amp; Scanner</a></p></li>
-<li><p><a class="reference internal" href="#reflection" id="id8">Reflection</a></p></li>
-<li><p><a class="reference internal" href="#exporter" id="id9">Exporter</a></p>
+<li><p><a class="reference internal" href="#memento-pattern" id="id6">Memento pattern</a></p></li>
+<li><p><a class="reference internal" href="#walker" id="id7">Walker</a></p></li>
+<li><p><a class="reference internal" href="#valuer-scanner" id="id8">Valuer &amp; Scanner</a></p></li>
+<li><p><a class="reference internal" href="#reflection" id="id9">Reflection</a></p></li>
+<li><p><a class="reference internal" href="#exporter" id="id10">Exporter</a></p>
 <ul>
-<li><p><a class="reference internal" href="#accepting-interface-mediator" id="id10">1. Accepting interface (Mediator)</a></p></li>
-<li><p><a class="reference internal" href="#returning-structure" id="id11">2. Returning structure</a></p></li>
+<li><p><a class="reference internal" href="#accepting-interface-mediator" id="id11">1. Accepting interface (Mediator)</a></p></li>
+<li><p><a class="reference internal" href="#returning-structure" id="id12">2. Returning structure</a></p></li>
 </ul>
 </li>
+<li><p><a class="reference internal" href="#id3" id="id13">Импорт состояния</a></p></li>
 </ul>
 </li>
 </ul>
 </nav>
 <section id="memento-pattern">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Memento pattern</a><a class="headerlink" href="#memento-pattern" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Memento pattern</a><a class="headerlink" href="#memento-pattern" title="Permalink to this heading">¶</a></h2>
 <p>Memento оказался близко, но не по назначению. Суть Memento в том, что он не должен раскрывать свое состояние никому, кроме своего создателя:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -104,7 +105,7 @@ The pattern shields other objects from potentially complex Originator internals,
 </div></blockquote>
 </section>
 <section id="walker">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Walker</a><a class="headerlink" href="#walker" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Walker</a><a class="headerlink" href="#walker" title="Permalink to this heading">¶</a></h2>
 <p>Walker представляет собою модификацию паттерна Visitor с целью сохранить инкапсуляцию Агрегатов. К числу недостатков паттерна паттерна Visitor относится:</p>
 <blockquote>
 <div><p>6. Breaking encapsulation. Visitor's approach assumes that the ConcreteElement interface is powerful enough to let visitors do their job.
@@ -149,7 +150,7 @@ Walker начинает быть слишком осведомленным о д
 <p>В целях достижения DRY возникает целесообразность возложить на Walker генерирование только части SQL, и освободить его от осведомленности знания таблиц в БД, что будет разрывать обязанность за построение SQL на несколько объектов и подрывать Cohesion.</p>
 </section>
 <section id="valuer-scanner">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Valuer &amp; Scanner</a><a class="headerlink" href="#valuer-scanner" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Valuer &amp; Scanner</a><a class="headerlink" href="#valuer-scanner" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pkg.go.dev/database/sql/driver#Valuer">Valuer</a></p></li>
 <li><p><a class="reference external" href="https://pkg.go.dev/database/sql#Scanner">Scanner</a></p></li>
@@ -175,14 +176,14 @@ Walker начинает быть слишком осведомленным о д
 </div></blockquote>
 </section>
 <section id="reflection">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">Reflection</a><a class="headerlink" href="#reflection" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Reflection</a><a class="headerlink" href="#reflection" title="Permalink to this heading">¶</a></h2>
 <p>В документации <a class="reference external" href="https://pkg.go.dev/reflect#Value.FieldByName">отсутствуют</a> какие-либо упоминания об ограничении доступа к защищенным атрибутам структуры данных посредством рефлекции.</p>
 <p>Может быть через рефлексию и заработало бы - я не пробовал.
 Но использовать рефлексию в production для таких целей как-то не сильно хочется, в т.ч. и по соображениям производительности.
 К тому же этот метод является, по сути, еще одним способом пробить брешь в инкапсуляции.</p>
 <p>Похожий трюк используется <a class="reference external" href="https://stackoverflow.com/a/25405485">здесь</a>:</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://stackoverflow.com/a/25405485">How to marshal struct when some members are protected/inner/hidden</a></span><a class="headerlink" href="#id3" title="Постоянная ссылка на код">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://stackoverflow.com/a/25405485">How to marshal struct when some members are protected/inner/hidden</a></span><a class="headerlink" href="#id4" title="Постоянная ссылка на код">¶</a></div>
 <div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nx">main</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
@@ -218,9 +219,9 @@ Walker начинает быть слишком осведомленным о д
 </div>
 </section>
 <section id="exporter">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">Exporter</a><a class="headerlink" href="#exporter" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Exporter</a><a class="headerlink" href="#exporter" title="Permalink to this heading">¶</a></h2>
 <section id="accepting-interface-mediator">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink">1. Accepting interface (Mediator)</a><a class="headerlink" href="#accepting-interface-mediator" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">1. Accepting interface (Mediator)</a><a class="headerlink" href="#accepting-interface-mediator" title="Permalink to this heading">¶</a></h3>
 <p>Такой вариант рассматривается в книге &quot;<a class="reference external" href="https://kalele.io/books/">Implementing Domain-Driven Design</a>&quot; by Vaughn Vernon:</p>
 <blockquote>
 <div><p>Use a Mediator to Publish Aggregate Internal State</p>
@@ -469,7 +470,7 @@ The Presenter/View boundary is one of these boundaries, but there are many other
 </div></blockquote>
 </section>
 <section id="returning-structure">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink">2. Returning structure</a><a class="headerlink" href="#returning-structure" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">2. Returning structure</a><a class="headerlink" href="#returning-structure" title="Permalink to this heading">¶</a></h3>
 <p>Возникает целесообразность облегчить метод экспортирования, придав ему сигнатуру <code class="docutils literal notranslate"><span class="pre">Endorser.Export()</span> <span class="pre">EndorserState</span></code> вместо <code class="docutils literal notranslate"><span class="pre">Endorser.ExportTo(ex</span> <span class="pre">EndorserExporter)</span></code>.
 Получится что-то типа DTO с тем лишь отличием, что он пересекает не сетевые границы, а границы инкапсуляции Агрегата.
 В Golang этот вариант выглядит чуть более привлекательным, хотя и менее OOP, но зато не контрастирует с FP принципами Value Object.</p>
@@ -569,6 +570,14 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
 Это еще один аргумент в пользу первого варианта с отдельными сеттерами для каждого атрибута Агрегата.</p>
 <p>Попробовав оба варианта, я остановился, все-таки, на первом, каноническом, даже несмотря на его многословность.</p>
 </section>
+</section>
+<section id="id3">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Импорт состояния</a><a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>В Golang область видимости структуры доступна всему пакету, поэтому нет большой необходимости реализовывать Importer/Provider - достаточно положить Reconstitutor в тот же пакет.</p>
+<p>В других языках может потребоваться делать Importer/Provider, что образует брешь в инкапсуляции.
+Поэтому импорт состояния делают либо посредством конструктора, если поддерживается множественная диспетчеризация (overloading), либо посредством статического метода класса - чтобы можно было создать, но невозможно было изменить.
+Правда, при этом возникает сложность с синхронизацией состояния объектов в IdentityMap при фиксации изменений (commit), ведь состояние агрегата теперь недоступно для синхронизации.
+В таком случае остается только очистить IdentityMap при фиксации изменений.</p>
 </section>
 </section>
 
@@ -687,7 +696,7 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
     </div>
     
     <div class="footer">
-      &copy;2023, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
+      &copy;2024, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>

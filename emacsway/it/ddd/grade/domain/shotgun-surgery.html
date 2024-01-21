@@ -63,8 +63,10 @@
     
   <section id="shotgun-surgery">
 <span id="index-0"></span><h1>Shotgun Surgery<a class="headerlink" href="#shotgun-surgery" title="Permalink to this heading">¶</a></h1>
-<p>Может показаться, что используя Raw-SQL мы обретаем классифицированный Code Smell, известный как Shotgun Surgery (Разлет Дроби), ибо добавление одного поля в Сущность требует правки многих файлов.
-Есть два способа решить эту проблему (и снизить Coupling), о которых писал Martin Fowler в главе &quot;Metadata Mapping&quot; книги &quot;Patterns of Enterprise Application Architecture&quot;: &quot;reflective program&quot; и &quot;code generation&quot;, причем, сам он лично предпочитает второй вариант:</p>
+<p>Может показаться, что используя Raw-SQL мы обретаем классифицированный Code Smell, известный как Shotgun Surgery (Разлет Дроби), ибо добавление одного поля в Сущность требует правки многих файлов.</p>
+<p>Это не так страшно, т.к. <a class="reference internal" href="../../../sdlc/uncertainty-management/adaptation/software-design/software-design.html#emacsway-who-reads-the-code"><span class="std std-ref">ввод символов с клавиатуры не оказывает существенного влияния на темпы разработки</span></a>, поскольку занимает не более 10% от времени конструирования кода.
+При этом вероятность возникновения ошибки тоже минимальна, т.к. легко отлавливается статическим анализатором кода.</p>
+<p>Есть два способа решить эту проблему (и снизить Coupling), о которых писал Martin Fowler в главе &quot;Metadata Mapping&quot; книги &quot;Patterns of Enterprise Application Architecture&quot;: &quot;reflective program&quot; и &quot;code generation&quot;, причем, сам он лично предпочитает второй вариант:</p>
 <blockquote>
 <div><p>Generated code is more explicit so you can see what's going on in the debugger;
 as a result I usually prefer generation to reflection,
@@ -191,7 +193,7 @@ and I think it's usually easier for less sophisticated developers
     </div>
     
     <div class="footer">
-      &copy;2023, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
+      &copy;2024, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>

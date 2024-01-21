@@ -177,6 +177,14 @@ Simon Brown тоже обратил внимание на тот факт, чт�
 
     💬 "Architecture is the decisions that you wish you could get right early in a project, but that you are not necessarily more likely to get them right than any other." -- Ralph Johnson
 
+..
+
+    Remember Johnson’s secondary definition: “Architecture is the decisions that you wish you could get right early in a project.”
+    Why do people feel the need to get some things right early in the project?
+    The answer, of course, is because they perceive those things as hard to change.
+
+    -- "`Who Needs Architect <https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf>`__" by Martin Fowler
+
 на
 
     💬 "A good architect pretends that the decision has not been made, and shapes the system such that those decisions can still be deferred or changed for as long as possible. 

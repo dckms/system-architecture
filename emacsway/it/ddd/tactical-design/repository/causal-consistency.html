@@ -107,6 +107,9 @@
 Каждое сообщение снабжается списком своих Causal Dependencies.</p>
 <p>И здесь обнажается проблема, т.к. при инкрементировании версии агрегата единожды на транзакцию, возникает риск образования более одного публичного Доменного События с одной и той же версией Агрегата.
 А это означает, что версию Агрегата не получится использовать для восстановления очередности Событий.</p>
+<p>Есть еще одна проблема.
+Если за один инкремент версии агрегат издал несколько событий, то при обновлении ReadModel по событиям её версия разъедется с версией агрегата, и будет утрачена возможность отслеживать, например, с frontend, докатились ли изменения до ReadModel.
+Но это так же означает, что доменное событие должно производиться на абсолютно каждое изменение состояния агрегата.</p>
 </section>
 <section id="id3">
 <h2><a class="toc-backref" href="#id8" role="doc-backlink">Варианты решений</a><a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
@@ -247,7 +250,7 @@
     </div>
     
     <div class="footer">
-      &copy;2023, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
+      &copy;2024, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
