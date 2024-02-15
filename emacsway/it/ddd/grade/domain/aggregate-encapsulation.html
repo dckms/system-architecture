@@ -472,6 +472,7 @@ The Presenter/View boundary is one of these boundaries, but there are many other
 <section id="returning-structure">
 <h3><a class="toc-backref" href="#id12" role="doc-backlink">2. Returning structure</a><a class="headerlink" href="#returning-structure" title="Permalink to this heading">¶</a></h3>
 <p>Возникает целесообразность облегчить метод экспортирования, придав ему сигнатуру <code class="docutils literal notranslate"><span class="pre">Endorser.Export()</span> <span class="pre">EndorserState</span></code> вместо <code class="docutils literal notranslate"><span class="pre">Endorser.ExportTo(ex</span> <span class="pre">EndorserExporter)</span></code>.
+В Python для этого есть даже задокументированные методы __getstate__() и __setstate__().
 Получится что-то типа DTO с тем лишь отличием, что он пересекает не сетевые границы, а границы инкапсуляции Агрегата.
 В Golang этот вариант выглядит чуть более привлекательным, хотя и менее OOP, но зато не контрастирует с FP принципами Value Object.</p>
 <p>О таком же принципе этом писал Robert C. Martin:</p>
@@ -564,6 +565,8 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
 <p>Недостатком такого решения, который я успел обнаружить, является то, что клиент не имеет возможности контролировать структуру экспортируемого объекта, в отличии от варианта с интерфейсом.
 Это затрудняет создание обобщенных классов, например, <a class="reference external" href="https://martinfowler.com/eaaCatalog/identityField.html">обобщенного композитного первичного ключа</a>.
 В результате плодятся промежуточные структуры, которые затем нужно преобразовывать к нужному виду.</p>
+<p>Вместе с данными экспортируется и иерархия данных, т.е. внутренняя структура агрегата. А значит, за обход структуры будет отвечать уже не агрегат в единственном месте, а потребители экспортируемых данных во мнодественных местах, что удорожает изменение программы.</p>
+<p>Затрудняется обратная совместимость, т.к. состояние единственно, а поведение множественно, что значит - версионируемо.</p>
 <p>Знание о возвращаемом типе подталкивает к применению generics там, где этого несложно избежать.</p>
 <p>Возвращаемая структура и ее типизация является избыточным знанием, которое может препятствовать обобщению (абстрагированию) клиента этого метода, например, препятствовать выделению абстрактного класса паттерна Repository.
 Гораздо удобней в таком случае был бы массив/срез объектов с типом <a class="reference external" href="https://pkg.go.dev/database/sql/driver#Value">driver.Value</a>.
