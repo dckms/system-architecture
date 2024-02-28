@@ -62,22 +62,26 @@
             
     
   <section id="domain-model-definition">
-<span id="stanislav3316-domain-model-definition"></span><h1><a class="toc-backref" href="#id10" role="doc-backlink">Domain Model Definition</a><a class="headerlink" href="#domain-model-definition" title="Permalink to this heading">¶</a></h1>
+<span id="stanislav3316-domain-model-definition"></span><h1><a class="toc-backref" href="#id24" role="doc-backlink">Domain Model Definition</a><a class="headerlink" href="#domain-model-definition" title="Permalink to this heading">¶</a></h1>
 <p><em>Автор раздела: Stanislav Bolsun</em></p>
-<p>Как показывает моя практика, понимание таких фундаментальных основ как доменная модель, границы доменной модели (ограниченный контекст), могут заметно повысить эффективность (скорость) команды разработки.</p>
+<p>Как показывает моя практика, понимание таких фундаментальных основ как доменная модель, границы доменной модели (ограниченный контекст), заметно могут повысить эффективность (скорость) команд разработки.</p>
 <nav class="contents" id="id1">
 <p class="topic-title">Содержание</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#domain-model-definition" id="id10">Domain Model Definition</a></p>
+<li><p><a class="reference internal" href="#domain-model-definition" id="id24">Domain Model Definition</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id2" id="id11">Доменная модель</a></p>
+<li><p><a class="reference internal" href="#id2" id="id25">Доменная модель</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id3" id="id12">А что если попытаться реализовать единственную всеобъемливающую модель предметной области?</a></p></li>
-<li><p><a class="reference internal" href="#id4" id="id13">Важное дополнение: модель по Тарасенко</a></p></li>
-<li><p><a class="reference internal" href="#id5" id="id14">Доменная модель, ограниченный контекст и единый язык</a></p></li>
-<li><p><a class="reference internal" href="#id7" id="id15">Ограниченный контекст и команды разработки</a></p></li>
-<li><p><a class="reference internal" href="#id8" id="id16">Классическая ошибка моделирования ограниченного контекста</a></p></li>
-<li><p><a class="reference internal" href="#id9" id="id17">Источники информации</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id26">Что такое модель</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id27">[Дополнение] Модель по Тарасенко</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id28">Концепнуальная (ментальная) модель предметной области</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id29">Доменная модель</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id30">А что если попытаться реализовать единственную всеобъемливающую модель предметной области?</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id31">Концептуальная, Доменная модели, ограниченный контекст и единый язык</a></p></li>
+<li><p><a class="reference internal" href="#id10" id="id32">Классическая ошибка моделирования ограниченного контекста</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id33">Ограниченный контекст и команды разработки</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id34">Краткие выводы:</a></p></li>
+<li><p><a class="reference internal" href="#id13" id="id35">Источники информации</a></p></li>
 </ul>
 </li>
 </ul>
@@ -85,106 +89,54 @@
 </ul>
 </nav>
 <section id="id2">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Доменная модель</a><a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
-<p>Начнем с канонического определения модели по Эвансу:</p>
+<h2><a class="toc-backref" href="#id25" role="doc-backlink">Доменная модель</a><a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>Прежде чем перейти к тому, что такое доменная модель нам желательно разобраться еще с несколькими понятиями, которые описываются далее.</p>
+<section id="id3">
+<h3><a class="toc-backref" href="#id26" role="doc-backlink">Что такое модель</a><a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<p>Рассмотрим понятие модели из различных источников, начиная с модели по Эвансу:</p>
 <blockquote>
 <div><p>💬 &quot;every model represents some aspect of reality or an idea that is of interest.
-A model is a simplification. It is an interpretation of reality that abstracts the aspects relevant to solving the problem at hand and ignores extraneous detail...&quot;</p>
+A model is a simplification.
+It is an interpretation of reality that abstracts the aspects relevant to solving the problem at hand and ignores extraneous detail...&quot;</p>
 <p class="attribution">—&quot;Domain-Driven Design: Tackling Complexity in the Heart of Software&quot; by Eric Evans</p>
 </div></blockquote>
 <blockquote>
 <div><p>💬 &quot;Модель - это упрощение; это такая интерпретация реальности, при которой из явления извлекаются существенные для решения задачи аспекты, а лишние детали игнорируются.&quot;</p>
 <p class="attribution">—&quot;Domain-Driven Design: Tackling Complexity in the Heart of Software&quot; by Eric Evans, перевод В.Л. Бродового</p>
 </div></blockquote>
-<p>Каждая модель имеет свой контекст применимости, без контекста применимости мы не сможем создать модель, так как не знаем какую проблему решаем (то есть какие свойства и поведение нужны для решения конкретной проблемы).</p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="../../../../_images/model_of_earth_processes.png"><img alt="Model of Earth processes" src="../../../../_images/model_of_earth_processes.png" style="width: 100%;" /></a>
-</figure>
-<p>На изображении выше, мы видим модель процессов Земли, служащую для решения определенных задач.</p>
-<p>Ограниченный контекст, являясь границей модели, определяет контекст применимости этой модели.
-На это и делают акцент Эванс (см. выше), Вернон и Зимарев в определениях модели:</p>
 <blockquote>
 <div><p>💬 &quot;So, models represent some artifact of the real world, but with a narrow purpose.
 How much space the building will occupy and how high the whole complex will be, for example,
 are often just enough for a rough model, during the first review stage of the building project.
 Models do not intend to replicate real life. Instead, they represent some particular aspects of real life at a certain level of detail,
-depending on the purpose of the model...</p>
-<p>Going back to Chapter 1, Why Domain-Driven Design?, if the business domain and the particular problems we have to
-solve are in our problem space, the domain model is purely in our solution space.
-We will be modeling our solution, and those models will be our domain models.&quot;</p>
+depending on the purpose of the model...&quot;</p>
 <p class="attribution">—&quot;Hands-On Domain-Driven Design with .NET Core: Tackling complexity in the heart of software by putting DDD principles into practice&quot; by Alexey Zimarev</p>
 </div></blockquote>
 <blockquote>
-<div><p>💬 &quot;What’s a Domain Model?
-It’s a software model of the very specific business domain you are working in. Often it’s implemented as an object model,
-where those objects have both data and behavior with literal and accurate business meaning.
-Creating a unique, carefully crafted domain model at the heart of a core, strategic application or subsystem is essential to
-practicing DDD. With DDD your domain models will tend to be smallish, very focused.
-Using DDD, you never try to model the whole business enterprise with a single, large domain model. Phew, that’s good!&quot;&quot;</p>
-<p class="attribution">—&quot;Implementing Domain-Driven Design&quot; by Vaughn Vernon</p>
-</div></blockquote>
-<figure class="align-center">
-<a class="reference internal image-reference" href="../../../../_images/real-model-impl.jpg"><img alt="Real object, model and implementation" src="../../../../_images/real-model-impl.jpg" style="width: 100%;" /></a>
-</figure>
-<p>Важное уточнение: Модель - это абстракция, которая формирует реализацию, но не является реализацией, хотя реализация и может осуществлять (реализовывать) эту модель.
-Модель это часть solution space.</p>
-<blockquote>
-<div><p>💬 &quot;A domain model is not a particular diagram; it is the idea that the diagram is intended to convey.
-It is not just the knowledge in a domain expert's head;
-it is a rigorously organized and selective abstraction of that knowledge.
-A diagram can represent and communicate a model, as can carefully written code, as can an English sentence...</p>
-<p>The model and the heart of the design shape each other.
-It is the intimate link between the model and the implementation that makes the model relevant and ensures that the analysis that went into it applies to the final product, a running program.
-This binding of model and implementation also helps during maintenance and continuing development, because the code can be interpreted based on understanding the model. (See Chapter 3.)&quot;</p>
-<p class="attribution">—&quot;Domain-Driven Design: Tackling Complexity in the Heart of Software&quot; by Eric Evans</p>
-</div></blockquote>
-<section id="id3">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink">А что если попытаться реализовать единственную всеобъемливающую модель предметной области?</a><a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
-<p>Если решаемой проблемы не существует или она неизвестена, то у нас есть два возможных пути:</p>
-<ol class="arabic">
-<li><p>модель не создавать вообще</p></li>
-<li><p>создать модель на все случаи жизни, но тогда придется полностью воспроизвести объект моделирования, что не позволит эффективно решать задачи (например, осуществление навигации судна по точной копии Земли).</p>
-<blockquote>
-<div><p>💬 &quot;Because the term domain model includes the word domain, we might get the idea that we should create a single, cohesive, all-inclusive model of an organization’s entire business domain—you know, like an enterprise model.
-However, when using DDD, that is not our goal. DDD places emphasis on just the opposite. The whole Domain of the organization is composed of Subdomains.
-Using DDD, models are developed in Bounded Contexts. In fact, developing a Domain Model is actually one way that we focus on only one specific area of the whole business domain.
-Any attempt to define the business of even a moderately complex organization in a single, all-encompassing model will be at best extremely difficult and will usually fail.
-As is made clear in this chapter, vigorously separating distinct areas of the whole business domain will help us succeed.</p>
-<p>So, if a domain model shouldn’t be all-inclusive of what the organization does and how it does it, what should it be, exactly?</p>
-<p>Almost every software Domain has multiple Subdomains. It really doesn’t matter whether the organization is huge and extremely complex or consists of just a few people and the software they use.
-There are different functions that make any business successful, so it’s advantageous to think about each of those business functions separately.&quot;</p>
-<p class="attribution">—&quot;Implementing Domain-Driven Design&quot; by Vaughn Vernon</p>
-</div></blockquote>
-</li>
-</ol>
-<p>В качестве иллюстрации того, что модель создается для решения конкретных задач (имеет определенный контекст применимости), рассмотрим примеры из доклада Эрика Эванса (Eric Evans — Tackling Complexity in the Heart of Software, Domain-Driven Design Europe 2016 - Brussels, January 26-29, 2016).</p>
+<div><p>💬 Model (glossary)</p>
 <ol class="arabic simple">
-<li><p>Карта морского ориентирования (цилиндрическая проекция Меркатора)</p></li>
+<li><p>A physical, mathematical, or otherwise logical representation of a system, entity, phenomenon, or process. (DoD 1998)</p></li>
+<li><p>A representation of one or more concepts that may be realized in the physical world. (Friedenthal, Moore, Steiner 2009)</p></li>
+<li><p>A simplified representation of a system at some particular point in time or space intended to promote understanding of the real system. (Bellinger 2004)</p></li>
+<li><p>An abstraction of a system, aimed at understanding, communicating, explaining, or designing aspects of interest of that system (Dori 2002)</p></li>
+<li><p>A selective representation of some system whose form and content are chosen based on a specific set of concerns. The model is related to the system by an explicit or implicit mapping. (Object Management Group 2010)</p></li>
 </ol>
-<figure class="align-center">
-<a class="reference internal image-reference" href="../../../../_images/mercator_projection.png"><img alt="Mercator projection" src="../../../../_images/mercator_projection.png" style="width: 100%;" /></a>
-</figure>
-<p>Такие карты используют относительное искажение размеров объектов относительно друг друга, но помогают направлять компас в сторону нужной конечной точки (направление на карте полностью совпадет со стрелкой компаса).
-На этой карте Африка и Гренландия выглядят равными по площади, но в действительности, Африка в 14 раз больше Гренландии, то есть у карты есть четкое предназначение, задача для которой она нужна, и только для нее - навигация судов.</p>
-<ol class="arabic simple" start="2">
-<li><p>Картографическая проекция земного шара на поверхность многогранника (проекция Димаксион (Фуллера))</p></li>
-</ol>
-<figure class="align-center">
-<a class="reference internal image-reference" href="../../../../_images/fuller_projection.png"><img alt="Fuller projection" src="../../../../_images/fuller_projection.png" style="width: 100%;" /></a>
-</figure>
-<p>Данная проекция имеет меньшие искажения относительных размеров объектов, особенно в сравнении с проекцией Меркатора, то есть, она может служить более точным инструментом определения относительных размеров объектов земли.</p>
-<div class="admonition seealso">
-<p class="admonition-title">См.также</p>
-<blockquote>
-<div><p>💬 &quot;We're making an effort with DDD to recognize that there is no practical way to have a canonical, enterprise data model where every single element in the model is representative of how every team in the enterprise would want to use it.
-It just doesn't happen. There's always some difference, and many times there are many differences that make it very painful for one team to try to use the model that another team has created.
-That's why we're focused on the bounded context with a ubiquitous language.&quot;</p>
+<p class="attribution">—&quot;SEBoK Model (glossary)&quot; <a class="reference external" href="https://sebokwiki.org/wiki/Model_(glossary">https://sebokwiki.org/wiki/Model_(glossary</a>)</p>
 </div></blockquote>
-<p><a class="reference external" href="https://www.infoq.com/articles/modeling-uncertainty-reactive-ddd/">Vaughn Vernon объясняет, почему построение канонической всеобъемлющей модели предприятия и единой предметной области на основе единой модели деятельности - миф</a></p>
+<p>Из определений следует, что каждая модель имеет свой контекст применимости, без контекста применимости мы не можем создать модель, так как не знаем какую проблему необходимо решить (то есть не знаем, какие аспекты оригинала будут релевантны решаемой проблеме).
+Контекст применимости модели выражается ограниченным контектом (DDD), который является границей модели.</p>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="../../../../_images/model_perspectives.jpeg"><img alt="The model's perspective matters" src="../../../../_images/model_perspectives.jpeg" style="width: 85%;" /></a>
+<figcaption>
+<p><span class="caption-text">Perspective matters</span><a class="headerlink" href="#id14" title="Постоянная ссылка на рисунок">¶</a></p>
+<div class="legend">
+<p>— <a class="reference external" href="https://ru.pinterest.com/pin/298222806578985943/">Источник</a></p>
 </div>
+</figcaption>
+</figure>
 </section>
 <section id="id4">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">Важное дополнение: модель по Тарасенко</a><a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id27" role="doc-backlink">[Дополнение] Модель по Тарасенко</a><a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>💬 &quot;Мы уже сформулировали два определения модели. Первое: модель есть средство осуществления любой деятельности субъекта. Второе: модель есть форма существования знаний.
 Можно несколько дополнить каждое из этих определений указанием на то, что модель — тоже система, со всеми описанными в главе 2 общесистемными свойствами.
@@ -194,8 +146,11 @@ That's why we're focused on the bounded context with a ubiquitous language.&quot
 Как мы уже знаем, уточнение описания модели можно сделать с помощью анализа и синтеза.&quot;</p>
 <p class="attribution">—&quot;Прикладной системный анализ&quot; Ф.П. Тарасенко</p>
 </div></blockquote>
-<figure class="align-center">
-<a class="reference internal image-reference" href="../../../../_images/tarasenko_model.png"><img alt="Tarasenko model" src="../../../../_images/tarasenko_model.png" style="width: 100%;" /></a>
+<figure class="align-center" id="id15">
+<a class="reference internal image-reference" href="../../../../_images/tarasenko_model.png"><img alt="'Прикладной системный анализ' Ф.П. Тарасенко, глава '3.8. Синтетический подход к понятию модели'" src="../../../../_images/tarasenko_model.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">'Прикладной системный анализ' Ф.П. Тарасенко, глава '3.8. Синтетический подход к понятию модели'</span><a class="headerlink" href="#id15" title="Постоянная ссылка на рисунок">¶</a></p>
+</figcaption>
 </figure>
 <p>и следует за этим:</p>
 <blockquote>
@@ -209,16 +164,195 @@ That's why we're focused on the bounded context with a ubiquitous language.&quot
 </div></blockquote>
 </section>
 <section id="id5">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">Доменная модель, ограниченный контекст и единый язык</a><a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id28" role="doc-backlink">Концепнуальная (ментальная) модель предметной области</a><a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<p>В каждый конкретный момент времени человек смотрит на мир через призму определенной системы понятий, и прежде чем начать формулировать какую-либо проблему, нам придется принять какую-то модель.
+Для этого нам нужно прийти к единому набору понятий, терминов для описания текущей реальности (ведь в зависимости от разных точек зрения акторов (viewpoint) реальность может описываться разными системами понятий, система глазами повара будет состоять из одних элементов, и эта же система глазами бухгалтера будет состоять из других).</p>
+<p>Терминология: далее, под ментальной моделью понимается концептуальная модель.</p>
+<p>Для выражения этой мысли приведу пример из чата по дискуссии о текущей статье, где Михаила Андронов хорошо описал этот момент:</p>
+<blockquote>
+<div><p>💬 &quot;Пока ты призму не принял, у тебя терминов нет, чтобы проблему выразить.
+Другое дело, что люди в большинстве своём не осознают что всегда через призму какой-то модели смотрят на мир.
+Считают, что то, что видят - это и есть реальность.
+Например, чтобы сказать, что в комнате грязно (такая у нас проблема), у тебя должны быть понятия &quot;комната&quot; и &quot;мусор&quot;.
+То есть ты уже смотришь на комнату как помещение с полезными и бесполезными предметами (такая модель).
+А представь, что ты при этом разговариваешь с кем-то, для кого эта комната - это место, где он был молод, счастлив и где его дети выросли.
+Он на неё смотрит как на копилку счастливых воспоминаний.
+В его модели невозможно выразить проблему &quot;в комнате грязно&quot;.
+И так будет до тех пор, пока он свою модель не сменит на твою.&quot;</p>
+<p class="attribution">—&quot;Domain Model tg group (обсуждение статьи, <a class="reference external" href="https://t.me/emacsway_log/1194">https://t.me/emacsway_log/1194</a>)&quot; - Михаил Андронов</p>
+</div></blockquote>
+<p>Чтобы задать систему понятий и терминов, можно использовать разные подходы, такие как задание определенного viewpoint актора (бухгалтер, повар, аналитик, ...), либо же применение Big Picture воркшопа из Event Storming для построения общей ментальной модели (через выравнивание доменных знаний участников).</p>
+<blockquote>
+<div><p>💬 &quot;Big Picture workshop tried hard not to focus but to embrace the whole complexity and maximize learning.
+Now the starting point is different: we can assume we have a shared better understanding of the underlying domain here the focus is on implementing software features that are solving a specific problem.</p>
+<p>..the big picture was a model of our current level of understanding, by digging deeper into key interaction we are already making it obsolete.</p>
+<p>..Gather all the key people in the same room and build together a model of the current understanding of the system&quot;</p>
+<p class="attribution">—&quot;Introducing EventStorming&quot; by Alberto Brandolini</p>
+</div></blockquote>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="../../../../_images/actor_perspective.png"><img alt="Actor perspective on current reality" src="../../../../_images/actor_perspective.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Например, есть у нас организация, в ней толпа народу чего-то делают. Мы можем на них посмотреть как на сотрудников - получим одну модель (должности, отделы, ответственности и т.п.).
+Можем посмотреть как на массу, которую лифты перевозят - получим другую модель (занимаемая площадь, вес, частота перемещений, направления перемещений).
+Можем посмотреть как на творцов, как на членов семьи, как на представителей homo sapiens.
+И это все разные модели будут.
+И прежде, чем мы сможем сформулировать какую-либо проблему, нам придется принять какую-то модель (концептуальную).
+Этот шаг редко осознается, хотя должен.
+(пример Михаила Андронова из tg чата по обсуждению текущей статьи, <a class="reference external" href="https://t.me/emacsway_log/1194">https://t.me/emacsway_log/1194</a>)</span><a class="headerlink" href="#id16" title="Постоянная ссылка на рисунок">¶</a></p>
+</figcaption>
+</figure>
+<blockquote>
+<div><p>💬 &quot;Знание замещает в нашем мышлении объект или его составные части. Изучая какую-то реальную вещь или системное образование мы чаще всего не можем работать непосредственно с ними. Что в устной речи, что в мышлении мы оперируем назывными конструкциями, каждая из которых относится к какому-то объективному содержанию.</p>
+<p>Например, говоря «стол» любому представителю современной культуры мы надеемся, что он нас поймёт не двусмысленно. Но куда указывает обозначающее слово «стол», на какой объект в каждой из ситуаций? Вероятно большинство сойдётся на том, что речь идёт о конструкции, главная функция которой — удерживать вещи с помощью горизонтальной поверхности. Но при этом читатель легко может представить себе стол, стоящий на четёрых ногах, в то время как говорящий мог представлять стол с центральной и единственной ножкой. Очевидно, что такое различие составленных представлений в ряде ситуаций может привести к конфузу.</p>
+<p>В нашем примере при отсутствии конкретного стола в непосредственном созерцании может возникнуть коммуникационная катастрофа — потеря содержания. Чтобы этого не произошло оба участника коммуникации должны обладать общим знанием о том какими столы бывают вообще, а также потрудиться выполнить мысленно этот перебор, когда обнаружены противоречия, чтобы выявить различие объектов у участника обсуждения.&quot;</p>
+<p class="attribution">—&quot;Замещение объектов знанием&quot; (Знания - системы понятий и утверждений), <a class="reference external" href="https://ashapiro.ru/articles/system-episteme">https://ashapiro.ru/articles/system-episteme</a></p>
+</div></blockquote>
+<p>Отражение концептуальной (ментальной) модели также можно обнаружить, например, в спецификации ArchiMate: &quot;Layers – the three levels at which an enterprise can be modeled in ArchiMate – Business, Application, and Technology&quot;.</p>
+<div class="admonition seealso">
+<p class="admonition-title">См.также</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://sebokwiki.org/wiki/Types_of_Models/">Types of Models</a></p></li>
+<li><p><a class="reference external" href="https://sebokwiki.org/wiki/Concept_(glossary)/">Concept (glossary)</a></p></li>
+<li><p><a class="reference external" href="https://sebokwiki.org/wiki/System_Modeling_Concepts#Conceptual_Model/">Conceptual_Model</a></p></li>
+</ul>
+</div>
+<p>Дополнение: Концептуальная (ментальная) модель предметной области является частью Problem Space.</p>
+<p>Теперь, когда мы поняли текущую реальность с помощью концептуальной (ментальной) модели, мы в состонии найти и описать проблему в терминах этой модели, и начать искать решение и способы интеграции его в уже новую реальность (с обеспечением целостности решения).</p>
+</section>
+<section id="id6">
+<h3><a class="toc-backref" href="#id29" role="doc-backlink">Доменная модель</a><a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<p>Осознав предметную область на основе общей ментальной модели стейкхолдеров (Problem Space), мы начинаем моделировать решение (Solution Space).
+Причиной проявления решения является потребность в решений некой проблемы, в контексте решения которой возникает модель предметной области.
+И эта предметная модель отражает только те аспекты поведения оригинала моделирования, которые релевантны в контексте решаения этой проблемы.</p>
+<blockquote>
+<div><p>💬 &quot;When you are just getting started in your software modeling efforts, your Bounded Context is
+somewhat conceptual. You could think of it as part of your problem space. However, as your model
+starts to take on deeper meaning and clarity, your Bounded Context will quickly transition to your
+solution space , with your software model being reflected as project source code. (The problem
+space and solution space are better explained in the box.) Remember that a Bounded Context is
+where a model is implemented, and you will have separate software artifacts for each Bounded
+Context.&quot;</p>
+<p class="attribution">—&quot;Domain-Driven Design Distilled&quot; by Vaughn Vernon</p>
+</div></blockquote>
+<p>Начнем также с определения доменной модели из различных источников:</p>
+<blockquote>
+<div><p>💬 &quot;Going back to Chapter 1, Why Domain-Driven Design?, if the business domain and the particular problems we have to
+solve are in our problem space, the domain model is purely in our solution space.
+We will be modeling our solution, and those models will be our domain models.&quot;</p>
+<p class="attribution">—&quot;Hands-On Domain-Driven Design with .NET Core: Tackling complexity in the heart of software by putting DDD principles into practice&quot; by Alexey Zimarev</p>
+</div></blockquote>
+<blockquote>
+<div><p>💬 &quot;What’s a Domain Model?
+It’s a software model of the very specific business domain you are working in. Often it’s implemented as an object model,
+where those objects have both data and behavior with literal and accurate business meaning.
+Creating a unique, carefully crafted domain model at the heart of a core, strategic application or subsystem is essential to
+practicing DDD. With DDD your domain models will tend to be smallish, very focused.
+Using DDD, you never try to model the whole business enterprise with a single, large domain model. Phew, that’s good!&quot;</p>
+<p class="attribution">—&quot;Implementing Domain-Driven Design&quot; by Vaughn Vernon</p>
+</div></blockquote>
+<p>Эта модель является абстракцией, воплощаемой в решениеи.</p>
+<blockquote>
+<div><p>💬 &quot;A domain model is not a particular diagram; it is the idea that the diagram is intended to convey.
+It is not just the knowledge in a domain expert's head;
+it is a rigorously organized and selective abstraction of that knowledge.
+A diagram can represent and communicate a model, as can carefully written code, as can an English sentence...</p>
+<p>The model and the heart of the design shape each other.
+It is the intimate link between the model and the implementation that makes the model relevant and ensures that the analysis that went into it applies to the final product, a running program.
+This binding of model and implementation also helps during maintenance and continuing development, because the code can be interpreted based on understanding the model. (See Chapter 3.)&quot;</p>
+<p class="attribution">—&quot;Domain-Driven Design: Tackling Complexity in the Heart of Software&quot; by Eric Evans</p>
+</div></blockquote>
+<p>Как мы уже отметили, доменная модель возникает в определеном контексте решаемой проблемы (в ограниченном контексте в терминах DDD), и служит решению этой проблемы и интеграции его с другими элементами системы (другими ограниченными контекстами).</p>
+<p>[Дополнение]: Доменная и концептуальная модели, находясь в двух разных пространствах - Problem и Soliution spaces, описываются с помощью вездесущего языка (пронизывающего оба пространства и являющегося некой мета-моделью над моделями).</p>
+<figure class="align-center" id="id17">
+<a class="reference internal image-reference" href="../../../../_images/domain_model_uml.jpg"><img alt="Domain model UML example" src="../../../../_images/domain_model_uml.jpg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Domain model UML example.</span><a class="headerlink" href="#id17" title="Постоянная ссылка на рисунок">¶</a></p>
+<div class="legend">
+<p>— <a class="reference external" href="https://olegchursin.medium.com/a-brief-introduction-to-domain-modeling-862a30b38353">Источник</a></p>
+</div>
+</figcaption>
+</figure>
+<figure class="align-center" id="id18">
+<a class="reference internal image-reference" href="../../../../_images/ddd_model_and_reality.png"><img alt="Integrating solution into new reality" src="../../../../_images/ddd_model_and_reality.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Integrating solution into new reality</span><a class="headerlink" href="#id18" title="Постоянная ссылка на рисунок">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id7">
+<h3><a class="toc-backref" href="#id30" role="doc-backlink">А что если попытаться реализовать единственную всеобъемливающую модель предметной области?</a><a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<p>Если решаемой проблемы не существует или она неизвестена, то и модель под решение у нас построить не получится, но если попробовать создать модель на все случаи жизни, то тогда придется полностью воспроизвести оригинал моделирования, что не позволит эффективно решать задачи (например, осуществление навигации судна по точной копии в масштабе 1:1 планеты Земля).</p>
+<blockquote>
+<div><p>💬 &quot;Because the term domain model includes the word domain, we might get the idea that we should create a single, cohesive, all-inclusive model of an organization’s entire business domain—you know, like an enterprise model.
+However, when using DDD, that is not our goal. DDD places emphasis on just the opposite. The whole Domain of the organization is composed of Subdomains.
+Using DDD, models are developed in Bounded Contexts. In fact, developing a Domain Model is actually one way that we focus on only one specific area of the whole business domain.
+Any attempt to define the business of even a moderately complex organization in a single, all-encompassing model will be at best extremely difficult and will usually fail.
+As is made clear in this chapter, vigorously separating distinct areas of the whole business domain will help us succeed.</p>
+<p>So, if a domain model shouldn’t be all-inclusive of what the organization does and how it does it, what should it be, exactly?</p>
+<p>Almost every software Domain has multiple Subdomains. It really doesn’t matter whether the organization is huge and extremely complex or consists of just a few people and the software they use.
+There are different functions that make any business successful, so it’s advantageous to think about each of those business functions separately.&quot;</p>
+<p class="attribution">—&quot;Implementing Domain-Driven Design&quot; by Vaughn Vernon</p>
+</div></blockquote>
+<p>В качестве иллюстрации того, что модель создается для решения конкретных задач (то есть имеет определенный контекст применимости), рассмотрим примеры из доклада Эрика Эванса (Eric Evans — Tackling Complexity in the Heart of Software, Domain-Driven Design Europe 2016 - Brussels, January 26-29, 2016).</p>
+<ol class="arabic simple">
+<li><p>Карта морского ориентирования (цилиндрическая проекция Меркатора)</p></li>
+</ol>
+<figure class="align-center" id="id19">
+<a class="reference internal image-reference" href="../../../../_images/mercator_projection.png"><img alt="Mercator projection" src="../../../../_images/mercator_projection.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Mercator projection</span><a class="headerlink" href="#id19" title="Постоянная ссылка на рисунок">¶</a></p>
+<div class="legend">
+<p>— <a class="reference external" href="https://www.youtube.com/watch?v=dnUFEg68ESM&amp;ab_channel=Domain-DrivenDesignEurope">Источник</a></p>
+</div>
+</figcaption>
+</figure>
+<p>Такие карты используют относительное искажение размеров объектов относительно друг друга, но помогают направлять компас в сторону нужной конечной точки (направление на карте полностью совпадет со стрелкой компаса).
+На этой карте Африка и Гренландия выглядят равными по площади, но в действительности, Африка в 14 раз больше Гренландии, то есть у карты есть четкое предназначение, задача для которой она нужна, и только для нее - и это навигация судов.</p>
+<ol class="arabic simple" start="2">
+<li><p>Картографическая проекция земного шара на поверхность многогранника (проекция Димаксион (Фуллера))</p></li>
+</ol>
+<figure class="align-center" id="id20">
+<a class="reference internal image-reference" href="../../../../_images/fuller_projection.png"><img alt="Fuller projection" src="../../../../_images/fuller_projection.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Fuller projection</span><a class="headerlink" href="#id20" title="Постоянная ссылка на рисунок">¶</a></p>
+<div class="legend">
+<p>— <a class="reference external" href="https://ru.m.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:Fuller_projection_rotated.svg">Источник</a></p>
+</div>
+</figcaption>
+</figure>
+<p>Данная проекция имеет меньшие искажения относительных размеров объектов, особенно в сравнении с проекцией Меркатора, то есть, она может служить более точным инструментом определения относительных размеров объектов земли (но не инсрументом навигации судов).</p>
+<div class="admonition seealso">
+<p class="admonition-title">См.также</p>
+<blockquote>
+<div><p>💬 &quot;We're making an effort with DDD to recognize that there is no practical way to have a canonical, enterprise data model where every single element in the model is representative of how every team in the enterprise would want to use it.
+It just doesn't happen. There's always some difference, and many times there are many differences that make it very painful for one team to try to use the model that another team has created.
+That's why we're focused on the bounded context with a ubiquitous language.&quot;</p>
+</div></blockquote>
+<p><a class="reference external" href="https://www.infoq.com/articles/modeling-uncertainty-reactive-ddd/">Vaughn Vernon объясняет, почему построение канонической всеобъемлющей модели предприятия и единой предметной области на основе единой модели деятельности - миф</a></p>
+</div>
+</section>
+<section id="id8">
+<h3><a class="toc-backref" href="#id31" role="doc-backlink">Концептуальная, Доменная модели, ограниченный контекст и единый язык</a><a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
 <p>Ограниченный контекст - это рассмотрение объекта моделирования с определенной точки зрения, с определенного ракурса решаемой проблемы (см. пример с огурцом далее).
-Основным назначением ограниченного контекста является поиск баланса между простой модели и ее достаточностью для решения проблемы.</p>
-<p>Количество слов используемых человеком в лексиконе ограничено, это около 6000 слов (в зависимости от языка), а количство явлений окружающего мира - безгранично.
-Это и есть та самая причина того, что если один термин обозначает несколько явлений окружающего мира, либо наоборот, одно явление мы называем различными терминами, - это обозначает лингвистический конфликт.</p>
+Основным назначением ограниченного контекста является поиск баланса между простой модели и ее достаточностью для решения проблемы (и концептуальной, и доменной модели), а именно, поиск баланса между минимизацией когнитивной нагрузки и минимизации коммуникативной нагрузки.
+Тут стоит отметить, что коммуникативная нагрузка выражается через coupling, а когнитивная через cohesion (в технических терминах).</p>
+<blockquote>
+<div><p>💬 &quot;When you are just getting started in your software modeling efforts, your Bounded Context is
+somewhat conceptual. You could think of it as part of your problem space. However, as your model
+starts to take on deeper meaning and clarity, your Bounded Context will quickly transition to your
+solution space, with your software model being reflected as project source code. (The problem
+space and solution space are better explained in the box.) Remember that a Bounded Context is
+where a model is implemented, and you will have separate software artifacts for each Bounded
+Context.&quot;</p>
+<p class="attribution">—&quot;Domain-Driven Design Distilled&quot; by Vaughn Vernon</p>
+</div></blockquote>
+<p>Количество слов используемых человеком в лексиконе ограничено, а количество явлений окружающего мира безгранично.
+Это и есть та самая причина по которой существуют лингвистические конфликты, то есть ситуации, когда один термин обозначает несколько явлений окружающего мира, либо наоборот, одно явление мы называем различными терминами.</p>
 <div class="admonition seealso">
 <p class="admonition-title">См.также</p>
 <p><a class="reference external" href="https://ru.m.wikipedia.org/wiki/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D0%BD%D1%8B%D0%B9_%D0%B7%D0%B0%D0%BF%D0%B0%D1%81/">Википедия: Словарный запас</a></p>
 </div>
-<p>И при поиске ограниченных контекстов мы можем ориентироваться на эти лингвистические конфликты в процессе коммуникации (эти конфликты и являются первыми маркерами/границами ограниченнных контекстов).</p>
+<p>И как раз при поиске ограниченных контекстов мы можем ориентироваться на эти лингвистические конфликты в процессе коммуникации (эти конфликты и являются первыми маркерами/границами ограниченнных контекстов).</p>
 <blockquote>
 <div><p>💬 &quot;The Language of a team in an explicit Bounded Context expressed as a domain model adds true business value
 and gives us certainty that we are implementing the correct software.&quot;</p>
@@ -226,8 +360,9 @@ and gives us certainty that we are implementing the correct software.&quot;</p>
 </div></blockquote>
 <p>Если внутри своего ограниченно контекста мы встречаем языковой конфликт, то это может являться симптомом того, что мы решаем сразу несколько задач одновременно.
 То есть, если мы называем одно явление разными терминами, то скорее всего это явление используется в разных контекстах, и наш контекст служит нескольким целям.
-Это сигнал о том, что наша модель переусложнена и при решении одной задачи мы вынуждены работать с теми деталями модели, которые нерелевантны для нас в момент рассмотрения. Это все отбирает ресурс внимания у команды и может удорожать процесс разработки для бизнеса.</p>
-<p>Поэтому, внутри каждого ограниченного контекста существует строгий единый (согласованный) язык.
+Это сигнал о том, что наша модель переусложнена и при решении одной задачи мы вынуждены работать с теми деталями модели, которые нерелевантны для нас в момент рассмотрения.
+Это все создает паразитную когнитивную нагрузку у команды и может удорожать процесс разработки для бизнеса.</p>
+<p>Поэтому, внутри каждого ограниченного контекста существует строгий единый (согласованный) язык (система понятий).
 Единый (согласованный) язык не просто словарь внутри компании, это подразумевает, в первую очередь, согласованный язык внутри границ применимости модели.
 Мы, в рамках модели, ограничены ограниченным контекстом, где каждый термин обозначает строго одно явление.</p>
 <blockquote>
@@ -237,9 +372,29 @@ This is a crucial cord that weaves the model into development activity and binds
 <p class="attribution">—&quot;Domain-Driven Design: Tackling Complexity in the Heart of Software&quot; by Eric Evans</p>
 </div></blockquote>
 <p>В качестве примера можно привести модель обыкновенного огурца, где термин &quot;огурец&quot; в каждом ограниченном контексте имеет строгое и однозначное толкование (но разное): плод, ингредиент, груз ...</p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="../../../../_images/cucumber_BC.jpg"><img alt="cucumber in diffent Bounded Contexts" src="../../../../_images/cucumber_BC.jpg" style="width: 100%;" /></a>
+<figure class="align-center" id="id21">
+<a class="reference internal image-reference" href="../../../../_images/cucumber_BC.jpg"><img alt="Сucumber in diffent Bounded Contexts" src="../../../../_images/cucumber_BC.jpg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Сucumber in diffent Bounded Contexts</span><a class="headerlink" href="#id21" title="Постоянная ссылка на рисунок">¶</a></p>
+</figcaption>
 </figure>
+<p>Как было упомянуто ранее, единый (согласованный) язык является средством выражения и концептуальной (ментальной), и доменной моделей.
+Отличительной чертой DDD является то, что в нем концептуальная (ментальная) и доменная модели совмещены, что позволяет выражать функции познавания и реализации через единую модель (именно поэтому всегда в литературе говорится явно только о доменной модели).</p>
+<figure class="align-center" id="id22">
+<a class="reference internal image-reference" href="../../../../_images/shared_mental_model.jpg"><img alt="What DDD is" src="../../../../_images/shared_mental_model.jpg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">(What DDD is).
+What if the domain experts, the development team, other stakeholders, and (most importantly) the source code itself all share the same model?
+In this case, there is no translation from the domain expert's requirements to the code.
+Rather, the code is designed to reflect the shared mental model directly. And that is the goal of domain-driven design.</span><a class="headerlink" href="#id22" title="Постоянная ссылка на рисунок">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition seealso">
+<p class="admonition-title">См.также</p>
+<ul class="simple">
+<li><p>&quot;<a class="reference internal" href="system-complexity.html#stanislav3316-system-complexity"><span class="std std-ref">Сложность как свойство систем</span></a>&quot;</p></li>
+</ul>
+</div>
 <p>[Дополнение] Про профессиональные языки от Тарасенко:</p>
 <blockquote>
 <div><p>💬 &quot;Главная для нас особенность — то, что язык является универсальным средством моделирования: говорить можно о чем угодно. Из многих свойств языка, обеспечивающих ему это свойство, обратим внимание на расплывчатость смысла слов.</p>
@@ -267,9 +422,35 @@ This is a crucial cord that weaves the model into development activity and binds
 </ul>
 </div>
 </section>
-<section id="id7">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink">Ограниченный контекст и команды разработки</a><a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
-<p>Для того чтобы реализовать модель, команда должна ее понимать, соответственно, набольшей эффективностью команда будет обладать тогда, когда граница ответственности команды совпадает с границей модели.
+<section id="id10">
+<h3><a class="toc-backref" href="#id32" role="doc-backlink">Классическая ошибка моделирования ограниченного контекста</a><a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
+<p>Классическая ошибка при моделировании ограниченного контекста заключается в том, что при неправильном понимании модели возникает желание &quot;запихнуть&quot; модель объекта моделирования в какой-то один ограниченный контекст.
+Существует два самых неправильных вопроса - в какой ограниченный контекст поместить сущность и как мне получить из другого ограниченного контекста нужную сущность.</p>
+<p>Моделирование ограниченного контекста - это не кройка.
+Плод, груз, ингредиент, блюдо - это все модели одного и того же объекта моделирования - огурца, только в разных ограниченных контекстах.
+Можно рассмотреть ограниченный контекст как одну из плоскостей додека‌эдра (когда один и тот же элемент виден под разными ракурсами), а не как фрагмент пазла (когда один элемент может принадлежать только одному фрагменту полотна).</p>
+<p>Задача не в том, в какой ограниченный контекст &quot;запихнуть&quot;, и не в том, как разрезать, а в том, какие именно аспекты поведения объекта моделирования релевантны в контексте решаемой проблемы.
+Посетитель, пользователь, клиент, покупатель, плательщик, получатель, адресат - это все тоже модели одного и того же объекта моделирования.</p>
+<figure class="align-center" id="id23">
+<a class="reference internal image-reference" href="../../../../_images/bc_perspective.png"><img alt="Different pespectives are matter" src="../../../../_images/bc_perspective.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">Different pespectives are matter</span><a class="headerlink" href="#id23" title="Постоянная ссылка на рисунок">¶</a></p>
+<div class="legend">
+<p>— <a class="reference external" href="https://mnogogranniki.ru/dodekaedr.html">Источник</a></p>
+</div>
+</figcaption>
+</figure>
+<p>Владик отлично подчеркивает это в своем примере:</p>
+<blockquote>
+<div><p>💬 &quot;However, it is more difficult to represent such a divergent model of the business domain in software. Source code doesn’t cope well with ambiguity. If we were to bring the sales department’s complicated model into marketing,
+it would introduce complexity where it’s not needed— far more detail and behavior than marketing people need for optimizing advertising campaigns. But if we were to try to simplify the sales model according to the marketing world view,
+it wouldn’t fit the sales subdomain’s needs, because it’s too simplistic for managing and optimizing the sales process.
+We’d have an overengineered solution in the first case and an under-engineered one in the second.&quot;</p>
+</div></blockquote>
+</section>
+<section id="id11">
+<h3><a class="toc-backref" href="#id33" role="doc-backlink">Ограниченный контекст и команды разработки</a><a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h3>
+<p>Для того чтобы реализовать доменную модель, команда должна ее понимать, соответственно, набольшей эффективностью команда будет обладать тогда, когда граница ответственности команды совпадает с границей модели.
 Это и можно назвать границей автономности рабочей команды, что позволяет команде фокусироваться на решении конкретной задачи.
 В ограниченном контексте команды модель обладает наибольшей внутренней связанностью (cohesion) и наименьшим сопряжением (coupling) с другими ограниченными контекстами.</p>
 <p>В таком случае решается проблема Брукса, а именно, достижение автономности команды, - рост коммуникационных связей внутри команды и уменьшение коммуникационных связей между командами.</p>
@@ -281,36 +462,27 @@ This is a crucial cord that weaves the model into development activity and binds
 </div>
 <p>Если же модель поделить неправильно, допустим, разрезать полноценную модель на две разные части, то резко возрастет количество коммуникационных путей между командами (для сохранения и поддержки инвариантов модели), и этим мы ухудшаем параллелизм задач.
 Аналогично, если свалим в один ограниченный контекст две модели которые служат двум разным целям, то мы увеличим когнитивную нагрузку команды (путем введения информации нерелеватной в момент рассмотрения, тем самым отнимая когнитивные ресурсы у человека).
-И чтобы достичь наибольшего уровня автономности команд, обеспечить их независимость друг от друга нужно правильно определить ограниченные контексты.</p>
+И чтобы достичь наибольшего уровня автономности команд, обеспечить их независимость друг от друга нужно правильно определить и снизить зависимость ограниченных контекстов.</p>
 <p>Таким образом, можно прийти к выводу, что ограниченный контекст помогает решить две проблемы:</p>
 <ol class="arabic simple">
 <li><p>Снижение когнитивной нагрузки на команду (путем исключения из рассмотрения нерелевантных деталей)</p></li>
 <li><p>Снижение коммуникативной нагрузки между командами (путем концентрации релевантных деталей)</p></li>
 </ol>
 </section>
-<section id="id8">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink">Классическая ошибка моделирования ограниченного контекста</a><a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
-<p>Классическая ошибка при моделировании ограниченного контекста заключается в том, что при неправильном понимании модели возникает желание &quot;запихнуть&quot; модель объекта моделирования в какой-то один ограниченный контекст.
-Существует два самых неправильных вопроса - в какой ограниченный контекст поместить сущность и как мне получить из другого ограниченного контекста нужную сущность.</p>
-<p>Моделирование ограниченного контекста - это не кройка. Плод, груз, ингредиент, блюдо - это все модели одного и того же объекта моделирования - огурца, только в разных ограниченных контекстах.
-Можно рассмотреть ограниченный контекст как одну из плоскостей додека‌эдра (когда один и тот же элемент виден под разными ракурсами), а не как фрагмент пазла (когда один элемент может принадлежать только одному фрагменту полотна).</p>
-<p>Задача не в том, в какой ограниченный контекст &quot;запихнуть&quot;, и не в том, как разрезать, а в том, какие именно аспекты поведения объекта моделирования релевантны в контексте решаемой проблемы текущего ограниченного контекста.
-Посетитель, пользователь, клиент, покупатель, плательщик, получатель, адресат - это все тоже модели одного и того же объекта моделирования.</p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="../../../../_images/bc_perspective.png"><img alt="Different pespectives are matter" src="../../../../_images/bc_perspective.png" style="width: 60%;" /></a>
-</figure>
-<p>Владик отлично выводит противоречие, как опытный диалектик:</p>
-<blockquote>
-<div><p>💬 &quot;However, it is more difficult to represent such a divergent model of the business domain in software. Source code doesn’t cope well with ambiguity. If we were to bring the sales department’s complicated model into marketing,
-it would introduce complexity where it’s not needed— far more detail and behavior than marketing people need for optimizing advertising campaigns. But if we were to try to simplify the sales model according to the marketing world view,
-it wouldn’t fit the sales subdomain’s needs, because it’s too simplistic for managing and optimizing the sales process.
-We’d have an overengineered solution in the first case and an under-engineered one in the second.&quot;</p>
-</div></blockquote>
+<section id="id12">
+<h3><a class="toc-backref" href="#id34" role="doc-backlink">Краткие выводы:</a><a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>чтобы осознать и описать проблему, нужно сначала принять какую-то модель, систему понятий (концептуальная модель)</p></li>
+<li><p>далее, мы можем приступать к поиску решения, выражаемом в виде доменой модели и способах интеграции его в новую реальность</p></li>
+<li><p>ограниченный контекст модели - это области применения модели в контексте решаемой проблемы (&quot;заказ&quot; для бухгалтера и &quot;заказ&quot; для повара имеют совершенно разные контексты и соотвествтенно это разные модели для разных задач)</p></li>
+<li><p>в DDD концептуальная и доменная модели, как правило, совмещены, и выражаются через единый (согласованный) язык</p></li>
+</ol>
 </section>
-<section id="id9">
-<h3><a class="toc-backref" href="#id17" role="doc-backlink">Источники информации</a><a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
+<section id="id13">
+<h3><a class="toc-backref" href="#id35" role="doc-backlink">Источники информации</a><a class="headerlink" href="#id13" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Ivan Zakrevskii</p></li>
+<li><p>Mikhail Andronov</p></li>
 <li><p>Группа тг-канала объединения ИТ-архитекторов (&#64;ru_arc)</p></li>
 <li><p>DDDevotion chat (tg <a class="reference external" href="https://t.me/iDDDqd">https://t.me/iDDDqd</a>)</p></li>
 <li><p>Группа тг-канала (&#64;emacsway_log) о Software Design/Architecture, DDD, Microservice Architecture, Distributed Systems, SDLC, Agile, Team Topology etc.</p></li>

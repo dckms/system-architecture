@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Сложность как свойство систем &#8212; System Architecture</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/alabaster.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" type="text/css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../../search.html" />
+    <link rel="next" title="Приватное пространство" href="../../../../private/index.html" />
+    <link rel="prev" title="Language Context Definition" href="language-context.html" />
+    
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+
+
+    
+        
+            <link rel="canonical" href="https://dckms.github.io/system-architecture/stanislav.bolsun/it/ddd/domain-model/system-complexity.html" />
+        
+    
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+              <div class="related top">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="language-context.html" title="Previous document">Language Context Definition</a>
+        </li>
+        <li>
+          <a href="../../../../private/index.html" title="Next document">Приватное пространство</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+
+          <div class="body" role="main">
+            
+    
+  <section id="stanislav3316-system-complexity">
+<span id="id1"></span><h1>Сложность как свойство систем<a class="headerlink" href="#stanislav3316-system-complexity" title="Permalink to this heading">¶</a></h1>
+<p><em>Автор раздела: Stanislav Bolsun</em></p>
+<section id="id2">
+<h2>Предельная сложность для понимания<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<blockquote>
+<div><p>💬 Одним из важнейших интеллектуальных процессов человека и проектировщика в особенности является понимание. Понимание конструкционно по своей природе. Это значит, что в процессе понимания мы соединяем различные частицы информации друг с другом при помощи особых связей, как если бы мы достраивали конструкцию. Мы соединяем те куски информации, что подходят друг к другу ближе по смыслу и углубляют понимание. Соединяем то, что вытекает одно из другого как причина и следствие. Стягивая связями подобные информационные отрывки друг с другом, мы получаем конструкцию, имеющую тот или иной смысл для нас. Смысл и является продуктом понимания.</p>
+<p>Так как понимание является в своей сути соединением элементов, то затруднение в понимании сложных систем связано обычно с объёмом элементов и связей, которые нужно удерживать в фокусе внимания или, говоря образно, необходимо «запихнуть в одну голову».</p>
+<blockquote>
+<div><p>💬 &quot;У меня когда-то был разговор с одним очень известным человеком (не буду называть фамилию), который во время аварийной ситуации вручную вывел [атомный] реактор из закритического состояния. Много времени прошло, это уже пожилой человек с орденами и медалями. Я спрашиваю: «Как?» Он ответил: «Я моделировал в голове, что происходит с реактором». Так вот, сейчас нет человека, который может смоделировать в голове, что происходит в сложной системе. Технические системы по степени своей сложности вышли за пределы интуиции инженеров-конструкторов. [П. Г. Шедровицкий, 2018]&quot;</p>
+<p class="attribution">—&quot;Пётр Щедровицкий, философ, методолог, общественный деятель&quot;</p>
+</div></blockquote>
+<p>Вероятно для каждого отдельного человека существует некоторая предельная сложность, которую он способен воспринять или удержать в моменте, конструируя собственную овнутрённую, то есть находящуюся только в его уме, модель системы. У всех этот предел разный, но у любого проектирующего с повышением сложности системы с некоторого момента начинает не хватать когнитивных способностей справиться с ней. Обычно так и говорят: не вмещается в голову. При этом в современном мире наблюдаем отчётливый тренд на повышение сложности систем. Напрашивается вывод: инструменты управления сложностью лучше внедрять с самого начала проектирования.</p>
+<p>...</p>
+<p class="attribution">—&quot;Управление знаниями в продукте&quot;, <a class="reference external" href="https://ashapiro.ru/articles/system-episteme">https://ashapiro.ru/articles/system-episteme</a></p>
+</div></blockquote>
+<div class="admonition seealso">
+<p class="admonition-title">См.также</p>
+<p>Согласно закономерности <a class="reference external" href="https://en.wikipedia.org/wiki/The_Magical_Number_Seven,_Plus_or_Minus_Two">Магического числа семь плюс-минус два</a>, обнаруженной американским учёным-психологом Джорджем Миллером, кратковременная человеческая память, как правило, не может запомнить и повторить более 7 ± 2 элементов.</p>
+</div>
+</section>
+</section>
+
+
+
+    
+        
+            <div class="section" style="text-align: right;">
+                <p><a href="https://dckms.github.io/system-architecture/stanislav.bolsun/it/ddd/domain-model/system-complexity.html">Canonical URL</a></p>
+            </div>
+        
+    
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="language-context.html" title="Previous document">Language Context Definition</a>
+        </li>
+        <li>
+          <a href="../../../../private/index.html" title="Next document">Приватное пространство</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">System Architecture</a></h1>
+
+
+
+<p class="blurb">Distributed Collaborative Knowledge Management System for System Architecture</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dckms&repo=system-architecture&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption" role="heading"><span class="caption-text">Общее пространство:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../trunk/it/index.html">IT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../trunk/soft-skills/index.html">Soft Skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../trunk/index.html">Общее пространство</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Авторские пространства:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../emacsway/index.html">Пространство Emacsway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ivan.ivanov/index.html">Пространство Ивана Иванова</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Пространство Станислава Болсуна</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Приватное пространствo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../private/index.html">Приватное пространство</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Прочее:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html">Как пользоваться</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://t.me/emacsway_log"><i class="fab fa-telegram" style="color:#54a9eb;"></i> Telegram</a></li>
+    
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../index.html">Пространство Станислава Болсуна</a></li>
+  <li><a href="../../index.html">IT</a></li>
+  <li><a href="../index.html">DDD</a></li>
+  <li><a href="index.html">Domain Model</a></li><ul>
+      <li>Previous: <a href="language-context.html" title="предыдущая глава">Language Context Definition</a></li>
+      <li>Next: <a href="../../../../private/index.html" title="следующая глава">Приватное пространство</a></li></ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="footer">
+      &copy;2024, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../_sources/stanislav.bolsun/it/ddd/domain-model/system-complexity.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/dckms/system-architecture" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+
+    
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+           ym(87033138, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true,
+                trackHash:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/87033138" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    
+
+  </body>
+</html>
