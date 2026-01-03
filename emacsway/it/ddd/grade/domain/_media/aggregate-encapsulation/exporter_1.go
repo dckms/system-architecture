@@ -5,17 +5,17 @@ import (
 )
 
 type Exporter[T any] interface {
-    SetState(T)
+    Export(ex func(T))
 }
 
 type Exportable[T any] interface {
-    ExportTo(Exporter[T])
+    Export(Exporter[T])
 }
 
 type ExportableUint uint
 
-func (e ExportableUint) Export(ex Exporter[uint]) {
-    ex.SetState(uint(e))
+func (e ExportableUint) Export(ex func(uint)) {
+    ex(uint(e))
 }
 
 type MemberId ExportableUint
@@ -56,28 +56,28 @@ func (e Endorser) Export(ex EndorserExporterSetter) {
 }
 
 type EndorserExporter struct {
-    Id                        UintExporter
-    Grade                     UintExporter
-    AvailableEndorsementCount UintExporter
-    PendingEndorsementCount   UintExporter
+    Id                        uint
+    Grade                     uint
+    AvailableEndorsementCount uint
+    PendingEndorsementCount   uint
     Version                   uint
     CreatedAt                 time.Time
 }
 
 func (ex *EndorserExporter) SetId(val MemberId) {
-    val.Export(&ex.Id)
+    val.Export(func(v string) { ex.Id = v })
 }
 
 func (ex *EndorserExporter) SetGrade(val Grade) {
-    val.Export(&ex.Grade)
+    val.Export(func(v string) { ex.Grade = v })
 }
 
 func (ex *EndorserExporter) SetAvailableEndorsementCount(val EndorsementCount) {
-    val.Export(&ex.AvailableEndorsementCount)
+    val.Export(func(v string) { ex.AvailableEndorsementCount = v })
 }
 
 func (ex *EndorserExporter) SetPendingEndorsementCount(val EndorsementCount) {
-    val.Export(&ex.PendingEndorsementCount)
+    val.Export(func(v string) { ex.PendingEndorsementCount = v })
 }
 
 func (ex *EndorserExporter) SetVersion(val uint) {
