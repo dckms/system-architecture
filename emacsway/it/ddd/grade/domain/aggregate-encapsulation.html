@@ -316,17 +316,17 @@ As always, such trade-offs must be discussed by your technical team members.</p>
 <span class="p">)</span><span class="w"></span>
 
 <span class="kd">type</span><span class="w"> </span><span class="nx">Exporter</span><span class="p">[</span><span class="nx">T</span><span class="w"> </span><span class="kt">any</span><span class="p">]</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">SetState</span><span class="p">(</span><span class="nx">T</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Export</span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">T</span><span class="p">))</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="kd">type</span><span class="w"> </span><span class="nx">Exportable</span><span class="p">[</span><span class="nx">T</span><span class="w"> </span><span class="kt">any</span><span class="p">]</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">ExportTo</span><span class="p">(</span><span class="nx">Exporter</span><span class="p">[</span><span class="nx">T</span><span class="p">])</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Export</span><span class="p">(</span><span class="nx">Exporter</span><span class="p">[</span><span class="nx">T</span><span class="p">])</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="kd">type</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="w"> </span><span class="kt">uint</span><span class="w"></span>
 
-<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="p">)</span><span class="w"> </span><span class="nx">Export</span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="nx">Exporter</span><span class="p">[</span><span class="kt">uint</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">ex</span><span class="p">.</span><span class="nx">SetState</span><span class="p">(</span><span class="nb">uint</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span><span class="w"></span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="p">)</span><span class="w"> </span><span class="nx">Export</span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kt">uint</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">ex</span><span class="p">(</span><span class="nb">uint</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="kd">type</span><span class="w"> </span><span class="nx">MemberId</span><span class="w"> </span><span class="nx">ExportableUint</span><span class="w"></span>
@@ -367,28 +367,28 @@ As always, such trade-offs must be discussed by your technical team members.</p>
 <span class="p">}</span><span class="w"></span>
 
 <span class="kd">type</span><span class="w"> </span><span class="nx">EndorserExporter</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">Id</span><span class="w">                        </span><span class="nx">UintExporter</span><span class="w"></span>
-<span class="w">    </span><span class="nx">Grade</span><span class="w">                     </span><span class="nx">UintExporter</span><span class="w"></span>
-<span class="w">    </span><span class="nx">AvailableEndorsementCount</span><span class="w"> </span><span class="nx">UintExporter</span><span class="w"></span>
-<span class="w">    </span><span class="nx">PendingEndorsementCount</span><span class="w">   </span><span class="nx">UintExporter</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Id</span><span class="w">                        </span><span class="kt">uint</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Grade</span><span class="w">                     </span><span class="kt">uint</span><span class="w"></span>
+<span class="w">    </span><span class="nx">AvailableEndorsementCount</span><span class="w"> </span><span class="kt">uint</span><span class="w"></span>
+<span class="w">    </span><span class="nx">PendingEndorsementCount</span><span class="w">   </span><span class="kt">uint</span><span class="w"></span>
 <span class="w">    </span><span class="nx">Version</span><span class="w">                   </span><span class="kt">uint</span><span class="w"></span>
 <span class="w">    </span><span class="nx">CreatedAt</span><span class="w">                 </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">EndorserExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetId</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">MemberId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ex</span><span class="p">.</span><span class="nx">Id</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ex</span><span class="p">.</span><span class="nx">Id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="p">})</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">EndorserExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetGrade</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">Grade</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ex</span><span class="p">.</span><span class="nx">Grade</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ex</span><span class="p">.</span><span class="nx">Grade</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="p">})</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">EndorserExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetAvailableEndorsementCount</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">EndorsementCount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ex</span><span class="p">.</span><span class="nx">AvailableEndorsementCount</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ex</span><span class="p">.</span><span class="nx">AvailableEndorsementCount</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="p">})</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">EndorserExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetPendingEndorsementCount</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="nx">EndorsementCount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ex</span><span class="p">.</span><span class="nx">PendingEndorsementCount</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nx">val</span><span class="p">.</span><span class="nx">Export</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ex</span><span class="p">.</span><span class="nx">PendingEndorsementCount</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="p">})</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">ex</span><span class="w"> </span><span class="o">*</span><span class="nx">EndorserExporter</span><span class="p">)</span><span class="w"> </span><span class="nx">SetVersion</span><span class="p">(</span><span class="nx">val</span><span class="w"> </span><span class="kt">uint</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -468,6 +468,33 @@ The Humble Object pattern is a good example, because the separation of the behav
 The Presenter/View boundary is one of these boundaries, but there are many others.&quot;</p>
 <p class="attribution">—&quot;Clean Architecture: A Craftsman's Guide to Software Structure and Design&quot; by Robert C. Martin, перевод ООО Издательство &quot;Питер&quot;</p>
 </div></blockquote>
+<p>Обратите внимание на то, что методы экспортера принимают ValueObject:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">func</span> <span class="p">(</span><span class="n">ex</span> \<span class="o">*</span><span class="n">EndorserExporter</span><span class="p">)</span> <span class="n">SetId</span><span class="p">(</span><span class="n">val</span> <span class="n">MemberId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">val</span><span class="o">.</span><span class="n">Export</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">v</span> <span class="n">string</span><span class="p">)</span> <span class="p">{</span> <span class="n">ex</span><span class="o">.</span><span class="n">Id</span> <span class="o">=</span> <span class="n">v</span> <span class="p">})</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Мы могли бы устранить эту избыточную осведомленность таким образом:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">func</span> <span class="p">(</span><span class="n">e</span> <span class="n">Endorser</span><span class="p">)</span> <span class="n">Export</span><span class="p">(</span><span class="n">ex</span> <span class="n">EndorserExporterSetter</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">Export</span><span class="p">(</span><span class="n">ex</span><span class="o">.</span><span class="n">SetId</span><span class="p">)</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+
+<span class="o">...</span>
+
+<span class="n">func</span> <span class="p">(</span><span class="n">ex</span> \<span class="o">*</span><span class="n">EndorserExporter</span><span class="p">)</span> <span class="n">SetId</span><span class="p">(</span><span class="n">val</span> <span class="n">uint</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">val</span><span class="o">.</span><span class="n">Export</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">v</span> <span class="n">string</span><span class="p">)</span> <span class="p">{</span> <span class="n">ex</span><span class="o">.</span><span class="n">Id</span> <span class="o">=</span> <span class="n">v</span> <span class="p">})</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Кажется, степень осведомленности сократилась.
+Но есть и обратная сторона.
+Предположим, ValueObject Id стал композитным.
+Нам потребуется изменить не только интерфейс экспортера ValueObject, но и интерфейс экспортера самого агрегата.
+У него появляется две причины для изменения.
+Так же две причины для изменения появляется и в логике экспорта самого агрегата. Это нарушает принцип SRP.</p>
+<p>Вторая проблема заключается в том, что для автоинкрементных PK нам нужен доступ к методу Id.Scan(any).
+И во втором варианте он исчезает.</p>
 </section>
 <section id="returning-structure">
 <h3><a class="toc-backref" href="#id12" role="doc-backlink">2. Returning structure</a><a class="headerlink" href="#returning-structure" title="Permalink to this heading">¶</a></h3>
@@ -699,7 +726,7 @@ The OutputData is then passed through the OutputBoundary interface to the Presen
     </div>
     
     <div class="footer">
-      &copy;2024, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
+      &copy;2026, @dckms (<a href="https://dckms.github.io/system-architecture/LICENSE.txt" rel="nofollow">License</a>).
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>

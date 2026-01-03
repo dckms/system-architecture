@@ -962,6 +962,7 @@ Online-каталоги
 ---------------
 
 - `Catalog of Refactorings <http://www.refactoring.com/catalog/>`__
+- `Catalog of legacy modernization patterns by Nick Tune <https://legacy-modernization.io/patterns/>`__
 - `Code Smell <http://c2.com/cgi/wiki?CodeSmell>`__
 - `Anti Patterns Catalog <http://c2.com/cgi/wiki?AntiPatternsCatalog>`__
 - `Catalog of Patterns of Enterprise Application Architecture <https://martinfowler.com/eaaCatalog/>`__
