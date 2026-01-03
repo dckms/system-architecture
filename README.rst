@@ -212,7 +212,7 @@ Sphinx-doc предоставляет и тегирование/индексир
 #. Если не установлен Python, то `установите его <https://docs.python.org/3/installing/index.html>`__.
 #. Установите зависимости. Для этого, из корневой директории проекта выполните команду: ``pip install -r requirements.freeze.txt``
 #. Отредактируйте файл conf.py, подробности смотрите в `документации <https://www.sphinx-doc.org/en/master/usage/configuration.html>`__.
-#. Произведите сборку: ``make html`` или ``sphinx-build -D language=ru -b html . _build`` или ``docker build -t sphinx_image . && docker run -v $(pwd):/sphinxtechnicalwriting sphinx_image make html``
+#. Произведите сборку: ``make html`` или ``sphinx-build -D language=ru -b html . _build`` или ``docker build -t sphinx_image . && docker run -v $(pwd):/sphinxtechnicalwriting sphinx_image sphinx-build -D language=ru -b html . _build``
 #. Локальный запуск: ``python -m http.server``
 #. Подробнее `здесь <https://www.sphinx-doc.org/en/master/usage/quickstart.html>`__.
 
